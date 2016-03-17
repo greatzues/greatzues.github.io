@@ -5,16 +5,49 @@
   
   <title>重新认识java | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="有点激动的是我开始写我自己的博客了，而且是写有关技术的博文，开始有点紧张，因为学习java也不是太多，当时只是java入门之后就直接转型写安卓了，担心理解不太正确，被吐槽，所以先在这里和各位大牛们打声招呼，如果博文有不对的地方，麻烦指点一下，我们可以互相交流。
+
+目录：
+
+
+java的三种特性：多态，继承，封装
+java的基本含义
+java关键字
+
+
+
+##多态在说多态之前先理解一下封装和继承">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重新认识java">
 <meta property="og:url" content="http://yoursite.com/2016/03/16/重新认识java/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-03-16T09:01:10.962Z">
+<meta property="og:description" content="有点激动的是我开始写我自己的博客了，而且是写有关技术的博文，开始有点紧张，因为学习java也不是太多，当时只是java入门之后就直接转型写安卓了，担心理解不太正确，被吐槽，所以先在这里和各位大牛们打声招呼，如果博文有不对的地方，麻烦指点一下，我们可以互相交流。
+
+目录：
+
+
+java的三种特性：多态，继承，封装
+java的基本含义
+java关键字
+
+
+
+##多态在说多态之前先理解一下封装和继承">
+<meta property="og:updated_time" content="2016-03-17T06:20:24.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重新认识java">
-<meta name="twitter:description">
+<meta name="twitter:description" content="有点激动的是我开始写我自己的博客了，而且是写有关技术的博文，开始有点紧张，因为学习java也不是太多，当时只是java入门之后就直接转型写安卓了，担心理解不太正确，被吐槽，所以先在这里和各位大牛们打声招呼，如果博文有不对的地方，麻烦指点一下，我们可以互相交流。
+
+目录：
+
+
+java的三种特性：多态，继承，封装
+java的基本含义
+java关键字
+
+
+
+##多态在说多态之前先理解一下封装和继承">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -54,7 +87,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -85,13 +118,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>有点激动的是我开始写我自己的<strong>博客</strong>了，而且是写有关技术的博文，开始有点紧张，因为<br>学习java也不是太多，当时只是java入门之后就直接转型写<strong>安卓</strong>了，担心理解不太正确，被吐<br>槽，所以先在这里和各位大牛们打声招呼，如果博文有不对的地方，麻烦指点一下，我们可以互相交流。</p>
+<hr>
+<p>目录：</p>
+<blockquote>
+<ul>
+<li>java的三种特性：多态，继承，封装</li>
+<li>java的基本含义</li>
+<li>java关键字</li>
+</ul>
+</blockquote>
+<hr>
+<p>##多态<br>在说多态之前先理解一下<strong>封装</strong>和<strong>继承</strong><br>    首先封装是隐藏类的内部实现机制，好处：一是可以保护类的内部结构，不影响方法的调用。二是隐藏实现方法，<br>提供给外界访问方法。<br>    继承是重用父类的代码，即子类可以访问父类的方法，通过super关键字调用父类的方法，也可以直接覆写父类的<br>方法。<br>    好了，现在该轮到多态登场了。</p>
+<pre><code>多态，简单的讲就是同一个行为有不同的表现形式和形态的能力。例如运动员这个对象，就有很多不同的表达和表
+</code></pre><p>现形式，例如乒乓球运动员，篮球运动员，足球运动员等。那么我认识一个运动明星，那我就会说我认识科比（篮球明星）<br>这样子我们就说运动员这个对象具有多态性。</p>
+<p>然后直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">java_duotai</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		BasketballPlayer b = <span class="keyword">new</span> KeBi();</span><br><span class="line">		b.attact();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BasketballPlayer</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attact</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"进攻"</span>);</span><br><span class="line">		shoot();</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shoot</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"投篮"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getPoint</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"轻松得分"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KeBi</span> <span class="keyword">extends</span> <span class="title">BasketballPlayer</span></span>&#123;</span><br><span class="line">	<span class="comment">//重载父类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attact</span><span class="params">(String kebiAttact)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"变向上篮"</span>);</span><br><span class="line">		shoot();</span><br><span class="line">		getPoint();</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="comment">//重写父类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shoot</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"三分球"</span>);</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="comment">//另外写一个父类不存在的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">win</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"哈哈"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/重新认识java/" data-id="cilumhyfb0002e4ixe392q6py" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/16/重新认识java/" data-id="cilvw3oip000418ixc8rlw7jc" class="article-share-link">Delen</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android入门/">android入门</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
     </footer>
   </div>
   
@@ -100,7 +150,7 @@
   
   
     <a href="/2016/03/08/zues-blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">zues blog</div>
     </a>
   
@@ -115,7 +165,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Categorieën</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/日记/">日记</a></li></ul>
     </div>
@@ -125,9 +175,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android入门/">android入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开始/">开始</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li></ul>
     </div>
   </div>
 
@@ -137,14 +187,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a>
+      <a href="/tags/android入门/" style="font-size: 10px;">android入门</a> <a href="/tags/java基础/" style="font-size: 10px;">java基础</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
@@ -154,7 +204,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
