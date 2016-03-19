@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android入门," />
 
 
 
@@ -57,19 +57,24 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓
+##Activity组件    Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+其实一直">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/03/08/hello-world/index.html">
+<meta property="og:title" content="android入门学习-activity">
+<meta property="og:url" content="http://yoursite.com/2016/03/19/android入门学习-activity/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-03-08T02:45:02.325Z">
+<meta property="og:description" content="想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓
+##Activity组件    Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+其实一直">
+<meta property="og:image" content="http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg">
+<meta property="og:updated_time" content="2016-03-19T07:56:31.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="android入门学习-activity">
+<meta name="twitter:description" content="想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓
+##Activity组件    Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+其实一直">
+<meta name="twitter:image" content="http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg">
 
 
 
@@ -87,7 +92,7 @@ Quick">
   };
 </script>
 
-  <title> Hello World | Hexo </title>
+  <title> android入门学习-activity | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -207,7 +212,7 @@ Quick">
             
             
               
-                Hello World
+                android入门学习-activity
               
             
           </h1>
@@ -219,11 +224,30 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-03-08T10:45:02+08:00" content="2016-03-08">
-              2016-03-08
+            <time itemprop="dateCreated" datetime="2016-03-19T14:29:37+08:00" content="2016-03-19">
+              2016-03-19
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -246,15 +270,58 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓</p>
+<p>##Activity组件<br>    Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了</p>
+<p>其实一直以来我都觉得安卓的开发模式和javaEE的MVC设计模式相同，因为都是有分开的视图层view（.xml）和控制层activity已经其他执行业务逻辑的模型层，不管怎么感觉，都是分开来，然后通过id或者监听传递实现数据处理。</p>
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>{
+    <span class="keyword">private</span> <span class="keyword">final</span> String TAG = <span class="string">"MainActivity"</span>;
+    <span class="comment">//创建Activity</span>
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>{
+        <span class="keyword">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Log.e(TAG,<span class="string">"-----&gt;&gt;onCreate&gt;&gt;------"</span>);
+    }
+    <span class="comment">//正在使用Activity</span>
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>{
+        <span class="keyword">super</span>.onResume();
+        Log.e(TAG,<span class="string">"-----&gt;&gt;onCreate&gt;&gt;------"</span>);
+    }
+    <span class="comment">//准备开始Activity</span>
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span> </span>{
+        <span class="keyword">super</span>.onStart();
+        Log.e(TAG,<span class="string">"-----&gt;&gt;onStart&gt;&gt;------"</span>);
+    }
+    <span class="comment">//Activity不可见，失去用户焦点，被意外暂停</span>
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>{
+        <span class="keyword">super</span>.onPause();
+        Log.e(TAG,<span class="string">"-----&gt;&gt;onPause&gt;&gt;------"</span>);
+    }
+    <span class="comment">//activity被停止，不再使用该activity</span>
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span> </span>{
+        <span class="keyword">super</span>.onStop();
+        Log.e(TAG,<span class="string">"-----&gt;&gt;onStop&gt;&gt;------"</span>);
+    }
+    <span class="comment">//Activity被销毁，在这里应该把所有在这个activity中占线程的耗时的操作都停掉销毁</span>
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>{
+        <span class="keyword">super</span>.onDestroy();
+        Log.e(TAG,<span class="string">"-----&gt;&gt;onDestroy&gt;&gt;------"</span>);
+    }
+
+}
+</code></pre>
+<ul>
+<li>Activity的整个生命周期在OnCreate()和OnDestory()之间。在OnCreate中执行全局状态的定义，在OnDestroy中释放并保持相关的资源。</li>
+<li>Activity的整个可见的生命周期在OnStart()和OnStop()之间。在这期间activity可能可见也可能不可见，系统在Activity的完整寿命中可能多次调用onStart()和onStop(),正如Activity交替地对用户可见或隐藏</li>
+<li>Activity的前台生命周期在OnResume()和OnPause()之间。Activity处于所有activity的前面，用户获得输入焦点，可以操作次Activity。</li>
+</ul>
+<p>通过图片加上文字会更好的理解，经典图片：<br><img src="http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg" alt="Activity的生命周期"></p>
+<p><strong>注意</strong><br>在创建完一个activity之后记得在Manifast上注册。（Manifast主要进行app的全局检索，根据签名注册找到对应的activity，服务）<br>具体运行结果自己跑起来试一试，我就不截图了。</p>
 
       
     </div>
@@ -267,18 +334,24 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/android入门/" rel="tag">#android入门</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/03/18/自动垃圾回收/" rel="next" title="java垃圾回收机制">
+                <i class="fa fa-chevron-left"></i> java垃圾回收机制
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/08/zues-blog/" rel="prev" title="zues blog">
-                zues blog <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -397,7 +470,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
