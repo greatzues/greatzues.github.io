@@ -58,21 +58,23 @@
 
 
 <meta name="description" content="想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓
-##Activity组件    Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
-其实一直">
+Activity组件Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+其实一直以来我都觉得">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android入门学习-activity">
 <meta property="og:url" content="http://yoursite.com/2016/03/19/android入门学习-activity/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓
-##Activity组件    Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
-其实一直">
-<meta property="og:updated_time" content="2016-03-19T09:01:25.911Z">
+Activity组件Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+其实一直以来我都觉得">
+<meta property="og:image" content="http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg">
+<meta property="og:updated_time" content="2016-03-19T13:37:18.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android入门学习-activity">
 <meta name="twitter:description" content="想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓
-##Activity组件    Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
-其实一直">
+Activity组件Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+其实一直以来我都觉得">
+<meta name="twitter:image" content="http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg">
 
 
 
@@ -148,7 +150,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -158,7 +160,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -221,7 +223,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-19T14:29:37+08:00" content="2016-03-19">
               2016-03-19
             </time>
@@ -233,7 +235,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
@@ -269,18 +271,84 @@
 
       
         <p>想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓</p>
-<p>##Activity组件<br>    Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了</p>
-<p>其实一直以来我都觉得安卓的开发模式和javaEE的MVC设计模式相同，因为都是有分开的视图层view（.xml）和控制层activity已经其他执行业务逻辑的模型层，不管怎么感觉，都是分开来，然后通过id或者监听传递实现数据处理。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends Activity &#123;</span><br><span class="line">	private final String TAG = "MainActivity";</span><br><span class="line">	//创建Activity</span><br><span class="line">	@Override</span><br><span class="line">	protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">		super.onCreate(savedInstanceState);</span><br><span class="line">		setContentView(R.layout.activity_main);</span><br><span class="line">		Log.e(TAG,"-----&gt;&gt;onCreate&gt;&gt;------");</span><br><span class="line">	&#125;</span><br><span class="line">	//正在使用Activity</span><br><span class="line">	@Override</span><br><span class="line">	protected void onResume() &#123;</span><br><span class="line">		super.onResume();</span><br><span class="line">		Log.e(TAG,"-----&gt;&gt;onCreate&gt;&gt;------");</span><br><span class="line">	&#125;</span><br><span class="line">	//准备开始Activity</span><br><span class="line">	@Override</span><br><span class="line">	protected void onStart() &#123;</span><br><span class="line">		super.onStart();</span><br><span class="line">		Log.e(TAG,"-----&gt;&gt;onStart&gt;&gt;------");</span><br><span class="line">	&#125;</span><br><span class="line">	//Activity不可见，失去用户焦点，被意外暂停</span><br><span class="line">	@Override</span><br><span class="line">	protected void onPause() &#123;</span><br><span class="line">		super.onPause();</span><br><span class="line">		Log.e(TAG,"-----&gt;&gt;onPause&gt;&gt;------");</span><br><span class="line">	&#125;</span><br><span class="line">	//activity被停止，不再使用该activity</span><br><span class="line">	@Override</span><br><span class="line">	protected void onStop() &#123;</span><br><span class="line">		super.onStop();</span><br><span class="line">		Log.e(TAG,"-----&gt;&gt;onStop&gt;&gt;------");</span><br><span class="line">	&#125;</span><br><span class="line">	//Activity被销毁，在这里应该把所有在这个activity中占线程的耗时的操作都停掉销毁</span><br><span class="line">	@Override</span><br><span class="line">	protected void onDestroy() &#123;</span><br><span class="line">		super.onDestroy();</span><br><span class="line">		Log.e(TAG,"-----&gt;&gt;onDestroy&gt;&gt;------");</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;	</span><br><span class="line">```	</span><br><span class="line">* Activity的整个生命周期在OnCreate()和OnDestory()之间。在OnCreate中执行全局状态的定义，在OnDestroy中释放并保持相关的资源。</span><br><span class="line">* Activity的整个可见的生命周期在OnStart()和OnStop()之间。在这期间activity可能可见也可能不可见，系统在Activity的完整寿命中可能多次调用onStart()和onStop(),正如Activity交替地对用户可见或隐藏</span><br><span class="line">* Activity的前台生命周期在OnResume()和OnPause()之间。Activity处于所有activity的前面，用户获得输入焦点，可以操作次Activity。</span><br><span class="line"></span><br><span class="line">通过图片加上文字会更好的理解，经典图片：</span><br><span class="line">![Activity的生命周期](http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg)</span><br><span class="line"></span><br><span class="line">**注意**</span><br><span class="line">在创建完一个activity之后记得在Manifast上注册。（Manifast.xml主要进行app的全局检索，中通过 &lt;activity&gt; 节点说明 Activity，将 apk 文件安装后，系统根据这里的说明来查找读取 Activity）</span><br><span class="line">具体运行结果自己跑起来试一试，我就不截图了。</span><br><span class="line"></span><br><span class="line">### 启动另外一个Activity：使用Activity的重载方法，startActivity(new Intent(CurrentActivity.this,OtherActivity.class));</span><br><span class="line">```java</span><br><span class="line">Intent intent =new Intent(CurrentActivity.this,OtherActivity.class); </span><br><span class="line"> startActivity(intent);</span><br></pre></td></tr></table></figure>
+<h2 id="Activity组件"><a href="#Activity组件" class="headerlink" title="Activity组件"></a>Activity组件</h2><pre><code>Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+</code></pre><p>其实一直以来我都觉得安卓的开发模式和javaEE的MVC设计模式相同，因为都是有分开的视图层view（.xml）和控制层activity已经其他执行业务逻辑的模型层，不管怎么感觉，都是分开来，然后通过id或者监听传递实现数据处理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> String TAG = <span class="string">"MainActivity"</span>;</span><br><span class="line">	<span class="comment">//创建Activity</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">		setContentView(R.layout.activity_main);</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onCreate&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//正在使用Activity</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onResume();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onCreate&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//准备开始Activity</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onStart();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onStart&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//Activity不可见，失去用户焦点，被意外暂停</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onPause();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onPause&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//activity被停止，不再使用该activity</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onStop();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onStop&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//Activity被销毁，在这里应该把所有在这个activity中占线程的耗时的操作都停掉销毁</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onDestroy();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onDestroy&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Activity的整个生命周期在OnCreate()和OnDestory()之间。在OnCreate中执行全局状态的定义，在OnDestroy中释放并保持相关的资源。</li>
+<li>Activity的整个可见的生命周期在OnStart()和OnStop()之间。在这期间activity可能可见也可能不可见，系统在Activity的完整寿命中可能多次调用onStart()和onStop(),正如Activity交替地对用户可见或隐藏</li>
+<li>Activity的前台生命周期在OnResume()和OnPause()之间。Activity处于所有activity的前面，用户获得输入焦点，可以操作次Activity。</li>
+</ul>
+<p>通过图片加上文字会更好的理解，经典图片：<br><img src="http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg" alt="Activity的生命周期"></p>
+<p><strong>注意</strong><br>在创建完一个activity之后记得在Manifast上注册。（Manifast.xml主要进行app的全局检索，中通过<code>&lt;activity&gt;</code>节点说明 Activity，将 apk 文件安装后，系统根据这里的说明来查找读取 Activity）<br>具体运行结果自己跑起来试一试，我就不截图了。</p>
+<h3 id="启动另外一个Activity："><a href="#启动另外一个Activity：" class="headerlink" title="启动另外一个Activity："></a>启动另外一个Activity：</h3><p>使用Activity的重载方法，startActivity(new Intent(CurrentActivity.this,OtherActivity.class));<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent =<span class="keyword">new</span> Intent(CurrentActivity.<span class="keyword">this</span>,OtherActivity.class); </span><br><span class="line"> startActivity(intent);</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="Activity之间通信"><a href="#Activity之间通信" class="headerlink" title="Activity之间通信"></a>Activity之间通信</h2><p>在Activity之中，可以使用Bundle来捆绑一些数据，进行activity之间的信息传递。类似发送一封Email，Email里面包括其他的内容就可以写好放在Email里面了，ok，直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以后熟练之后就可以直接this，这里加上当前Activity是为了更好的理解</span></span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent(CurrentActivity.<span class="keyword">this</span>,OtherActivity.class);</span><br><span class="line">Bundle bundle = <span class="keyword">new</span> Bundle();<span class="comment">//创建一个Email</span></span><br><span class="line">bundle.putBoolean(<span class="string">"boolean_key"</span>,<span class="keyword">true</span>);<span class="comment">//通过key-value传递，这里就是Email的内容</span></span><br><span class="line">bundle.putString(<span class="string">"String_key"</span>,<span class="string">"String_value"</span>);</span><br><span class="line">intent.putExtra(<span class="string">"key"</span>,bundle);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure></p>
 <p>目的Activity,也就是收件人可以通过下面代码收到信。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = getIntent();<span class="comment">//收取信</span></span><br><span class="line">Bundle bundle =intent.getExtra(<span class="string">"key"</span>);</span><br><span class="line">bundle.getBoolean(<span class="string">"boolean_key"</span>);<span class="comment">//通过key来读取对应的内容</span></span><br><span class="line">bundle.getString(<span class="string">"String_key"</span>);</span><br></pre></td></tr></table></figure></p>
 <p>当然也可以简化一下代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Intent intent =<span class="keyword">new</span> Intent(<span class="keyword">this</span>,OtherActivity.class); </span><br><span class="line"> intent.putExtra(<span class="string">"boolean_key"</span>, <span class="keyword">true</span>); </span><br><span class="line"> intent.putExtra(<span class="string">"string_key"</span>, <span class="string">"string_value"</span>); </span><br><span class="line"> startActivity(intent);</span><br></pre></td></tr></table></figure></p>
 <p>接收<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent intent=getIntent(); </span><br><span class="line"> intent.getBooleanExtra(<span class="string">"boolean_key"</span>,<span class="keyword">false</span>); </span><br><span class="line"> intent.getStringExtra(<span class="string">"string_key"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码是对于向下一个Activity返回结果，我们也可以向上一个Activity返回结果，同样上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = getIntent();</span><br><span class="line">Bundle bundle = <span class="keyword">new</span> Bundle();</span><br><span class="line">bundle.putBoolean(<span class="string">"boolean_key"</span>);</span><br><span class="line">bundle.putString(<span class="string">"string_key"</span>);</span><br><span class="line">intent.putExtra(bundle);</span><br><span class="line">setResult(<span class="string">"key"</span>,intent);<span class="comment">//回传结果给上一个Activity，从单词意思也可以理解到，设置这个页面的结果，并且参数是一个intent。</span></span><br></pre></td></tr></table></figure></p>
 <p>除了上面的Extra之外当然还有其他的传递方式。</p>
 <h3 id="使用SharePreferences"><a href="#使用SharePreferences" class="headerlink" title="使用SharePreferences"></a>使用SharePreferences</h3><p>SharePreferences使用一种xml的格式为Android应用提供一种永久的数据存储方式。对于一个Android应用，它存储在文件系统的/data/data/your_app_package_name/share_prefs/目录下，可以被处于同一个应用的所有Activity访问。<br>看代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入SharePreferences</span></span><br><span class="line">SharePreferences preference = getSharePreferences(<span class="string">"name"</span>,MODE_PRIVATE);<span class="comment">//获得perferences对象</span></span><br><span class="line">Editor editor = preferences.edit();<span class="comment">//获得edit动作</span></span><br><span class="line">editor.putBoolean(<span class="string">"boolean_key"</span>,<span class="keyword">true</span>);<span class="comment">//写入</span></span><br><span class="line">editor.putString(<span class="string">"String_key"</span>,<span class="string">"String_key"</span>);</span><br><span class="line">editor.commit();</span><br></pre></td></tr></table></figure></p>
 <p>读取：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SharePreferences preference = getSharePreferences(<span class="string">"name"</span>,MODE_PRIVATE);</span><br><span class="line">preference.getBoolean(<span class="string">"boolean_key"</span>);</span><br><span class="line">preference.getString(<span class="string">"String_key"</span>);</span><br></pre></td></tr></table></figure></p>
 <h3 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h3><p>还有SQLite，文件都可以数据存储并读取传递，从而进行数据交换，如果有必要还可以使用<a href="http://blog.csdn.net/luoshengyang/article/details/6618363" target="_blank" rel="external">IPC方式</a>。</p>
+<hr>
+<h2 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h2><blockquote>
+<p>通过Context.startActivity() orActivity.startActivityForResult() 启动一个Activity；<br>通过 Context.startService() 启动一个服务，或者通过Context.bindService() 和后台服务交互；<br>通过广播方法,比如Context.sendBroadcast(),Context.sendOrderedBroadcast(),Context<br>.sendStickyBroadcast(),发给broadcast receivers。</p>
+</blockquote>
+<p>在sdk中定义了一些标准的动作，包括</p>
+<table>
+<thead>
+<tr>
+<th>onstant</th>
+<th>Target component</th>
+<th>ACTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACTION_CALL</td>
+<td>activity</td>
+<td>Initiate a phone call.</td>
+</tr>
+<tr>
+<td>ACTION_EDIT</td>
+<td>activity</td>
+<td>Display data for the user to edit.</td>
+</tr>
+<tr>
+<td>ACTION_MAIN</td>
+<td>activity</td>
+<td>Start up as the initial activity of a task, with no data input and no returned output.</td>
+</tr>
+<tr>
+<td>ACTION_SYNC</td>
+<td>activity</td>
+<td>Synchronize data on a server with data on the mobile device.</td>
+</tr>
+<tr>
+<td>ACTION_BATTERY_LOW</td>
+<td>broadcast receiver</td>
+<td>A warning that the battery is low.</td>
+</tr>
+<tr>
+<td>ACTION_HEADSET_PLUG</td>
+<td>broadcast receiver</td>
+<td>A headset has been plugged into the device, or unplugged from it.</td>
+</tr>
+<tr>
+<td>ACTION_SCREEN_ON</td>
+<td>broadcast receiver</td>
+<td>The screen has been turned on.</td>
+</tr>
+<tr>
+<td>ACTION_TIMEZONE_CHANGED</td>
+<td>broadcast receiver</td>
+<td>The setting for the time zone has changed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"><a href="#当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。" class="headerlink" title="当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"></a>当然也可以<strong>自定义动作</strong>，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。</h2><p>参考文章：<br><a href="http://www.cnblogs.com/feisky/archive/2010/01/16/1649081.html" target="_blank" rel="external">Android Activity和Intent机制学习笔记</a><br><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-android-actvt/" target="_blank" rel="external">详解 Android 的 Activity 组件</a></p>
 
       
     </div>
@@ -359,10 +427,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -379,7 +447,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -387,7 +455,7 @@
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               
             </div>
           
@@ -396,7 +464,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -429,7 +497,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity之间通信"><span class="nav-number">1.</span> <span class="nav-text">Activity之间通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SharePreferences"><span class="nav-number">1.1.</span> <span class="nav-text">使用SharePreferences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他方式"><span class="nav-number">1.2.</span> <span class="nav-text">其他方式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity组件"><span class="nav-number">1.</span> <span class="nav-text">Activity组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动另外一个Activity："><span class="nav-number">1.1.</span> <span class="nav-text">启动另外一个Activity：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity之间通信"><span class="nav-number">2.</span> <span class="nav-text">Activity之间通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SharePreferences"><span class="nav-number">2.1.</span> <span class="nav-text">使用SharePreferences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他方式"><span class="nav-number">2.2.</span> <span class="nav-text">其他方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intent"><span class="nav-number">3.</span> <span class="nav-text">Intent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"><span class="nav-number">4.</span> <span class="nav-text">当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -459,7 +527,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
