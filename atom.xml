@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>zues blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-03-21T10:05:37.880Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>great zues</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android入门学习-activity</title>
+    <link href="http://yoursite.com/2016/03/19/android%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0-activity/"/>
+    <id>http://yoursite.com/2016/03/19/android入门学习-activity/</id>
+    <published>2016-03-19T06:29:37.000Z</published>
+    <updated>2016-03-21T10:05:37.880Z</updated>
+    
+    <content type="html">&lt;p&gt;想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓&lt;/p&gt;
+&lt;h2 id=&quot;Activity组件&quot;&gt;&lt;a href=&quot;#Activity组件&quot; class=&quot;headerlink&quot; title=&quot;Activity组件&quot;&gt;&lt;/a&gt;Activity组件&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其实一直以来我都觉得安卓的开发模式和javaEE的MVC设计模式相同，因为都是有分开的视图层view（.xml）和控制层activity已经其他执行业务逻辑的模型层，不管怎么感觉，都是分开来，然后通过id或者监听传递实现数据处理。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MainActivity&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Activity&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; String TAG = &lt;span class=&quot;string&quot;&gt;&quot;MainActivity&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//创建Activity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Bundle savedInstanceState)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onCreate(savedInstanceState);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		setContentView(R.layout.activity_main);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		Log.e(TAG,&lt;span class=&quot;string&quot;&gt;&quot;-----&amp;gt;&amp;gt;onCreate&amp;gt;&amp;gt;------&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//正在使用Activity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onResume&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onResume();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		Log.e(TAG,&lt;span class=&quot;string&quot;&gt;&quot;-----&amp;gt;&amp;gt;onCreate&amp;gt;&amp;gt;------&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//准备开始Activity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onStart&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onStart();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		Log.e(TAG,&lt;span class=&quot;string&quot;&gt;&quot;-----&amp;gt;&amp;gt;onStart&amp;gt;&amp;gt;------&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//Activity不可见，失去用户焦点，被意外暂停&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onPause&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onPause();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		Log.e(TAG,&lt;span class=&quot;string&quot;&gt;&quot;-----&amp;gt;&amp;gt;onPause&amp;gt;&amp;gt;------&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//activity被停止，不再使用该activity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onStop&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onStop();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		Log.e(TAG,&lt;span class=&quot;string&quot;&gt;&quot;-----&amp;gt;&amp;gt;onStop&amp;gt;&amp;gt;------&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//Activity被销毁，在这里应该把所有在这个activity中占线程的耗时的操作都停掉销毁&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onDestroy&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onDestroy();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		Log.e(TAG,&lt;span class=&quot;string&quot;&gt;&quot;-----&amp;gt;&amp;gt;onDestroy&amp;gt;&amp;gt;------&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Activity的整个生命周期在OnCreate()和OnDestory()之间。在OnCreate中执行全局状态的定义，在OnDestroy中释放并保持相关的资源。&lt;/li&gt;
+&lt;li&gt;Activity的整个可见的生命周期在OnStart()和OnStop()之间。在这期间activity可能可见也可能不可见，系统在Activity的完整寿命中可能多次调用onStart()和onStop(),正如Activity交替地对用户可见或隐藏&lt;/li&gt;
+&lt;li&gt;Activity的前台生命周期在OnResume()和OnPause()之间。Activity处于所有activity的前面，用户获得输入焦点，可以操作次Activity。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过图片加上文字会更好的理解，经典图片：&lt;br&gt;&lt;img src=&quot;http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg&quot; alt=&quot;Activity的生命周期&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;br&gt;在创建完一个activity之后记得在Manifast上注册。（Manifast.xml主要进行app的全局检索，中通过&lt;code&gt;&amp;lt;activity&amp;gt;&lt;/code&gt;节点说明 Activity，将 apk 文件安装后，系统根据这里的说明来查找读取 Activity）&lt;br&gt;具体运行结果自己跑起来试一试，我就不截图了。&lt;/p&gt;
+&lt;h3 id=&quot;启动另外一个Activity：&quot;&gt;&lt;a href=&quot;#启动另外一个Activity：&quot; class=&quot;headerlink&quot; title=&quot;启动另外一个Activity：&quot;&gt;&lt;/a&gt;启动另外一个Activity：&lt;/h3&gt;&lt;p&gt;使用Activity的重载方法，startActivity(new Intent(CurrentActivity.this,OtherActivity.class));&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Intent intent =&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Intent(CurrentActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,OtherActivity.class); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; startActivity(intent);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Activity之间通信&quot;&gt;&lt;a href=&quot;#Activity之间通信&quot; class=&quot;headerlink&quot; title=&quot;Activity之间通信&quot;&gt;&lt;/a&gt;Activity之间通信&lt;/h2&gt;&lt;p&gt;在Activity之中，可以使用Bundle来捆绑一些数据，进行activity之间的信息传递。类似发送一封Email，Email里面包括其他的内容就可以写好放在Email里面了，ok，直接上代码：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//以后熟练之后就可以直接this，这里加上当前Activity是为了更好的理解&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Intent intent = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Intent(CurrentActivity.&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,OtherActivity.class);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Bundle bundle = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Bundle();&lt;span class=&quot;comment&quot;&gt;//创建一个Email&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bundle.putBoolean(&lt;span class=&quot;string&quot;&gt;&quot;boolean_key&quot;&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//通过key-value传递，这里就是Email的内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bundle.putString(&lt;span class=&quot;string&quot;&gt;&quot;String_key&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;String_value&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;intent.putExtra(&lt;span class=&quot;string&quot;&gt;&quot;key&quot;&lt;/span&gt;,bundle);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;startActivity(intent);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;目的Activity,也就是收件人可以通过下面代码收到信。&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Intent intent = getIntent();&lt;span class=&quot;comment&quot;&gt;//收取信&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Bundle bundle =intent.getExtra(&lt;span class=&quot;string&quot;&gt;&quot;key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bundle.getBoolean(&lt;span class=&quot;string&quot;&gt;&quot;boolean_key&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//通过key来读取对应的内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bundle.getString(&lt;span class=&quot;string&quot;&gt;&quot;String_key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;当然也可以简化一下代码&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Intent intent =&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Intent(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,OtherActivity.class); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; intent.putExtra(&lt;span class=&quot;string&quot;&gt;&quot;boolean_key&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; intent.putExtra(&lt;span class=&quot;string&quot;&gt;&quot;string_key&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;string_value&quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; startActivity(intent);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;接收&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Intent intent=getIntent(); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; intent.getBooleanExtra(&lt;span class=&quot;string&quot;&gt;&quot;boolean_key&quot;&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; intent.getStringExtra(&lt;span class=&quot;string&quot;&gt;&quot;string_key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;上面的代码是对于向下一个Activity返回结果，我们也可以向上一个Activity返回结果，同样上代码：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Intent intent = getIntent();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Bundle bundle = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Bundle();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bundle.putBoolean(&lt;span class=&quot;string&quot;&gt;&quot;boolean_key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bundle.putString(&lt;span class=&quot;string&quot;&gt;&quot;string_key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;intent.putExtra(bundle);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;setResult(&lt;span class=&quot;string&quot;&gt;&quot;key&quot;&lt;/span&gt;,intent);&lt;span class=&quot;comment&quot;&gt;//回传结果给上一个Activity，从单词意思也可以理解到，设置这个页面的结果，并且参数是一个intent。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;除了上面的Extra之外当然还有其他的传递方式。&lt;/p&gt;
+&lt;h3 id=&quot;使用SharePreferences&quot;&gt;&lt;a href=&quot;#使用SharePreferences&quot; class=&quot;headerlink&quot; title=&quot;使用SharePreferences&quot;&gt;&lt;/a&gt;使用SharePreferences&lt;/h3&gt;&lt;p&gt;SharePreferences使用一种xml的格式为Android应用提供一种永久的数据存储方式。对于一个Android应用，它存储在文件系统的/data/data/your_app_package_name/share_prefs/目录下，可以被处于同一个应用的所有Activity访问。&lt;br&gt;看代码：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//写入SharePreferences&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SharePreferences preference = getSharePreferences(&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;,MODE_PRIVATE);&lt;span class=&quot;comment&quot;&gt;//获得perferences对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Editor editor = preferences.edit();&lt;span class=&quot;comment&quot;&gt;//获得edit动作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;editor.putBoolean(&lt;span class=&quot;string&quot;&gt;&quot;boolean_key&quot;&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//写入&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;editor.putString(&lt;span class=&quot;string&quot;&gt;&quot;String_key&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;String_key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;editor.commit();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;读取：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SharePreferences preference = getSharePreferences(&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;,MODE_PRIVATE);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;preference.getBoolean(&lt;span class=&quot;string&quot;&gt;&quot;boolean_key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;preference.getString(&lt;span class=&quot;string&quot;&gt;&quot;String_key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;其他方式&quot;&gt;&lt;a href=&quot;#其他方式&quot; class=&quot;headerlink&quot; title=&quot;其他方式&quot;&gt;&lt;/a&gt;其他方式&lt;/h3&gt;&lt;p&gt;还有SQLite，文件都可以数据存储并读取传递，从而进行数据交换，如果有必要还可以使用&lt;a href=&quot;http://blog.csdn.net/luoshengyang/article/details/6618363&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;IPC方式&lt;/a&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Intent&quot;&gt;&lt;a href=&quot;#Intent&quot; class=&quot;headerlink&quot; title=&quot;Intent&quot;&gt;&lt;/a&gt;Intent&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;通过Context.startActivity() orActivity.startActivityForResult() 启动一个Activity；&lt;br&gt;通过 Context.startService() 启动一个服务，或者通过Context.bindService() 和后台服务交互；&lt;br&gt;通过广播方法,比如Context.sendBroadcast(),Context.sendOrderedBroadcast(),Context&lt;br&gt;.sendStickyBroadcast(),发给broadcast receivers。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在sdk中定义了一些标准的动作，包括&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;onstant&lt;/th&gt;
+&lt;th&gt;Target component&lt;/th&gt;
+&lt;th&gt;ACTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ACTION_CALL&lt;/td&gt;
+&lt;td&gt;activity&lt;/td&gt;
+&lt;td&gt;Initiate a phone call.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ACTION_EDIT&lt;/td&gt;
+&lt;td&gt;activity&lt;/td&gt;
+&lt;td&gt;Display data for the user to edit.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ACTION_MAIN&lt;/td&gt;
+&lt;td&gt;activity&lt;/td&gt;
+&lt;td&gt;Start up as the initial activity of a task, with no data input and no returned output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ACTION_SYNC&lt;/td&gt;
+&lt;td&gt;activity&lt;/td&gt;
+&lt;td&gt;Synchronize data on a server with data on the mobile device.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ACTION_BATTERY_LOW&lt;/td&gt;
+&lt;td&gt;broadcast receiver&lt;/td&gt;
+&lt;td&gt;A warning that the battery is low.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ACTION_HEADSET_PLUG&lt;/td&gt;
+&lt;td&gt;broadcast receiver&lt;/td&gt;
+&lt;td&gt;A headset has been plugged into the device, or unplugged from it.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ACTION_SCREEN_ON&lt;/td&gt;
+&lt;td&gt;broadcast receiver&lt;/td&gt;
+&lt;td&gt;The screen has been turned on.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ACTION_TIMEZONE_CHANGED&lt;/td&gt;
+&lt;td&gt;broadcast receiver&lt;/td&gt;
+&lt;td&gt;The setting for the time zone has changed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。&quot;&gt;&lt;a href=&quot;#当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。&quot; class=&quot;headerlink&quot; title=&quot;当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。&quot;&gt;&lt;/a&gt;当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。&lt;/h4&gt;&lt;hr&gt;
+&lt;h3 id=&quot;Activity的-Intent-Filter&quot;&gt;&lt;a href=&quot;#Activity的-Intent-Filter&quot; class=&quot;headerlink&quot; title=&quot;Activity的 Intent Filter&quot;&gt;&lt;/a&gt;Activity的 Intent Filter&lt;/h3&gt;&lt;p&gt;场景：当我在一个app里面看到一个不错的文章，我想把它分享出去，当我点击share按钮的时候就会跳出一个选择框，让你选择要分享到微信.qq.还是新浪。&lt;br&gt;翻译为意图过滤器，可以过滤意图，让Intent跳转到想要跳转的Activity，在android的manifast.xml配置文件中通过&lt;intent-filter&gt;节点为一个Activity指定其Intent Filter，以便告诉系统响应什么Intent.&lt;br&gt;规则：当没有设置&lt;action&gt;的时候所有的filter都不会找到这个Intent，如果设置了category的话，当 Intent 中包含这个列表的所有项目时 Category 类别匹配才会成功。一个Intent可以通过URL携带外部数据给目标文件，只有所有的属性都匹配成功时 URI 数据匹配才会成功。&lt;br&gt;Intent Filter的匹配过程参考图片：&lt;br&gt;&lt;img src=&quot;https://www.ibm.com/developerworks/cn/opensource/os-cn-android-actvt/image004.jpg&quot; alt=&quot;Intent Filter的匹配过程&quot;&gt;&lt;br&gt;可以在&lt;intent-filter&gt;中指定&lt;action&gt;的name属性，当我们在安卓的setAction中指定action的name的时候系统就可以查找到有具有和name一样字眼的Intent.&lt;br&gt;例如下面这个Intent-filter&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;action android:name=&quot;android.intent.action.MAIN&quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;action android:name=&quot;com.zues.action&quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/action&gt;&lt;/intent-filter&gt;&lt;/action&gt;&lt;/intent-filter&gt;&lt;/p&gt;
+&lt;p&gt;对象&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Intent intent  = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Intent();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;intent.setAction(&lt;span class=&quot;string&quot;&gt;&quot;com.zues.action&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;那么所有的Action列表包含com.zues.action都会匹配成功。（自己操作一次好了）&lt;br&gt;先假设一下如果在Intent中设置了跳转的class，会不会跳转到Action中的Activity&lt;br&gt;假设categories如果在设定中设定了三个，在Intent.addcategory如果没有添加三个会不会报错。&lt;br&gt;假设在intent-filter中加入url，会不会带到目标Activity,主要是这两个Activity之间的关系要搞清楚。&lt;/p&gt;
+&lt;p&gt;参考文章：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/feisky/archive/2010/01/16/1649081.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android Activity和Intent机制学习笔记&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.ibm.com/developerworks/cn/opensource/os-cn-android-actvt/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;详解 Android 的 Activity 组件&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓&lt;/p&gt;
+&lt;h2 id=&quot;Activity组件&quot;&gt;&lt;a href=&quot;#Activity组件&quot; cl
+    
+    </summary>
+    
+      <category term="android" scheme="http://yoursite.com/categories/android/"/>
+    
+    
+      <category term="android入门" scheme="http://yoursite.com/tags/android%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java垃圾回收机制</title>
+    <link href="http://yoursite.com/2016/03/18/%E8%87%AA%E5%8A%A8%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"/>
+    <id>http://yoursite.com/2016/03/18/自动垃圾回收/</id>
+    <published>2016-03-18T09:13:28.000Z</published>
+    <updated>2016-03-19T06:25:15.712Z</updated>
+    
+    <content type="html">&lt;p&gt;我也不知道以我现在的水平来讨论java的自动垃圾回收是否合理，因为我自己还没深入过JVM去研究过，只是想用自己的想法理解一下GC的工作原理，以帮助我写出更好的程序，包括java和安卓的应用&lt;/p&gt;
+&lt;p&gt;垃圾收集的好处：比起以往的C,C++来说，java的自动垃圾回收机制的可靠性高，能使内存管理与开发过程设计相分离，减少开发者跟踪内存错误的时间。比如著名的悬空指针和内存泄漏就不会在java中发生(但是java的内存泄漏还是会以某种形式泄漏，准确的说是非故意的对象保留)。&lt;/p&gt;
+&lt;p&gt;理想的垃圾收集实现，没有垃圾收集暂停，没有因为垃圾收集而产生的CPU时间损失，垃圾收集器不会与虚拟内存或者缓存有负面的互动，另外堆不需要大于应用程序的驻留空间即堆占用，不过肯定是没有十全十美的垃圾回收实现。&lt;/p&gt;
+&lt;p&gt;在正式谈到垃圾回收之前，先记住一个单词：&lt;strong&gt;stop-the-world&lt;/strong&gt;。stop-the-wrold会在任何一个GC算法中发生，当stop-the-world发生，意味着除GC所需的线程，所有的线程都处于等待状态，应用程序停止执行，知道GC任务完成。而GC优化则是指减少stop-the-world发生的时间，还有就是了解一下堆（heap）和堆栈（stack）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;堆heap）**，是一个运行时的数据区，类的对象主要存储在这里，也就是通过new、newarray、anewarray和multianewarray等指令建立，他们不需要程序代码显现的释放。优点：动态分配内存大小，灵活的生存期，因为是在运行时分配内存，java垃圾收集器会自动收走不再使用的数据。缺点：因为是动态的分配内存，也就是需要的时候才去取，比如商品进货，需要的时候才去批发商那里进货当然速度就比一开始就储备好的商品慢的得多。`&lt;/li&gt;
+&lt;li&gt;栈（stack）&lt;strong&gt;，是静态的数据区，也就是和上面的比喻中的储备好的商品一样，主要存放一些基本的数据类型(int,short,long,byte,float,double,boolean,char)和对象句柄，由于栈中数据在编译器中就可以确定（不理解可以看下面的例子），所以存钱速度比堆快，而且仅次于寄存器，&lt;/strong&gt;栈数据可以共享&lt;strong&gt;。&lt;br&gt;  这里必须举个例子：String s;和String s = new String(“哈哈”)；这两个代码中第一个s就是一个句柄，就好比是电视和电视的遥控，s可以控制电视，也就是第二个代码的“哈哈”，但是如果没有电视，遥控依然可以独立存在，也就是说s就和遥控一样，只是拥有一个句柄，并不表示有一个对象和它连接，所以第一段代码只是创建一个句柄，并不是对象。而第二个代码中的s则被初始化了，但是s依旧是遥控，而“哈哈”则是电视，所以两者的区别就是s是一个句柄保存在堆栈（stack）中，而new String(“哈哈”)保存在堆（heap）中。&lt;br&gt;  处理过程：编译器处理String s = “哈哈”的时候，先在栈中创建一个变量为s的内存空间，然后查找有没有字符串为“哈哈”的地址，没有的话，就在&lt;/strong&gt;栈**（因为在这里不是用new()创建的对象）中开辟一个存放“哈哈”的地址，然后将s指向“哈哈”的地址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;什么是垃圾回收&quot;&gt;&lt;a href=&quot;#什么是垃圾回收&quot; class=&quot;headerlink&quot; title=&quot;什么是垃圾回收&quot;&gt;&lt;/a&gt;什么是垃圾回收&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;java中没有被对象句柄所引用的对象和长时间没有被使用的对象均可被视为“垃圾”。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如String s = new String(“哈哈”)&lt;br&gt;a = null;&lt;br&gt;那么此时右边new出来的对象就没有句柄指向他，理所当然就成为了“垃圾”，会被自动回收内存。这里可以发现垃圾回收几乎只存在堆空间中，而栈中不存在垃圾回收（后面再慢慢解释为什么栈中为什么不存在垃圾回收）。&lt;/p&gt;
+&lt;h2 id=&quot;垃圾回收机制的类型&quot;&gt;&lt;a href=&quot;#垃圾回收机制的类型&quot; class=&quot;headerlink&quot; title=&quot;垃圾回收机制的类型&quot;&gt;&lt;/a&gt;垃圾回收机制的类型&lt;/h2&gt;&lt;h3 id=&quot;按代的垃圾回收机制&quot;&gt;&lt;a href=&quot;#按代的垃圾回收机制&quot; class=&quot;headerlink&quot; title=&quot;按代的垃圾回收机制&quot;&gt;&lt;/a&gt;按代的垃圾回收机制&lt;/h3&gt;&lt;p&gt;java程序中不能显性的分配和注销内存，看到有些人把对象设置为null或者调用System.gc()来显性清理内存。设置为null至少没什么坏处，但是System.gc必须杜绝，对系统性能影响太大。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我按照我自己的理解说一下按代垃圾回收的过程：&lt;/strong&gt;&lt;br&gt;首先java存在两种下面的假设&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;假设大多数对象会很快变得不可达&lt;/li&gt;
+&lt;li&gt;假设只有很少的由老对象（创建时间较长的对象）指向新生对象的引用&lt;br&gt;这些假设我们称之为&lt;strong&gt;弱年代假设（ weak generational hypothesis）&lt;/strong&gt;。为了强化这一假设，HotSpot虚拟机将其物理上划分为两个–&lt;strong&gt;新生代（young generation）&lt;/strong&gt;和&lt;strong&gt;老年代（old generation）&lt;/strong&gt;。&lt;br&gt;  新生代（Young generation）:绝大多是的最新被创建的对象被分配到新生代，由于在假设中假设大部分对象在创建后很快不可达，所以在新生代是最多短暂的对象出生和毁灭的地方。&lt;br&gt;  老年代（Old generation）: 对象没有变成不可达,在新生代中存活下来的都会被拷贝到老年代，因为老年代的空间比较大，所以在老年代的GC要比新生代少得多。&lt;br&gt;&lt;img src=&quot;http://img.my.csdn.net/uploads/201210/06/1349489545_2949.png&quot; alt=&quot;垃圾回收机制&quot;&gt;&lt;br&gt;&lt;strong&gt;新生代的构成&lt;/strong&gt;&lt;br&gt;在一个&lt;strong&gt;伊甸园空间（Eden ）&lt;/strong&gt;和两个&lt;strong&gt;幸存者空间（Survivor ）&lt;/strong&gt;这三个空间中&lt;/li&gt;
+&lt;li&gt;绝大多数刚刚被创建的对象会存放在伊甸园空间。&lt;/li&gt;
+&lt;li&gt;在伊甸园空间执行了第一次GC之后，存活的对象被移动到其中一个幸存者空间&lt;/li&gt;
+&lt;li&gt;此后，在伊甸园空间执行GC之后，存活的对象会被堆积在同一个幸存者空间&lt;/li&gt;
+&lt;li&gt;当一个幸存者空间饱和，还在存活的对象会被移动到另一个幸存者空间。之后会清空已经饱和的那个幸存者空间&lt;/li&gt;
+&lt;li&gt;在以上的步骤中重复几次依然存活的对象，就会被移动到老年代&lt;br&gt;其实我还不太理解第四个，有不同见解的可以互相交流一下。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;另外还有各种GC的类型，因为我尚且知识短浅，理解不下来，所以在这里也是为了给以后的我做个标记，让未来的我完善。&lt;/p&gt;
+&lt;p&gt;参考文章：&lt;a href=&quot;http://www.importnew.com/1993.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;深入浅出Java垃圾回收机制&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我也不知道以我现在的水平来讨论java的自动垃圾回收是否合理，因为我自己还没深入过JVM去研究过，只是想用自己的想法理解一下GC的工作原理，以帮助我写出更好的程序，包括java和安卓的应用&lt;/p&gt;
+&lt;p&gt;垃圾收集的好处：比起以往的C,C++来说，java的自动垃圾回收机制的
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重新认识java</title>
+    <link href="http://yoursite.com/2016/03/16/%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86java/"/>
+    <id>http://yoursite.com/2016/03/16/重新认识java/</id>
+    <published>2016-03-16T09:01:10.000Z</published>
+    <updated>2016-03-18T09:02:35.745Z</updated>
+    
+    <content type="html">&lt;p&gt;有点激动的是我开始写我自己的&lt;strong&gt;博客&lt;/strong&gt;了，而且是写有关技术的博文，开始有点紧张，因为学习java也不是太多，&lt;br&gt;当时只是java入门之后就直接转型写&lt;strong&gt;安卓&lt;/strong&gt;了，担心理解不太正确，被吐槽，所以先在这里和各位大牛们打声招呼&lt;br&gt;，如果博文有不对的地方，麻烦指点一下，我们可以互相交流。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;目录：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;java的三种特性：多态，继承，封装&lt;/li&gt;
+&lt;li&gt;java的基本含义&lt;/li&gt;
+&lt;li&gt;java关键字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;多态&quot;&gt;&lt;a href=&quot;#多态&quot; class=&quot;headerlink&quot; title=&quot;多态&quot;&gt;&lt;/a&gt;多态&lt;/h2&gt;&lt;h3 id=&quot;在说多态之前先理解一下封装和继承&quot;&gt;&lt;a href=&quot;#在说多态之前先理解一下封装和继承&quot; class=&quot;headerlink&quot; title=&quot;在说多态之前先理解一下封装和继承&quot;&gt;&lt;/a&gt;在说多态之前先理解一下&lt;strong&gt;封装&lt;/strong&gt;和&lt;strong&gt;继承&lt;/strong&gt;&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;首先封装是隐藏类的内部实现机制，好处：一是可以保护类的内部结构，不影响方法的调用。二是隐藏实现方法，提供给外界访问方法。
+继承是重用父类的代码，即子类可以访问父类的方法，通过super关键字调用父类的方法，也可以直接覆写父类的方法。
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;好了，现在该轮到多态登场了。&quot;&gt;&lt;a href=&quot;#好了，现在该轮到多态登场了。&quot; class=&quot;headerlink&quot; title=&quot;好了，现在该轮到多态登场了。&quot;&gt;&lt;/a&gt;好了，现在该轮到多态登场了。&lt;/h3&gt;&lt;p&gt;多态，简单的讲就是同一个行为有不同的表现形式和形态的能力。例如运动员这个对象，就有很多不同的表达和表现形式，例如乒乓球运动员，篮球运动员，足球运动员等。那么我认识一个运动明星，那我就会说我认识科比（篮球明星）这样子我们就说运动员这个对象具有多态性。&lt;/p&gt;
+&lt;p&gt;然后直接上代码：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;java_duotai&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		BasketballPlayer b = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; KeBi();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		b.attact();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;BasketballPlayer&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;attact&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;进攻&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		shoot();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;shoot&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;投篮&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getPoint&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;轻松得分&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List s = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;KeBi&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;BasketballPlayer&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//重载父类的方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;attact&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String kebiAttact)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;变向上篮&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		shoot();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//重写父类的方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;shoot&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;三分球&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//另外写一个父类不存在的方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;win&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;哈哈&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;上面的代码创建了一个BasketballPlayer的父类，然后科比是其中一个子类。在main方法中创建一个指向子类的父类引用。这时候发现创建的对象b只能调用自己的自己的方法，但是当我运行测试的时候，被子类重写过的方法也就是&lt;strong&gt;shoot()&lt;/strong&gt;却没有调用父类的，而是调用的是子类科比的shoot()方法。&lt;/p&gt;
+&lt;h3 id=&quot;ok，现在对于运行结果进行分析：&quot;&gt;&lt;a href=&quot;#ok，现在对于运行结果进行分析：&quot; class=&quot;headerlink&quot; title=&quot;ok，现在对于运行结果进行分析：&quot;&gt;&lt;/a&gt;ok，现在对于运行结果进行分析：&lt;/h3&gt;&lt;p&gt;在这个程序中子类科比重载了父类的attact()方法，重写了shoot()方法，而且重载后的attact(String kebiAttact)方法与父类的attact()不是同一个方法，由于父类没有该方法，向上转型之后会丢失该方法，所以执行BasketballPlayer的attact方法是不能引用attact方法的，而被子类重写的shoot()方法，因为改变了父类的方法实现，所以指向kebi的BasketballPlayer会调用kebi的shoot方法。&lt;br&gt;    &lt;code&gt;指向子类的父类引用由于向上转型了，它只能访问父类中拥有的方法和属性，而对于子类中存在而父类中不存在的方法，
+该引用是不能使用的，尽管是重载该方法。若子类重写了父类中的某些方法，在调用该些方法的时候，必定是使用子类中定义
+的这些方法（动态连接、动态调用）。&lt;/code&gt;&lt;br&gt;    &lt;strong&gt;总结：当使用多态方式调用方法时，首先检查父类中是否有该方法，如果没有，则编译错误；如果有，再去调用子类的该同名方法&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;多态的实现由三个必要的条件，那就是继承，重写和向上转型&quot;&gt;&lt;a href=&quot;#多态的实现由三个必要的条件，那就是继承，重写和向上转型&quot; class=&quot;headerlink&quot; title=&quot;多态的实现由三个必要的条件，那就是继承，重写和向上转型&quot;&gt;&lt;/a&gt;多态的实现由三个必要的条件，那就是继承，重写和向上转型&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;继承：在多态中必须存在有继承关系的子类和父类
+重写：子类对父类的某些方法进行重新定义，在调用这些方法的时候就会调用子类的方法。
+向上转型：在多态中需要将子类的引用赋给父类对象，只有这样该引用才能具备技能调用父类的方法和子类的方法
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我觉得就像以后会经常用到的一个声明方法List list = new ArratList();在这里，List是一个接口，定义了一些方法，但是方法没有被实现，ArrayList是一个类，实现了List这个接口，List里面定义的方法，ArrayList里面都实现了，同时List也可以被其他类实现，例如Vector ,Vector和ArrayList都对List定义的方法的实现就有所区别，这就是一个基于接口实现的多态，继承是通过重写父类的同一个方法的几个不同子类来实现，那么在接口里面就可以实现接口并覆盖里面的统一方法的不同的类实现。&lt;/p&gt;
+&lt;h3 id=&quot;延伸一下：&quot;&gt;&lt;a href=&quot;#延伸一下：&quot; class=&quot;headerlink&quot; title=&quot;延伸一下：&quot;&gt;&lt;/a&gt;延伸一下：&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; List &lt;span class=&quot;title&quot;&gt;getXXXList&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;List list = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; list;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;比如像上面的一种定义，是一种非常棒的面向接口编程的习惯，如果万一以后要将new ArratList改成new LinkList()的话，这个方法就不需要改变返回类型了，，并且调用这个方法的所有类都不需要修改，这样就可以降低了修改程序的成本和风险，提高了程序的可复用性这也是面向接口编程的好处。&lt;/p&gt;
+&lt;p&gt;同时，java的多态，List只是定义了一堆接口，而对于这些接口，有各种各样的实现，比如ArrayList，LinkedList等等，不同的实现，会有自己不同的特性以及追加自己特有的方法。当你仅仅使用List的通用接口方法时，定义成List(也就是面向接口编程)是非常好的习惯，如上所说。但是，当你在某个地方想用ArrayList的某个特有的方法的时候，如果定义成List的话，就需要转型成为ArrayList之后才能使用，这时候，如果定义成ArrayList的话，就少了转型这一步。&lt;/p&gt;
+&lt;p&gt;参考文章:&lt;a href=&quot;http://blog.csdn.net/chenssy/article/details/12786385&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;java提高篇（三）—–理解java的三大特性之多态 &lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有点激动的是我开始写我自己的&lt;strong&gt;博客&lt;/strong&gt;了，而且是写有关技术的博文，开始有点紧张，因为学习java也不是太多，&lt;br&gt;当时只是java入门之后就直接转型写&lt;strong&gt;安卓&lt;/strong&gt;了，担心理解不太正确，被吐槽，所以先在这里和各位大牛们打
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="android入门" scheme="http://yoursite.com/tags/android%E5%85%A5%E9%97%A8/"/>
+    
+      <category term="java基础" scheme="http://yoursite.com/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zues blog</title>
+    <link href="http://yoursite.com/2016/03/08/zues-blog/"/>
+    <id>http://yoursite.com/2016/03/08/zues-blog/</id>
+    <published>2016-03-08T03:11:11.000Z</published>
+    <updated>2016-03-19T13:26:40.428Z</updated>
+    
+    <content type="html">&lt;p&gt;写博客的目的主要是为了能给有共同兴趣爱好的编程者们交流自己学习不同的编程语言的思想，已经问题的探讨。&lt;br&gt;还可以整理笔记，将自己的知识传播给其他人。——&lt;strong&gt;great zues&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;安卓知识&lt;/li&gt;
+&lt;li&gt;网页前端的知识&lt;/li&gt;
+&lt;li&gt;数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://newtab.firefoxchina.cn/img/worldindex/logo.png&quot; alt=&quot;zues-blog&quot;&gt;&lt;br&gt;哈哈，先测试一下先，看看效果。&lt;/p&gt;
+&lt;h3 id=&quot;zues-blog这里用百度链接做测试&quot;&gt;&lt;a href=&quot;#zues-blog这里用百度链接做测试&quot; class=&quot;headerlink&quot; title=&quot;zues blog这里用百度链接做测试&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zues blog这里用百度链接做测试&lt;/a&gt;&lt;/h3&gt;&lt;hr&gt;
+&lt;h3 id=&quot;怎样使用hexo搭建自己的博客&quot;&gt;&lt;a href=&quot;#怎样使用hexo搭建自己的博客&quot; class=&quot;headerlink&quot; title=&quot;怎样使用hexo搭建自己的博客&quot;&gt;&lt;/a&gt;怎样使用hexo搭建自己的博客&lt;/h3&gt;&lt;h3 id=&quot;1-，可以使用markdown和swing语法编写自己的博客&quot;&gt;&lt;a href=&quot;#1-，可以使用markdown和swing语法编写自己的博客&quot; class=&quot;headerlink&quot; title=&quot;1 ，可以使用markdown和swing语法编写自己的博客&quot;&gt;&lt;/a&gt;1 ，可以使用markdown和swing语法编写自己的博客&lt;/h3&gt;&lt;p&gt;这里对markdown的语法很严厉，少一个space都不行，像刚刚就犯了几次的错误了。分别是日记开头的tag和无序标点以及&lt;br&gt;字体加粗&lt;/p&gt;
+&lt;h3 id=&quot;2-使用hexo-new-文件名创建自己新的博文，因为经常忘记，所以mark一下，提醒一下自己。&quot;&gt;&lt;a href=&quot;#2-使用hexo-new-文件名创建自己新的博文，因为经常忘记，所以mark一下，提醒一下自己。&quot; class=&quot;headerlink&quot; title=&quot;2 , 使用hexo new +文件名创建自己新的博文，因为经常忘记，所以mark一下，提醒一下自己。&quot;&gt;&lt;/a&gt;2 , 使用hexo new +文件名创建自己新的博文，因为经常忘记，所以mark一下，提醒一下自己。&lt;/h3&gt;&lt;h3 id=&quot;3，在markdown语法中使用表格的时候需要注意一下，在表格的上一行一定要是空行，也就是说在文字和表格之间一定要有一段空行&quot;&gt;&lt;a href=&quot;#3，在markdown语法中使用表格的时候需要注意一下，在表格的上一行一定要是空行，也就是说在文字和表格之间一定要有一段空行&quot; class=&quot;headerlink&quot; title=&quot;3，在markdown语法中使用表格的时候需要注意一下，在表格的上一行一定要是空行，也就是说在文字和表格之间一定要有一段空行&quot;&gt;&lt;/a&gt;3，在markdown语法中使用表格的时候需要注意一下，在表格的上一行一定要是空行，也就是说在文字和表格之间一定要有一段空行&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写博客的目的主要是为了能给有共同兴趣爱好的编程者们交流自己学习不同的编程语言的思想，已经问题的探讨。&lt;br&gt;还可以整理笔记，将自己的知识传播给其他人。——&lt;strong&gt;great zues&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;安卓知识&lt;/
+    
+    </summary>
+    
+      <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="开始" scheme="http://yoursite.com/tags/%E5%BC%80%E5%A7%8B/"/>
+    
+      <category term="日记" scheme="http://yoursite.com/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/03/08/hello-world/"/>
+    <id>http://yoursite.com/2016/03/08/hello-world/</id>
+    <published>2016-03-08T02:45:02.323Z</published>
+    <updated>2016-03-08T02:45:02.325Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
