@@ -59,12 +59,12 @@
 
 <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="zues blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="zues blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="zues blog">
 <meta name="twitter:description">
 
 
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title> Hexo </title>
+  <title> zues blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -116,7 +116,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">zues blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -143,7 +143,7 @@
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -153,7 +153,7 @@
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -219,7 +219,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-19T14:29:37+08:00" content="2016-03-19">
               2016-03-19
             </time>
@@ -231,7 +231,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
@@ -247,6 +247,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/19/android入门学习-activity/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/19/android入门学习-activity/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -346,7 +353,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"><a href="#当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。" class="headerlink" title="当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"></a>当然也可以<strong>自定义动作</strong>，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。</h2><p>参考文章：<br><a href="http://www.cnblogs.com/feisky/archive/2010/01/16/1649081.html" target="_blank" rel="external">Android Activity和Intent机制学习笔记</a><br><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-android-actvt/" target="_blank" rel="external">详解 Android 的 Activity 组件</a></p>
+<h4 id="当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"><a href="#当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。" class="headerlink" title="当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"></a>当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。</h4><hr>
+<h3 id="Activity的-Intent-Filter"><a href="#Activity的-Intent-Filter" class="headerlink" title="Activity的 Intent Filter"></a>Activity的 Intent Filter</h3><p>场景：当我在一个app里面看到一个不错的文章，我想把它分享出去，当我点击share按钮的时候就会跳出一个选择框，让你选择要分享到微信.qq.还是新浪。<br>翻译为意图过滤器，可以过滤意图，让Intent跳转到想要跳转的Activity，在android的manifast.xml配置文件中通过<intent-filter>节点为一个Activity指定其Intent Filter，以便告诉系统响应什么Intent.<br>规则：当没有设置<action>的时候所有的filter都不会找到这个Intent，如果设置了category的话，当 Intent 中包含这个列表的所有项目时 Category 类别匹配才会成功。一个Intent可以通过URL携带外部数据给目标文件，只有所有的属性都匹配成功时 URI 数据匹配才会成功。<br>Intent Filter的匹配过程参考图片：<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-android-actvt/image004.jpg" alt="Intent Filter的匹配过程"><br>可以在<intent-filter>中指定<action>的name属性，当我们在安卓的setAction中指定action的name的时候系统就可以查找到有具有和name一样字眼的Intent.<br>例如下面这个Intent-filter<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;intent-filter&gt;</span><br><span class="line">	&lt;action android:name="android.intent.action.MAIN"&gt;</span><br><span class="line">	&lt;action android:name="com.zues.action"&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/intent-filter&gt;</span><br></pre></td></tr></table></figure></action></intent-filter></action></intent-filter></p>
+<p>对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent  = <span class="keyword">new</span> Intent();</span><br><span class="line">intent.setAction(<span class="string">"com.zues.action"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>那么所有的Action列表包含com.zues.action都会匹配成功。（自己操作一次好了）<br>先假设一下如果在Intent中设置了跳转的class，会不会跳转到Action中的Activity<br>假设categories如果在设定中设定了三个，在Intent.addcategory如果没有添加三个会不会报错。<br>假设在intent-filter中加入url，会不会带到目标Activity,主要是这两个Activity之间的关系要搞清楚。</p>
+<p>参考文章：<br><a href="http://www.cnblogs.com/feisky/archive/2010/01/16/1649081.html" target="_blank" rel="external">Android Activity和Intent机制学习笔记</a><br><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-android-actvt/" target="_blank" rel="external">详解 Android 的 Activity 组件</a></p>
 
           
         
@@ -405,7 +416,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-18T17:13:28+08:00" content="2016-03-18">
               2016-03-18
             </time>
@@ -417,7 +428,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
@@ -433,6 +444,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/18/自动垃圾回收/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/18/自动垃圾回收/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -539,7 +557,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-16T17:01:10+08:00" content="2016-03-16">
               2016-03-16
             </time>
@@ -551,7 +569,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
@@ -567,6 +585,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/16/重新认识java/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/16/重新认识java/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -674,7 +699,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-08T11:11:11+08:00" content="2016-03-08">
               2016-03-08
             </time>
@@ -686,7 +711,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/日记/" itemprop="url" rel="index">
@@ -702,6 +727,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/08/zues-blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/08/zues-blog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -792,7 +824,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-08T10:45:02+08:00" content="2016-03-08">
               2016-03-08
             </time>
@@ -801,6 +833,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/08/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/08/hello-world/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -889,15 +928,15 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="great zues" />
+          <p class="site-author-name" itemprop="name">great zues</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -905,7 +944,7 @@
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -914,7 +953,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -956,11 +995,11 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">great zues</span>
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -1033,6 +1072,25 @@
 
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'greatzuesgithubio';
+      var disqus_identifier = 'index.html';
+      var disqus_title = '';
+      var disqus_url = '';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+    </script>
   
 
 
