@@ -219,6 +219,472 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/03/29/Fragment基础（上）/" itemprop="url">
+                  Fragment基础（上）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-03-29T14:46:19+08:00" content="2016-03-29">
+              2016-03-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/29/Fragment基础（上）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/29/Fragment基础（上）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>因为自己经常忘记了fragment的写法，所以想通过博客巩固一下自己的知识，以后就不用再看demo来写fragment了，唉，都是写代码写的少惹的祸！！</p>
+<h2 id="fragment的出现"><a href="#fragment的出现" class="headerlink" title="fragment的出现"></a>fragment的出现</h2><h3 id="1，Fragment的含义"><a href="#1，Fragment的含义" class="headerlink" title="1，Fragment的含义"></a>1，Fragment的含义</h3><p>fragment的翻译出来的意思是碎片的意思，很棒的命名，因为它就像一个activity碎片一样可以在activity中拼凑，也就是可以单独一部分出现在activity，基于这个特点曾经在fragmeng出来的时候不管开发什么都会首先考虑能不能用上fragment，似乎没有用上fragment就不时髦的样子。</p>
+<h3 id="2，场景再现"><a href="#2，场景再现" class="headerlink" title="2，场景再现"></a>2，场景再现</h3><p>我们都知道，Android上的界面展示都是通过Activity实现的，Activity实在是太常用了，我相信大家都已经非常熟悉了，这里就不再赘述。但是Activity也有它的局限性，同样的界面在手机上显示可能很好看，在平板上就未必了，因为平板的屏幕非常大，手机的界面放在平板上可能会有过分被拉长、控件间距过大等情况。这个时候更好的体验效果是在Activity中嵌入”小Activity”，然后每个”小Activity”又可以拥有自己的布局。因此，我们今天的主角Fragment闪亮登场了。</p>
+<h3 id="3，Fragment的生命周期"><a href="#3，Fragment的生命周期" class="headerlink" title="3，Fragment的生命周期"></a>3，Fragment的生命周期</h3><p>fragment不能独立存在，必须嵌入到activity中，所以fragment的生命周期必然会受到activity的影响，当 activity 暂停时,它拥有的所有的 Fragment 都暂停了,当 activity 销毁时,它拥有的所有 Fragment 都被销毁。然而,当 activity 运行时(在 onResume()之后,onPause()之前),可以单独地操作每个 Fragment, 比如添加或删除它们。当在执行上述针对 Fragment 的事务时,可以将事务添加到一个栈中,这个栈被 activity 管 理,栈中的每一条都是一个 Fragment 的一次事务。有了这个栈,就可以反向执行 Fragment 的事务,这样就可以在 Fragment 级支持“返回”键(向后导航)。</p>
+<p>当向 activity 中添加一个 Fragment 时,它须置于 ViewGroup 控件中,并且需定义 Fragment 自己的界面。可 以在 layoutxml 文件中声明 Fragment,元素为:<fragment>;也可以在代码中创建 Fragment,然后把它加入到 ViewGroup 控件中。然而,Fragment 不一定非要放在 activity 的界面中,它可以隐藏在后台为 actvitiy 工作。<br>直接上图<br><img src="http://img.my.csdn.net/uploads/201211/29/1354170699_6619.png" alt="Fragment的生命周期"><br>上图非常经典的重现fragment的生命周期，但是继续看下图与Activity的生命周期进行对比看一下<br><img src="http://img.my.csdn.net/uploads/201211/29/1354170682_3824.png" alt="Fragment的生命周期与activity的生命周期对比照"></fragment></p>
+<p>可以发现fragment比activity多了几个回调函数，下面我来详细分解每一个回调方法的作用</p>
+<blockquote>
+<p><strong>onAttach(Activity)</strong> 在fragment被添加进来之后，当Fragment与Activity关联的时候开始调用，在这个方法中可以获得所在的activity，也就是getActivity()方法。说是这样说，但是我还没有理解到什么时候用这个函数比较好<br><strong>onCreateView(LayoutInfalter,ViewGroup,Bundle)</strong> 当activity要得到fragment的layout时调用此方法，fragment在其中创建自己的layout界面。<br><strong>onActivityCreated(Bundle)</strong> 当activity的onCreate()方法返回之后调用这个方法<br><strong>onDestoryView()</strong> 当fragment中的是视图被移除的时候调用<br><strong>onDetach()</strong> 当fragment与activity分离的时候调用</p>
+<h1 id="注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现"><a href="#注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现" class="headerlink" title="注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现"></a>注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现</h1><hr>
+<p>当一个fargment被创建之后会经历以下几个状态：<br>onAttach()<br>onCreate()<br>onCreateView()<br>onActivityCreated()<br>在frgment对用户可见的时候，会经历：<br>onStart()<br>onResume()<br>当fragment进入后台，会经历：<br>onPause()<br>onStop()<br>当fragment被销毁（或者持有它的activity被销毁），它会经历：<br>onPause()<br>onStop()<br>onDestoryView()<br>onDestory()<br>onDetach()<br>像activity一样，在以下状态中可以使用bundle对象保存一个fragment对象<br>onCreate()<br>onCreateView()<br>onActivityCreated()</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/19/android入门学习-activity/" itemprop="url">
+                  android入门学习-activity
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-03-19T14:29:37+08:00" content="2016-03-19">
+              2016-03-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/19/android入门学习-activity/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/19/android入门学习-activity/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>想写安卓的博客很久了，一直都没有时间，先把java的放到一边去，等需要的时候在写一些有关java的，因为我主要是做安卓的开发，所以我是想借博客来监督自己的学习顺便更好的理解安卓</p>
+<h2 id="Activity组件"><a href="#Activity组件" class="headerlink" title="Activity组件"></a>Activity组件</h2><pre><code>Activity组件作为安卓的四大组件之一，主要用来显示view，按照英文翻译是活动窗口的意思，是与用户交互的UI，除了activity之外就是fragment和viewpage了
+</code></pre><p>其实一直以来我都觉得安卓的开发模式和javaEE的MVC设计模式相同，因为都是有分开的视图层view（.xml）和控制层activity已经其他执行业务逻辑的模型层，不管怎么感觉，都是分开来，然后通过id或者监听传递实现数据处理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> String TAG = <span class="string">"MainActivity"</span>;</span><br><span class="line">	<span class="comment">//创建Activity</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">		setContentView(R.layout.activity_main);</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onCreate&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//正在使用Activity</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onResume();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onCreate&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//准备开始Activity</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onStart();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onStart&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//Activity不可见，失去用户焦点，被意外暂停</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onPause();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onPause&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//activity被停止，不再使用该activity</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onStop();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onStop&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//Activity被销毁，在这里应该把所有在这个activity中占线程的耗时的操作都停掉销毁</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onDestroy();</span><br><span class="line">		Log.e(TAG,<span class="string">"-----&gt;&gt;onDestroy&gt;&gt;------"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Activity的整个生命周期在OnCreate()和OnDestory()之间。在OnCreate中执行全局状态的定义，在OnDestroy中释放并保持相关的资源。</li>
+<li>Activity的整个可见的生命周期在OnStart()和OnStop()之间。在这期间activity可能可见也可能不可见，系统在Activity的完整寿命中可能多次调用onStart()和onStop(),正如Activity交替地对用户可见或隐藏</li>
+<li>Activity的前台生命周期在OnResume()和OnPause()之间。Activity处于所有activity的前面，用户获得输入焦点，可以操作次Activity。</li>
+</ul>
+<p>通过图片加上文字会更好的理解，经典图片：<br><img src="http://www.skill-guru.com/blog/wp-content/uploads/2011/01/Android_Logcat-Activity-Starts.jpg" alt="Activity的生命周期"></p>
+<p><strong>注意</strong><br>在创建完一个activity之后记得在Manifast上注册。（Manifast.xml主要进行app的全局检索，中通过<code>&lt;activity&gt;</code>节点说明 Activity，将 apk 文件安装后，系统根据这里的说明来查找读取 Activity）<br>具体运行结果自己跑起来试一试，我就不截图了。</p>
+<h3 id="启动另外一个Activity："><a href="#启动另外一个Activity：" class="headerlink" title="启动另外一个Activity："></a>启动另外一个Activity：</h3><p>使用Activity的重载方法，startActivity(new Intent(CurrentActivity.this,OtherActivity.class));<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent =<span class="keyword">new</span> Intent(CurrentActivity.<span class="keyword">this</span>,OtherActivity.class); </span><br><span class="line"> startActivity(intent);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="Activity之间通信"><a href="#Activity之间通信" class="headerlink" title="Activity之间通信"></a>Activity之间通信</h2><p>在Activity之中，可以使用Bundle来捆绑一些数据，进行activity之间的信息传递。类似发送一封Email，Email里面包括其他的内容就可以写好放在Email里面了，ok，直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以后熟练之后就可以直接this，这里加上当前Activity是为了更好的理解</span></span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent(CurrentActivity.<span class="keyword">this</span>,OtherActivity.class);</span><br><span class="line">Bundle bundle = <span class="keyword">new</span> Bundle();<span class="comment">//创建一个Email</span></span><br><span class="line">bundle.putBoolean(<span class="string">"boolean_key"</span>,<span class="keyword">true</span>);<span class="comment">//通过key-value传递，这里就是Email的内容</span></span><br><span class="line">bundle.putString(<span class="string">"String_key"</span>,<span class="string">"String_value"</span>);</span><br><span class="line">intent.putExtra(<span class="string">"key"</span>,bundle);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure></p>
+<p>目的Activity,也就是收件人可以通过下面代码收到信。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = getIntent();<span class="comment">//收取信</span></span><br><span class="line">Bundle bundle =intent.getExtra(<span class="string">"key"</span>);</span><br><span class="line">bundle.getBoolean(<span class="string">"boolean_key"</span>);<span class="comment">//通过key来读取对应的内容</span></span><br><span class="line">bundle.getString(<span class="string">"String_key"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>当然也可以简化一下代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Intent intent =<span class="keyword">new</span> Intent(<span class="keyword">this</span>,OtherActivity.class); </span><br><span class="line"> intent.putExtra(<span class="string">"boolean_key"</span>, <span class="keyword">true</span>); </span><br><span class="line"> intent.putExtra(<span class="string">"string_key"</span>, <span class="string">"string_value"</span>); </span><br><span class="line"> startActivity(intent);</span><br></pre></td></tr></table></figure></p>
+<p>接收<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent intent=getIntent(); </span><br><span class="line"> intent.getBooleanExtra(<span class="string">"boolean_key"</span>,<span class="keyword">false</span>); </span><br><span class="line"> intent.getStringExtra(<span class="string">"string_key"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码是对于向下一个Activity返回结果，我们也可以向上一个Activity返回结果，同样上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = getIntent();</span><br><span class="line">Bundle bundle = <span class="keyword">new</span> Bundle();</span><br><span class="line">bundle.putBoolean(<span class="string">"boolean_key"</span>);</span><br><span class="line">bundle.putString(<span class="string">"string_key"</span>);</span><br><span class="line">intent.putExtra(bundle);</span><br><span class="line">setResult(<span class="string">"key"</span>,intent);<span class="comment">//回传结果给上一个Activity，从单词意思也可以理解到，设置这个页面的结果，并且参数是一个intent。</span></span><br></pre></td></tr></table></figure></p>
+<p>除了上面的Extra之外当然还有其他的传递方式。</p>
+<h3 id="使用SharePreferences"><a href="#使用SharePreferences" class="headerlink" title="使用SharePreferences"></a>使用SharePreferences</h3><p>SharePreferences使用一种xml的格式为Android应用提供一种永久的数据存储方式。对于一个Android应用，它存储在文件系统的/data/data/your_app_package_name/share_prefs/目录下，可以被处于同一个应用的所有Activity访问。<br>看代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//写入SharePreferences</span></span><br><span class="line">SharePreferences preference = getSharePreferences(<span class="string">"name"</span>,MODE_PRIVATE);<span class="comment">//获得perferences对象</span></span><br><span class="line">Editor editor = preferences.edit();<span class="comment">//获得edit动作</span></span><br><span class="line">editor.putBoolean(<span class="string">"boolean_key"</span>,<span class="keyword">true</span>);<span class="comment">//写入</span></span><br><span class="line">editor.putString(<span class="string">"String_key"</span>,<span class="string">"String_key"</span>);</span><br><span class="line">editor.commit();</span><br></pre></td></tr></table></figure></p>
+<p>读取：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SharePreferences preference = getSharePreferences(<span class="string">"name"</span>,MODE_PRIVATE);</span><br><span class="line">preference.getBoolean(<span class="string">"boolean_key"</span>);</span><br><span class="line">preference.getString(<span class="string">"String_key"</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h3><p>还有SQLite，文件都可以数据存储并读取传递，从而进行数据交换，如果有必要还可以使用<a href="http://blog.csdn.net/luoshengyang/article/details/6618363" target="_blank" rel="external">IPC方式</a>。</p>
+<hr>
+<h2 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h2><blockquote>
+<p>通过Context.startActivity() orActivity.startActivityForResult() 启动一个Activity；<br>通过 Context.startService() 启动一个服务，或者通过Context.bindService() 和后台服务交互；<br>通过广播方法,比如Context.sendBroadcast(),Context.sendOrderedBroadcast(),Context<br>.sendStickyBroadcast(),发给broadcast receivers。</p>
+</blockquote>
+<p>在sdk中定义了一些标准的动作，包括</p>
+<table>
+<thead>
+<tr>
+<th>onstant</th>
+<th>Target component</th>
+<th>ACTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACTION_CALL</td>
+<td>activity</td>
+<td>Initiate a phone call.</td>
+</tr>
+<tr>
+<td>ACTION_EDIT</td>
+<td>activity</td>
+<td>Display data for the user to edit.</td>
+</tr>
+<tr>
+<td>ACTION_MAIN</td>
+<td>activity</td>
+<td>Start up as the initial activity of a task, with no data input and no returned output.</td>
+</tr>
+<tr>
+<td>ACTION_SYNC</td>
+<td>activity</td>
+<td>Synchronize data on a server with data on the mobile device.</td>
+</tr>
+<tr>
+<td>ACTION_BATTERY_LOW</td>
+<td>broadcast receiver</td>
+<td>A warning that the battery is low.</td>
+</tr>
+<tr>
+<td>ACTION_HEADSET_PLUG</td>
+<td>broadcast receiver</td>
+<td>A headset has been plugged into the device, or unplugged from it.</td>
+</tr>
+<tr>
+<td>ACTION_SCREEN_ON</td>
+<td>broadcast receiver</td>
+<td>The screen has been turned on.</td>
+</tr>
+<tr>
+<td>ACTION_TIMEZONE_CHANGED</td>
+<td>broadcast receiver</td>
+<td>The setting for the time zone has changed.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"><a href="#当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com-example-project-SHOW-COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。" class="headerlink" title="当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。"></a>当然也可以自定义动作，自定义的动作在使用时，需要加上包名作为前缀，如”com.example.project.SHOW_COLOR”，并且可以定义响应的Activity来处理我们的自定义动作。</h4><hr>
+<h3 id="Activity的-Intent-Filter"><a href="#Activity的-Intent-Filter" class="headerlink" title="Activity的 Intent Filter"></a>Activity的 Intent Filter</h3><p>场景：当我在一个app里面看到一个不错的文章，我想把它分享出去，当我点击share按钮的时候就会跳出一个选择框，让你选择要分享到微信.qq.还是新浪。<br>翻译为意图过滤器，可以过滤意图，让Intent跳转到想要跳转的Activity，在android的manifast.xml配置文件中通过<intent-filter>节点为一个Activity指定其Intent Filter，以便告诉系统响应什么Intent.<br>规则：当没有设置<action>的时候所有的filter都不会找到这个Intent，如果设置了category的话，当 Intent 中包含这个列表的所有项目时 Category 类别匹配才会成功。一个Intent可以通过URL携带外部数据给目标文件，只有所有的属性都匹配成功时 URI 数据匹配才会成功。<br>Intent Filter的匹配过程参考图片：<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-android-actvt/image004.jpg" alt="Intent Filter的匹配过程"><br>可以在<intent-filter>中指定<action>的name属性，当我们在安卓的setAction中指定action的name的时候系统就可以查找到有具有和name一样字眼的Intent.<br>例如下面这个Intent-filter<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;intent-filter&gt;</span><br><span class="line">	&lt;action android:name="android.intent.action.MAIN"&gt;</span><br><span class="line">	&lt;action android:name="com.zues.action"&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/intent-filter&gt;</span><br></pre></td></tr></table></figure></action></intent-filter></action></intent-filter></p>
+<p>对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent  = <span class="keyword">new</span> Intent();</span><br><span class="line">intent.setAction(<span class="string">"com.zues.action"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>那么所有的Action列表包含com.zues.action都会匹配成功。（自己操作一次好了）<br>先假设一下如果在Intent中设置了跳转的class，会不会跳转到Action中的Activity<br>假设categories如果在设定中设定了三个，在Intent.addcategory如果没有添加三个会不会报错。<br>假设在intent-filter中加入url，会不会带到目标Activity,主要是这两个Activity之间的关系要搞清楚。</p>
+<h2 id="创建一个灵活性高的跳转Activity方法"><a href="#创建一个灵活性高的跳转Activity方法" class="headerlink" title="创建一个灵活性高的跳转Activity方法"></a>创建一个灵活性高的跳转Activity方法</h2><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ToActivity</span><span class="params">(Class&lt;?&gt; activityClass)</span></span>&#123;</span><br><span class="line">	Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, activityClass);</span><br><span class="line">	startActivtiy(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>类似的加入Extra information的也可以在参数里面添加bundle就可以了，剩下的自己YY。</p>
+<p>参考文章：<br><a href="http://www.cnblogs.com/feisky/archive/2010/01/16/1649081.html" target="_blank" rel="external">Android Activity和Intent机制学习笔记</a><br><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-android-actvt/" target="_blank" rel="external">详解 Android 的 Activity 组件</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/18/自动垃圾回收/" itemprop="url">
+                  java垃圾回收机制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-03-18T17:13:28+08:00" content="2016-03-18">
+              2016-03-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/18/自动垃圾回收/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/18/自动垃圾回收/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我也不知道以我现在的水平来讨论java的自动垃圾回收是否合理，因为我自己还没深入过JVM去研究过，只是想用自己的想法理解一下GC的工作原理，以帮助我写出更好的程序，包括java和安卓的应用</p>
+<p>垃圾收集的好处：比起以往的C,C++来说，java的自动垃圾回收机制的可靠性高，能使内存管理与开发过程设计相分离，减少开发者跟踪内存错误的时间。比如著名的悬空指针和内存泄漏就不会在java中发生(但是java的内存泄漏还是会以某种形式泄漏，准确的说是非故意的对象保留)。</p>
+<p>理想的垃圾收集实现，没有垃圾收集暂停，没有因为垃圾收集而产生的CPU时间损失，垃圾收集器不会与虚拟内存或者缓存有负面的互动，另外堆不需要大于应用程序的驻留空间即堆占用，不过肯定是没有十全十美的垃圾回收实现。</p>
+<p>在正式谈到垃圾回收之前，先记住一个单词：<strong>stop-the-world</strong>。stop-the-wrold会在任何一个GC算法中发生，当stop-the-world发生，意味着除GC所需的线程，所有的线程都处于等待状态，应用程序停止执行，知道GC任务完成。而GC优化则是指减少stop-the-world发生的时间，还有就是了解一下堆（heap）和堆栈（stack）</p>
+<blockquote>
+<ul>
+<li>堆heap）**，是一个运行时的数据区，类的对象主要存储在这里，也就是通过new、newarray、anewarray和multianewarray等指令建立，他们不需要程序代码显现的释放。优点：动态分配内存大小，灵活的生存期，因为是在运行时分配内存，java垃圾收集器会自动收走不再使用的数据。缺点：因为是动态的分配内存，也就是需要的时候才去取，比如商品进货，需要的时候才去批发商那里进货当然速度就比一开始就储备好的商品慢的得多。`</li>
+<li>栈（stack）<strong>，是静态的数据区，也就是和上面的比喻中的储备好的商品一样，主要存放一些基本的数据类型(int,short,long,byte,float,double,boolean,char)和对象句柄，由于栈中数据在编译器中就可以确定（不理解可以看下面的例子），所以存钱速度比堆快，而且仅次于寄存器，</strong>栈数据可以共享<strong>。<br>  这里必须举个例子：String s;和String s = new String(“哈哈”)；这两个代码中第一个s就是一个句柄，就好比是电视和电视的遥控，s可以控制电视，也就是第二个代码的“哈哈”，但是如果没有电视，遥控依然可以独立存在，也就是说s就和遥控一样，只是拥有一个句柄，并不表示有一个对象和它连接，所以第一段代码只是创建一个句柄，并不是对象。而第二个代码中的s则被初始化了，但是s依旧是遥控，而“哈哈”则是电视，所以两者的区别就是s是一个句柄保存在堆栈（stack）中，而new String(“哈哈”)保存在堆（heap）中。<br>  处理过程：编译器处理String s = “哈哈”的时候，先在栈中创建一个变量为s的内存空间，然后查找有没有字符串为“哈哈”的地址，没有的话，就在</strong>栈**（因为在这里不是用new()创建的对象）中开辟一个存放“哈哈”的地址，然后将s指向“哈哈”的地址。</li>
+</ul>
+</blockquote>
+<h3 id="什么是垃圾回收"><a href="#什么是垃圾回收" class="headerlink" title="什么是垃圾回收"></a>什么是垃圾回收</h3><pre><code>java中没有被对象句柄所引用的对象和长时间没有被使用的对象均可被视为“垃圾”。
+</code></pre><p>如String s = new String(“哈哈”)<br>a = null;<br>那么此时右边new出来的对象就没有句柄指向他，理所当然就成为了“垃圾”，会被自动回收内存。这里可以发现垃圾回收几乎只存在堆空间中，而栈中不存在垃圾回收（后面再慢慢解释为什么栈中为什么不存在垃圾回收）。</p>
+<h2 id="垃圾回收机制的类型"><a href="#垃圾回收机制的类型" class="headerlink" title="垃圾回收机制的类型"></a>垃圾回收机制的类型</h2><h3 id="按代的垃圾回收机制"><a href="#按代的垃圾回收机制" class="headerlink" title="按代的垃圾回收机制"></a>按代的垃圾回收机制</h3><p>java程序中不能显性的分配和注销内存，看到有些人把对象设置为null或者调用System.gc()来显性清理内存。设置为null至少没什么坏处，但是System.gc必须杜绝，对系统性能影响太大。</p>
+<p><strong>我按照我自己的理解说一下按代垃圾回收的过程：</strong><br>首先java存在两种下面的假设</p>
+<blockquote>
+<ul>
+<li>假设大多数对象会很快变得不可达</li>
+<li>假设只有很少的由老对象（创建时间较长的对象）指向新生对象的引用<br>这些假设我们称之为<strong>弱年代假设（ weak generational hypothesis）</strong>。为了强化这一假设，HotSpot虚拟机将其物理上划分为两个–<strong>新生代（young generation）</strong>和<strong>老年代（old generation）</strong>。<br>  新生代（Young generation）:绝大多是的最新被创建的对象被分配到新生代，由于在假设中假设大部分对象在创建后很快不可达，所以在新生代是最多短暂的对象出生和毁灭的地方。<br>  老年代（Old generation）: 对象没有变成不可达,在新生代中存活下来的都会被拷贝到老年代，因为老年代的空间比较大，所以在老年代的GC要比新生代少得多。<br><img src="http://img.my.csdn.net/uploads/201210/06/1349489545_2949.png" alt="垃圾回收机制"><br><strong>新生代的构成</strong><br>在一个<strong>伊甸园空间（Eden ）</strong>和两个<strong>幸存者空间（Survivor ）</strong>这三个空间中</li>
+<li>绝大多数刚刚被创建的对象会存放在伊甸园空间。</li>
+<li>在伊甸园空间执行了第一次GC之后，存活的对象被移动到其中一个幸存者空间</li>
+<li>此后，在伊甸园空间执行GC之后，存活的对象会被堆积在同一个幸存者空间</li>
+<li>当一个幸存者空间饱和，还在存活的对象会被移动到另一个幸存者空间。之后会清空已经饱和的那个幸存者空间</li>
+<li>在以上的步骤中重复几次依然存活的对象，就会被移动到老年代<br>其实我还不太理解第四个，有不同见解的可以互相交流一下。</li>
+</ul>
+</blockquote>
+<p>另外还有各种GC的类型，因为我尚且知识短浅，理解不下来，所以在这里也是为了给以后的我做个标记，让未来的我完善。</p>
+<p>参考文章：<a href="http://www.importnew.com/1993.html" target="_blank" rel="external">深入浅出Java垃圾回收机制</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/16/重新认识java/" itemprop="url">
                   重新认识java
                 </a>
@@ -619,7 +1085,7 @@ var _hmt = _hmt || [];
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

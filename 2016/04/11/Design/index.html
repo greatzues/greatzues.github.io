@@ -1,0 +1,828 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android??," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zues blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="## appcompat v21: ? Android 5.0 ?????? Material Design
+????:[appcompat v21: material design for pre-Lollipop devices!](https://chris.banes.me/2014/10/17/appcompat-v21/)
+????:[skyfly](http://my.oschina">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zues blog">
+<meta property="og:url" content="http://yoursite.com/2016/04/11/Design/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="## appcompat v21: ? Android 5.0 ?????? Material Design
+????:[appcompat v21: material design for pre-Lollipop devices!](https://chris.banes.me/2014/10/17/appcompat-v21/)
+????:[skyfly](http://my.oschina">
+<meta property="og:image" content="http://static.oschina.net/uploads/img/201411/09065203_9VSQ.png">
+<meta property="og:updated_time" content="2016-04-11T10:07:25.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zues blog">
+<meta name="twitter:description" content="## appcompat v21: ? Android 5.0 ?????? Material Design
+????:[appcompat v21: material design for pre-Lollipop devices!](https://chris.banes.me/2014/10/17/appcompat-v21/)
+????:[skyfly](http://my.oschina">
+<meta name="twitter:image" content="http://static.oschina.net/uploads/img/201411/09065203_9VSQ.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b706031fedc2f13c7dc61b81d4a77d64";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <title>  | zues blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zues blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-11T17:34:06+08:00" content="2016-04-11">
+              2016-04-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/11/Design/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/11/Design/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>## appcompat v21: ? Android 5.0 ?????? Material Design
+????:[appcompat v21: material design for pre-Lollipop devices!](https://chris.banes.me/2014/10/17/appcompat-v21/)
+????:[skyfly](http://my.oschina.net/u/552375),[crossmix](http://my.oschina.net/bigfool007139),[BreakingBad](http://my.oschina.net/u/2248293)
+</code></pre><hr>
+<pre><code>???(appcompat v21: ? Android 5.0 ?????? Material Design)[http://www.oschina.net/translate/appcompat-21]
+</code></pre><hr>
+<p>??Android 5.0 SDK????,???????????,??????UI??????????????????????????????????,??????????( support libraries),????AppCompat??????????????AppCompat??????????????????</p>
+<p>AppCompat (aka ActionBarCompat)?????android4.0  ActionBar ?API???,??????Gingerbread?????????????API????v21?appcompat????android5.0????API?????</p>
+<p>Android 5.0 ??????? Toolbar??,????Action Bar????????????,???????????????????????????????toolbar????????????view,??????????????view???????,??????????????<br><img src="http://static.oschina.net/uploads/img/201411/09065203_9VSQ.png" alt="Android 5.0"></p>
+<h2 id=""><a href="#" class="headerlink" title="??"></a>??</h2><hr>
+<p>?androidstudio???gradle,?androidstudio 1.5 stable???????????????? appcompat ?? dependency ?? build.gradle ?,?????22????:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile fileTree(dir: 'libs', include: ['*.jar'])</span><br><span class="line">    ...</span><br><span class="line">    compile 'com.android.support:appcompat-v7:22.2.1'</span><br></pre></td></tr></table></figure></p>
+<h2 id="-1"><a href="#-1" class="headerlink" title="??:"></a>??:</h2><hr>
+<p>?????? AppCompat, ??????????:</p>
+<blockquote>
+<ul>
+<li>?? Activity ????? ActionBarActivity . ????? v4 ????? FragmentActivity , ??, ????????? Fragment.</li>
+<li>???? Action Bar/Toolbar ? Theme ???? Theme.AppCompat. ???????, ?? Light,  NoActionBar.</li>
+<li>??? Inflat Action Bar ???? (?? Action Bar ??????? SpinnerAdapter), Action Bar ? Themed Context ???getSupportActionBar().getThemedContext() ??.</li>
+<li>MenuItem ??????????? MenuItemCompat ???????.<br><a href="http://developer.android.com/intl/zh-cn/training/appbar/index.html" target="_blank" rel="external">Action Bar API ??</a>??????? AppCompat ????. ????? v21 ??. ???????? Action Bar Style ?????????? ‘Example theme’ ??????.</li>
+</ul>
+</blockquote>
+<p>???<br>????, ?????????? Toolbar/ActionBar ?????(Support Implementation), ????, ????????? ActionBar ??? android:??(android: attributes ).</p>
+<p>????????? appcompat ???, ??? v14 ?????? theme ??.  ????????????, ? android ????(namespace) ?, ?????????. ???, ??????? ActionBar ? styles/widgets ??.</p>
+<p>?????????, ??? values/: ?, ????theme ??????,<br>value/style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Theme.MyTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml">  </span><br><span class="line">    <span class="comment">&lt;!-- Here we setting appcompat's actionBarStyle --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"actionBarStyle"</span>&gt;</span>@style/MyActionBarStyle<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- ...and here we setting appcompat's color theming attrs --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/my_awesome_red<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/my_awesome_darker_red<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- The rest of your attributes --&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="-2"><a href="#-2" class="headerlink" title="??"></a>??</h2><hr>
+<p>AppCompat????????????,??????????????????????(<a href="http://www.google.com/design/spec/style/color.html#color-ui-color-application" target="_blank" rel="external">primary and accent colour</a>)??????????????????:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Theme.MyTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span><span class="xml">  </span><br><span class="line">    <span class="comment">&lt;!-- colorPrimary is used for the default action bar background --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/my_awesome_color<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- colorPrimaryDark is used for the status bar --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/my_awesome_darker_color<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- colorAccent is used as the default value for colorControlActivated</span><br><span class="line">         which is used to tint widgets --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/accent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">&lt;!-- You can also set colorControlNormal, colorControlActivated</span><br><span class="line">         colorControlHighlight &amp; colorSwitchThumbNormal. --&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>??????,AppCompat????????????API21+??????,???????????????????</p>
+<p>??????,AppCompat?????????????????????actionbar??????????</p>
+<h2 id="widget"><a href="#widget" class="headerlink" title="widget??"></a>widget??</h2><hr>
+<p>? Android 5.0 ?????,??? widgets ??????????????????????????,?????????:????,??????????(???attr/foo)?</p>
+<p>Appcompat ???? UIwidgets ??????????????:</p>
+<blockquote>
+<ul>
+<li>?Appcompat?????????(??????)</li>
+<li>????</li>
+<li>??</li>
+<li>???</li>
+<li>????</li>
+<li>??(????android.support.v7.widget.switchcompat)</li>
+<li>??????<br>???????????????,????????????????????Appcompat??????(???????;??????FAQ)?</li>
+</ul>
+</blockquote>
+<p>??,???????Appcompat??,????????widget?API????????,?????class android.support.v7.widget.??????????????:</p>
+<pre><code>????????Actionbar???,????????????(?????????,[Actionbardrawertoggle](https://developer.android.com/intl/zh-cn/reference/android/support/v7/app/ActionBarDrawerToggle.html)???)??????????????
+
+?????????????????,???????????????,??????????????????????,???????????????
+</code></pre><p>???????Actionbardrawertoggle????????,?????????????????</p>
+<h2 id="Action-bar"><a href="#Action-bar" class="headerlink" title="Action bar"></a>Action bar</h2><hr>
+<p>???action bar????toolbar,?????decor??action bar???????????????????Theme.AppCompat.NoActionBar (?? light variant).</p>
+<p>??,???????toolbar??,??????xml?????:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span>  </span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/my_awesome_toolbar"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:minHeight</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">    <span class="attr">android:background</span>=<span class="string">"?attr/colorPrimary"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>????????(?????????????????????????)??????,???????????toolbar????ViewGroup???????????????,???????????</p>
+<p>???Activityh?Fragment?,?Toolbar??????action bar:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Toolbar toolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);</span><br><span class="line">    setSupportActionBar(toolbar);</span><br></pre></td></tr></table></figure></p>
+<p>?????,?????????Toolbar?????,??options menu???????</p>
+<h2 id="-3"><a href="#-3" class="headerlink" title="???"></a>???</h2><hr>
+<p>???????,??????????????Toolbar????action bar??????,??????AppCompat?????,?????decor???action bar????</p>
+<p>????????,??????????content/actions???,???????actions,?????????inflate??menu:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.my_layout);</span><br><span class="line"> </span><br><span class="line">    Toolbar toolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);    <span class="comment">// Set an OnMenuItemClickListener to handle menu item clicks</span></span><br><span class="line">    toolbar.setOnMenuItemClickListener(            <span class="keyword">new</span> Toolbar.OnMenuItemClickListener() &#123;                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;                    <span class="comment">// Handle the menu item</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">    &#125;);    <span class="comment">// Inflate a menu to be displayed in the toolbar</span></span><br><span class="line">    toolbar.inflateMenu(R.menu.your_toolbar_menu);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>??Toolbar????????????,?? (javadoc)[<a href="https://developer.android.com/intl/zh-cn/reference/android/support/v7/widget/Toolbar.html" target="_blank" rel="external">https://developer.android.com/intl/zh-cn/reference/android/support/v7/widget/Toolbar.html</a>]</p>
+<h2 id="-4"><a href="#-4" class="headerlink" title="??"></a>??</h2><hr>
+<p>Toolbar???????action bar??????,???????view?????</p>
+<p>?????Toolbar??acton bar????????????????:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span>  </span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:minHeight</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">    <span class="attr">app:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.ActionBar"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="app-theme-items-100"><a href="#app-theme-items-100" class="headerlink" title="app:theme ??????????items??????(???100%???????),????????????"></a>app:theme ??????????items??????(???100%???????),????????????</h3><h2 id="DarkActionBar"><a href="#DarkActionBar" class="headerlink" title="DarkActionBar"></a>DarkActionBar</h2><p>???????????????????,?????????’DarkActionBar’(???????????)?Toolbar???????theme?popupTheme?????:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span>  </span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:minHeight</span>=<span class="string">"@dimen/triple_height_toolbar"</span></span><br><span class="line">    <span class="attr">app:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span></span><br><span class="line">    <span class="attr">app:popupTheme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>????????????????????,??????????</p>
+<h2 id="SearchView"><a href="#SearchView" class="headerlink" title="SearchView ?????????????"></a>SearchView ?????????????</h2><hr>
+<p>AppCompat??????????SearchView?API???????????(???)??????,?????L????????searchView*??????</p>
+<p>????????SearchView???:<br>value/style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"Theme.MyTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat"</span>&gt;</span><span class="xml">  </span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"searchViewStyle"</span>&gt;</span>@style/MySearchViewStyle<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"MySearchViewStyle"</span> <span class="attr">parent</span>=<span class="string">"Widget.AppCompat.SearchView"</span>&gt;</span><span class="xml">  </span><br><span class="line">    <span class="comment">&lt;!-- The layout for the search view. Be careful. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"layout"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Background for the search query section (e.g. EditText) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"queryBackground"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Background for the actions section (e.g. voice, submit) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"submitBackground"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Close button icon --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"closeIcon"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Search button icon --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"searchIcon"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Go/commit button icon --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"goIcon"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Voice search button icon --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"voiceIcon"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Commit icon shown in the query suggestion row --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"commitIcon"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Layout for query suggestion rows --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"suggestionRowLayout"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>??????????????SearchView?actionClass?????<br>???????????(?????)????,???????????app????</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android??</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/10/安卓shape的使用/" rel="next" title="安卓shape的使用">
+                <i class="fa fa-chevron-left"></i> 安卓shape的使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="漏雨" />
+          <p class="site-author-name" itemprop="name">漏雨</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">??</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">2.</span> <span class="nav-text">??:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-2"><span class="nav-number">3.</span> <span class="nav-text">??</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#widget"><span class="nav-number">4.</span> <span class="nav-text">widget??</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Action-bar"><span class="nav-number">5.</span> <span class="nav-text">Action bar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-3"><span class="nav-number">6.</span> <span class="nav-text">???</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-4"><span class="nav-number">7.</span> <span class="nav-text">??</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#app-theme-items-100"><span class="nav-number">7.1.</span> <span class="nav-text">app:theme ??????????items??????(???100%???????),????????????</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DarkActionBar"><span class="nav-number">8.</span> <span class="nav-text">DarkActionBar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SearchView"><span class="nav-number">9.</span> <span class="nav-text">SearchView ?????????????</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">漏雨</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'greatzuesgithubio';
+      var disqus_identifier = '2016/04/11/Design/';
+      var disqus_title = '';
+      var disqus_url = 'http://yoursite.com/2016/04/11/Design/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

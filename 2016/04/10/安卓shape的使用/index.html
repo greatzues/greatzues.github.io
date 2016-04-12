@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android入门," />
 
 
 
@@ -59,16 +59,21 @@
 
 
 
-<meta name="description">
+<meta name="description" content="Shape可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。
+如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fragment的高级应用">
-<meta property="og:url" content="http://yoursite.com/2016/03/29/Fragment的高级应用/index.html">
+<meta property="og:title" content="安卓shape的使用">
+<meta property="og:url" content="http://yoursite.com/2016/04/10/安卓shape的使用/index.html">
 <meta property="og:site_name" content="zues blog">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-03-29T06:48:57.729Z">
+<meta property="og:description" content="Shape可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。
+如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示">
+<meta property="og:image" content="http://yoursite.com/./img/layer.png">
+<meta property="og:updated_time" content="2016-04-10T14:23:22.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fragment的高级应用">
-<meta name="twitter:description">
+<meta name="twitter:title" content="安卓shape的使用">
+<meta name="twitter:description" content="Shape可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。
+如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示">
+<meta name="twitter:image" content="http://yoursite.com/./img/layer.png">
 
 
 
@@ -97,7 +102,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <title> Fragment的高级应用 | zues blog </title>
+  <title> 安卓shape的使用 | zues blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -217,7 +222,7 @@ var _hmt = _hmt || [];
             
             
               
-                Fragment的高级应用
+                安卓shape的使用
               
             
           </h1>
@@ -229,19 +234,38 @@ var _hmt = _hmt || [];
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-03-29T14:48:57+08:00" content="2016-03-29">
-              2016-03-29
+            <time itemprop="dateCreated" datetime="2016-04-10T20:29:44+08:00" content="2016-04-10">
+              2016-04-10
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/29/Fragment的高级应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/29/Fragment的高级应用/" itemprop="commentsCount"></span>
+                <a href="/2016/04/10/安卓shape的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/10/安卓shape的使用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -263,7 +287,69 @@ var _hmt = _hmt || [];
       
 
       
-        
+        <h2 id="Shape"><a href="#Shape" class="headerlink" title="Shape"></a>Shape</h2><p>可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。</p>
+<p>如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了<br>在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示<shape>  android:shape=[“rectangle” | “oval” | “line” | “ring”]</shape></p>
+<p>另外Shape子节点的常用属性：<br>1，<gradient>  渐变</gradient></p>
+<blockquote>
+<ul>
+<li>android:startColor  起始颜色</li>
+<li>android:endColor  结束颜色            </li>
+<li>android:angle  渐变角度，0从上到下，90表示从左到右，数值为45的整数倍默认为0；</li>
+<li>android:type  渐变的样式 liner线性渐变 radial环形渐变 sweep</li>
+</ul>
+</blockquote>
+<p>2,<solid>  填充</solid></p>
+<blockquote>
+<ul>
+<li>android:color  填充的颜色</li>
+</ul>
+</blockquote>
+<p>3,<stroke> 描边</stroke></p>
+<blockquote>
+<ul>
+<li>android:width 描边的宽度</li>
+<li>android:color 描边的颜色</li>
+<li>android:dashWidth 表示’-‘横线的宽度</li>
+<li>android:dashGap 表示’-‘横线之间的距离</li>
+</ul>
+</blockquote>
+<p>4,<corners> 圆角</corners></p>
+<blockquote>
+<ul>
+<li>android:radius  圆角的半径 值越大角越圆</li>
+<li>android:topRightRadius  右上圆角半径</li>
+<li>android:bottomLeftRadius 右下圆角角半径</li>
+<li>android:topLeftRadius 左上圆角半径</li>
+<li>android:bottomRightRadius 左下圆角半径</li>
+</ul>
+</blockquote>
+<p>5，<padding>填充</padding></p>
+<blockquote>
+<ul>
+<li>android:bottom=”1.0dip” 底部填充</li>
+<li>android:left=”1.0dip” 左边填充</li>
+<li>android:right=”1.0dip” 右边填充</li>
+<li>android:top=”0.0dip” 上面填充</li>
+</ul>
+</blockquote>
+<p>关于如何使用请看下文</p>
+<h2 id="Selector的应用场景"><a href="#Selector的应用场景" class="headerlink" title="Selector的应用场景"></a>Selector的应用场景</h2><p>我们经常会需要在用户点击某个按钮或者图片按钮之后图片改变颜色表示响应操作，从而和用户进行交互。</p>
+<h2 id="Selector的用法"><a href="#Selector的用法" class="headerlink" title="Selector的用法"></a>Selector的用法</h2><p>一，selector的四大属性</p>
+<blockquote>
+<ul>
+<li>android:state_selected 是选中</li>
+<li>android:state_focused 是获得焦点</li>
+<li>android:state_pressed 是点击</li>
+<li>android:state_enabled 是设置是否响应事件,指所有事件</li>
+<li>android:state_window_focused 默认时的背景图片</li>
+</ul>
+</blockquote>
+<p>xml demo如下,测试的时候自己用不同颜色的图片，这样才能看出效果<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:Android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- 默认时的背景图片--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span> <span class="attr">Android:drawable</span>=<span class="string">"@drawable/pic1"</span> /&gt;</span>        </span><br><span class="line"><span class="comment">&lt;!-- 没有焦点时的背景图片 --&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_window_focused</span>=<span class="string">"false"</span>        </span><br><span class="line">   <span class="attr">android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="comment">&lt;!-- 非触摸模式下获得焦点并单击时的背景图片 --&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">android:state_pressed</span>=<span class="string">"true"</span>     </span><br><span class="line">   <span class="attr">android:drawable</span>= "@<span class="attr">drawable</span>/<span class="attr">ic_launcher</span>"   /&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- 触摸模式下单击时的背景图片--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"false"</span>   </span><br><span class="line">   <span class="attr">Android:state_pressed</span>=<span class="string">"true"</span>     </span><br><span class="line">   <span class="attr">Android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>      </span><br><span class="line"><span class="comment">&lt;!--选中时的图片背景--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_selected</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="comment">&lt;!--获得焦点时的图片背景--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">Android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>然后接下来是在一个项目里面需要用到的一个功能</p>
+<h2 id="layer-list"><a href="#layer-list" class="headerlink" title="layer-list"></a>layer-list</h2><p>当你需要把多张图片按照顺序层层叠起来的时候就能用上了，这个可以用来制造倒影的效果，用的好的话会很酷炫的。</p>
+<p>xml代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"0dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/#44000000"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"2dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/color_primary_red"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>效果<br><img src="./img/layer.png" alt="layer-list"></p>
+<h2 id="最后-三个一起使用"><a href="#最后-三个一起使用" class="headerlink" title="最后 三个一起使用"></a>最后 三个一起使用</h2>
       
     </div>
 
@@ -275,21 +361,27 @@ var _hmt = _hmt || [];
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/android入门/" rel="tag">#android入门</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/29/Fragment基础（下）/" rel="next" title="Fragment基础（下）">
-                <i class="fa fa-chevron-left"></i> Fragment基础（下）
+              <a href="/2016/04/10/谢谢各位小伙伴的祝福/" rel="next" title="谢谢各位小伙伴的祝福">
+                <i class="fa fa-chevron-left"></i> 谢谢各位小伙伴的祝福
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/31/Toolbar基础/" rel="prev" title="Toolbar基础">
-                Toolbar基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/12/RecycleView滑动隐藏toolbar/" rel="prev" title="RecycleView滑动隐藏toolbar">
+                RecycleView滑动隐藏toolbar <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -423,7 +515,7 @@ var _hmt = _hmt || [];
               
             
             
-              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shape"><span class="nav-number">1.</span> <span class="nav-text">Shape</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selector的应用场景"><span class="nav-number">2.</span> <span class="nav-text">Selector的应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selector的用法"><span class="nav-number">3.</span> <span class="nav-text">Selector的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-list"><span class="nav-number">4.</span> <span class="nav-text">layer-list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后-三个一起使用"><span class="nav-number">5.</span> <span class="nav-text">最后 三个一起使用</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -700,9 +792,9 @@ var _hmt = _hmt || [];
 
     <script type="text/javascript">
       var disqus_shortname = 'greatzuesgithubio';
-      var disqus_identifier = '2016/03/29/Fragment的高级应用/';
-      var disqus_title = 'Fragment的高级应用';
-      var disqus_url = 'http://yoursite.com/2016/03/29/Fragment的高级应用/';
+      var disqus_identifier = '2016/04/10/安卓shape的使用/';
+      var disqus_title = '安卓shape的使用';
+      var disqus_url = 'http://yoursite.com/2016/04/10/安卓shape的使用/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
