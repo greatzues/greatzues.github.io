@@ -68,7 +68,7 @@
 <meta property="og:description" content="Shape可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。
 如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示">
 <meta property="og:image" content="http://yoursite.com/./img/layer.png">
-<meta property="og:updated_time" content="2016-04-10T14:23:22.301Z">
+<meta property="og:updated_time" content="2016-04-13T03:35:37.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安卓shape的使用">
 <meta name="twitter:description" content="Shape可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。
@@ -349,7 +349,8 @@ var _hmt = _hmt || [];
 <h2 id="layer-list"><a href="#layer-list" class="headerlink" title="layer-list"></a>layer-list</h2><p>当你需要把多张图片按照顺序层层叠起来的时候就能用上了，这个可以用来制造倒影的效果，用的好的话会很酷炫的。</p>
 <p>xml代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"0dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/#44000000"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"2dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/color_primary_red"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>效果<br><img src="./img/layer.png" alt="layer-list"></p>
-<h2 id="最后-三个一起使用"><a href="#最后-三个一起使用" class="headerlink" title="最后 三个一起使用"></a>最后 三个一起使用</h2>
+<p>值得参考的文章:<a href="http://keeganlee.me/post/android/20150830" target="_blank" rel="external">Keegan小钢</a></p>
+
       
     </div>
 
@@ -457,7 +458,7 @@ var _hmt = _hmt || [];
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
@@ -465,7 +466,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">Kategorien</span>
               
             </div>
@@ -474,7 +475,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
@@ -515,7 +516,7 @@ var _hmt = _hmt || [];
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shape"><span class="nav-number">1.</span> <span class="nav-text">Shape</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selector的应用场景"><span class="nav-number">2.</span> <span class="nav-text">Selector的应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selector的用法"><span class="nav-number">3.</span> <span class="nav-text">Selector的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-list"><span class="nav-number">4.</span> <span class="nav-text">layer-list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后-三个一起使用"><span class="nav-number">5.</span> <span class="nav-text">最后 三个一起使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shape"><span class="nav-number">1.</span> <span class="nav-text">Shape</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selector的应用场景"><span class="nav-number">2.</span> <span class="nav-text">Selector的应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selector的用法"><span class="nav-number">3.</span> <span class="nav-text">Selector的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-list"><span class="nav-number">4.</span> <span class="nav-text">layer-list</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
