@@ -1,0 +1,983 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react-native," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zues blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="正则表达式是为了记录文本规则的代码，在编写处理字符串或者网页的时候，经常会查找符合某些复杂规则的字符串而生。
+首先举个例子，当我们需要查找某一个目录下的Word文档，我们会搜索*.doc，而这里的*就会变解释成任意的字符串，但是这里的*或者经常使用的?我们称做通配符。ok，开始学习
+开始
+假如我们需要在一边小说中查找一个单词“he”，一般情况下会怎么做呢？在我看来不管在什么情况下，我们都可以使用c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式笔记">
+<meta property="og:url" content="http://yoursite.com/2016/07/29/正则表达式笔记/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="正则表达式是为了记录文本规则的代码，在编写处理字符串或者网页的时候，经常会查找符合某些复杂规则的字符串而生。
+首先举个例子，当我们需要查找某一个目录下的Word文档，我们会搜索*.doc，而这里的*就会变解释成任意的字符串，但是这里的*或者经常使用的?我们称做通配符。ok，开始学习
+开始
+假如我们需要在一边小说中查找一个单词“he”，一般情况下会怎么做呢？在我看来不管在什么情况下，我们都可以使用c">
+<meta property="og:updated_time" content="2016-08-05T01:39:48.894Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式笔记">
+<meta name="twitter:description" content="正则表达式是为了记录文本规则的代码，在编写处理字符串或者网页的时候，经常会查找符合某些复杂规则的字符串而生。
+首先举个例子，当我们需要查找某一个目录下的Word文档，我们会搜索*.doc，而这里的*就会变解释成任意的字符串，但是这里的*或者经常使用的?我们称做通配符。ok，开始学习
+开始
+假如我们需要在一边小说中查找一个单词“he”，一般情况下会怎么做呢？在我看来不管在什么情况下，我们都可以使用c">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b706031fedc2f13c7dc61b81d4a77d64";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <title> 正则表达式笔记 | zues blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zues blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                正则表达式笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-07-29T17:46:27+08:00" content="2016-07-29">
+              2016-07-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/29/正则表达式笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/29/正则表达式笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>正则表达式是为了记录文本规则的代码，在编写处理字符串或者网页的时候，经常会查找符合某些复杂规则的字符串而生。</p>
+<p>首先举个例子，当我们需要查找某一个目录下的Word文档，我们会搜索<strong>*</strong>.doc，而这里的*就会变解释成任意的字符串，但是这里的<strong>*</strong>或者经常使用的<strong>?</strong>我们称做通配符。ok，开始学习</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><hr>
+<p>假如我们需要在一边小说中查找一个单词“he”，一般情况下会怎么做呢？在我看来不管在什么情况下，我们都可以使用<strong>ctrl+f</strong>就会弹出查找的框。不过有时候比较糟糕的是很多单词都会有这两个字母，例如hello，head，heel等等，那么这时候就会有很多的he被找出来了，那当我们会使用正则表达式的话就可以使用<strong>\bhe\b</strong>.<br><strong>\b</strong>是正则表达式里面规定的一个特殊的代码，人称<strong>元字符</strong>，代表的那次的开头或者结尾，也就是单词的分界处。</p>
+<p>假如这里he的后面不远处有一个Lucy，就可以使用<strong>\bhe\b.*\bLucy\b</strong>。<br>可以注意这里的<strong>.</strong>，它也是一个元字符，匹配除了换行符意外的任意字符。<strong>*</strong>同样是元字符，不过它代表的不是字符，也不是位置，而是指<strong>数量</strong>，它指定<strong>*</strong>号前边的内容可以连续重复使用任意次以使整个表达式得到匹配。<br>因此，<strong>.*</strong>就意味着<strong>任意数量的不包含换行的字符</strong>。那么现在<strong>\bhe\b.*\bLucy\b</strong>的意思就非常明显了：先是一个单词he，然后是任意字符串（不含换行）最后是lucy这个单词</p>
+<p>这时候就可以联想肯定还有很多元字符，如果将其全部构造在一起那将是最强大的正则表达式。例如下面的例子：<br><strong>0\d\d-\d\d\d\d\d\d\d\d</strong>能匹配怎样的字符串呢：以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字，我们的国家的电话号码就是这样的区号。<br>这里的<strong>\d</strong>是一个新的元字符，匹配一个<strong>数字</strong>（数字0-9）.但是这里的“-”号不是元字符，它只匹配一个符号，为了简便和避免出错，我们也可以用<strong>0\d{2}-\d{8}</strong>，{8}（或者{2}）表示连续重复。把<strong>{n}</strong>放在了\d前面，也就意味着前面的\d符号必须连续重复n次，相当于被copy了n次，于是就构造出了和上面区号一样的效果。</p>
+<h3 id="小总结："><a href="#小总结：" class="headerlink" title="小总结："></a>小总结：</h3><blockquote>
+<ul>
+<li>元字符<strong>\b</strong>，代表着单词的口头或者结尾，记住是单词，而不是字符，它只匹配一个位置。</li>
+<li>元字符<strong>.</strong>，匹配除了换行符以外的任意字符，记住只是单个字符。</li>
+<li>元字符<strong>*</strong>，匹配的不是字符，也不是位置，肯定不能和别人抢饭碗对吧，所以它匹配的是数量，任意数量，它指定它前面的内容可以连续使用任意次从而使整个表达式得到匹配。</li>
+<li>元字符<strong>\d</strong>，匹配的也是数量，但是这里它可以控制字符串多少，第一种比较傻，使用多少个“\d”就匹配多少个，而“\d{n}”，n是多少就能匹配多少次<strong>连续</strong>且重复。</li>
+</ul>
+</blockquote>
+<h2 id="认识更多"><a href="#认识更多" class="headerlink" title="认识更多"></a>认识更多</h2><hr>
+<p><strong>\ba\w*\b</strong>，首先看到\b就知道可以匹配以字母a开头的单词，然后是<strong>\w*</strong>，\w这个元字符的作用是可以匹配单个字母数字下划线或者汉字，和数量<strong>**相结合后就相当于任意数量的字母或者数字，最后\b是字母的结尾处。
+</strong>\d+<strong>，可以匹配一个或更多连续的</strong>数字<strong>。这里的+是和<em>类似的元字符，不同的是不同的是</em>匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。
+</strong>\b\w{6}\b**，可以匹配刚好6个字符的单词。</p>
+<h3 id="常用元字符"><a href="#常用元字符" class="headerlink" title="常用元字符"></a>常用元字符</h3><table>
+<thead>
+<tr>
+<th>代码</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td style="text-align:right">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td style="text-align:right">匹配字母或数字或下划线或汉字</td>
+</tr>
+<tr>
+<td>\s</td>
+<td style="text-align:right">匹配任意的空白符</td>
+</tr>
+<tr>
+<td>\d</td>
+<td style="text-align:right">匹配数字</td>
+</tr>
+<tr>
+<td>\b</td>
+<td style="text-align:right">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td>^</td>
+<td style="text-align:right">匹配字符串的开始</td>
+</tr>
+<tr>
+<td>$</td>
+<td style="text-align:right">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+<p>关于<strong>^</strong>和<strong>$</strong>令我有点蛋疼，因为\b也是可以匹配开头，不过这个是单词，但是^是匹配字符串，那也就是意味着^匹配的范围会更大，不过精确程度肯定是\b，另外这两个元字符还可以在允许处理多行的情况下变成匹配行的开始处和结尾处。<br>先来看一个表达式：<strong>^\d{5,12}$</strong>，这个表达式可以类似一个网站验证qq号，并且qq号必须为数字的重复次数不少于5次，不能多于12次。否则都匹配不成功。这里的<strong>{5，12}</strong>和前面\b的一样，意味着<strong>重复的次数不能少于5次，不能多于12次</strong>。</p>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><hr>
+<p>当我们需要查找的是正则里面的元符本身的话，正常情况下肯定找不到，这时候就要用<strong>\</strong>来消除这些字符的特殊意义，因此需要找.或者<em>的时候就要用.和\</em>。当然需要找<strong>\</strong>本身也需要使用\，因此在以后可以看到一些\\这样类型的，表示的是\。<br>例如：deerchao.net匹配deerchao.net，C:\Windows匹配C:\Windows。</p>
+<h2 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h2><hr>
+<p>前面已经知道了<em>表示前边的内容可以连续重复使用任意次以使整个表达式得到匹配，而+是和</em>类似但是匹配的次数重复1次或者更多，意味着一定会重复。另外{n}还有{5，12}我就不解释了，这个比较好记。</p>
+<h3 id="常用的限定符"><a href="#常用的限定符" class="headerlink" title="常用的限定符"></a>常用的限定符</h3><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td style="text-align:right">重复零次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td style="text-align:right">重复一次或更多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td style="text-align:right">重复零次或一次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td style="text-align:right">重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td style="text-align:right">重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td style="text-align:right">重复n到m次</td>
+</tr>
+</tbody>
+</table>
+<p>例子：Windows\d+匹配Windows后面跟1个或更多数字，^\w+匹配一行的第一个单词(或整个字符串的第一个单词，具体匹配哪个意思得看选项设置)。</p>
+<h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h2><hr>
+<p>如果需要查找单个数字，字母都是比较简单的，但是如果需要找一些集合的时候，例如元音字母aeiou的时候怎么办，这时候只需要在方括号里面列出它们就可以了，就像这样[aeiou]就能匹配任何一个英文元音字母，[.?!]匹配标点里面的符号，从这里也可以看出在方括号里面是可以放元字符的，而无须转义。<br>当然也可以指定一个字符范围，[0-9]这个的含义就是和\d一样了：表示一个数字。同样这个例子[a-z0-9A-Z]，其实一开始我是没有看懂的，这里我们把里面的字符分开来看就可以看到a-z,0-9,A-Z这样就等同于\w了。</p>
+<p>接下来是一个更加复杂的表达式：(?0\d{2}[) -]?\d{8}<br>这个表达式可以匹配集中格式的电话号码，像(010)88886666，或022-22334455，或02912345678等，对立面的字符进行分析，首先是转义的<strong>(</strong>，因为“（”和“）”都是元字符，它可能重复0次或者1次（？），然后是一个数字0，后面接着两个数字（\d{2}）,然后是方括号里面有-或者空格（要看到是有空格的）或者是“）”，也是出现一次或者零次，最后是8个重复的\d,也就是后面接着8个数字。</p>
+<h2 id="分支条件"><a href="#分支条件" class="headerlink" title="分支条件"></a>分支条件</h2><hr>
+<p>在上面的例子中是不是会出现一种情况，那就是假如是010)12345678或(022-87654321也是可以的，但是格式不是我们想要的，要解决这个问题需要使用到这节的标题。使用符号<strong>|</strong>把不同的规则分开，然后满足其中一种就可以完成匹配。<br>0\d{2}-\d{8}|0\d{3}-\d{7}这个表达式能匹配两种以连字号分隔的电话号码：一种是三位区号，8位本地号(如010-12345678)，一种是4位区号，7位本地号(0376-2233445)<br>(?0\d{2})?[- ]?\d{8}|0\d{2}[- ]?\d{8}这个表达式匹配3位区号的电话号码，其中区号可以用小括号括起来，也可以不用，区号与本地号间可以用连字号或空格间隔，也可以没有间隔。</p>
+<p>\d{5}-\d{4}|\d{5}这个表达式用于匹配美国的邮政编码。美国邮编的规则是5位数字，或者用连字号间隔的9位数字。之所以要给出这个例子是因为它能说明一个问题：使用<strong>分枝条件时</strong>，要<strong>注意各个条件的顺序</strong>。如果你把它改成\d{5}|\d{5}-\d{4}的话，那么就只会匹配5位的邮编(以及9位邮编的前5位)。原因是匹配分枝条件时，将会从左到右地测试每个条件，如果满足了某个分枝的话，就不会去再管其它的条件了。<br>对于上面一段话我有一点想法，那就是在分支匹配的时候要吧负责的匹配放在前面。不然的话复杂里面夹杂着简单的匹配的时候就会出现部分满足导致匹配不理想。还有就是<strong>|</strong>分支符号的左右都是完整的表达式，因此写这个的时候会显得和上面的方括号麻烦一些。</p>
+<h2 id="分组-子表达式"><a href="#分组-子表达式" class="headerlink" title="分组/子表达式"></a>分组/子表达式</h2><hr>
+<p>在前面我们知道了怎么重复单个字符，也就是前面那张表。但是如果需要重复多个字符的时候应该怎么办呢！这时候就要使用到标题，用小括号()来指定<strong>子表达式</strong>，然后就可以制定子表达式的重复次数。<br>(\d{1,3}.){3}\d{1,3}，这是一个ip地址的表达式，要理解这个表达式，我们一个一个来分析：既然是子表达式，所以肯定先分析括号里面的表达式，\d{1,3}匹配至少重复1到3位的数字，那么(\d{1,3}.){3}就是表示三位数字加一个英文句号（用了转义）重复三次，最后再加一个至少重复一次或者三次的数字（\d{1,3}）。<br>但是像上面的表达式避免不了匹配类似错误的ip256.300.888.999，因为正则没有提供关于数学的功能，因此需要冗长的表达式才可以正确描述：((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5])<br>可以发现最主要的分析对象是2[0-4]\d|25[0-5]|[01]?\d\d?，因为ip是1-255的，所以需要有几种情况，第一个分支2[0-4]，就是200-249，一看就看明白了，第二个分支25[0-5]，就是250-255，第三个分支有点难度[01]?\d\d?，意思是0或者1可能重复1次或者0次（不出现），后面接一个0-9的数字，再后面接着最多出现1次或者0次（不出现）的数字，也就是可以构造出两位数。</p>
+<h2 id="反义"><a href="#反义" class="headerlink" title="反义"></a>反义</h2><hr>
+<p>有时候需要找除了某一个字符以外的其他字符，于是这时候就要使用到反义。我个人觉得这样的情况很少见，除非一篇文章都差不多使用那么几种字符</p>
+<h3 id="常用的反义字符"><a href="#常用的反义字符" class="headerlink" title="常用的反义字符"></a>常用的反义字符</h3><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\W</td>
+<td style="text-align:right">匹配任意不是字母，数字，下划线，汉字的字符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td style="text-align:right">匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>\D</td>
+<td style="text-align:right">匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\B</td>
+<td style="text-align:right">匹配不是单词开头或者结束的位置</td>
+</tr>
+<tr>
+<td>[^x]</td>
+<td style="text-align:right">匹配除了x以外的任意字符</td>
+</tr>
+<tr>
+<td>[^aeiou]</td>
+<td style="text-align:right">匹配除了aeiou这几个字母以外的任意字符</td>
+</tr>
+</tbody>
+</table>
+<p>例子：\S+匹配不包含空白符的字符串，因为\S匹配不是空白符，而+要求至少要有重复，加在\S后面表示，不能有一个空白符或者多个空白符，理解下来就是没有任何空白符的<strong>字符串</strong>。<a[^>]+&gt;匹配用尖括号括起来的以a开头的字符串。<br><a[^>]+&gt;匹配用尖括号括起来的以a开头的字符串，这里需要注意尖括号不是元字符，所以就直接理解就可以了，而a[^&gt;]+表示a开头的字符串，并且a后面匹配除了&gt;符号的字符串，最后再加上最后那一个尖括号，于是就成为了用尖括号括起来的以a开头的字符串。</a[^></a[^></p>
+<h2 id="后向引用"><a href="#后向引用" class="headerlink" title="后向引用"></a>后向引用</h2><hr>
+<p>我的理解是通过后向对于已经被解释过的分组进行数字替代。用于重复搜索前面某个分组匹配的文本。例如， \1代表分组1匹配的文本。<br>例如：<strong>\b(\w+)\b\s+\1\b</strong>，可以用来匹配重复的单词，例如 go go，或者是kitty kitty。这个表达式先是一个单词，也就是单词开头和结尾处之间多余一个字母或数字的（\b(\w+)\b），这个单词在组号分配的时候会被捕获到编号为1的分组，然后是1个或几个空白符\s+，最后是分组1中捕获的内容。<br>除了可以自动陪匹配组号，还可以指定子表达式的组号，可以使用这样的语法：(?<word>\w+)(或者把尖括号换成’也是可以得:(?’Word’\w+))，这样就可以把\w+的组名指定为Word了，当需要反向指定这个分组的时候就可以使用\k<word>，所以上一个例子也可以写成这样：\b(?<word>\w)\b\s+\k<word>\b。)</word></word></word></word></p>
+<p>为什么分组会从1开始呢！因为分组0对应的是整个正则表达式，而不是某一个分组，当然这里还有一个规则，就像上面说的除了那些没有命名被自动赋名的分组，还有已经被命名的分组，而组号分配是从左到右扫描两边，第一遍只给未命名组分配，第二次只给命名组分配，那么久可以很简单推测出所有命名组的组号都大于为命名组号。</p>
+<h3 id="常用分组语法"><a href="#常用分组语法" class="headerlink" title="常用分组语法"></a>常用分组语法</h3><table>
+<thead>
+<tr>
+<th>分类</th>
+<th style="text-align:right">代码/语法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>捕获</td>
+<td style="text-align:right">(exp)</td>
+<td style="text-align:center">匹配exp,并捕获文本到自动命名的组里</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right">(?<name>exp)</name></td>
+<td style="text-align:center">匹配exp,并捕获文本到名称为name的组里，也可以写成(?’name’exp)</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right">(?:exp)</td>
+<td style="text-align:center">匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>
+</tr>
+<tr>
+<td>——</td>
+<td style="text-align:right">——</td>
+<td style="text-align:center">——–</td>
+</tr>
+<tr>
+<td>零宽断言</td>
+<td style="text-align:right">(?=exp)</td>
+<td style="text-align:center">匹配exp前面的位置</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right">(?&lt;=exp)</td>
+<td style="text-align:center">匹配exp后面的位置</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right">(?!exp)</td>
+<td style="text-align:center">匹配后面跟的不是exp的位置</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right">(?&lt;!exp)</td>
+<td style="text-align:center">匹配前面不是exp的位置</td>
+</tr>
+<tr>
+<td>—–</td>
+<td style="text-align:right">—-</td>
+<td style="text-align:center">——–</td>
+</tr>
+<tr>
+<td>注释</td>
+<td style="text-align:right">(?#comment)</td>
+<td style="text-align:center">这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>
+</tr>
+</tbody>
+</table>
+<p>例如可以使用(?:exp)这样的语法来剥夺一个分组对组号分配的参与权，其中exp是一个表达式，有效阻断组号分配，不过为什么要剥夺呢？我暂时还没有想到应用场景。</p>
+<h2 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h2><hr>
+<p>断言也就是可以预测位置，和\b,^,$一样具有指定位置的功能，并且这个位置具备一定的条件，在左边表示是前面，而在右边则是后面后面会一直持续提到这两个位置，因此被称作零宽断言。</p>
+<p>(?=exp)也叫做<strong>零宽都正预测先行断言</strong>，它能断言<strong>表达式exp前面的位置</strong>。比如\b\w+(?=ing\b)，匹配以ing结尾的单词的前面部分除ing以外，加入查找I’m singing while you’re dancing.时，它会匹配sing和danc。</p>
+<p>(?&lt;=exp)也叫做<strong>零宽度正回顾后发断言</strong>，它能断言<strong>表达式exp后面的位置</strong>。比如(?&lt;=\bre)\w+\b会匹配以re开头的单词的后半部分除re以外，例如在查找reading a book时，它能匹配ading。</p>
+<p>假如你想要给一个很长的数字中每三位间加一个逗号(当然是从右边加起了)，你可以这样查找需要在前面和里面添加逗号的部分：((?&lt;=\d)\d{3})+\b，用它对1234567890进行查找时结果是234567890。<br><strong>说实话，上面这句话没看懂</strong>,不过还是可以分析：首先是分组里面的是匹配表达式\d后面的位置，然后是匹配三个数字(\d{3}),然后又是一个分组表示至少重复一次(+)，最后是就是结尾字符(\b)。<br>最后是是下面这个例子同时使用了这两种断言：(?&lt;=\s)\d+(?=\s)匹配以空白符间隔的数字(再次强调，不包括这些空白符)。</p>
+<h2 id="负向零宽断言"><a href="#负向零宽断言" class="headerlink" title="负向零宽断言"></a>负向零宽断言</h2><hr>
+<p>负向零宽断言正好和零宽断言相反，也分为先行和回顾断言两种。<br>零宽度负预测先行断言(?!exp),意思是断言此位置的后面不能匹配表达式exp。例如：\d{3}(?!\d)匹配三位数字，而且这三位数字的后面不能是数字。\b((?!abc)\w)+\b匹配不包含连续字符串abc的单词。同理很好理解接下来的。</p>
+<p>零宽度负回顾后发断言(?&lt;!exp),意思是断言此位置的前面不能匹配表达式exp，(?&lt;![a-z])\d{7}匹配前面不是小写字母的七位数字。我觉得以后每次看都可能需要思考一下，因为一下子有可能理解不了。</p>
+<p>我们来看一下一个例子，<strong>\b\w<em>q[^u]\w</em>\b</strong>，这个表达式可以匹配一个不含换行符的单词，在前面已经知道任意数量的字母或数字是(\w<em>)，按正常情况下是可以的，但是在一些特殊情况下，例如Iraq,Benq，因为[^u]肯定会匹配一个字符，因此加入q是最后一个字符的话就会出现两个单词连在一起匹配结果。<br>但是使用了我们的负向零宽断言就不一样了，因为它完全不会消费任何字符，只匹配一个位置，因此可以使用这个表达式来轻松搞定：**\b\w</em>q(?!u)\w<em>\b*</em>,只要u前面不是q的话，那么表达式成立，同时匹配不成功</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><hr>
+<p>我觉得直接看例子就可以看明白了，</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/27/python爬虫日记/" rel="next" title="python爬虫日记">
+                <i class="fa fa-chevron-left"></i> python爬虫日记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/31/react-native学习笔记2/" rel="prev" title="react-native学习笔记2">
+                react-native学习笔记2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="漏雨" />
+          <p class="site-author-name" itemprop="name">漏雨</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小总结："><span class="nav-number">1.1.</span> <span class="nav-text">小总结：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#认识更多"><span class="nav-number">2.</span> <span class="nav-text">认识更多</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用元字符"><span class="nav-number">2.1.</span> <span class="nav-text">常用元字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义字符"><span class="nav-number">3.</span> <span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复"><span class="nav-number">4.</span> <span class="nav-text">重复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的限定符"><span class="nav-number">4.1.</span> <span class="nav-text">常用的限定符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符类"><span class="nav-number">5.</span> <span class="nav-text">字符类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支条件"><span class="nav-number">6.</span> <span class="nav-text">分支条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组-子表达式"><span class="nav-number">7.</span> <span class="nav-text">分组/子表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反义"><span class="nav-number">8.</span> <span class="nav-text">反义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的反义字符"><span class="nav-number">8.1.</span> <span class="nav-text">常用的反义字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后向引用"><span class="nav-number">9.</span> <span class="nav-text">后向引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用分组语法"><span class="nav-number">9.1.</span> <span class="nav-text">常用分组语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#零宽断言"><span class="nav-number">10.</span> <span class="nav-text">零宽断言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负向零宽断言"><span class="nav-number">11.</span> <span class="nav-text">负向零宽断言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">12.</span> <span class="nav-text">注释</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">漏雨</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'greatzuesgithubio';
+      var disqus_identifier = '2016/07/29/正则表达式笔记/';
+      var disqus_title = '正则表达式笔记';
+      var disqus_url = 'http://yoursite.com/2016/07/29/正则表达式笔记/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
