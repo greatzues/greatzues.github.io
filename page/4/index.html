@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -219,6 +219,148 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/03/16/重新认识java/" itemprop="url">
+                  重新认识java
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-16T17:01:10+08:00" content="2016-03-16">
+              2016-03-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/16/重新认识java/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/16/重新认识java/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有点激动的是我开始写我自己的<strong>博客</strong>了，而且是写有关技术的博文，开始有点紧张，因为学习java也不是太多，<br>当时只是java入门之后就直接转型写<strong>安卓</strong>了，担心理解不太正确，被吐槽，所以先在这里和各位大牛们打声招呼<br>，如果博文有不对的地方，麻烦指点一下，我们可以互相交流。</p>
+<hr>
+<p>目录：</p>
+<blockquote>
+<ul>
+<li>java的三种特性：多态，继承，封装</li>
+<li>java的基本含义</li>
+<li>java关键字</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h3 id="在说多态之前先理解一下封装和继承"><a href="#在说多态之前先理解一下封装和继承" class="headerlink" title="在说多态之前先理解一下封装和继承"></a>在说多态之前先理解一下<strong>封装</strong>和<strong>继承</strong></h3><pre><code>首先封装是隐藏类的内部实现机制，好处：一是可以保护类的内部结构，不影响方法的调用。二是隐藏实现方法，提供给外界访问方法。
+继承是重用父类的代码，即子类可以访问父类的方法，通过super关键字调用父类的方法，也可以直接覆写父类的方法。
+</code></pre><h3 id="好了，现在该轮到多态登场了。"><a href="#好了，现在该轮到多态登场了。" class="headerlink" title="好了，现在该轮到多态登场了。"></a>好了，现在该轮到多态登场了。</h3><p>多态，简单的讲就是同一个行为有不同的表现形式和形态的能力。例如运动员这个对象，就有很多不同的表达和表现形式，例如乒乓球运动员，篮球运动员，足球运动员等。那么我认识一个运动明星，那我就会说我认识科比（篮球明星）这样子我们就说运动员这个对象具有多态性。</p>
+<p>然后直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">java_duotai</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		BasketballPlayer b = <span class="keyword">new</span> KeBi();</span><br><span class="line">		b.attact();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BasketballPlayer</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attact</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"进攻"</span>);</span><br><span class="line">		shoot();</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shoot</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"投篮"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getPoint</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"轻松得分"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">List s = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KeBi</span> <span class="keyword">extends</span> <span class="title">BasketballPlayer</span></span>&#123;</span><br><span class="line">	<span class="comment">//重载父类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attact</span><span class="params">(String kebiAttact)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"变向上篮"</span>);</span><br><span class="line">		shoot();</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="comment">//重写父类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shoot</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"三分球"</span>);</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="comment">//另外写一个父类不存在的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">win</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"哈哈"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码创建了一个BasketballPlayer的父类，然后科比是其中一个子类。在main方法中创建一个指向子类的父类引用。这时候发现创建的对象b只能调用自己的自己的方法，但是当我运行测试的时候，被子类重写过的方法也就是<strong>shoot()</strong>却没有调用父类的，而是调用的是子类科比的shoot()方法。</p>
+<h3 id="ok，现在对于运行结果进行分析："><a href="#ok，现在对于运行结果进行分析：" class="headerlink" title="ok，现在对于运行结果进行分析："></a>ok，现在对于运行结果进行分析：</h3><p>在这个程序中子类科比重载了父类的attact()方法，重写了shoot()方法，而且重载后的attact(String kebiAttact)方法与父类的attact()不是同一个方法，由于父类没有该方法，向上转型之后会丢失该方法，所以执行BasketballPlayer的attact方法是不能引用attact方法的，而被子类重写的shoot()方法，因为改变了父类的方法实现，所以指向kebi的BasketballPlayer会调用kebi的shoot方法。<br>    <code>指向子类的父类引用由于向上转型了，它只能访问父类中拥有的方法和属性，而对于子类中存在而父类中不存在的方法，
+该引用是不能使用的，尽管是重载该方法。若子类重写了父类中的某些方法，在调用该些方法的时候，必定是使用子类中定义
+的这些方法（动态连接、动态调用）。</code><br>    <strong>总结：当使用多态方式调用方法时，首先检查父类中是否有该方法，如果没有，则编译错误；如果有，再去调用子类的该同名方法</strong></p>
+<hr>
+<h3 id="多态的实现由三个必要的条件，那就是继承，重写和向上转型"><a href="#多态的实现由三个必要的条件，那就是继承，重写和向上转型" class="headerlink" title="多态的实现由三个必要的条件，那就是继承，重写和向上转型"></a>多态的实现由三个必要的条件，那就是继承，重写和向上转型</h3><pre><code>继承：在多态中必须存在有继承关系的子类和父类
+重写：子类对父类的某些方法进行重新定义，在调用这些方法的时候就会调用子类的方法。
+向上转型：在多态中需要将子类的引用赋给父类对象，只有这样该引用才能具备技能调用父类的方法和子类的方法
+</code></pre><p>我觉得就像以后会经常用到的一个声明方法List list = new ArratList();在这里，List是一个接口，定义了一些方法，但是方法没有被实现，ArrayList是一个类，实现了List这个接口，List里面定义的方法，ArrayList里面都实现了，同时List也可以被其他类实现，例如Vector ,Vector和ArrayList都对List定义的方法的实现就有所区别，这就是一个基于接口实现的多态，继承是通过重写父类的同一个方法的几个不同子类来实现，那么在接口里面就可以实现接口并覆盖里面的统一方法的不同的类实现。</p>
+<h3 id="延伸一下："><a href="#延伸一下：" class="headerlink" title="延伸一下："></a>延伸一下：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List <span class="title">getXXXList</span><span class="params">()</span></span>&#123;</span><br><span class="line">List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">...</span><br><span class="line"><span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>比如像上面的一种定义，是一种非常棒的面向接口编程的习惯，如果万一以后要将new ArratList改成new LinkList()的话，这个方法就不需要改变返回类型了，，并且调用这个方法的所有类都不需要修改，这样就可以降低了修改程序的成本和风险，提高了程序的可复用性这也是面向接口编程的好处。</p>
+<p>同时，java的多态，List只是定义了一堆接口，而对于这些接口，有各种各样的实现，比如ArrayList，LinkedList等等，不同的实现，会有自己不同的特性以及追加自己特有的方法。当你仅仅使用List的通用接口方法时，定义成List(也就是面向接口编程)是非常好的习惯，如上所说。但是，当你在某个地方想用ArrayList的某个特有的方法的时候，如果定义成List的话，就需要转型成为ArrayList之后才能使用，这时候，如果定义成ArrayList的话，就少了转型这一步。</p>
+<p>参考文章:<a href="http://blog.csdn.net/chenssy/article/details/12786385" target="_blank" rel="external">java提高篇（三）—–理解java的三大特性之多态 </a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/08/zues-blog/" itemprop="url">
                   zues blog
                 </a>
@@ -232,7 +374,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-08T11:11:11+08:00" content="2016-03-08">
               2016-03-08
             </time>
@@ -244,7 +386,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/日记/" itemprop="url" rel="index">
@@ -304,13 +446,13 @@ var _hmt = _hmt || [];
 <p>启动服务器，用浏览器打开<a href="http://localhost:4000/atom.xml" target="_blank" rel="external">http://localhost:4000/atom.xml</a>，就可以看到RSS已经生效了。<strong>但是</strong>，因为hexo在2.6版本之后更新了命令，所以要自己安装<br>    npm install hexo-generator-feed –save<br>然后这条命令行就可以搞定了！</p>
 <h3 id="6-当然，除了这些还有很多需要的功能，像Google分析，百度统计，微薄转发等，大家可以自己找找，也可以自己开发一些插件！但是像我这种渣渣就等以后有时间再开发造福大家好了，现在实力还不强，只能望梅止渴啦！"><a href="#6-当然，除了这些还有很多需要的功能，像Google分析，百度统计，微薄转发等，大家可以自己找找，也可以自己开发一些插件！但是像我这种渣渣就等以后有时间再开发造福大家好了，现在实力还不强，只能望梅止渴啦！" class="headerlink" title="6 , 当然，除了这些还有很多需要的功能，像Google分析，百度统计，微薄转发等，大家可以自己找找，也可以自己开发一些插件！但是像我这种渣渣就等以后有时间再开发造福大家好了，现在实力还不强，只能望梅止渴啦！"></a>6 , 当然，除了这些还有很多需要的功能，像Google分析，百度统计，微薄转发等，大家可以自己找找，也可以自己开发一些插件！但是像我这种渣渣就等以后有时间再开发造福大家好了，现在实力还不强，只能望梅止渴啦！</h3><h3 id="7-另外如果出现下面的错误代码的话"><a href="#7-另外如果出现下面的错误代码的话" class="headerlink" title="7 , 另外如果出现下面的错误代码的话"></a>7 , 另外如果出现下面的错误代码的话</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">//此处省去好多段代码。。。</span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line"></span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (D:\blog\node_modules\hexo-util\lib\spawn.js:37:17)</span><br><span class="line">    at emitTwo (events.js:100:13)</span><br><span class="line">    at ChildProcess.emit (events.js:185:7)</span><br><span class="line">    at ChildProcess.cp.emit (D:\blog\node_modules\cross-spawn-async\lib\enoent.js:37:29)</span><br><span class="line">    at maybeClose (internal/child_process.js:827:16)</span><br><span class="line">    at Socket.&lt;anonymous&gt; (internal/child_process.js:319:11)</span><br><span class="line">    at emitOne (events.js:90:13)</span><br><span class="line">    at Socket.emit (events.js:182:7)</span><br><span class="line">    at Pipe._onclose (net.js:475:12)</span><br></pre></td></tr></table></figure>
 <p>那么就是你没有网络了，因为github也被中国GFW了，所以要翻墙之后才可以sync你的文件了！</p>
-<h3 id="8-关于使用hexo-generate报错（2016-08-05）"><a href="#8-关于使用hexo-generate报错（2016-08-05）" class="headerlink" title="8 , 关于使用hexo generate报错（2016-08-05）"></a>8 , 关于使用hexo generate报错（2016-08-05）</h3><p>当我在使用hexo g的时候发现会提示下面的错误，然而在前一天开始整个博客系统都是正常运行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Template render error: (unknown path) [Line 25, Column 31]</span><br><span class="line">  parseAggregate: expected colon after dict key</span><br></pre></td></tr></table></figure></p>
+<h3 id="8-关于使用hexo-generate报错（2016-08-05更新）"><a href="#8-关于使用hexo-generate报错（2016-08-05更新）" class="headerlink" title="8 , 关于使用hexo generate报错（2016-08-05更新）"></a>8 , 关于使用hexo generate报错（2016-08-05更新）</h3><p>当我在使用hexo g的时候发现会提示下面的错误，然而在前一天开始整个博客系统都是正常运行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Template render error: (unknown path) [Line 25, Column 31]</span><br><span class="line">  parseAggregate: expected colon after dict key</span><br></pre></td></tr></table></figure></p>
 <p>最后发现原来是因为博文里面有敏感字符，而我也参照它提示的网址链接过去ctrl+f搜索了一下关键词parse，找到了下面的一些文字。<br>
 Escape Contents
 Hexo uses Nunjucks to render posts (Swig was used in older version, which share a similar syntax). Content wrapped with {{ }} or {% %} will get parsed and may cause problems. You can wrap sensitive content with the raw tag plugin.
 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">Hello &#123;&#123; sensitive &#125;&#125;</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-<p>接着在对应的博文敏感字符上下文添加相应的<strong>和</strong>注释掉就可以解决这个问题了，不过代价是被注释的部分就会以原生的形式出现，也就是不会被渲染。</p>
+<p>接着在对应的博文敏感字符上下文添加相应的注释就可以解决这个问题了，不过代价是被注释的部分就会以原生的形式出现，也就是不会被渲染。</p>
 <hr>
 <p>想要搭建自己的博客可以有很多选择，不一定要和我一样选择hexo做引擎，还有很多优秀的当然也可以使用。下面我列举一些可以免费搭建免流的Bolg引擎<br><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">github Pages和Jekyll搭建免流博客</a><br><a href="http://gitblogdoc.sinaapp.com/" target="_blank" rel="external">GitBlog</a><br><a href="http://blog.novacloud.com/post/build-a-share-blog-use-farbox-and-dropbox.html" target="_blank" rel="external">使用farbox和dropbox搭建共享博客</a><br>我也附上我的博客参照的教程，<a href="http://blog.fens.me/hexo-blog-github/" target="_blank" rel="external">Hexo在github上构建免费的Web应用</a></p>
 <p>喜欢折腾的你也想要自己的博客就赶紧动手吧！</p>
@@ -372,7 +514,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-08T10:45:02+08:00" content="2016-03-08">
               2016-03-08
             </time>
@@ -487,8 +629,8 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -496,7 +638,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               
             </div>
           
@@ -505,7 +647,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -558,7 +700,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
