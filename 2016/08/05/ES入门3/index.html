@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="react-native," />
 
 
 
@@ -67,7 +67,7 @@ ES6的模块的思想，是尽量的静态化，使得编译的时候就能确�
 <meta property="og:site_name" content="zues blog">
 <meta property="og:description" content="Module因为项目进度比较赶，所以我要先跳着学了，现在直接跳到Module这一章来学。首先直接看标题就知道是围绕模块化，因为ES6的class只是面向对象的语法糖，但是没有解决模块化问题。
 ES6的模块的思想，是尽量的静态化，使得编译的时候就能确定模块的依赖关系，以及输入和输出的变量。CommonJS和AMD模块，都只能在运行时确定这些东西。比如，CommonJS模块就是对象，输入时必须查找对象">
-<meta property="og:updated_time" content="2016-08-05T14:47:41.888Z">
+<meta property="og:updated_time" content="2016-08-06T02:46:26.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES入门3">
 <meta name="twitter:description" content="Module因为项目进度比较赶，所以我要先跳着学了，现在直接跳到Module这一章来学。首先直接看标题就知道是围绕模块化，因为ES6的class只是面向对象的语法糖，但是没有解决模块化问题。
@@ -158,7 +158,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -168,7 +168,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -231,12 +231,31 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-05T10:47:22+08:00" content="2016-08-05">
               2016-08-05
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -336,6 +355,12 @@ var _hmt = _hmt || [];
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
@@ -348,6 +373,10 @@ var _hmt = _hmt || [];
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/06/ES入门4/" rel="prev" title="ES入门4">
+                ES入门4 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -403,10 +432,10 @@ var _hmt = _hmt || [];
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -422,8 +451,8 @@ var _hmt = _hmt || [];
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -431,7 +460,7 @@ var _hmt = _hmt || [];
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -440,7 +469,7 @@ var _hmt = _hmt || [];
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -510,7 +539,7 @@ var _hmt = _hmt || [];
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
