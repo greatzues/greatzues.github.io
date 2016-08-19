@@ -41,10 +41,12 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="日记," />
+  <meta name="keywords" content="react-native," />
 
 
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="zues blog" type="application/atom+xml" />
@@ -59,24 +61,19 @@
 
 
 
-<meta name="description" content="凌晨雨声    滴滴答答的雨声敲在地上，溅起玲珑般的声响，懒猪一样的我仍在梦的国度统治着我领土，那雨声似弓箭从我的耳边射到了我的疆土，被漫天乱箭杀个片甲不留，我很不忍心的放弃了自己的子民，睁开了眼睛。
-生日祝福打开手机，已经快到九点，意味着一天忙碌的生活在此刻计时，起床刷牙洗脸上个厕所，打开wechat，才想起今天是我的阳历的生日，算了一下，到现在我敲下这个字的时候，已经有15个小伙伴祝我生日快乐">
+<meta name="description" content="仿百度搜索框仅仅是模仿ui，在输入词的时候会弹出提示。
+TextInput.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谢谢各位小伙伴的祝福">
-<meta property="og:url" content="http://yoursite.com/2016/04/10/谢谢各位小伙伴的祝福/index.html">
+<meta property="og:title" content="react-native学习笔记5">
+<meta property="og:url" content="http://yoursite.com/2016/08/18/react-native学习笔记5/index.html">
 <meta property="og:site_name" content="zues blog">
-<meta property="og:description" content="凌晨雨声    滴滴答答的雨声敲在地上，溅起玲珑般的声响，懒猪一样的我仍在梦的国度统治着我领土，那雨声似弓箭从我的耳边射到了我的疆土，被漫天乱箭杀个片甲不留，我很不忍心的放弃了自己的子民，睁开了眼睛。
-生日祝福打开手机，已经快到九点，意味着一天忙碌的生活在此刻计时，起床刷牙洗脸上个厕所，打开wechat，才想起今天是我的阳历的生日，算了一下，到现在我敲下这个字的时候，已经有15个小伙伴祝我生日快乐">
-<meta property="og:image" content="http://pic.qiantucdn.com/58pic/11/99/07/84q58PICCNS.jpg">
-<meta property="og:image" content="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQYq6DyvI62XrsX57y5oENBJG3KM16qYqSo93UfYv9sEROQWf_1EA">
-<meta property="og:image" content="http://club.sina.com.cn.sinastorage.com/09/11/16/1285910141_ec1ee1bce6254ab68bdd3123ebe61ad1.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/b551a925gw1etw3nrz0ykj21kw1kw4aq.jpg">
-<meta property="og:updated_time" content="2016-04-10T04:02:36.858Z">
+<meta property="og:description" content="仿百度搜索框仅仅是模仿ui，在输入词的时候会弹出提示。
+TextInput.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+<meta property="og:updated_time" content="2016-08-19T13:12:01.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="谢谢各位小伙伴的祝福">
-<meta name="twitter:description" content="凌晨雨声    滴滴答答的雨声敲在地上，溅起玲珑般的声响，懒猪一样的我仍在梦的国度统治着我领土，那雨声似弓箭从我的耳边射到了我的疆土，被漫天乱箭杀个片甲不留，我很不忍心的放弃了自己的子民，睁开了眼睛。
-生日祝福打开手机，已经快到九点，意味着一天忙碌的生活在此刻计时，起床刷牙洗脸上个厕所，打开wechat，才想起今天是我的阳历的生日，算了一下，到现在我敲下这个字的时候，已经有15个小伙伴祝我生日快乐">
-<meta name="twitter:image" content="http://pic.qiantucdn.com/58pic/11/99/07/84q58PICCNS.jpg">
+<meta name="twitter:title" content="react-native学习笔记5">
+<meta name="twitter:description" content="仿百度搜索框仅仅是模仿ui，在输入词的时候会弹出提示。
+TextInput.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
 
 
 
@@ -105,7 +102,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <title> 谢谢各位小伙伴的祝福 | zues blog </title>
+  <title> react-native学习笔记5 | zues blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -225,7 +222,7 @@ var _hmt = _hmt || [];
             
             
               
-                谢谢各位小伙伴的祝福
+                react-native学习笔记5
               
             
           </h1>
@@ -237,19 +234,38 @@ var _hmt = _hmt || [];
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-10T10:19:11+08:00" content="2016-04-10">
-              2016-04-10
+            <time itemprop="dateCreated" datetime="2016-08-18T20:36:57+08:00" content="2016-08-18">
+              2016-08-18
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/10/谢谢各位小伙伴的祝福/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/10/谢谢各位小伙伴的祝福/" itemprop="commentsCount"></span>
+                <a href="/2016/08/18/react-native学习笔记5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/18/react-native学习笔记5/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -271,17 +287,15 @@ var _hmt = _hmt || [];
       
 
       
-        <h2 id="凌晨雨声"><a href="#凌晨雨声" class="headerlink" title="凌晨雨声"></a>凌晨雨声</h2><p><img src="http://pic.qiantucdn.com/58pic/11/99/07/84q58PICCNS.jpg" alt="生日快乐1"><br>    滴滴答答的雨声敲在地上，溅起玲珑般的声响，懒猪一样的我仍在梦的国度统治着我领土，那雨声似弓箭从我的耳边射到了我的疆土，被漫天乱箭杀个片甲不留，我很不忍心的放弃了自己的子民，睁开了眼睛。</p>
-<h2 id="生日祝福"><a href="#生日祝福" class="headerlink" title="生日祝福"></a>生日祝福</h2><p><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQYq6DyvI62XrsX57y5oENBJG3KM16qYqSo93UfYv9sEROQWf_1EA" alt="github"><br>打开手机，已经快到九点，意味着一天忙碌的生活在此刻计时，起床刷牙洗脸上个厕所，打开wechat，才想起今天是我的阳历的生日，算了一下，到现在我敲下这个字的时候，已经有15个小伙伴祝我生日快乐了，恭喜我自己，成功突破个人吉尼斯生日祝福记录，从来在班上就只有我的几个好朋友才会记得我的生日。</p>
-<p>如果此刻你有千里眼，可以看见的18颗洁白的牙齿闪耀在空气中，此刻，世界上最亮的光是太阳的，接着就是我的<strong>笑容</strong>发出的光芒了。</p>
-<h2 id="大学不是象牙塔"><a href="#大学不是象牙塔" class="headerlink" title="大学不是象牙塔"></a>大学不是<a href="http://www.baike.com/wiki/%E8%B1%A1%E7%89%99%E5%A1%94" target="_blank" rel="external">象牙塔</a></h2><p><img src="http://club.sina.com.cn.sinastorage.com/09/11/16/1285910141_ec1ee1bce6254ab68bdd3123ebe61ad1.jpg" alt="拼搏"></p>
-<h3 id="高中的拼搏不是为了大学的享乐"><a href="#高中的拼搏不是为了大学的享乐" class="headerlink" title="高中的拼搏不是为了大学的享乐"></a><a href="http://learning.sohu.com/20151011/n422945805.shtml" target="_blank" rel="external">高中的拼搏不是为了大学的享乐</a></h3><p>每个大学生都有懵懂的大一，仗着自己是小鲜肉，可以任意挥霍自己的时间用来弥补高中为了奋斗高考而逝去的美好青春。</p>
-<pre><code>糟糕的是，干净的双手，靓丽的服饰，整天打lol玩游戏，经常唱K，频繁喝酒，通宵打牌，更多恶习请自己脑补...
-
-开心的是，大学可以下课之后有空去跑跑步，运动一下，鼓起勇气约自己喜欢的女生一起看电影，有时间去打打兼职，遇上自己喜欢的女孩子就去追求，尽管我依旧单身，做着自己喜欢而有意义的事。
-</code></pre><p>我狡辩一下，我在说糟糕的事情的时候是有形容词的，我并没有全盘否定，总之适度都是可以接受的。换句话说，我也喜欢打游戏，不过每天一两个小时就可以了，没必要把大部分时间花在游戏上，况且现在打游戏的人那么多，想要当职业的游戏选手竞争也很激烈。</p>
-<h2 id="兴趣-创造"><a href="#兴趣-创造" class="headerlink" title="兴趣 创造"></a>兴趣 创造</h2><p>希望各位小伙伴都能做干喜欢的事情，寻自己的乐，没人规定选了什么专业你就一定从事什么行业，永远不要让兴趣的小船说翻就翻。</p>
-<h3 id="呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。-特地写一篇浅陋的日记来感谢大家的爱，谢谢！"><a href="#呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。-特地写一篇浅陋的日记来感谢大家的爱，谢谢！" class="headerlink" title="呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。 特地写一篇浅陋的日记来感谢大家的爱，谢谢！"></a>呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。 特地写一篇浅陋的日记来感谢大家的爱，谢谢！</h3><p><img src="http://ww4.sinaimg.cn/large/b551a925gw1etw3nrz0ykj21kw1kw4aq.jpg" alt="生日快乐2"><br>参考文章：<a href="http://www.knowledger.info/2014/07/13/6-reason-you-should-go-do-what-you-love-to-do/" target="_blank" rel="external">勇於去做你自己想做的事的六個理由</a><br>          <a href="https://www.zhihu.com/question/28358499" target="_blank" rel="external">如何长时间高效学习</a><br>          <a href="https://site.douban.com/136100/widget/notes/6048777/note/206121752/" target="_blank" rel="external">美国大学生有多牛</a></p>
+        <h2 id="仿百度搜索框"><a href="#仿百度搜索框" class="headerlink" title="仿百度搜索框"></a>仿百度搜索框</h2><p>仅仅是模仿ui，在输入词的时候会弹出提示。</p>
+<p>TextInput.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">import React , &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, TextInput, PixelRatio &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">var onePt = 1 / PixelRatio.get();//或许安卓设备的一个最小单位，方便适配</span><br><span class="line"></span><br><span class="line">export default class TextInputDemo extends Component &#123;</span><br><span class="line"></span><br><span class="line">	//show boolean this.state</span><br><span class="line">	//value 显示的值</span><br><span class="line">	constructor(props) &#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			show : false,</span><br><span class="line">			value: null,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getValue = (text) =&gt; &#123;</span><br><span class="line">		this.setState(&#123;</span><br><span class="line">			show : true,</span><br><span class="line">			value : text,</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	hide = (val) =&gt; &#123;</span><br><span class="line">		this.setState (&#123;</span><br><span class="line">			show : false, 	</span><br><span class="line">			value : val,</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	render() &#123;</span><br><span class="line">		return (</span><br><span class="line">			&lt;View style = &#123;styles.flex&#125;&gt;</span><br><span class="line">				&lt;View style = &#123;styles.flexDirection&#125;&gt;</span><br><span class="line">					&lt;View style = &#123;[styles.flex,styles.input]&#125;&gt;</span><br><span class="line">						&lt;TextInput </span><br><span class="line">							keyboardType = &quot;web-search&quot;</span><br><span class="line">							value = &#123;this.state.value&#125; </span><br><span class="line">							onChangeText=&#123;this.getValue.bind(this)&#125;</span><br><span class="line">							placeholder = &quot;请输入关键词&quot;/&gt;</span><br><span class="line">					&lt;/View&gt;</span><br><span class="line"></span><br><span class="line">					&lt;View style = &#123;styles.btn&#125;&gt;</span><br><span class="line">						&lt;Text style = &#123;styles.search&#125; onPress = &#123;this.hide.bind(this, this.state.value)&#125;&gt;搜索&lt;/Text&gt;</span><br><span class="line">					&lt;/View&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">				&#123;this.state.show?</span><br><span class="line">						&lt;View style = &#123;styles.result&#125;&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, this.state.value + &apos;哈哈哈哈&apos;)&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt; &#123;this.state.value&#125;哈哈哈哈&lt;/Text&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, this.state.value + &apos;北京&apos;)&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt; &#123;this.state.value&#125;北京&lt;/Text&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, 80 + this.state.value + &apos;综合商店&apos;)&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt; 80&#123;this.state.value&#125;综合商店&lt;/Text&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, this.state.value + &apos;cool&apos;)&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt; &#123;this.state.value&#125;cool&lt;/Text&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, &apos;吃饭&apos; + this.state.value )&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt;吃饭&#123;this.state.value&#125;&lt;/Text&gt;</span><br><span class="line">						&lt;/View&gt;</span><br><span class="line">						: null</span><br><span class="line">					&#125;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	flex: &#123;</span><br><span class="line">		flex:1,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	flexDirection: &#123;</span><br><span class="line">		flexDirection:&apos;row&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	btn: &#123;</span><br><span class="line">		width:45,</span><br><span class="line">		marginLeft:-5,</span><br><span class="line">		marginRight:5,</span><br><span class="line">		backgroundColor:&apos;#23BEFF&apos;,</span><br><span class="line">		height:50,</span><br><span class="line">		justifyContent:&apos;center&apos;,</span><br><span class="line">		alignItems:&apos;center&apos;</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	search: &#123;</span><br><span class="line">		color:&apos;#fff&apos;,</span><br><span class="line">		fontSize:15,</span><br><span class="line">		fontWeight:&apos;bold&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	item: &#123;</span><br><span class="line">		fontSize:16,</span><br><span class="line">		paddingTop:5,</span><br><span class="line">		paddingBottom:10,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	result: &#123;</span><br><span class="line">		marginTop:onePt,</span><br><span class="line">		marginLeft:18,</span><br><span class="line">		marginRight:5,</span><br><span class="line">		height:200.</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	input: &#123;</span><br><span class="line">		height:50,</span><br><span class="line">		borderColor:&apos;red&apos;,</span><br><span class="line">		borderWidth:1,</span><br><span class="line">		marginLeft:10,</span><br><span class="line">		paddingLeft:5,</span><br><span class="line">		borderRadius:5,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	topStatue: &#123;</span><br><span class="line">		marginTop:25,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在构造函数中创建一个value值用来传递，以及提示框的开关show，显示的时候为true。</p>
+<p>在 <code>&lt;TextInput&gt;</code>中<code>keyboardType = &quot;web-search&quot;</code>表示的是<strong>显示便于在网页上书写的虚拟键盘</strong>,而placeholder则是占位符，一般填写请输入关键字之类的，value是框里面显示的文字，为空的时候显示的是占位符（假如有占位符）。</p>
+<p>最后是onChangeText属性，这个属性在value值改变的时候触发，返回改变之后的value给回调函数，因此这里的代码：<code>onChangeText={this.getValue.bind(this)}</code>意思就是在text改变的时候返回参数给回调函数getValue，可以看到该函数记接收到函数之后，将其作为参数赋值给value了。</p>
+<blockquote>
+<p>同理可以看到下面<text>的代码：<code>onPress = {this.hide.bind(this, this.state.value + &#39;哈哈哈哈&#39;)</code>,这句代码和刚刚的bind只有一个参数的明显不一样，这句代码的意思是在<code>onPress(this, i)</code>被调用的时候传递调用的参数<code>i</code>，这个绑定参数的做法我是比较少见到的。然而这不是React的新概念，而是javascript的。</text></p>
+</blockquote>
+<p>于是后面的代码就基本上可以不用看了，在hide将onPress传递过去的参数赋值到value，于是就有了提示的词取代了原来的值。</p>
 
       
     </div>
@@ -296,7 +310,7 @@ var _hmt = _hmt || [];
       
         <div class="post-tags">
           
-            <a href="/tags/日记/" rel="tag">#日记</a>
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
           
         </div>
       
@@ -305,17 +319,13 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/09/androidstudio2-0版本的新发现/" rel="next" title="androidstudio2.0版本的新发现">
-                <i class="fa fa-chevron-left"></i> androidstudio2.0版本的新发现
+              <a href="/2016/08/13/react-native学习笔记4/" rel="next" title="react-native学习笔记4">
+                <i class="fa fa-chevron-left"></i> react-native学习笔记4
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/10/安卓shape的使用/" rel="prev" title="安卓shape的使用">
-                安卓shape的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -448,7 +458,7 @@ var _hmt = _hmt || [];
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#凌晨雨声"><span class="nav-number">1.</span> <span class="nav-text">凌晨雨声</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生日祝福"><span class="nav-number">2.</span> <span class="nav-text">生日祝福</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大学不是象牙塔"><span class="nav-number">3.</span> <span class="nav-text">大学不是象牙塔</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高中的拼搏不是为了大学的享乐"><span class="nav-number">3.1.</span> <span class="nav-text">高中的拼搏不是为了大学的享乐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兴趣-创造"><span class="nav-number">4.</span> <span class="nav-text">兴趣 创造</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。-特地写一篇浅陋的日记来感谢大家的爱，谢谢！"><span class="nav-number">4.1.</span> <span class="nav-text">呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。 特地写一篇浅陋的日记来感谢大家的爱，谢谢！</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#仿百度搜索框"><span class="nav-number">1.</span> <span class="nav-text">仿百度搜索框</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -725,9 +735,9 @@ var _hmt = _hmt || [];
 
     <script type="text/javascript">
       var disqus_shortname = 'greatzuesgithubio';
-      var disqus_identifier = '2016/04/10/谢谢各位小伙伴的祝福/';
-      var disqus_title = '谢谢各位小伙伴的祝福';
-      var disqus_url = 'http://yoursite.com/2016/04/10/谢谢各位小伙伴的祝福/';
+      var disqus_identifier = '2016/08/18/react-native学习笔记5/';
+      var disqus_title = 'react-native学习笔记5';
+      var disqus_url = 'http://yoursite.com/2016/08/18/react-native学习笔记5/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

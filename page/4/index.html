@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -219,6 +219,379 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/03/29/Fragment的高级应用/" itemprop="url">
+                  Fragment的高级应用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-29T14:48:57+08:00" content="2016-03-29">
+              2016-03-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/29/Fragment的高级应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/29/Fragment的高级应用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/29/Fragment基础（下）/" itemprop="url">
+                  Fragment基础（下）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-29T14:46:51+08:00" content="2016-03-29">
+              2016-03-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/29/Fragment基础（下）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/29/Fragment基础（下）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="静态使用fragment"><a href="#静态使用fragment" class="headerlink" title="静态使用fragment"></a>静态使用fragment</h2><p>就是把fragment当作一个简单的view一样生命在activity中使用，然后所有的代码都有各自的Fragment处理，瞬间觉得Activity非常干净，很清爽，代码的可读性,复用性以及可维护性也瞬间搞逼格了有木有。效果自己写代码运行起来试一试<br>简单在fragment中写一个button，然后再fragment中获取监听，使用Toast吐出几个字来。<br>noact_fragment的布局文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">tools:context</span>=<span class="string">"com.example.zues.bolg_fragment.MainActivity"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/bt"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>NoActFragment<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NoActFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.bt)</span><br><span class="line">    ImageView bt;</span><br><span class="line">    <span class="keyword">private</span> LayoutInflater inflater;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, <span class="keyword">final</span> ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        View view = inflater.inflate(R.layout.noact_fragment, container, <span class="keyword">false</span>);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>, view);</span><br><span class="line">        imgHome.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                Toast.makeText(getActivity(),<span class="string">"哈哈，我是button"</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>activity_main布局文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">tools:context</span>=<span class="string">"com.example.zues.bolg_fragment.MainActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!--下面的name是fragment的标识，是fargment所在的目录名字，不可以不写--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fragment</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:name</span>=<span class="string">"com.example.zues.bolg_fragment.fragment.NoActFragment"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/tab_bottom"</span></span><br><span class="line">        <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="好啦，简单的静态fragment就写好了，是不是觉得就像设计照片墙一样，想把自己的照片放哪儿就放哪儿。不过静态的添加不能移除，这种方式在Activity需要的时候就被创建出来，灵活性差，仅仅是作为简单的视图展示就可以了。"><a href="#好啦，简单的静态fragment就写好了，是不是觉得就像设计照片墙一样，想把自己的照片放哪儿就放哪儿。不过静态的添加不能移除，这种方式在Activity需要的时候就被创建出来，灵活性差，仅仅是作为简单的视图展示就可以了。" class="headerlink" title="好啦，简单的静态fragment就写好了，是不是觉得就像设计照片墙一样，想把自己的照片放哪儿就放哪儿。不过静态的添加不能移除，这种方式在Activity需要的时候就被创建出来，灵活性差，仅仅是作为简单的视图展示就可以了。"></a>好啦，简单的静态fragment就写好了，是不是觉得就像设计照片墙一样，想把自己的照片放哪儿就放哪儿。不过静态的添加不能移除，这种方式在Activity需要的时候就被创建出来，灵活性差，仅仅是作为简单的视图展示就可以了。</h2><h2 id="动态使用fragment"><a href="#动态使用fragment" class="headerlink" title="动态使用fragment"></a>动态使用fragment</h2><p>动态使用fragment可以进行动态的添加，更新，以及删除操作<br>为了更好的实现动态使用fragment的效果，我改了一下布局，添加了底部tab，xml比较长我就不写出来了，基本图就像微信的底部tab一样。<br>先上一个fragment,另外一个除了类名不一样之外，其他都是一样的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> inflater.inflate(R.layout.home_fragment,container,<span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tab_home)</span><br><span class="line">    RelativeLayout tabHome;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tab_search)</span><br><span class="line">    RelativeLayout tabSearch;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tab_friend)</span><br><span class="line">    RelativeLayout tabFriend;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tab_mine)</span><br><span class="line">    RelativeLayout tabMine;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.content)</span><br><span class="line">    LinearLayout linearLayout;</span><br><span class="line">    <span class="keyword">private</span> NoActFragment fragment1;</span><br><span class="line">    <span class="keyword">private</span> HomeFragment fragment2;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line">        tabHome.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line">        tabSearch.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFragment</span><span class="params">(<span class="keyword">int</span> res, Fragment fragment)</span> </span>&#123;</span><br><span class="line">        FragmentManager fragmentManager = getFragmentManager();</span><br><span class="line">        FragmentTransaction transaction = fragmentManager.beginTransaction();</span><br><span class="line">        transaction.replace(res, fragment);</span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (v.getId())&#123;</span><br><span class="line">            <span class="keyword">case</span> R.id.tab_home:</span><br><span class="line">                <span class="keyword">if</span> (fragment1 == <span class="keyword">null</span>)fragment1 = <span class="keyword">new</span> NoActFragment();</span><br><span class="line">                addFragment(R.id.content,fragment1);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> R.id.tab_search:</span><br><span class="line">                <span class="keyword">if</span> (fragment2 == <span class="keyword">null</span>)fragment2 = <span class="keyword">new</span> HomeFragment();</span><br><span class="line">                addFragment(R.id.content,fragment2);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后我再借以前看过的一篇博客的图片，来展示一下写好之后的效果<br><img src="http://img.blog.csdn.net/20140720002532641" alt="Fragmeng的动态调用"></p>
+<h2 id="嗯，就这样完成了fragment动态调用，是不是感觉非常好用呢！"><a href="#嗯，就这样完成了fragment动态调用，是不是感觉非常好用呢！" class="headerlink" title="嗯，就这样完成了fragment动态调用，是不是感觉非常好用呢！"></a>嗯，就这样完成了fragment动态调用，是不是感觉非常好用呢！</h2><h3 id="动态使用fragment的几个重要方法详解"><a href="#动态使用fragment的几个重要方法详解" class="headerlink" title="动态使用fragment的几个重要方法详解"></a>动态使用fragment的几个重要方法详解</h3><p>首先在上面的addFragment方法中可以看到几个重要的方法，也就是Fragment常用的三个类：</p>
+<blockquote>
+<ul>
+<li>android.app.Fragment </li>
+<li>android.app.FragmentManager </li>
+<li>android.app.FragmentTransaction<br>  注意：这里一定要保证所有导入的包名一样的，不然的话就会报错，以前刚开始学的时候就是一直犯这个错误，心痛啊！</li>
+<li>FragmentManager fragmentManager = getFragmentManager(); //获取fragment管理者</li>
+<li>FragmentTransaction transaction = fragmentManager.beginTransaction(); //开启一个事务</li>
+<li>transaction.commit(); //提交事务请求，这个方法是最后才使用的，就好像网页的表单中的提交按钮一样<br>另外还有动态添加删除以及更新<br><strong>transaction.add()</strong>,往activity中加入一个fragment<br><strong>transaction.remove()</strong>,从activity中移除一个Fragment<br><strong>transaction.replace()</strong>,使用其他的Fargment来替换当前的fragment<br><strong>transaction.hide()</strong>,隐藏当前的Fragment，但仅仅是设为不可见，并没有销毁这个对象<br><strong>transaction.show()</strong>,显示之前隐藏的fragment，一般和hide一起配合使用<br><strong>detach</strong>,见view从ui中移除，和remove()不太一样，detach()方法能ui销毁，没有销毁fragment实例，在栈中还是划有一块内存空间给这个fragment，但是此时的fragment依旧被FragmentManager维护，这也意味着你可以重新使用这个Fragment通过回调onAttach()方法。但是remove()方法移除之后的实例不能被reAttached,你必须重新add it到fragment transaction事务。<br>如果你的当前activity一直存在，那么在不保留数据的情况下，可以优先使用detach。</li>
+</ul>
+</blockquote>
+<p>关于hide和show方法，当切换Fragment是，如果希望在切换回来之后数据和面板依然存在，就可以使用这两个方法了，不需要一直new，可以进行非null判断，就不会浪费内存空间了。</p>
+<h2 id="不希望保留用户数据，就可以使用remove，然后使用add方法。这里就可以想一想replace其实就是remove和add的结合体，还蛮有趣的。"><a href="#不希望保留用户数据，就可以使用remove，然后使用add方法。这里就可以想一想replace其实就是remove和add的结合体，还蛮有趣的。" class="headerlink" title="不希望保留用户数据，就可以使用remove，然后使用add方法。这里就可以想一想replace其实就是remove和add的结合体，还蛮有趣的。"></a>不希望保留用户数据，就可以使用remove，然后使用add方法。这里就可以想一想replace其实就是remove和add的结合体，还蛮有趣的。</h2><h3 id="fragment的回退栈"><a href="#fragment的回退栈" class="headerlink" title="fragment的回退栈"></a>fragment的回退栈</h3><p>如果想要你的fragment能使用返回键返回从不可见重新返回栈顶的话，就可以在commit()之前声明transaction.addToBackStack(null);<br>有关括号的参数是</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/29/Fragment基础（上）/" itemprop="url">
+                  Fragment基础（上）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-29T14:46:19+08:00" content="2016-03-29">
+              2016-03-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/29/Fragment基础（上）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/29/Fragment基础（上）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>因为自己经常忘记了fragment的写法，所以想通过博客巩固一下自己的知识，以后就不用再看demo来写fragment了，唉，都是写代码写的少惹的祸！！</p>
+<h2 id="fragment的出现"><a href="#fragment的出现" class="headerlink" title="fragment的出现"></a>fragment的出现</h2><h3 id="1，Fragment的含义"><a href="#1，Fragment的含义" class="headerlink" title="1，Fragment的含义"></a>1，Fragment的含义</h3><p>fragment的翻译出来的意思是碎片的意思，很棒的命名，因为它就像一个activity碎片一样可以在activity中拼凑，也就是可以单独一部分出现在activity，基于这个特点曾经在fragmeng出来的时候不管开发什么都会首先考虑能不能用上fragment，似乎没有用上fragment就不时髦的样子。</p>
+<h3 id="2，场景再现"><a href="#2，场景再现" class="headerlink" title="2，场景再现"></a>2，场景再现</h3><p>我们都知道，Android上的界面展示都是通过Activity实现的，Activity实在是太常用了，我相信大家都已经非常熟悉了，这里就不再赘述。但是Activity也有它的局限性，同样的界面在手机上显示可能很好看，在平板上就未必了，因为平板的屏幕非常大，手机的界面放在平板上可能会有过分被拉长、控件间距过大等情况。这个时候更好的体验效果是在Activity中嵌入”小Activity”，然后每个”小Activity”又可以拥有自己的布局。因此，我们今天的主角Fragment闪亮登场了。</p>
+<h3 id="3，Fragment的生命周期"><a href="#3，Fragment的生命周期" class="headerlink" title="3，Fragment的生命周期"></a>3，Fragment的生命周期</h3><p>fragment不能独立存在，必须嵌入到activity中，所以fragment的生命周期必然会受到activity的影响，当 activity 暂停时,它拥有的所有的 Fragment 都暂停了,当 activity 销毁时,它拥有的所有 Fragment 都被销毁。然而,当 activity 运行时(在 onResume()之后,onPause()之前),可以单独地操作每个 Fragment, 比如添加或删除它们。当在执行上述针对 Fragment 的事务时,可以将事务添加到一个栈中,这个栈被 activity 管 理,栈中的每一条都是一个 Fragment 的一次事务。有了这个栈,就可以反向执行 Fragment 的事务,这样就可以在 Fragment 级支持“返回”键(向后导航)。</p>
+<p>当向 activity 中添加一个 Fragment 时,它须置于 ViewGroup 控件中,并且需定义 Fragment 自己的界面。可 以在 layoutxml 文件中声明 Fragment,元素为:<fragment>;也可以在代码中创建 Fragment,然后把它加入到 ViewGroup 控件中。然而,Fragment 不一定非要放在 activity 的界面中,它可以隐藏在后台为 actvitiy 工作。<br>直接上图<br><img src="http://img.my.csdn.net/uploads/201211/29/1354170699_6619.png" alt="Fragment的生命周期"><br>上图非常经典的重现fragment的生命周期，但是继续看下图与Activity的生命周期进行对比看一下<br><img src="http://img.my.csdn.net/uploads/201211/29/1354170682_3824.png" alt="Fragment的生命周期与activity的生命周期对比照"></fragment></p>
+<p>可以发现fragment比activity多了几个回调函数，下面我来详细分解每一个回调方法的作用</p>
+<blockquote>
+<p><strong>onAttach(Activity)</strong> 在fragment被添加进来之后，当Fragment与Activity关联的时候开始调用，在这个方法中可以获得所在的activity，也就是getActivity()方法。说是这样说，但是我还没有理解到什么时候用这个函数比较好<br><strong>onCreateView(LayoutInfalter,ViewGroup,Bundle)</strong> 当activity要得到fragment的layout时调用此方法，fragment在其中创建自己的layout界面。<br><strong>onActivityCreated(Bundle)</strong> 当activity的onCreate()方法返回之后调用这个方法<br><strong>onDestoryView()</strong> 当fragment中的是视图被移除的时候调用<br><strong>onDetach()</strong> 当fragment与activity分离的时候调用</p>
+<h1 id="注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现"><a href="#注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现" class="headerlink" title="注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现"></a>注意：除了onCreateView，其他的所有方法如果你重写了，必须调用父类对于该方法的实现</h1><hr>
+<p>当一个fargment被创建之后会经历以下几个状态：<br>onAttach()<br>onCreate()<br>onCreateView()<br>onActivityCreated()<br>在frgment对用户可见的时候，会经历：<br>onStart()<br>onResume()<br>当fragment进入后台，会经历：<br>onPause()<br>onStop()<br>当fragment被销毁（或者持有它的activity被销毁），它会经历：<br>onPause()<br>onStop()<br>onDestoryView()<br>onDestory()<br>onDetach()<br>像activity一样，在以下状态中可以使用bundle对象保存一个fragment对象<br>onCreate()<br>onCreateView()<br>onActivityCreated()</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/19/android入门学习-activity/" itemprop="url">
                   android入门学习-activity
                 </a>
@@ -232,7 +605,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-19T14:29:37+08:00" content="2016-03-19">
               2016-03-19
             </time>
@@ -244,7 +617,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
@@ -432,7 +805,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-18T17:13:28+08:00" content="2016-03-18">
               2016-03-18
             </time>
@@ -444,7 +817,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
@@ -573,7 +946,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-16T17:01:10+08:00" content="2016-03-16">
               2016-03-16
             </time>
@@ -585,7 +958,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
@@ -715,7 +1088,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-08T11:11:11+08:00" content="2016-03-08">
               2016-03-08
             </time>
@@ -727,7 +1100,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/日记/" itemprop="url" rel="index">
@@ -855,7 +1228,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-08T10:45:02+08:00" content="2016-03-08">
               2016-03-08
             </time>
@@ -970,8 +1343,8 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">35</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">38</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -979,7 +1352,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               
             </div>
           
@@ -988,7 +1361,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -1041,7 +1414,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

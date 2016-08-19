@@ -1,0 +1,803 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react-native," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zues blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="这一次的将要学习文本输入的处理，scrollView，listView以及网络和导航器的操作使用。
+处理文本输入
+在Reactnative中，TextInput是一个允许用户输入文本的基础组件。它有一个onChangeText的属性，这个属性接受一个函数，而这个函数会在文本变化的时候被调用。另外还有一个onSubmitEditing的属性，这个属性会在文本被提交之后调用。
+ok，开始动手12345">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native学习笔记3">
+<meta property="og:url" content="http://yoursite.com/2016/08/09/react-native学习笔记3/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="这一次的将要学习文本输入的处理，scrollView，listView以及网络和导航器的操作使用。
+处理文本输入
+在Reactnative中，TextInput是一个允许用户输入文本的基础组件。它有一个onChangeText的属性，这个属性接受一个函数，而这个函数会在文本变化的时候被调用。另外还有一个onSubmitEditing的属性，这个属性会在文本被提交之后调用。
+ok，开始动手12345">
+<meta property="og:updated_time" content="2016-08-11T02:39:20.706Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native学习笔记3">
+<meta name="twitter:description" content="这一次的将要学习文本输入的处理，scrollView，listView以及网络和导航器的操作使用。
+处理文本输入
+在Reactnative中，TextInput是一个允许用户输入文本的基础组件。它有一个onChangeText的属性，这个属性接受一个函数，而这个函数会在文本变化的时候被调用。另外还有一个onSubmitEditing的属性，这个属性会在文本被提交之后调用。
+ok，开始动手12345">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b706031fedc2f13c7dc61b81d4a77d64";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <title> react-native学习笔记3 | zues blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zues blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                react-native学习笔记3
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-09T10:18:32+08:00" content="2016-08-09">
+              2016-08-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/09/react-native学习笔记3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/09/react-native学习笔记3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这一次的将要学习文本输入的处理，scrollView，listView以及网络和导航器的操作使用。</p>
+<h2 id="处理文本输入"><a href="#处理文本输入" class="headerlink" title="处理文本输入"></a>处理文本输入</h2><hr>
+<p>在Reactnative中，<code>TextInput</code>是一个允许用户输入文本的基础组件。它有一个<code>onChangeText</code>的属性，这个属性接受一个函数，而这个函数会在文本变化的时候被调用。另外还有一个<code>onSubmitEditing</code>的属性，这个属性会在文本被提交之后调用。</p>
+<p>ok，开始动手<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry, Text, TextInput, View &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">class PizzaTranslator extends Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;text: &apos;&apos;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;&#123;padding: 10&#125;&#125;&gt;</span><br><span class="line">        &lt;TextInput</span><br><span class="line">          style=&#123;&#123;height: 40&#125;&#125;</span><br><span class="line">          placeholder=&quot;Type here to translate!&quot;</span><br><span class="line">          onChangeText=&#123;(text) =&gt; this.setState(&#123;text&#125;)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;Text style=&#123;&#123;padding: 10, fontSize: 42&#125;&#125;&gt;</span><br><span class="line">          &#123;this.state.text.split(&apos; &apos;).map((word) =&gt; word &amp;&amp; &apos;🍕&apos;).join(&apos; &apos;)&#125;</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 注册应用(registerComponent)后才能正确渲染</span><br><span class="line">// 注意：只把应用作为一个整体注册一次，而不是每个组件/模块都注册</span><br><span class="line">AppRegistry.registerComponent(&apos;AwesomeProject&apos;, () =&gt; PizzaTranslator);</span><br></pre></td></tr></table></figure></p>
+<p>首先肯定要先注意代码里面的两行注释，然后就开始从class哪里开始一步一步分析下来。在构造函数中，声明了组件的state的成员变量text为空字符。</p>
+<p>接着text接受构造函数传来的一个<code>text</code>参数，我们把<code>text</code>传入到onChangeText中的函数去，调用setState方法，这样它就会随着时间而变化。</p>
+<p>然后再下一段<code>&lt;Text&gt;</code>代码则是接收并显示这个组件的state里面的text值，加入匹配空格键的时候，将会触发map里面对应的函数，传入一个word文本，并且返回一个word和对应的蛋糕<code>🍕</code>，最后追加到Text里面。</p>
+<p>为了更加清晰的理解，我做过两个修改，首先是把构造函数的text变量改变名字，然后其他的也对应改掉，程序正常运行，所以我一开始的分析是真确的。接着我修改了<code>&lt;Text&gt;</code>的子元素里面的split(‘/‘)和join(‘<em>‘),发现只要输入<code>/</code>符号对应的transtor文本就会出现`</em><code>符号，如果在这中间输入非</code>/`值的话，就会出现蛋糕，明白现象之后本质很快就能出现了。</p>
+<p>所以我最后理解的<code>{this.state.text.split(&#39; &#39;).map((word) =&gt; word &amp;&amp; &#39;🍕&#39;).join(&#39; &#39;)}</code>作用是：匹配text中含有split参数的符号，假如匹配成功，触发map函数，接收匹配符号<code>/</code>前的数字，函数返回一个布朗值：如果是<code>word &amp;&amp; &#39;🍕&#39;</code>值的话就执行后面的join方法。哈哈，不知道分析是不是正确的，不管了，后面肯定还会遇到这个的，到时有更深刻的解释再回来补。</p>
+<p>如果想要在用户输入的时候进行验证，可以参考<a href="http://reactjs.cn/react/docs/forms.html" target="_blank" rel="external">React的表单组件中的受限组件</a>，里面有详细的示例。另外以后需要更多关于TextInput的特点就可以关注<a href="http://reactnative.cn/docs/0.30/textinput.html" target="_blank" rel="external">TextInput的文档</a>。</p>
+<h2 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h2><hr>
+<p>ScrollView是最经常使用的滚动容器了，它能容纳多个组件和视图。ScrollView中的子元素不一定需要同样的，这将允许设置垂直和水平滚动。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class IScrolledDownAndWhatHappenedNextShockedMe extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;ScrollView&gt;</span><br><span class="line">        &lt;Text style = &#123;&#123;fontSize: 96&#125;&#125;&gt;ScrollView me plz&lt;/Text&gt;</span><br><span class="line">        &lt;Image source=&#123;require(&apos;./img/header_logo.png&apos;)&#125; /&gt;</span><br><span class="line">      &lt;/ScrollView&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="LIstView"><a href="#LIstView" class="headerlink" title="LIstView"></a>LIstView</h2><hr>
+<p><code>LIstView</code>能很好的展示一系列数据，这些数据可以是随时间不断变化的，但是，仅仅是展示数据。不像scrollView，listView只能显示当前屏幕的数据，也就是说，不能滚动显示所有数据。</p>
+<p>ListView组件需要两个主要的属性值：<code>dataSource</code>和<code>renderRow</code>。<code>dataSource</code>是列表信息展示的资源，而<code>renderRow</code>则是每次取一条资源然后返回一个格式化的组件去渲染，也就是我们安卓里面说的适配。</p>
+<p>就像下面的代码创造了一个简单的LIstView，在构造函数中初始化之后的数据dataSource用于填满ListView的数据，每一个Item在dataSource都会被渲染成为一个<code>&lt;Text&gt;</code>组件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry, ListView, Text, View &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">class ListViewBasics extends Component &#123;</span><br><span class="line">  // Initialize the hardcoded data</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    const ds = new ListView.DataSource(&#123;rowHasChanged: (r1, r2) =&gt; r1 !== r2&#125;);</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      dataSource: ds.cloneWithRows([</span><br><span class="line">        &apos;John&apos;, &apos;Joel&apos;, &apos;James&apos;, &apos;Jimmy&apos;, &apos;Jackson&apos;, &apos;Jillian&apos;, &apos;Julie&apos;, &apos;Devin&apos;</span><br><span class="line">      ])</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;&#123;paddingTop: 22&#125;&#125;&gt;</span><br><span class="line">        &lt;ListView</span><br><span class="line">          dataSource=&#123;this.state.dataSource&#125;</span><br><span class="line">          renderRow=&#123;(rowData) =&gt; &lt;Text&gt;&#123;rowData&#125;&lt;/Text&gt;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// App registration and rendering</span><br><span class="line">AppRegistry.registerComponent(&apos;ListViewBasics&apos;, () =&gt; ListViewBasics);</span><br></pre></td></tr></table></figure></p>
+<p>不过我还是不明白构造函数内的ds变量的意思，可是我知道接下来一句的意思，就是在state中声明一个成员变量dattaSource，对应存储一大段数据，然后在后面的<code>&lt;ListView&gt;</code>中使用，我认为renderRow的参数rowData应该是第一条dataSource传进去的每一个Item。</p>
+<h2 id="Networking"><a href="#Networking" class="headerlink" title="Networking"></a>Networking</h2><hr>
+<h3 id="使用Fetch"><a href="#使用Fetch" class="headerlink" title="使用Fetch"></a>使用Fetch</h3><p>rn提供了<code>Fetch</code>来满足网络请求的需要，<code>Fetch</code>和XMLHttpRequest以及其他网络请求API相似，如果想要知道更多关于使用Fetch可以到<a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" rel="external">MDN上的Using Fetch</a>去获取更多的用法。</p>
+<h3 id="request请求"><a href="#request请求" class="headerlink" title="request请求"></a>request请求</h3><p>如果仅仅需要获得一个url上的内容，我们可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;https://mywebsite.com/mydata.json&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>Fetch还有一个可选择的第二个参数，可以用来自定义http请求，我可以用这个来构造额外的请求头部信息，或者是做一个POST请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;https://mywebsite.com/endpoint/&apos;, &#123;</span><br><span class="line">  method: &apos;POST&apos;,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    &apos;Accept&apos;: &apos;application/json&apos;,</span><br><span class="line">    &apos;Content-Type&apos;: &apos;application/json&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  body: JSON.stringify(&#123;</span><br><span class="line">    firstParam: &apos;yourValue&apos;,</span><br><span class="line">    secondParam: &apos;yourOtherValue&apos;,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>然后可以在<a href="https://developer.mozilla.org/en-US/docs/Web/API/Request" target="_blank" rel="external">Fetch Request文档</a>上查看更多关于fetch的属性。</p>
+<h3 id="处理response"><a href="#处理response" class="headerlink" title="处理response"></a>处理response</h3><p>有了请求之后当然会有响应，网络请求是异步操作的，因此fetch方法会返回一个Promise使得可以简单的编写异步运行的代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">getMoviesFromApiAsync() &#123;</span><br><span class="line">	return fetch(&apos;http://facebook.github.io/react-native/movies.json&apos;)</span><br><span class="line">	.then((response) =&gt; response.json())</span><br><span class="line">	.then((responseJson) =&gt; &#123;</span><br><span class="line">		return responseJson.movies;</span><br><span class="line">	&#125;)</span><br><span class="line">	.catch((error) =&gt; &#123;</span><br><span class="line">		console.error(error);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>官网还介绍了ES2017的<code>async/await</code>来操作异步网络任务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">async getMoviesFromApi() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      let response = await fetch(&apos;http://facebook.github.io/react-native/movies.json&apos;);</span><br><span class="line">      let responseJson = await response.json();</span><br><span class="line">      return responseJson.movies;</span><br><span class="line">    &#125; catch(error) &#123;</span><br><span class="line">      console.error(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：一定要记得要catch来自fetch抛出的异常，不然程序突然死掉就不好了。</p>
+<h3 id="使用其他的网络请求库"><a href="#使用其他的网络请求库" class="headerlink" title="使用其他的网络请求库"></a>使用其他的网络请求库</h3><p>除了<a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="external">XMLHttpRequest API</a>，因此使用第三方请求库像<code>frisbee</code>和<code>axios</code>也是使用XMLHttpRequest作为底层的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var request = new XMLHttpRequest();</span><br><span class="line">request.onreadystatechange = (e) =&gt; &#123;</span><br><span class="line">	if (request.readyState !== 4) &#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	if(request.states === 200) &#123;</span><br><span class="line">		console.log(&apos;success&apos;,request.responseText);</span><br><span class="line">	&#125;else &#123;</span><br><span class="line">		console.warn(&apos;error&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">request.open(&apos;GET&apos;, &apos;https://mywebsite.com/endpoint/&apos;);</span><br><span class="line">request.send();</span><br></pre></td></tr></table></figure></p>
+<p>XMLHttpRequest的安全模型和web上的不一样，因为native app中的XMLHttpRequest 没有COPS这个概念。</p>
+<h3 id="支持WebSocket"><a href="#支持WebSocket" class="headerlink" title="支持WebSocket"></a>支持WebSocket</h3><p>这个协议允许在单个tcp连接上提供全双工的通信信道（我完全不知道是什么意思）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var ws  = new WebSocket(&apos;ws://host.com/path&apos;);</span><br><span class="line"></span><br><span class="line">ws.onopen = () =&gt; &#123;</span><br><span class="line">	//connection opened</span><br><span class="line">	</span><br><span class="line">	ws.wend(&apos;something&apos;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ws.onmessage = (e) =&gt; &#123;</span><br><span class="line">	//a message was received</span><br><span class="line">	console.log(e.data);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ws.onerror = (e) =&gt; &#123;</span><br><span class="line">	//an error occurred</span><br><span class="line">	console.log(e.messge);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ws.onclose = (e) =&gt; &#123;</span><br><span class="line">	//connection closed</span><br><span class="line">	console.log(e.code, e.reason);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>哈哈，学习到这里感觉好煎熬，一开始的基础不牢固，就算代码能看懂一些也写不出来。我觉得应该花一晚上去复习一下知识点。 </p>
+<h2 id="使用Navigator"><a href="#使用Navigator" class="headerlink" title="使用Navigator"></a>使用Navigator</h2><hr>
+<p>通过渲染一个<code>Navigator</code>,然后用<code>Navigator</code>通过自定义的函数渲染场景<code>renderScene</code>属性.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">	return (</span><br><span class="line">		&lt;Navigator</span><br><span class="line">			initialRoute = &#123;&#123;title: &apos;My Initial Scene&apos;, index: 0 &#125;&#125;</span><br><span class="line">			renderScene = &#123;(route, navigator) =&gt; &#123;</span><br><span class="line">			&lt;MyScene title = &#123;route.title&#125; /&gt;</span><br><span class="line">		&#125;&#125;</span><br><span class="line">		/&gt;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>问题来了，这时候有点疑惑这里的路由函数renderScene的实现了。根据我查阅资料得知，<code>renderScene</code>函数是Navigator组件的必填函数，参数有route和当前的navigator对象，返回值是一个jsx（也就是<code>&lt;组件名字 /&gt;</code>）。</p>
+<p>好了，接下来就是分析参数，类似传统的路由，根据传进去的route返回一个作为新页面的jsx，也就是说所有的路由函数都是在这个函数里面实现的。route是一个自定义的对象，是<code>navigator.push</code>方法中传入的对象。</p>
+<p>这个函数是路由的统一处理器，所有的页面跳转请求都会通过此函数的计算来获得具体的jsx页面，由于路由处理是统一的，因此要求传入的route对象要满足统一的标准。因此在设计头对象遵循：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	name: &apos;Page2&apos;,//名字用于做上下文判断和日志输出</span><br><span class="line">	page: &lt;Page2 /&gt;, //jsx形式的page，作为新页面的jsx</span><br><span class="line">	//page: () =&gt; &lt;Page2 /&gt;, //当然函数形式的page也是可以的，要求必须返回jsx，作为新页面的jsx</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>写图片轮播的时候遇到一个小坑，导入react-native-viewpager库的时候出现了问题，一开始直接用命令提示符输入<code>npm i -d react-native-viewpager --save</code>提示error找不到package.json,于是转到项目文件夹下再次输入，提示权限不足，要求获得管理员权限。最后使用管理员权限打开命令提示符，尽管也有ERR提示bufferutil@1.2.1~install: Failed to exec install script，但是打开node_modules可以发现已经有react-native-viewpager这个库了。</p>
+<p>在写图片轮播的时候又遇到一样的坑了：Adjacent JSX elements must be wrapped in an enclosing tag，解决办法就是因为缺少了一个父View，添加<code>&lt;View&gt;&lt;/View&gt;</code>即可。</p>
+<p>先贴上图片轮播的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, Image, StyleSheet, Dimensions &#125; from &apos;react-native&apos;;</span><br><span class="line">import ViewPager from &apos;react-native-viewpager&apos;;</span><br><span class="line">//创建图片资源文件夹数组变量</span><br><span class="line">const BANNER_IMG = [</span><br><span class="line">	require(&apos;./img/banner/1.jpg&apos;),</span><br><span class="line">	require(&apos;./img/banner/2.jpg&apos;),</span><br><span class="line">	require(&apos;./img/banner/3.jpg&apos;),</span><br><span class="line">	require(&apos;./img/banner/4.jpg&apos;)</span><br><span class="line">];</span><br><span class="line">//获取设备宽度</span><br><span class="line">const deviceWidth = Dimensions.get(&apos;window&apos;).width;</span><br><span class="line"></span><br><span class="line">export default class Banner extends Component &#123;</span><br><span class="line">	constructor(props) &#123;</span><br><span class="line">		super(props);</span><br><span class="line">		//构建DataSource对象</span><br><span class="line">		var dataSource = new ViewPager.DataSource(&#123;</span><br><span class="line">			pageHasChange: (p1, p2) =&gt; p1!==p2,</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		//实际的DataSource存放在state中</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			dataSource: dataSource.cloneWithPages(BANNER_IMG)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	renderPage(data, pageID)&#123;</span><br><span class="line">		return (</span><br><span class="line">			&lt;Image </span><br><span class="line">				source = &#123;data&#125;</span><br><span class="line">				style = &#123;styles.page&#125;</span><br><span class="line">			/&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render() &#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;ViewPager </span><br><span class="line">			style = &#123;&#123;height: 130&#125;&#125;</span><br><span class="line">			dataSource = &#123;this.state.dataSource&#125;</span><br><span class="line">			renderPage = &#123;this.renderPage&#125;</span><br><span class="line">			isLoop =&#123;true&#125;</span><br><span class="line">			autoPlay = &#123;true&#125;</span><br><span class="line">		/&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	page: &#123;</span><br><span class="line">		width: deviceWidth,	</span><br><span class="line">		height: 130,</span><br><span class="line">		resizeMode: &apos;stretch&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/06/ES入门5/" rel="next" title="ES入门5">
+                <i class="fa fa-chevron-left"></i> ES入门5
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/13/react-native学习笔记4/" rel="prev" title="react-native学习笔记4">
+                react-native学习笔记4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="漏雨" />
+          <p class="site-author-name" itemprop="name">漏雨</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">38</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#处理文本输入"><span class="nav-number">1.</span> <span class="nav-text">处理文本输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ScrollView"><span class="nav-number">2.</span> <span class="nav-text">ScrollView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIstView"><span class="nav-number">3.</span> <span class="nav-text">LIstView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Networking"><span class="nav-number">4.</span> <span class="nav-text">Networking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Fetch"><span class="nav-number">4.1.</span> <span class="nav-text">使用Fetch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request请求"><span class="nav-number">4.2.</span> <span class="nav-text">request请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理response"><span class="nav-number">4.3.</span> <span class="nav-text">处理response</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用其他的网络请求库"><span class="nav-number">4.4.</span> <span class="nav-text">使用其他的网络请求库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持WebSocket"><span class="nav-number">4.5.</span> <span class="nav-text">支持WebSocket</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Navigator"><span class="nav-number">5.</span> <span class="nav-text">使用Navigator</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">漏雨</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'greatzuesgithubio';
+      var disqus_identifier = '2016/08/09/react-native学习笔记3/';
+      var disqus_title = 'react-native学习笔记3';
+      var disqus_url = 'http://yoursite.com/2016/08/09/react-native学习笔记3/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
