@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -219,6 +219,441 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/08/22/深度解析rn知乎日报/" itemprop="url">
+                  深度解析rn知乎日报
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-22T08:25:55+08:00" content="2016-08-22">
+              2016-08-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/22/深度解析rn知乎日报/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/22/深度解析rn知乎日报/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="推荐："><a href="#推荐：" class="headerlink" title="推荐："></a>推荐：</h2><hr>
+<p>文章的开始之前我要先推荐一篇博客，写得非常清晰，笔者看完瞬间觉得逻辑清晰了很多，献上地址：<a href="http://codecloud.net/11084.html" target="_blank" rel="external">React 组件构造方法: ES5 (createClass) 还是 ES6 (class)？ | 程序员的资料库</a>。</p>
+<h2 id="正文：index-android-js"><a href="#正文：index-android-js" class="headerlink" title="正文：index.android.js"></a>正文：index.android.js</h2><hr>
+<p>首先看到入口<code>index.android.js</code>,这里是用ES5写的代码，在ES6中默认是使用严格方式，因此这里的ues strict在ES6中就可以省略了。然后是ES5以前导入其他函数的语法，ES6就使用import关键字来做同样的事情了。好了，后面肯定还有很多ES5的语法，但是暂时不用理了，因为这对于代码阅读没有多大的影响。</p>
+<p>接着是声明一个<code>_navigator</code>变量，编写安卓手机物理返回键的事件监听，判断是否在此页面之前还有导航页，如果存在的话就使用<code>pop()</code>方法返回，返回true表示执行这个物理键操作。</p>
+<p>然后是入口类<code>RCTZhiHuDaily</code>,一开始看到的是mixins,这个暂时不知道是什么，先不管后面用到的时候再回头说。那现在就开始接触组件的生命周期了：</p>
+<blockquote>
+<ul>
+<li>getInitialState: 获得初始化组件状态，只调用一次，在ES6中被构造函数取代。</li>
+<li>componentWillMount：组件将要加载，只调用一次</li>
+<li>componentDidMount：组件加载完成并显示出来了，也就是完成了一次绘制，只调用一次</li>
+<li>render：绘制组件，可能调用多次</li>
+</ul>
+</blockquote>
+<p>可以看到在<code>componentDidMount</code>方法中设置了一个定时器，里面有一个开关，应该是启动页轮播图的开关，不过经过我翻译这个单词（译为“溅”）之后就不这么想了，肯定不是轮播图的，因为这个单词有个组合splash screen，译为启动页面.</p>
+<p><code>RouteMapper</code>函数：相当于路由的函数，接收route，navigationOperations，onComponentRef三个参数，将传进去的onComponentRef赋值给_navigator,判断传进去的页面name，假如是home，就返回MainScreen组件，假如是story，就返回详情页StoryScreen，并且通过组件通信传递文章详情，两个返回的组件都有一个同样的属性那就是navigator，毋庸置疑，那肯定就是在路由中传递的组件Component了。</p>
+<p>getInitialState函数：在组件初始化的时候将状态的成员splashed开关设为false</p>
+<p>onActionSelected函数：没有处理方法</p>
+<p>render函数：判断假如splash为true的时候返回启动页面initialRoute的name为home，结合上面的RouteMapper函数，可以知道此时会返回一个MainScreen组件，并且在render属性也明确了路由函数是<code>this.RouteMapper</code>。</p>
+<p>最后是样式，flexDirections为column表示排列为竖直，如果是row则是水平。</p>
+<p>分析到这里的时候开始有点糊涂了，为什么要一开始getInitialState要将splashed设为false，然后又在componentDidMount放一个定时器将splashed改为true,直接将其设为true不就好了吗。先去看看SplashScreen和MainScreen，回头再来补充。<br>》————–<strong><em>我是补充</em></strong>——————-》</p>
+<blockquote>
+<p>果然和我想的一样，首先是在渲染的时候进入一个动画的启动导航页，页面只有一幅图片，并且通过动画缩小的特效来做的引导页，然后在渲染完成之后通知<code>componentDidMount</code>函数，在<code>componentDidMount</code>函数里面设置定时时间，之后执行<code>setState</code>方法跳转到首页，哈哈，特效挺漂亮的。</p>
+</blockquote>
+<p>另外这里还有一个疑问就是setTimeout和setInterval的区别，setTimeout是在指定延迟时间去执行一次表达式，仅执行一次，而setInterval则是每隔指定的时间就执行一次表达式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> */</span><br><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">var React = require(&apos;react-native&apos;);</span><br><span class="line">//import React from &apos;react-native&apos;;</span><br><span class="line">var &#123;</span><br><span class="line">  AppRegistry,</span><br><span class="line">  BackAndroid,</span><br><span class="line">  Text,</span><br><span class="line">  View,</span><br><span class="line">  Navigator,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  ToolbarAndroid,</span><br><span class="line">  ToastAndroid,</span><br><span class="line">&#125; = React;</span><br><span class="line">var SplashScreen = require(&apos;./SplashScreen&apos;);</span><br><span class="line">var MainScreen = require(&apos;./MainScreen&apos;);</span><br><span class="line">var StoryScreen = require(&apos;./StoryScreen&apos;);</span><br><span class="line">var ToolbarAndroid = require(&apos;ToolbarAndroid&apos;);</span><br><span class="line">var TimerMixin = require(&apos;react-timer-mixin&apos;);</span><br><span class="line"></span><br><span class="line">var _navigator;</span><br><span class="line">BackAndroid.addEventListener(&apos;hardwareBackPress&apos;, () =&gt; &#123;</span><br><span class="line">  if (_navigator &amp;&amp; _navigator.getCurrentRoutes().length &gt; 1) &#123;</span><br><span class="line">    _navigator.pop();</span><br><span class="line">    return true;</span><br><span class="line">  &#125;</span><br><span class="line">  return false;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var RCTZhiHuDaily = React.createClass(&#123;</span><br><span class="line">  mixins: [TimerMixin],</span><br><span class="line">  componentDidMount: function() &#123;</span><br><span class="line">    this.setTimeout(</span><br><span class="line">      () =&gt; &#123;</span><br><span class="line">        this.setState(&#123;splashed: true&#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">      2000,</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line">  RouteMapper: function(route, navigationOperations, onComponentRef) &#123;</span><br><span class="line">    _navigator = navigationOperations;</span><br><span class="line">    if (route.name === &apos;home&apos;) &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">          &lt;MainScreen navigator=&#123;navigationOperations&#125;/&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125; else if (route.name === &apos;story&apos;) &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">          &lt;StoryScreen</span><br><span class="line">            style=&#123;&#123;flex: 1&#125;&#125;</span><br><span class="line">            navigator=&#123;navigationOperations&#125;</span><br><span class="line">            story=&#123;route.story&#125; /&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  getInitialState: function() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      splashed: false,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  onActionSelected: function(position) &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    if (this.state.splashed) &#123;</span><br><span class="line">      var initialRoute = &#123;name: &apos;home&apos;&#125;;</span><br><span class="line">      return (</span><br><span class="line">        &lt;Navigator</span><br><span class="line">          style=&#123;styles.container&#125;</span><br><span class="line">          initialRoute=&#123;initialRoute&#125;</span><br><span class="line">          configureScene=&#123;() =&gt; Navigator.SceneConfigs.FadeAndroid&#125;</span><br><span class="line">          renderScene=&#123;this.RouteMapper&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;SplashScreen /&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    flexDirection: &apos;column&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  instructions: &#123;</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    color: &apos;#333333&apos;,</span><br><span class="line">    marginBottom: 5,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;RCTZhiHuDaily&apos;, () =&gt; RCTZhiHuDaily);</span><br></pre></td></tr></table></figure></p>
+<h2 id="SplashScreen-js"><a href="#SplashScreen-js" class="headerlink" title="SplashScreen.js"></a>SplashScreen.js</h2><hr>
+<p>根据index.android.js的生命周期执行顺序，接下来需要看的是SplashScreen.js。</p>
+<p>头部的导入几乎可以忽略，不过可以提一下<code>var WINDOW_WIDTH = Dimensions.get(&#39;window&#39;).width;</code>这个是获取设备窗口的宽度，可以很灵活的适配手机视图。</p>
+<p>然后就是SplashScreen类了，简单浏览一下代码发现原来这里只是简单的展示一副图片并且使用了动画效果，看来这一页是大多数app的引导页，这样我就可以去补充刚刚上面的疑问了。</p>
+<p><strong>fetchData函数</strong>：repository.getCover()这个是DataRepository里面的一个函数，return返回<code>_safeStorage(KEY_COVER)</code>,其中KEY_COVER的值为@Cover，是用来持久保存启动页的动画封面。</p>
+<p>传进去一个key值到_safeStorage中去，该方法通过<code>new</code>来调用<code>Promise</code>的构造器返回一个实例化之后的promise对象，这个对象可以使用<code>promise.then()</code>方法。</p>
+<p>可以看到传进去之后的key被<code>AsyncStorage</code>的<code>static getItem(key: string, callback?: ?(error: ?Error, result: ?string) =&gt; void)</code>所使用，这个方法也返回一个promise对象，将get到的item作为一个变量retData通过<code>promise的resolve</code>传出去给then方法使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">DataRepository.prototype.getCover = function() &#123;</span><br><span class="line">  return this._safeStorage(KEY_COVER);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">DataRepository.prototype._safeStorage = function(key: string) &#123; </span><br><span class="line">  return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    AsyncStorage.getItem(key, (error, result) =&gt; &#123;</span><br><span class="line">      var retData = JSON.parse(result);</span><br><span class="line">      if (error) &#123;</span><br><span class="line">        console.error(error);</span><br><span class="line">        resolve(null);</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        resolve(retData);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>接下来就是<code>repository.getCover().then((result) =&gt;{...}</code>的操作了,then函数能像先知一样对可能发生的结果进行不同的回调处理，如果是resolve（成功）的话就会调用<code>onFulfilled</code>方法,如果是reject(失败)的话就会被catch到error，触发<code>onRejected</code>方法，因为下面的代码都是箭头函数，因此我们不能明显看到那两个方法的名字。</p>
+<p>在getCover执行完之后就开始执行的是<code>repository.updateCover();</code>我们需要倒回去看一下这个函数的实现，下面是这个方法的代码，需要贴出来的是<code>API_COVER_URL</code>,这个作为fetch的参数，后面还有then，说明是通过get方式获取到response，得到response.json，并且继续通过then方法将返回的json数据作为then的参数responseData传进去，方法里面使用AsyncStorage.setItem将其用键值对的形式永久保存起来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DataRepository.prototype.updateCover = function() &#123;</span><br><span class="line">  fetch(API_COVER_URL)</span><br><span class="line">    .then((response) =&gt; response.json())</span><br><span class="line">    .then((responseData) =&gt; &#123;</span><br><span class="line">      AsyncStorage.setItem(KEY_COVER, JSON.stringify(responseData));</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) =&gt; &#123;</span><br><span class="line">      console.error(error);</span><br><span class="line">    &#125;)</span><br><span class="line">    .done();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>getInitialState函数：返回state的两个变量<code>cover</code>为null和<code>bounceValue</code>为<code>new Animated.Value(1)</code>，其中cover肯定是后面用来装载启动页api对应的图片uri，详情可以看到<code>fetchData</code>里面的<code>setState</code>和<code>render</code>里面的<code>uri: this.state.cover.img</code>，然后<code>bounceValue</code>变量存储<code>new Animated.Value(1)</code>是rn的animated里面常见的声明实例用法了（<a href="">如果不明白请看我上一篇博客</a>），因为这里的效果是timing缩放，所以这里参数中的1表示的图像的原始形状。</p>
+<p>componentDidMount函数：这个函数在render之后执行，这里的代码表示这个函数首先会执行fetchData函数，接着执行setValue又是为原型，开启动画<code>Animated.timing(animateValue, conf&lt;Object&gt;)</code>,画面再次渲染。</p>
+<p>render函数：局部变量img和text，判断如果cover的api存在就分别用来存储cover.img和cover.text（至于为什么会有img和text就要自己打开api去看一下里面的json数据了），如果不存在的话img就为require(‘image!splash’),哈哈，这句没看懂，文件夹里面也没有image文件夹啊而且感叹号也不知道是什么意思。接着就是return回<animated.image>,这个动画参数需要有source（图片资源），已经将动画原始值绑定到style里面去，也就是这里的<code>transform:[{scale: this.state.bounceValue}]</code>,transform是转换的意思，scale是规模比例。<text>放{text}文字。</text></animated.image></p>
+<h3 id="这里是完整代码SplashScreen-js"><a href="#这里是完整代码SplashScreen-js" class="headerlink" title="这里是完整代码SplashScreen.js"></a>这里是完整代码SplashScreen.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">var React = require(&apos;react-native&apos;);</span><br><span class="line">var &#123;</span><br><span class="line">  AsyncStorage,</span><br><span class="line">  Image,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  View,</span><br><span class="line">  Dimensions,</span><br><span class="line">&#125; = React;</span><br><span class="line"></span><br><span class="line">var Animated = require(&apos;Animated&apos;);</span><br><span class="line"></span><br><span class="line">var WINDOW_WIDTH = Dimensions.get(&apos;window&apos;).width;</span><br><span class="line"></span><br><span class="line">var DataRepository = require(&apos;./DataRepository&apos;);</span><br><span class="line">var repository = new DataRepository();</span><br><span class="line"></span><br><span class="line">var SplashScreen = React.createClass(&#123;</span><br><span class="line">  fetchData: function() &#123;</span><br><span class="line">    repository.getCover()</span><br><span class="line">      .then((result) =&gt; &#123;</span><br><span class="line">        if (result)&#123;</span><br><span class="line">          this.setState(&#123;cover: result&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch((error) =&gt; &#123;</span><br><span class="line">        console.error(error);</span><br><span class="line">      &#125;)</span><br><span class="line">      .done();</span><br><span class="line">    repository.updateCover();</span><br><span class="line">  &#125;,</span><br><span class="line">  getInitialState: function() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      cover: null,</span><br><span class="line">      bounceValue: new Animated.Value(1),</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  componentDidMount: function() &#123;</span><br><span class="line">    this.fetchData();</span><br><span class="line">    this.state.bounceValue.setValue(1);</span><br><span class="line">    Animated.timing(</span><br><span class="line">      this.state.bounceValue,</span><br><span class="line">      &#123;</span><br><span class="line">        toValue: 1.2,</span><br><span class="line">        duration: 5000,</span><br><span class="line">      &#125;</span><br><span class="line">    ).start();</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    var img, text;</span><br><span class="line">    if (this.state.cover) &#123;</span><br><span class="line">      img = &#123;uri: this.state.cover.img&#125;;</span><br><span class="line">      text = this.state.cover.text;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      img = require(&apos;image!splash&apos;);</span><br><span class="line">      text = &apos;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return(</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Animated.Image</span><br><span class="line">          source=&#123;img&#125;</span><br><span class="line">          style=&#123;&#123;</span><br><span class="line">            flex: 1,</span><br><span class="line">            width: WINDOW_WIDTH,</span><br><span class="line">            height: 1,</span><br><span class="line">            transform: [</span><br><span class="line">              &#123;scale: this.state.bounceValue&#125;,</span><br><span class="line">            ]</span><br><span class="line">          &#125;&#125; /&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.text&#125;&gt;</span><br><span class="line">            &#123;text&#125;</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">        &lt;Image style=&#123;styles.logo&#125; source=&#123;require(&apos;image!splash_logo&apos;)&#125; /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    flexDirection: &apos;column&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  cover: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    width: 200,</span><br><span class="line">    height: 1,</span><br><span class="line">  &#125;,</span><br><span class="line">  logo: &#123;</span><br><span class="line">    resizeMode: &apos;contain&apos;,</span><br><span class="line">    position: &apos;absolute&apos;,</span><br><span class="line">    left: 0,</span><br><span class="line">    right: 0,</span><br><span class="line">    bottom: 30,</span><br><span class="line">    height: 54,</span><br><span class="line">    backgroundColor: &apos;transparent&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  text: &#123;</span><br><span class="line">    flex: 1,</span><br><span class="line">    fontSize: 16,</span><br><span class="line">    textAlign: &apos;center&apos;,</span><br><span class="line">    color: &apos;white&apos;,</span><br><span class="line">    position: &apos;absolute&apos;,</span><br><span class="line">    left: 0,</span><br><span class="line">    right: 0,</span><br><span class="line">    bottom: 10,</span><br><span class="line">    backgroundColor: &apos;transparent&apos;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">module.exports = SplashScreen;</span><br></pre></td></tr></table></figure>
+<h2 id="MainScreen"><a href="#MainScreen" class="headerlink" title="MainScreen"></a>MainScreen</h2><hr>
+<p>这里的代码相对比较少，导入那一块因为现在已经是ES6，有新的语法糖，可以使用import关键字导入。类外部声明了一个全局变量<code>DRAWER_REF = &#39;drawer&#39;</code>.开始分析类里面的方法：<br>构造函数getInitialState(ES6是constructor写法有所不同)：声明一个state的成员变量theme为null。</p>
+<p>onSelectTheme函数：这个方法用来选择主题，方法传入一个theme，使用ref调用DRAWER_REF对应的抽屉的close方法，将抽屉关闭，并且将theme赋值给state的theme变量。</p>
+<p>onRefresh函数：调用onSelectTheme函数，用来刷新主题。</p>
+<p>render函数：这里用局部变量draw存储<themelist>组件，并且将其属性onSelectItem触发的时候调用onSelectTheme回调函数。然后返回一个<a href="https://github.com/root-two/react-native-drawer" target="_blank" rel="external">react-native-drawer</a>库的一个实例<code>&lt;Drawer&gt;</code>组件。这里的属性比较多，一开始是ref用来标识，然后就是`openDrawerOffset</themelist></p>
+<blockquote>
+<p>这里的属性比较多，一开始是ref用来标识，然后就是<code>openDrawerOffset (Number|Function)</code>这个是定义抽屉当被打开的手势偏移量，参数可以是像素也可以是整数，也可以是一个方法。<code>panCloseMask (Number)</code>,鉴于英文水平不好，google上好像也找不到解释，暂时先不理[破涕为笑.jpg]。然后就是content (React.Component)根据意思可以知道也就是抽屉菜单。</p>
+</blockquote>
+<p>然后被这个抽屉函数包括的当然就是知乎日报里面的list了，所以这个<storieslist>就是一开始启动动画过渡之后的知乎新闻列表，而属性的this.state.theme就是每一个item的样式，因为点击每一个新闻都可以跳转到详情页，所以navigator就是导航器，经过index.android.js的路由然后跳转到对应的页面。</storieslist></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">var React = require(&apos;react-native&apos;);</span><br><span class="line">var &#123;</span><br><span class="line">  AsyncStorage,</span><br><span class="line">  Image,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  View,</span><br><span class="line">&#125; = React;</span><br><span class="line"></span><br><span class="line">var Drawer = require(&apos;react-native-drawer&apos;);</span><br><span class="line">var StoriesList = require(&apos;./StoriesList&apos;);</span><br><span class="line">var ThemesList = require(&apos;./ThemesList&apos;);</span><br><span class="line"></span><br><span class="line">var DRAWER_REF = &apos;drawer&apos;;</span><br><span class="line"></span><br><span class="line">var MainScreen = React.createClass(&#123;</span><br><span class="line">  getInitialState: function() &#123;</span><br><span class="line">    return (&#123;</span><br><span class="line">      theme: null,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  onSelectTheme: function(theme) &#123;</span><br><span class="line">    this.refs[DRAWER_REF].close();</span><br><span class="line">    this.setState(&#123;theme: theme&#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  onRefresh: function() &#123;</span><br><span class="line">    this.onSelectTheme(this.state.theme);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    var drawer = &lt;ThemesList onSelectItem=&#123;this.onSelectTheme&#125; /&gt;;</span><br><span class="line">    return (</span><br><span class="line">        &lt;Drawer</span><br><span class="line">          ref=&#123;DRAWER_REF&#125;</span><br><span class="line">          openDrawerOffset=&#123;100&#125;</span><br><span class="line">          panCloseMask=&#123;1&#125;</span><br><span class="line">          content=&#123;drawer&#125; &gt;</span><br><span class="line">          &lt;StoriesList theme=&#123;this.state.theme&#125; navigator=&#123;this.props.navigator&#125;/&gt;</span><br><span class="line">        &lt;/Drawer&gt;</span><br><span class="line">      );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">module.exports = MainScreen;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/20/react-native学习笔记7/" itemprop="url">
+                  react-native学习笔记7
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-20T20:39:46+08:00" content="2016-08-20">
+              2016-08-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/20/react-native学习笔记7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/20/react-native学习笔记7/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="DrawerLayoutAndroid使用"><a href="#DrawerLayoutAndroid使用" class="headerlink" title="DrawerLayoutAndroid使用"></a>DrawerLayoutAndroid使用</h2><p>这个是抽屉式布局，像我这种熟练安卓的人自然就知道所有基本的属性了。不说太多，亮代码：</p>
+<p>DrawerLayout.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, DrawerLayoutAndroid &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">export default class DrawerLayoutDemo extends Component &#123;</span><br><span class="line">	render()&#123;</span><br><span class="line">		var navigationView = (</span><br><span class="line">			&lt;View style = &#123;&#123;flex:1,backgroundColor:&apos;#ff0&apos;&#125;&#125;&gt;</span><br><span class="line">				&lt;Text style = &#123;&#123;margin: 10, fontSize: 15, textAlign: &apos;left&apos;&#125;&#125;&gt;我是抽屉&lt;/Text&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line"></span><br><span class="line">		return (</span><br><span class="line">			&lt;DrawerLayoutAndroid</span><br><span class="line">				drawerWidth = &#123;100&#125;</span><br><span class="line">				drawerPosition = &#123;DrawerLayoutAndroid.positions.Right&#125;</span><br><span class="line">				renderNavigationView = &#123;() =&gt; navigationView&#125;&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;View style = &#123;&#123;flex:1,alignItems: &apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">					&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;Hello&lt;/Text&gt;</span><br><span class="line">					&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;React native cool world!&lt;/Text&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">			&lt;/DrawerLayoutAndroid&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>drawerWidth是抽屉拉开之后展开的宽度，这里的100是比较小的，反正设计需要多大自己改就可以了。<br>drawerPosition是抽屉的位置，默认是left，这里我设置成右边，因此手势需要向左划才可以拉出抽屉。</p>
+</blockquote>
+<p>然后需要注意的是在使用这个已经封装好的组件的话需要单独使用，并且展示内容要在<code>&lt;DrawerLayoutAndroid&gt;&lt;/DrawerLayoutAndroid&gt;</code>。什么意思呢？就是我刚刚在我已经写过的图片选择组件下直接填加这个抽屉组件，发现拉出抽屉有效的距离仅仅是含有下面这段代码的地方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;View style = &#123;&#123;flex:1,alignItems: &apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">	&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;Hello&lt;/Text&gt;</span><br><span class="line">	&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;React native cool world!&lt;/Text&gt;</span><br><span class="line">&lt;/View&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>而一旦离开这段代码的区域，就不能滑动出来抽屉，而且抽屉也仅仅是一部分的，总的来说就像qq的列表那样的效果那样，只在一部分地方可以滑动出抽屉</p>
+<p>如果强行给DrawerLayoutAndroid添加height，想下面这样的话就会造成加入抽屉后原来的组件内容被覆盖，假设原来的组件是有按钮的话，按钮的点击效果就会无效。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;DrawerLayoutAndroid</span><br><span class="line">				style = &#123;&#123;height:200&#125;&#125;</span><br><span class="line">				drawerWidth = &#123;100&#125;</span><br><span class="line">				drawerPosition = &#123;DrawerLayoutAndroid.positions.Right&#125;</span><br><span class="line">				renderNavigationView = &#123;() =&gt; navigationView&#125;&gt;</span><br><span class="line">				</span><br><span class="line">				...</span><br><span class="line">&lt;DrawerLayoutAndroid&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="../img/drawer.png" alt="抽屉屏蔽掉图片选择器的点击效果"></p>
+<p>因此建议初学的我如果需要写出想安卓那样高度铺满整个屏幕的抽屉的话，就需要在<code>&lt;DrawerLayoutAndroid&gt;&lt;/DrawerLayoutAndroid&gt;</code>里面编写了，省时便宜又实惠。就像下面的代码,就可以使用图片选择器的按钮了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, DrawerLayoutAndroid &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">import ImageDemo from &apos;./Image&apos;</span><br><span class="line"></span><br><span class="line">var imgs = [</span><br><span class="line">  &apos;http://misc.360buyimg.com/lib/img/e/logo-201305.png&apos;,</span><br><span class="line">  &apos;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png&apos;,</span><br><span class="line">  &apos;http://www.csdn.net/css/logo.png&apos;  </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">export default class DrawerLayoutDemo extends Component &#123;</span><br><span class="line">	render()&#123;</span><br><span class="line">		var navigationView = (</span><br><span class="line">			&lt;View style = &#123;&#123;flex:1,backgroundColor:&apos;#fff&apos;&#125;&#125;&gt;</span><br><span class="line">				&lt;Text style = &#123;&#123;margin: 10, fontSize: 15, textAlign: &apos;left&apos;&#125;&#125;&gt;我是抽屉&lt;/Text&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line"></span><br><span class="line">		return (</span><br><span class="line">			&lt;DrawerLayoutAndroid</span><br><span class="line">				drawerWidth = &#123;100&#125;</span><br><span class="line">				drawerPosition = &#123;DrawerLayoutAndroid.positions.Right&#125;</span><br><span class="line">				renderNavigationView = &#123;() =&gt; navigationView&#125;&gt;</span><br><span class="line"></span><br><span class="line">				&lt;View style = &#123;&#123;flex:1,alignItems: &apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">					&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;Hello&lt;/Text&gt;</span><br><span class="line">					&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;我是抽屉1&lt;/Text&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;ImageDemo imgs = &#123;imgs&#125;&gt;&lt;/ImageDemo&gt;</span><br><span class="line">			&lt;/DrawerLayoutAndroid&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行起来是这样的：<br><img src="../img/drawer2.png" alt="在drawerlayoutandroid里面编写视图"></p>
+<p>刚刚说到可以写出像qq那样的抽屉列表，感觉真的好像用这个方法写简单多了，不过我试过，在一个页面写上两个封装好的上面的组件是不行的，同时直接在上面的组件内写多个<drawerlayoutandroid></drawerlayoutandroid>也是运行出来是一片空白。</p>
+<p>以后能力强了之后再尝试一下。</p>
+<h2 id="ViewPager组件"><a href="#ViewPager组件" class="headerlink" title="ViewPager组件"></a>ViewPager组件</h2><hr>
+<p>基本属性：</p>
+<blockquote>
+<ul>
+<li>initialPage 这是初始选中页的下标</li>
+<li>onPageScroll 页面滚动的回调函数，不管是动画还是用户在页面滑动/拖拽都会执行，回调参数中的<code>event.nativeEvent</code>对象会包含这些数据：<code>position</code>（位置）是一个数字，而 <code>offset</code>（偏移量）是一个在[0,1)大于等于0小于1之间的范围，很明显就是页面当前切换的状态了</li>
+<li>onPageScrollStateChanged  idle(不动) dragging(拖拽) settling(停靠)</li>
+<li>onPageSelected 这个回调会在页面切换完成之后（当用户在页面滑动）调用回调函数中的event.nativeEvent对象返回：position</li>
+<li>onPageEnabled 滚动功能的开启与否，true表示开启，默认是true</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/19/react-native学习笔记6/" itemprop="url">
+                  react-native学习笔记6
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-19T21:19:25+08:00" content="2016-08-19">
+              2016-08-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/19/react-native学习笔记6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/19/react-native学习笔记6/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="image组件"><a href="#image组件" class="headerlink" title="image组件"></a>image组件</h2><p>仿照视频顺便改了一点代码写了一个图片查看器</p>
+<p>Image.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Image, TouchableOpacity &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">export default class ImageDemo extends Component &#123;</span><br><span class="line">	//本地图片引用方法：source = &#123;require(&apos;./img/xxx.png&apos;)&#125;</span><br><span class="line">	//网络图片引用方法：source = &#123;&#123;uri : &apos;http://host/path//.png&apos;&#125;&#125;</span><br><span class="line">	constructor (props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			count: 1,</span><br><span class="line">			imgs:this.props.imgs,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	goPreview()&#123;</span><br><span class="line">		var Count = this.state.count;</span><br><span class="line">		Count--;</span><br><span class="line">		if(Count &gt;= 0 )&#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:Count,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:this.state.imgs.length -1,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	goNext()&#123;</span><br><span class="line">		var Count = this.state.count;</span><br><span class="line">		Count++;</span><br><span class="line">		if(Count &lt; this.state.imgs.length)&#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:Count,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:0,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;View style = &#123;[styles.flex, &#123;alignItems:&apos;center&apos;&#125;]&#125;&gt;</span><br><span class="line">				&lt;View style = &#123;styles.image&#125;&gt;</span><br><span class="line">					&lt;Image style = &#123;styles.img&#125;</span><br><span class="line">						resizeMode = &quot;contain&quot;</span><br><span class="line">						source = &#123;&#123;uri:this.state.imgs[this.state.count]&#125;&#125;</span><br><span class="line">					/&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line"></span><br><span class="line">				&lt;View style = &#123;styles.btns&#125;&gt;</span><br><span class="line">					&lt;TouchableOpacity onPress = &#123;this.goPreview.bind(this)&#125;&gt;&lt;View style = &#123;styles.btn&#125;&gt;&lt;Text&gt;上一张&lt;/Text&gt;&lt;/View&gt;&lt;/TouchableOpacity&gt;</span><br><span class="line"></span><br><span class="line">					&lt;TouchableOpacity onPress = &#123;this.goNext.bind(this)&#125;&gt;&lt;View style = &#123;styles.btn&#125;&gt;&lt;Text&gt;下一张&lt;/Text&gt;&lt;/View&gt;&lt;/TouchableOpacity&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	flex: &#123;</span><br><span class="line">		flex:1,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	image: &#123;</span><br><span class="line">		borderWidth:1,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	img: &#123;</span><br><span class="line">		height:150,</span><br><span class="line">		width:200,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	btn: &#123;</span><br><span class="line">		width:60,</span><br><span class="line">		height: 30,</span><br><span class="line">		borderColor: &apos;#0089FF&apos;,</span><br><span class="line">		borderWidth: 1,</span><br><span class="line">		justifyContent: &apos;center&apos;,</span><br><span class="line">		alignItems:&apos;center&apos;,</span><br><span class="line">		borderRadius:3,</span><br><span class="line">		marginRight:20,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	btns: &#123;</span><br><span class="line">		flexDirection: &apos;row&apos;, //设置主轴方向为水平</span><br><span class="line">		marginTop: 20,</span><br><span class="line">		justifyContent: &apos;center&apos; //设置主轴方向居中也就是水平居中了</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在构造函数中初始化使用图片地址数字选择count，已及<code>imgs:this.props.imgs</code>，这句代码的意思和前面所学的<code>const {imgs} = this.props;</code>作用是一样的，都是把imgs作为一个灵活的组件属性，然后就可以将图片uri数组传递进去。</p>
+<p>看到<image>组件，里面有一个resizeMode属性，这个属性有三个可选择的值，分别是stretch(拉伸：不保留原始分辨率)，cover(平铺：按照原图平铺)，contain(包裹：等比例放大缩小平铺),因此一般都会选择第三个，具体效果自己去测试。</image></p>
+<p>关于source，在代码的注释已经解释的比较清楚了，需要注意的是source里面放的必须是静态字符串，所以不可以在source里面进行动态选择uri，要选择的话在source外面慢慢搞。</p>
+</blockquote>
+<p>然后就是看到goPreview和goNext方法了，这里只需要将一种就可以了，其中看到两处都用var声明的Count变量，因此知道var的作用域是整个同级节点和子节点，这个在以前的<a href="http://greatzues.github.io/2016/07/31/ES6%E5%85%A5%E9%97%A8/" target="_blank" rel="external">ES学习</a>中也提到过这个块级作用域的知识点。</p>
+<h2 id="最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。"><a href="#最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。" class="headerlink" title="最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。"></a>最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。</h2><h3 id="引用的时候就只需要这样写："><a href="#引用的时候就只需要这样写：" class="headerlink" title="引用的时候就只需要这样写："></a>引用的时候就只需要这样写：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import ImageDemo from &apos;./Image&apos;;</span><br><span class="line"></span><br><span class="line">var imgs = [</span><br><span class="line">  &apos;http://misc.360buyimg.com/lib/img/e/logo-201305.png&apos;,</span><br><span class="line">  &apos;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png&apos;,</span><br><span class="line">  &apos;http://www.csdn.net/css/logo.png&apos;  </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">class Main extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;ImageDemo imgs = &#123;imgs&#125;&gt;&lt;/ImageDemo&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;YourProject&apos;, () =&gt; Main);</span><br></pre></td></tr></table></figure>
+<h2 id="Picker函数"><a href="#Picker函数" class="headerlink" title="Picker函数"></a>Picker函数</h2><hr>
+<p>这个比较简单，等会记下一点东西就可以了。直接上代码吧！</p>
+<h3 id="Picker-js"><a href="#Picker-js" class="headerlink" title="Picker.js"></a>Picker.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Picker, ProgressBarAndroid &#125; from &apos;react-native&apos;</span><br><span class="line"></span><br><span class="line">export default class PickerDemo extends Component &#123;</span><br><span class="line">	constructor(props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			language:null,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;View&gt;</span><br><span class="line">				&lt;Text&gt;Picker组件&lt;/Text&gt;</span><br><span class="line"></span><br><span class="line">				&lt;Picker </span><br><span class="line">				selectedValue = &#123;this.state.language&#125;</span><br><span class="line">				onValueChange = &#123;(lang) =&gt; this.setState(&#123;language: lang&#125;)&#125;</span><br><span class="line">				mode = &quot;dropdown&quot;</span><br><span class="line">				style = &#123;&#123;color:&apos;#f00&apos;&#125;&#125;&gt;</span><br><span class="line"></span><br><span class="line">					&lt;Picker.Item label = &quot;Jave&quot; value = &quot;java&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Javascript&quot; value = &quot;js&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;C语言&quot; value = &quot;C&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Php开发&quot; value = &quot;Php&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Python开发&quot; value = &quot;Python&quot; /&gt;</span><br><span class="line">				&lt;/Picker&gt;</span><br><span class="line"></span><br><span class="line">				&lt;Text&gt;&#123;this.state.language&#125;&lt;/Text&gt;</span><br><span class="line"></span><br><span class="line">				&#123;/**</span><br><span class="line">					styleAttr（进度条样式）： Horizontal Small Large Inverse SmallInverse LargeInverse </span><br><span class="line">					progress： 进度值在0-1之间</span><br><span class="line">				**/&#125;</span><br><span class="line">				&lt;ProgressBarAndroid styleAttr = &quot;Horizontal&quot; /&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>直接看到<code>onValueChange = {(lang) =&gt; this.setState({language:lang})}</code>这段代码，这里需要注意的是将改变的value值传递给回调函数的自定义参数lang，我们可以这么想，这里少了一个步骤，就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onValueChange = &#123;</span><br><span class="line">	lang = value,</span><br><span class="line">	(lang) =&gt; this.setState(&#123;language: lang&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然而这仅仅是我为了理解想出来的一个步骤而已，因此上面的onValueChange改变的是value值，而不是label值，所以这段代码在模拟器上运行起来的时候就可以很明显的看到了，最下面的<text>组件显示的text是Picker.Item的value值，而在picker上显示的是label值。</text></p>
+<p>最后是mode，这个mode除了“dialog（对话框）”以外还有<code>dropdown</code>（下拉），默认是dialog。其他属性请看<a href="https://facebook.github.io/react-native/docs/picker.html" target="_blank" rel="external">官方帮助文档</a>。</p>
+<h2 id="ProgressBarAndroid-和-ProgressViewIOS"><a href="#ProgressBarAndroid-和-ProgressViewIOS" class="headerlink" title="ProgressBarAndroid 和 ProgressViewIOS"></a>ProgressBarAndroid 和 ProgressViewIOS</h2><hr>
+<p>代码在上面，因为progress分android和ios的，所以以后是需要自定义封装好在一个组件里面使用的。</p>
+<p>主要有两个属性，分别是styleAttr和progress。<br>styleAttr（进度条样式）： Normal(普通) Horizontal(水平) Small(小圆圈) Large(大圆圈) Inverse(中圆圈) SmallInverse(也是小圆圈) LargeInverse(大圆圈) ，哈哈，好像Small和SmallInverse以及Large和LargeInverse是一样的<br>progress： 进度值在0-1之间</p>
+<p>了解<a href="https://facebook.github.io/react-native/docs/progressbarandroid.html" target="_blank" rel="external">其他属性访问这里</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/18/react-native学习笔记5/" itemprop="url">
                   react-native学习笔记5
                 </a>
@@ -232,7 +667,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-18T20:36:57+08:00" content="2016-08-18">
               2016-08-18
             </time>
@@ -244,7 +679,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
@@ -297,6 +732,31 @@ var _hmt = _hmt || [];
 <p>同理可以看到下面<text>的代码：<code>onPress = {this.hide.bind(this, this.state.value + &#39;哈哈哈哈&#39;)</code>,这句代码和刚刚的bind只有一个参数的明显不一样，这句代码的意思是在<code>onPress(this, i)</code>被调用的时候传递调用的参数<code>i</code>，这个绑定参数的做法我是比较少见到的。然而这不是React的新概念，而是javascript的。</text></p>
 </blockquote>
 <p>于是后面的代码就基本上可以不用看了，在hide将onPress传递过去的参数赋值到value，于是就有了提示的词取代了原来的值。</p>
+<h2 id="animated使用"><a href="#animated使用" class="headerlink" title="animated使用"></a>animated使用</h2><hr>
+<p>首先推荐这篇博客： <a href="http://www.cnblogs.com/vajoy/p/5299315.html" target="_blank" rel="external">ReactNative入门 —— 动画篇（上）</a>,里面介绍的非常详细，我这里是为了自己加深印象，所以结合代码再整理一下思路。</p>
+<blockquote>
+<p>基本的Animated组件有Animated.View、Animated.Image、Animated.Text三种，animated支持三种动画效果：<code>spring``decay``timing</code>。<code>Interpolation插值函数</code>，4种动画组合：同时、顺序、错峰、延迟,动画执行回调，跟踪动态值，animated.event输入事件，响应当前的动画值等功能。</p>
+<p>将初始值绑定到动画目标属性上，如style。调用start启动动画stop停止动画，同时可以在start里面回调相关功能。</p>
+<ul>
+<li><p>Animated.timing(animateValue, conf<object>) ,透明效果,第二个conf<object>设置参数参考：</object></object></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  duration: 动画持续的时间（单位是毫秒），默认为500。</span><br><span class="line">  easing：一个用于定义曲线的渐变函数。阅读Easing模块可以找到许多预定义的函数。iOS默认为Easing.inOut(Easing.ease)。</span><br><span class="line">  delay: 在一段时间之后开始动画（单位是毫秒），默认为0。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Animated.spring(animateValue, conf<object>) ,基础的单次弹跳物理模型,conf<object>设置参数参考：</object></object></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  friction: 控制“弹跳系数”、夸张系数，默认为7。</span><br><span class="line">  tension: 控制速度，默认40。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Animated.decay(animateValue, conf<object>) ,以一个初始速度开始并且逐渐减慢停止,conf<object>设置参数参考：</object></object></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  velocity: 起始速度，必填参数。</span><br><span class="line">  deceleration: 速度衰减比例，默认为0.997。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>第一个参数是实例化动画的初始值，一般会在构造函数中声明，将初始值赋给state里面的变量。其中使用Animated.Value设定一个或多个初始值，例如位置属性，透明属性，角度属性等。</p>
+<h3 id="监听动画"><a href="#监听动画" class="headerlink" title="监听动画"></a>监听动画</h3><p>使用<code>animateValue.stopAnimation(callback&lt;Function&gt;)</code>或者是<code>animateValue.addListener(callback&lt;Function&gt;)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Animated, TouchableOpacity, Easing&#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">var animteHandler;</span><br><span class="line">export default class AnimatedDemo extends Component &#123;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        animateHandler = Animated.timing(this.state.opacityAnmValue, &#123;</span><br><span class="line">            toValue: 1,  //透明度动画最终值</span><br><span class="line">            duration: 3000,   //动画时长3000毫秒</span><br><span class="line">            easing: Easing.bezier(0.15, 0.73, 0.37, 1.2)  //缓动函数</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            opacityAnmValue : new Animated.Value(0)   //设置透明度动画初始值</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _onPress() &#123;</span><br><span class="line">       animateHandler.start &amp;&amp; animateHandler.start()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                &lt;Animated.View ref=&quot;view&quot; style=&#123;[styles.content, &#123;width: 200, height: 20, opacity: this.state.opacityAnmValue&#125;]&#125;&gt;</span><br><span class="line">                    &lt;Text style=&#123;[&#123;textAlign: &apos;center&apos;&#125;]&#125;&gt;Hi, here is VaJoy&lt;/Text&gt;</span><br><span class="line">                &lt;/Animated.View&gt;</span><br><span class="line">                &lt;TouchableOpacity onPress=&#123;this._onPress&#125;&gt;</span><br><span class="line">                    &lt;View style=&#123;styles.button&#125;&gt;</span><br><span class="line">                        &lt;Text style=&#123;styles.buttonText&#125;&gt;Press me!&lt;/Text&gt;</span><br><span class="line">                    &lt;/View&gt;</span><br><span class="line">                &lt;/TouchableOpacity&gt;</span><br><span class="line">                &lt;TouchableOpacity &gt;</span><br><span class="line">                    &lt;View style=&#123;styles.button&#125;&gt;</span><br><span class="line">                        &lt;Text style=&#123;styles.buttonText&#125;&gt;忽略本按钮&lt;/Text&gt;</span><br><span class="line">                    &lt;/View&gt;</span><br><span class="line">                &lt;/TouchableOpacity&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	container:&#123;</span><br><span class="line">		flex:1,</span><br><span class="line">		justifyContent: &apos;center&apos;,</span><br><span class="line">		alignItems: &apos;center&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">	buttonText:&#123;</span><br><span class="line">		fontSize:16,</span><br><span class="line">		color: &apos;white&apos;,</span><br><span class="line">		fontWeight: &apos;bold&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">	button:&#123;</span><br><span class="line">		marginTop: 10,</span><br><span class="line">		paddingVertical: 10,</span><br><span class="line">		paddingHorizontal: 20,</span><br><span class="line">		backgroundColor: &apos;black&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">	content: &#123;</span><br><span class="line">		justifyContent: &apos;center&apos;,</span><br><span class="line">		backgroundColor: &apos;yellow&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>经过我一日一夜的探索，终于找到一点技巧了，首先在构造函数中设置state的成员变量<code>opacityAnmValue</code>为<code>new Animated.Value(0)</code>,正如注释所说，这是设置透明度初始值。</p>
+<p>然后是render函数中在对应的<code>&lt;Animated.View&gt;</code>中绑定opacity传入到style中，编写onPress方法，在按下按钮的时候调用start()方法开始动画，因为有了开始的方法，当然也会有动画的设置参数。</p>
+<p>因此最后是在componentDidMount中设置动画启动前的参数，因为是timming，所以会有duration和<a href="https://github.com/facebook/react-native/blob/master/Libraries/Animated/src/Easing.js" target="_blank" rel="external">Easing</a>（Easing动画函数模块会在<code>react-native/Libraries/Animated/src/</code>目录下，该模块与预设了linear，ease，elastic，bezier等缓动特性。）,toVlaue是透明度动画的最终值，这里的1代表的是100%不透明。</p>
+<p>呃，还是提一下好，一开始写demo的时候一直在报错<code>underfined is not an object(&#39;animatehandler.start&#39;)</code>，而animatehandler这个变量只有在ComponentDidMount和_onPress使用到，后来折腾了一下午，卧槽，原来是ComponentDidMount的首字母写成大写了，导致赋值函数一直没有被调用，其实是小写componentDidMount，我都快哭出来了，浪费了我一个下午，这是个血淋林的教训啊！</p>
+<p>ok,以后复习的时候就结合自己这篇博客的分析逻辑和开头分享的博客一对一找回感觉，这篇博客就先到这里，有问题欢迎提出来。</p>
 
           
         
@@ -355,7 +815,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-13T17:12:46+08:00" content="2016-08-13">
               2016-08-13
             </time>
@@ -367,7 +827,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
@@ -496,7 +956,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-09T10:18:32+08:00" content="2016-08-09">
               2016-08-09
             </time>
@@ -508,7 +968,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
@@ -647,7 +1107,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-06T16:22:30+08:00" content="2016-08-06">
               2016-08-06
             </time>
@@ -659,7 +1119,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
@@ -767,7 +1227,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-06T10:45:49+08:00" content="2016-08-06">
               2016-08-06
             </time>
@@ -779,7 +1239,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
@@ -896,7 +1356,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-05T10:47:22+08:00" content="2016-08-05">
               2016-08-05
             </time>
@@ -908,7 +1368,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
@@ -1068,7 +1528,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-08-02T15:32:41+08:00" content="2016-08-02">
               2016-08-02
             </time>
@@ -1080,7 +1540,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/react/" itemprop="url" rel="index">
@@ -1176,686 +1636,11 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/31/ES6入门/" itemprop="url">
-                  ES6入门
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-31T16:40:00+08:00" content="2016-07-31">
-              2016-07-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/31/ES6入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/31/ES6入门/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p>我是在学习react-native官网的时候说开发react-native需要用到ES6的时候才开始学的，一切都还是刚刚开始，我标记一下我是在<a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">阮一峰老师的书</a>中学习的，非常棒的一本书，习惯看书学习的同学可以自己去买一本来看，链接之后就有购买途径了。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<p>ES6是ECMAScript 6.0的简称，也是javascript的下一代标准，尽管这套标准目前还没有在所有的浏览器上完整实现，所以目前而言web开发中还很少使用，但是React Native内置了对ES2015(也就是ES6)标准的支持，你可以放心使用而无需担心兼容性问题。</p>
-<h2 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h2><hr>
-<p>先看一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let a = 10;</span><br><span class="line">  var b = 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a // ReferenceError: a is not defined.</span><br><span class="line">b // 1</span><br></pre></td></tr></table></figure></p>
-<p>我们能看到注释，在代码快使用var和let声明两个变量，在代码块外调用，let声明的变量报错而var声明的会返回正确的值。这也能看出，let声明的变量只在它所在的代码块有效。</p>
-<p>因此我们可以使用let命令写for循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; arr.length; i++) &#123;&#125;</span><br><span class="line"></span><br><span class="line">console.log(i);</span><br><span class="line">//ReferenceError: i is not defined</span><br></pre></td></tr></table></figure></p>
-<p>可以看到在循环体外log是会报错的。再看下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 10</span><br></pre></td></tr></table></figure></p>
-<p>for循环的i是var声明的，在全局范围内有效，每一次循环都会覆盖旧的值，因此最后输出的是最后一轮的i值。而使用let的话，最后输出的是6，那为什么会是6呢！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 6</span><br></pre></td></tr></table></figure></p>
-<p>因为在每一次for循环中，每一次的i都只会在该次循环中存在并且有效，而循环结束到下一次循环开始，又会进行let i = i + 1的操作，从而跳出该次循环，但是同时又重新为i赋了一个值。导致最后的数组a[]方法在每一次循环生成不同的function。</p>
-<pre><code>不管是用let还是var声明，变量都要在声明后使用，否则就会报错。
-</code></pre><h3 id="暂时性死区（temporal-dead-zone，简称TDZ）"><a href="#暂时性死区（temporal-dead-zone，简称TDZ）" class="headerlink" title="暂时性死区（temporal dead zone，简称TDZ）"></a>暂时性死区（temporal dead zone，简称TDZ）</h3><p>如果在局部代码块中使用<strong>let</strong>和<strong>const</strong>命令，这些区块就会形成封闭作用域，在变量声明之前使用这些变量就会报错，尽管可能在代码块外面已经用var声明过同名变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var tmp = 123;</span><br><span class="line"></span><br><span class="line">if (true) &#123;</span><br><span class="line">  tmp = &apos;abc&apos;; // ReferenceError</span><br><span class="line">  let tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">  // TDZ开始</span><br><span class="line">  tmp = &apos;abc&apos;; // ReferenceError</span><br><span class="line">  console.log(tmp); // ReferenceError</span><br><span class="line"></span><br><span class="line">  let tmp; // TDZ结束</span><br><span class="line">  console.log(tmp); // undefined</span><br><span class="line"></span><br><span class="line">  tmp = 123;</span><br><span class="line">  console.log(tmp); // 123</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>有些死区比较难以被发现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function bar(x = y, y = 2) &#123;</span><br><span class="line">  return [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar(); // 报错</span><br></pre></td></tr></table></figure></p>
-<p>因为在参数里面声明的x直接就调用y，而y此时还没被声明。因此这时候调用bar()就会报错，其实我写这个例子主要是不明白为什么在调用bar的时候不用带参，我写java的时候如果函数有参的话调用的时候也要带参，不管，我先标记一下！！！<br>反正不管怎样就是要先声明在使用变量就对了。</p>
-<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var tmp = new Date();</span><br><span class="line"></span><br><span class="line">function f() &#123;</span><br><span class="line">  console.log(tmp);</span><br><span class="line">  if (false) &#123;</span><br><span class="line">    var tmp = &quot;hello world&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(); // undefined</span><br></pre></td></tr></table></figure>
-<p>上面代码执行之后会输出undefined，因为变量提升，导致内层tmp覆盖外层的tmp。但是这里我的重心是这段代码是不是写错了，if()的false参数怎样传进去，如果不传进去怎么执行里面的函数，好奇怪，又得标记一下了。</p>
-<p>第二种场景，用来计数的循环变量泄露为全局变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">for (var i = 0; i &lt; s.length; i++) &#123;</span><br><span class="line">  console.log(s[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(i); // 5</span><br></pre></td></tr></table></figure></p>
-<p>上面代码中，变量i只用来控制循环，但是循环结束后，它并没有消失，泄露成了全局变量。</p>
-<h3 id="ES6的块状作用域"><a href="#ES6的块状作用域" class="headerlink" title="ES6的块状作用域"></a>ES6的块状作用域</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> n = <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> n = <span class="number">10</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(n); <span class="comment">// 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码最后输出5，表示let声明的变量外层代码块不受内层代码块的影响，但是使用var定义变量n，也就是把两个let都变成var，最后输出10.上面同一段代码我尝试了四种情况</p>
-<blockquote>
-<p>用let声明第一个n，用let声明第二个n，输出的是：5<br>用let声明第一个n，用var声明第二个n，输出的是：无任何输出结果<br>用var声明第一个n，用var声明第二个n，输出的是：10<br>用var声明第一个n，用let声明第二个n，输出的是：5<br>可以看出不允许将let放在比var等级更高的代码层，不然会报错。<br>
-至于ES允许的块级作用域任意嵌套，**{{{{{let insane = 'Hello World'}}}}};**，我觉得没什么用处，但是可以知道一些，这时候外层作用域无法读取内层作用域的变量。
-不过也正是块级作用域的出现，就可以逐渐淘汰掉现在被广泛使用的匿名函数(IIFE)不再必要了
-undefined
-
-块级作用域与函数声明
-在ES6中，允许在块级作用域中声明函数，而这在ES5之前是不被允许的，规定函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。
-undefined
-
-很重要的一点是，ES6规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。
-undefined
-
-上面代码中，会得到“i am inside!”，因为在if内声明的函数f会被提升到函数头部。
-> * 允许在块级作用域内声明函数。
-> * 函数声明类似于var，即会提升到全局作用域或函数作用域的头部
-> * 同时，函数声明还会提升到所在的块级作用域的头部
-
-注意：上面三条规则只对ES6的浏览器实现有效，其他环境的实现不用遵守，还是将块级作用域的函数声明当作let处理。
-
-前面的代码在老版本的chrome环境在运行时会报错的。
-因为在老版的chrome环境下被编译的时候会被解释成。
-undefined
-
-因为考虑到环境导致的行为差异太大，应避免在块级作用域内声明函数。加入确实需要也应该写成函数表达式，而不是声明语句。
-undefined
-
-另外，还有一个需要注意的地方。ES6的块级作用域允许声明函数的规则，只在使用大括号的情况下成立，如果没有使用大括号，就会报错。
-undefined
-
-</p>
-<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p>const声明一个只读的常量。一旦声明，常量的值就不能改变。哈哈，记忆的时候就可以将这个词和我们java的final一起记忆了。<br>const声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo;</span><br><span class="line"><span class="comment">// SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>上面的代码表示，对于const一旦表明变量，就必修立即初始化，不能留到以后赋值，不然就会报错。</p>
-<blockquote>
-<ul>
-<li>const的作用域与let命令相同：只在声明所在的块级作用域内有效。</li>
-<li>const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。</li>
-<li>const声明的常量，也与let一样不可重复声明。</li>
-</ul>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line">foo.prop = <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line">foo.prop</span><br><span class="line"><span class="comment">// 123</span></span><br><span class="line"></span><br><span class="line">foo = &#123;&#125;; <span class="comment">// TypeError: "foo" is read-only</span></span><br></pre></td></tr></table></figure>
-<p>上面代码中，常量foo存储的是一个地址，这个地址指向一个对象。不可变的这个地址，而最后一句代码foo = {}相当于把foo指向另一个地址，于是就会报错，但那时对象本身是可变的，所以可以为期添加新属性。<br>下面是另一个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [];</span><br><span class="line">a.push(<span class="string">'Hello'</span>); <span class="comment">// 可执行</span></span><br><span class="line">a.length = <span class="number">0</span>;    <span class="comment">// 可执行</span></span><br><span class="line">a = [<span class="string">'Dave'</span>];    <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
-<p>上面代码中，常量a是一个数组，这个数组本身是可以写的，但是如果将另一个数组赋值给a，就会报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 常规模式时，下面一行不起作用；</span></span><br><span class="line"><span class="comment">// 严格模式时，该行会报错</span></span><br><span class="line">foo.prop = <span class="number">123</span>;</span><br></pre></td></tr></table></figure></p>
-<p>上面代码中使用了一个<strong>Object.freeze</strong>方法，将常量foo指向一个冻结的对象，所以添加新属性不起作用，严格模式下还会报错。</p>
-<p>除了将对象本身冻结，对象的属性也可以被冻结，虽然我不知福冻结的用法在什么情况下会被用到。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> constantize = (obj) =&gt; &#123;</span><br><span class="line">  <span class="built_in">Object</span>.freeze(obj);</span><br><span class="line">  <span class="built_in">Object</span>.keys(obj).forEach( (key, value) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</span><br><span class="line">      constantize( obj[key] );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>扩展</strong>：ES5只有两种声明变量的方法：var命令和function，命令。ES6除了添加let和const命令之外，还有其他声明变量的方法：import和class命令，而这些也是我要写react-native需要用到的，因此ES6一共会有6中声明变量的方法。</p>
-<h3 id="全局对象的属性"><a href="#全局对象的属性" class="headerlink" title="全局对象的属性"></a>全局对象的属性</h3><p>全局对象是最顶层的对象，在浏览器环境指的是window对象，在nodejs中指的是global对象。ES5之中，全局对象的属性和全局变量是等价的,就像下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.a = <span class="number">1</span>;</span><br><span class="line">a <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">window</span>.a <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
-<p>上面代码中，全局对象的属性赋值和全局变量的赋值，被看做事同一件事（对于Node来说，这一条只对REPL环境适用，模块环境之中，全局变量必须显式声明成global对象的属性。这句不太明白，还是先标记一下以后明白之后再改正！！）</p>
-<p>到了ES6之后就开始改变了，为了保持兼容性，var命令和function命令声明发的全局变量，依旧是全局变量的属性，另外有let命令，const命令class命令声明的全局变量，不属于全局变量的属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 如果在Node的REPL环境，可以写成global.a</span></span><br><span class="line"><span class="comment">// 或者采用通用方法，写成this.a</span></span><br><span class="line"><span class="built_in">window</span>.a <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">window</span>.b <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></p>
-<p>上面的代码中，全局变量a由var命令声明，所以他是全局变量的属性；而全局变量b由let声明，所以它不是全局变量的属性，返回undefined(未定义)。</p>
-<p>终于看完这一章了，好多知识点啊！！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/31/react-native学习笔记2/" itemprop="url">
-                  react-native学习笔记2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-31T10:45:15+08:00" content="2016-07-31">
-              2016-07-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/31/react-native学习笔记2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/31/react-native学习笔记2/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry, Text &#125; from &apos;react-native&apos;</span><br><span class="line"></span><br><span class="line">class HelloWorldApp extends Component &#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		return (</span><br><span class="line">			&lt;Text&gt;Hello World!&lt;/Text&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//注意，这里用引号括起来的&apos;HelloWorldApp&apos;必须和你init创建的项目名一致</span><br><span class="line">AppRegistry.registerComponent(&apos;HelloWorldApp&apos;, () =&gt; HelloWorldApp);</span><br></pre></td></tr></table></figure>
-<p>然后一个简单的HelloWorldApp就完成了，不过鉴于第一次接触，所以要一步一步来分析每一步的意义。</p>
-<p>首先需要了解上面的代码是我曾经学过的语言javascript，但是很明显这和我想象中javascript不像好不好，不过这确实是“未来”的javascript，最新的javascript官方标准是ES2015（也叫做ES6）.没错，在完全进行开发之前我还需要了解一下ES6.</p>
-<p>简单看了一些ES6之后就要开始真干了，</p>
-<h2 id="官网文档"><a href="#官网文档" class="headerlink" title="官网文档"></a>官网文档</h2><hr>
-<p>官网的文档都是英文的，部分看不太懂，因为中文网最近不知道为什么突然就跪了，然后就只能对着官网的代码自己敲然后自己去翻译文档。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry,  Image, Text, View, StyleSheet &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">class AwesomeProject extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    let pic = &#123;</span><br><span class="line">      uri: &apos;https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg&apos;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;View style = &#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Text&gt;hello wrold!&lt;/Text&gt;</span><br><span class="line">        &lt;Image source = &#123;pic&#125; style = &#123;&#123;width:193, height: 110&#125;&#125; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Greeting text=&apos;jsakdhkjasdh&apos; /&gt;</span><br><span class="line">        &lt;Greeting text = &apos;mike&apos; /&gt;</span><br><span class="line">        &lt;Greeting text = &apos;zues&apos; /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Greeting extends Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;showText: true&#125;;</span><br><span class="line"></span><br><span class="line">    setInterval(() =&gt; &#123;</span><br><span class="line">      this.setState(&#123;showText: !this.state.showText &#125;);</span><br><span class="line">    &#125;, 1000);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render ()&#123;</span><br><span class="line">    let display = this.state.showText ? this.props.text : &apos;&apos;;</span><br><span class="line">    return (</span><br><span class="line">      &lt;Text&gt;&#123;display&#125;&lt;/Text&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    alignItems:&apos;center&apos;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;AwesomeProject&apos;, () =&gt; AwesomeProject);</span><br></pre></td></tr></table></figure></p>
-<p>这是在前两节的基础上，copy的第三节文档的代码。我想分析一下整理一下思路。首先是写好的class Greeting组件，这里的语法都是ES6的新语法，还好我及时恶补了一些。</p>
-<p>首先是constructor构造函数，传入属性props，第一段代码就继承了父类的属性<code>super(props);</code>,然后先设定初始状态的成员变量showText为true。然后使用一个定时器作为开关，设定在1000毫秒内执行第一个参数来改变this.state.showText的值<code>this.setState({showText: !this.state.showText });</code>，然后就在render函数那里创建一个变量display存储一个判断的方法：<code>this.state.showText ? this.props.text : &#39;&#39;;</code>，代码的意思是如果this.state.showText如果为true的时候就显示this.props.text属性，否则就显示空字符。然后返回由<text>包裹的文字。</text></p>
-<p>在这中间我尝试过修改了this.state为this.st或者是修改showText为show。但是修改之后效果就没有了，所以我初步断定this.state和showText为父类的属性和变量，因此不可以被修改。不过应该也可以理解，那就是在这些步骤之前使用了super关键字。</p>
-<h2 id="关于style"><a href="#关于style" class="headerlink" title="关于style"></a>关于style</h2><hr>
-<p>学到style的时候有开始模仿代码了，这次是样式的编写。类似官网的文档，模仿了下面的一段代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry,  Image, Text, View, StyleSheet &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">class AwesomeProject extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    let pic = &#123;</span><br><span class="line">      uri: &apos;https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg&apos;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;View style = &#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Text&gt;hello wrold!&lt;/Text&gt;</span><br><span class="line">        &lt;Image source = &#123;pic&#125; style = &#123;&#123;width:193, height: 110&#125;&#125; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Greeting text=&apos;jsakdhkjasdh&apos; /&gt;</span><br><span class="line">        &lt;Greeting text = &apos;mike&apos; /&gt;</span><br><span class="line">        &lt;Greeting text = &apos;zues&apos; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;LotIOfStyles /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Greeting extends Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;showText: true&#125;;</span><br><span class="line"></span><br><span class="line">    setInterval(() =&gt; &#123;</span><br><span class="line">      this.setState(&#123;showText: !this.state.showText &#125;);</span><br><span class="line">    &#125;, 1000);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render ()&#123;</span><br><span class="line">    let display = this.state.showText ? this.props.text : &apos;haha&apos;;</span><br><span class="line">    return (</span><br><span class="line">      &lt;Text&gt;&#123;display&#125;&lt;/Text&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class LotIOfStyles extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View&gt;</span><br><span class="line">        &lt;Text style = &#123;styles.red&#125;&gt;just red&lt;/Text&gt;</span><br><span class="line">        &lt;Text style = &#123;styles.bigblue&#125;&gt;just bigblue&lt;/Text&gt;</span><br><span class="line">        &lt;Text style = &#123;[styles.bigblue, styles.red]&#125;&gt;bigblue, then red&lt;/Text&gt;</span><br><span class="line">        &lt;Text style = &#123;[styles.red, styles.bigblue]&#125;&gt;red, then bigblue&lt;/Text&gt;</span><br><span class="line"></span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">      );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  container: &#123;</span><br><span class="line">    alignItems:&apos;center&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  red: &#123;</span><br><span class="line">    color: &apos;red&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  bigblue: &#123;</span><br><span class="line">    color: &apos;blue&apos;,</span><br><span class="line">    fontWeight: &apos;bold&apos;,</span><br><span class="line">    fontSize: 30,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;AwesomeProject&apos;, () =&gt; AwesomeProject);</span><br></pre></td></tr></table></figure></p>
-<p>其实就是自己加了一个LotIOfStyles的类，然后再里面编写一些样式，读懂代码是没问题的，就是有一些小错会犯，在这里我要记下来提醒一下自己。</p>
-<blockquote>
-<ul>
-<li>首先是styles的red和bigblue的大括号后面忘记写”,”这个小符号了，然后就是除了数字，其他的颜色和加粗之类的东西需要用<code>&#39;&#39;</code>这个符号来标识，经常会写成<code>&quot;&quot;</code>这个符号。</li>
-<li>然后就是在写好四个<text>之后忘记用一个父类<view>包裹起来，这个很关键，我觉得后续我还会继续犯这个错，因为我暂时还没有完全学会这个语言。</view></text></li>
-</ul>
-</blockquote>
-<h2 id="Height-and-Width"><a href="#Height-and-Width" class="headerlink" title="Height and Width"></a>Height and Width</h2><hr>
-<p>一个组件的高度和宽度决定了组件在屏幕的尺寸。<br>最简单设置组件的宽度和高度的方法就是直接用内联样式将宽度和高度加进去。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class FixedDimensionsBasics extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View&gt;</span><br><span class="line">        &lt;View style = &#123;&#123;width: 50, height: 50, backgroundColor:&apos;powderblue&apos;&#125;&#125; /&gt;</span><br><span class="line">        &lt;View style = &#123;&#123;width: 100, height: 100, backgroundColor:&apos;skyblue&apos;&#125;&#125; /&gt;</span><br><span class="line">        &lt;View style = &#123;&#123;width: 150, height: 200, backgroundColor:&apos;steelblue&apos;&#125;&#125; /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;AwesomeProject&apos;, () =&gt; FlexDimensionsBasics);</span><br></pre></td></tr></table></figure></p>
-<p>这样就可以构造出三个小正方形了。</p>
-<h2 id="Flexbox布局"><a href="#Flexbox布局" class="headerlink" title="Flexbox布局"></a>Flexbox布局</h2><hr>
-<p>在React Native中使用flexbox规则来指定组件子元素的布局，Flexbox可以在不同的屏幕上提供一致的布局结构。但是一般情况下，使用<code>flexDirection</code>,<code>alignItems</code>,<code>justifyContent</code>三个样式就可以满足大部分的布局需求咯。</p>
-<blockquote>
-<p>React Native中的Flexbox的工作原理和web上的CSS基本一致，当然也存在少许差异。首先是默认值不同：flexDirection的默认值是column而不是row，alignItems的默认值是stretch而不是flex-start，以及flex只能指定一个数字值。</p>
-</blockquote>
-<h3 id="Flex-Direction"><a href="#Flex-Direction" class="headerlink" title="Flex Direction"></a>Flex Direction</h3><p>在组件的style中指定flexDirection可以决定布局的主轴。子元素可以是沿<strong>水平轴（row）</strong>方向排列，也可以是沿<strong>竖直轴（column）</strong>方向排列，而默认是竖直轴方向。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class FlexDirectionBasics extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      // 尝试把`flexDirection`改为`column`看看</span><br><span class="line">      &lt;View style=&#123;&#123;flex: 1, flexDirection: &apos;row&apos;&#125;&#125;&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;powderblue&apos;&#125;&#125; /&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;skyblue&apos;&#125;&#125; /&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;steelblue&apos;&#125;&#125; /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;AwesomeProject&apos;, () =&gt; FlexDirectionBasics);</span><br></pre></td></tr></table></figure></p>
-<p>这时候我发现了一个东西，身为初学者的我总是希望发现一些可以利用的知识点，很明显这里最后一句代码交代了这个项目（app）的名字叫做AwesomeProject，而入口组件则是FlexDirectionBasics。这就非常清晰明了了，以前我总以为要名字对应，现在才发现参数的实在意义。</p>
-<h3 id="Justify-Content"><a href="#Justify-Content" class="headerlink" title="Justify Content"></a>Justify Content</h3><p>在组件的style中指定<code>justifyContent</code>可以决定其子元素沿着主轴的排列方式。子元素是应该靠近主轴的起始段还是末尾段分布呢？亦或应该是均匀分布呢？对应的这些可选项有：<code>flex-start</code>,<code>center</code>,<code>flex-end</code>,<code>space-around</code>以及<code>space-between</code>。不过其实这些我都看过教学视频，只不过当时没记下来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class JustifyContentBasics extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      // 尝试把`justifyContent`改为`center`看看</span><br><span class="line">      // 尝试把`flexDirection`改为`row`看看</span><br><span class="line">      &lt;View style=&#123;&#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        flexDirection: &apos;column&apos;,</span><br><span class="line">        justifyContent: &apos;space-between&apos;,</span><br><span class="line">      &#125;&#125;&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;powderblue&apos;&#125;&#125; /&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;skyblue&apos;&#125;&#125; /&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;steelblue&apos;&#125;&#125; /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>修改之后会出现几种情况，在英文官网的文档内修改也可以直接看到实时的效果，我实在本地编辑器修改测试的。</p>
-<blockquote>
-<p>一开始出现三个小正方形块上中下分别有一小块图像<br>修改justifyContent为center之后就变成三块合并在最左边中间<br>保留第二步不动，修改flexDirection之后就变成三块合并贴在最顶端的中间。</p>
-</blockquote>
-<p>因此大概可以猜到这些样式的用法了，我觉得以后经常使用会非常熟练，所以现在暂时还是测试一下不认真记录了。</p>
-<h3 id="Align-Items"><a href="#Align-Items" class="headerlink" title="Align Items"></a>Align Items</h3><p>在组件的style中指定<code>alignItems</code>可以决定其子元素沿着次轴（与主轴垂直的轴，比如主轴此时为row，那么次轴就是column）的排列方式。子元素是应该靠近次轴的起始端还是末尾段分布呢？亦或应该均匀分布？对应的这些可选项有：<code>flex-start</code>、<code>center</code>、<code>flex-end</code>以及<code>stretch</code>。</p>
-<p><strong>注意啦：</strong>要使stretch生效的话，子元素在次轴方向上不能有固定的尺寸。以下面的代码为例：只有将子元素样式中的<code>width：50</code>去掉之后，<code>alignItems:&#39;stretch&#39;</code>才会生效。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class AlignItemsBasics extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      // 尝试把`alignItems`改为`flex-start`看看</span><br><span class="line">      // 尝试把`justifyContent`改为`flex-end`看看</span><br><span class="line">      // 尝试把`flexDirection`改为`row`看看</span><br><span class="line">      &lt;View style=&#123;&#123;</span><br><span class="line">        flex: 1,</span><br><span class="line">        flexDirection: &apos;column&apos;,</span><br><span class="line">        justifyContent: &apos;center&apos;,</span><br><span class="line">        alignItems: &apos;center&apos;,</span><br><span class="line">      &#125;&#125;&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;powderblue&apos;&#125;&#125; /&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;skyblue&apos;&#125;&#125; /&gt;</span><br><span class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;steelblue&apos;&#125;&#125; /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>三个尝试我觉得我以后能一下子看懂，主要是上面的注意，我觉得需要备注一下，因为这里的主轴方向是flexDirection是column（竖），所以次轴就是row（行），因此对应次轴的属性就是宽度不能有固定尺寸，相反，如果这时候主轴方向是row，那么子元素的宽度不能固定才能使stretch生效。</p>
-<h2 id="预热"><a href="#预热" class="headerlink" title="预热"></a>预热</h2><hr>
-<p>这个是看视频的时候抄的代码，觉得在刚学习的阶段应该会有用，所以先写下来记忆一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;script type =  /&gt;</span><br><span class="line">		&lt;script type =  /&gt;</span><br><span class="line">		&lt;script type =  /&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id = &quot;example&quot;&gt;&lt;/div&gt;</span><br><span class="line">		&lt;script type = &quot;text/bable&quot;&gt;</span><br><span class="line">			var Parent = React.create(&#123;</span><br><span class="line">				click:function()&#123;</span><br><span class="line">					this.refd.child.getDOMNode().style.color=&quot;red&quot;;</span><br><span class="line">				&#125;,</span><br><span class="line">				render:function()&#123;</span><br><span class="line">					return (</span><br><span class="line">						&lt;div onClick=&#123;this.click&#125; &gt;Parents is:</span><br><span class="line">						&lt;Child name = &#123;this.props.name&#125; ref = &quot;child&quot; &gt;&lt;/child&gt;</span><br><span class="line">						&lt;/div&gt;</span><br><span class="line">					);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			</span><br><span class="line">			var Child = React.createClass(&#123;</span><br><span class="line">				render:function()&#123;</span><br><span class="line">					return &lt;span&gt; &#123;this.props.name&#125; &lt;span&gt;;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			</span><br><span class="line">			ReactDOM.render(&lt;Parent name = &quot;React语法基础&quot; /&gt; , document.getElementById(&apos;example&apos;));</span><br><span class="line">		&lt;/script&gt;		</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>上面的代码不是react-native,而是react，不过还是可以先学习一下代码里面对于父类和子类之间的通信关系。<br>首先看child，代码很简单就是在渲染的时候直接返回一个span标签，里面是child的名字属性。<br>然后是父类，首先是创建一个click函数，暂时先不分析方法里面的细节，再看render函数，创建了一个div函数，并且在div的onClick方法中嗲用click函数。接着是直接使用child实例标签，这个实例里面含有一个那么的属性，关于属性的赋值是this.props.name，注意，这里认真一想还是很好理解的，那就是这个this是指向parent的，因此这里是先的到parent的name属性再赋值给child实例，这样一来就清晰很多了。<br>另外可以看到ref，我们可以把这个属性看成是标签作用，用来标记一个实例，我觉得可以把ref看成是id，回到click函数，函数里面的详细内容是this.refs.child.getDOMNode(),this.refs是找到有ref属性的实例，然后指向已经标记的实例，也就是child，刚刚命名的那个。去到对应的DOM节点，之后就可以对这个实例进行方法或者样式的变换了。这里是直接更改child的颜色，当然也可以写一个函数。</p>
-<p>更加详细的属性列表<a href="http://reactnative.cn/docs/0.31/layout-props.html" target="_blank" rel="external">布局样式属性</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/29/正则表达式笔记/" itemprop="url">
-                  正则表达式笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-29T17:46:27+08:00" content="2016-07-29">
-              2016-07-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/29/正则表达式笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/29/正则表达式笔记/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>正则表达式是为了记录文本规则的代码，在编写处理字符串或者网页的时候，经常会查找符合某些复杂规则的字符串而生。</p>
-<p>首先举个例子，当我们需要查找某一个目录下的Word文档，我们会搜索<strong>*</strong>.doc，而这里的*就会变解释成任意的字符串，但是这里的<strong>*</strong>或者经常使用的<strong>?</strong>我们称做通配符。ok，开始学习</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><hr>
-<p>假如我们需要在一边小说中查找一个单词“he”，一般情况下会怎么做呢？在我看来不管在什么情况下，我们都可以使用<strong>ctrl+f</strong>就会弹出查找的框。不过有时候比较糟糕的是很多单词都会有这两个字母，例如hello，head，heel等等，那么这时候就会有很多的he被找出来了，那当我们会使用正则表达式的话就可以使用<strong>\bhe\b</strong>.<br><strong>\b</strong>是正则表达式里面规定的一个特殊的代码，人称<strong>元字符</strong>，代表的那次的开头或者结尾，也就是单词的分界处。</p>
-<p>假如这里he的后面不远处有一个Lucy，就可以使用<strong>\bhe\b.*\bLucy\b</strong>。<br>可以注意这里的<strong>.</strong>，它也是一个元字符，匹配除了换行符意外的任意字符。<strong>*</strong>同样是元字符，不过它代表的不是字符，也不是位置，而是指<strong>数量</strong>，它指定<strong>*</strong>号前边的内容可以连续重复使用任意次以使整个表达式得到匹配。<br>因此，<strong>.*</strong>就意味着<strong>任意数量的不包含换行的字符</strong>。那么现在<strong>\bhe\b.*\bLucy\b</strong>的意思就非常明显了：先是一个单词he，然后是任意字符串（不含换行）最后是lucy这个单词</p>
-<p>这时候就可以联想肯定还有很多元字符，如果将其全部构造在一起那将是最强大的正则表达式。例如下面的例子：<br><strong>0\d\d-\d\d\d\d\d\d\d\d</strong>能匹配怎样的字符串呢：以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字，我们的国家的电话号码就是这样的区号。<br>这里的<strong>\d</strong>是一个新的元字符，匹配一个<strong>数字</strong>（数字0-9）.但是这里的“-”号不是元字符，它只匹配一个符号，为了简便和避免出错，我们也可以用<strong>0\d{2}-\d{8}</strong>，{8}（或者{2}）表示连续重复。把<strong>{n}</strong>放在了\d前面，也就意味着前面的\d符号必须连续重复n次，相当于被copy了n次，于是就构造出了和上面区号一样的效果。</p>
-<h3 id="小总结："><a href="#小总结：" class="headerlink" title="小总结："></a>小总结：</h3><blockquote>
-<ul>
-<li>元字符<strong>\b</strong>，代表着单词的口头或者结尾，记住是单词，而不是字符，它只匹配一个位置。</li>
-<li>元字符<strong>.</strong>，匹配除了换行符以外的任意字符，记住只是单个字符。</li>
-<li>元字符<strong>*</strong>，匹配的不是字符，也不是位置，肯定不能和别人抢饭碗对吧，所以它匹配的是数量，任意数量，它指定它前面的内容可以连续使用任意次从而使整个表达式得到匹配。</li>
-<li>元字符<strong>\d</strong>，匹配的也是数量，但是这里它可以控制字符串多少，第一种比较傻，使用多少个“\d”就匹配多少个，而“\d{n}”，n是多少就能匹配多少次<strong>连续</strong>且重复。</li>
-</ul>
-</blockquote>
-<h2 id="认识更多"><a href="#认识更多" class="headerlink" title="认识更多"></a>认识更多</h2><hr>
-<p><strong>\ba\w*\b</strong>，首先看到\b就知道可以匹配以字母a开头的单词，然后是<strong>\w*</strong>，\w这个元字符的作用是可以匹配单个字母数字下划线或者汉字，和数量<strong>**相结合后就相当于任意数量的字母或者数字，最后\b是字母的结尾处。
-</strong>\d+<strong>，可以匹配一个或更多连续的</strong>数字<strong>。这里的+是和<em>类似的元字符，不同的是不同的是</em>匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。
-</strong>\b\w{6}\b**，可以匹配刚好6个字符的单词。</p>
-<h3 id="常用元字符"><a href="#常用元字符" class="headerlink" title="常用元字符"></a>常用元字符</h3><table>
-<thead>
-<tr>
-<th>代码</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.</td>
-<td style="text-align:right">匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td>\w</td>
-<td style="text-align:right">匹配字母或数字或下划线或汉字</td>
-</tr>
-<tr>
-<td>\s</td>
-<td style="text-align:right">匹配任意的空白符</td>
-</tr>
-<tr>
-<td>\d</td>
-<td style="text-align:right">匹配数字</td>
-</tr>
-<tr>
-<td>\b</td>
-<td style="text-align:right">匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td>^</td>
-<td style="text-align:right">匹配字符串的开始</td>
-</tr>
-<tr>
-<td>$</td>
-<td style="text-align:right">匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-<p>关于<strong>^</strong>和<strong>$</strong>令我有点蛋疼，因为\b也是可以匹配开头，不过这个是单词，但是^是匹配字符串，那也就是意味着^匹配的范围会更大，不过精确程度肯定是\b，另外这两个元字符还可以在允许处理多行的情况下变成匹配行的开始处和结尾处。<br>先来看一个表达式：<strong>^\d{5,12}$</strong>，这个表达式可以类似一个网站验证qq号，并且qq号必须为数字的重复次数不少于5次，不能多于12次。否则都匹配不成功。这里的<strong>{5，12}</strong>和前面\b的一样，意味着<strong>重复的次数不能少于5次，不能多于12次</strong>。</p>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><hr>
-<p>当我们需要查找的是正则里面的元符本身的话，正常情况下肯定找不到，这时候就要用<strong>\</strong>来消除这些字符的特殊意义，因此需要找.或者<em>的时候就要用.和\</em>。当然需要找<strong>\</strong>本身也需要使用\，因此在以后可以看到一些\\这样类型的，表示的是\。<br>例如：deerchao.net匹配deerchao.net，C:\Windows匹配C:\Windows。</p>
-<h2 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h2><hr>
-<p>前面已经知道了<em>表示前边的内容可以连续重复使用任意次以使整个表达式得到匹配，而+是和</em>类似但是匹配的次数重复1次或者更多，意味着一定会重复。另外{n}还有{5，12}我就不解释了，这个比较好记。</p>
-<h3 id="常用的限定符"><a href="#常用的限定符" class="headerlink" title="常用的限定符"></a>常用的限定符</h3><table>
-<thead>
-<tr>
-<th>代码/语法</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td style="text-align:right">重复零次或更多次</td>
-</tr>
-<tr>
-<td>+</td>
-<td style="text-align:right">重复一次或更多次</td>
-</tr>
-<tr>
-<td>?</td>
-<td style="text-align:right">重复零次或一次</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td style="text-align:right">重复n次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td style="text-align:right">重复n次或更多次</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td style="text-align:right">重复n到m次</td>
-</tr>
-</tbody>
-</table>
-<p>例子：Windows\d+匹配Windows后面跟1个或更多数字，^\w+匹配一行的第一个单词(或整个字符串的第一个单词，具体匹配哪个意思得看选项设置)。</p>
-<h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h2><hr>
-<p>如果需要查找单个数字，字母都是比较简单的，但是如果需要找一些集合的时候，例如元音字母aeiou的时候怎么办，这时候只需要在方括号里面列出它们就可以了，就像这样[aeiou]就能匹配任何一个英文元音字母，[.?!]匹配标点里面的符号，从这里也可以看出在方括号里面是可以放元字符的，而无须转义。<br>当然也可以指定一个字符范围，[0-9]这个的含义就是和\d一样了：表示一个数字。同样这个例子[a-z0-9A-Z]，其实一开始我是没有看懂的，这里我们把里面的字符分开来看就可以看到a-z,0-9,A-Z这样就等同于\w了。</p>
-<p>接下来是一个更加复杂的表达式：(?0\d{2}[) -]?\d{8}<br>这个表达式可以匹配集中格式的电话号码，像(010)88886666，或022-22334455，或02912345678等，对立面的字符进行分析，首先是转义的<strong>(</strong>，因为“（”和“）”都是元字符，它可能重复0次或者1次（？），然后是一个数字0，后面接着两个数字（\d{2}）,然后是方括号里面有-或者空格（要看到是有空格的）或者是“）”，也是出现一次或者零次，最后是8个重复的\d,也就是后面接着8个数字。</p>
-<h2 id="分支条件"><a href="#分支条件" class="headerlink" title="分支条件"></a>分支条件</h2><hr>
-<p>在上面的例子中是不是会出现一种情况，那就是假如是010)12345678或(022-87654321也是可以的，但是格式不是我们想要的，要解决这个问题需要使用到这节的标题。使用符号<strong>|</strong>把不同的规则分开，然后满足其中一种就可以完成匹配。<br>0\d{2}-\d{8}|0\d{3}-\d{7}这个表达式能匹配两种以连字号分隔的电话号码：一种是三位区号，8位本地号(如010-12345678)，一种是4位区号，7位本地号(0376-2233445)<br>(?0\d{2})?[- ]?\d{8}|0\d{2}[- ]?\d{8}这个表达式匹配3位区号的电话号码，其中区号可以用小括号括起来，也可以不用，区号与本地号间可以用连字号或空格间隔，也可以没有间隔。</p>
-<p>\d{5}-\d{4}|\d{5}这个表达式用于匹配美国的邮政编码。美国邮编的规则是5位数字，或者用连字号间隔的9位数字。之所以要给出这个例子是因为它能说明一个问题：使用<strong>分枝条件时</strong>，要<strong>注意各个条件的顺序</strong>。如果你把它改成\d{5}|\d{5}-\d{4}的话，那么就只会匹配5位的邮编(以及9位邮编的前5位)。原因是匹配分枝条件时，将会从左到右地测试每个条件，如果满足了某个分枝的话，就不会去再管其它的条件了。<br>对于上面一段话我有一点想法，那就是在分支匹配的时候要吧负责的匹配放在前面。不然的话复杂里面夹杂着简单的匹配的时候就会出现部分满足导致匹配不理想。还有就是<strong>|</strong>分支符号的左右都是完整的表达式，因此写这个的时候会显得和上面的方括号麻烦一些。</p>
-<h2 id="分组-子表达式"><a href="#分组-子表达式" class="headerlink" title="分组/子表达式"></a>分组/子表达式</h2><hr>
-<p>在前面我们知道了怎么重复单个字符，也就是前面那张表。但是如果需要重复多个字符的时候应该怎么办呢！这时候就要使用到标题，用小括号()来指定<strong>子表达式</strong>，然后就可以制定子表达式的重复次数。<br>(\d{1,3}.){3}\d{1,3}，这是一个ip地址的表达式，要理解这个表达式，我们一个一个来分析：既然是子表达式，所以肯定先分析括号里面的表达式，\d{1,3}匹配至少重复1到3位的数字，那么(\d{1,3}.){3}就是表示三位数字加一个英文句号（用了转义）重复三次，最后再加一个至少重复一次或者三次的数字（\d{1,3}）。<br>但是像上面的表达式避免不了匹配类似错误的ip256.300.888.999，因为正则没有提供关于数学的功能，因此需要冗长的表达式才可以正确描述：((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5])<br>可以发现最主要的分析对象是2[0-4]\d|25[0-5]|[01]?\d\d?，因为ip是1-255的，所以需要有几种情况，第一个分支2[0-4]，就是200-249，一看就看明白了，第二个分支25[0-5]，就是250-255，第三个分支有点难度[01]?\d\d?，意思是0或者1可能重复1次或者0次（不出现），后面接一个0-9的数字，再后面接着最多出现1次或者0次（不出现）的数字，也就是可以构造出两位数。</p>
-<h2 id="反义"><a href="#反义" class="headerlink" title="反义"></a>反义</h2><hr>
-<p>有时候需要找除了某一个字符以外的其他字符，于是这时候就要使用到反义。我个人觉得这样的情况很少见，除非一篇文章都差不多使用那么几种字符</p>
-<h3 id="常用的反义字符"><a href="#常用的反义字符" class="headerlink" title="常用的反义字符"></a>常用的反义字符</h3><table>
-<thead>
-<tr>
-<th>代码/语法</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\W</td>
-<td style="text-align:right">匹配任意不是字母，数字，下划线，汉字的字符</td>
-</tr>
-<tr>
-<td>\S</td>
-<td style="text-align:right">匹配任意不是空白符的字符</td>
-</tr>
-<tr>
-<td>\D</td>
-<td style="text-align:right">匹配任意非数字的字符</td>
-</tr>
-<tr>
-<td>\B</td>
-<td style="text-align:right">匹配不是单词开头或者结束的位置</td>
-</tr>
-<tr>
-<td>[^x]</td>
-<td style="text-align:right">匹配除了x以外的任意字符</td>
-</tr>
-<tr>
-<td>[^aeiou]</td>
-<td style="text-align:right">匹配除了aeiou这几个字母以外的任意字符</td>
-</tr>
-</tbody>
-</table>
-<p>例子：\S+匹配不包含空白符的字符串，因为\S匹配不是空白符，而+要求至少要有重复，加在\S后面表示，不能有一个空白符或者多个空白符，理解下来就是没有任何空白符的<strong>字符串</strong>。<a[^>]+&gt;匹配用尖括号括起来的以a开头的字符串。<br><a[^>]+&gt;匹配用尖括号括起来的以a开头的字符串，这里需要注意尖括号不是元字符，所以就直接理解就可以了，而a[^&gt;]+表示a开头的字符串，并且a后面匹配除了&gt;符号的字符串，最后再加上最后那一个尖括号，于是就成为了用尖括号括起来的以a开头的字符串。</a[^></a[^></p>
-<h2 id="后向引用"><a href="#后向引用" class="headerlink" title="后向引用"></a>后向引用</h2><hr>
-<p>我的理解是通过后向对于已经被解释过的分组进行数字替代。用于重复搜索前面某个分组匹配的文本。例如， \1代表分组1匹配的文本。<br>例如：<strong>\b(\w+)\b\s+\1\b</strong>，可以用来匹配重复的单词，例如 go go，或者是kitty kitty。这个表达式先是一个单词，也就是单词开头和结尾处之间多余一个字母或数字的（\b(\w+)\b），这个单词在组号分配的时候会被捕获到编号为1的分组，然后是1个或几个空白符\s+，最后是分组1中捕获的内容。<br>除了可以自动陪匹配组号，还可以指定子表达式的组号，可以使用这样的语法：(?<word>\w+)(或者把尖括号换成’也是可以得:(?’Word’\w+))，这样就可以把\w+的组名指定为Word了，当需要反向指定这个分组的时候就可以使用\k<word>，所以上一个例子也可以写成这样：\b(?<word>\w)\b\s+\k<word>\b。)</word></word></word></word></p>
-<p>为什么分组会从1开始呢！因为分组0对应的是整个正则表达式，而不是某一个分组，当然这里还有一个规则，就像上面说的除了那些没有命名被自动赋名的分组，还有已经被命名的分组，而组号分配是从左到右扫描两边，第一遍只给未命名组分配，第二次只给命名组分配，那么久可以很简单推测出所有命名组的组号都大于为命名组号。</p>
-<h3 id="常用分组语法"><a href="#常用分组语法" class="headerlink" title="常用分组语法"></a>常用分组语法</h3><table>
-<thead>
-<tr>
-<th>分类</th>
-<th style="text-align:right">代码/语法</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>捕获</td>
-<td style="text-align:right">(exp)</td>
-<td style="text-align:center">匹配exp,并捕获文本到自动命名的组里</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:right">(?<name>exp)</name></td>
-<td style="text-align:center">匹配exp,并捕获文本到名称为name的组里，也可以写成(?’name’exp)</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:right">(?:exp)</td>
-<td style="text-align:center">匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>
-</tr>
-<tr>
-<td>——</td>
-<td style="text-align:right">——</td>
-<td style="text-align:center">——–</td>
-</tr>
-<tr>
-<td>零宽断言</td>
-<td style="text-align:right">(?=exp)</td>
-<td style="text-align:center">匹配exp前面的位置</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:right">(?&lt;=exp)</td>
-<td style="text-align:center">匹配exp后面的位置</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:right">(?!exp)</td>
-<td style="text-align:center">匹配后面跟的不是exp的位置</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:right">(?&lt;!exp)</td>
-<td style="text-align:center">匹配前面不是exp的位置</td>
-</tr>
-<tr>
-<td>—–</td>
-<td style="text-align:right">—-</td>
-<td style="text-align:center">——–</td>
-</tr>
-<tr>
-<td>注释</td>
-<td style="text-align:right">(?#comment)</td>
-<td style="text-align:center">这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>
-</tr>
-</tbody>
-</table>
-<p>例如可以使用(?:exp)这样的语法来剥夺一个分组对组号分配的参与权，其中exp是一个表达式，有效阻断组号分配，不过为什么要剥夺呢？我暂时还没有想到应用场景。</p>
-<h2 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h2><hr>
-<p>断言也就是可以预测位置，和\b,^,$一样具有指定位置的功能，并且这个位置具备一定的条件，在左边表示是前面，而在右边则是后面后面会一直持续提到这两个位置，因此被称作零宽断言。</p>
-<p>(?=exp)也叫做<strong>零宽都正预测先行断言</strong>，它能断言<strong>表达式exp前面的位置</strong>。比如\b\w+(?=ing\b)，匹配以ing结尾的单词的前面部分除ing以外，加入查找I’m singing while you’re dancing.时，它会匹配sing和danc。</p>
-<p>(?&lt;=exp)也叫做<strong>零宽度正回顾后发断言</strong>，它能断言<strong>表达式exp后面的位置</strong>。比如(?&lt;=\bre)\w+\b会匹配以re开头的单词的后半部分除re以外，例如在查找reading a book时，它能匹配ading。</p>
-<p>假如你想要给一个很长的数字中每三位间加一个逗号(当然是从右边加起了)，你可以这样查找需要在前面和里面添加逗号的部分：((?&lt;=\d)\d{3})+\b，用它对1234567890进行查找时结果是234567890。<br><strong>说实话，上面这句话没看懂</strong>,不过还是可以分析：首先是分组里面的是匹配表达式\d后面的位置，然后是匹配三个数字(\d{3}),然后又是一个分组表示至少重复一次(+)，最后是就是结尾字符(\b)。<br>最后是是下面这个例子同时使用了这两种断言：(?&lt;=\s)\d+(?=\s)匹配以空白符间隔的数字(再次强调，不包括这些空白符)。</p>
-<h2 id="负向零宽断言"><a href="#负向零宽断言" class="headerlink" title="负向零宽断言"></a>负向零宽断言</h2><hr>
-<p>负向零宽断言正好和零宽断言相反，也分为先行和回顾断言两种。<br>零宽度负预测先行断言(?!exp),意思是断言此位置的后面不能匹配表达式exp。例如：\d{3}(?!\d)匹配三位数字，而且这三位数字的后面不能是数字。\b((?!abc)\w)+\b匹配不包含连续字符串abc的单词。同理很好理解接下来的。</p>
-<p>零宽度负回顾后发断言(?&lt;!exp),意思是断言此位置的前面不能匹配表达式exp，(?&lt;![a-z])\d{7}匹配前面不是小写字母的七位数字。我觉得以后每次看都可能需要思考一下，因为一下子有可能理解不了。</p>
-<p>我们来看一下一个例子，<strong>\b\w<em>q[^u]\w</em>\b</strong>，这个表达式可以匹配一个不含换行符的单词，在前面已经知道任意数量的字母或数字是(\w<em>)，按正常情况下是可以的，但是在一些特殊情况下，例如Iraq,Benq，因为[^u]肯定会匹配一个字符，因此加入q是最后一个字符的话就会出现两个单词连在一起匹配结果。<br>但是使用了我们的负向零宽断言就不一样了，因为它完全不会消费任何字符，只匹配一个位置，因此可以使用这个表达式来轻松搞定：**\b\w</em>q(?!u)\w<em>\b*</em>,只要u前面不是q的话，那么表达式成立，同时匹配不成功</p>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><hr>
-<p>我觉得直接看例子就可以看明白了，</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1896,8 +1681,8 @@ undefined
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">38</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -1905,7 +1690,7 @@ undefined
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -1914,7 +1699,7 @@ undefined
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1967,7 +1752,7 @@ undefined
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

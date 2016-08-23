@@ -1,0 +1,779 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react-native," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zues blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="image组件仿照视频顺便改了一点代码写了一个图片查看器
+Image.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native学习笔记6">
+<meta property="og:url" content="http://yoursite.com/2016/08/19/react-native学习笔记6/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="image组件仿照视频顺便改了一点代码写了一个图片查看器
+Image.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+<meta property="og:updated_time" content="2016-08-20T12:37:31.068Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native学习笔记6">
+<meta name="twitter:description" content="image组件仿照视频顺便改了一点代码写了一个图片查看器
+Image.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b706031fedc2f13c7dc61b81d4a77d64";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <title> react-native学习笔记6 | zues blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zues blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                react-native学习笔记6
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-19T21:19:25+08:00" content="2016-08-19">
+              2016-08-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/19/react-native学习笔记6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/19/react-native学习笔记6/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="image组件"><a href="#image组件" class="headerlink" title="image组件"></a>image组件</h2><p>仿照视频顺便改了一点代码写了一个图片查看器</p>
+<p>Image.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Image, TouchableOpacity &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">export default class ImageDemo extends Component &#123;</span><br><span class="line">	//本地图片引用方法：source = &#123;require(&apos;./img/xxx.png&apos;)&#125;</span><br><span class="line">	//网络图片引用方法：source = &#123;&#123;uri : &apos;http://host/path//.png&apos;&#125;&#125;</span><br><span class="line">	constructor (props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			count: 1,</span><br><span class="line">			imgs:this.props.imgs,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	goPreview()&#123;</span><br><span class="line">		var Count = this.state.count;</span><br><span class="line">		Count--;</span><br><span class="line">		if(Count &gt;= 0 )&#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:Count,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:this.state.imgs.length -1,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	goNext()&#123;</span><br><span class="line">		var Count = this.state.count;</span><br><span class="line">		Count++;</span><br><span class="line">		if(Count &lt; this.state.imgs.length)&#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:Count,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:0,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;View style = &#123;[styles.flex, &#123;alignItems:&apos;center&apos;&#125;]&#125;&gt;</span><br><span class="line">				&lt;View style = &#123;styles.image&#125;&gt;</span><br><span class="line">					&lt;Image style = &#123;styles.img&#125;</span><br><span class="line">						resizeMode = &quot;contain&quot;</span><br><span class="line">						source = &#123;&#123;uri:this.state.imgs[this.state.count]&#125;&#125;</span><br><span class="line">					/&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line"></span><br><span class="line">				&lt;View style = &#123;styles.btns&#125;&gt;</span><br><span class="line">					&lt;TouchableOpacity onPress = &#123;this.goPreview.bind(this)&#125;&gt;&lt;View style = &#123;styles.btn&#125;&gt;&lt;Text&gt;上一张&lt;/Text&gt;&lt;/View&gt;&lt;/TouchableOpacity&gt;</span><br><span class="line"></span><br><span class="line">					&lt;TouchableOpacity onPress = &#123;this.goNext.bind(this)&#125;&gt;&lt;View style = &#123;styles.btn&#125;&gt;&lt;Text&gt;下一张&lt;/Text&gt;&lt;/View&gt;&lt;/TouchableOpacity&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	flex: &#123;</span><br><span class="line">		flex:1,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	image: &#123;</span><br><span class="line">		borderWidth:1,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	img: &#123;</span><br><span class="line">		height:150,</span><br><span class="line">		width:200,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	btn: &#123;</span><br><span class="line">		width:60,</span><br><span class="line">		height: 30,</span><br><span class="line">		borderColor: &apos;#0089FF&apos;,</span><br><span class="line">		borderWidth: 1,</span><br><span class="line">		justifyContent: &apos;center&apos;,</span><br><span class="line">		alignItems:&apos;center&apos;,</span><br><span class="line">		borderRadius:3,</span><br><span class="line">		marginRight:20,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	btns: &#123;</span><br><span class="line">		flexDirection: &apos;row&apos;, //设置主轴方向为水平</span><br><span class="line">		marginTop: 20,</span><br><span class="line">		justifyContent: &apos;center&apos; //设置主轴方向居中也就是水平居中了</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在构造函数中初始化使用图片地址数字选择count，已及<code>imgs:this.props.imgs</code>，这句代码的意思和前面所学的<code>const {imgs} = this.props;</code>作用是一样的，都是把imgs作为一个灵活的组件属性，然后就可以将图片uri数组传递进去。</p>
+<p>看到<image>组件，里面有一个resizeMode属性，这个属性有三个可选择的值，分别是stretch(拉伸：不保留原始分辨率)，cover(平铺：按照原图平铺)，contain(包裹：等比例放大缩小平铺),因此一般都会选择第三个，具体效果自己去测试。</image></p>
+<p>关于source，在代码的注释已经解释的比较清楚了，需要注意的是source里面放的必须是静态字符串，所以不可以在source里面进行动态选择uri，要选择的话在source外面慢慢搞。</p>
+</blockquote>
+<p>然后就是看到goPreview和goNext方法了，这里只需要将一种就可以了，其中看到两处都用var声明的Count变量，因此知道var的作用域是整个同级节点和子节点，这个在以前的<a href="http://greatzues.github.io/2016/07/31/ES6%E5%85%A5%E9%97%A8/" target="_blank" rel="external">ES学习</a>中也提到过这个块级作用域的知识点。</p>
+<h2 id="最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。"><a href="#最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。" class="headerlink" title="最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。"></a>最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。</h2><h3 id="引用的时候就只需要这样写："><a href="#引用的时候就只需要这样写：" class="headerlink" title="引用的时候就只需要这样写："></a>引用的时候就只需要这样写：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import ImageDemo from &apos;./Image&apos;;</span><br><span class="line"></span><br><span class="line">var imgs = [</span><br><span class="line">  &apos;http://misc.360buyimg.com/lib/img/e/logo-201305.png&apos;,</span><br><span class="line">  &apos;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png&apos;,</span><br><span class="line">  &apos;http://www.csdn.net/css/logo.png&apos;  </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">class Main extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;ImageDemo imgs = &#123;imgs&#125;&gt;&lt;/ImageDemo&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;YourProject&apos;, () =&gt; Main);</span><br></pre></td></tr></table></figure>
+<h2 id="Picker函数"><a href="#Picker函数" class="headerlink" title="Picker函数"></a>Picker函数</h2><hr>
+<p>这个比较简单，等会记下一点东西就可以了。直接上代码吧！</p>
+<h3 id="Picker-js"><a href="#Picker-js" class="headerlink" title="Picker.js"></a>Picker.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Picker, ProgressBarAndroid &#125; from &apos;react-native&apos;</span><br><span class="line"></span><br><span class="line">export default class PickerDemo extends Component &#123;</span><br><span class="line">	constructor(props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			language:null,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;View&gt;</span><br><span class="line">				&lt;Text&gt;Picker组件&lt;/Text&gt;</span><br><span class="line"></span><br><span class="line">				&lt;Picker </span><br><span class="line">				selectedValue = &#123;this.state.language&#125;</span><br><span class="line">				onValueChange = &#123;(lang) =&gt; this.setState(&#123;language: lang&#125;)&#125;</span><br><span class="line">				mode = &quot;dropdown&quot;</span><br><span class="line">				style = &#123;&#123;color:&apos;#f00&apos;&#125;&#125;&gt;</span><br><span class="line"></span><br><span class="line">					&lt;Picker.Item label = &quot;Jave&quot; value = &quot;java&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Javascript&quot; value = &quot;js&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;C语言&quot; value = &quot;C&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Php开发&quot; value = &quot;Php&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Python开发&quot; value = &quot;Python&quot; /&gt;</span><br><span class="line">				&lt;/Picker&gt;</span><br><span class="line"></span><br><span class="line">				&lt;Text&gt;&#123;this.state.language&#125;&lt;/Text&gt;</span><br><span class="line"></span><br><span class="line">				&#123;/**</span><br><span class="line">					styleAttr（进度条样式）： Horizontal Small Large Inverse SmallInverse LargeInverse </span><br><span class="line">					progress： 进度值在0-1之间</span><br><span class="line">				**/&#125;</span><br><span class="line">				&lt;ProgressBarAndroid styleAttr = &quot;Horizontal&quot; /&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>直接看到<code>onValueChange = {(lang) =&gt; this.setState({language:lang})}</code>这段代码，这里需要注意的是将改变的value值传递给回调函数的自定义参数lang，我们可以这么想，这里少了一个步骤，就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onValueChange = &#123;</span><br><span class="line">	lang = value,</span><br><span class="line">	(lang) =&gt; this.setState(&#123;language: lang&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然而这仅仅是我为了理解想出来的一个步骤而已，因此上面的onValueChange改变的是value值，而不是label值，所以这段代码在模拟器上运行起来的时候就可以很明显的看到了，最下面的<text>组件显示的text是Picker.Item的value值，而在picker上显示的是label值。</text></p>
+<p>最后是mode，这个mode除了“dialog（对话框）”以外还有<code>dropdown</code>（下拉），默认是dialog。其他属性请看<a href="https://facebook.github.io/react-native/docs/picker.html" target="_blank" rel="external">官方帮助文档</a>。</p>
+<h2 id="ProgressBarAndroid-和-ProgressViewIOS"><a href="#ProgressBarAndroid-和-ProgressViewIOS" class="headerlink" title="ProgressBarAndroid 和 ProgressViewIOS"></a>ProgressBarAndroid 和 ProgressViewIOS</h2><hr>
+<p>代码在上面，因为progress分android和ios的，所以以后是需要自定义封装好在一个组件里面使用的。</p>
+<p>主要有两个属性，分别是styleAttr和progress。<br>styleAttr（进度条样式）： Normal(普通) Horizontal(水平) Small(小圆圈) Large(大圆圈) Inverse(中圆圈) SmallInverse(也是小圆圈) LargeInverse(大圆圈) ，哈哈，好像Small和SmallInverse以及Large和LargeInverse是一样的<br>progress： 进度值在0-1之间</p>
+<p>了解<a href="https://facebook.github.io/react-native/docs/progressbarandroid.html" target="_blank" rel="external">其他属性访问这里</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/18/react-native学习笔记5/" rel="next" title="react-native学习笔记5">
+                <i class="fa fa-chevron-left"></i> react-native学习笔记5
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/20/react-native学习笔记7/" rel="prev" title="react-native学习笔记7">
+                react-native学习笔记7 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="漏雨" />
+          <p class="site-author-name" itemprop="name">漏雨</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#image组件"><span class="nav-number">1.</span> <span class="nav-text">image组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。"><span class="nav-number">2.</span> <span class="nav-text">最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用的时候就只需要这样写："><span class="nav-number">2.1.</span> <span class="nav-text">引用的时候就只需要这样写：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Picker函数"><span class="nav-number">3.</span> <span class="nav-text">Picker函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Picker-js"><span class="nav-number">3.1.</span> <span class="nav-text">Picker.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ProgressBarAndroid-和-ProgressViewIOS"><span class="nav-number">4.</span> <span class="nav-text">ProgressBarAndroid 和 ProgressViewIOS</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">漏雨</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'greatzuesgithubio';
+      var disqus_identifier = '2016/08/19/react-native学习笔记6/';
+      var disqus_title = 'react-native学习笔记6';
+      var disqus_url = 'http://yoursite.com/2016/08/19/react-native学习笔记6/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

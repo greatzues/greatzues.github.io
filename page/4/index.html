@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -219,6 +219,404 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/04/03/AutoScrollViewPager轮播控件的使用/" itemprop="url">
+                  AutoScrollViewPager轮播控件的使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-03T12:16:59+08:00" content="2016-04-03">
+              2016-04-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/03/AutoScrollViewPager轮播控件的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/03/AutoScrollViewPager轮播控件的使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>以前写轮播都是直接用viewpager写的，详情可以看我上一篇写的博文。<br>因为我使用的是androidstudio所以我直接说我在as中导入这个库的代码，在gradle的app里面添加下面这行<br>    compile (‘cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2’) {<br>        exclude module: ‘support-v4’}<br>之后就可以很快的做出轮播的效果了，我是在fragment中添加的轮播，如果你在activity中添加的话修改对应的上下文就可以了，我直接上代码：<br>XMl<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!--直接把以前用viewpager改成这个就可以了--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/autoViewpager"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>MainActivity.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> AutoScrollViewPager viewPager;</span><br><span class="line">    <span class="keyword">private</span> List&lt;ImageView&gt; list;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] imageRes = &#123;R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        list = <span class="keyword">new</span> ArrayList&lt;ImageView&gt;();</span><br><span class="line">        viewPager = (AutoScrollViewPager) findViewById(R.id.autoViewpager);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;imageRes.length;i++)&#123;</span><br><span class="line">            ImageView imageView = <span class="keyword">new</span> ImageView(<span class="keyword">this</span>);</span><br><span class="line">            imageView.setImageResource(imageRes[i]);</span><br><span class="line">            list.add(imageView);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        viewPager.setAdapter(<span class="keyword">new</span> PagerAdapter() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isViewFromObject</span><span class="params">(View view, Object object)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> view == object;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroyItem</span><span class="params">(ViewGroup container, <span class="keyword">int</span> position, Object object)</span> </span>&#123;</span><br><span class="line">                Log.e(<span class="string">"destroyItem"</span>,<span class="string">"现在销毁第"</span>+(position+<span class="number">1</span>)+<span class="string">"张图片"</span>);</span><br><span class="line">                position = position % list.size();</span><br><span class="line">                container.removeView(list.get(position));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">instantiateItem</span><span class="params">(ViewGroup container, <span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">                Log.e(<span class="string">"destroyItem"</span>,<span class="string">"现在创建第"</span>+(position+<span class="number">1</span>)+<span class="string">"张图片"</span>);</span><br><span class="line">                position = position % list.size();</span><br><span class="line">                container.addView(list.get(position));</span><br><span class="line">                <span class="keyword">return</span> list.get(position);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        viewPager.startAutoScroll();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy();</span><br><span class="line">        viewPager.stopAutoScroll();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>之后就可以看到banner的效果了，不过我还是建议自己按照原理自己写一个，总是使用别人写好的东西反正自己进步会很慢。
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/01/图片轮播详解/" itemprop="url">
+                  图片轮播详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-01T13:36:39+08:00" content="2016-04-01">
+              2016-04-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/01/图片轮播详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/01/图片轮播详解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这篇博文的起源，因为现在很多客户端都要实现一个图片轮播的效果，用来展示一些广告和最新消息。另外，我经常会忘记一些东西怎么写，所以写下这篇博文，巩固一下自己的知识。<br>首先在做轮播图之前先想一下逻辑，在一个轮播图的<strong>表面</strong>，我们首先要有图片，构造一个imageView容器用来适配图片在viewpager上，最后还要具有导航的dot来引导用户现在处于哪个banner页面，还有多少banner页面可以看。<br>其次就是在轮播图背后的逻辑是：</p>
+<blockquote>
+<ul>
+<li><p>实现循环滚动：<br>  1，将PagerAdapter的getCount方法返回值设为无穷大，这样就可以实现无限制的滑动，因为getCount方法返回的是viewpager的子view的数目，所以就不会出现滑倒尽头的时候。<br>  2，在每次添加新的view的时候，都是对当前的position对当前的总页数的取余，当时我还不太理解当小的数目取余大的数目的时候，如3%5的时候，原来这样取余的结果也是和8%5一样都是3，看来真的是小学水平有待提高了。然后就能得到要显示的view进行添加，删除也是一样。<br>  3，设定最开始要显示的Viewpager的currentItem为Integ.MAX的一半左右，这样可以保证向左循环滑动。</p>
+</li>
+<li><p>实现自动循环<br>  创建一个变量position来记录当前的Viewpager的位置，开启一个新的线程，每隔一定时间对position加1，并发送一个Message给Handler，在Handler中重新setCurrentItem();</p>
+</li>
+<li>手动滑动和自动滑动结合<br>  1，利用一个boolean变量isTouch来记录当前是否在触摸Viewpager，在Viewpager的setOntouchListener中更新该值，只有在isTouch为false中时才能对handler发送message。<br>  2，在手动滑动页面的时候要改变position值，否则在下次自动滑动的时候position的只没有更新会报错，所以在setOnPagerChangeListener中来更新position。<br>下面是布局：<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/container"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- ViewPager --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/viewpager"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"180dip"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_alignBottom</span>=<span class="string">"@id/viewpager"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"#44000000"</span></span><br><span class="line">        <span class="attr">android:gravity</span>=<span class="string">"center"</span></span><br><span class="line">        <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span><br><span class="line">        <span class="attr">android:padding</span>=<span class="string">"5dip"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- Banner的文字描述 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/tv_banner_text_desc"</span></span><br><span class="line">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:textColor</span>=<span class="string">"@android:color/white"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 小圆点的父控件 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/ll_dot_group"</span></span><br><span class="line">            <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></span><br><span class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:layout_gravity</span>=<span class="string">"center_horizontal"</span></span><br><span class="line">            <span class="attr">android:layout_marginTop</span>=<span class="string">"5dip"</span></span><br><span class="line">            <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span></span><br><span class="line">            <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>这里我是直接在fragment中使用的轮播，所以下面是一个fragment<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BannerFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.viewpager)</span><br><span class="line">    ViewPager viewpager;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tv_banner_text_desc)</span><br><span class="line">    TextView tvBannerTextDesc;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.ll_dot_group)</span><br><span class="line">    LinearLayout llDotGroup;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * viewPager中的ImageView容器</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;ImageView&gt; imageViewContainer = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 上一个被选中的小圆点的索引，默认值为0</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> preDotPosition = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * banner的文字描述数组</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> String[] bannerTextDescArray = &#123;</span><br><span class="line">            <span class="string">"愚人节笑话，哈哈"</span>,</span><br><span class="line">            <span class="string">"你真无聊，哈哈哈"</span>,</span><br><span class="line">            <span class="string">"左边那副图是傻逼，哈哈哈哈"</span>,</span><br><span class="line">            <span class="string">"右边的才是真正的傻逼，哈哈哈哈哈"</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * banner滚动线程受否销毁的标志，默认不销毁</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isStop = <span class="keyword">false</span>;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * banner的切换下一个page的间隔时间</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">long</span> scrollTimeOffset = <span class="number">4000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ScheduledExecutorService scheduledExecutorService;</span><br><span class="line">    <span class="keyword">private</span> android.os.Handler handler;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        View view = inflater.inflate(R.layout.banner_fragment, container, <span class="keyword">false</span>);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>, view);</span><br><span class="line"></span><br><span class="line">        imageViewContainer = <span class="keyword">new</span> ArrayList&lt;ImageView&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] imageIDS = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;</span><br><span class="line">                R.drawable.bigbang,</span><br><span class="line">                R.drawable.hannibal,</span><br><span class="line">                R.drawable.ellipsis,</span><br><span class="line">                R.drawable.game_of_thrones</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        ImageView imageView =<span class="keyword">null</span>;</span><br><span class="line">        View dot = <span class="keyword">null</span>;</span><br><span class="line">        LinearLayout.LayoutParams params = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> id:imageIDS)&#123;</span><br><span class="line">            imageView = <span class="keyword">new</span> ImageView(getActivity());</span><br><span class="line">            imageView.setBackgroundResource(id);</span><br><span class="line">            imageViewContainer.add(imageView);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//每循环一次添加一个点到线性布局</span></span><br><span class="line">            dot = <span class="keyword">new</span> View(getActivity());</span><br><span class="line">            dot.setBackgroundResource(R.drawable.dot_bg_selector);</span><br><span class="line">            params = <span class="keyword">new</span> LinearLayout.LayoutParams(<span class="number">5</span>,<span class="number">5</span>);</span><br><span class="line">            params.leftMargin =<span class="number">10</span>;</span><br><span class="line">            dot.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">            dot.setLayoutParams(params);</span><br><span class="line">            llDotGroup.addView(dot);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        viewpager.setAdapter(<span class="keyword">new</span> BannerAdapter());</span><br><span class="line">        viewpager.setOnPageChangeListener(<span class="keyword">new</span> BannerPageChangeListener());</span><br><span class="line"></span><br><span class="line">        tvBannerTextDesc.setText(bannerTextDescArray[<span class="number">0</span>]);</span><br><span class="line">        llDotGroup.getChildAt(<span class="number">0</span>).setEnabled(<span class="keyword">true</span>);<span class="comment">//设为可见</span></span><br><span class="line">        viewpager.setCurrentItem(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroyView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroyView();</span><br><span class="line">        ButterKnife.unbind(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">BannerAdapter</span> <span class="keyword">extends</span> <span class="title">PagerAdapter</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isViewFromObject</span><span class="params">(View view, Object object)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> view == object;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Object <span class="title">instantiateItem</span><span class="params">(ViewGroup container, <span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">            View view = imageViewContainer.get(position % imageViewContainer.size());</span><br><span class="line"></span><br><span class="line">            view.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                    Toast.makeText(getActivity(), <span class="string">"page被点击了"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            container.addView(view);</span><br><span class="line">            <span class="keyword">return</span> view;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroyItem</span><span class="params">(ViewGroup container, <span class="keyword">int</span> position, Object object)</span> </span>&#123;</span><br><span class="line">            container.removeView(imageViewContainer.get(position%imageViewContainer.size()));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">BannerPageChangeListener</span> <span class="keyword">implements</span> <span class="title">ViewPager</span>.<span class="title">OnPageChangeListener</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> position, <span class="keyword">float</span> positionOffset, <span class="keyword">int</span> positionOffsetPixels)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> state)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> newPosition  = state % imageViewContainer.size();</span><br><span class="line">            tvBannerTextDesc.setText(bannerTextDescArray[newPosition]);</span><br><span class="line">            llDotGroup.getChildAt(preDotPosition).setEnabled(<span class="keyword">false</span>);</span><br><span class="line">            llDotGroup.getChildAt(newPosition).setEnabled(<span class="keyword">true</span>);</span><br><span class="line">            preDotPosition = newPosition;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在上面的程序中，我们定义了Viewpager，banner下面的TextView，已经轮播的导航点Dotgroup。还有就是装载viewpager的imageView的容器list，以及上一个被选中的小圆点</p>
+<p>未完待续…</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/31/Toolbar基础/" itemprop="url">
+                  Toolbar基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-03-31T21:18:51+08:00" content="2016-03-31">
+              2016-03-31
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/31/Toolbar基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/31/Toolbar基础/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="为什么要使用toolbar"><a href="#为什么要使用toolbar" class="headerlink" title="为什么要使用toolbar"></a>为什么要使用toolbar</h2><p>在Android5.0以后谷歌大力推崇Material Design设计，之后，在世界各地疯狂地掀起一阵material design热。Material design不仅看起来令人惊叹，也是一个前所未有的设计理念。不仅对设计师的影响深大，对开发人员亦是。</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>在build.gradle下添加相关库的依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile 'com.android.support:appcompat-v7:22.2.0'</span><br></pre></td></tr></table></figure></p>
+<p>当然稳定版的androidstudio在创建项目的时候也默认添加了这个库。</p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>在xml中新建一个toolbar的标签，然后在style中改掉theme，编写一个menu的菜单，如下：<br>另外有一个提醒，就是在V7的支持包里面没有android:showAsAction和android:actionViewClass这两个属性，所以一直在这两个属性的困惑下打滚了两天。</p>
+<p>style样式，把之前的主题风格<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;</span><span class="undefined"></span></span><br></pre></td></tr></table></figure></p>
+<p>改成这个<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></span><br></pre></td></tr></table></figure></p>
+<p>因为v7支持包中默认是appcompatActivity所以默认是自带有actionbar的，如果不把action取消掉的话就会有冲突了，会报actionbar不能强制转换为toolbar的提示，下面我也会详细提到报错的原因。</p>
+<p>下面是menu.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--注意在V7支持包中加入上面导入的apk/res-auto包--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/action_search"</span></span><br><span class="line">        <span class="attr">app:actionViewClass</span>=<span class="string">"android.widget.SearchView"</span></span><br><span class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/actionbar_search_icon"</span></span><br><span class="line">        <span class="attr">app:showAsAction</span>=<span class="string">"ifRoom"</span></span><br><span class="line">        <span class="attr">android:title</span>=<span class="string">"搜索"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/action_plus"</span></span><br><span class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ofm_add_icon"</span></span><br><span class="line">        <span class="attr">app:actionProviderClass</span>=<span class="string">"com.example.zues.toolbar_demo.PlusActionProvider"</span></span><br><span class="line">        <span class="attr">android:title</span>=<span class="string">"添加"</span></span><br><span class="line">        <span class="attr">app:showAsAction</span>=<span class="string">"ifRoom"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/photo"</span></span><br><span class="line">        <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span><br><span class="line">        <span class="attr">android:title</span>=<span class="string">"拍照"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/group"</span></span><br><span class="line">        <span class="attr">app:icon</span>=<span class="string">"@drawable/ofm_group_chat_icon"</span></span><br><span class="line">        <span class="attr">android:title</span>=<span class="string">"群聊"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面不同的item标签中，简单的我就不解释了，主要是讲几个比较重要的</p>
+<blockquote>
+<ul>
+<li>actionViewClass主要用来关联操作的item的添加操作，也就是可以创建一个类继承ActionProvider然后覆写其中的方法进行设置title，icon以及设置监听等操作</li>
+<li>showAsAction这个标签有五个可以选的属性，分别是never,ifroom,collapseActionView,withText,always,具体功能自己测试一下，这样的效果比自己看别人写好的经验好几倍</li>
+</ul>
+</blockquote>
+<p>接下来就是继承了actionbar之后的类了，也就是上面第二个actionProviderClass关联的class，这个类可以动态添加一些icon和title，直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.zues.toolbar_demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.support.v4.view.ActionProvider;</span><br><span class="line"><span class="keyword">import</span> android.view.MenuItem;</span><br><span class="line"><span class="keyword">import</span> android.view.SubMenu;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by zues on 2016/4/7.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlusActionProvider</span> <span class="keyword">extends</span> <span class="title">ActionProvider</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Context context;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Creates a new instance. ActionProvider classes should always implement a</span><br><span class="line">     * constructor that takes a single Context parameter for inflating from menu XML.</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@param</span> context Context for accessing resources.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PlusActionProvider</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">        <span class="keyword">this</span>.context =context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateActionView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPrepareSubMenu</span><span class="params">(SubMenu subMenu)</span> </span>&#123;</span><br><span class="line">        subMenu.clear();</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_group_chat))</span><br><span class="line">                .setIcon(R.drawable.ofm_group_chat_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        Intent intent = <span class="keyword">new</span> Intent(context,TestActivity.class);</span><br><span class="line">                        context.startActivity(intent);</span><br><span class="line">						<span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//这里把返回值设为true</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_add_friend))</span><br><span class="line">                .setIcon(R.drawable.ofm_add_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_video_chat))</span><br><span class="line">                .setIcon(R.drawable.ofm_video_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_scan))</span><br><span class="line">                .setIcon(R.drawable.ofm_qrcode_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_take_photo))</span><br><span class="line">                .setIcon(R.drawable.ofm_camera_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasSubMenu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面值得注意的是里面的几个包的导入，我在这里折腾了一个多小时，因为跑起来一直在报错<br>一开始报错的原因是下面这段代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.ClassCastException: com.example.zues.toolbar_demo.PlusActionProvider cannot be cast to android.support.v4.view.ActionProvider</span><br><span class="line">                                                     at android.support.v7.internal.view.SupportMenuInflater$MenuState</span><br></pre></td></tr></table></figure></p>
+<p>意思是在V7支持MenuInflater$MenuState包下的PlusActionProvider不能强制转换为V4支持包的ActionProvider，所以出现exception。<br>解决的办法就是把原来在v7包下的ActionProvider改成导入V4的包，然后就能运行起来了。<br>然后是另外一个报错，就是This Activity already has an action bar supplied by the window decor，也就是说原来的activity已经自带了activity，所以就不可以再添加其他的windowbar了<br>这里的解决办法就是直接将资源目录下的style.xml文件中的主题改成&lt; …  parent=”Theme.AppCompat.Light.NoActionBar”&gt;就不会有冲突了。</p>
+<p>然后是分析里面的方法：</p>
+<blockquote>
+<ul>
+<li>继承之后在构造方法中传入上下文，然后开始在onPrepareSubMenu中准备menu的子item，主要方法是add方法，</li>
+<li>在setOnMenuItemClickListener进行设置相关的监听事件，返回true的话在安卓开发者文档中查找之后的解释是：</li>
+<li>Called when a menu item has been invoked. This is the first code that is executed; if it returns true, no other callbacks will be executed.也就是返回时true的话，其他的回调函数将不会被执行，虽然好像很厉害的样子，但是依然理解不了是什么意思</li>
+<li>可以看到我在第一个item的onMenuItemClick中添加了intent，并且返回true，另外我也在第二个onMenuItemClick中也添加了intent，但是返回的是false，似乎真的没什么差别</li>
+<li>其中在一片博文中看到过一篇文章说的是在调用过程中有优先级之分，将菜单项和intent关联，用户点击后，系统将自动执行startActivity(intent)。intent的优先级别低于onOptionItemSelected()</li>
+</ul>
+</blockquote>
+<p>最后是activity_main的xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"#f51630"</span></span><br><span class="line">        <span class="attr">app:elevation</span>=<span class="string">"4dp"</span></span><br><span class="line">        <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.ActionBar"</span></span><br><span class="line">        <span class="attr">app:popupTheme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>还有就是style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;</span><span class="xml"></span><br><span class="line">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Toolbar toolbar;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        toolbar = findView(R.id.toolbar);</span><br><span class="line">        setSupportActionBar(toolbar);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后就可以看到下面的图像了<br><img src="http://img.blog.csdn.net/20150611160308224" alt="toolbar的图像"></p>
+<p>详细的style中各个属性的作用请看下面的代码以及注释，因为注释已经很明确了，所以自己慢慢体会一下，敲一下就行。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="xml"></span><br><span class="line">       <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--导航栏底色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/accent_material_dark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--状态栏底色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/accent_material_light<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--导航栏上的标题颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColorPrimary"</span>&gt;</span>@android:color/black<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--Activity窗口的颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowBackground"</span>&gt;</span>@color/material_blue_grey_800<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--按钮选中或者点击获得焦点后的颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>#00ff00<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--和 colorAccent相反，正常状态下按钮的颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>#ff0000<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--Button按钮正常状态颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorButtonNormal"</span>&gt;</span>@color/accent_material_light<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--EditText 输入框中字体的颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"editTextColor"</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>为了更好的理解上面的特效，可以看下图<br><img src="http://img.blog.csdn.net/20150611165509495" alt="toolbar的各种属性"></p>
+<h2 id="三，添加点击事件"><a href="#三，添加点击事件" class="headerlink" title="三，添加点击事件"></a>三，添加点击事件</h2><p>理解了添加和设计toolbar的设计之后，我们就应该处理里面的逻辑事件了，不担心，谷歌肯定会给我们设置监听事件的。<br>    通过Activity继承Toolbar的OnMenuItemClickListener接口<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现接口</span></span><br><span class="line">toolbar.setOnMenuItemClickListener(<span class="keyword">this</span>);</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</span><br><span class="line">            <span class="comment">//详细每个item的监听</span></span><br><span class="line">			...</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>通过看toolbar的源码可以知道toolbar是继承了viewgroup的一个容器空间，这样一来很多事情就好办了。<br>这个是自定义的xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"?attr/colorPrimary"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">RelativeLayout</span></span><br><span class="line">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:gravity</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">                <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:text</span>=<span class="string">"add"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">                <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_centerInParent</span>=<span class="string">"true"</span></span><br><span class="line">                <span class="attr">android:layout_gravity</span>=<span class="string">"center_vertical"</span></span><br><span class="line">                <span class="attr">android:text</span>=<span class="string">"标题"</span></span><br><span class="line">                <span class="attr">android:textSize</span>=<span class="string">"18sp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">                <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span></span><br><span class="line">                <span class="attr">android:background</span>=<span class="string">"@drawable/abc_ic_menu_share_mtrl_alpha"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.v7.widget.Toolbar</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>另外注意一下一个数值，类似这个的?attr/<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span><br><span class="line">	<span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span><br><span class="line">       <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">       <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">       <span class="attr">android:background</span>=<span class="string">"?attr/colorPrimary"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的android:attr只是一个数值，这个肯定大家都知道。特别的要说一下<strong>?attr/actionBarSize</strong>这个的意思是定义actionbar的高度为一个特定的值，这个值是安卓自定义好的数字，也就是内部定义好的数值，专门用来在一些没有专业美工妹子设计的demo中使用的数值，这样一来就不用程序员自己花心思去想了，直接使用谷歌写好的标准数值。<br>类似的?attr/colorPrimary也一样的，这个是material design定义好的默认标准背景，看起来其实蛮舒服的。</p>
+<p>不要忘记在ctivity中关联toolbar，这个跑起来的效果如下图<br><img src="http://img.blog.csdn.net/20150611164426768" alt="自定义toolbar"><br>任由你想象，各种toolbar特效都ok。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/29/Fragment的高级应用/" itemprop="url">
                   Fragment的高级应用
                 </a>
@@ -232,7 +630,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-29T14:48:57+08:00" content="2016-03-29">
               2016-03-29
             </time>
@@ -244,7 +642,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
@@ -346,7 +744,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-29T14:46:51+08:00" content="2016-03-29">
               2016-03-29
             </time>
@@ -358,7 +756,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
@@ -480,7 +878,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-29T14:46:19+08:00" content="2016-03-29">
               2016-03-29
             </time>
@@ -492,7 +890,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
@@ -605,7 +1003,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-19T14:29:37+08:00" content="2016-03-19">
               2016-03-19
             </time>
@@ -617,7 +1015,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/android/" itemprop="url" rel="index">
@@ -805,7 +1203,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-18T17:13:28+08:00" content="2016-03-18">
               2016-03-18
             </time>
@@ -817,7 +1215,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
@@ -946,7 +1344,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-16T17:01:10+08:00" content="2016-03-16">
               2016-03-16
             </time>
@@ -958,7 +1356,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
@@ -1088,7 +1486,7 @@ var _hmt = _hmt || [];
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-03-08T11:11:11+08:00" content="2016-03-08">
               2016-03-08
             </time>
@@ -1100,7 +1498,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/日记/" itemprop="url" rel="index">
@@ -1194,115 +1592,11 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/08/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-08T10:45:02+08:00" content="2016-03-08">
-              2016-03-08
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/08/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/08/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1343,8 +1637,8 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">38</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -1352,7 +1646,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -1361,7 +1655,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1414,7 +1708,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
