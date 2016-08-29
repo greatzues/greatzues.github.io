@@ -219,6 +219,148 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/08/02/ES6入门2/" itemprop="url">
+                  ES6入门2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-02T15:32:41+08:00" content="2016-08-02">
+              2016-08-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/02/ES6入门2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/02/ES6入门2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="变量的解构复制"><a href="#变量的解构复制" class="headerlink" title="变量的解构复制"></a>变量的解构复制</h1><hr>
+<h2 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h2><hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5为变量赋值</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="number">3</span>;</span><br><span class="line"><span class="comment">//ES6为变量赋值，允许下面这样</span></span><br><span class="line"><span class="keyword">var</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<p>同样的赋值，ES6能节省更多代码，其中最后一行代码表示从数组中取值，按照对应的位置，对变量赋值。<br>这种写法被称作“模式匹配”，也就是只要等号两边的模式相同，左边的变量就会被赋予对应的值，下面是使用嵌套数组进行解构的例子。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo, [[bar], baz]] = [<span class="number">1</span>, [[<span class="number">2</span>], <span class="number">3</span>]];</span><br><span class="line">foo <span class="comment">// 1</span></span><br><span class="line">bar <span class="comment">// 2</span></span><br><span class="line">baz <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [ , , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</span><br><span class="line">third <span class="comment">// "baz"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [x, , y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">x <span class="comment">// 1</span></span><br><span class="line">y <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">head <span class="comment">// 1</span></span><br><span class="line">tail <span class="comment">// [2, 3, 4]</span></span><br><span class="line">tail[<span class="number">2</span>] <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [x, y, ...z] = [<span class="string">'a'</span>];</span><br><span class="line">x <span class="comment">// "a"</span></span><br><span class="line">y <span class="comment">// undefined</span></span><br><span class="line">z <span class="comment">// []</span></span><br></pre></td></tr></table></figure></p>
+<p>对于上面的运行结果我得思考一下，如果两边刚好有对应的，那么久赋值到对应的值，不过竟然可以用第二种和第三中方式进行赋值，觉得有点神奇，尽管这种赋值方式并不现实。相比之下，第四种方式更实用一点，通过字符<strong>…</strong>声明一个数组存储对应后面的很多值，并且额可以通过<strong>数值名字[对应数字]</strong>正常调用数组元素。这也为最后一种方式做铺垫。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [foo] = [];</span><br><span class="line"><span class="keyword">var</span> [bar, foo] = [<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<p>上面的代码都表示的是解析不成功的，foo的值都等于undefined。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">x <span class="comment">// 1</span></span><br><span class="line">y <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [a, [b], d] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>];</span><br><span class="line">a <span class="comment">// 1</span></span><br><span class="line">b <span class="comment">// 2</span></span><br><span class="line">d <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+<p>不完全解构，即等号左边的模式只匹配一部分等号右边的数组，这种情况下，解构依然能成功。正如上面的代码一样，都属于不完全解构。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">NaN</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">undefined</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> [foo] = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>很明显左边和右边的模式是不一样的，官方的解释是因为右边的值，要么转化为对象以后不具备Iterator接口（前五个表达式），要么本身就不具备Iterator接口（最后一个表达式），科普一下，Iterator是迭代器的意思，java中也有这个概念，把他想象成现代化容器，这个容器具备很多供自身被访问的功能，也就是提供遍历自身的各种抽象接口详，情自己去查阅这方面的知识。</p>
+<pre><code>解构复制不仅适用于var，还适用于let和const命令。
+</code></pre><p>对于Set结构，也可以使用数组的解构赋值。（记住写法）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y, z] = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]);</span><br><span class="line">x <span class="comment">// "a"</span></span><br></pre></td></tr></table></figure></p>
+<p>现在可以用专业一点的概括语言来总结一下，只要某种数据结构具有Iterator接口，都可以采用数组形式的解构赋值，也就是写习惯了之后两边对称，那其实就可以了。<br>不过很尴尬，我还是不明白下面这段代码的意思：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> a;</span><br><span class="line">    [a, b] = [b, a + b];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> [first, second, third, fourth, fifth, sixth] = fibs();</span><br><span class="line">sixth <span class="comment">// 5 为什么输出的是5？</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="这里先标记一下，真的没看懂，哈哈！！"><a href="#这里先标记一下，真的没看懂，哈哈！！" class="headerlink" title="这里先标记一下，真的没看懂，哈哈！！"></a>这里先标记一下，真的没看懂，哈哈！！</h3><h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><hr>
+<p>解构赋值允许默认值，例如<strong>var [foo = true] = [];</strong>，那么在调用foo的时候默认就是true，下面代码是其他例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>]; <span class="comment">// x='a', y='b'</span></span><br><span class="line">[x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>, <span class="literal">undefined</span>]; <span class="comment">// x='a', y='b'</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [x = <span class="number">1</span>] = [<span class="literal">undefined</span>];</span><br><span class="line">x <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> [x = <span class="number">1</span>] = [<span class="literal">null</span>];</span><br><span class="line">x <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+<p>但是有一种情况是，如果有一个数组的成员是null，那么默认值就不会生效，因为null不严格等于undefined。<br>假如默认值是一个表达式，那么这个表达式是惰性求值，也就是需要用到的时候才会取值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'aaa'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [x = f()] = [<span class="number">1</span>];</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码其实等价于下面的代码，不过我却没看懂，解释是因为x能取到值，所以函数f根本不会执行，初看以为自己理解了，但是看下面的代码却好像还是挺懵懂的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x;</span><br><span class="line"><span class="keyword">if</span> ([<span class="number">1</span>][<span class="number">0</span>] === <span class="literal">undefined</span>) &#123;</span><br><span class="line">  x = f();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  x = [<span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>再看一下下面的几个变量定义，我觉得我会弄混掉。最后一个表达式在上一章已经说过，因为x在取值y之前，y未被声明。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>, y = x] = [];     <span class="comment">// x=1; y=1</span></span><br><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>, y = x] = [<span class="number">2</span>];    <span class="comment">// x=2; y=2</span></span><br><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>, y = x] = [<span class="number">1</span>, <span class="number">2</span>]; <span class="comment">// x=1; y=2</span></span><br><span class="line"><span class="keyword">let</span> [x = y, y = <span class="number">1</span>] = [];     <span class="comment">// ReferenceError</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h2><hr>
+<p>解构除了用于数组，还用于对象。不过我觉得这样使用会把代码变得比较冗长。</p>
+<p>另外对象与数组还有不同的地方，那就是数组是按照次序排列的，变量的取值由他们的位置决定，但是对象的属性没有次序，变量必须和属性同名，才能取到正确的值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123; foo, bar &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</span><br><span class="line">foo <span class="comment">// "aaa"</span></span><br><span class="line">bar <span class="comment">// "bbb"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123; baz &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</span><br><span class="line">baz <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">//如果变量名与属性名字不一致，就要写成下面这样</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123; first: <span class="string">'hello'</span>, last: <span class="string">'world'</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> &#123; first: f, last: l &#125; = obj;</span><br><span class="line">f <span class="comment">// 'hello'</span></span><br><span class="line">l <span class="comment">// 'world'</span></span><br></pre></td></tr></table></figure></p>
+<p>其实对象的解构是下面代码形式的简写，也就是对象的解构要先找到同名属性，然后赋值给对应的变量，看下面的代码自己理解。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123; foo: foo, bar: bar &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123; foo: baz &#125; = &#123; foo: <span class="string">"aaa"</span>, bar: <span class="string">"bbb"</span> &#125;;</span><br><span class="line">baz <span class="comment">// "aaa"</span></span><br><span class="line">foo <span class="comment">// error: foo is not defined</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码中真正被复制的变量是baz，而不是模式foo。</p>
+<p>再看一下下面两段代码的对比<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo;</span><br><span class="line"><span class="keyword">let</span> &#123;foo&#125; = &#123;foo: <span class="number">1</span>&#125;; <span class="comment">// SyntaxError: Duplicate declaration "foo"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> baz;</span><br><span class="line"><span class="keyword">let</span> &#123;bar: baz&#125; = &#123;bar: <span class="number">1</span>&#125;; <span class="comment">// SyntaxError: Duplicate declaration "baz"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//------》》我是分界线》》-------------------</span></span><br><span class="line"><span class="comment">//仅仅是用来对比</span></span><br><span class="line"><span class="keyword">let</span> foo;</span><br><span class="line">(&#123;foo&#125; = &#123;foo: <span class="number">1</span>&#125;); <span class="comment">// 成功</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> baz;</span><br><span class="line">(&#123;bar: baz&#125; = &#123;bar: <span class="number">1</span>&#125;); <span class="comment">// 成功</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看出，采用这种写法的时候，变量的声明和赋值时一体的，也就是在一条代码就搞定了，如果像分界线上面的代码就会因为重复声明而导致报错，着对于let和const来说都是不可以的。而var命令是允许重复声明的，所以var声明是被允许的。<br>分界线下面的代码中let命令下面一行的圆括号是必须的，否则会报错。因为在解析的时候会把括号当成是代码块，而不是赋值语句处理。</p>
+<p>啊啊啊！！！还有好多啊，不想看了，直接实战了，不懂再倒回来看。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/31/ES6入门/" itemprop="url">
                   ES6入门
                 </a>
@@ -1630,115 +1772,6 @@ a在带参构造函数中的值：10
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/11/view的构造函数/" itemprop="url">
-                  view的构造函数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-05-11T12:27:14+08:00" content="2016-05-11">
-              2016-05-11
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/11/view的构造函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/11/view的构造函数/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要是转载一篇文章，以自己的实力当前还写不出这样的文章，不说太多，直接上文章，<a href="http://blog.csdn.net/yuzhouxiang/article/details/6958017" target="_blank" rel="external"> android view构造函数研究</a></p>
-<p>在这之前一直被view的构造函数弄糊涂了好多次，这次终于找到一篇好的博文介绍了，看了两遍还不是很懂，打算看第三遍顺便写个demo敲一下。</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><hr>
-<p>任意继承一个view，androidstudio会提醒你至少继承一个构造函数，下面是view的四个不同的构造函数。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">YourView</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>(context);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">YourView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>(context, attrs);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">YourView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>(context, attrs, defStyleAttr);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">YourView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr, <span class="keyword">int</span> defStyleRes)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>(context, attrs, defStyleAttr, defStyleRes);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p>分别给每一个构造函数编号为y1,y2,y3,y4。</p>
-<blockquote>
-<p>首先y1是简单的构造函数，如果只是想动态定性的快速构建一个view的时候，而不使用额外的xml文件inflate的话，在代码中直接new一个view实例的时候，会调用第一个构造函数。<br>y2多了一个AttributeSet类型的参数，通过布局文件xml创建一个view时，这个参数会将xml里面设定的属性传递给构造函数，也就是说通过inflate的方法但是却没有实现y2的话就会报错，类似这个android.view.InflateException<br>重要的是y3，</p>
-</blockquote>
-<p>我的想法是这样的，为什么需要自定义view，就是希望能创造出一些比较合乎业务要求的布局，这时候如果单纯的height或者margin之类的单个不能实现的话，我们就有需要自己通过自定义style，创造出自己的命名空间，然后定义自己独有的一些值，通过代码的形式传到自定义view类里面，然后将传进来的attrs进行相应的操作，我试一下用相应的代码实现来验证我的想法</p>
-<h2 id="自定义style"><a href="#自定义style" class="headerlink" title="自定义style"></a>自定义style</h2><p>可以在res/values下创建一个attrs.xml文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"CustomView"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--采用驼峰命名规则,可以随意命名,format是属性的单位--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"ourstyle"</span> <span class="attr">format</span>=<span class="string">"reference"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"atext"</span> <span class="attr">format</span>=<span class="string">"string"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>上面的代码中，定义了两个属性，单位是format，format类型包括<br>    reference     引用<br>    color            颜色<br>    boolean       布尔值<br>    dimension   尺寸值<br>    float            浮点值<br>    integer        整型值<br>    string          字符串<br>    enum          枚举值</p>
-<h3 id="怎么使用呢？"><a href="#怎么使用呢？" class="headerlink" title="怎么使用呢？"></a>怎么使用呢？</h3><p>首先我们可以看到布局文件中最大的viewgroup会有一个或者两个是xmlns开头的字段，其实这个是XML name space的缩写，明白抽象概念之后我们自己定义一个命名空间（name space）<br>首先参考这个：xmlns:android=”<a href="http://schemas.android.com/apk/res/android" target="_blank" rel="external">http://schemas.android.com/apk/res/android</a>“<br><em>xmlns</em>，这个就不说了，上面刚讲了是XML name space的缩写<br><em>android</em>，这个是命名空间的名称，可以随意写，因为你也可能看到有些命名为app，后面调用的时候会用到这个，建议用可记性强简短的单词，你可以把android改成其他字母，再随便使用一下android:layout_width=”match_parent”或者android:layout_height=”match_parent”，你会发现定义好attrs都失效了，然后把这个属性的名称改成你命名之后的名字，又正常了<br><em><a href="http://schemas.android.com/apk/res/android" target="_blank" rel="external">http://schemas.android.com/apk/res/android</a></em>，这个是androidstudio万能的书写方式，在stackoverflow中翻译得到的意思是主要用来标记一些重要的属性，例如：&lt;RelativeLayout不写成&lt;RelativeLayout：id ，还有android:layout_width为什么不写成layout_width，更准确的说算是校对吧。而在eclipse中一般会这样默认写xmlns:app=”<a href="http://schemas.android.com/apk/res/com.zues.demo&quot;，后面的com.zues.demoshi" target="_blank" rel="external">http://schemas.android.com/apk/res/com.zues.demo&quot;，后面的com.zues.demoshi</a> app的包名，google一下这段代码会发现，这段简单的代码后面隐藏了惊天大秘密，具体的探索我就只帮你找到我觉得比较好的一个博客了<a href="http://gejiaheng.github.io/2015/04/19/xml-namespace/" target="_blank" rel="external">XML namespace in Android</a></p>
-<h3 id="怎么在自定义的view中拿到我们定义好的属性呢？"><a href="#怎么在自定义的view中拿到我们定义好的属性呢？" class="headerlink" title="怎么在自定义的view中拿到我们定义好的属性呢？"></a>怎么在自定义的view中拿到我们定义好的属性呢？</h3><p>通过context.obtainStyledAttributes将构造函数中的attrs进行解析出来,就可以拿到相对应的属性.(下面的mAttrs只是举例)<br>TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.MyView);<br>mColor = typedArray.getColor(R.styleable.MyView_roundColor, 0XFF00FF00);</p>
-<h3 id="需要注意的一点是-在我们获取尺寸的时候有三个函数进行使用-我们来看看他们之间的区别"><a href="#需要注意的一点是-在我们获取尺寸的时候有三个函数进行使用-我们来看看他们之间的区别" class="headerlink" title="需要注意的一点是:在我们获取尺寸的时候有三个函数进行使用,我们来看看他们之间的区别."></a>需要注意的一点是:在我们获取尺寸的时候有三个函数进行使用,我们来看看他们之间的区别.</h3><p>getDimension()是基于当前DisplayMetrics进行转换，获取指定资源id对应的尺寸。文档里并没说这里返回的就是像素，要注意这个函数的返回值是float，像素肯定是int。<br>getDimensionPixelSize()与getDimension()功能类似，不同的是将结果转换为int，并且小数部分四舍五入。<br>getDimensionPixelOffset()与getDimension()功能类似，不同的是将结果转换为int，并且偏移转换（offset conversion，函数命名中的offset是这个意思）是直接截断小数位，即取整（其实就是把float强制转化为int，注意不是四舍五入哦）。<br>    由此可见，这三个函数返回的都是绝对尺寸，而不是相对尺寸（dp\sp等）。如果getDimension()返回结果是20.5f，那么getDimensionPixelSize()返回结果就是21，getDimensionPixelOffset()返回结果就是20。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1784,7 +1817,7 @@ a在带参构造函数中的值：10
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-count">42</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

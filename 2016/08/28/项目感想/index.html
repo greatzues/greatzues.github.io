@@ -1,0 +1,789 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react-native," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="zues blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="代码块
+不是我吹牛啊，刚刚把想了一晚的组件通信那部分写好了，现在有一点经验分享给自己，首先贴上部分代码：
+index.android.js123456789101112131415161718192021render() &amp;#123;      let defaultName = &amp;apos;BottomTap&amp;apos;;      let defaultComponent = BottomTa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目感想">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/项目感想/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="代码块
+不是我吹牛啊，刚刚把想了一晚的组件通信那部分写好了，现在有一点经验分享给自己，首先贴上部分代码：
+index.android.js123456789101112131415161718192021render() &amp;#123;      let defaultName = &amp;apos;BottomTap&amp;apos;;      let defaultComponent = BottomTa">
+<meta property="og:updated_time" content="2016-08-29T06:09:35.801Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目感想">
+<meta name="twitter:description" content="代码块
+不是我吹牛啊，刚刚把想了一晚的组件通信那部分写好了，现在有一点经验分享给自己，首先贴上部分代码：
+index.android.js123456789101112131415161718192021render() &amp;#123;      let defaultName = &amp;apos;BottomTap&amp;apos;;      let defaultComponent = BottomTa">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b706031fedc2f13c7dc61b81d4a77d64";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <title> 项目感想 | zues blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zues blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                项目感想
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-28T08:44:51+08:00" content="2016-08-28">
+              2016-08-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/28/项目感想/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/28/项目感想/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><hr>
+<p>不是我吹牛啊，刚刚把想了一晚的组件通信那部分写好了，现在有一点经验分享给自己，首先贴上部分代码：</p>
+<h3 id="index-android-js"><a href="#index-android-js" class="headerlink" title="index.android.js"></a>index.android.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">      let defaultName = &apos;BottomTap&apos;;</span><br><span class="line">      let defaultComponent = BottomTap;</span><br><span class="line">      if(this.state.toStartPage)&#123;</span><br><span class="line">          return(</span><br><span class="line">              &lt;StartPage /&gt;</span><br><span class="line">          );</span><br><span class="line">      &#125;else &#123;</span><br><span class="line">          var initialRoute = &#123;name: defaultName, component: defaultComponent&#125;;</span><br><span class="line">          return(</span><br><span class="line">              &lt;Navigator</span><br><span class="line">                  sceneStyle=&#123;styles.container&#125;</span><br><span class="line">                  initialRoute=&#123;initialRoute&#125;</span><br><span class="line">                  configureScene=&#123;(route) =&gt; Navigator.SceneConfigs.FadeAndroid&#125;</span><br><span class="line">                  renderScene=&#123;(route, navigator) =&gt; &#123;</span><br><span class="line">                      let Component  = route.component;</span><br><span class="line">                      return &lt;Component &#123;...route.params&#125; navigator=&#123;navigator&#125;/&gt;</span><br><span class="line">                  &#125;&#125;/&gt;</span><br><span class="line">          );</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="BottomTap-js"><a href="#BottomTap-js" class="headerlink" title="BottomTap.js"></a>BottomTap.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;TabNavigator.Item</span><br><span class="line">                title = &quot;主页&quot;</span><br><span class="line">                selected = &#123;this.state.selectTab === &apos;home&apos;&#125;</span><br><span class="line">                selectedTitleStyle = &#123;styles.seletedTextStyle&#125;</span><br><span class="line">                titleStyle =&#123;styles.textStyle&#125;</span><br><span class="line">                renderIcon = &#123;() =&gt; &lt;Image source=&#123;require(&apos;./img/home.png&apos;)&#125; style=&#123;styles.iconStyle&#125;/&gt; &#125;</span><br><span class="line">                renderSelectedIcon =&#123;() =&gt; &lt;Image source=&#123;require(&apos;./img/home_selected.png&apos;)&#125; style=&#123;styles.iconStyle&#125;/&gt; &#125;</span><br><span class="line">                onPress=&#123;() =&gt; this.setState(&#123;selectTab:&apos;home&apos;&#125;)&#125;&gt;</span><br><span class="line">	</span><br><span class="line">		&lt;Home homeClick=&#123;this.click.bind(this)&#125;/&gt;</span><br><span class="line">		</span><br><span class="line">            &lt;/TabNavigator.Item&gt;	</span><br><span class="line">//...此处省略了很多代码</span><br><span class="line">click()&#123;</span><br><span class="line">	const &#123; navigator &#125; = this.props;</span><br><span class="line">	if( navigator ) &#123;</span><br><span class="line">		navigator.push(&#123;</span><br><span class="line">			name: &apos;Login&apos;,</span><br><span class="line">			component: Login,</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Home-js"><a href="#Home-js" class="headerlink" title="Home.js"></a>Home.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">       var navigationView = (</span><br><span class="line">           &lt;View &gt;</span><br><span class="line">               &lt;Text style=&#123;[styles.text,&#123;marginTop: 20&#125;]&#125; onPress=&#123;() =&gt;this.setState(&#123;absence : &apos;已签到&apos;&#125;) &#125;&gt;&#123;this.state.absence&#125;&lt;/Text&gt;</span><br><span class="line">           &lt;/View&gt;</span><br><span class="line">       );</span><br><span class="line"></span><br><span class="line">       return (</span><br><span class="line">           &lt;View&gt;</span><br><span class="line">               &lt;Toolbar ref = &quot;toolbar&quot; click = &#123;this.props.homeClick&#125; /&gt;</span><br><span class="line">               &lt;View&gt;&lt;PicBanner/&gt;&lt;/View&gt;</span><br><span class="line">               &lt;TouchableOpacity&gt;</span><br><span class="line">                   &lt;View style = &#123;styles.textStyle&#125; onPress=&#123;() =&gt; this.setState&#125;&gt;</span><br><span class="line">                       &lt;Text style=&#123;styles.text&#125;&gt;机电小广场&lt;/Text&gt;</span><br><span class="line">                   &lt;/View&gt;</span><br><span class="line">               &lt;/TouchableOpacity&gt;</span><br><span class="line">               &lt;View style=&#123;&#123;height: 65&#125;&#125;&gt;</span><br><span class="line">                   &lt;DrawerLayoutAndroid</span><br><span class="line">                       drawerWidth=&#123;100&#125;</span><br><span class="line">                       drawerPosition=&#123;DrawerLayoutAndroid.positions.Right&#125;</span><br><span class="line">                       renderNavigationView=&#123;() =&gt;navigationView&#125;&gt;</span><br><span class="line"></span><br><span class="line">                           &lt;TouchableOpacity style=&#123;styles.drawerLayoutAndroidView&#125; &gt;</span><br><span class="line">                               &lt;View &gt;&lt;Text style=&#123;styles.drawerLayoutAndroidText&#125;&gt;我的班级我的家&lt;/Text&gt;&lt;/View&gt;</span><br><span class="line">                               &lt;View style=&#123;&#123;flexDirection: &apos;row&apos;,alignItems: &apos;center&apos;,marginLeft:5,marginRight:20&#125;&#125;&gt;</span><br><span class="line">                                   &lt;Text&gt;左划签到&lt;/Text&gt;</span><br><span class="line">                                   &lt;Image source=&#123;require(&apos;./img/arrow_left.png&apos;)&#125; style=&#123;&#123;height: 12&#125;&#125;&gt;&lt;/Image&gt;</span><br><span class="line">                               &lt;/View&gt;</span><br><span class="line">                           &lt;/TouchableOpacity&gt;</span><br><span class="line"></span><br><span class="line">                   &lt;/DrawerLayoutAndroid&gt;</span><br><span class="line">               &lt;/View&gt;</span><br><span class="line"></span><br><span class="line">               &lt;TouchableOpacity&gt;</span><br><span class="line">                   &lt;View style = &#123;styles.textStyle&#125;&gt;&lt;Text style=&#123;styles.text&#125;&gt;机电简讯&lt;/Text&gt;&lt;/View&gt;</span><br><span class="line">               &lt;/TouchableOpacity&gt;</span><br><span class="line"></span><br><span class="line">                &lt;TouchableOpacity&gt;</span><br><span class="line">                   &lt;View style = &#123;styles.textStyle&#125;&gt;&lt;Text style=&#123;styles.text&#125;&gt;校友风采&lt;/Text&gt;&lt;/View&gt;</span><br><span class="line">               &lt;/TouchableOpacity&gt;</span><br><span class="line">           &lt;/View&gt;</span><br><span class="line">       );</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Toolbar-js"><a href="#Toolbar-js" class="headerlink" title="Toolbar.js"></a>Toolbar.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">       return(</span><br><span class="line">           &lt;ToolbarAndroid</span><br><span class="line">               actions=&#123;toolbarActions&#125;</span><br><span class="line">               style=&#123;styles.toolbar&#125;</span><br><span class="line">               title= &quot;机电E家人&quot;</span><br><span class="line">               navIcon = &#123;require(&apos;./img/pic.png&apos;)&#125;</span><br><span class="line">               onIconClicked=&#123;this.props.click&#125;</span><br><span class="line">               onActionSelected=&#123;this.onActionSelected&#125;&gt;</span><br><span class="line"></span><br><span class="line">           &lt;/ToolbarAndroid&gt;</span><br><span class="line">       );</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="安卓手机物理键BackAndroid的使用"><a href="#安卓手机物理键BackAndroid的使用" class="headerlink" title="安卓手机物理键BackAndroid的使用"></a>安卓手机物理键BackAndroid的使用</h2><hr>
+<p>首先我要埋怨一下我做这个整个用了一天，仅仅是一个小功能而已。贴上代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sample React Native App</span><br><span class="line"> * https://github.com/facebook/react-native</span><br><span class="line"> * @flow</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123;AppRegistry,StyleSheet,Text,View,Navigator,BackAndroid,ToastAndroid&#125; from &apos;react-native&apos;;</span><br><span class="line">import StartPage from &apos;./StartPage&apos;;</span><br><span class="line">import BottomTap from &apos;./BottomTap&apos;;</span><br><span class="line"></span><br><span class="line">class ElectromechanicalFamily extends Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">      var Nav;</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      toStartPage : true,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    onBackAndroid = () =&gt; &#123;</span><br><span class="line">        if(Nav.getCurrentRoutes().length &gt; 1)&#123;</span><br><span class="line">            Nav.pop();</span><br><span class="line">            return true;</span><br><span class="line">        &#125;else &#123;if (this.lastBackPressed &amp;&amp; this.lastBackPressed + 2000 &gt;= Date.now()) &#123;</span><br><span class="line">            //最近2秒内按过back键，可以退出应用。</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">            this.lastBackPressed = Date.now();</span><br><span class="line">            ToastAndroid.show(&apos;再按一次退出应用&apos;,ToastAndroid.SHORT);</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    this.timer = setTimeout(() =&gt; &#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            toStartPage: false,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,3000);</span><br><span class="line"></span><br><span class="line">    BackAndroid.addEventListener(&apos;hardwareBackPress&apos;, this.onBackAndroid);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">    //解除定时器</span><br><span class="line">    componentWillUnMount() &#123;</span><br><span class="line">        this.timer &amp;&amp; clearTimeout(this.timer);</span><br><span class="line"></span><br><span class="line">        BackAndroid.removeEventListener(&apos;hardwareBackPress&apos;, this.onBackAndroid);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">  render() &#123;</span><br><span class="line">      let defaultName = &apos;BottomTap&apos;;</span><br><span class="line">      let defaultComponent = BottomTap;</span><br><span class="line">      if(this.state.toStartPage)&#123;</span><br><span class="line">          return(</span><br><span class="line">              &lt;StartPage /&gt;</span><br><span class="line">          );</span><br><span class="line">      &#125;else &#123;</span><br><span class="line">          var initialRoute = &#123;name: defaultName, component: defaultComponent&#125;;</span><br><span class="line"></span><br><span class="line">          return(</span><br><span class="line">              &lt;Navigator</span><br><span class="line">                  sceneStyle=&#123;styles.container&#125;</span><br><span class="line">                  initialRoute=&#123;initialRoute&#125;</span><br><span class="line">                  configureScene=&#123;(route) =&gt; Navigator.SceneConfigs.FadeAndroid&#125;</span><br><span class="line">                  renderScene=&#123;(route, navigator) =&gt; &#123;</span><br><span class="line">                      Nav = navigator;</span><br><span class="line">                      let Component  = route.component;</span><br><span class="line">                      return &lt;Component &#123;...route.params&#125; navigator=&#123;navigator&#125;/&gt;</span><br><span class="line">                  &#125;&#125;/&gt;</span><br><span class="line">          );</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在构造函数中创建一个全局的变量<code>Nav</code>，用来在renderScene中保持<code>navigator</code>对象。然后就可以使用<code>getCurrentRoutes()</code>来获得当前的route了，route其实就是记录路径的一个数组（呃，应该是数组，纯属自己理解如有不对的地方还请指出）。</p>
+<p>判断假如当前路径不是initialRoute的话就正常<code>pop()</code>返回,如果是首页的话就提示是否要退出应用。<code>BackAndroid</code>的addEventListener中第二个参数是一个handle方法，这个方法返回true表示默认按下物理back键正常退出，而返回true表示要do something而不执行物理键的直接退出操作。</p>
+<p>一开始的时候看了很多博客和demo，但是reactnative更新实在是太快，很多以前ES5写的都已经过时了，而且自己对于navigator的基础又不太牢固，所以一直都是写错了，特别是<code>Nav = navigator;</code>这一句代码，最令我头疼，因为很多博客的做法都是直接在方法体里面执行下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">onBackAndroid = () =&gt; &#123;</span><br><span class="line">    const nav = this.navigator;</span><br><span class="line">    const routers = nav.getCurrentRoutes();</span><br><span class="line">    if (routers.length &gt; 1) &#123;</span><br><span class="line">      nav.pop();</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码是参考中文网的<a href="http://reactnative.cn/post/480" target="_blank" rel="external">安卓Back键的处理·基本+高级篇</a>我不知道是否我写错什么地方了，但是就是用上面的代码会报<code>undefined is not object</code>错，意思是navigator未定义不是一个object，这就让我郁闷了很久了。</p>
+<p>不过这仅仅是我个人的情况，或许真的是我写错了，最后我采用在renderScene里面获取navigator的时候成功取到navigator对象。</p>
+<p>根据我自己的逻辑一步一步下来，给未来的自己看当时的自己：</p>
+<blockquote>
+<p>首先是<code>index.android.js</code>,可以看到导航器这里的initialRoute初始化界面是<code>BottomTap.js</code>，于是我们开始看第二段代码<code>BottomTap.js</code>,这里的功能是仿微信的底部导航条，其中主页显示的组件是<code>Home.js</code>.<br>再看到<code>Home.js</code>中使用了<code>Toolbar</code>组件，好了，事情的源头就是从这里开始，我想给<code>Toolbar</code>的onIconClicked创建页面跳转到登录页面，这时候我使用的是props在组件间通信，于是可以看到<code>onIconClicked={this.props.click}</code>。<br>见到props，理所当然就是回去看调用<code>Toolbar</code>的父组件<code>Home.js</code>，这里可以看到代码<code>&lt;Toolbar ref = &quot;toolbar&quot; click = {this.props.homeClick} /&gt;</code>,又传递了props，怎么那么麻烦？别方啊！着急吃不了热豆腐，继续看下一个调用的组件<br>这时候就来到<code>BootomTap.js</code>,可以看到<code>&lt;Home homeClick={this.click.bind(this)}/&gt;</code>,已经很明显了，homeClick属性调用的方法就是click方法，熟悉导航器navigator的使用之后就很熟悉click方法体里面的逻辑了</p>
+</blockquote>
+<p>补充一下：click方法体里面，因为index.android.js哪里的<code>return &lt;Component {...route.params} navigator={navigator}/&gt;</code>返回了含有navigator的属性的组件，所以这里的<code>BottomTap</code>必须要有navigator属性，传递的是Navigator导航的方法,这里的属性是可以<code>navigator={navigator}</code>传递的参数里面的navigator是可以使用pop，push等一系列方法的。</p>
+<h2 id="纠错"><a href="#纠错" class="headerlink" title="纠错"></a>纠错</h2><hr>
+<p>在这个成功页面跳转之前，我试过一系列的方法，index.android.js里面的代码不变，但是我却是将属性只传到<code>Home.js</code>就结束了，一开始其实我只是在<code>Toolbar.js</code>里面使用navigator跳转，很明显是不可以的，在<code>Home.js</code>里面也尝试过页面跳转，也是不行。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
+<blockquote>
+<p>当需要在多层调用的组件，也就是Dom结构分支很多的情况下进行页面跳转跳转的话，例如dom结构此时是这样的<code>parent&lt;=child&lt;=child&#39;s child&lt;= (child&#39;s child)&#39;s child</code>,箭头表示调用，一定要在“按钮/点击”所调用的方法里将方法传递到之间渲染给用户看到的最高父组件里面执行，不然将无法跳转。</p>
+</blockquote>
+<p>呃，如果没看懂，建议多看几遍上面的解释。</p>
+<blockquote>
+<p>另外通过ref也可以传递子组件里面的方法，关于ref，使用时直接在组件里面添加<code>&lt;childComponent ref = &quot;refName&quot; /&gt;</code>,假如childComponent里面有一个sayHello的方法，那么在父组件里面调用的时候就可以使用<code>this.refs.refName.sayHello()</code>,refName可以自己定义。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/22/深度解析rn知乎日报/" rel="next" title="深度解析rn知乎日报">
+                <i class="fa fa-chevron-left"></i> 深度解析rn知乎日报
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="漏雨" />
+          <p class="site-author-name" itemprop="name">漏雨</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码块"><span class="nav-number">1.</span> <span class="nav-text">代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#index-android-js"><span class="nav-number">1.1.</span> <span class="nav-text">index.android.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BottomTap-js"><span class="nav-number">1.2.</span> <span class="nav-text">BottomTap.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Home-js"><span class="nav-number">1.3.</span> <span class="nav-text">Home.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Toolbar-js"><span class="nav-number">1.4.</span> <span class="nav-text">Toolbar.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安卓手机物理键BackAndroid的使用"><span class="nav-number">2.</span> <span class="nav-text">安卓手机物理键BackAndroid的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#纠错"><span class="nav-number">3.</span> <span class="nav-text">纠错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">漏雨</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'greatzuesgithubio';
+      var disqus_identifier = '2016/08/28/项目感想/';
+      var disqus_title = '项目感想';
+      var disqus_url = 'http://yoursite.com/2016/08/28/项目感想/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

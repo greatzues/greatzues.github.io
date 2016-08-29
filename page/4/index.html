@@ -219,6 +219,140 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/04/09/androidstudio2-0版本的新发现/" itemprop="url">
+                  androidstudio2.0版本的新发现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-09T14:16:22+08:00" content="2016-04-09">
+              2016-04-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/09/androidstudio2-0版本的新发现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/09/androidstudio2-0版本的新发现/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在使用稳定版的时候弹出一个提示说有update，于是点开之后跳转到android develop的页面，所以就更新了新版本的androidstudio，今天本着尝试的原则用了一下这个新版本的androidstudio的新特性<br>因为在官网的视频中经过我不太厉害的英语听力听到几个单词，说是新版本和旧版本可以use side by side,也就是可以同时下载两个版本，而且可以互不影响。<br>我们可以在稳定版的settings-&gt;System Settings-&gt;updates中设置为Stable Channel，而在2.0版本中的settings-&gt;System Settings-&gt;updates设置为Canary Channel，也就是有最新的更新就会有提示。当然你也可以自己在Help-&gt;Check For Update…中更新<br>如果在新版本中发现了bug，可以在Help-&gt;Submit Feedback中写好出现的bug详情，这样有利于谷歌更好的收集漏洞不断完善功能。<br>我们可以把两个版本的androidstudio放在不同的文件夹，把新版本的命名添加有2.0之类的关键字用来鉴别，顺便也新建一个新的workplace来装载新版本的工作区。好了，前期工作基本就做好了。</p>
+<h2 id="新的安卓模拟器"><a href="#新的安卓模拟器" class="headerlink" title="新的安卓模拟器"></a>新的安卓模拟器</h2><p>当我用新版本的studio写好一个程序之后开始运行，在select虚拟机的时候弹出一个提示框说我没有安装HAXM，于是上了一下google之后发现原来这个HAXM来头不小</p>
+<h3 id="Intel-HAXM"><a href="#Intel-HAXM" class="headerlink" title="Intel HAXM"></a>Intel HAXM</h3><p>以前开发安卓是绝对不会想用安卓自带的虚拟机开发的，因为炒鸡炒鸡慢，而新版本的studio为了解决这个问题就想使用Intel HAXM来为模拟器加速，使模拟器运行度媲美真机， 彻底解决模拟器运行慢的问题。</p>
+<p>Intel HAXM (Hardware Accelerated Execution Manager) 使用基于 Intel(R) Virtualization Technology (VT) 的硬件加速， 因此需要 CPU 支持 VT ， 而且仅限于 Intel CPU， 与 AMD CPU 无缘， Intel HAXM 的描述如下：</p>
+<blockquote>
+<ul>
+<li>使用 Intel VT 技术；</li>
+<li>为 Android x86 虚拟设备的模拟运行提供硬件加速；</li>
+<li>与 Android SDK 集成；<br>硬件需求如下：</li>
+<li>支持 VT-x, EM64T 以及 Execute Disable Bit 的 Intel 处理器；</li>
+<li>至少 1GB 可用内存<br>支持的操作系统：</li>
+<li>Windows 7 (32/64-bit)</li>
+<li>Windows Vista (32/64-bit)</li>
+<li>Windows XP (32-bit only)</li>
+<li>OS X 10.6 or 10.7 (32/64-bit)</li>
+</ul>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>网上介绍一大堆安装过程，其实并没啥卵用，因为androidstudio已经可以一件安装并集成到模拟器上，所以可以省很多心水。</p>
+<h2 id="个人体会"><a href="#个人体会" class="headerlink" title="个人体会"></a>个人体会</h2><p>我没啥优点，但是有一个很大的缺点就是太诚实，我想说，加速了之后的安卓自带的模拟器之后，速度确实比以前的快很多了，但是和genymotion还有真机调试比起来还是有段距离，不要打我啊！不过界面还是和以前自带的模拟器一样很美。</p>
+<p>ok，基本就是这些了，剩余的我会在后期发现再推上来的。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/03/AutoScrollViewPager轮播控件的使用/" itemprop="url">
                   AutoScrollViewPager轮播控件的使用
                 </a>
@@ -1452,146 +1586,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/08/zues-blog/" itemprop="url">
-                  zues blog
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-03-08T11:11:11+08:00" content="2016-03-08">
-              2016-03-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日记/" itemprop="url" rel="index">
-                    <span itemprop="name">日记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/08/zues-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/08/zues-blog/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>写博客的目的主要是为了能给有共同兴趣爱好的编程者们交流自己学习不同的编程语言的思想，已经问题的探讨。<br>还可以整理笔记，将自己的知识传播给其他人。——<strong>great zues</strong></p>
-<blockquote>
-<ul>
-<li>安卓知识</li>
-<li>网页前端的知识</li>
-<li>数据库</li>
-</ul>
-</blockquote>
-<p><img src="http://newtab.firefoxchina.cn/img/worldindex/logo.png" alt="zues-blog"><br>哈哈，先测试一下先，看看效果。</p>
-<h3 id="zues-blog这里用百度链接做测试"><a href="#zues-blog这里用百度链接做测试" class="headerlink" title="zues blog这里用百度链接做测试"></a><a href="http://www.baidu.com" target="_blank" rel="external">zues blog这里用百度链接做测试</a></h3><hr>
-<h3 id="怎样使用hexo搭建自己的博客"><a href="#怎样使用hexo搭建自己的博客" class="headerlink" title="怎样使用hexo搭建自己的博客"></a>怎样使用hexo搭建自己的博客</h3><h3 id="1-，可以使用markdown和swing语法编写自己的博客"><a href="#1-，可以使用markdown和swing语法编写自己的博客" class="headerlink" title="1 ，可以使用markdown和swing语法编写自己的博客"></a>1 ，可以使用markdown和swing语法编写自己的博客</h3><p>这里对markdown的语法很严厉，少一个space都不行，像刚刚就犯了几次的错误了。分别是日记开头的tag和无序标点以及<br>字体加粗</p>
-<h3 id="2-使用hexo-new-文件名创建自己新的博文，因为经常忘记，所以mark一下，提醒一下自己。"><a href="#2-使用hexo-new-文件名创建自己新的博文，因为经常忘记，所以mark一下，提醒一下自己。" class="headerlink" title="2 , 使用hexo new +文件名创建自己新的博文，因为经常忘记，所以mark一下，提醒一下自己。"></a>2 , 使用hexo new +文件名创建自己新的博文，因为经常忘记，所以mark一下，提醒一下自己。</h3><h3 id="3-在markdown语法中使用表格的时候需要注意一下，在表格的上一行一定要是空行，也就是说在文字和表格之间一定要有一段空行"><a href="#3-在markdown语法中使用表格的时候需要注意一下，在表格的上一行一定要是空行，也就是说在文字和表格之间一定要有一段空行" class="headerlink" title="3 , 在markdown语法中使用表格的时候需要注意一下，在表格的上一行一定要是空行，也就是说在文字和表格之间一定要有一段空行"></a>3 , 在markdown语法中使用表格的时候需要注意一下，在表格的上一行一定要是空行，也就是说在文字和表格之间一定要有一段空行</h3><h3 id="4-在给博客添加评论功能的时候发现了一个问题，我先说一下我的添加步骤，登陆http-disqus-com-网站，申请一个shortname，然后在D-blog-themes-YourBlogThemes-comfig-yml里面添加你申请的shortname，就像这样disqus-shortname-greatzuesgithubio-记住要加一个空格。"><a href="#4-在给博客添加评论功能的时候发现了一个问题，我先说一下我的添加步骤，登陆http-disqus-com-网站，申请一个shortname，然后在D-blog-themes-YourBlogThemes-comfig-yml里面添加你申请的shortname，就像这样disqus-shortname-greatzuesgithubio-记住要加一个空格。" class="headerlink" title="4 , 在给博客添加评论功能的时候发现了一个问题，我先说一下我的添加步骤，登陆http://disqus.com/网站，申请一个shortname，然后在D:\blog\themes\YourBlogThemes_comfig.yml里面添加你申请的shortname，就像这样disqus_shortname: greatzuesgithubio,记住要加一个空格。"></a>4 , 在给博客添加评论功能的时候发现了一个问题，我先说一下我的添加步骤，登陆<a href="http://disqus.com/" target="_blank" rel="external">http://disqus.com/</a>网站，申请一个shortname，然后在D:\blog\themes\YourBlogThemes_comfig.yml里面添加你申请的shortname，就像这样<strong>disqus_shortname: greatzuesgithubio</strong>,记住要加一个空格。</h3><p><img src="http://blog.fens.me/wp-content/uploads/2014/05/disqus-comment.png" alt="评论系统"><br>就这样，评论系统就简单完成了。（呃，图片是在网上随便找的，自己懒得去截图了）</p>
-<h3 id="5-除了上面那些，还可以添加RSS订阅功能，这个功能就显得超级简单了，因为已经有大牛写好了插件，所以我们只需要安装插件就可以了。"><a href="#5-除了上面那些，还可以添加RSS订阅功能，这个功能就显得超级简单了，因为已经有大牛写好了插件，所以我们只需要安装插件就可以了。" class="headerlink" title="5 , 除了上面那些，还可以添加RSS订阅功能，这个功能就显得超级简单了，因为已经有大牛写好了插件，所以我们只需要安装插件就可以了。"></a>5 , 除了上面那些，还可以添加RSS订阅功能，这个功能就显得超级简单了，因为已经有大牛写好了插件，所以我们只需要安装插件就可以了。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$npm install hexo-generator-feed</span><br><span class="line">npm WARN deprecated graceful-fs@2.0.3: graceful-fs version 3 and before will fail on newer node releases. Please update to graceful-fs@^4.0.0 as soon as possible.</span><br><span class="line">hexo-site@0.0.0 D:\blog</span><br><span class="line">+-- hexo-generator-feed@1.1.0  extraneous</span><br><span class="line">`-- hexo-renderer-stylus@0.3.1</span><br><span class="line">  +-- nib@1.1.0</span><br><span class="line">  | `-- stylus@0.49.3</span><br><span class="line">  |   `-- glob@3.2.11</span><br><span class="line">  |     `-- minimatch@0.3.0</span><br><span class="line">  |       `-- lru-cache@2.7.3</span><br><span class="line">  `-- stylus@0.53.0</span><br><span class="line">    `-- glob@3.2.11</span><br><span class="line">      `-- minimatch@0.3.0</span><br><span class="line">        `-- lru-cache@2.7.3</span><br><span class="line"></span><br><span class="line">npm WARN optional Skipping failed optional dependency /hexo-generator-feed/chokidar/fsevents:</span><br><span class="line">npm WARN notsup Not compatible with your operating system or architecture: fsevents@0.3.8</span><br><span class="line">npm WARN optional Skipping failed optional dependency /chokidar/fsevents:</span><br><span class="line">npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.0.9</span><br></pre></td></tr></table></figure>
-<p>启动服务器，用浏览器打开<a href="http://localhost:4000/atom.xml" target="_blank" rel="external">http://localhost:4000/atom.xml</a>，就可以看到RSS已经生效了。<strong>但是</strong>，因为hexo在2.6版本之后更新了命令，所以要自己安装<br>    npm install hexo-generator-feed –save<br>然后这条命令行就可以搞定了！</p>
-<h3 id="6-当然，除了这些还有很多需要的功能，像Google分析，百度统计，微薄转发等，大家可以自己找找，也可以自己开发一些插件！但是像我这种渣渣就等以后有时间再开发造福大家好了，现在实力还不强，只能望梅止渴啦！"><a href="#6-当然，除了这些还有很多需要的功能，像Google分析，百度统计，微薄转发等，大家可以自己找找，也可以自己开发一些插件！但是像我这种渣渣就等以后有时间再开发造福大家好了，现在实力还不强，只能望梅止渴啦！" class="headerlink" title="6 , 当然，除了这些还有很多需要的功能，像Google分析，百度统计，微薄转发等，大家可以自己找找，也可以自己开发一些插件！但是像我这种渣渣就等以后有时间再开发造福大家好了，现在实力还不强，只能望梅止渴啦！"></a>6 , 当然，除了这些还有很多需要的功能，像Google分析，百度统计，微薄转发等，大家可以自己找找，也可以自己开发一些插件！但是像我这种渣渣就等以后有时间再开发造福大家好了，现在实力还不强，只能望梅止渴啦！</h3><h3 id="7-另外如果出现下面的错误代码的话"><a href="#7-另外如果出现下面的错误代码的话" class="headerlink" title="7 , 另外如果出现下面的错误代码的话"></a>7 , 另外如果出现下面的错误代码的话</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">//此处省去好多段代码。。。</span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line"></span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (D:\blog\node_modules\hexo-util\lib\spawn.js:37:17)</span><br><span class="line">    at emitTwo (events.js:100:13)</span><br><span class="line">    at ChildProcess.emit (events.js:185:7)</span><br><span class="line">    at ChildProcess.cp.emit (D:\blog\node_modules\cross-spawn-async\lib\enoent.js:37:29)</span><br><span class="line">    at maybeClose (internal/child_process.js:827:16)</span><br><span class="line">    at Socket.&lt;anonymous&gt; (internal/child_process.js:319:11)</span><br><span class="line">    at emitOne (events.js:90:13)</span><br><span class="line">    at Socket.emit (events.js:182:7)</span><br><span class="line">    at Pipe._onclose (net.js:475:12)</span><br></pre></td></tr></table></figure>
-<p>那么就是你没有网络了，因为github也被中国GFW了，所以要翻墙之后才可以sync你的文件了！</p>
-<h3 id="8-关于使用hexo-generate报错（2016-08-05更新）"><a href="#8-关于使用hexo-generate报错（2016-08-05更新）" class="headerlink" title="8 , 关于使用hexo generate报错（2016-08-05更新）"></a>8 , 关于使用hexo generate报错（2016-08-05更新）</h3><p>当我在使用hexo g的时候发现会提示下面的错误，然而在前一天开始整个博客系统都是正常运行的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Template render error: (unknown path) [Line 25, Column 31]</span><br><span class="line">  parseAggregate: expected colon after dict key</span><br></pre></td></tr></table></figure></p>
-<p>最后发现原来是因为博文里面有敏感字符，而我也参照它提示的网址链接过去ctrl+f搜索了一下关键词parse，找到了下面的一些文字。<br>
-Escape Contents
-Hexo uses Nunjucks to render posts (Swig was used in older version, which share a similar syntax). Content wrapped with {{ }} or {% %} will get parsed and may cause problems. You can wrap sensitive content with the raw tag plugin.
-</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">Hello &#123;&#123; sensitive &#125;&#125;</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-<p>接着在对应的博文敏感字符上下文添加相应的注释就可以解决这个问题了，不过代价是被注释的部分就会以原生的形式出现，也就是不会被渲染。</p>
-<hr>
-<p>想要搭建自己的博客可以有很多选择，不一定要和我一样选择hexo做引擎，还有很多优秀的当然也可以使用。下面我列举一些可以免费搭建免流的Bolg引擎<br><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">github Pages和Jekyll搭建免流博客</a><br><a href="http://gitblogdoc.sinaapp.com/" target="_blank" rel="external">GitBlog</a><br><a href="http://blog.novacloud.com/post/build-a-share-blog-use-farbox-and-dropbox.html" target="_blank" rel="external">使用farbox和dropbox搭建共享博客</a><br>我也附上我的博客参照的教程，<a href="http://blog.fens.me/hexo-blog-github/" target="_blank" rel="external">Hexo在github上构建免费的Web应用</a></p>
-<p>喜欢折腾的你也想要自己的博客就赶紧动手吧！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1637,7 +1631,7 @@ Hexo uses Nunjucks to render posts (Swig was used in older version, which share 
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-count">42</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
