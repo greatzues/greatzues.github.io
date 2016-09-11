@@ -46,8 +46,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="zues blog" type="application/atom+xml" />
 
@@ -71,7 +69,7 @@ index.android.js123456789101112131415161718192021render() &amp;#123;      let de
 <meta property="og:description" content="代码块
 不是我吹牛啊，刚刚把想了一晚的组件通信那部分写好了，现在有一点经验分享给自己，首先贴上部分代码：
 index.android.js123456789101112131415161718192021render() &amp;#123;      let defaultName = &amp;apos;BottomTap&amp;apos;;      let defaultComponent = BottomTa">
-<meta property="og:updated_time" content="2016-08-29T06:09:35.801Z">
+<meta property="og:updated_time" content="2016-08-29T06:11:54.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目感想">
 <meta name="twitter:description" content="代码块
@@ -303,6 +301,7 @@ var _hmt = _hmt || [];
 <p>一开始的时候看了很多博客和demo，但是reactnative更新实在是太快，很多以前ES5写的都已经过时了，而且自己对于navigator的基础又不太牢固，所以一直都是写错了，特别是<code>Nav = navigator;</code>这一句代码，最令我头疼，因为很多博客的做法都是直接在方法体里面执行下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">onBackAndroid = () =&gt; &#123;</span><br><span class="line">    const nav = this.navigator;</span><br><span class="line">    const routers = nav.getCurrentRoutes();</span><br><span class="line">    if (routers.length &gt; 1) &#123;</span><br><span class="line">      nav.pop();</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
 <p>上面的代码是参考中文网的<a href="http://reactnative.cn/post/480" target="_blank" rel="external">安卓Back键的处理·基本+高级篇</a>我不知道是否我写错什么地方了，但是就是用上面的代码会报<code>undefined is not object</code>错，意思是navigator未定义不是一个object，这就让我郁闷了很久了。</p>
 <p>不过这仅仅是我个人的情况，或许真的是我写错了，最后我采用在renderScene里面获取navigator的时候成功取到navigator对象。</p>
+<hr>
 <p>根据我自己的逻辑一步一步下来，给未来的自己看当时的自己：</p>
 <blockquote>
 <p>首先是<code>index.android.js</code>,可以看到导航器这里的initialRoute初始化界面是<code>BottomTap.js</code>，于是我们开始看第二段代码<code>BottomTap.js</code>,这里的功能是仿微信的底部导航条，其中主页显示的组件是<code>Home.js</code>.<br>再看到<code>Home.js</code>中使用了<code>Toolbar</code>组件，好了，事情的源头就是从这里开始，我想给<code>Toolbar</code>的onIconClicked创建页面跳转到登录页面，这时候我使用的是props在组件间通信，于是可以看到<code>onIconClicked={this.props.click}</code>。<br>见到props，理所当然就是回去看调用<code>Toolbar</code>的父组件<code>Home.js</code>，这里可以看到代码<code>&lt;Toolbar ref = &quot;toolbar&quot; click = {this.props.homeClick} /&gt;</code>,又传递了props，怎么那么麻烦？别方啊！着急吃不了热豆腐，继续看下一个调用的组件<br>这时候就来到<code>BootomTap.js</code>,可以看到<code>&lt;Home homeClick={this.click.bind(this)}/&gt;</code>,已经很明显了，homeClick属性调用的方法就是click方法，熟悉导航器navigator的使用之后就很熟悉click方法体里面的逻辑了</p>
@@ -348,6 +347,10 @@ var _hmt = _hmt || [];
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/06/项目感想2/" rel="prev" title="项目感想2">
+                项目感想2 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -422,7 +425,7 @@ var _hmt = _hmt || [];
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

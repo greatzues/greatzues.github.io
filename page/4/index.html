@@ -219,6 +219,289 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/04/10/安卓shape的使用/" itemprop="url">
+                  安卓shape的使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-10T20:29:44+08:00" content="2016-04-10">
+              2016-04-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/10/安卓shape的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/10/安卓shape的使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Shape"><a href="#Shape" class="headerlink" title="Shape"></a>Shape</h2><p>可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。</p>
+<p>如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了<br>在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示<shape>  android:shape=[“rectangle” | “oval” | “line” | “ring”]</shape></p>
+<p>另外Shape子节点的常用属性：<br>1，<gradient>  渐变</gradient></p>
+<blockquote>
+<ul>
+<li>android:startColor  起始颜色</li>
+<li>android:endColor  结束颜色            </li>
+<li>android:angle  渐变角度，0从上到下，90表示从左到右，数值为45的整数倍默认为0；</li>
+<li>android:type  渐变的样式 liner线性渐变 radial环形渐变 sweep</li>
+</ul>
+</blockquote>
+<p>2,<solid>  填充</solid></p>
+<blockquote>
+<ul>
+<li>android:color  填充的颜色</li>
+</ul>
+</blockquote>
+<p>3,<stroke> 描边</stroke></p>
+<blockquote>
+<ul>
+<li>android:width 描边的宽度</li>
+<li>android:color 描边的颜色</li>
+<li>android:dashWidth 表示’-‘横线的宽度</li>
+<li>android:dashGap 表示’-‘横线之间的距离</li>
+</ul>
+</blockquote>
+<p>4,<corners> 圆角</corners></p>
+<blockquote>
+<ul>
+<li>android:radius  圆角的半径 值越大角越圆</li>
+<li>android:topRightRadius  右上圆角半径</li>
+<li>android:bottomLeftRadius 右下圆角角半径</li>
+<li>android:topLeftRadius 左上圆角半径</li>
+<li>android:bottomRightRadius 左下圆角半径</li>
+</ul>
+</blockquote>
+<p>5，<padding>填充</padding></p>
+<blockquote>
+<ul>
+<li>android:bottom=”1.0dip” 底部填充</li>
+<li>android:left=”1.0dip” 左边填充</li>
+<li>android:right=”1.0dip” 右边填充</li>
+<li>android:top=”0.0dip” 上面填充</li>
+</ul>
+</blockquote>
+<p>关于如何使用请看下文</p>
+<h2 id="Selector的应用场景"><a href="#Selector的应用场景" class="headerlink" title="Selector的应用场景"></a>Selector的应用场景</h2><p>我们经常会需要在用户点击某个按钮或者图片按钮之后图片改变颜色表示响应操作，从而和用户进行交互。</p>
+<h2 id="Selector的用法"><a href="#Selector的用法" class="headerlink" title="Selector的用法"></a>Selector的用法</h2><p>一，selector的四大属性</p>
+<blockquote>
+<ul>
+<li>android:state_selected 是选中</li>
+<li>android:state_focused 是获得焦点</li>
+<li>android:state_pressed 是点击</li>
+<li>android:state_enabled 是设置是否响应事件,指所有事件</li>
+<li>android:state_window_focused 默认时的背景图片</li>
+</ul>
+</blockquote>
+<p>xml demo如下,测试的时候自己用不同颜色的图片，这样才能看出效果<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:Android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- 默认时的背景图片--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span> <span class="attr">Android:drawable</span>=<span class="string">"@drawable/pic1"</span> /&gt;</span>        </span><br><span class="line"><span class="comment">&lt;!-- 没有焦点时的背景图片 --&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_window_focused</span>=<span class="string">"false"</span>        </span><br><span class="line">   <span class="attr">android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="comment">&lt;!-- 非触摸模式下获得焦点并单击时的背景图片 --&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">android:state_pressed</span>=<span class="string">"true"</span>     </span><br><span class="line">   <span class="attr">android:drawable</span>= "@<span class="attr">drawable</span>/<span class="attr">ic_launcher</span>"   /&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- 触摸模式下单击时的背景图片--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"false"</span>   </span><br><span class="line">   <span class="attr">Android:state_pressed</span>=<span class="string">"true"</span>     </span><br><span class="line">   <span class="attr">Android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>      </span><br><span class="line"><span class="comment">&lt;!--选中时的图片背景--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_selected</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="comment">&lt;!--获得焦点时的图片背景--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">Android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>然后接下来是在一个项目里面需要用到的一个功能</p>
+<h2 id="layer-list"><a href="#layer-list" class="headerlink" title="layer-list"></a>layer-list</h2><p>当你需要把多张图片按照顺序层层叠起来的时候就能用上了，这个可以用来制造倒影的效果，用的好的话会很酷炫的。</p>
+<p>xml代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"0dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/#44000000"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"2dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/color_primary_red"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>效果<br><img src="./img/layer.png" alt="layer-list"></p>
+<p>值得参考的文章:<a href="http://keeganlee.me/post/android/20150830" target="_blank" rel="external">Keegan小钢</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/10/谢谢各位小伙伴的祝福/" itemprop="url">
+                  谢谢各位小伙伴的祝福
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-10T10:19:11+08:00" content="2016-04-10">
+              2016-04-10
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/10/谢谢各位小伙伴的祝福/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/10/谢谢各位小伙伴的祝福/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="凌晨雨声"><a href="#凌晨雨声" class="headerlink" title="凌晨雨声"></a>凌晨雨声</h2><p><img src="http://pic.qiantucdn.com/58pic/11/99/07/84q58PICCNS.jpg" alt="生日快乐1"><br>    滴滴答答的雨声敲在地上，溅起玲珑般的声响，懒猪一样的我仍在梦的国度统治着我领土，那雨声似弓箭从我的耳边射到了我的疆土，被漫天乱箭杀个片甲不留，我很不忍心的放弃了自己的子民，睁开了眼睛。</p>
+<h2 id="生日祝福"><a href="#生日祝福" class="headerlink" title="生日祝福"></a>生日祝福</h2><p><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQYq6DyvI62XrsX57y5oENBJG3KM16qYqSo93UfYv9sEROQWf_1EA" alt="github"><br>打开手机，已经快到九点，意味着一天忙碌的生活在此刻计时，起床刷牙洗脸上个厕所，打开wechat，才想起今天是我的阳历的生日，算了一下，到现在我敲下这个字的时候，已经有15个小伙伴祝我生日快乐了，恭喜我自己，成功突破个人吉尼斯生日祝福记录，从来在班上就只有我的几个好朋友才会记得我的生日。</p>
+<p>如果此刻你有千里眼，可以看见的18颗洁白的牙齿闪耀在空气中，此刻，世界上最亮的光是太阳的，接着就是我的<strong>笑容</strong>发出的光芒了。</p>
+<h2 id="大学不是象牙塔"><a href="#大学不是象牙塔" class="headerlink" title="大学不是象牙塔"></a>大学不是<a href="http://www.baike.com/wiki/%E8%B1%A1%E7%89%99%E5%A1%94" target="_blank" rel="external">象牙塔</a></h2><p><img src="http://club.sina.com.cn.sinastorage.com/09/11/16/1285910141_ec1ee1bce6254ab68bdd3123ebe61ad1.jpg" alt="拼搏"></p>
+<h3 id="高中的拼搏不是为了大学的享乐"><a href="#高中的拼搏不是为了大学的享乐" class="headerlink" title="高中的拼搏不是为了大学的享乐"></a><a href="http://learning.sohu.com/20151011/n422945805.shtml" target="_blank" rel="external">高中的拼搏不是为了大学的享乐</a></h3><p>每个大学生都有懵懂的大一，仗着自己是小鲜肉，可以任意挥霍自己的时间用来弥补高中为了奋斗高考而逝去的美好青春。</p>
+<pre><code>糟糕的是，干净的双手，靓丽的服饰，整天打lol玩游戏，经常唱K，频繁喝酒，通宵打牌，更多恶习请自己脑补...
+
+开心的是，大学可以下课之后有空去跑跑步，运动一下，鼓起勇气约自己喜欢的女生一起看电影，有时间去打打兼职，遇上自己喜欢的女孩子就去追求，尽管我依旧单身，做着自己喜欢而有意义的事。
+</code></pre><p>我狡辩一下，我在说糟糕的事情的时候是有形容词的，我并没有全盘否定，总之适度都是可以接受的。换句话说，我也喜欢打游戏，不过每天一两个小时就可以了，没必要把大部分时间花在游戏上，况且现在打游戏的人那么多，想要当职业的游戏选手竞争也很激烈。</p>
+<h2 id="兴趣-创造"><a href="#兴趣-创造" class="headerlink" title="兴趣 创造"></a>兴趣 创造</h2><p>希望各位小伙伴都能做干喜欢的事情，寻自己的乐，没人规定选了什么专业你就一定从事什么行业，永远不要让兴趣的小船说翻就翻。</p>
+<h3 id="呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。-特地写一篇浅陋的日记来感谢大家的爱，谢谢！"><a href="#呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。-特地写一篇浅陋的日记来感谢大家的爱，谢谢！" class="headerlink" title="呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。 特地写一篇浅陋的日记来感谢大家的爱，谢谢！"></a>呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。 特地写一篇浅陋的日记来感谢大家的爱，谢谢！</h3><p><img src="http://ww4.sinaimg.cn/large/b551a925gw1etw3nrz0ykj21kw1kw4aq.jpg" alt="生日快乐2"><br>参考文章：<a href="http://www.knowledger.info/2014/07/13/6-reason-you-should-go-do-what-you-love-to-do/" target="_blank" rel="external">勇於去做你自己想做的事的六個理由</a><br>          <a href="https://www.zhihu.com/question/28358499" target="_blank" rel="external">如何长时间高效学习</a><br>          <a href="https://site.douban.com/136100/widget/notes/6048777/note/206121752/" target="_blank" rel="external">美国大学生有多牛</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/09/androidstudio2-0版本的新发现/" itemprop="url">
                   androidstudio2.0版本的新发现
                 </a>
@@ -1303,289 +1586,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/18/自动垃圾回收/" itemprop="url">
-                  java垃圾回收机制
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-03-18T17:13:28+08:00" content="2016-03-18">
-              2016-03-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/18/自动垃圾回收/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/18/自动垃圾回收/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我也不知道以我现在的水平来讨论java的自动垃圾回收是否合理，因为我自己还没深入过JVM去研究过，只是想用自己的想法理解一下GC的工作原理，以帮助我写出更好的程序，包括java和安卓的应用</p>
-<p>垃圾收集的好处：比起以往的C,C++来说，java的自动垃圾回收机制的可靠性高，能使内存管理与开发过程设计相分离，减少开发者跟踪内存错误的时间。比如著名的悬空指针和内存泄漏就不会在java中发生(但是java的内存泄漏还是会以某种形式泄漏，准确的说是非故意的对象保留)。</p>
-<p>理想的垃圾收集实现，没有垃圾收集暂停，没有因为垃圾收集而产生的CPU时间损失，垃圾收集器不会与虚拟内存或者缓存有负面的互动，另外堆不需要大于应用程序的驻留空间即堆占用，不过肯定是没有十全十美的垃圾回收实现。</p>
-<p>在正式谈到垃圾回收之前，先记住一个单词：<strong>stop-the-world</strong>。stop-the-wrold会在任何一个GC算法中发生，当stop-the-world发生，意味着除GC所需的线程，所有的线程都处于等待状态，应用程序停止执行，知道GC任务完成。而GC优化则是指减少stop-the-world发生的时间，还有就是了解一下堆（heap）和堆栈（stack）</p>
-<blockquote>
-<ul>
-<li>堆heap）**，是一个运行时的数据区，类的对象主要存储在这里，也就是通过new、newarray、anewarray和multianewarray等指令建立，他们不需要程序代码显现的释放。优点：动态分配内存大小，灵活的生存期，因为是在运行时分配内存，java垃圾收集器会自动收走不再使用的数据。缺点：因为是动态的分配内存，也就是需要的时候才去取，比如商品进货，需要的时候才去批发商那里进货当然速度就比一开始就储备好的商品慢的得多。`</li>
-<li>栈（stack）<strong>，是静态的数据区，也就是和上面的比喻中的储备好的商品一样，主要存放一些基本的数据类型(int,short,long,byte,float,double,boolean,char)和对象句柄，由于栈中数据在编译器中就可以确定（不理解可以看下面的例子），所以存钱速度比堆快，而且仅次于寄存器，</strong>栈数据可以共享<strong>。<br>  这里必须举个例子：String s;和String s = new String(“哈哈”)；这两个代码中第一个s就是一个句柄，就好比是电视和电视的遥控，s可以控制电视，也就是第二个代码的“哈哈”，但是如果没有电视，遥控依然可以独立存在，也就是说s就和遥控一样，只是拥有一个句柄，并不表示有一个对象和它连接，所以第一段代码只是创建一个句柄，并不是对象。而第二个代码中的s则被初始化了，但是s依旧是遥控，而“哈哈”则是电视，所以两者的区别就是s是一个句柄保存在堆栈（stack）中，而new String(“哈哈”)保存在堆（heap）中。<br>  处理过程：编译器处理String s = “哈哈”的时候，先在栈中创建一个变量为s的内存空间，然后查找有没有字符串为“哈哈”的地址，没有的话，就在</strong>栈**（因为在这里不是用new()创建的对象）中开辟一个存放“哈哈”的地址，然后将s指向“哈哈”的地址。</li>
-</ul>
-</blockquote>
-<h3 id="什么是垃圾回收"><a href="#什么是垃圾回收" class="headerlink" title="什么是垃圾回收"></a>什么是垃圾回收</h3><pre><code>java中没有被对象句柄所引用的对象和长时间没有被使用的对象均可被视为“垃圾”。
-</code></pre><p>如String s = new String(“哈哈”)<br>a = null;<br>那么此时右边new出来的对象就没有句柄指向他，理所当然就成为了“垃圾”，会被自动回收内存。这里可以发现垃圾回收几乎只存在堆空间中，而栈中不存在垃圾回收（后面再慢慢解释为什么栈中为什么不存在垃圾回收）。</p>
-<h2 id="垃圾回收机制的类型"><a href="#垃圾回收机制的类型" class="headerlink" title="垃圾回收机制的类型"></a>垃圾回收机制的类型</h2><h3 id="按代的垃圾回收机制"><a href="#按代的垃圾回收机制" class="headerlink" title="按代的垃圾回收机制"></a>按代的垃圾回收机制</h3><p>java程序中不能显性的分配和注销内存，看到有些人把对象设置为null或者调用System.gc()来显性清理内存。设置为null至少没什么坏处，但是System.gc必须杜绝，对系统性能影响太大。</p>
-<p><strong>我按照我自己的理解说一下按代垃圾回收的过程：</strong><br>首先java存在两种下面的假设</p>
-<blockquote>
-<ul>
-<li>假设大多数对象会很快变得不可达</li>
-<li>假设只有很少的由老对象（创建时间较长的对象）指向新生对象的引用<br>这些假设我们称之为<strong>弱年代假设（ weak generational hypothesis）</strong>。为了强化这一假设，HotSpot虚拟机将其物理上划分为两个–<strong>新生代（young generation）</strong>和<strong>老年代（old generation）</strong>。<br>  新生代（Young generation）:绝大多是的最新被创建的对象被分配到新生代，由于在假设中假设大部分对象在创建后很快不可达，所以在新生代是最多短暂的对象出生和毁灭的地方。<br>  老年代（Old generation）: 对象没有变成不可达,在新生代中存活下来的都会被拷贝到老年代，因为老年代的空间比较大，所以在老年代的GC要比新生代少得多。<br><img src="http://img.my.csdn.net/uploads/201210/06/1349489545_2949.png" alt="垃圾回收机制"><br><strong>新生代的构成</strong><br>在一个<strong>伊甸园空间（Eden ）</strong>和两个<strong>幸存者空间（Survivor ）</strong>这三个空间中</li>
-<li>绝大多数刚刚被创建的对象会存放在伊甸园空间。</li>
-<li>在伊甸园空间执行了第一次GC之后，存活的对象被移动到其中一个幸存者空间</li>
-<li>此后，在伊甸园空间执行GC之后，存活的对象会被堆积在同一个幸存者空间</li>
-<li>当一个幸存者空间饱和，还在存活的对象会被移动到另一个幸存者空间。之后会清空已经饱和的那个幸存者空间</li>
-<li>在以上的步骤中重复几次依然存活的对象，就会被移动到老年代<br>其实我还不太理解第四个，有不同见解的可以互相交流一下。</li>
-</ul>
-</blockquote>
-<p>另外还有各种GC的类型，因为我尚且知识短浅，理解不下来，所以在这里也是为了给以后的我做个标记，让未来的我完善。</p>
-<p>参考文章：<a href="http://www.importnew.com/1993.html" target="_blank" rel="external">深入浅出Java垃圾回收机制</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/16/重新认识java/" itemprop="url">
-                  重新认识java
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-03-16T17:01:10+08:00" content="2016-03-16">
-              2016-03-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/16/重新认识java/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/16/重新认识java/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>有点激动的是我开始写我自己的<strong>博客</strong>了，而且是写有关技术的博文，开始有点紧张，因为学习java也不是太多，<br>当时只是java入门之后就直接转型写<strong>安卓</strong>了，担心理解不太正确，被吐槽，所以先在这里和各位大牛们打声招呼<br>，如果博文有不对的地方，麻烦指点一下，我们可以互相交流。</p>
-<hr>
-<p>目录：</p>
-<blockquote>
-<ul>
-<li>java的三种特性：多态，继承，封装</li>
-<li>java的基本含义</li>
-<li>java关键字</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h3 id="在说多态之前先理解一下封装和继承"><a href="#在说多态之前先理解一下封装和继承" class="headerlink" title="在说多态之前先理解一下封装和继承"></a>在说多态之前先理解一下<strong>封装</strong>和<strong>继承</strong></h3><pre><code>首先封装是隐藏类的内部实现机制，好处：一是可以保护类的内部结构，不影响方法的调用。二是隐藏实现方法，提供给外界访问方法。
-继承是重用父类的代码，即子类可以访问父类的方法，通过super关键字调用父类的方法，也可以直接覆写父类的方法。
-</code></pre><h3 id="好了，现在该轮到多态登场了。"><a href="#好了，现在该轮到多态登场了。" class="headerlink" title="好了，现在该轮到多态登场了。"></a>好了，现在该轮到多态登场了。</h3><p>多态，简单的讲就是同一个行为有不同的表现形式和形态的能力。例如运动员这个对象，就有很多不同的表达和表现形式，例如乒乓球运动员，篮球运动员，足球运动员等。那么我认识一个运动明星，那我就会说我认识科比（篮球明星）这样子我们就说运动员这个对象具有多态性。</p>
-<p>然后直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">java_duotai</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		BasketballPlayer b = <span class="keyword">new</span> KeBi();</span><br><span class="line">		b.attact();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BasketballPlayer</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attact</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"进攻"</span>);</span><br><span class="line">		shoot();</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shoot</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"投篮"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getPoint</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"轻松得分"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">List s = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KeBi</span> <span class="keyword">extends</span> <span class="title">BasketballPlayer</span></span>&#123;</span><br><span class="line">	<span class="comment">//重载父类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attact</span><span class="params">(String kebiAttact)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"变向上篮"</span>);</span><br><span class="line">		shoot();</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="comment">//重写父类的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shoot</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"三分球"</span>);</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="comment">//另外写一个父类不存在的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">win</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"哈哈"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上面的代码创建了一个BasketballPlayer的父类，然后科比是其中一个子类。在main方法中创建一个指向子类的父类引用。这时候发现创建的对象b只能调用自己的自己的方法，但是当我运行测试的时候，被子类重写过的方法也就是<strong>shoot()</strong>却没有调用父类的，而是调用的是子类科比的shoot()方法。</p>
-<h3 id="ok，现在对于运行结果进行分析："><a href="#ok，现在对于运行结果进行分析：" class="headerlink" title="ok，现在对于运行结果进行分析："></a>ok，现在对于运行结果进行分析：</h3><p>在这个程序中子类科比重载了父类的attact()方法，重写了shoot()方法，而且重载后的attact(String kebiAttact)方法与父类的attact()不是同一个方法，由于父类没有该方法，向上转型之后会丢失该方法，所以执行BasketballPlayer的attact方法是不能引用attact方法的，而被子类重写的shoot()方法，因为改变了父类的方法实现，所以指向kebi的BasketballPlayer会调用kebi的shoot方法。<br>    <code>指向子类的父类引用由于向上转型了，它只能访问父类中拥有的方法和属性，而对于子类中存在而父类中不存在的方法，
-该引用是不能使用的，尽管是重载该方法。若子类重写了父类中的某些方法，在调用该些方法的时候，必定是使用子类中定义
-的这些方法（动态连接、动态调用）。</code><br>    <strong>总结：当使用多态方式调用方法时，首先检查父类中是否有该方法，如果没有，则编译错误；如果有，再去调用子类的该同名方法</strong></p>
-<hr>
-<h3 id="多态的实现由三个必要的条件，那就是继承，重写和向上转型"><a href="#多态的实现由三个必要的条件，那就是继承，重写和向上转型" class="headerlink" title="多态的实现由三个必要的条件，那就是继承，重写和向上转型"></a>多态的实现由三个必要的条件，那就是继承，重写和向上转型</h3><pre><code>继承：在多态中必须存在有继承关系的子类和父类
-重写：子类对父类的某些方法进行重新定义，在调用这些方法的时候就会调用子类的方法。
-向上转型：在多态中需要将子类的引用赋给父类对象，只有这样该引用才能具备技能调用父类的方法和子类的方法
-</code></pre><p>我觉得就像以后会经常用到的一个声明方法List list = new ArratList();在这里，List是一个接口，定义了一些方法，但是方法没有被实现，ArrayList是一个类，实现了List这个接口，List里面定义的方法，ArrayList里面都实现了，同时List也可以被其他类实现，例如Vector ,Vector和ArrayList都对List定义的方法的实现就有所区别，这就是一个基于接口实现的多态，继承是通过重写父类的同一个方法的几个不同子类来实现，那么在接口里面就可以实现接口并覆盖里面的统一方法的不同的类实现。</p>
-<h3 id="延伸一下："><a href="#延伸一下：" class="headerlink" title="延伸一下："></a>延伸一下：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List <span class="title">getXXXList</span><span class="params">()</span></span>&#123;</span><br><span class="line">List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">...</span><br><span class="line"><span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>比如像上面的一种定义，是一种非常棒的面向接口编程的习惯，如果万一以后要将new ArratList改成new LinkList()的话，这个方法就不需要改变返回类型了，，并且调用这个方法的所有类都不需要修改，这样就可以降低了修改程序的成本和风险，提高了程序的可复用性这也是面向接口编程的好处。</p>
-<p>同时，java的多态，List只是定义了一堆接口，而对于这些接口，有各种各样的实现，比如ArrayList，LinkedList等等，不同的实现，会有自己不同的特性以及追加自己特有的方法。当你仅仅使用List的通用接口方法时，定义成List(也就是面向接口编程)是非常好的习惯，如上所说。但是，当你在某个地方想用ArrayList的某个特有的方法的时候，如果定义成List的话，就需要转型成为ArrayList之后才能使用，这时候，如果定义成ArrayList的话，就少了转型这一步。</p>
-<p>参考文章:<a href="http://blog.csdn.net/chenssy/article/details/12786385" target="_blank" rel="external">java提高篇（三）—–理解java的三大特性之多态 </a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1631,7 +1631,7 @@ var _hmt = _hmt || [];
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

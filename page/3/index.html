@@ -219,6 +219,252 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/07/19/react-native学习笔记/" itemprop="url">
+                  react-native学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-07-19T21:02:29+08:00" content="2016-07-19">
+              2016-07-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/19/react-native学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/19/react-native学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首先配置环境就配了两天才跑出来welcome to React Native（呃，我的图是盗来的[鬼脸.jpg]）<br><img src="http://vczero.github.io/react_native/1_1.png" alt="welcome to React native"></p>
+<p>直接登陆官网按照步骤下载需要的nodeJS，React，还有python2，另外我是学安卓的，很早就开始用androidstudio了，所以直接俄就省了很多步骤，该下载的东西下载好之后就可以开始新建一个项目了</p>
+<h2 id="AwesomePreject的创建"><a href="#AwesomePreject的创建" class="headerlink" title="AwesomePreject的创建"></a>AwesomePreject的创建</h2><p>这个项目的名字是直接根据官网提供来创建的，使用这几个命令行：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">react-native init AwesomeProject</span><br><span class="line">cd AwesomeProject</span><br><span class="line">react-native run-android</span><br></pre></td></tr></table></figure></p>
+<p>前两步非常顺利就执行下来了，剩下的是第三步，开始出差错了。</p>
+<h2 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h2><p>一开始报错是这样的：<br>    err(一串数字)：项目路径（一般直接用命令行创建的都会在C盘的windows/system32目录下）…ERROR:Unable to open file.<br>这个就非常蛋疼了，google上搜索一下，在stack overflow中给出的解释翻译过来就是说文件的目录路径太长了，window下规定最长文件的读取路径长度是255 个字符，然而项目的某一张安卓的资源图片刚好长度就超过了，这就非常尴尬了，我一开始采取的措施是直接更改文件夹的名字，当时有点头脑发热，这完全行不通啊！用脑袋想想也知道，路径是代码里面写好的，你改文件夹的名字有什么用。<br>然后我就开始第二个方案，我竟然把项目放在了一个含有中文的文件夹下，导致还是读取不了。<br>最后我直接将项目放在D盘下，不过听说直接放在C盘也可以，因为只要把路径的字符数减少就可以了。最后才React-native android-start之后就可以运行了，但是此时还是出现了下面的错误<br><img src="http://static.oschina.net/uploads/space/2015/1010/145457_0VIT_2320053.png" alt="红色报错提示"><br>出现这个错误的原因我不太清楚，不过我还是按照我的想法写下来我的理解<br>它当时建议的步骤是这样的，查看你的模拟器或者真机是否已经开启debug，然后检查一下接口是否真确连接，最后是调试的wifi必须在同一个局域网内，最后可以之后就重新start。<br>我当时按照这些之后根据官网的一句代码react-native start，虽然我不太懂这句代码的作用，不过根据官网的翻译应该是如果使用react-native run-android包没有被正确启动的时候就可以使用这段代码来运行<br>结果又报错了，说是端口被占用，本来应该使用8801端口的，又去网上找了一下修改native端口的方法，下面是在ubuntu上才去的命令行，没想到window也适用<br>参考：<a href="http://stackoverflow.com/questions/32572399/react-native-android-failed-to-load-js-bundle" target="_blank" rel="external">修改权限</a></p>
+<p>最后的最后无意中重新启动了一次，然后竟然看到模拟器出现了新情况，那就是提示正在获取jscript，所以上面的我觉得大部分是废话，这句才是经典。原来是打包的时候出错了。</p>
+<p>后面就继续根据官网的提示改动了一下代码，<strong>使用快捷方式直接在模拟器上双击两次R键，瞬间就刷新了</strong>。</p>
+<p>最后就是我的小米3在react-native的调试中很明显控制台是有信息输出的，但是却只出现一片空白，而模拟器却能正常调试，解决方式是打开悬浮窗权限<br>以为小米默认是屏蔽悬浮窗权限的，方法：<a href="http://jingyan.baidu.com/article/f25ef25466c0fc482d1b824d.html" target="_blank" rel="external">打开小米悬浮窗权限</a><br>至此，react-native就配置成功了，如果刚好可以帮助到你，我将非常荣幸，如果没有帮上忙，那我也没办法。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/03/非静态代码块和静态代码块static/" itemprop="url">
+                  非静态代码块和静态代码块static
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-03T13:14:45+08:00" content="2016-06-03">
+              2016-06-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/03/非静态代码块和静态代码块static/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/03/非静态代码块和静态代码块static/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在复习java的时候，突然发现一个比较模糊的东西，就是static这个关键字，我不知道是不是我当时学的时候走神了，所以现在补回来。<br><em>本文参考：<a href="http://blog.csdn.net/qinde025/article/details/6825051" target="_blank" rel="external">java静态方法、非静态代码块{}、静态代码块static{} </a>,集合了自己的想法写成。</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zues.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//从输出来看可以知道这段代码只执行了一次，不然在实例化线段之后会再打印多一次</span></span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		a= <span class="number">10</span>;</span><br><span class="line">		System.out.println(<span class="string">"父类在静态代码块中执行a = "</span>+a);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//这个是非静态代码块，感觉有点奇怪因为第一次看到这样的写法，完全没有依靠任何对象的调用就可以了</span></span><br><span class="line">		&#123;</span><br><span class="line">			a=<span class="number">8</span>;</span><br><span class="line">			System.out.println(<span class="string">"父类在非静态中执行a = "</span>+a);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	Test2()&#123;</span><br><span class="line">		<span class="comment">//通过讨论，因为a = 10是类加载的时候就自动执行的，所以这里直接用类访问的a，是已经执行完static静态代码块但是还没执行非静态代码块的，所以只被赋值到a = 8这一步。</span></span><br><span class="line">		<span class="keyword">this</span>(<span class="string">"a在带参构造函数中的值："</span> + Test2.a);</span><br><span class="line">		System.out.println(a);<span class="comment">//然后这里会打印出8，是因为这时候已经初始化了实例，会执行到非静态代码块，结果证明非静态代码块的执行顺序优先于构造函数</span></span><br><span class="line">		System.out.println(<span class="string">"父类在无参数构造函数中的a="</span>+a);<span class="comment">//这里已经是执行了非静态代码块里面的代码，所以a被赋值为8了</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	Test2(String n)&#123;</span><br><span class="line">		System.out.println(n);</span><br><span class="line">		System.out.println(a);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Test2 t = <span class="keyword">null</span>;</span><br><span class="line">		System.out.println(<span class="string">"--------我是条实例化前后之间的线段---------"</span>);</span><br><span class="line">		t = <span class="keyword">new</span> Test2();		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="打印出来的结果是："><a href="#打印出来的结果是：" class="headerlink" title="打印出来的结果是："></a>打印出来的结果是：</h4><pre><code>父类在静态代码块中执行a = 10
+--------我是条实例化前后之间的线段---------
+父类在非静态中执行a = 8
+a在带参构造函数中的值：10
+8
+8
+父类在无参数构造函数中的a=8
+</code></pre><p>我套用我参考的文章的总结语：静态代码块是在类加载时自动执行的，非静态代码块是在创建对象时自动执行的代码，不创建对象不执行该类的非静态代码块。<br>我是因为不太懂来源博文的代码意义才写这篇博客的，另外关于更多static用法请自己折腾。<br>ok，本次心得就到这里。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/11/view的构造函数/" itemprop="url">
                   view的构造函数
                 </a>
@@ -451,8 +697,8 @@ var _hmt = _hmt || [];
             
               
                 
-                <a class="post-title-link" href="/2016/04/25/String-format（）的使用/" itemprop="url">
-                  String.format（）的使用
+                <a class="post-title-link" href="/2016/04/25/分析一篇博客中学到的下拉刷新原理/" itemprop="url">
+                  分析一篇博客中学到的下拉刷新原理
                 </a>
               
             
@@ -495,8 +741,8 @@ var _hmt = _hmt || [];
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/25/String-format（）的使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/String-format（）的使用/" itemprop="commentsCount"></span>
+                <a href="/2016/04/25/分析一篇博客中学到的下拉刷新原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/分析一篇博客中学到的下拉刷新原理/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -520,13 +766,32 @@ var _hmt = _hmt || [];
       
         
           
-            <p>在我模仿一个下拉刷新的时候遇到这段代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updateAtValue = String.format(getResources().getString(R.string.updated_at), value)</span><br></pre></td></tr></table></figure></p>
-<p>其中，getResources().getString(R.string.updated_at是一段字符串，内容是<string name="updated_at">上次更新于%1$s前</string>，比较好奇的是为什么会有%1$s这个特殊字符，所以谷歌了一下科普了一些知识，发现原来是可以替换一些内容的功能。</p>
-<p>例如上面的代码可以出现的其中一条结果是，上传更新与2小时前，那么这时候后面传进去的value的值就是2小时了，通过谷歌可以知道%s属于字符串类型，所以可以替换传进来的“2小时”这个字符串。</p>
-<p>所以上面那句话的理解就是，因为%s是字符串替换符，然后$是被格式化的参数索引，因此这时候被格式化的就是传进来的第一个value值会被格式化。如果把1改成2的话，就会出现，需要传入第二个value值，如果不传两个的话，就会出现Exception in thread “main” java.util.MissingFormatArgumentException: Format specifier ‘%2$s’，这个错误，提示缺少第二个声明。</p>
-<p>我google了很多篇博文，发现这篇博文很不错，献上地址<a href="http://blog.csdn.net/lonely_fireworks/article/details/7962171" target="_blank" rel="external">http://blog.csdn.net/lonely_fireworks/article/details/7962171</a></p>
-<p>博主强调了未经允许不可以转载，所以上面给个网址自己去看吧！很简单，一看就能懂。</p>
-<p>主要的功能是动态替换，以前看过C语言的一点东西，感觉和C语言的一些写法相似，其实我觉得如果在实际开发中应该很少会应用到这个，可能使用这个的话代码会简洁很多，提高代码复用，不使用这个的话似乎也可以很漂亮的替换。</p>
+            <p>原来已经写好的博客因为没有保存，电脑突然死机，所以没办法只能重新写多一次，首先把我模仿的博客地址放出来<br>    <a href="http://blog.csdn.net/guolin_blog/article/details/9255575" target="_blank" rel="external">Android下拉刷新完全解析，教你如何一分钟实现下拉刷新功能 </a></p>
+<p>在博客上博主已经写明了原理，其实就是在隐藏一个下拉头，在touch的时候进行事件监听，如果listview滚动到顶部的是并且手指还在下拉就将头部显示出来，松手之后进行刷新操作，并将下拉头再次隐藏。<br><img src="http://img.blog.csdn.net/20130706113543125?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2lueXU4OTA4MDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="下拉刷新原理图"><br>s<br>首先是定义好刷新的头部，这里除了基本的文字提示还有上次更新时间是不变的，其他的都可以根据自己的想象力来创建，当然根据需求来实现就可以了。代码就不贴了，自己看博主的博客吧！</p>
+<p>在继承了linearLayout的class中，首先是定义变量，这里需要自己思考逻辑，把下拉刷新的每一步都分解成一个小动作，先是分解表面的小动作，然后是分别背后逻辑实现的具体实现。</p>
+<blockquote>
+<ul>
+<li><p>按照刷新前后可以分为，下拉状态，释放之后立即刷新状态，正在刷新状态，刷新完成或者未刷新状态，ok，一个周期就这样完成了。</p>
+</li>
+<li><p>分析了表面之后，开始分析头部的view，准备刷新的时候，描述文字会对应改变，然后就是与用户进行交互的操作，主要是人性化提示上一次更新时间是什么时候，博主在这里把更新时间细分到年月日时分秒，另外定义一个字符串常量UPDATED_AT，用来作为SharePreferences的键值。</p>
+</li>
+<li><p>接下来是箭头和进度条，这里的思维是这样的，在下拉的时候，箭头先逆时针旋转180度，描述文字变成下拉立即刷新</p>
+</li>
+<li><p>最后就是做一些细节性的操作，新建监听对象，记录上次更新的毫秒值，另外为了防止不同的界面在使用同一个下拉刷新的时候更新时间上会由于key相同而冲突，所以使用id来区分，定义currentStatus标记当前处于什么状态，创建一个布朗值ableToPull规定只有listview滚动到头的时候才允许下拉，判定滚动之前用户手指可以移动的最大值</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>实现逻辑考虑之后，剩下的就比较好办了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">RefreshableView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">        preferences = PreferenceManager.getDefaultSharedPreferences(context); <span class="comment">//1</span></span><br><span class="line">        header = LayoutInflater.from(context).inflate(R.layout.pull_to_refresh, <span class="keyword">null</span>, <span class="keyword">true</span>);</span><br><span class="line">        progressBar = (ProgressBar) header.findViewById(R.id.progress_bar);</span><br><span class="line">        arrow = (ImageView) header.findViewById(R.id.arrow);</span><br><span class="line">        description = (TextView) header.findViewById(R.id.description);</span><br><span class="line">        updateAt = (TextView) header.findViewById(R.id.update_at);</span><br><span class="line">        touchSlop = ViewConfiguration.get(context).getScaledTouchSlop(); <span class="comment">//2</span></span><br><span class="line">        refreshUpdatedAtValue();<span class="comment">//3</span></span><br><span class="line">        setOrientation(VERTICAL);</span><br><span class="line">        addView(header, <span class="number">0</span>);<span class="comment">//4</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>创建RefreshableView的构造函数RefreshableView(Context context, AttributeSet attrs)，传入当前使用refresh的上下文用来绑定下拉头的view和可能用到的数值集合AttributeSet attrs，主要分析上面标有数字的代码片段。<br>1，PreferenceManager.getDefaultSharedPreferences(Context) 来获取管理者，比如当我们想获得整数我们可以用 getInt(String key, int defVal) .获取里面的某个键值，当我们想修改时候我们用 putInt(String key, int newVal)， 最后用 edit(), commit()方法提交!<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences mPerferences = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);            </span><br><span class="line">      <span class="keyword">int</span> counter = mPerferences.getInt(<span class="string">"counter"</span>, <span class="number">0</span>);           </span><br><span class="line">      TextView mTextView = (TextView)findViewById(R.id.text);           </span><br><span class="line">      mTextView.setText(<span class="string">"This app has been started "</span> + counter + <span class="string">" times."</span>);            </span><br><span class="line">      SharedPreferences.Editor mEditor = mPerferences.edit();       </span><br><span class="line">      mEditor.putInt(<span class="string">"counter"</span>, ++counter);  </span><br><span class="line">      mEditor.commit();</span><br></pre></td></tr></table></figure></p>
+<p>通过上面的代码可以做到动态统计客户端的应用被启动的次数。<br>2，返回一个距离，表示滑动的时候，手的移动要大于这个距离才开始移动控件<br>3，负责刷新下拉头中上次更新时间的文字描述<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">refreshUpdatedAtValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        lastUpdateTime = preferences.getLong(UPDATED_AT + mId, -<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">long</span> currentTime = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">long</span> timePassed = currentTime - lastUpdateTime;</span><br><span class="line">        <span class="keyword">long</span> timeIntoFormat;</span><br><span class="line">        String updateAtValue;</span><br><span class="line">        <span class="keyword">if</span> (lastUpdateTime == -<span class="number">1</span>) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.not_updated_yet);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.time_error);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_MINUTE) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.updated_just_now);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_HOUR) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_MINUTE;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"分钟"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_DAY) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_HOUR;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"小时"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_MONTH) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_DAY;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"天"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_YEAR) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_MONTH;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"个月"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_YEAR;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"年"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125;</span><br><span class="line">        updateAt.setText(updateAtValue);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>可能是我太笨，其实第一句的意思我还真的没有理解到什么意思，不过肯定是获取上一次打开app的时候保存在preferences的时间值，但是丝毫没有看到lastUpdateTime保存的上一次打开的痕迹。除此之外，其他的都很容易理解。不过这里的设计思路感觉非常清晰，以后写保存时间的也可以这样写。</p>
+<h2 id="4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在-lt-gt-lt-gt-中间添加view一样。"><a href="#4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在-lt-gt-lt-gt-中间添加view一样。" class="headerlink" title="4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在&lt;&gt;&lt;/&gt;中间添加view一样。"></a>4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在&lt;&gt;&lt;/&gt;中间添加view一样。</h2><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onLayout(changed, l, t, r, b);</span><br><span class="line">        <span class="keyword">if</span> (changed &amp;&amp; !loadOnce) &#123;</span><br><span class="line">            hideHeaderHeight = -header.getHeight(); <span class="comment">//获得可视区域的正上方header的高度</span></span><br><span class="line">            headerLayoutParams = (MarginLayoutParams) header.getLayoutParams();</span><br><span class="line">            headerLayoutParams.topMargin = hideHeaderHeight; <span class="comment">//把header放置在距离可视区域的正上方header.getHeight()处，这样可以完美隐藏header</span></span><br><span class="line">            listView = (ListView) getChildAt(<span class="number">1</span>); <span class="comment">//getChildAt（int position)返回的item都是指的可视区域内的第position个元素</span></span><br><span class="line">            listView.setOnTouchListener(<span class="keyword">this</span>);</span><br><span class="line">            loadOnce = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法用来放置子View的位置，参数的字母意义分别是left，top，right，bottom。另外布朗值是用来判断Layout是否重新加载layout的数值。<br>判断的意思是如果曾经未曾加载过一次并且loadOnce为第一次加载不是false的话，就执行下面的语句，因为onlayout只需加载一次就可以了，所以要判断是否是第一次加载。<br>先得到header的高度，然后将高度设为负值，意味着将header放在屏幕的上方隐藏起来，为了将hideHeaderHeight实现起来，就要获取MarginLayoutParams管理，来获得topMargin值。<br>最后<em>listView = (ListView) getChildAt(1)</em>获得viewGroup的第二个child，也就是整个listview设置touch监听。下面是监听代码的第一个child，设置touch监听。<br>下面是监听代码（下面的代码是整个刷新原理的关键）：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View v, MotionEvent event)</span> </span>&#123;</span><br><span class="line">       setIsAbleToPull(event);</span><br><span class="line">       <span class="keyword">if</span> (ableToPull) &#123;</span><br><span class="line">           <span class="keyword">switch</span> (event.getAction()) &#123;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">                   yDown = event.getRawY();</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">                   <span class="keyword">float</span> yMove = event.getRawY();</span><br><span class="line">                   <span class="keyword">int</span> distance = (<span class="keyword">int</span>) (yMove - yDown);</span><br><span class="line">                   <span class="comment">// 如果手指是下滑状态，并且下拉头是完全隐藏的，就屏蔽下拉事件</span></span><br><span class="line">                   <span class="keyword">if</span> (distance &lt;= <span class="number">0</span> &amp;&amp; headerLayoutParams.topMargin &lt;= hideHeaderHeight) &#123;</span><br><span class="line">                       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">if</span> (distance &lt; touchSlop) &#123;</span><br><span class="line">                       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">if</span> (currentStatus != STATUS_REFRESHING) &#123;</span><br><span class="line">                       <span class="keyword">if</span> (headerLayoutParams.topMargin &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                           currentStatus = STATUS_RELEASE_TO_REFRESH;</span><br><span class="line">                       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                           currentStatus = STATUS_PULL_TO_REFRESH;</span><br><span class="line">                       &#125;</span><br><span class="line">                       <span class="comment">// 通过偏移下拉头的topMargin值，来实现下拉效果</span></span><br><span class="line">                       headerLayoutParams.topMargin = (distance / <span class="number">2</span>) + hideHeaderHeight;</span><br><span class="line">                       header.setLayoutParams(headerLayoutParams);</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_UP:</span><br><span class="line">               <span class="keyword">default</span>:</span><br><span class="line">                   <span class="keyword">if</span> (currentStatus == STATUS_RELEASE_TO_REFRESH) &#123;</span><br><span class="line">                       <span class="comment">// 松手时如果是释放立即刷新状态，就去调用正在刷新的任务</span></span><br><span class="line">                       <span class="keyword">new</span> RefreshingTask().execute();</span><br><span class="line">                   &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentStatus == STATUS_PULL_TO_REFRESH) &#123;</span><br><span class="line">                       <span class="comment">// 松手时如果是下拉状态，就去调用隐藏下拉头的任务</span></span><br><span class="line">                       <span class="keyword">new</span> HideHeaderTask().execute();</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="comment">// 时刻记得更新下拉头中的信息</span></span><br><span class="line">           <span class="keyword">if</span> (currentStatus == STATUS_PULL_TO_REFRESH</span><br><span class="line">                   || currentStatus == STATUS_RELEASE_TO_REFRESH) &#123;</span><br><span class="line">               updateHeaderView();</span><br><span class="line">               <span class="comment">// 当前正处于下拉或释放状态，要让ListView失去焦点，否则被点击的那一项会一直处于选中状态</span></span><br><span class="line">               listView.setPressed(<span class="keyword">false</span>);</span><br><span class="line">               listView.setFocusable(<span class="keyword">false</span>);</span><br><span class="line">               listView.setFocusableInTouchMode(<span class="keyword">false</span>);</span><br><span class="line">               lastStatus = currentStatus;</span><br><span class="line">               <span class="comment">// 当前正处于下拉或释放状态，通过返回true屏蔽掉ListView的滚动事件</span></span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>先判断其他语句的意思，<br>如果可以进行下拉刷新的时候，当手指ACTION_DOWN的时候，记录当前的getRawY()，然后再move的时候使用一个float变量跟踪手指最终的getRawY，得到一个移动的距离<br>如果移动的距离是一个负数，说明下滑状态，这时候下拉头会被隐藏，返回false屏蔽下拉事件，不执行下拉刷新的操作<br>如果移动的距离小于最小滑动距离touchSlop，这时候因为滑动的距离太短，也不执行下拉刷新<br>虽然我觉得应该在这里加多一段else的语句，返回一个true，但是好像太早返回true的话就不能执行记录当前状态的<br>如果当前状态不等于正在刷新的话，再判断header是否在父view的下面，也就是是否已经移到可视图层，如果</p>
+<p>1，代码中的第一句setIsAbleToPull(event);是判断是否可以下拉，下面的是详细代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setIsAbleToPull</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line">        View firstChild = listView.getChildAt(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span> (firstChild != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> firstVisiblePos = listView.getFirstVisiblePosition();</span><br><span class="line">            <span class="keyword">if</span> (firstVisiblePos == <span class="number">0</span> &amp;&amp; firstChild.getTop() == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!ableToPull) &#123;</span><br><span class="line">                    yDown = event.getRawY();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 如果首个元素的上边缘，距离父布局值为0，就说明ListView滚动到了最顶部，此时应该允许下拉刷新</span></span><br><span class="line">                ableToPull = <span class="keyword">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (headerLayoutParams.topMargin != hideHeaderHeight) &#123;</span><br><span class="line">                    headerLayoutParams.topMargin = hideHeaderHeight;</span><br><span class="line">                    header.setLayoutParams(headerLayoutParams);</span><br><span class="line">                &#125;</span><br><span class="line">                ableToPull = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果ListView中没有元素，也应该允许下拉刷新</span></span><br><span class="line">            ableToPull = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先创建一个变量firstChild获取listview视图中可以看到的第一个view，判断假如listview中含有子类的时候，再创建一个firstVisiblePos变量获取第一个看到的listview的position，如果如果首个元素的上边缘，距离getTop()父布局值为0，就说明ListView滚动到了最顶部，此时应该允许下拉刷新,此时的点击事件就要记录首次按下的Y坐标yDown，并让布朗值变为true，允许下拉。<br>另外假如判断不成立的话，此时的状态可能是listview还在滚动状态或者是下拉之后准备释放的状态，这时候我们要让下拉投变回原来的位置，所以要让header的topMargin变为原来的位置，此时不允许下拉。</p>
+<p>先偷懒一下，好吧！我说谎了，这里下去看代码没有找到适合的逻辑来分析，先标记一下。</p>
 
           
         
@@ -693,8 +958,8 @@ var _hmt = _hmt || [];
             
               
                 
-                <a class="post-title-link" href="/2016/04/25/分析一篇博客中学到的下拉刷新原理/" itemprop="url">
-                  分析一篇博客中学到的下拉刷新原理
+                <a class="post-title-link" href="/2016/04/25/String-format（）的使用/" itemprop="url">
+                  String.format（）的使用
                 </a>
               
             
@@ -737,8 +1002,8 @@ var _hmt = _hmt || [];
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/25/分析一篇博客中学到的下拉刷新原理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/分析一篇博客中学到的下拉刷新原理/" itemprop="commentsCount"></span>
+                <a href="/2016/04/25/String-format（）的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/String-format（）的使用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -762,32 +1027,13 @@ var _hmt = _hmt || [];
       
         
           
-            <p>原来已经写好的博客因为没有保存，电脑突然死机，所以没办法只能重新写多一次，首先把我模仿的博客地址放出来<br>    <a href="http://blog.csdn.net/guolin_blog/article/details/9255575" target="_blank" rel="external">Android下拉刷新完全解析，教你如何一分钟实现下拉刷新功能 </a></p>
-<p>在博客上博主已经写明了原理，其实就是在隐藏一个下拉头，在touch的时候进行事件监听，如果listview滚动到顶部的是并且手指还在下拉就将头部显示出来，松手之后进行刷新操作，并将下拉头再次隐藏。<br><img src="http://img.blog.csdn.net/20130706113543125?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2lueXU4OTA4MDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="下拉刷新原理图"><br>s<br>首先是定义好刷新的头部，这里除了基本的文字提示还有上次更新时间是不变的，其他的都可以根据自己的想象力来创建，当然根据需求来实现就可以了。代码就不贴了，自己看博主的博客吧！</p>
-<p>在继承了linearLayout的class中，首先是定义变量，这里需要自己思考逻辑，把下拉刷新的每一步都分解成一个小动作，先是分解表面的小动作，然后是分别背后逻辑实现的具体实现。</p>
-<blockquote>
-<ul>
-<li><p>按照刷新前后可以分为，下拉状态，释放之后立即刷新状态，正在刷新状态，刷新完成或者未刷新状态，ok，一个周期就这样完成了。</p>
-</li>
-<li><p>分析了表面之后，开始分析头部的view，准备刷新的时候，描述文字会对应改变，然后就是与用户进行交互的操作，主要是人性化提示上一次更新时间是什么时候，博主在这里把更新时间细分到年月日时分秒，另外定义一个字符串常量UPDATED_AT，用来作为SharePreferences的键值。</p>
-</li>
-<li><p>接下来是箭头和进度条，这里的思维是这样的，在下拉的时候，箭头先逆时针旋转180度，描述文字变成下拉立即刷新</p>
-</li>
-<li><p>最后就是做一些细节性的操作，新建监听对象，记录上次更新的毫秒值，另外为了防止不同的界面在使用同一个下拉刷新的时候更新时间上会由于key相同而冲突，所以使用id来区分，定义currentStatus标记当前处于什么状态，创建一个布朗值ableToPull规定只有listview滚动到头的时候才允许下拉，判定滚动之前用户手指可以移动的最大值</p>
-</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>实现逻辑考虑之后，剩下的就比较好办了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">RefreshableView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">        preferences = PreferenceManager.getDefaultSharedPreferences(context); <span class="comment">//1</span></span><br><span class="line">        header = LayoutInflater.from(context).inflate(R.layout.pull_to_refresh, <span class="keyword">null</span>, <span class="keyword">true</span>);</span><br><span class="line">        progressBar = (ProgressBar) header.findViewById(R.id.progress_bar);</span><br><span class="line">        arrow = (ImageView) header.findViewById(R.id.arrow);</span><br><span class="line">        description = (TextView) header.findViewById(R.id.description);</span><br><span class="line">        updateAt = (TextView) header.findViewById(R.id.update_at);</span><br><span class="line">        touchSlop = ViewConfiguration.get(context).getScaledTouchSlop(); <span class="comment">//2</span></span><br><span class="line">        refreshUpdatedAtValue();<span class="comment">//3</span></span><br><span class="line">        setOrientation(VERTICAL);</span><br><span class="line">        addView(header, <span class="number">0</span>);<span class="comment">//4</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>创建RefreshableView的构造函数RefreshableView(Context context, AttributeSet attrs)，传入当前使用refresh的上下文用来绑定下拉头的view和可能用到的数值集合AttributeSet attrs，主要分析上面标有数字的代码片段。<br>1，PreferenceManager.getDefaultSharedPreferences(Context) 来获取管理者，比如当我们想获得整数我们可以用 getInt(String key, int defVal) .获取里面的某个键值，当我们想修改时候我们用 putInt(String key, int newVal)， 最后用 edit(), commit()方法提交!<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences mPerferences = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);            </span><br><span class="line">      <span class="keyword">int</span> counter = mPerferences.getInt(<span class="string">"counter"</span>, <span class="number">0</span>);           </span><br><span class="line">      TextView mTextView = (TextView)findViewById(R.id.text);           </span><br><span class="line">      mTextView.setText(<span class="string">"This app has been started "</span> + counter + <span class="string">" times."</span>);            </span><br><span class="line">      SharedPreferences.Editor mEditor = mPerferences.edit();       </span><br><span class="line">      mEditor.putInt(<span class="string">"counter"</span>, ++counter);  </span><br><span class="line">      mEditor.commit();</span><br></pre></td></tr></table></figure></p>
-<p>通过上面的代码可以做到动态统计客户端的应用被启动的次数。<br>2，返回一个距离，表示滑动的时候，手的移动要大于这个距离才开始移动控件<br>3，负责刷新下拉头中上次更新时间的文字描述<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">refreshUpdatedAtValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        lastUpdateTime = preferences.getLong(UPDATED_AT + mId, -<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">long</span> currentTime = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">long</span> timePassed = currentTime - lastUpdateTime;</span><br><span class="line">        <span class="keyword">long</span> timeIntoFormat;</span><br><span class="line">        String updateAtValue;</span><br><span class="line">        <span class="keyword">if</span> (lastUpdateTime == -<span class="number">1</span>) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.not_updated_yet);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.time_error);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_MINUTE) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.updated_just_now);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_HOUR) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_MINUTE;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"分钟"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_DAY) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_HOUR;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"小时"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_MONTH) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_DAY;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"天"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_YEAR) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_MONTH;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"个月"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_YEAR;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"年"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125;</span><br><span class="line">        updateAt.setText(updateAtValue);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>可能是我太笨，其实第一句的意思我还真的没有理解到什么意思，不过肯定是获取上一次打开app的时候保存在preferences的时间值，但是丝毫没有看到lastUpdateTime保存的上一次打开的痕迹。除此之外，其他的都很容易理解。不过这里的设计思路感觉非常清晰，以后写保存时间的也可以这样写。</p>
-<h2 id="4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在-lt-gt-lt-gt-中间添加view一样。"><a href="#4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在-lt-gt-lt-gt-中间添加view一样。" class="headerlink" title="4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在&lt;&gt;&lt;/&gt;中间添加view一样。"></a>4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在&lt;&gt;&lt;/&gt;中间添加view一样。</h2><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onLayout(changed, l, t, r, b);</span><br><span class="line">        <span class="keyword">if</span> (changed &amp;&amp; !loadOnce) &#123;</span><br><span class="line">            hideHeaderHeight = -header.getHeight(); <span class="comment">//获得可视区域的正上方header的高度</span></span><br><span class="line">            headerLayoutParams = (MarginLayoutParams) header.getLayoutParams();</span><br><span class="line">            headerLayoutParams.topMargin = hideHeaderHeight; <span class="comment">//把header放置在距离可视区域的正上方header.getHeight()处，这样可以完美隐藏header</span></span><br><span class="line">            listView = (ListView) getChildAt(<span class="number">1</span>); <span class="comment">//getChildAt（int position)返回的item都是指的可视区域内的第position个元素</span></span><br><span class="line">            listView.setOnTouchListener(<span class="keyword">this</span>);</span><br><span class="line">            loadOnce = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>这个方法用来放置子View的位置，参数的字母意义分别是left，top，right，bottom。另外布朗值是用来判断Layout是否重新加载layout的数值。<br>判断的意思是如果曾经未曾加载过一次并且loadOnce为第一次加载不是false的话，就执行下面的语句，因为onlayout只需加载一次就可以了，所以要判断是否是第一次加载。<br>先得到header的高度，然后将高度设为负值，意味着将header放在屏幕的上方隐藏起来，为了将hideHeaderHeight实现起来，就要获取MarginLayoutParams管理，来获得topMargin值。<br>最后<em>listView = (ListView) getChildAt(1)</em>获得viewGroup的第二个child，也就是整个listview设置touch监听。下面是监听代码的第一个child，设置touch监听。<br>下面是监听代码（下面的代码是整个刷新原理的关键）：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View v, MotionEvent event)</span> </span>&#123;</span><br><span class="line">       setIsAbleToPull(event);</span><br><span class="line">       <span class="keyword">if</span> (ableToPull) &#123;</span><br><span class="line">           <span class="keyword">switch</span> (event.getAction()) &#123;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">                   yDown = event.getRawY();</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">                   <span class="keyword">float</span> yMove = event.getRawY();</span><br><span class="line">                   <span class="keyword">int</span> distance = (<span class="keyword">int</span>) (yMove - yDown);</span><br><span class="line">                   <span class="comment">// 如果手指是下滑状态，并且下拉头是完全隐藏的，就屏蔽下拉事件</span></span><br><span class="line">                   <span class="keyword">if</span> (distance &lt;= <span class="number">0</span> &amp;&amp; headerLayoutParams.topMargin &lt;= hideHeaderHeight) &#123;</span><br><span class="line">                       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">if</span> (distance &lt; touchSlop) &#123;</span><br><span class="line">                       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">if</span> (currentStatus != STATUS_REFRESHING) &#123;</span><br><span class="line">                       <span class="keyword">if</span> (headerLayoutParams.topMargin &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                           currentStatus = STATUS_RELEASE_TO_REFRESH;</span><br><span class="line">                       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                           currentStatus = STATUS_PULL_TO_REFRESH;</span><br><span class="line">                       &#125;</span><br><span class="line">                       <span class="comment">// 通过偏移下拉头的topMargin值，来实现下拉效果</span></span><br><span class="line">                       headerLayoutParams.topMargin = (distance / <span class="number">2</span>) + hideHeaderHeight;</span><br><span class="line">                       header.setLayoutParams(headerLayoutParams);</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_UP:</span><br><span class="line">               <span class="keyword">default</span>:</span><br><span class="line">                   <span class="keyword">if</span> (currentStatus == STATUS_RELEASE_TO_REFRESH) &#123;</span><br><span class="line">                       <span class="comment">// 松手时如果是释放立即刷新状态，就去调用正在刷新的任务</span></span><br><span class="line">                       <span class="keyword">new</span> RefreshingTask().execute();</span><br><span class="line">                   &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentStatus == STATUS_PULL_TO_REFRESH) &#123;</span><br><span class="line">                       <span class="comment">// 松手时如果是下拉状态，就去调用隐藏下拉头的任务</span></span><br><span class="line">                       <span class="keyword">new</span> HideHeaderTask().execute();</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="comment">// 时刻记得更新下拉头中的信息</span></span><br><span class="line">           <span class="keyword">if</span> (currentStatus == STATUS_PULL_TO_REFRESH</span><br><span class="line">                   || currentStatus == STATUS_RELEASE_TO_REFRESH) &#123;</span><br><span class="line">               updateHeaderView();</span><br><span class="line">               <span class="comment">// 当前正处于下拉或释放状态，要让ListView失去焦点，否则被点击的那一项会一直处于选中状态</span></span><br><span class="line">               listView.setPressed(<span class="keyword">false</span>);</span><br><span class="line">               listView.setFocusable(<span class="keyword">false</span>);</span><br><span class="line">               listView.setFocusableInTouchMode(<span class="keyword">false</span>);</span><br><span class="line">               lastStatus = currentStatus;</span><br><span class="line">               <span class="comment">// 当前正处于下拉或释放状态，通过返回true屏蔽掉ListView的滚动事件</span></span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p>先判断其他语句的意思，<br>如果可以进行下拉刷新的时候，当手指ACTION_DOWN的时候，记录当前的getRawY()，然后再move的时候使用一个float变量跟踪手指最终的getRawY，得到一个移动的距离<br>如果移动的距离是一个负数，说明下滑状态，这时候下拉头会被隐藏，返回false屏蔽下拉事件，不执行下拉刷新的操作<br>如果移动的距离小于最小滑动距离touchSlop，这时候因为滑动的距离太短，也不执行下拉刷新<br>虽然我觉得应该在这里加多一段else的语句，返回一个true，但是好像太早返回true的话就不能执行记录当前状态的<br>如果当前状态不等于正在刷新的话，再判断header是否在父view的下面，也就是是否已经移到可视图层，如果</p>
-<p>1，代码中的第一句setIsAbleToPull(event);是判断是否可以下拉，下面的是详细代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setIsAbleToPull</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line">        View firstChild = listView.getChildAt(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span> (firstChild != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> firstVisiblePos = listView.getFirstVisiblePosition();</span><br><span class="line">            <span class="keyword">if</span> (firstVisiblePos == <span class="number">0</span> &amp;&amp; firstChild.getTop() == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!ableToPull) &#123;</span><br><span class="line">                    yDown = event.getRawY();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 如果首个元素的上边缘，距离父布局值为0，就说明ListView滚动到了最顶部，此时应该允许下拉刷新</span></span><br><span class="line">                ableToPull = <span class="keyword">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (headerLayoutParams.topMargin != hideHeaderHeight) &#123;</span><br><span class="line">                    headerLayoutParams.topMargin = hideHeaderHeight;</span><br><span class="line">                    header.setLayoutParams(headerLayoutParams);</span><br><span class="line">                &#125;</span><br><span class="line">                ableToPull = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果ListView中没有元素，也应该允许下拉刷新</span></span><br><span class="line">            ableToPull = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>首先创建一个变量firstChild获取listview视图中可以看到的第一个view，判断假如listview中含有子类的时候，再创建一个firstVisiblePos变量获取第一个看到的listview的position，如果如果首个元素的上边缘，距离getTop()父布局值为0，就说明ListView滚动到了最顶部，此时应该允许下拉刷新,此时的点击事件就要记录首次按下的Y坐标yDown，并让布朗值变为true，允许下拉。<br>另外假如判断不成立的话，此时的状态可能是listview还在滚动状态或者是下拉之后准备释放的状态，这时候我们要让下拉投变回原来的位置，所以要让header的topMargin变为原来的位置，此时不允许下拉。</p>
-<p>先偷懒一下，好吧！我说谎了，这里下去看代码没有找到适合的逻辑来分析，先标记一下。</p>
+            <p>在我模仿一个下拉刷新的时候遇到这段代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updateAtValue = String.format(getResources().getString(R.string.updated_at), value)</span><br></pre></td></tr></table></figure></p>
+<p>其中，getResources().getString(R.string.updated_at是一段字符串，内容是<string name="updated_at">上次更新于%1$s前</string>，比较好奇的是为什么会有%1$s这个特殊字符，所以谷歌了一下科普了一些知识，发现原来是可以替换一些内容的功能。</p>
+<p>例如上面的代码可以出现的其中一条结果是，上传更新与2小时前，那么这时候后面传进去的value的值就是2小时了，通过谷歌可以知道%s属于字符串类型，所以可以替换传进来的“2小时”这个字符串。</p>
+<p>所以上面那句话的理解就是，因为%s是字符串替换符，然后$是被格式化的参数索引，因此这时候被格式化的就是传进来的第一个value值会被格式化。如果把1改成2的话，就会出现，需要传入第二个value值，如果不传两个的话，就会出现Exception in thread “main” java.util.MissingFormatArgumentException: Format specifier ‘%2$s’，这个错误，提示缺少第二个声明。</p>
+<p>我google了很多篇博文，发现这篇博文很不错，献上地址<a href="http://blog.csdn.net/lonely_fireworks/article/details/7962171" target="_blank" rel="external">http://blog.csdn.net/lonely_fireworks/article/details/7962171</a></p>
+<p>博主强调了未经允许不可以转载，所以上面给个网址自己去看吧！很简单，一看就能懂。</p>
+<p>主要的功能是动态替换，以前看过C语言的一点东西，感觉和C语言的一些写法相似，其实我觉得如果在实际开发中应该很少会应用到这个，可能使用这个的话代码会简洁很多，提高代码复用，不使用这个的话似乎也可以很漂亮的替换。</p>
 
           
         
@@ -1206,289 +1452,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/10/安卓shape的使用/" itemprop="url">
-                  安卓shape的使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-04-10T20:29:44+08:00" content="2016-04-10">
-              2016-04-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/10/安卓shape的使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/10/安卓shape的使用/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Shape"><a href="#Shape" class="headerlink" title="Shape"></a>Shape</h2><p>可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。</p>
-<p>如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了<br>在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示<shape>  android:shape=[“rectangle” | “oval” | “line” | “ring”]</shape></p>
-<p>另外Shape子节点的常用属性：<br>1，<gradient>  渐变</gradient></p>
-<blockquote>
-<ul>
-<li>android:startColor  起始颜色</li>
-<li>android:endColor  结束颜色            </li>
-<li>android:angle  渐变角度，0从上到下，90表示从左到右，数值为45的整数倍默认为0；</li>
-<li>android:type  渐变的样式 liner线性渐变 radial环形渐变 sweep</li>
-</ul>
-</blockquote>
-<p>2,<solid>  填充</solid></p>
-<blockquote>
-<ul>
-<li>android:color  填充的颜色</li>
-</ul>
-</blockquote>
-<p>3,<stroke> 描边</stroke></p>
-<blockquote>
-<ul>
-<li>android:width 描边的宽度</li>
-<li>android:color 描边的颜色</li>
-<li>android:dashWidth 表示’-‘横线的宽度</li>
-<li>android:dashGap 表示’-‘横线之间的距离</li>
-</ul>
-</blockquote>
-<p>4,<corners> 圆角</corners></p>
-<blockquote>
-<ul>
-<li>android:radius  圆角的半径 值越大角越圆</li>
-<li>android:topRightRadius  右上圆角半径</li>
-<li>android:bottomLeftRadius 右下圆角角半径</li>
-<li>android:topLeftRadius 左上圆角半径</li>
-<li>android:bottomRightRadius 左下圆角半径</li>
-</ul>
-</blockquote>
-<p>5，<padding>填充</padding></p>
-<blockquote>
-<ul>
-<li>android:bottom=”1.0dip” 底部填充</li>
-<li>android:left=”1.0dip” 左边填充</li>
-<li>android:right=”1.0dip” 右边填充</li>
-<li>android:top=”0.0dip” 上面填充</li>
-</ul>
-</blockquote>
-<p>关于如何使用请看下文</p>
-<h2 id="Selector的应用场景"><a href="#Selector的应用场景" class="headerlink" title="Selector的应用场景"></a>Selector的应用场景</h2><p>我们经常会需要在用户点击某个按钮或者图片按钮之后图片改变颜色表示响应操作，从而和用户进行交互。</p>
-<h2 id="Selector的用法"><a href="#Selector的用法" class="headerlink" title="Selector的用法"></a>Selector的用法</h2><p>一，selector的四大属性</p>
-<blockquote>
-<ul>
-<li>android:state_selected 是选中</li>
-<li>android:state_focused 是获得焦点</li>
-<li>android:state_pressed 是点击</li>
-<li>android:state_enabled 是设置是否响应事件,指所有事件</li>
-<li>android:state_window_focused 默认时的背景图片</li>
-</ul>
-</blockquote>
-<p>xml demo如下,测试的时候自己用不同颜色的图片，这样才能看出效果<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:Android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- 默认时的背景图片--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span> <span class="attr">Android:drawable</span>=<span class="string">"@drawable/pic1"</span> /&gt;</span>        </span><br><span class="line"><span class="comment">&lt;!-- 没有焦点时的背景图片 --&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_window_focused</span>=<span class="string">"false"</span>        </span><br><span class="line">   <span class="attr">android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="comment">&lt;!-- 非触摸模式下获得焦点并单击时的背景图片 --&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">android:state_pressed</span>=<span class="string">"true"</span>     </span><br><span class="line">   <span class="attr">android:drawable</span>= "@<span class="attr">drawable</span>/<span class="attr">ic_launcher</span>"   /&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- 触摸模式下单击时的背景图片--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"false"</span>   </span><br><span class="line">   <span class="attr">Android:state_pressed</span>=<span class="string">"true"</span>     </span><br><span class="line">   <span class="attr">Android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>      </span><br><span class="line"><span class="comment">&lt;!--选中时的图片背景--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_selected</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="comment">&lt;!--获得焦点时的图片背景--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">Android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>然后接下来是在一个项目里面需要用到的一个功能</p>
-<h2 id="layer-list"><a href="#layer-list" class="headerlink" title="layer-list"></a>layer-list</h2><p>当你需要把多张图片按照顺序层层叠起来的时候就能用上了，这个可以用来制造倒影的效果，用的好的话会很酷炫的。</p>
-<p>xml代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"0dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/#44000000"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"2dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/color_primary_red"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>效果<br><img src="./img/layer.png" alt="layer-list"></p>
-<p>值得参考的文章:<a href="http://keeganlee.me/post/android/20150830" target="_blank" rel="external">Keegan小钢</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/10/谢谢各位小伙伴的祝福/" itemprop="url">
-                  谢谢各位小伙伴的祝福
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-04-10T10:19:11+08:00" content="2016-04-10">
-              2016-04-10
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/10/谢谢各位小伙伴的祝福/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/10/谢谢各位小伙伴的祝福/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="凌晨雨声"><a href="#凌晨雨声" class="headerlink" title="凌晨雨声"></a>凌晨雨声</h2><p><img src="http://pic.qiantucdn.com/58pic/11/99/07/84q58PICCNS.jpg" alt="生日快乐1"><br>    滴滴答答的雨声敲在地上，溅起玲珑般的声响，懒猪一样的我仍在梦的国度统治着我领土，那雨声似弓箭从我的耳边射到了我的疆土，被漫天乱箭杀个片甲不留，我很不忍心的放弃了自己的子民，睁开了眼睛。</p>
-<h2 id="生日祝福"><a href="#生日祝福" class="headerlink" title="生日祝福"></a>生日祝福</h2><p><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQYq6DyvI62XrsX57y5oENBJG3KM16qYqSo93UfYv9sEROQWf_1EA" alt="github"><br>打开手机，已经快到九点，意味着一天忙碌的生活在此刻计时，起床刷牙洗脸上个厕所，打开wechat，才想起今天是我的阳历的生日，算了一下，到现在我敲下这个字的时候，已经有15个小伙伴祝我生日快乐了，恭喜我自己，成功突破个人吉尼斯生日祝福记录，从来在班上就只有我的几个好朋友才会记得我的生日。</p>
-<p>如果此刻你有千里眼，可以看见的18颗洁白的牙齿闪耀在空气中，此刻，世界上最亮的光是太阳的，接着就是我的<strong>笑容</strong>发出的光芒了。</p>
-<h2 id="大学不是象牙塔"><a href="#大学不是象牙塔" class="headerlink" title="大学不是象牙塔"></a>大学不是<a href="http://www.baike.com/wiki/%E8%B1%A1%E7%89%99%E5%A1%94" target="_blank" rel="external">象牙塔</a></h2><p><img src="http://club.sina.com.cn.sinastorage.com/09/11/16/1285910141_ec1ee1bce6254ab68bdd3123ebe61ad1.jpg" alt="拼搏"></p>
-<h3 id="高中的拼搏不是为了大学的享乐"><a href="#高中的拼搏不是为了大学的享乐" class="headerlink" title="高中的拼搏不是为了大学的享乐"></a><a href="http://learning.sohu.com/20151011/n422945805.shtml" target="_blank" rel="external">高中的拼搏不是为了大学的享乐</a></h3><p>每个大学生都有懵懂的大一，仗着自己是小鲜肉，可以任意挥霍自己的时间用来弥补高中为了奋斗高考而逝去的美好青春。</p>
-<pre><code>糟糕的是，干净的双手，靓丽的服饰，整天打lol玩游戏，经常唱K，频繁喝酒，通宵打牌，更多恶习请自己脑补...
-
-开心的是，大学可以下课之后有空去跑跑步，运动一下，鼓起勇气约自己喜欢的女生一起看电影，有时间去打打兼职，遇上自己喜欢的女孩子就去追求，尽管我依旧单身，做着自己喜欢而有意义的事。
-</code></pre><p>我狡辩一下，我在说糟糕的事情的时候是有形容词的，我并没有全盘否定，总之适度都是可以接受的。换句话说，我也喜欢打游戏，不过每天一两个小时就可以了，没必要把大部分时间花在游戏上，况且现在打游戏的人那么多，想要当职业的游戏选手竞争也很激烈。</p>
-<h2 id="兴趣-创造"><a href="#兴趣-创造" class="headerlink" title="兴趣 创造"></a>兴趣 创造</h2><p>希望各位小伙伴都能做干喜欢的事情，寻自己的乐，没人规定选了什么专业你就一定从事什么行业，永远不要让兴趣的小船说翻就翻。</p>
-<h3 id="呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。-特地写一篇浅陋的日记来感谢大家的爱，谢谢！"><a href="#呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。-特地写一篇浅陋的日记来感谢大家的爱，谢谢！" class="headerlink" title="呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。 特地写一篇浅陋的日记来感谢大家的爱，谢谢！"></a>呃，另外，我不过阳历的生日，我过的是农历的4月10日的生日，估计还有一个月吧！到时记得我生日的才是真爱啊。 特地写一篇浅陋的日记来感谢大家的爱，谢谢！</h3><p><img src="http://ww4.sinaimg.cn/large/b551a925gw1etw3nrz0ykj21kw1kw4aq.jpg" alt="生日快乐2"><br>参考文章：<a href="http://www.knowledger.info/2014/07/13/6-reason-you-should-go-do-what-you-love-to-do/" target="_blank" rel="external">勇於去做你自己想做的事的六個理由</a><br>          <a href="https://www.zhihu.com/question/28358499" target="_blank" rel="external">如何长时间高效学习</a><br>          <a href="https://site.douban.com/136100/widget/notes/6048777/note/206121752/" target="_blank" rel="external">美国大学生有多牛</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1534,7 +1497,7 @@ var _hmt = _hmt || [];
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

@@ -219,6 +219,307 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/08/06/ES入门4/" itemprop="url">
+                  ES入门4
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-06T10:45:49+08:00" content="2016-08-06">
+              2016-08-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/06/ES入门4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/06/ES入门4/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>今天学的是javascript的class，关于class基本语法，继承，构造函数，等等</p>
+<h2 id="class的基本语法"><a href="#class的基本语法" class="headerlink" title="class的基本语法"></a>class的基本语法</h2><hr>
+<p>javascript传统方法是通过构造函数，定义生成新的对象。如下所示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.x = x;</span><br><span class="line">	<span class="keyword">this</span>.y = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Point.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">'('</span>+<span class="keyword">this</span>.x+<span class="string">','</span>+<span class="keyword">this</span>.y+<span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>可是这样的写法和传统的面向对象难免有差异，至少我看起来这样的写法就有点陌生了。</p>
+<p>ES6提供了更接近传统语音的写法，引入了class，也就是类，class的大部分功能，ES5都可以做到，我们可以将class看作是一个语法糖，只是为了程序员阅读方便而已。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(x, y)&#123;</span><br><span class="line">		<span class="keyword">this</span>.x = x;</span><br><span class="line">		<span class="keyword">this</span>.y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	thString()&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>看到constructor，那就是传统面向对象的构造函数的英文单词了，然后this则表示实例对象。对比上下ES5和ES6可以知道ES5的<strong>构造函数</strong>对应ES6的<strong>Point类</strong>的构造<strong>方法</strong>。</p>
+<p>除此之外Point类还定义了一个toString方法，这时候要注意语法结构了，不需要添加function关键字，直接把函数定义加进去就可以了。另外，方法之间不再需要逗号分隔了，反而加了之后会报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">typeof</span> Point <span class="comment">// "function"</span></span><br><span class="line">Point === Point.prototype.constructor <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码定义了一个类，使用typeof函数指明了Point，输出的是一个function，也就是说类的数据类型的就是函数，而最后一段代码更表明<strong>类本身就指向构造函数</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bar</span> </span>&#123;</span><br><span class="line">  doStuff() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'stuff'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Bar();</span><br><span class="line">b.doStuff() <span class="comment">// "stuff"</span></span><br></pre></td></tr></table></figure>
+<p>使用的时候也和普通new出实例一样，直接对类使用new命令。但是构造函数的prototype属性，在ES6的类这个新特性上继续存在。而事实上，类的所有方法都定义在类的prototype属性上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString()&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toValue()&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"></span><br><span class="line">Point.prototype = &#123;</span><br><span class="line">  toString()&#123;&#125;,</span><br><span class="line">  toValue()&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>哈哈，不过鉴于我还是习惯不用prototype。在类的实例上面调用方法，其实就是调用原型上的方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B();</span><br><span class="line"></span><br><span class="line">b.constructor === B.prototype.constructor <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>哈哈，学到这里突然就想起一点东西，因为ES6也出现了类，那么在类的整个块级作用域内，使用let实例定义一个变量的话，就相当于java的private关键字，只允许在会计作用内使用。<br>上面的代码中，可以看到最后一段代码表示它的constructor方法就是和B类原型的construor方法等同。</p>
+<p>由于类的方法都可以定义在prototype上，所以类的新方法可以添加在prototpe对象上面。<strong>Object.assign</strong>方法可以很很方便的一次向类添加多个方法,哈哈，好像挺方便的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.assign(Point.prototype, &#123;</span><br><span class="line">  toString()&#123;&#125;,</span><br><span class="line">  toValue()&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>prototype对象的constructor属性，直接指向类的本身，这与ES5的行为是一致的，证据如下：。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Point.prototype.constructor === Point <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/05/ES入门3/" itemprop="url">
+                  ES入门3
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-05T10:47:22+08:00" content="2016-08-05">
+              2016-08-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/05/ES入门3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/05/ES入门3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h1><p>因为项目进度比较赶，所以我要先跳着学了，现在直接跳到Module这一章来学。<br>首先直接看标题就知道是围绕模块化，因为ES6的class只是面向对象的语法糖，但是没有解决模块化问题。</p>
+<p>ES6的模块的思想，是尽量的静态化，使得编译的时候就能确定模块的依赖关系，以及输入和输出的变量。CommonJS和AMD模块，都只能在运行时确定这些东西。比如，CommonJS模块就是对象，输入时必须查找对象属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonJS模块</span></span><br><span class="line"><span class="keyword">let</span> &#123; stat, exists, readFile &#125; = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">let</span> _fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">let</span> stat = _fs.stat, exists = _fs.exists, readfile = _fs.readfile;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码实质是整体加载fs模块（也就是加载fs的所有方法），生成一个对象_fs,然后再从这个对象上面读取3个发那个发，这种加载的方式成为“运行时加载”，因为只有运行时才能得到这个对象。</p>
+<p><strong>ES6</strong>不是对象，而是通过<strong>export</strong>命令显示指定输出的代码，输入时也采用静态命令的形式。(其实我不明白这句话的意思)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6模块</span></span><br><span class="line"><span class="keyword">import</span> &#123; stat, exists, readFile &#125; <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码是从fs模块加载3个方法，其他方法不加载。这种加载方式称为“编译时加载”，也就是在编译的时候就会完成加载，效率要比CommonJS的要高。当然这样导致没法引用ES6模块本身，因为它不是对象，从这里可以理解到ES6不可以引用对象。</p>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><hr>
+<p>ES6的模块自动采用严格模式，不管你是否在模块头部加上“use strict”;。<br>严格模式有以下限制：</p>
+<blockquote>
+<p>变量必须声明后再使用<br>函数的参数不能有同名属性，否则报错<br>不能使用with语句<br>不能对只读属性赋值，否则报错<br>不能使用前缀0表示八进制数，否则报错<br>不能删除不可删除的属性，否则报错<br>不能删除变量delete prop，会报错，只能删除属性delete global[prop]<br>eval不会在它的外层作用域引入变量<br>eval和arguments不能被重新赋值<br>arguments不会自动反映函数参数的变化<br>不能使用arguments.callee<br>不能使用arguments.caller<br>禁止this指向全局对象<br>不能使用fn.caller和fn.arguments获取函数调用的堆栈<br>增加了保留字（比如protected、static和interface）</p>
+</blockquote>
+<h2 id="export命令"><a href="#export命令" class="headerlink" title="export命令"></a>export命令</h2><hr>
+<pre><code>模块功能主要由两个命令组成：**export和import**。&apos;export&apos;命令用于规定模块的对外接口，&apos;import&apos;用于输入其他模块提供的功能。
+</code></pre><p>一个模块就是一个独立的文件。该文件内部的所有变量，外部都无法获取。如果你希望外部能够读取模块内部的某个变量，就要使用export关键字暑输出该变量。下面代码输出了三个变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="string">``</span><span class="string">`	</span><br><span class="line">另一种写法(推荐)：</span><br><span class="line">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>第二种方法应该被优先考虑使用，因为这样就可以在脚本的底部一看就清楚输出了哪些变量。</p>
+<p>通常情况下，export输出的变量就是本来的名字，但是可以使用as关键字重命名。另外export还可以输出函数或者是类（class）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">v1</span>(<span class="params"></span>) </span>&#123; ... &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">v2</span>(<span class="params"></span>) </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line">  v1 <span class="keyword">as</span> streamV1,</span><br><span class="line">  v2 <span class="keyword">as</span> streamV2,</span><br><span class="line">  v2 <span class="keyword">as</span> streamLatestVersion</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码使用了as关键字，重命名了函数v1和v2的对外接口，重命名之后，v2可以用不同的名字输出两次，可是我不知道输出两次的用处是什么。</p>
+<p><strong>export命令规定的是对外的接口，必须与模块内部的变量建立一一对应的关系。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">export</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> m;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确写法一</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确写法二</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;m&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确写法三</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;n <span class="keyword">as</span> m&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> f;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;f&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>第一种写法直接输出1，第二种写法通过变量m，还是直接输出1，1只是一个值，不是接口。因此正确的写法应该是下面三种。</p>
+<p>不过第三种写法我觉得和第二种差不多，但是确不会报错，好奇怪。其实质都是规定了对外的接口m。其他脚本可以通过这个借口取到值1.</p>
+<p>同样，参考最后三种可以知道function和class的输出也遵循这样的写法。另外export语句输出的接口，与其对应的值是动态绑定的关系。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> foo = <span class="string">'bar'</span>;</span><br><span class="line">setTimeout(() =&gt; foo = <span class="string">'baz'</span>, <span class="number">500</span>);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码输出foo变量，值为bar，但是500毫秒之后就会变成baz。export语句输出的接口，与其对应的值是动态绑定关系，即通过该接口可以取到模块内部实时的值。</p>
+<p>export只能处于模块顶层任何位置，但是不能处于块级作用域内，也就是括号()和大括号{}内都不可以。</p>
+<h2 id="import命令"><a href="#import命令" class="headerlink" title="import命令"></a>import命令</h2><hr>
+<p>在使用export命令定义好模块的对外接口之后，其他的js文件就可以通过import命令加载对应的模块。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;firstName, lastName, year&#125; <span class="keyword">from</span> <span class="string">'./profile'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  element.textContent = firstName + <span class="string">' '</span> + lastName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码使用import命令，加载profile.js文件，并从中输入变量。import命令接受一个对象也就是{},里面指定要从其他模块导入的变量名，其变量名需要被导入的对外接口变量名相同。</p>
+<p>当然也可以用as来改写名字，如下面代码所示，另外，<strong>import命令</strong>具有提升效果，会提升到整个模块的头部，首先执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; lastName <span class="keyword">as</span> surname &#125; <span class="keyword">from</span> <span class="string">'./profile'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>下面的代码尽管import在使用的方法后面，但是不会报错，因为import会先被执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo();</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; foo &#125; <span class="keyword">from</span> <span class="string">'my_module'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如果在一个模块内，先输入后输出同一个模块，import可以和export语句写在一起。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123; es6 <span class="keyword">as</span> <span class="keyword">default</span> &#125; <span class="keyword">from</span> <span class="string">'./someModule'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">import</span> &#123; es6 &#125; <span class="keyword">from</span> <span class="string">'./someModule'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> es6;</span><br></pre></td></tr></table></figure></p>
+<p>但是不建议使用连在一行的写法，因为这样不利于阅读。<br>不过这里我有一个问题，那就是使用这样导出之后，对外接口的名字是什么？default还是es6？</p>
+<h2 id="模块整体加载"><a href="#模块整体加载" class="headerlink" title="模块整体加载"></a>模块整体加载</h2><p>和指定加载某个模块不一样，可以用（*）号指定一个对象，所有的输出值都加载在上面。</p>
+<p>假如现在有一个circle.js文件，它export两个方法area和circumstance。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">area</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * radius * radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">circumference</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span> * <span class="built_in">Math</span>.PI * radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后我们来加载这个模块到main.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; area, circumference &#125; <span class="keyword">from</span> <span class="string">'./circle'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆面积：'</span> + area(<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆周长：'</span> + circumference(<span class="number">14</span>));</span><br></pre></td></tr></table></figure></p>
+<p>然后我们也可以使用这一节介绍的方法将所有导出的函数加载进去，写法参考下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> circle <span class="keyword">from</span> <span class="string">'./circle'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆面积：'</span> + circle.area(<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆周长：'</span> + circle.circumference(<span class="number">14</span>));</span><br></pre></td></tr></table></figure></p>
+<p>这里我还有一个疑问，那就是为什么不直接import  * from ‘./circle’呢，当然这里我可以理解为实例化了circle对象来调用circle.js里面的方法。</p>
+<h2 id="export-default命令"><a href="#export-default命令" class="headerlink" title="export default命令"></a>export default命令</h2><p>紧张，我刚刚还在疑问这个命令的用法，没想到就开始介绍到了。</p>
+<p>从前面的例子可以看出，使用import命令的时候，用户需要知道所要加载的变量名或函数名，否则无法加载。但是，用户肯定希望快速上手，未必愿意阅读文档，去了解模块有哪些属性和方法。</p>
+<p>为了给用户方便，使用户不用阅读就能加载模块，于是export就应运而生了，为模块指定默认输出，也就是不需要明显生成输出接口就默认需要输出，这对于我来联想java就可以想象到java的接口的应用，也是有一些使用abstract抽象化的接口是必须要实现的，我觉得差不多，仅仅是觉得而已。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>假设上面的代码是模块文件export-default.js.它输出的是一个函数。其他模块加载这个模块的时候，import命令可以为该匿名函数指定任意名字。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br><span class="line">customName(); <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是，上面的import命令可以用任意名称指向export-default.js模块输出的方法，而这时候就就不需要知道原模块输出的函数名，并且此时不需要使用<strong>大括号</strong>。</p>
+<p>‘export default’命令用在匿名函数前，也是可以得。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者写成</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> foo;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码中，使用default输出之后，在模块的外部是无效的，加载的时候视同匿名函数加载。</p>
+<p>下面通过代码比较一下默认的输出和正常情况下的输出：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">crc32</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输入</span></span><br><span class="line"><span class="keyword">import</span> crc32 <span class="keyword">from</span> <span class="string">'crc32'</span>;</span><br><span class="line"><span class="comment">//--------------》》此处是分界线》》----------------</span></span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">crc32</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 输入</span></span><br><span class="line"><span class="keyword">import</span> &#123;crc32&#125; <span class="keyword">from</span> <span class="string">'crc32'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>和下午需要讲到的一样，此时我也已经想到一件事，那就是，那假如一个模块里面如果有两个默认输出那该怎么办，很好，如果此时你想到这个的时候就不用顾虑了，因为ES6中，一个模块只允许有一个默认的输出。</p>
+<p>本质上，export default就是输出一个叫做default的变量或方法，然后系统允许你为它取任意名字。所以，下面的写法也是有效的，不过繁琐了一点，但是理解起来会比较容易一点。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// modules.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;add <span class="keyword">as</span> <span class="keyword">default</span>&#125;;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="comment">// export default add;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// app.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">default</span> <span class="keyword">as</span> xxx &#125; <span class="keyword">from</span> <span class="string">'modules'</span>;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="comment">// import xxx from 'modules';</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码有一处地方值得被发现，那就是’export default add;’，根据注释，很明显知道这句代码的含义是将函数（有时候是变量）add的值赋给变量default。因此我们看下一段的代码，看上去像是正确的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+<p>但是由于default已经赋值过了，这时候再赋值就重复了，因此会报错。</p>
+<p>如果想在一条import语句中，同时输出默认方法和其他变量，就可以写成下面这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> customName, &#123; otherMethod &#125; <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>哈哈，react-native的第一句就是和这句差不多，当时一直不理解为什么第一个react会没有大括号，现在明白了。</p>
+<p>如果需要输出默认的值，只需将值跟跟在export default之后即可，这里可以相信到一些应用场景，假如某一段任务实现之后，返回true或者是其他的默认值，想想就觉得蛮有作用的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="number">42</span>;</span><br></pre></td></tr></table></figure></p>
+<p>前面也已经提到过一点，export可以输出一个类class，export default也可以实现。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MyClass.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> MyClass <span class="keyword">from</span> <span class="string">'MyClass'</span>;</span><br><span class="line"><span class="keyword">let</span> o = <span class="keyword">new</span> MyClass();</span><br></pre></td></tr></table></figure></p>
+<p>最后是一个例子，输入jQuery，不过我不怎么懂那个’$’符号是什么意思，我自己的理解就是仅仅是一个custom name，仅仅而已，不管，先标记一下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'jquery'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>最后，真的是最后，我还有一个疑问，就是加入使用’export *’来导出所有输出的时候，那么是不是默认的也输出了呢！假如输出了，那么输出之后的接口名字是什么？</p>
+<h2 id="模块的继承"><a href="#模块的继承" class="headerlink" title="模块的继承"></a>模块的继承</h2><p>模块之间可以继承。假设有一个circleplus模块，继承了circle模块：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// circleplus.js</span></span><br><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">'circle'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> e = <span class="number">2.71828182846</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.exp(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>竟然那么快又看到答案了，不过我上面的那个问题后半段问得有点傻逼，加入输出之后对应的接口名字就在import了改模块之后自定义了啊！天哪，又犯老糊涂了。</p>
+<p>不过上面这段代码中的’export <em>‘,表示输出circle也就是父类的所有属性和方法，但是’export </em>‘会忽略circle模块的default方法。然后，上面的代码又输出了circleplue自定义的e变量和默认方法。</p>
+<p>对应需要加载上面的模块写法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> math <span class="keyword">from</span> <span class="string">'circleplus'</span>;</span><br><span class="line"><span class="keyword">import</span> exp <span class="keyword">from</span> <span class="string">'circleplus'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(exp(math.e));</span><br></pre></td></tr></table></figure></p>
+<p>结合前面写的东西就可以知道上面代码中的’import exp’表示，将circleplus模块的默认方法加载为exp方法。</p>
+<p>剩下还有ES6模块加载的实质，还有好多好多。暂时不写先，想睡觉了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/02/ES6入门2/" itemprop="url">
                   ES6入门2
                 </a>
@@ -1526,252 +1827,6 @@ undefined
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/19/react-native学习笔记/" itemprop="url">
-                  react-native学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-07-19T21:02:29+08:00" content="2016-07-19">
-              2016-07-19
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/19/react-native学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/19/react-native学习笔记/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>首先配置环境就配了两天才跑出来welcome to React Native（呃，我的图是盗来的[鬼脸.jpg]）<br><img src="http://vczero.github.io/react_native/1_1.png" alt="welcome to React native"></p>
-<p>直接登陆官网按照步骤下载需要的nodeJS，React，还有python2，另外我是学安卓的，很早就开始用androidstudio了，所以直接俄就省了很多步骤，该下载的东西下载好之后就可以开始新建一个项目了</p>
-<h2 id="AwesomePreject的创建"><a href="#AwesomePreject的创建" class="headerlink" title="AwesomePreject的创建"></a>AwesomePreject的创建</h2><p>这个项目的名字是直接根据官网提供来创建的，使用这几个命令行：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">react-native init AwesomeProject</span><br><span class="line">cd AwesomeProject</span><br><span class="line">react-native run-android</span><br></pre></td></tr></table></figure></p>
-<p>前两步非常顺利就执行下来了，剩下的是第三步，开始出差错了。</p>
-<h2 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h2><p>一开始报错是这样的：<br>    err(一串数字)：项目路径（一般直接用命令行创建的都会在C盘的windows/system32目录下）…ERROR:Unable to open file.<br>这个就非常蛋疼了，google上搜索一下，在stack overflow中给出的解释翻译过来就是说文件的目录路径太长了，window下规定最长文件的读取路径长度是255 个字符，然而项目的某一张安卓的资源图片刚好长度就超过了，这就非常尴尬了，我一开始采取的措施是直接更改文件夹的名字，当时有点头脑发热，这完全行不通啊！用脑袋想想也知道，路径是代码里面写好的，你改文件夹的名字有什么用。<br>然后我就开始第二个方案，我竟然把项目放在了一个含有中文的文件夹下，导致还是读取不了。<br>最后我直接将项目放在D盘下，不过听说直接放在C盘也可以，因为只要把路径的字符数减少就可以了。最后才React-native android-start之后就可以运行了，但是此时还是出现了下面的错误<br><img src="http://static.oschina.net/uploads/space/2015/1010/145457_0VIT_2320053.png" alt="红色报错提示"><br>出现这个错误的原因我不太清楚，不过我还是按照我的想法写下来我的理解<br>它当时建议的步骤是这样的，查看你的模拟器或者真机是否已经开启debug，然后检查一下接口是否真确连接，最后是调试的wifi必须在同一个局域网内，最后可以之后就重新start。<br>我当时按照这些之后根据官网的一句代码react-native start，虽然我不太懂这句代码的作用，不过根据官网的翻译应该是如果使用react-native run-android包没有被正确启动的时候就可以使用这段代码来运行<br>结果又报错了，说是端口被占用，本来应该使用8801端口的，又去网上找了一下修改native端口的方法，下面是在ubuntu上才去的命令行，没想到window也适用<br>参考：<a href="http://stackoverflow.com/questions/32572399/react-native-android-failed-to-load-js-bundle" target="_blank" rel="external">修改权限</a></p>
-<p>最后的最后无意中重新启动了一次，然后竟然看到模拟器出现了新情况，那就是提示正在获取jscript，所以上面的我觉得大部分是废话，这句才是经典。原来是打包的时候出错了。</p>
-<p>后面就继续根据官网的提示改动了一下代码，<strong>使用快捷方式直接在模拟器上双击两次R键，瞬间就刷新了</strong>。</p>
-<p>最后就是我的小米3在react-native的调试中很明显控制台是有信息输出的，但是却只出现一片空白，而模拟器却能正常调试，解决方式是打开悬浮窗权限<br>以为小米默认是屏蔽悬浮窗权限的，方法：<a href="http://jingyan.baidu.com/article/f25ef25466c0fc482d1b824d.html" target="_blank" rel="external">打开小米悬浮窗权限</a><br>至此，react-native就配置成功了，如果刚好可以帮助到你，我将非常荣幸，如果没有帮上忙，那我也没办法。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/03/非静态代码块和静态代码块static/" itemprop="url">
-                  非静态代码块和静态代码块static
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-03T13:14:45+08:00" content="2016-06-03">
-              2016-06-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/03/非静态代码块和静态代码块static/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/03/非静态代码块和静态代码块static/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在复习java的时候，突然发现一个比较模糊的东西，就是static这个关键字，我不知道是不是我当时学的时候走神了，所以现在补回来。<br><em>本文参考：<a href="http://blog.csdn.net/qinde025/article/details/6825051" target="_blank" rel="external">java静态方法、非静态代码块{}、静态代码块static{} </a>,集合了自己的想法写成。</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zues.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//从输出来看可以知道这段代码只执行了一次，不然在实例化线段之后会再打印多一次</span></span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		a= <span class="number">10</span>;</span><br><span class="line">		System.out.println(<span class="string">"父类在静态代码块中执行a = "</span>+a);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//这个是非静态代码块，感觉有点奇怪因为第一次看到这样的写法，完全没有依靠任何对象的调用就可以了</span></span><br><span class="line">		&#123;</span><br><span class="line">			a=<span class="number">8</span>;</span><br><span class="line">			System.out.println(<span class="string">"父类在非静态中执行a = "</span>+a);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	Test2()&#123;</span><br><span class="line">		<span class="comment">//通过讨论，因为a = 10是类加载的时候就自动执行的，所以这里直接用类访问的a，是已经执行完static静态代码块但是还没执行非静态代码块的，所以只被赋值到a = 8这一步。</span></span><br><span class="line">		<span class="keyword">this</span>(<span class="string">"a在带参构造函数中的值："</span> + Test2.a);</span><br><span class="line">		System.out.println(a);<span class="comment">//然后这里会打印出8，是因为这时候已经初始化了实例，会执行到非静态代码块，结果证明非静态代码块的执行顺序优先于构造函数</span></span><br><span class="line">		System.out.println(<span class="string">"父类在无参数构造函数中的a="</span>+a);<span class="comment">//这里已经是执行了非静态代码块里面的代码，所以a被赋值为8了</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	Test2(String n)&#123;</span><br><span class="line">		System.out.println(n);</span><br><span class="line">		System.out.println(a);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Test2 t = <span class="keyword">null</span>;</span><br><span class="line">		System.out.println(<span class="string">"--------我是条实例化前后之间的线段---------"</span>);</span><br><span class="line">		t = <span class="keyword">new</span> Test2();		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="打印出来的结果是："><a href="#打印出来的结果是：" class="headerlink" title="打印出来的结果是："></a>打印出来的结果是：</h4><pre><code>父类在静态代码块中执行a = 10
---------我是条实例化前后之间的线段---------
-父类在非静态中执行a = 8
-a在带参构造函数中的值：10
-8
-8
-父类在无参数构造函数中的a=8
-</code></pre><p>我套用我参考的文章的总结语：静态代码块是在类加载时自动执行的，非静态代码块是在创建对象时自动执行的代码，不创建对象不执行该类的非静态代码块。<br>我是因为不太懂来源博文的代码意义才写这篇博客的，另外关于更多static用法请自己折腾。<br>ok，本次心得就到这里。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1817,7 +1872,7 @@ a在带参构造函数中的值：10
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

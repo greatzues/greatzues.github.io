@@ -1,0 +1,818 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="react-native," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="zues blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="这篇博客有点乱，项目赶得紧，以后再花时间去整理。
+持久化储存
+//传统持久化存储
+// pastStorage(){
+//     var keyName = &amp;apos;myCookie&amp;apos;;
+//     var keyValue = response.headers.get(&amp;apos;set-cookie&amp;apos;);
+//     AsyncStorage.setItem(ke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目感想3">
+<meta property="og:url" content="http://yoursite.com/2016/09/11/项目感想3/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="这篇博客有点乱，项目赶得紧，以后再花时间去整理。
+持久化储存
+//传统持久化存储
+// pastStorage(){
+//     var keyName = &amp;apos;myCookie&amp;apos;;
+//     var keyValue = response.headers.get(&amp;apos;set-cookie&amp;apos;);
+//     AsyncStorage.setItem(ke">
+<meta property="og:updated_time" content="2016-09-11T04:12:29.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目感想3">
+<meta name="twitter:description" content="这篇博客有点乱，项目赶得紧，以后再花时间去整理。
+持久化储存
+//传统持久化存储
+// pastStorage(){
+//     var keyName = &amp;apos;myCookie&amp;apos;;
+//     var keyValue = response.headers.get(&amp;apos;set-cookie&amp;apos;);
+//     AsyncStorage.setItem(ke">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b706031fedc2f13c7dc61b81d4a77d64";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <title> 项目感想3 | zues blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zues blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                项目感想3
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-09-11T11:53:47+08:00" content="2016-09-11">
+              2016-09-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/11/项目感想3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/11/项目感想3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇博客有点乱，项目赶得紧，以后再花时间去整理。</p>
+<h2 id="持久化储存"><a href="#持久化储存" class="headerlink" title="持久化储存"></a>持久化储存</h2><hr>
+<pre><code>//传统持久化存储
+// pastStorage(){
+//     var keyName = &apos;myCookie&apos;;
+//     var keyValue = response.headers.get(&apos;set-cookie&apos;);
+//     AsyncStorage.setItem(keyName,keyValue,(errs) =&gt; {
+//         if (errs){
+//             console.log(&apos;存储错误&apos;);
+//         }else {
+//             console.log(&apos;已经保存&apos;);
+//         }
+//     });
+//     AsyncStorage.getItem(keyName, (errs, result) =&gt; {
+//         if (!errs){
+//             console.log(&apos;result=&apos;+ result);
+//         }
+//     });
+// }
+
+
+//已经被封装好的一个库的持久化保持的方法，这个方法试过几次没成功，还是使用rn自带的AsyncStorage好了
+                // storage.save({
+                //     key:&apos;zues&apos;,
+                //     rawData:&apos;zues&apos;,
+                //     expires: 1000 * 3600
+                // });
+                // storage.load({
+                //     key:&apos;zues&apos;,
+                // }).then(ret =&gt; {
+                //     console.log(&apos;ret:&apos;+ ret);
+                // });
+</code></pre><p>下面这段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">export default class BasinInfo extends Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            response: &apos;&apos;,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        //需要登录才可以拿到用户信息</span><br><span class="line">        this.fetchData();</span><br><span class="line">        console.log(&apos;response1:&apos;+ this.state.response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fetchData()&#123;</span><br><span class="line">        var URl = &apos;/student/getinfo&apos;;</span><br><span class="line">        var response;</span><br><span class="line">        new Net().getMethod(URl).then((responseData) =&gt; &#123;</span><br><span class="line">            response = responseData.response;</span><br><span class="line">			console.log(&apos;response2:&apos;+ this.state.response.name);</span><br><span class="line">            this.setState(&#123;response:response&#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;View style=&#123;[styles.container,&#123;marginTop: 100&#125;]&#125;&gt;</span><br><span class="line">                &lt;Text&gt;hello,&#123;this.state.response.name&#125;&lt;/Text&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在console中输出的信息是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response1:</span><br><span class="line">返回码：200</span><br><span class="line">respons2:zues</span><br></pre></td></tr></table></figure></p>
+<p>试了一整天，原来是同步执行和异步加载的问题，我都快哭了，试了一天。</p>
+<p>在我没测试成功之前我的代码是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   fetchData()&#123;</span><br><span class="line">	var URL = &apos;/student/getinfo&apos;;</span><br><span class="line">       var name = new Net().getMethod(URL).then((responseData) =&gt; &#123;</span><br><span class="line">           console.log(responseData.response.name);</span><br><span class="line">           return responseData.response.name;</span><br><span class="line">       &#125;);</span><br><span class="line">       this.setState(&#123;username:name&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在手势处理中简单写了几行代码测试了一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">componentWillMount() &#123;</span><br><span class="line">        this.panResponder = PanResponder.create(&#123;</span><br><span class="line">            onStartShouldSetPanResponder: (evt, gestureState) =&gt; true,</span><br><span class="line">            onStartShouldSetPanResponderCapture: (evt, gestureState) =&gt; true,</span><br><span class="line">            onMoveShouldSetPanResponder: (evt, gestureState) =&gt; true,</span><br><span class="line">            onMoveShouldSetPanResponderCapture:(evt, gestureState) =&gt; true,</span><br><span class="line"></span><br><span class="line">            onPanResponderGrant: (evt, gestureState) =&gt; &#123;</span><br><span class="line">                console.log(&apos;开始手势操作&apos;);</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line"></span><br><span class="line">            onPanResponderMove: (evt, gestureState) =&gt; &#123;</span><br><span class="line">                console.log(&apos;正在滑动&apos;);</span><br><span class="line">                console.log(&apos;垂直滑动了：&apos;+ gestureState.moveX + &apos;个距离&apos;);</span><br><span class="line">                console.log(&apos;滑动的速度vx：&apos;+ gestureState.vx);</span><br><span class="line">                console.log(&apos;滑动的速度vy：&apos;+ gestureState.vy);</span><br><span class="line">                console.log(&apos;滑动的距离dx：&apos;+ gestureState.dx);</span><br><span class="line">                console.log(&apos;滑动的距离dy：&apos;+ gestureState.dy);</span><br><span class="line">                console.log(&apos;滑动的初始位置x0：&apos;+ gestureState.x0);</span><br><span class="line">                console.log(&apos;滑动的初始位置y0：&apos;+ gestureState.y0);</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            onPanResponderRelease: (evt, gesture) =&gt; &#123;</span><br><span class="line">                console.log(&apos;释放手势&apos;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	render() &#123;</span><br><span class="line">        return (</span><br><span class="line">                &lt;ScrollView style=&#123;styles.container&#125; &#123;...this.panResponder.panHandlers&#125;&gt;</span><br><span class="line">                    &lt;Toolbar/&gt;</span><br><span class="line">                    &lt;NewsItems /&gt;</span><br><span class="line">                    &lt;NewsItems /&gt;</span><br><span class="line">                    &lt;NewsItems /&gt;</span><br><span class="line">                    &lt;NewsItems /&gt;</span><br><span class="line">                    &lt;NewsItems /&gt;</span><br><span class="line">                &lt;/ScrollView&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中回调中的参数<code>gestureState.dx</code>表示x轴方向也就是手势向左右滑动的距离，<code>gestureState.vx</code>表示的是手势向左右滑动的速度，gestureState.x0表示的是初始接触的位置。</p>
+<p>同理，y就一样理解了，其实就是向上向下滑动。而<code>gestureState.moveX</code>就是最终滑动到的手势结束的位置，从屏幕最上面开始是坐标<code>x=0,y=0</code>,可以通过<code>Dimensions.get(&#39;window&#39;).width/height</code>获取屏幕的宽度或者高度像素，所以屏幕右下角的位置对应就是<code>x=Dimensions.get(&#39;window&#39;).width</code>,<code>y=Dimensions.get(&#39;window&#39;).height</code>。所以在我们需要判断是否手势移动就可以用<code>gestureState.moveX-gestureState.x0</code>或者是<code>gestureState.moveY-gestureState.y0</code>来分别获得移动的距离，呃，其实就是<code>gestureState.dx</code>和<code>gestureState.dy</code>，真不好意思，装逼过度了。</p>
+<p>好，那么现在来测试一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">onPanResponderMove: (evt, gestureState) =&gt; &#123;</span><br><span class="line">                console.log(&apos;正在滑动&apos;);</span><br><span class="line">                console.log(&apos;X垂直滑动了：&apos;+ gestureState.moveX + &apos;个距离&apos;);</span><br><span class="line">                console.log(&apos;Y垂直滑动了：&apos;+ gestureState.moveY + &apos;个距离&apos;);</span><br><span class="line">                console.log(&apos;滑动的速度vx：&apos;+ gestureState.vx);</span><br><span class="line">                console.log(&apos;滑动的速度vy：&apos;+ gestureState.vy);</span><br><span class="line">                console.log(&apos;滑动的距离dx：&apos;+ gestureState.dx);</span><br><span class="line">                console.log(&apos;滑动的距离dy：&apos;+ gestureState.dy);</span><br><span class="line">                console.log(&apos;滑动的初始位置x0：&apos;+ gestureState.x0);</span><br><span class="line">                console.log(&apos;滑动的初始位置y0：&apos;+ gestureState.y0);</span><br><span class="line">                var distanceX = gestureState.x0 -gestureState.moveX;</span><br><span class="line">                var distanceY = gestureState.y0 -gestureState.moveY;</span><br><span class="line">                console.log(&apos;向左右活动了距离：&apos;+distanceX);</span><br><span class="line">                console.log(&apos;向上下活动了距离：&apos;+distanceY);</span><br><span class="line">            &#125;,</span><br></pre></td></tr></table></figure></p>
+<p>通过这几行代码在console中打印出来的信息是：</p>
+<blockquote>
+<p>正在滑动<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:35X垂直滑动了：173.5060272216797个距离<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:36Y垂直滑动了：106.6391372680664个距离<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:37滑动的速度vx：9.972693229298832e-8<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:38滑动的速度vy：4.13791786703599e-7<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:39滑动的距离dx：1.6651458740234375<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:40滑动的距离dy：6.9091033935546875<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:41滑动的初始位置x0：171.84088134765625<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:42滑动的初始位置y0：99.73003387451172<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:45向左右活动了距离：-1.6651458740234375<br>D:\rn\workplace\ElectromechanicalFamily\SchoolNews.js:46向上下活动了距离：-6.9091033935546875</p>
+</blockquote>
+<p>通过对比其实就可以知道真相了，其实gestureState.moveX-gestureState.x0和gestureState.dx还是有少许区别的，前面得出的值是分正负的，而后者是绝对值。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/06/项目感想2/" rel="next" title="项目感想2">
+                <i class="fa fa-chevron-left"></i> 项目感想2
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="漏雨" />
+          <p class="site-author-name" itemprop="name">漏雨</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#持久化储存"><span class="nav-number">1.</span> <span class="nav-text">持久化储存</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">漏雨</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'greatzuesgithubio';
+      var disqus_identifier = '2016/09/11/项目感想3/';
+      var disqus_title = '项目感想3';
+      var disqus_url = 'http://yoursite.com/2016/09/11/项目感想3/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
