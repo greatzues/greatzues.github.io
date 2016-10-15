@@ -219,6 +219,293 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/07/25/学习javascript有感/" itemprop="url">
+                  学习javascript有感
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-07-25T16:14:04+08:00" content="2016-07-25">
+              2016-07-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/25/学习javascript有感/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/25/学习javascript有感/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>基础的东西我就不想记在我的博客里面上了，大家也可以在w3c里面自己练习一下，我主要是为了记一下现在刚刚学习完javascript的思维方式，因为学好的东西一般情况下基础的东西会记得，但是总会得了新伤就忘记久痛，忘记以前学习的心得。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><hr>
+<h3 id="javascript的try-catch语法"><a href="#javascript的try-catch语法" class="headerlink" title="javascript的try-catch语法"></a>javascript的try-catch语法</h3><p>在javasscript中，使用try-catch语句的用法：在try里面将可能出现抛出的错误做个判断，然后做出对应的throw信息，并会将这个信息传递给err这个变量，然后在catch(err)语句里面做相应的处理。</p>
+<h3 id="javascript的原始对象"><a href="#javascript的原始对象" class="headerlink" title="javascript的原始对象"></a>javascript的原始对象</h3><p>javascript是一门面向对象的语言，因此我可以将很多知识和我现有知道的java语言相对比。在面向对象中，最重要的是封装。直接看代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var worker = new Object();</span><br><span class="line">worker.name = "tom";</span><br><span class="line">worker.age = 10;</span><br><span class="line">worker.isWorking = false;</span><br><span class="line">worker.startWork = function()&#123;</span><br><span class="line">	if(this.isWorking) return;</span><br><span class="line">    this.isWorking = true;</span><br><span class="line">&#125;;</span><br><span class="line">worker["position"] = "worker";</span><br><span class="line"></span><br><span class="line">document.write("Worker的名字是 : " + worker["name"]);</span><br><span class="line">worker.startWork();</span><br><span class="line">document.write("<span class="tag">&lt;<span class="name">br</span>/&gt;</span>Worker的职位是 : " + worker.position);</span><br></pre></td></tr></table></figure></p>
+<p>上面这段代码输出的结果是：<br>    Worker的名字是 : tom<br>    Worker的职位是 : worker<br>再看一下另外一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> worker = &#123;</span><br><span class="line">        name : <span class="string">"John"</span>,</span><br><span class="line">        age : <span class="number">30</span>,</span><br><span class="line">        isWorking : <span class="literal">false</span>,</span><br><span class="line">        startWork : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="keyword">this</span>.isWorking)&#123;</span><br><span class="line">                <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在上面的两段代码可以看出构建一个object和我们java是很不一样的，它们不需要再额外的声明一个变量来存储这个object的属性，另外和java一样的是也可以在实例里面添加字符，数字，布尔值甚至是一个方法的成员，这个特点在上面两段代码中都很明显的显示了出来。</p>
+<p>在第一段代码中能发现创建属性的两种方式分别是<strong>实例名.成员名 = 内容</strong>,当然可以用<strong>实例名.[“成员名”] = 内容</strong>。而这里思想我觉得可以和java的map联系起来，就是通过键值对来存储属性，使用的时候javascript通过键解释对应的值。</p>
+<p>不过认真看一下代码就知道，上面的单纯创建实例很呆板，仅仅是创建好一个可以吃的月饼，但是我们创建实例是为了方便我们后面的开发，所以这种方法肯定不提倡，我们应该创建以一个做月饼的模板，当相同的面团来的时候就可以直接用模板做好一个月饼，省去很多开发成本。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newHuman</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">    	name : name,</span><br><span class="line">        age : age,</span><br><span class="line">        sayHello : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        	<span class="built_in">document</span>.write(<span class="string">"Hello World! I'm "</span> + <span class="keyword">this</span>.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> h = newHuman(<span class="string">"jim"</span>,<span class="number">30</span>);</span><br><span class="line">h.sayHello(); <span class="comment">//输出结果是：Hello World! I'm jim</span></span><br></pre></td></tr></table></figure></p>
+<p>这段代码声明了三个属性，分别是name，age，sayHello方法，最后实例化这个方法，调用里面的sayHello方法，当然在再外部使用实例好的h.age也是可以得。至于为什么要直接return才可以创建成员我就不知道了，用一句老话说应该是：javascript就规定这样。我试过在return外卖加this.iswork = false;或者在实例好newHuman之后添加h.iswork = false。最后还是输出underfined。</p>
+<p>然后继续看下面一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">this</span>.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> worker(<span class="string">"tom"</span>, <span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(tom.startWork == jim.startWork);</span><br><span class="line"><span class="comment">//最终输出的结果是：false</span></span><br></pre></td></tr></table></figure></p>
+<p>对于我来说，上面这段代码消除了我原来在上面的代码的疑问，因为这里没有return，可是依然可以访问到实例后的成员属性，不过我在上面一段代码中其实是用试过这样改的，但是输出的结果一样。<br>但是我们从最终的输出结果来看，可以知道最终实例好的tom和jim其实值得内存是不一样的，这样意味着当我们需要创建很多实例的时候，内存的开销会非常大。于是我们看下一段代码进行改善：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> worker(<span class="string">"tom"</span>, <span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> </span><br><span class="line">				+ (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br></pre></td></tr></table></figure></p>
+<p>run上面的代码的时候输出的结果是tom和jim两个实例的startWork方法是否共用内存 : true。这下两个不同实例的startwork是指向相同的地址了，说明了不同的实例共用了该方法。</p>
+<p>在设计javascript的时候遵循下面两条规则<br>1，因为实例不同而不同的内容，用this关键字声明<br>2，无论实例怎样内容完全相同的成员，定义在prototype上</p>
+<p>而上面第二条所说的prototype其实就是原型，<strong>任何类型都会有属于自己的原型，并且原型上定义的成员，可以在每个实例中引用，并且是共用的</strong>，其实我不太明白这句话，不过初步理解肯定是定义的成员能共用同一块内存。</p>
+<p>然后对比相面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.startWith = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str.indexOf(str) == <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"abc"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(str.startWith(<span class="string">"ab"</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.prototype.endWith = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str.indexOf(str) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="string">"test"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(test.endWith(<span class="string">"a"</span>));</span><br></pre></td></tr></table></figure></p>
+<p>这里可以看出一些规律，首先是上面哪一段代码里面是worker.prototype.startWork通过使用new worker来创建一个实例，但是这里是String.prototype.endWith来创建的方法，自然就是使用String类来创建变量。当然把String改成Boolean的话，声明变量就只能用true和false了。</p>
+<p>看了一天，总算是明白了这里的意思：就是javascript的成员定义是写在定义域外面的，这和我们java的不一样，因此尽管已经是定义好的String或者Data类型，我们依然可以使用javascript这种特殊的语法结构进行扩展和修改。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1，其实，写了上述那么多例子，应该能看出点什么？作为一名写java写了两年的小程序员，在学习javascript过程中我一直在想象这两门语言的不同之处和相同之处，其实这里我们可以把父function看作java的类，也就是javascript所说的对象，然后父function所嵌入的function就是我们一直都知道的方法这个概念了，只不过奇特的是javascript在设计的时候会遵循一些规则，其中一条就是定义内容相同的成员，要定义在外部的prototype上，所以才会看到如上面的代码这样把方法写出来。<br>语法结构可以概括为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(父<span class="function"><span class="keyword">function</span>).<span class="title">prototype</span>.(<span class="params">成员方法名字</span>) = <span class="title">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//此处编写代码逻辑</span></span><br><span class="line">	<span class="comment">//在此方法内部使用成员变量需要加关键字this</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>2，另外一种定义父类的方法就是直接通过var关键字定义一个实例对象，通过键值对来存储，存储类型可以是：String，boolean，Integer，function等基本类型。<br>语法结构：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里需要注意一些语法问题，例如一些标点符号的使用</span></span><br><span class="line"><span class="keyword">var</span> objName = &#123;</span><br><span class="line">	key1 : <span class="string">"String"</span>,</span><br><span class="line">	key2 : <span class="number">3</span>,</span><br><span class="line">	key3 : <span class="literal">false</span>,</span><br><span class="line">	key4 : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>关于javascript的继承我们同样有两种方法来实现，首先是对原始对象使用<strong>$.entend</strong>关键字，继承之后可以拥有父类对象也可以重写父类型还可以自定义自己的成员。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个工人</span></span><br><span class="line">    <span class="keyword">var</span> worker = &#123;</span><br><span class="line">        name : <span class="string">""</span>,</span><br><span class="line">        age : <span class="number">0</span>,</span><br><span class="line">        isWorking : <span class="literal">false</span>,</span><br><span class="line">        startWork : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">//some code here</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//定义一个工头，工头本身也是工人，但他有一个额外的属性，用于记录他所管理的员工列表，并且可以指挥一名工人开工</span></span><br><span class="line">    <span class="keyword">var</span> leader = $.extend(worker,&#123;</span><br><span class="line">        workers : [],</span><br><span class="line">        callStart : <span class="function"><span class="keyword">function</span>(<span class="params">worker</span>)</span>&#123;</span><br><span class="line">            <span class="comment">//指挥一名工人开工</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//此时的leader除了拥有name，age，isWorking，startWork这四项属性之外，还拥有workers和callStart成员。</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="父类的构造函数调用"><a href="#父类的构造函数调用" class="headerlink" title="父类的构造函数调用"></a>父类的构造函数调用</h2><p>对于function创建的类型，其自身是无法进行$.extend的，这时候我就可以想到java的父类调用了，java是可以使用super关键字对于已经继承了父类进行构造函数的调用。而这里是使用：[function的名字].apply(this, arguments);其中这里的arguments是参数列表。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baseClass</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.a = a;</span><br><span class="line">    <span class="keyword">this</span>.b = b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aClass</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	baseClass.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> aClass(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">document</span>.write(test.a);</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line"><span class="built_in">document</span>.write(test.b);</span><br><span class="line"><span class="comment">//输出1 2</span></span><br></pre></td></tr></table></figure></p>
+<p>对于刚学javascript的我需要在开始的时候仔细整理一下我的思路：<br>首先是apply关键字，我可以把它看作是java中的super关键字，就好像是指针指向对应创建的构造函数的内存空间，相当于反射。<br>而通过baseClass.apply(this,arguments);相当于使用当前的实例和当前函数执行一次baseClass方法,这样看起来好像没有什么作用，仅仅是可以节省一些代码来调用另外一个函数。</p>
+<p>直接继承：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;;</span><br><span class="line">worker.prototype.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"hello ! &lt;br/&gt;"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;;</span><br><span class="line">leader.prototype = worker.prototype;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> l = <span class="keyword">new</span> leader(<span class="string">"jim"</span>);</span><br><span class="line">l.sayHello();</span><br><span class="line"><span class="comment">//输出 hello！</span></span><br></pre></td></tr></table></figure></p>
+<p>而直接继承成员会有缺陷：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.workers = [];</span><br><span class="line">&#125;</span><br><span class="line">leader.prototype = worker.prototype;</span><br><span class="line">leader.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//重写工人的开始工作方法，工头开工时，下属工人也要开工</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> workerLength = <span class="keyword">this</span>.workers.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; workerLength; i++)&#123;</span><br><span class="line">    	<span class="keyword">this</span>.workers[i].startWork();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> leader(<span class="string">"tom"</span>,<span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line">tom.workers.push(jim);</span><br><span class="line">tom.startWork();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> + (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码其实我没有读太明白，我知道因为在leader中他新创建了一个空的workers集合，而他的父类没有workers集合，但是在startWork里面调用的isWorking里面的，因此会由于在worker里面找不到workers集合，会出现异常。呃，我只能这样理解不知道正不正确。</p>
+<p>另外还有一点就是倒数第四句的<strong>tom.workers.push(jim);</strong>是什么意思，删掉之后也对程序没什么影响，我觉得学到后面才可以知道它的作用。另外经过证实我的理解可能是正确的是，我通过在worker中加入一句<strong>this.workers = [];</strong>然后程序就跑起来了，输出的结果是tom和jim两个实例的startWork方法是否共用内存 : true。</p>
+<p>我们再看下一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.workers = [];</span><br><span class="line">&#125;</span><br><span class="line">leader.prototype = <span class="keyword">new</span> worker();	<span class="comment">//重点</span></span><br><span class="line">leader.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//重写工人的开始工作方法，工头开工时，下属工人也要开工</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> workerLength = <span class="keyword">this</span>.workers.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; workerLength; i++)&#123;</span><br><span class="line">    	<span class="keyword">this</span>.workers[i].startWork();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> leader(<span class="string">"tom"</span>,<span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line">tom.workers.push(jim);</span><br><span class="line">tom.startWork();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> + (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br><span class="line"><span class="comment">//输出的结果是：tom和jim两个实例的startWork方法是否共用内存 : false</span></span><br></pre></td></tr></table></figure></p>
+<p>对比上面哪一段代码，这段代码增加了一段<strong>leader.prototype = new worker();</strong>，我们先看一下其他代码和上面的一样，另外worker方法里面也没有对应的workers集合，再运行一下代码，可以运行，没有抛出异常。<br>另外看一下输出的结果也不是true，通过现象看本质，可以看到现在leader和worker对应的内存空间肯定不一样了。我们来听一下比较官方的解释：通过leader.prototype = new worker();这段代码相当于创建了一个worker实例，并将这个实例中的各个成员复制给leader的原型，这样一来对子类的修改仅仅是影响worker的实例，而不会影响worker的原型。</p>
+<p>学完这些之后要好好分析一下上面的代码才可以，根据代码解释的顺序来分析；<br>首先是创建了一个worker父类方法，然后使用方法的规则创建一个内存共享的startWork成员方法，将新建的leader使用apply关键字继承worker，并且新创建一个workers集合。<br>然后使用leader.prototype = new worker();这段代码继承父类的副本实例对象，接下来就可以重写父类的startWork成员方法了，不过这里面写的一大段东西我都不太明白是什么意思<br>接下来就是实例化父类和子类了，事实证明，接下来的代码里面，tom.startWork();这段代码是没有用处的，感觉仅仅是个开关功能，不知道有没有执行到for循环，接着再下下面的代码就没什么可以分析的了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/20/nodeJS入门基础/" itemprop="url">
+                  nodeJS入门基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-07-20T11:27:57+08:00" content="2016-07-20">
+              2016-07-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/20/nodeJS入门基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/20/nodeJS入门基础/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是NodeJS？"><a href="#什么是NodeJS？" class="headerlink" title="什么是NodeJS？"></a>什么是NodeJS？</h2><p>Node是一个服务器端的javascript解释器,它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。<br>Node解决并发连接最大数量的方法是：每个连接发射一个在 Node 引擎的进程中运行的事件，而不是为每个连接生成一个新的 OS 线程（并为其分配一些配套内存）。Node 声称它绝不会死锁，因为它根本不允许使用锁，它不会直接阻塞 I/O 调用。Node 还宣称，运行它的服务器能支持数万个并发连接。</p>
+<p>在学习react-native的时候发现有些后备知识不太健全，于是按照学习入门的要求就来看了一下nodejs的入门，但是这里我就不详细说学习步骤了，网上有一大堆步骤，我只说我遇到的一些问题和解决办法</p>
+<h2 id="有关函数传递"><a href="#有关函数传递" class="headerlink" title="有关函数传递"></a>有关函数传递</h2><hr>
+<p>写好一个以http服务器的server之后，我们如果想要模块化这个功能，在其他js文件里面调用这个server模块的时候就要在对应的server结尾处添加一段代码；</p>
+<h2 id="server-js"><a href="#server-js" class="headerlink" title="server.js"></a>server.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var http = require("http");</span><br><span class="line"></span><br><span class="line">function start() &#123;</span><br><span class="line">  function onRequest(request, response) &#123;</span><br><span class="line">    console.log("Request received.");</span><br><span class="line">    response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">    response.write("Hello World");</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  http.createServer(onRequest).listen(8888);</span><br><span class="line">  console.log("Server has started.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br></pre></td></tr></table></figure>
+<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var server = require("./server");</span><br><span class="line"></span><br><span class="line">server.start();</span><br></pre></td></tr></table></figure>
+<p>这里只需要关注一下server.js的function的名字和对应导出去的那个start方法。<br>我在测试的时候相应的改动了三处：</p>
+<blockquote>
+<p>修改function的start，改为starter，报错为在server.js中的ReferenceError: start is not defined，意思是引用错误，start方法未被定义。<br>修改了一下function的start为starter还有末尾的exports.start = start改为exports.start = starter,此时服务器正常启动<br>根据程序员的正常嗅觉可以知道这时候要改动的就是exports.starter = start为exports.starter = start，另外修改了index.js的server.start为server.starter,很明显这时候正常运行<br>通过自己的测试可以知道这里的引用对象是exports函数通过声明一个新的start变量来存储在server.js中的start方法，因此最后一句是赋值语句，呃，这个好像不说大家也知道。<br>最后在index中通过requie将函数传递进来，通过“函数.方法”方法来调用传递过来的方法。</p>
+</blockquote>
+<h2 id="入门第二天"><a href="#入门第二天" class="headerlink" title="入门第二天"></a>入门第二天</h2><hr>
+<p>我开始学到函数式编程，也就是我们把一个函数当作是参数来传递，在我写好的index文件中，将router对象传递技进去，服务器随后可以调用这个对象的route函数。也就是不把函数看作是一个名词，而是一个动词。</p>
+<p>这次新创建了一个requestHandlers的模块，并且对于每一个请求处理程序，添加一个占位用函数，并随后将函数导出：</p>
+<h2 id="requestHandlers-js"><a href="#requestHandlers-js" class="headerlink" title="requestHandlers.js"></a>requestHandlers.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function start() &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function upload() &#123;</span><br><span class="line">  console.log("Request handler 'upload' was called.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br><span class="line">exports.upload = upload;</span><br></pre></td></tr></table></figure>
+<h2 id="index-js-1"><a href="#index-js-1" class="headerlink" title="index.js"></a>index.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var server = require("./server");</span><br><span class="line">var router = require("./router");</span><br><span class="line">var requestHandlers = require("./requestHandlers");</span><br><span class="line"></span><br><span class="line">var handle = &#123;&#125;</span><br><span class="line">handle["/"] = requestHandlers.start;</span><br><span class="line">handle["/start"] = requestHandlers.start;</span><br><span class="line">handle["/upload"] = requestHandlers.upload;</span><br><span class="line"></span><br><span class="line">server.start(router.route, handle);</span><br></pre></td></tr></table></figure>
+<h2 id="server-js-1"><a href="#server-js-1" class="headerlink" title="server.js"></a>server.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var http = require("http");</span><br><span class="line">var url = require("url");</span><br><span class="line"></span><br><span class="line">function start(route, handle) &#123;</span><br><span class="line">  function onRequest(request, response) &#123;</span><br><span class="line">    var pathname = url.parse(request.url).pathname;</span><br><span class="line">    console.log("Request for " + pathname + " received.");</span><br><span class="line"></span><br><span class="line">    route(handle, pathname);</span><br><span class="line"></span><br><span class="line">    response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">    response.write("Hello World");</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  http.createServer(onRequest).listen(8888);</span><br><span class="line">  console.log("Server has started.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br></pre></td></tr></table></figure>
+<h2 id="route-js"><a href="#route-js" class="headerlink" title="route.js"></a>route.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function route(handle, pathname) &#123;</span><br><span class="line">  console.log("About to route a request for " + pathname);</span><br><span class="line">  if (typeof handle[pathname] === 'function') &#123;</span><br><span class="line">    handle[pathname]();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log("No request handler found for " + pathname);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.route = route;</span><br></pre></td></tr></table></figure>
+<p>从上到下观察改动的对象和函数可以知道一些东西，例如，首先为了能低耦合的方式将对象注入到route函数中，我们需要将requestHandlers.js写好的两个函数导出去，外部调用。<br>然后是看到index.js，注意这里的handle是一个包装了请求处理程序的集合，我直接照搬书里的话，正如所见，将不同的url映射到相同的请求处理程序上是是很容易的：只要在对象中添加一个键为”/“的属性，对应requestHandlers.start即可，这样我们就可以干净简洁地配置/start和/的请求都交由start这一处理程序处理。<br>接着就是server.js，在start里面添加了一个新的参数，然后通过参数传入到route回调函数里面去，因此我们也要修改一下route函数。<br>route函数的代码我们可以这样来阅读，首先判断给定的路径对应的请求程序也就是这里的方法function是否存在，如果存在的话就直接调用相应的函数。这样一来就很好解释简洁流畅的形如handle<a href="">pathname</a>;的表达式了<br>也就是说，如果传进去的pathname是刚刚在index集合中某一个，就会触发对应的函数，我们在index可以把这些集合和我们安卓的map相关起来，就是通过键值对来解释对应的pathname和函数程序。</p>
+<h3 id="阻塞与非阻塞"><a href="#阻塞与非阻塞" class="headerlink" title="阻塞与非阻塞"></a>阻塞与非阻塞</h3><hr>
+<p>首先更改掉start请求处理程序，我们让它等待10秒之后再返回hello Start，由于javascript没有sleep的操作，所以只能自己创建一个方法。</p>
+<h2 id="修改requestHandlers-js修改如下"><a href="#修改requestHandlers-js修改如下" class="headerlink" title="修改requestHandlers.js修改如下"></a>修改requestHandlers.js修改如下</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function start() &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line"></span><br><span class="line">  function sleep(milliSeconds) &#123;</span><br><span class="line">    var startTime = new Date().getTime();</span><br><span class="line">    while (new Date().getTime() <span class="tag">&lt; <span class="attr">startTime</span> + <span class="attr">milliSeconds</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="attr">sleep</span>(<span class="attr">10000</span>);</span><br><span class="line">  <span class="attr">return</span> "<span class="attr">Hello</span> <span class="attr">Start</span>";</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">function</span> <span class="attr">upload</span>() &#123;</span><br><span class="line">  <span class="attr">console.log</span>("<span class="attr">Request</span> <span class="attr">handler</span> '<span class="attr">upload</span>' <span class="attr">was</span> <span class="attr">called.</span>");</span><br><span class="line">  <span class="attr">return</span> "<span class="attr">Hello</span> <span class="attr">Upload</span>";</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">exports.start</span> = <span class="attr">start</span>;</span><br><span class="line"><span class="attr">exports.upload</span> = <span class="attr">upload</span>;</span></span><br></pre></td></tr></table></figure>
+<p>当我们单独打开<a href="http://localhost:8888/start和http://localhost:8888/upload的时候，按照程序的逻辑，start函数会先等待10秒，然后再返回hello" target="_blank" rel="external">http://localhost:8888/start和http://localhost:8888/upload的时候，按照程序的逻辑，start函数会先等待10秒，然后再返回hello</a> start。而upload则会立即返回。<br>但是当我们重启浏览器，然后开启两个窗口，分别输入上面的两个地址但是不要打开，现在“/start”按下回车，快速切换到第二个窗口“/upload”也按下回车，这里发生了点事情，/start URl花了10秒，/upload也花了10秒，这就非常奇怪了，到底为什么？<br>原因是start()包含了阻塞操作，node实行的是并行执行，也就是node在不增加额外线程的情况下，依然可以对人物进行并行处理，node是单线程的，通过<a href="http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/" target="_blank" rel="external">事件轮询</a>来实现并行操作，一个队列如果阻塞了之后就会导致线程被占用而后面需要处理的程序被阻塞。</p>
+<p>为了尽可能的避免阻塞操作，我们需要使用非阻塞操作，将函数作为参数传递给其他需要花时间做处理的函数，在完成之后使用回调传回到主线程上。ok，开始初步更改：<br>还是更改requestHandlers.js<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var exec = require("child_process").exec;</span><br><span class="line"></span><br><span class="line">function start() &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line">  var content = "empty";</span><br><span class="line"></span><br><span class="line">  exec("ls -lah", function (error, stdout, stderr) &#123;</span><br><span class="line">    content = stdout;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  return content;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function upload() &#123;</span><br><span class="line">  console.log("Request handler 'upload' was called.");</span><br><span class="line">  return "Hello Upload";</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br><span class="line">exports.upload = upload;</span><br></pre></td></tr></table></figure></p>
+<p>上述代码使用了一个叫做child_process的nodejs模块，使用它是为了实现一个非常简单的非阻塞操作：exec().它能做什么，它能使用node的一天shell指令来遍历当前目录下的所有文件(“ls -lah”)，当/startURl的时候将文件信息输出到浏览器中。<br>上述代码访问呢“<a href="http://localhost:8888/start”" target="_blank" rel="external">http://localhost:8888/start”</a> 的运行结果是只出现了一个empty，这时候很明显就是想到了新添加的exec()函数发挥作用了，有了它，我们可以在执行非常耗时的操作的时候无需等待，如果换成”/find”会更加明显，因为find/，一般情况下执行时间会非常久，但是这并不是我们想要的效果。<br>我们先来分析一下exec()函数的，在例子中，回调函数function (error, stdout, stderr)是作为第二个参数传递给exec()的匿名函数。当代码执行到exec()之后，node就立即执行了return content；而这个时候，content依旧是“empty”，因为传递给exec()的回调函数还没有执行到——因为exec()的操作是异步的。<br>所以尽管只要耗时稍微比较长的话，都会交给node在后天继续执行下去，但是函数却调到下一条代码了，那么要怎么才能将检索好的目录呈现给用户呢？</p>
+<h3 id="用非阻塞的方式进行请求响应"><a href="#用非阻塞的方式进行请求响应" class="headerlink" title="用非阻塞的方式进行请求响应"></a>用非阻塞的方式进行请求响应</h3><p>鉴于上面那种只实现了将耗时的操作交给回调函数处理，但是处理好的结果却没有很好的呈现出来，因此我们需要其他的计划和解决方法。刚好，nodeJS就有一种实现方案：函数传递。<br>这种新的方式是通过和旧的方式将内容传递给服务器想比，我们采用将服务器传递给内容的方式。从实践的角度来看，就是将response对象（从回调函数onRequest（）获取）通过请求路由传递给处理程序。随后。处理程序就可以采用该对象上的函数来对请求做出响应。</p>
+<h3 id="首先是server-js函数："><a href="#首先是server-js函数：" class="headerlink" title="首先是server.js函数："></a>首先是server.js函数：</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var http = require("http");</span><br><span class="line">var url  = require("url");</span><br><span class="line"></span><br><span class="line">function start(route, handle)&#123;</span><br><span class="line">	function onRequest(request, response)&#123;</span><br><span class="line">		var pathname = url.parse(request.url).pathname;</span><br><span class="line">		console.log("Request for " + pathname + " received.");</span><br><span class="line">		</span><br><span class="line">		route(handle, pathname, response);</span><br><span class="line">	&#125;</span><br><span class="line">	http.createServer(onRequest).listen(8888);</span><br><span class="line">	console.log("Server has started.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br></pre></td></tr></table></figure>
+<p>route.js<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function route(handle, pathname, response)&#123;</span><br><span class="line">	console.log("About to route a request for " + pathname);</span><br><span class="line">	if(typeof handle[pathname] == 'function')&#123;</span><br><span class="line">		handle[pathname](response);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		console.log("No request handler found for " + pathname);</span><br><span class="line">		response.writeHead(404,&#123;"Content-type":"text/plain"&#125;);</span><br><span class="line">		response.write("404 Not found");</span><br><span class="line">		response.end();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.route = route;</span><br></pre></td></tr></table></figure></p>
+<p>最后是requestHandler.js函数<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var exec = require("child_process").exec;</span><br><span class="line"></span><br><span class="line">function start(response) &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line"></span><br><span class="line">  exec("ls -lah", function (error, stdout, stderr) &#123;</span><br><span class="line">    response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">    response.write(stdout);</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function upload(response) &#123;</span><br><span class="line">  console.log("Request handler 'upload' was called.");</span><br><span class="line">  response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">  response.write("Hello Upload");</span><br><span class="line">  response.end();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br><span class="line">exports.upload = upload;</span><br></pre></td></tr></table></figure></p>
+<p>参考文章：[Node.js 究竟是什么？]{<a href="http://www.ibm.com/developerworks/cn/opensource/os-nodejs/index.html?ca=drs#icomments}" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/opensource/os-nodejs/index.html?ca=drs#icomments}</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/19/react-native学习笔记/" itemprop="url">
                   react-native学习笔记
                 </a>
@@ -697,146 +984,6 @@ a在带参构造函数中的值：10
             
               
                 
-                <a class="post-title-link" href="/2016/04/25/分析一篇博客中学到的下拉刷新原理/" itemprop="url">
-                  分析一篇博客中学到的下拉刷新原理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-04-25T17:21:26+08:00" content="2016-04-25">
-              2016-04-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/25/分析一篇博客中学到的下拉刷新原理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/分析一篇博客中学到的下拉刷新原理/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>原来已经写好的博客因为没有保存，电脑突然死机，所以没办法只能重新写多一次，首先把我模仿的博客地址放出来<br>    <a href="http://blog.csdn.net/guolin_blog/article/details/9255575" target="_blank" rel="external">Android下拉刷新完全解析，教你如何一分钟实现下拉刷新功能 </a></p>
-<p>在博客上博主已经写明了原理，其实就是在隐藏一个下拉头，在touch的时候进行事件监听，如果listview滚动到顶部的是并且手指还在下拉就将头部显示出来，松手之后进行刷新操作，并将下拉头再次隐藏。<br><img src="http://img.blog.csdn.net/20130706113543125?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2lueXU4OTA4MDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="下拉刷新原理图"><br>s<br>首先是定义好刷新的头部，这里除了基本的文字提示还有上次更新时间是不变的，其他的都可以根据自己的想象力来创建，当然根据需求来实现就可以了。代码就不贴了，自己看博主的博客吧！</p>
-<p>在继承了linearLayout的class中，首先是定义变量，这里需要自己思考逻辑，把下拉刷新的每一步都分解成一个小动作，先是分解表面的小动作，然后是分别背后逻辑实现的具体实现。</p>
-<blockquote>
-<ul>
-<li><p>按照刷新前后可以分为，下拉状态，释放之后立即刷新状态，正在刷新状态，刷新完成或者未刷新状态，ok，一个周期就这样完成了。</p>
-</li>
-<li><p>分析了表面之后，开始分析头部的view，准备刷新的时候，描述文字会对应改变，然后就是与用户进行交互的操作，主要是人性化提示上一次更新时间是什么时候，博主在这里把更新时间细分到年月日时分秒，另外定义一个字符串常量UPDATED_AT，用来作为SharePreferences的键值。</p>
-</li>
-<li><p>接下来是箭头和进度条，这里的思维是这样的，在下拉的时候，箭头先逆时针旋转180度，描述文字变成下拉立即刷新</p>
-</li>
-<li><p>最后就是做一些细节性的操作，新建监听对象，记录上次更新的毫秒值，另外为了防止不同的界面在使用同一个下拉刷新的时候更新时间上会由于key相同而冲突，所以使用id来区分，定义currentStatus标记当前处于什么状态，创建一个布朗值ableToPull规定只有listview滚动到头的时候才允许下拉，判定滚动之前用户手指可以移动的最大值</p>
-</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>实现逻辑考虑之后，剩下的就比较好办了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">RefreshableView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">        preferences = PreferenceManager.getDefaultSharedPreferences(context); <span class="comment">//1</span></span><br><span class="line">        header = LayoutInflater.from(context).inflate(R.layout.pull_to_refresh, <span class="keyword">null</span>, <span class="keyword">true</span>);</span><br><span class="line">        progressBar = (ProgressBar) header.findViewById(R.id.progress_bar);</span><br><span class="line">        arrow = (ImageView) header.findViewById(R.id.arrow);</span><br><span class="line">        description = (TextView) header.findViewById(R.id.description);</span><br><span class="line">        updateAt = (TextView) header.findViewById(R.id.update_at);</span><br><span class="line">        touchSlop = ViewConfiguration.get(context).getScaledTouchSlop(); <span class="comment">//2</span></span><br><span class="line">        refreshUpdatedAtValue();<span class="comment">//3</span></span><br><span class="line">        setOrientation(VERTICAL);</span><br><span class="line">        addView(header, <span class="number">0</span>);<span class="comment">//4</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>创建RefreshableView的构造函数RefreshableView(Context context, AttributeSet attrs)，传入当前使用refresh的上下文用来绑定下拉头的view和可能用到的数值集合AttributeSet attrs，主要分析上面标有数字的代码片段。<br>1，PreferenceManager.getDefaultSharedPreferences(Context) 来获取管理者，比如当我们想获得整数我们可以用 getInt(String key, int defVal) .获取里面的某个键值，当我们想修改时候我们用 putInt(String key, int newVal)， 最后用 edit(), commit()方法提交!<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences mPerferences = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);            </span><br><span class="line">      <span class="keyword">int</span> counter = mPerferences.getInt(<span class="string">"counter"</span>, <span class="number">0</span>);           </span><br><span class="line">      TextView mTextView = (TextView)findViewById(R.id.text);           </span><br><span class="line">      mTextView.setText(<span class="string">"This app has been started "</span> + counter + <span class="string">" times."</span>);            </span><br><span class="line">      SharedPreferences.Editor mEditor = mPerferences.edit();       </span><br><span class="line">      mEditor.putInt(<span class="string">"counter"</span>, ++counter);  </span><br><span class="line">      mEditor.commit();</span><br></pre></td></tr></table></figure></p>
-<p>通过上面的代码可以做到动态统计客户端的应用被启动的次数。<br>2，返回一个距离，表示滑动的时候，手的移动要大于这个距离才开始移动控件<br>3，负责刷新下拉头中上次更新时间的文字描述<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">refreshUpdatedAtValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        lastUpdateTime = preferences.getLong(UPDATED_AT + mId, -<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">long</span> currentTime = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">long</span> timePassed = currentTime - lastUpdateTime;</span><br><span class="line">        <span class="keyword">long</span> timeIntoFormat;</span><br><span class="line">        String updateAtValue;</span><br><span class="line">        <span class="keyword">if</span> (lastUpdateTime == -<span class="number">1</span>) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.not_updated_yet);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.time_error);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_MINUTE) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.updated_just_now);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_HOUR) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_MINUTE;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"分钟"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_DAY) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_HOUR;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"小时"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_MONTH) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_DAY;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"天"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_YEAR) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_MONTH;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"个月"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_YEAR;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"年"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125;</span><br><span class="line">        updateAt.setText(updateAtValue);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>可能是我太笨，其实第一句的意思我还真的没有理解到什么意思，不过肯定是获取上一次打开app的时候保存在preferences的时间值，但是丝毫没有看到lastUpdateTime保存的上一次打开的痕迹。除此之外，其他的都很容易理解。不过这里的设计思路感觉非常清晰，以后写保存时间的也可以这样写。</p>
-<h2 id="4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在-lt-gt-lt-gt-中间添加view一样。"><a href="#4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在-lt-gt-lt-gt-中间添加view一样。" class="headerlink" title="4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在&lt;&gt;&lt;/&gt;中间添加view一样。"></a>4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在&lt;&gt;&lt;/&gt;中间添加view一样。</h2><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onLayout(changed, l, t, r, b);</span><br><span class="line">        <span class="keyword">if</span> (changed &amp;&amp; !loadOnce) &#123;</span><br><span class="line">            hideHeaderHeight = -header.getHeight(); <span class="comment">//获得可视区域的正上方header的高度</span></span><br><span class="line">            headerLayoutParams = (MarginLayoutParams) header.getLayoutParams();</span><br><span class="line">            headerLayoutParams.topMargin = hideHeaderHeight; <span class="comment">//把header放置在距离可视区域的正上方header.getHeight()处，这样可以完美隐藏header</span></span><br><span class="line">            listView = (ListView) getChildAt(<span class="number">1</span>); <span class="comment">//getChildAt（int position)返回的item都是指的可视区域内的第position个元素</span></span><br><span class="line">            listView.setOnTouchListener(<span class="keyword">this</span>);</span><br><span class="line">            loadOnce = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>这个方法用来放置子View的位置，参数的字母意义分别是left，top，right，bottom。另外布朗值是用来判断Layout是否重新加载layout的数值。<br>判断的意思是如果曾经未曾加载过一次并且loadOnce为第一次加载不是false的话，就执行下面的语句，因为onlayout只需加载一次就可以了，所以要判断是否是第一次加载。<br>先得到header的高度，然后将高度设为负值，意味着将header放在屏幕的上方隐藏起来，为了将hideHeaderHeight实现起来，就要获取MarginLayoutParams管理，来获得topMargin值。<br>最后<em>listView = (ListView) getChildAt(1)</em>获得viewGroup的第二个child，也就是整个listview设置touch监听。下面是监听代码的第一个child，设置touch监听。<br>下面是监听代码（下面的代码是整个刷新原理的关键）：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View v, MotionEvent event)</span> </span>&#123;</span><br><span class="line">       setIsAbleToPull(event);</span><br><span class="line">       <span class="keyword">if</span> (ableToPull) &#123;</span><br><span class="line">           <span class="keyword">switch</span> (event.getAction()) &#123;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">                   yDown = event.getRawY();</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">                   <span class="keyword">float</span> yMove = event.getRawY();</span><br><span class="line">                   <span class="keyword">int</span> distance = (<span class="keyword">int</span>) (yMove - yDown);</span><br><span class="line">                   <span class="comment">// 如果手指是下滑状态，并且下拉头是完全隐藏的，就屏蔽下拉事件</span></span><br><span class="line">                   <span class="keyword">if</span> (distance &lt;= <span class="number">0</span> &amp;&amp; headerLayoutParams.topMargin &lt;= hideHeaderHeight) &#123;</span><br><span class="line">                       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">if</span> (distance &lt; touchSlop) &#123;</span><br><span class="line">                       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">if</span> (currentStatus != STATUS_REFRESHING) &#123;</span><br><span class="line">                       <span class="keyword">if</span> (headerLayoutParams.topMargin &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                           currentStatus = STATUS_RELEASE_TO_REFRESH;</span><br><span class="line">                       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                           currentStatus = STATUS_PULL_TO_REFRESH;</span><br><span class="line">                       &#125;</span><br><span class="line">                       <span class="comment">// 通过偏移下拉头的topMargin值，来实现下拉效果</span></span><br><span class="line">                       headerLayoutParams.topMargin = (distance / <span class="number">2</span>) + hideHeaderHeight;</span><br><span class="line">                       header.setLayoutParams(headerLayoutParams);</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_UP:</span><br><span class="line">               <span class="keyword">default</span>:</span><br><span class="line">                   <span class="keyword">if</span> (currentStatus == STATUS_RELEASE_TO_REFRESH) &#123;</span><br><span class="line">                       <span class="comment">// 松手时如果是释放立即刷新状态，就去调用正在刷新的任务</span></span><br><span class="line">                       <span class="keyword">new</span> RefreshingTask().execute();</span><br><span class="line">                   &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentStatus == STATUS_PULL_TO_REFRESH) &#123;</span><br><span class="line">                       <span class="comment">// 松手时如果是下拉状态，就去调用隐藏下拉头的任务</span></span><br><span class="line">                       <span class="keyword">new</span> HideHeaderTask().execute();</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="comment">// 时刻记得更新下拉头中的信息</span></span><br><span class="line">           <span class="keyword">if</span> (currentStatus == STATUS_PULL_TO_REFRESH</span><br><span class="line">                   || currentStatus == STATUS_RELEASE_TO_REFRESH) &#123;</span><br><span class="line">               updateHeaderView();</span><br><span class="line">               <span class="comment">// 当前正处于下拉或释放状态，要让ListView失去焦点，否则被点击的那一项会一直处于选中状态</span></span><br><span class="line">               listView.setPressed(<span class="keyword">false</span>);</span><br><span class="line">               listView.setFocusable(<span class="keyword">false</span>);</span><br><span class="line">               listView.setFocusableInTouchMode(<span class="keyword">false</span>);</span><br><span class="line">               lastStatus = currentStatus;</span><br><span class="line">               <span class="comment">// 当前正处于下拉或释放状态，通过返回true屏蔽掉ListView的滚动事件</span></span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p>先判断其他语句的意思，<br>如果可以进行下拉刷新的时候，当手指ACTION_DOWN的时候，记录当前的getRawY()，然后再move的时候使用一个float变量跟踪手指最终的getRawY，得到一个移动的距离<br>如果移动的距离是一个负数，说明下滑状态，这时候下拉头会被隐藏，返回false屏蔽下拉事件，不执行下拉刷新的操作<br>如果移动的距离小于最小滑动距离touchSlop，这时候因为滑动的距离太短，也不执行下拉刷新<br>虽然我觉得应该在这里加多一段else的语句，返回一个true，但是好像太早返回true的话就不能执行记录当前状态的<br>如果当前状态不等于正在刷新的话，再判断header是否在父view的下面，也就是是否已经移到可视图层，如果</p>
-<p>1，代码中的第一句setIsAbleToPull(event);是判断是否可以下拉，下面的是详细代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setIsAbleToPull</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line">        View firstChild = listView.getChildAt(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span> (firstChild != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> firstVisiblePos = listView.getFirstVisiblePosition();</span><br><span class="line">            <span class="keyword">if</span> (firstVisiblePos == <span class="number">0</span> &amp;&amp; firstChild.getTop() == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!ableToPull) &#123;</span><br><span class="line">                    yDown = event.getRawY();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 如果首个元素的上边缘，距离父布局值为0，就说明ListView滚动到了最顶部，此时应该允许下拉刷新</span></span><br><span class="line">                ableToPull = <span class="keyword">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (headerLayoutParams.topMargin != hideHeaderHeight) &#123;</span><br><span class="line">                    headerLayoutParams.topMargin = hideHeaderHeight;</span><br><span class="line">                    header.setLayoutParams(headerLayoutParams);</span><br><span class="line">                &#125;</span><br><span class="line">                ableToPull = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果ListView中没有元素，也应该允许下拉刷新</span></span><br><span class="line">            ableToPull = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>首先创建一个变量firstChild获取listview视图中可以看到的第一个view，判断假如listview中含有子类的时候，再创建一个firstVisiblePos变量获取第一个看到的listview的position，如果如果首个元素的上边缘，距离getTop()父布局值为0，就说明ListView滚动到了最顶部，此时应该允许下拉刷新,此时的点击事件就要记录首次按下的Y坐标yDown，并让布朗值变为true，允许下拉。<br>另外假如判断不成立的话，此时的状态可能是listview还在滚动状态或者是下拉之后准备释放的状态，这时候我们要让下拉投变回原来的位置，所以要让header的topMargin变为原来的位置，此时不允许下拉。</p>
-<p>先偷懒一下，好吧！我说谎了，这里下去看代码没有找到适合的逻辑来分析，先标记一下。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/04/25/简单实现定位功能/" itemprop="url">
                   简单实现定位功能
                 </a>
@@ -1079,6 +1226,146 @@ a在带参构造函数中的值：10
             
               
                 
+                <a class="post-title-link" href="/2016/04/25/分析一篇博客中学到的下拉刷新原理/" itemprop="url">
+                  分析一篇博客中学到的下拉刷新原理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-25T17:21:26+08:00" content="2016-04-25">
+              2016-04-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/25/分析一篇博客中学到的下拉刷新原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/分析一篇博客中学到的下拉刷新原理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原来已经写好的博客因为没有保存，电脑突然死机，所以没办法只能重新写多一次，首先把我模仿的博客地址放出来<br>    <a href="http://blog.csdn.net/guolin_blog/article/details/9255575" target="_blank" rel="external">Android下拉刷新完全解析，教你如何一分钟实现下拉刷新功能 </a></p>
+<p>在博客上博主已经写明了原理，其实就是在隐藏一个下拉头，在touch的时候进行事件监听，如果listview滚动到顶部的是并且手指还在下拉就将头部显示出来，松手之后进行刷新操作，并将下拉头再次隐藏。<br><img src="http://img.blog.csdn.net/20130706113543125?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2lueXU4OTA4MDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="下拉刷新原理图"><br>s<br>首先是定义好刷新的头部，这里除了基本的文字提示还有上次更新时间是不变的，其他的都可以根据自己的想象力来创建，当然根据需求来实现就可以了。代码就不贴了，自己看博主的博客吧！</p>
+<p>在继承了linearLayout的class中，首先是定义变量，这里需要自己思考逻辑，把下拉刷新的每一步都分解成一个小动作，先是分解表面的小动作，然后是分别背后逻辑实现的具体实现。</p>
+<blockquote>
+<ul>
+<li><p>按照刷新前后可以分为，下拉状态，释放之后立即刷新状态，正在刷新状态，刷新完成或者未刷新状态，ok，一个周期就这样完成了。</p>
+</li>
+<li><p>分析了表面之后，开始分析头部的view，准备刷新的时候，描述文字会对应改变，然后就是与用户进行交互的操作，主要是人性化提示上一次更新时间是什么时候，博主在这里把更新时间细分到年月日时分秒，另外定义一个字符串常量UPDATED_AT，用来作为SharePreferences的键值。</p>
+</li>
+<li><p>接下来是箭头和进度条，这里的思维是这样的，在下拉的时候，箭头先逆时针旋转180度，描述文字变成下拉立即刷新</p>
+</li>
+<li><p>最后就是做一些细节性的操作，新建监听对象，记录上次更新的毫秒值，另外为了防止不同的界面在使用同一个下拉刷新的时候更新时间上会由于key相同而冲突，所以使用id来区分，定义currentStatus标记当前处于什么状态，创建一个布朗值ableToPull规定只有listview滚动到头的时候才允许下拉，判定滚动之前用户手指可以移动的最大值</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>实现逻辑考虑之后，剩下的就比较好办了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">RefreshableView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">        preferences = PreferenceManager.getDefaultSharedPreferences(context); <span class="comment">//1</span></span><br><span class="line">        header = LayoutInflater.from(context).inflate(R.layout.pull_to_refresh, <span class="keyword">null</span>, <span class="keyword">true</span>);</span><br><span class="line">        progressBar = (ProgressBar) header.findViewById(R.id.progress_bar);</span><br><span class="line">        arrow = (ImageView) header.findViewById(R.id.arrow);</span><br><span class="line">        description = (TextView) header.findViewById(R.id.description);</span><br><span class="line">        updateAt = (TextView) header.findViewById(R.id.update_at);</span><br><span class="line">        touchSlop = ViewConfiguration.get(context).getScaledTouchSlop(); <span class="comment">//2</span></span><br><span class="line">        refreshUpdatedAtValue();<span class="comment">//3</span></span><br><span class="line">        setOrientation(VERTICAL);</span><br><span class="line">        addView(header, <span class="number">0</span>);<span class="comment">//4</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>创建RefreshableView的构造函数RefreshableView(Context context, AttributeSet attrs)，传入当前使用refresh的上下文用来绑定下拉头的view和可能用到的数值集合AttributeSet attrs，主要分析上面标有数字的代码片段。<br>1，PreferenceManager.getDefaultSharedPreferences(Context) 来获取管理者，比如当我们想获得整数我们可以用 getInt(String key, int defVal) .获取里面的某个键值，当我们想修改时候我们用 putInt(String key, int newVal)， 最后用 edit(), commit()方法提交!<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences mPerferences = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);            </span><br><span class="line">      <span class="keyword">int</span> counter = mPerferences.getInt(<span class="string">"counter"</span>, <span class="number">0</span>);           </span><br><span class="line">      TextView mTextView = (TextView)findViewById(R.id.text);           </span><br><span class="line">      mTextView.setText(<span class="string">"This app has been started "</span> + counter + <span class="string">" times."</span>);            </span><br><span class="line">      SharedPreferences.Editor mEditor = mPerferences.edit();       </span><br><span class="line">      mEditor.putInt(<span class="string">"counter"</span>, ++counter);  </span><br><span class="line">      mEditor.commit();</span><br></pre></td></tr></table></figure></p>
+<p>通过上面的代码可以做到动态统计客户端的应用被启动的次数。<br>2，返回一个距离，表示滑动的时候，手的移动要大于这个距离才开始移动控件<br>3，负责刷新下拉头中上次更新时间的文字描述<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">refreshUpdatedAtValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        lastUpdateTime = preferences.getLong(UPDATED_AT + mId, -<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">long</span> currentTime = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">long</span> timePassed = currentTime - lastUpdateTime;</span><br><span class="line">        <span class="keyword">long</span> timeIntoFormat;</span><br><span class="line">        String updateAtValue;</span><br><span class="line">        <span class="keyword">if</span> (lastUpdateTime == -<span class="number">1</span>) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.not_updated_yet);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.time_error);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_MINUTE) &#123;</span><br><span class="line">            updateAtValue = getResources().getString(R.string.updated_just_now);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_HOUR) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_MINUTE;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"分钟"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_DAY) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_HOUR;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"小时"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_MONTH) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_DAY;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"天"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (timePassed &lt; ONE_YEAR) &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_MONTH;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"个月"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            timeIntoFormat = timePassed / ONE_YEAR;</span><br><span class="line">            String value = timeIntoFormat + <span class="string">"年"</span>;</span><br><span class="line">            updateAtValue = String.format(getResources().getString(R.string.updated_at), value);</span><br><span class="line">        &#125;</span><br><span class="line">        updateAt.setText(updateAtValue);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>可能是我太笨，其实第一句的意思我还真的没有理解到什么意思，不过肯定是获取上一次打开app的时候保存在preferences的时间值，但是丝毫没有看到lastUpdateTime保存的上一次打开的痕迹。除此之外，其他的都很容易理解。不过这里的设计思路感觉非常清晰，以后写保存时间的也可以这样写。</p>
+<h2 id="4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在-lt-gt-lt-gt-中间添加view一样。"><a href="#4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在-lt-gt-lt-gt-中间添加view一样。" class="headerlink" title="4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在&lt;&gt;&lt;/&gt;中间添加view一样。"></a>4，这个是viewGroup组件中特有的动态添加view的方法，相当于xml里面直接在&lt;&gt;&lt;/&gt;中间添加view一样。</h2><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onLayout(changed, l, t, r, b);</span><br><span class="line">        <span class="keyword">if</span> (changed &amp;&amp; !loadOnce) &#123;</span><br><span class="line">            hideHeaderHeight = -header.getHeight(); <span class="comment">//获得可视区域的正上方header的高度</span></span><br><span class="line">            headerLayoutParams = (MarginLayoutParams) header.getLayoutParams();</span><br><span class="line">            headerLayoutParams.topMargin = hideHeaderHeight; <span class="comment">//把header放置在距离可视区域的正上方header.getHeight()处，这样可以完美隐藏header</span></span><br><span class="line">            listView = (ListView) getChildAt(<span class="number">1</span>); <span class="comment">//getChildAt（int position)返回的item都是指的可视区域内的第position个元素</span></span><br><span class="line">            listView.setOnTouchListener(<span class="keyword">this</span>);</span><br><span class="line">            loadOnce = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法用来放置子View的位置，参数的字母意义分别是left，top，right，bottom。另外布朗值是用来判断Layout是否重新加载layout的数值。<br>判断的意思是如果曾经未曾加载过一次并且loadOnce为第一次加载不是false的话，就执行下面的语句，因为onlayout只需加载一次就可以了，所以要判断是否是第一次加载。<br>先得到header的高度，然后将高度设为负值，意味着将header放在屏幕的上方隐藏起来，为了将hideHeaderHeight实现起来，就要获取MarginLayoutParams管理，来获得topMargin值。<br>最后<em>listView = (ListView) getChildAt(1)</em>获得viewGroup的第二个child，也就是整个listview设置touch监听。下面是监听代码的第一个child，设置touch监听。<br>下面是监听代码（下面的代码是整个刷新原理的关键）：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View v, MotionEvent event)</span> </span>&#123;</span><br><span class="line">       setIsAbleToPull(event);</span><br><span class="line">       <span class="keyword">if</span> (ableToPull) &#123;</span><br><span class="line">           <span class="keyword">switch</span> (event.getAction()) &#123;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">                   yDown = event.getRawY();</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">                   <span class="keyword">float</span> yMove = event.getRawY();</span><br><span class="line">                   <span class="keyword">int</span> distance = (<span class="keyword">int</span>) (yMove - yDown);</span><br><span class="line">                   <span class="comment">// 如果手指是下滑状态，并且下拉头是完全隐藏的，就屏蔽下拉事件</span></span><br><span class="line">                   <span class="keyword">if</span> (distance &lt;= <span class="number">0</span> &amp;&amp; headerLayoutParams.topMargin &lt;= hideHeaderHeight) &#123;</span><br><span class="line">                       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">if</span> (distance &lt; touchSlop) &#123;</span><br><span class="line">                       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">if</span> (currentStatus != STATUS_REFRESHING) &#123;</span><br><span class="line">                       <span class="keyword">if</span> (headerLayoutParams.topMargin &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                           currentStatus = STATUS_RELEASE_TO_REFRESH;</span><br><span class="line">                       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                           currentStatus = STATUS_PULL_TO_REFRESH;</span><br><span class="line">                       &#125;</span><br><span class="line">                       <span class="comment">// 通过偏移下拉头的topMargin值，来实现下拉效果</span></span><br><span class="line">                       headerLayoutParams.topMargin = (distance / <span class="number">2</span>) + hideHeaderHeight;</span><br><span class="line">                       header.setLayoutParams(headerLayoutParams);</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               <span class="keyword">case</span> MotionEvent.ACTION_UP:</span><br><span class="line">               <span class="keyword">default</span>:</span><br><span class="line">                   <span class="keyword">if</span> (currentStatus == STATUS_RELEASE_TO_REFRESH) &#123;</span><br><span class="line">                       <span class="comment">// 松手时如果是释放立即刷新状态，就去调用正在刷新的任务</span></span><br><span class="line">                       <span class="keyword">new</span> RefreshingTask().execute();</span><br><span class="line">                   &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentStatus == STATUS_PULL_TO_REFRESH) &#123;</span><br><span class="line">                       <span class="comment">// 松手时如果是下拉状态，就去调用隐藏下拉头的任务</span></span><br><span class="line">                       <span class="keyword">new</span> HideHeaderTask().execute();</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="comment">// 时刻记得更新下拉头中的信息</span></span><br><span class="line">           <span class="keyword">if</span> (currentStatus == STATUS_PULL_TO_REFRESH</span><br><span class="line">                   || currentStatus == STATUS_RELEASE_TO_REFRESH) &#123;</span><br><span class="line">               updateHeaderView();</span><br><span class="line">               <span class="comment">// 当前正处于下拉或释放状态，要让ListView失去焦点，否则被点击的那一项会一直处于选中状态</span></span><br><span class="line">               listView.setPressed(<span class="keyword">false</span>);</span><br><span class="line">               listView.setFocusable(<span class="keyword">false</span>);</span><br><span class="line">               listView.setFocusableInTouchMode(<span class="keyword">false</span>);</span><br><span class="line">               lastStatus = currentStatus;</span><br><span class="line">               <span class="comment">// 当前正处于下拉或释放状态，通过返回true屏蔽掉ListView的滚动事件</span></span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>先判断其他语句的意思，<br>如果可以进行下拉刷新的时候，当手指ACTION_DOWN的时候，记录当前的getRawY()，然后再move的时候使用一个float变量跟踪手指最终的getRawY，得到一个移动的距离<br>如果移动的距离是一个负数，说明下滑状态，这时候下拉头会被隐藏，返回false屏蔽下拉事件，不执行下拉刷新的操作<br>如果移动的距离小于最小滑动距离touchSlop，这时候因为滑动的距离太短，也不执行下拉刷新<br>虽然我觉得应该在这里加多一段else的语句，返回一个true，但是好像太早返回true的话就不能执行记录当前状态的<br>如果当前状态不等于正在刷新的话，再判断header是否在父view的下面，也就是是否已经移到可视图层，如果</p>
+<p>1，代码中的第一句setIsAbleToPull(event);是判断是否可以下拉，下面的是详细代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setIsAbleToPull</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line">        View firstChild = listView.getChildAt(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span> (firstChild != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> firstVisiblePos = listView.getFirstVisiblePosition();</span><br><span class="line">            <span class="keyword">if</span> (firstVisiblePos == <span class="number">0</span> &amp;&amp; firstChild.getTop() == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!ableToPull) &#123;</span><br><span class="line">                    yDown = event.getRawY();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 如果首个元素的上边缘，距离父布局值为0，就说明ListView滚动到了最顶部，此时应该允许下拉刷新</span></span><br><span class="line">                ableToPull = <span class="keyword">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (headerLayoutParams.topMargin != hideHeaderHeight) &#123;</span><br><span class="line">                    headerLayoutParams.topMargin = hideHeaderHeight;</span><br><span class="line">                    header.setLayoutParams(headerLayoutParams);</span><br><span class="line">                &#125;</span><br><span class="line">                ableToPull = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果ListView中没有元素，也应该允许下拉刷新</span></span><br><span class="line">            ableToPull = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先创建一个变量firstChild获取listview视图中可以看到的第一个view，判断假如listview中含有子类的时候，再创建一个firstVisiblePos变量获取第一个看到的listview的position，如果如果首个元素的上边缘，距离getTop()父布局值为0，就说明ListView滚动到了最顶部，此时应该允许下拉刷新,此时的点击事件就要记录首次按下的Y坐标yDown，并让布朗值变为true，允许下拉。<br>另外假如判断不成立的话，此时的状态可能是listview还在滚动状态或者是下拉之后准备释放的状态，这时候我们要让下拉投变回原来的位置，所以要让header的topMargin变为原来的位置，此时不允许下拉。</p>
+<p>先偷懒一下，好吧！我说谎了，这里下去看代码没有找到适合的逻辑来分析，先标记一下。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/13/NavigationView和DrawerLayout实现抽屉式设计/" itemprop="url">
                   NavigationView和DrawerLayout实现抽屉式设计
                 </a>
@@ -1194,264 +1481,6 @@ a在带参构造函数中的值：10
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/12/RecycleView的用法/" itemprop="url">
-                  RecycleView的用法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-04-12T18:13:33+08:00" content="2016-04-12">
-              2016-04-12
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/12/RecycleView的用法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/12/RecycleView的用法/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为做着一个项目需要写一个能用recycleView实现的滑动隐藏toolbar的功能，所以特地模仿了一个demo，写完之后想把心得写下来</p>
-<h2 id="RectcleView的优点"><a href="#RectcleView的优点" class="headerlink" title="RectcleView的优点"></a>RectcleView的优点</h2><hr>
-<p>RecycleView是在android L的预览版中出现的，最新的v7支持包新添加了两个控件：RecyclerView和CardView。RecycleView是经典的ListView的进化与升华，比listView还要灵活，因此也具备一定的复杂性。</p>
-<blockquote>
-<ul>
-<li>Recycle自带ViewHolder来实现View的复用，也就是说不用listView那样在getView中判断converView的setTab和getTab操作了</li>
-<li>可以使用LayoutManager实现ListView,GridView还有流布局的列表效果</li>
-<li>通过setItemAnimator(ItemAnimator animator)可以实现增删动画，当然也可以使用默认的ItemAnimator对象，效果也不错</li>
-<li>而且还可以控制item之间的间隔，可以使用additemDecoration(ItemDecoration decor),不过里面的ItemDecoration是个抽象类，需要自己去实现。</li>
-</ul>
-</blockquote>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><hr>
-<p>1，导入相关的库，配合cardView一起使用。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">compile "com.android.support:recyclerview-v7:22.2.1"</span><br><span class="line">compile 'com.android.support:cardview-v7:22.2.1'</span><br></pre></td></tr></table></figure></p>
-<p>需要注意的是导入的库必须是版本相同的，例如不能是一个21.0.0，一个是22.0.0。<br>2，在xml中使用RecycleView<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.RecyclerView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/recyclerView"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>很多属性都是默认的，当然需要改的话自己勤动手，上网查一下就有很多的了。<br>3,主要的类以及作用<br>    RecyclerView.Adapter：数据集合，为每个Item创建视图；<br>    RecyclerView.ViewHolder：承载Item视图的子视图；<br>    RecyclerView.LayoutManager：负责Item视图的布局；<br>    RecyclerView.ItemDecoration：为每个Item视图添加子视图，在Demo中被用来绘制Divider；<br>    RecyclerView.ItemAnimator：负责添加、删除数据时的动画效果；</p>
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><hr>
-<p>adapter.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">ViewHolder</span>&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ViewHolder.newInstance(parent);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(ViewHolder holder, <span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">        holder.onBindViewHolder(list.get(position));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> list.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上面的代码中，<br>  <code>onCreateViewHolder(int position)</code>：返回一个Viewholder对象，在里面进行绑定每一个item的view对象的操作，方法体里面有两个参数，viewType表示的是可以有不同类型的ViewHolder，也就是iRecycleView对多类型的ItemView的支持。<br>  <code>onBindViewHolder(ViewHolder holder, int position)</code>:绑定ViewHolder的控件和每一个position对应的Item的数据。<br>  <code>getItemViewType(int position)</code>:根据不同的position来返回不同的viewType，不过我只实现了头部和尾部的测试，其他特殊的position应该也可以实现。</p>
-<p>Viewholder.java<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> public class ViewHolder extends RecyclerView.ViewHolder&#123;</span><br><span class="line">    private TextView textView;</span><br><span class="line"></span><br><span class="line">    public ViewHolder(View itemView,TextView textView) &#123;</span><br><span class="line">        super(itemView);</span><br><span class="line">        this.textView = textView;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static ViewHolder newInstance(View parent)&#123;</span><br><span class="line">        TextView itemTextView = (TextView) parent.findViewById(R.id.item_text);</span><br><span class="line">        return new ViewHolder(parent,itemTextView);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void onBindViewHolder(String data)&#123;</span><br><span class="line">        textView.setText(data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>可以发现，我们在viewholder就直接findViewById了，并且可以直接在holder中set好数据。</p>
-<p>MainActivity.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.setLayoutManager(<span class="keyword">new</span> LinearLayoutManager(<span class="keyword">this</span>));</span><br><span class="line">RecyclerAdapter recyclerAdapter = <span class="keyword">new</span> RecyclerAdapter(createItemList());</span><br><span class="line">recyclerView.setAdapter(recyclerAdapter);</span><br></pre></td></tr></table></figure></p>
-<p>实例化RecycleView之后，就可以使用setLayoutManager()给它布局了，这里有三个选择</p>
-<blockquote>
-<ul>
-<li><code>StaggeredGridLayoutManager(int spanCount, int orientation)</code> 流式布局,第一个是网格的列数，第二个参数是数据呈现的方向<br>（如果是竖直，那么第一个参数的意义就是列数，反之为行数。而且第二个参数在StaggeredGridLayoutManager里也有同样名称的常量</li>
-<li><code>GridLayoutManager(Context context, int spanCount</code> 表格布局,需要说明的是，最后一个参数表示的是是否逆向布局（意思是将数据反向显示，原先从左向右，从上至下。设为true之后全部逆转，默认是VERTICAL和FALSE）</li>
-<li><code>LinearLayoutManager(Context context)</code> 线性布局,默认为VERTICAL。</li>
-</ul>
-</blockquote>
-<p>添加分隔线，ItemDecoration有三个方法<br>我的demo里面是使用cardView来做每一个item的布局，所以没有定义分割线，但是直接写出来的RecycleView是没有分割线，而且ItemDecoration并没有对它实现，也没有默认的，所以需要自己完成。<br>1，onDraw方法：其绘制将会在每个Item被绘制之前进行；<br>2，onDrawOver：在绘制完Item后进行绘制；<br>3，getItemOffsets 可以通过outRect.set()为每个Item设置一定的偏移量；</p>
-<p>ItemDivider.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ItemDivider</span> <span class="keyword">extends</span> <span class="title">ItemDecoration</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Drawable mDrawable;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ItemDivider</span><span class="params">(Context context, <span class="keyword">int</span> resId)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//在这里我们传入作为Divider的Drawable对象</span></span><br><span class="line">        mDrawable = context.getResources().getDrawable(resId);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawOver</span><span class="params">(Canvas c, RecyclerView parent)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> left = parent.getPaddingLeft();</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> right = parent.getWidth() - parent.getPaddingRight();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> childCount = parent.getChildCount();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; childCount; i++) &#123;</span><br><span class="line">            <span class="keyword">final</span> View child = parent.getChildAt(i);</span><br><span class="line">            <span class="keyword">final</span> RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child</span><br><span class="line">                    .getLayoutParams();</span><br><span class="line">            <span class="comment">//以下计算主要用来确定绘制的位置</span></span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> top = child.getBottom() + params.bottomMargin;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> bottom = top + mDrawable.getIntrinsicHeight();</span><br><span class="line">            mDrawable.setBounds(left, top, right, bottom);</span><br><span class="line">            mDrawable.draw(c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getItemOffsets</span><span class="params">(Rect outRect, <span class="keyword">int</span> position, RecyclerView parent)</span> </span>&#123;</span><br><span class="line">        outRect.set(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, mDrawable.getIntrinsicWidth());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>使用一个shape代替分隔线<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">shape</span> </span><br><span class="line">	<span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:shape</span>=<span class="string">"rectangle"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"#000"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">"2dp"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>参考文章：<a href="http://www.jianshu.com/p/7fdfea845937" target="_blank" rel="external">RecyclerView的使用与提升</a><br><a href="http://www.bkjia.com/Androidjc/988765.html" target="_blank" rel="external">Android开发–RecyclerView使用，看AndroidL新特性，android5.0新特性</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/12/RecycleView滑动隐藏toolbar/" itemprop="url">
-                  RecycleView滑动隐藏toolbar
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-04-12T11:16:57+08:00" content="2016-04-12">
-              2016-04-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/12/RecycleView滑动隐藏toolbar/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/12/RecycleView滑动隐藏toolbar/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><hr>
-<p>当我们想要把所有的item的内容全部展现给用户的时候，为了能让用户能尽可能看到最大的内容，我们会想把toolbar隐藏不过我们又不想放弃toolbar的功能，另外我们不仅需要让用户看到最大的内容区域，还要和用户进行交互，就有了向下滑动list的时候隐藏toolbar，向上滑动的时候显示toolbar。</p>
-<h2 id="代码区"><a href="#代码区" class="headerlink" title="代码区"></a>代码区</h2><p>首先创建一个框架布局<framelayout>,先来介绍一下<framelayout>。<br>FrameLayout是最简单的一个布局对象。它被定制为你屏幕上的一个空白备用区域，之后你可以在其中填充一个单一对象。所有的子元素将会固定在屏幕的左上角；你不能为FrameLayout中的一个子元素指定一个位置。后一个子元素将会按照顺序在前一个子元素之上进行覆盖填充，把它们部份或全部挡住（除非后一个子元素是透明的）<br>在官方文章中翻译近似是这样的，设计FrameLayout是为了显示单一项widget。通常，不建议使用FrameLayout显示多项内容；因为它们的布局很难调节。不用layout_gravity属性的话，多项内容会重叠；使用layout_gravity的话，能设置不同的位置。</framelayout></framelayout></p>
-<p>xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">FrameLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.v7.widget.RecyclerView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/recyclerView"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"?attr/colorPrimary"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageButton</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"56dp"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"56dp"</span></span><br><span class="line">        <span class="attr">android:layout_gravity</span>=<span class="string">"bottom|right"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/fabButton"</span></span><br><span class="line">        <span class="attr">android:layout_marginBottom</span>=<span class="string">"16dp"</span></span><br><span class="line">        <span class="attr">android:layout_marginRight</span>=<span class="string">"16dp"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"@drawable/fab_bcg"</span></span><br><span class="line">        <span class="attr">android:src</span>=<span class="string">"@mipmap/ic_favorite_outline_white_24dp"</span></span><br><span class="line">        <span class="attr">android:contentDescription</span>=<span class="string">"@string/fab_description"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>ImageButton的background文件，关于layer-list的作用我在<a href="">上一篇博文</a>中也讲过了。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"0dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/color_shadow"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"2dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/color_primary_red"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>然后就是逻辑代码了，先是Adapter，下面是RecyclerAdapter.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecyclerAdapter</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">Adapter</span>&lt;<span class="title">RecyclerView</span>.<span class="title">ViewHolder</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TYPE_HEADER = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> TYPE_ITEM = <span class="number">1</span>;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.itemTextView)</span><br><span class="line">    TextView itemTextView;</span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; mItemList;</span><br><span class="line">    RecyclerItemViewHolder itemholder;</span><br><span class="line">    RecyclerHeaderViewHolder headholder;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RecyclerAdapter</span><span class="params">(List&lt;String&gt; mItemList)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mItemList = mItemList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> RecyclerView.<span class="function">ViewHolder <span class="title">onCreateViewHolder</span><span class="params">(ViewGroup parent, <span class="keyword">int</span> viewType)</span> </span>&#123;</span><br><span class="line">        Context context = parent.getContext();</span><br><span class="line">        <span class="keyword">if</span> (viewType == TYPE_ITEM)&#123;</span><br><span class="line">            <span class="keyword">final</span> View view = LayoutInflater.from(context).inflate(R.layout.recycler_item, parent, <span class="keyword">false</span>);</span><br><span class="line">            itemholder = <span class="keyword">new</span> RecyclerItemViewHolder(view,itemTextView );</span><br><span class="line">            <span class="keyword">return</span> RecyclerItemViewHolder.newInstance(view);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (viewType == TYPE_HEADER)&#123;</span><br><span class="line">            <span class="keyword">final</span> View view = LayoutInflater.from(context).inflate(R.layout.recycle_header,parent,<span class="keyword">false</span>);</span><br><span class="line">            headholder = <span class="keyword">new</span> RecyclerHeaderViewHolder(view);</span><br><span class="line">            <span class="keyword">return</span> headholder;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"There is no type that matches the type "</span> + viewType + <span class="string">" + make sure your using types correctly"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(RecyclerView.ViewHolder holder, <span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!isPositionHeader(position))&#123;</span><br><span class="line">            RecyclerItemViewHolder holder1 = (RecyclerItemViewHolder) holder;</span><br><span class="line">            String itemText = mItemList.get(position - <span class="number">1</span>); <span class="comment">// header</span></span><br><span class="line">            holder1.mItemTextView.setText(itemText);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getBasicItemCount</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mItemList == <span class="keyword">null</span> ?<span class="number">0</span> :mItemList.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isPositionHeader</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> position == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemViewType</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isPositionHeader(position))&#123;</span><br><span class="line">            <span class="keyword">return</span> TYPE_HEADER;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> TYPE_ITEM;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getItemCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getBasicItemCount() + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">     * ViewHolder类</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">RecyclerItemViewHolder</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ViewHolder</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> TextView mItemTextView;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">RecyclerItemViewHolder</span><span class="params">(<span class="keyword">final</span> View itemView, TextView itemTextView)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(itemView);</span><br><span class="line">            <span class="keyword">this</span>.mItemTextView = itemTextView;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RecyclerItemViewHolder <span class="title">newInstance</span><span class="params">(View parent)</span> </span>&#123;</span><br><span class="line">            TextView itemTextView = (TextView) parent.findViewById(R.id.itemTextView);</span><br><span class="line">            <span class="keyword">return</span>  <span class="keyword">new</span> RecyclerItemViewHolder(parent,itemTextView);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecyclerHeaderViewHolder</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">ViewHolder</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">RecyclerHeaderViewHolder</span><span class="params">(View itemView)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(itemView);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>一步一步的分析上面的方法实现：<br>首先跳到 <code>getItemViewType</code>方法里面，这里用判断，取出不同情况下的ViewType，然后就可以在onCreateViewHolder中使用这些viewType了<br> <code>onCreateViewHolder</code>中判断如果是TYPE_ITEM的时候就绑定R.layout.recycler_item，返回一个viewHolder，如果是TYPE_HEADER，则返回的viewHandler是recycle_header.xml。<br> <code>onBindViewHolder</code>中判断如果不是第一个的话，就适配数据进去，这里的position-1也比较好理解，因为这里的position是按照第一个item来算position的，另外下面我会上recycle_header.xml的代码，可以发现recycle_header.xml其实就是一个高度和actionbar一样的空白的view，用来占位置的。因为占了一个位置，所以在position上就减去它。<br> <code>getItemCount</code>也是和上面的一样理解，getItemCount返回的是item的数目，这里除了适配的mItemList的size之外还有占了头部的view，所以还要加一<br>普及一下recycleVie的知识，在上面的代码中，onCreateViewHolder是在初始化viewholder组件的时候调用的，在onCreateViewHolder之后就是把初始化好的数据绑定在item上</p>
-<p>剩下的就是ViewHolder类的设计艺术了，我觉得称为艺术不算很过分。因为谷歌这样将ViewHolder可以更方便的存取Viewholder，事实证明RecycleView比listView的holder更具效率。<br>初始化的时候就把view的组件声明，然后在创建能返回实例对象的newInstance的时候绑定组件，所以一定要在初始化的时候加入参数View。另外还可以实现在viewholder里面的创建一个setText的方法，不过在这个demo里面不写也可以，如果viewholder需要重复利用的话就建议写在Viewholder了里面，这样就提高代码复用性，规范性。</p>
-<p>HidingScrollListener.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">HidingScrollListener</span> <span class="keyword">extends</span> <span class="title">RecyclerView</span>.<span class="title">OnScrollListener</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HIDE_THRESHOLD = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mScrolledDistance = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> mControlsVisible = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onScrolled</span><span class="params">(RecyclerView recyclerView, <span class="keyword">int</span> dx, <span class="keyword">int</span> dy)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onScrolled(recyclerView, dx, dy);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> firstVisableItem = ((LinearLayoutManager)recyclerView.getLayoutManager()).findFirstVisibleItemPosition();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (firstVisableItem == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (!mControlsVisible)&#123;</span><br><span class="line">                onShow();</span><br><span class="line">                mControlsVisible = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (mScrolledDistance &gt; HIDE_THRESHOLD &amp;&amp; mControlsVisible)&#123;</span><br><span class="line">                onHide();</span><br><span class="line">                mControlsVisible = <span class="keyword">false</span>;</span><br><span class="line">                mScrolledDistance = <span class="number">0</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (mScrolledDistance &lt; -HIDE_THRESHOLD &amp;&amp; !mControlsVisible)&#123;</span><br><span class="line">                onShow();</span><br><span class="line">                mControlsVisible = <span class="keyword">true</span>;</span><br><span class="line">                mScrolledDistance = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ((mControlsVisible &amp;&amp; dy&gt;<span class="number">0</span>) || (!mControlsVisible &amp;&amp; dy &lt; <span class="number">0</span>))&#123;</span><br><span class="line">            mScrolledDistance +=dy;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">onHide</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">onShow</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>定义了在滚动的时候的监听，通过getLayoutManager获取第一个可见的item的position。得到之后剩下的就好办了，只需知道手势操作就可以动态隐藏和显示toolbar了<br>mControlsVisible = true负责向下面的if传递判断是否显示toolbar和fab。</p>
-<p>同样的思路也可以创建一个RecycleView每一个Item的onItemClickLisener()方法，继承onClickLisener(),然后再Onclick中编写如果点中的时候会调用那个方法，另外写一个interface就可以实现对每一个item的监听了</p>
-<p>recycle_item.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.CardView</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br><span class="line">    <span class="attr">android:layout_gravity</span>=<span class="string">"center"</span></span><br><span class="line">    <span class="attr">android:layout_margin</span>=<span class="string">"8dp"</span></span><br><span class="line">    <span class="attr">app:cardCornerRadius</span>=<span class="string">"4dp"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/itemTextView"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"?attr/listPreferredItemHeight"</span></span><br><span class="line">        <span class="attr">android:gravity</span>=<span class="string">"center_vertical"</span></span><br><span class="line">        <span class="attr">android:padding</span>=<span class="string">"8dp"</span></span><br><span class="line">        <span class="attr">style</span>=<span class="string">"@style/TextAppearance.AppCompat.Body2"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.v7.widget.CardView</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>recycle_header.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">View</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line"><span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>MainActivity.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PartOneActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bind</span>(R.id.recyclerView)</span><br><span class="line">    RecyclerView recyclerView;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.toolbar)</span><br><span class="line">    Toolbar toolbar;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.fabButton)</span><br><span class="line">    ImageButton fabButton;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        setTheme(R.style.AppThemeRed);</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_part_one);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        setSupportActionBar(toolbar);</span><br><span class="line">        setTitle(getString(R.string.app_name));</span><br><span class="line">        <span class="comment">//这里我要区分R.color和android.R.color的区别，其中的R.color检索的是项目目录下的color文件的数值，而android.R.color则是检索sdk里面的color</span></span><br><span class="line">        toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));</span><br><span class="line"></span><br><span class="line">        recyclerView.setLayoutManager(<span class="keyword">new</span> LinearLayoutManager(<span class="keyword">this</span>));</span><br><span class="line">        RecyclerAdapter recyclerAdapter = <span class="keyword">new</span> RecyclerAdapter(createItemList());</span><br><span class="line">        recyclerView.setAdapter(recyclerAdapter);</span><br><span class="line">        recyclerView.addOnScrollListener(<span class="keyword">new</span> HidingScrollListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onHide</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                hideViews();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onShow</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                showViews();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">showViews</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        toolbar.animate().translationY(<span class="number">0</span>).setInterpolator(<span class="keyword">new</span> DecelerateInterpolator(<span class="number">2</span>));</span><br><span class="line">        fabButton.animate().translationY(<span class="number">0</span>).setInterpolator(<span class="keyword">new</span> DecelerateInterpolator(<span class="number">2</span>)).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">hideViews</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        toolbar.animate().translationY(-toolbar.getHeight()).setInterpolator(<span class="keyword">new</span> AccelerateInterpolator(<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">        FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) fabButton.getLayoutParams();</span><br><span class="line">        <span class="keyword">int</span> fabBottomMargin = lp.bottomMargin;</span><br><span class="line">        fabButton.animate().translationY(fabButton.getHeight()+fabBottomMargin).setInterpolator(<span class="keyword">new</span> AccelerateInterpolator(<span class="number">2</span>)).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">createItemList</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;String&gt; itemList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">20</span>;i++)&#123;</span><br><span class="line">            itemList.add(<span class="string">"item"</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> itemList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在onCreate最前面的setTheme(),可以在value.styles.xml中自定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppThemeRed"</span> <span class="attr">parent</span>=<span class="string">"AppTheme"</span>&gt;</span><span class="xml"></span><br><span class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/color_primary_red<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/color_primary_red_dark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>最后献上效果图<img src="http://mzgreen.github.io/images/1/demo_gif.gif" alt="How to hide/show Toolbar when list is scroling"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1497,7 +1526,7 @@ a在带参构造函数中的值：10
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">46</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

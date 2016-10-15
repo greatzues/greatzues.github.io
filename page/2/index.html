@@ -219,6 +219,280 @@ var _hmt = _hmt || [];
             
               
                 
+                <a class="post-title-link" href="/2016/08/09/react-native学习笔记3/" itemprop="url">
+                  react-native学习笔记3
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-09T10:18:32+08:00" content="2016-08-09">
+              2016-08-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/09/react-native学习笔记3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/09/react-native学习笔记3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这一次的将要学习文本输入的处理，scrollView，listView以及网络和导航器的操作使用。</p>
+<h2 id="处理文本输入"><a href="#处理文本输入" class="headerlink" title="处理文本输入"></a>处理文本输入</h2><hr>
+<p>在Reactnative中，<code>TextInput</code>是一个允许用户输入文本的基础组件。它有一个<code>onChangeText</code>的属性，这个属性接受一个函数，而这个函数会在文本变化的时候被调用。另外还有一个<code>onSubmitEditing</code>的属性，这个属性会在文本被提交之后调用。</p>
+<p>ok，开始动手<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry, Text, TextInput, View &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">class PizzaTranslator extends Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;text: &apos;&apos;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;&#123;padding: 10&#125;&#125;&gt;</span><br><span class="line">        &lt;TextInput</span><br><span class="line">          style=&#123;&#123;height: 40&#125;&#125;</span><br><span class="line">          placeholder=&quot;Type here to translate!&quot;</span><br><span class="line">          onChangeText=&#123;(text) =&gt; this.setState(&#123;text&#125;)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;Text style=&#123;&#123;padding: 10, fontSize: 42&#125;&#125;&gt;</span><br><span class="line">          &#123;this.state.text.split(&apos; &apos;).map((word) =&gt; word &amp;&amp; &apos;🍕&apos;).join(&apos; &apos;)&#125;</span><br><span class="line">        &lt;/Text&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 注册应用(registerComponent)后才能正确渲染</span><br><span class="line">// 注意：只把应用作为一个整体注册一次，而不是每个组件/模块都注册</span><br><span class="line">AppRegistry.registerComponent(&apos;AwesomeProject&apos;, () =&gt; PizzaTranslator);</span><br></pre></td></tr></table></figure></p>
+<p>首先肯定要先注意代码里面的两行注释，然后就开始从class哪里开始一步一步分析下来。在构造函数中，声明了组件的state的成员变量text为空字符。</p>
+<p>接着text接受构造函数传来的一个<code>text</code>参数，我们把<code>text</code>传入到onChangeText中的函数去，调用setState方法，这样它就会随着时间而变化。</p>
+<p>然后再下一段<code>&lt;Text&gt;</code>代码则是接收并显示这个组件的state里面的text值，加入匹配空格键的时候，将会触发map里面对应的函数，传入一个word文本，并且返回一个word和对应的蛋糕<code>🍕</code>，最后追加到Text里面。</p>
+<p>为了更加清晰的理解，我做过两个修改，首先是把构造函数的text变量改变名字，然后其他的也对应改掉，程序正常运行，所以我一开始的分析是真确的。接着我修改了<code>&lt;Text&gt;</code>的子元素里面的split(‘/‘)和join(‘<em>‘),发现只要输入<code>/</code>符号对应的transtor文本就会出现`</em><code>符号，如果在这中间输入非</code>/`值的话，就会出现蛋糕，明白现象之后本质很快就能出现了。</p>
+<p>所以我最后理解的<code>{this.state.text.split(&#39; &#39;).map((word) =&gt; word &amp;&amp; &#39;🍕&#39;).join(&#39; &#39;)}</code>作用是：匹配text中含有split参数的符号，假如匹配成功，触发map函数，接收匹配符号<code>/</code>前的数字，函数返回一个布朗值：如果是<code>word &amp;&amp; &#39;🍕&#39;</code>值的话就执行后面的join方法。哈哈，不知道分析是不是正确的，不管了，后面肯定还会遇到这个的，到时有更深刻的解释再回来补。</p>
+<p>如果想要在用户输入的时候进行验证，可以参考<a href="http://reactjs.cn/react/docs/forms.html" target="_blank" rel="external">React的表单组件中的受限组件</a>，里面有详细的示例。另外以后需要更多关于TextInput的特点就可以关注<a href="http://reactnative.cn/docs/0.30/textinput.html" target="_blank" rel="external">TextInput的文档</a>。</p>
+<h2 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h2><hr>
+<p>ScrollView是最经常使用的滚动容器了，它能容纳多个组件和视图。ScrollView中的子元素不一定需要同样的，这将允许设置垂直和水平滚动。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class IScrolledDownAndWhatHappenedNextShockedMe extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;ScrollView&gt;</span><br><span class="line">        &lt;Text style = &#123;&#123;fontSize: 96&#125;&#125;&gt;ScrollView me plz&lt;/Text&gt;</span><br><span class="line">        &lt;Image source=&#123;require(&apos;./img/header_logo.png&apos;)&#125; /&gt;</span><br><span class="line">      &lt;/ScrollView&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="LIstView"><a href="#LIstView" class="headerlink" title="LIstView"></a>LIstView</h2><hr>
+<p><code>LIstView</code>能很好的展示一系列数据，这些数据可以是随时间不断变化的，但是，仅仅是展示数据。不像scrollView，listView只能显示当前屏幕的数据，也就是说，不能滚动显示所有数据。</p>
+<p>ListView组件需要两个主要的属性值：<code>dataSource</code>和<code>renderRow</code>。<code>dataSource</code>是列表信息展示的资源，而<code>renderRow</code>则是每次取一条资源然后返回一个格式化的组件去渲染，也就是我们安卓里面说的适配。</p>
+<p>就像下面的代码创造了一个简单的LIstView，在构造函数中初始化之后的数据dataSource用于填满ListView的数据，每一个Item在dataSource都会被渲染成为一个<code>&lt;Text&gt;</code>组件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry, ListView, Text, View &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">class ListViewBasics extends Component &#123;</span><br><span class="line">  // Initialize the hardcoded data</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    const ds = new ListView.DataSource(&#123;rowHasChanged: (r1, r2) =&gt; r1 !== r2&#125;);</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      dataSource: ds.cloneWithRows([</span><br><span class="line">        &apos;John&apos;, &apos;Joel&apos;, &apos;James&apos;, &apos;Jimmy&apos;, &apos;Jackson&apos;, &apos;Jillian&apos;, &apos;Julie&apos;, &apos;Devin&apos;</span><br><span class="line">      ])</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;View style=&#123;&#123;paddingTop: 22&#125;&#125;&gt;</span><br><span class="line">        &lt;ListView</span><br><span class="line">          dataSource=&#123;this.state.dataSource&#125;</span><br><span class="line">          renderRow=&#123;(rowData) =&gt; &lt;Text&gt;&#123;rowData&#125;&lt;/Text&gt;&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;/View&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// App registration and rendering</span><br><span class="line">AppRegistry.registerComponent(&apos;ListViewBasics&apos;, () =&gt; ListViewBasics);</span><br></pre></td></tr></table></figure></p>
+<p>不过我还是不明白构造函数内的ds变量的意思，可是我知道接下来一句的意思，就是在state中声明一个成员变量dattaSource，对应存储一大段数据，然后在后面的<code>&lt;ListView&gt;</code>中使用，我认为renderRow的参数rowData应该是第一条dataSource传进去的每一个Item。</p>
+<h2 id="Networking"><a href="#Networking" class="headerlink" title="Networking"></a>Networking</h2><hr>
+<h3 id="使用Fetch"><a href="#使用Fetch" class="headerlink" title="使用Fetch"></a>使用Fetch</h3><p>rn提供了<code>Fetch</code>来满足网络请求的需要，<code>Fetch</code>和XMLHttpRequest以及其他网络请求API相似，如果想要知道更多关于使用Fetch可以到<a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" rel="external">MDN上的Using Fetch</a>去获取更多的用法。</p>
+<h3 id="request请求"><a href="#request请求" class="headerlink" title="request请求"></a>request请求</h3><p>如果仅仅需要获得一个url上的内容，我们可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;https://mywebsite.com/mydata.json&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>Fetch还有一个可选择的第二个参数，可以用来自定义http请求，我可以用这个来构造额外的请求头部信息，或者是做一个POST请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;https://mywebsite.com/endpoint/&apos;, &#123;</span><br><span class="line">  method: &apos;POST&apos;,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    &apos;Accept&apos;: &apos;application/json&apos;,</span><br><span class="line">    &apos;Content-Type&apos;: &apos;application/json&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  body: JSON.stringify(&#123;</span><br><span class="line">    firstParam: &apos;yourValue&apos;,</span><br><span class="line">    secondParam: &apos;yourOtherValue&apos;,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>下面是我写的一个简单获取api里面的一个头像的demo<br>FetchDemo.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Image &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">export default class FetchDemo extends Component &#123;</span><br><span class="line">	constructor(props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			img : null,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	getImage = () =&gt; &#123;</span><br><span class="line">    return fetch(&apos;https://api.github.com/users&apos;)</span><br><span class="line">      .then((response) =&gt; response.json())</span><br><span class="line">      .then((responseJson) =&gt; &#123;</span><br><span class="line">        return this.setState(&#123;</span><br><span class="line">			img : responseJson[1].avatar_url,</span><br><span class="line">		&#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch((error) =&gt; &#123;</span><br><span class="line">        console.error(error);</span><br><span class="line">      &#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	componentDidMount()&#123;</span><br><span class="line">		this.getImage();</span><br><span class="line">	&#125;</span><br><span class="line">	//下面的Image如果不添加style的高度以及宽度图片不会显示</span><br><span class="line">	render()&#123;</span><br><span class="line">		return (</span><br><span class="line">			&lt;View&gt;</span><br><span class="line">				&lt;Image source=&#123;&#123;uri:this.state.img&#125;&#125; style = &#123;&#123;width:100,height:100&#125;&#125;/&gt; </span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面核心的代码是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;https://api.github.com/users&apos;)</span><br><span class="line">      .then((response) =&gt; response.json())</span><br><span class="line">      .then((responseJson) =&gt; &#123;</span><br><span class="line">        return this.setState(&#123;</span><br><span class="line">			img : responseJson[1].avatar_url,</span><br><span class="line">		&#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch((error) =&gt; &#123;</span><br><span class="line">        console.error(error);</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>首先传入url到<code>fetch</code>方法，它返回一个Promise，当Promise通过，它会返回一个<code>response</code>对象，通过该对象的<code>json()</code>方法就可以将结果作为JSON对象返回。<code>response.json()</code>同样返回一个Promise对象，因此可以继续调用then方法,然后就可以对json进行操作了。</p>
+<p>然后可以在<a href="https://developer.mozilla.org/en-US/docs/Web/API/Request" target="_blank" rel="external">Fetch Request文档</a>上查看更多关于fetch的属性。</p>
+<h3 id="处理response"><a href="#处理response" class="headerlink" title="处理response"></a>处理response</h3><p>有了请求之后当然会有响应，网络请求是异步操作的，因此fetch方法会返回一个Promise使得可以简单的编写异步运行的代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">getMoviesFromApiAsync() &#123;</span><br><span class="line">	return fetch(&apos;http://facebook.github.io/react-native/movies.json&apos;)</span><br><span class="line">	.then((response) =&gt; response.json())</span><br><span class="line">	.then((responseJson) =&gt; &#123;</span><br><span class="line">		return responseJson.movies;</span><br><span class="line">	&#125;)</span><br><span class="line">	.catch((error) =&gt; &#123;</span><br><span class="line">		console.error(error);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>官网还介绍了ES2017的<code>async/await</code>来操作异步网络任务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">async getMoviesFromApi() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      let response = await fetch(&apos;http://facebook.github.io/react-native/movies.json&apos;);</span><br><span class="line">      let responseJson = await response.json();</span><br><span class="line">      return responseJson.movies;</span><br><span class="line">    &#125; catch(error) &#123;</span><br><span class="line">      console.error(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：一定要记得要catch来自fetch抛出的异常，不然程序突然死掉就不好了。</p>
+<h3 id="使用其他的网络请求库"><a href="#使用其他的网络请求库" class="headerlink" title="使用其他的网络请求库"></a>使用其他的网络请求库</h3><p>除了<a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="external">XMLHttpRequest API</a>，因此使用第三方请求库像<code>frisbee</code>和<code>axios</code>也是使用XMLHttpRequest作为底层的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var request = new XMLHttpRequest();</span><br><span class="line">request.onreadystatechange = (e) =&gt; &#123;</span><br><span class="line">	if (request.readyState !== 4) &#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	if(request.states === 200) &#123;</span><br><span class="line">		console.log(&apos;success&apos;,request.responseText);</span><br><span class="line">	&#125;else &#123;</span><br><span class="line">		console.warn(&apos;error&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">request.open(&apos;GET&apos;, &apos;https://mywebsite.com/endpoint/&apos;);</span><br><span class="line">request.send();</span><br></pre></td></tr></table></figure></p>
+<p>XMLHttpRequest的安全模型和web上的不一样，因为native app中的XMLHttpRequest 没有COPS这个概念。</p>
+<h3 id="支持WebSocket"><a href="#支持WebSocket" class="headerlink" title="支持WebSocket"></a>支持WebSocket</h3><p>这个协议允许在单个tcp连接上提供全双工的通信信道（我完全不知道是什么意思）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var ws  = new WebSocket(&apos;ws://host.com/path&apos;);</span><br><span class="line"></span><br><span class="line">ws.onopen = () =&gt; &#123;</span><br><span class="line">	//connection opened</span><br><span class="line">	</span><br><span class="line">	ws.wend(&apos;something&apos;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ws.onmessage = (e) =&gt; &#123;</span><br><span class="line">	//a message was received</span><br><span class="line">	console.log(e.data);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ws.onerror = (e) =&gt; &#123;</span><br><span class="line">	//an error occurred</span><br><span class="line">	console.log(e.messge);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ws.onclose = (e) =&gt; &#123;</span><br><span class="line">	//connection closed</span><br><span class="line">	console.log(e.code, e.reason);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>哈哈，学习到这里感觉好煎熬，一开始的基础不牢固，就算代码能看懂一些也写不出来。我觉得应该花一晚上去复习一下知识点。 </p>
+<h2 id="使用Navigator"><a href="#使用Navigator" class="headerlink" title="使用Navigator"></a>使用Navigator</h2><hr>
+<p>通过渲染一个<code>Navigator</code>,然后用<code>Navigator</code>通过自定义的函数渲染场景<code>renderScene</code>属性.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">	return (</span><br><span class="line">		&lt;Navigator</span><br><span class="line">			initialRoute = &#123;&#123;title: &apos;My Initial Scene&apos;, index: 0 &#125;&#125;</span><br><span class="line">			renderScene = &#123;(route, navigator) =&gt; &#123;</span><br><span class="line">			&lt;MyScene title = &#123;route.title&#125; /&gt;</span><br><span class="line">		&#125;&#125;</span><br><span class="line">		/&gt;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>问题来了，这时候有点疑惑这里的路由函数renderScene的实现了。根据我查阅资料得知，<code>renderScene</code>函数是Navigator组件的必填函数，参数有route和当前的navigator对象，返回值是一个jsx（也就是<code>&lt;组件名字 /&gt;</code>）。</p>
+<p>好了，接下来就是分析参数，类似传统的路由，根据传进去的route返回一个作为新页面的jsx，也就是说所有的路由函数都是在这个函数里面实现的。route是一个自定义的对象，是<code>navigator.push</code>方法中传入的对象。</p>
+<p>这个函数是路由的统一处理器，所有的页面跳转请求都会通过此函数的计算来获得具体的jsx页面，由于路由处理是统一的，因此要求传入的route对象要满足统一的标准。因此在设计头对象遵循：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	name: &apos;Page2&apos;,//名字用于做上下文判断和日志输出</span><br><span class="line">	page: &lt;Page2 /&gt;, //jsx形式的page，作为新页面的jsx</span><br><span class="line">	//page: () =&gt; &lt;Page2 /&gt;, //当然函数形式的page也是可以的，要求必须返回jsx，作为新页面的jsx</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>写图片轮播的时候遇到一个小坑，导入react-native-viewpager库的时候出现了问题，一开始直接用命令提示符输入<code>npm i -d react-native-viewpager --save</code>提示error找不到package.json,于是转到项目文件夹下再次输入，提示权限不足，要求获得管理员权限。最后使用管理员权限打开命令提示符，尽管也有ERR提示bufferutil@1.2.1~install: Failed to exec install script，但是打开node_modules可以发现已经有react-native-viewpager这个库了。</p>
+<p>在写图片轮播的时候又遇到一样的坑了：Adjacent JSX elements must be wrapped in an enclosing tag，解决办法就是因为缺少了一个父View，添加<code>&lt;View&gt;&lt;/View&gt;</code>即可。</p>
+<p>先贴上图片轮播的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, Image, StyleSheet, Dimensions &#125; from &apos;react-native&apos;;</span><br><span class="line">import ViewPager from &apos;react-native-viewpager&apos;;</span><br><span class="line">//创建图片资源文件夹数组变量</span><br><span class="line">const BANNER_IMG = [</span><br><span class="line">	require(&apos;./img/banner/1.jpg&apos;),</span><br><span class="line">	require(&apos;./img/banner/2.jpg&apos;),</span><br><span class="line">	require(&apos;./img/banner/3.jpg&apos;),</span><br><span class="line">	require(&apos;./img/banner/4.jpg&apos;)</span><br><span class="line">];</span><br><span class="line">//获取设备宽度</span><br><span class="line">const deviceWidth = Dimensions.get(&apos;window&apos;).width;</span><br><span class="line"></span><br><span class="line">export default class Banner extends Component &#123;</span><br><span class="line">	constructor(props) &#123;</span><br><span class="line">		super(props);</span><br><span class="line">		//构建DataSource对象</span><br><span class="line">		var dataSource = new ViewPager.DataSource(&#123;</span><br><span class="line">			pageHasChange: (p1, p2) =&gt; p1!==p2,</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		//实际的DataSource存放在state中</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			dataSource: dataSource.cloneWithPages(BANNER_IMG)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	renderPage(data, pageID)&#123;</span><br><span class="line">		return (</span><br><span class="line">			&lt;Image </span><br><span class="line">				source = &#123;data&#125;</span><br><span class="line">				style = &#123;styles.page&#125;</span><br><span class="line">			/&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render() &#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;ViewPager </span><br><span class="line">			style = &#123;&#123;height: 130&#125;&#125;</span><br><span class="line">			dataSource = &#123;this.state.dataSource&#125;</span><br><span class="line">			renderPage = &#123;this.renderPage&#125;</span><br><span class="line">			isLoop =&#123;true&#125;</span><br><span class="line">			autoPlay = &#123;true&#125;</span><br><span class="line">		/&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	page: &#123;</span><br><span class="line">		width: deviceWidth,	</span><br><span class="line">		height: 130,</span><br><span class="line">		resizeMode: &apos;stretch&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/06/ES入门5/" itemprop="url">
+                  ES入门5
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-06T16:22:30+08:00" content="2016-08-06">
+              2016-08-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/06/ES入门5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/06/ES入门5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>为了加快进度，我要忽略很多内容，现在直接跳到函数这一部分来学习了，因为在初学reactnative的时候就遇到了箭头函数。</p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><hr>
+<p>在ES6中允许使用箭头(=&gt;)来定义函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = v =&gt; v;</span><br><span class="line"></span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> v;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>小结一下：对比可以看出一点端倪，首先是分析结构：<strong>var 变量名字 = 参数列表 =&gt; 返回的数值;</strong>。也就是“=&gt;”可以替代function这个词语使用并且前后省略了return这个关键字，方便了许多。</p>
+<p>另外如果箭头函数<strong>不需要参数</strong>或者是需要<strong>多个参数</strong>的时候，就可以使用一个圆括号代表参数部分。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = () =&gt; <span class="number">5</span>;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="number">5</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = (num1, num2) =&gt; num1 + num2;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>当然如果箭头函数的代码块多于一条语句，就需要用大括号括起来，并且使用return语句返回。由此我可以联想到假如在return之前还需要做一些事情的话，有了这个功能就很好办了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = (num1, num2) =&gt; &#123;<span class="keyword">return</span> num1 + num2;&#125;</span><br><span class="line"><span class="comment">//记住最后是有分号结尾的</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/06/ES入门4/" itemprop="url">
                   ES入门4
                 </a>
@@ -1540,293 +1814,6 @@ undefined
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/25/学习javascript有感/" itemprop="url">
-                  学习javascript有感
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-07-25T16:14:04+08:00" content="2016-07-25">
-              2016-07-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/25/学习javascript有感/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/25/学习javascript有感/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
-<p>基础的东西我就不想记在我的博客里面上了，大家也可以在w3c里面自己练习一下，我主要是为了记一下现在刚刚学习完javascript的思维方式，因为学好的东西一般情况下基础的东西会记得，但是总会得了新伤就忘记久痛，忘记以前学习的心得。</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><hr>
-<h3 id="javascript的try-catch语法"><a href="#javascript的try-catch语法" class="headerlink" title="javascript的try-catch语法"></a>javascript的try-catch语法</h3><p>在javasscript中，使用try-catch语句的用法：在try里面将可能出现抛出的错误做个判断，然后做出对应的throw信息，并会将这个信息传递给err这个变量，然后在catch(err)语句里面做相应的处理。</p>
-<h3 id="javascript的原始对象"><a href="#javascript的原始对象" class="headerlink" title="javascript的原始对象"></a>javascript的原始对象</h3><p>javascript是一门面向对象的语言，因此我可以将很多知识和我现有知道的java语言相对比。在面向对象中，最重要的是封装。直接看代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var worker = new Object();</span><br><span class="line">worker.name = "tom";</span><br><span class="line">worker.age = 10;</span><br><span class="line">worker.isWorking = false;</span><br><span class="line">worker.startWork = function()&#123;</span><br><span class="line">	if(this.isWorking) return;</span><br><span class="line">    this.isWorking = true;</span><br><span class="line">&#125;;</span><br><span class="line">worker["position"] = "worker";</span><br><span class="line"></span><br><span class="line">document.write("Worker的名字是 : " + worker["name"]);</span><br><span class="line">worker.startWork();</span><br><span class="line">document.write("<span class="tag">&lt;<span class="name">br</span>/&gt;</span>Worker的职位是 : " + worker.position);</span><br></pre></td></tr></table></figure></p>
-<p>上面这段代码输出的结果是：<br>    Worker的名字是 : tom<br>    Worker的职位是 : worker<br>再看一下另外一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> worker = &#123;</span><br><span class="line">        name : <span class="string">"John"</span>,</span><br><span class="line">        age : <span class="number">30</span>,</span><br><span class="line">        isWorking : <span class="literal">false</span>,</span><br><span class="line">        startWork : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="keyword">this</span>.isWorking)&#123;</span><br><span class="line">                <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure></p>
-<p>在上面的两段代码可以看出构建一个object和我们java是很不一样的，它们不需要再额外的声明一个变量来存储这个object的属性，另外和java一样的是也可以在实例里面添加字符，数字，布尔值甚至是一个方法的成员，这个特点在上面两段代码中都很明显的显示了出来。</p>
-<p>在第一段代码中能发现创建属性的两种方式分别是<strong>实例名.成员名 = 内容</strong>,当然可以用<strong>实例名.[“成员名”] = 内容</strong>。而这里思想我觉得可以和java的map联系起来，就是通过键值对来存储属性，使用的时候javascript通过键解释对应的值。</p>
-<p>不过认真看一下代码就知道，上面的单纯创建实例很呆板，仅仅是创建好一个可以吃的月饼，但是我们创建实例是为了方便我们后面的开发，所以这种方法肯定不提倡，我们应该创建以一个做月饼的模板，当相同的面团来的时候就可以直接用模板做好一个月饼，省去很多开发成本。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newHuman</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">    	name : name,</span><br><span class="line">        age : age,</span><br><span class="line">        sayHello : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        	<span class="built_in">document</span>.write(<span class="string">"Hello World! I'm "</span> + <span class="keyword">this</span>.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> h = newHuman(<span class="string">"jim"</span>,<span class="number">30</span>);</span><br><span class="line">h.sayHello(); <span class="comment">//输出结果是：Hello World! I'm jim</span></span><br></pre></td></tr></table></figure></p>
-<p>这段代码声明了三个属性，分别是name，age，sayHello方法，最后实例化这个方法，调用里面的sayHello方法，当然在再外部使用实例好的h.age也是可以得。至于为什么要直接return才可以创建成员我就不知道了，用一句老话说应该是：javascript就规定这样。我试过在return外卖加this.iswork = false;或者在实例好newHuman之后添加h.iswork = false。最后还是输出underfined。</p>
-<p>然后继续看下面一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">this</span>.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> worker(<span class="string">"tom"</span>, <span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(tom.startWork == jim.startWork);</span><br><span class="line"><span class="comment">//最终输出的结果是：false</span></span><br></pre></td></tr></table></figure></p>
-<p>对于我来说，上面这段代码消除了我原来在上面的代码的疑问，因为这里没有return，可是依然可以访问到实例后的成员属性，不过我在上面一段代码中其实是用试过这样改的，但是输出的结果一样。<br>但是我们从最终的输出结果来看，可以知道最终实例好的tom和jim其实值得内存是不一样的，这样意味着当我们需要创建很多实例的时候，内存的开销会非常大。于是我们看下一段代码进行改善：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> worker(<span class="string">"tom"</span>, <span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> </span><br><span class="line">				+ (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br></pre></td></tr></table></figure></p>
-<p>run上面的代码的时候输出的结果是tom和jim两个实例的startWork方法是否共用内存 : true。这下两个不同实例的startwork是指向相同的地址了，说明了不同的实例共用了该方法。</p>
-<p>在设计javascript的时候遵循下面两条规则<br>1，因为实例不同而不同的内容，用this关键字声明<br>2，无论实例怎样内容完全相同的成员，定义在prototype上</p>
-<p>而上面第二条所说的prototype其实就是原型，<strong>任何类型都会有属于自己的原型，并且原型上定义的成员，可以在每个实例中引用，并且是共用的</strong>，其实我不太明白这句话，不过初步理解肯定是定义的成员能共用同一块内存。</p>
-<p>然后对比相面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.startWith = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str.indexOf(str) == <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"abc"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(str.startWith(<span class="string">"ab"</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.prototype.endWith = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str.indexOf(str) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="string">"test"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(test.endWith(<span class="string">"a"</span>));</span><br></pre></td></tr></table></figure></p>
-<p>这里可以看出一些规律，首先是上面哪一段代码里面是worker.prototype.startWork通过使用new worker来创建一个实例，但是这里是String.prototype.endWith来创建的方法，自然就是使用String类来创建变量。当然把String改成Boolean的话，声明变量就只能用true和false了。</p>
-<p>看了一天，总算是明白了这里的意思：就是javascript的成员定义是写在定义域外面的，这和我们java的不一样，因此尽管已经是定义好的String或者Data类型，我们依然可以使用javascript这种特殊的语法结构进行扩展和修改。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1，其实，写了上述那么多例子，应该能看出点什么？作为一名写java写了两年的小程序员，在学习javascript过程中我一直在想象这两门语言的不同之处和相同之处，其实这里我们可以把父function看作java的类，也就是javascript所说的对象，然后父function所嵌入的function就是我们一直都知道的方法这个概念了，只不过奇特的是javascript在设计的时候会遵循一些规则，其中一条就是定义内容相同的成员，要定义在外部的prototype上，所以才会看到如上面的代码这样把方法写出来。<br>语法结构可以概括为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(父<span class="function"><span class="keyword">function</span>).<span class="title">prototype</span>.(<span class="params">成员方法名字</span>) = <span class="title">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//此处编写代码逻辑</span></span><br><span class="line">	<span class="comment">//在此方法内部使用成员变量需要加关键字this</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>2，另外一种定义父类的方法就是直接通过var关键字定义一个实例对象，通过键值对来存储，存储类型可以是：String，boolean，Integer，function等基本类型。<br>语法结构：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里需要注意一些语法问题，例如一些标点符号的使用</span></span><br><span class="line"><span class="keyword">var</span> objName = &#123;</span><br><span class="line">	key1 : <span class="string">"String"</span>,</span><br><span class="line">	key2 : <span class="number">3</span>,</span><br><span class="line">	key3 : <span class="literal">false</span>,</span><br><span class="line">	key4 : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>关于javascript的继承我们同样有两种方法来实现，首先是对原始对象使用<strong>$.entend</strong>关键字，继承之后可以拥有父类对象也可以重写父类型还可以自定义自己的成员。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个工人</span></span><br><span class="line">    <span class="keyword">var</span> worker = &#123;</span><br><span class="line">        name : <span class="string">""</span>,</span><br><span class="line">        age : <span class="number">0</span>,</span><br><span class="line">        isWorking : <span class="literal">false</span>,</span><br><span class="line">        startWork : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">//some code here</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//定义一个工头，工头本身也是工人，但他有一个额外的属性，用于记录他所管理的员工列表，并且可以指挥一名工人开工</span></span><br><span class="line">    <span class="keyword">var</span> leader = $.extend(worker,&#123;</span><br><span class="line">        workers : [],</span><br><span class="line">        callStart : <span class="function"><span class="keyword">function</span>(<span class="params">worker</span>)</span>&#123;</span><br><span class="line">            <span class="comment">//指挥一名工人开工</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//此时的leader除了拥有name，age，isWorking，startWork这四项属性之外，还拥有workers和callStart成员。</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="父类的构造函数调用"><a href="#父类的构造函数调用" class="headerlink" title="父类的构造函数调用"></a>父类的构造函数调用</h2><p>对于function创建的类型，其自身是无法进行$.extend的，这时候我就可以想到java的父类调用了，java是可以使用super关键字对于已经继承了父类进行构造函数的调用。而这里是使用：[function的名字].apply(this, arguments);其中这里的arguments是参数列表。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baseClass</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.a = a;</span><br><span class="line">    <span class="keyword">this</span>.b = b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aClass</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	baseClass.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> aClass(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">document</span>.write(test.a);</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line"><span class="built_in">document</span>.write(test.b);</span><br><span class="line"><span class="comment">//输出1 2</span></span><br></pre></td></tr></table></figure></p>
-<p>对于刚学javascript的我需要在开始的时候仔细整理一下我的思路：<br>首先是apply关键字，我可以把它看作是java中的super关键字，就好像是指针指向对应创建的构造函数的内存空间，相当于反射。<br>而通过baseClass.apply(this,arguments);相当于使用当前的实例和当前函数执行一次baseClass方法,这样看起来好像没有什么作用，仅仅是可以节省一些代码来调用另外一个函数。</p>
-<p>直接继承：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;;</span><br><span class="line">worker.prototype.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"hello ! &lt;br/&gt;"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;;</span><br><span class="line">leader.prototype = worker.prototype;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> l = <span class="keyword">new</span> leader(<span class="string">"jim"</span>);</span><br><span class="line">l.sayHello();</span><br><span class="line"><span class="comment">//输出 hello！</span></span><br></pre></td></tr></table></figure></p>
-<p>而直接继承成员会有缺陷：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.workers = [];</span><br><span class="line">&#125;</span><br><span class="line">leader.prototype = worker.prototype;</span><br><span class="line">leader.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//重写工人的开始工作方法，工头开工时，下属工人也要开工</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> workerLength = <span class="keyword">this</span>.workers.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; workerLength; i++)&#123;</span><br><span class="line">    	<span class="keyword">this</span>.workers[i].startWork();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> leader(<span class="string">"tom"</span>,<span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line">tom.workers.push(jim);</span><br><span class="line">tom.startWork();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> + (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br></pre></td></tr></table></figure></p>
-<p>上面的代码其实我没有读太明白，我知道因为在leader中他新创建了一个空的workers集合，而他的父类没有workers集合，但是在startWork里面调用的isWorking里面的，因此会由于在worker里面找不到workers集合，会出现异常。呃，我只能这样理解不知道正不正确。</p>
-<p>另外还有一点就是倒数第四句的<strong>tom.workers.push(jim);</strong>是什么意思，删掉之后也对程序没什么影响，我觉得学到后面才可以知道它的作用。另外经过证实我的理解可能是正确的是，我通过在worker中加入一句<strong>this.workers = [];</strong>然后程序就跑起来了，输出的结果是tom和jim两个实例的startWork方法是否共用内存 : true。</p>
-<p>我们再看下一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.workers = [];</span><br><span class="line">&#125;</span><br><span class="line">leader.prototype = <span class="keyword">new</span> worker();	<span class="comment">//重点</span></span><br><span class="line">leader.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//重写工人的开始工作方法，工头开工时，下属工人也要开工</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> workerLength = <span class="keyword">this</span>.workers.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; workerLength; i++)&#123;</span><br><span class="line">    	<span class="keyword">this</span>.workers[i].startWork();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> leader(<span class="string">"tom"</span>,<span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line">tom.workers.push(jim);</span><br><span class="line">tom.startWork();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> + (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br><span class="line"><span class="comment">//输出的结果是：tom和jim两个实例的startWork方法是否共用内存 : false</span></span><br></pre></td></tr></table></figure></p>
-<p>对比上面哪一段代码，这段代码增加了一段<strong>leader.prototype = new worker();</strong>，我们先看一下其他代码和上面的一样，另外worker方法里面也没有对应的workers集合，再运行一下代码，可以运行，没有抛出异常。<br>另外看一下输出的结果也不是true，通过现象看本质，可以看到现在leader和worker对应的内存空间肯定不一样了。我们来听一下比较官方的解释：通过leader.prototype = new worker();这段代码相当于创建了一个worker实例，并将这个实例中的各个成员复制给leader的原型，这样一来对子类的修改仅仅是影响worker的实例，而不会影响worker的原型。</p>
-<p>学完这些之后要好好分析一下上面的代码才可以，根据代码解释的顺序来分析；<br>首先是创建了一个worker父类方法，然后使用方法的规则创建一个内存共享的startWork成员方法，将新建的leader使用apply关键字继承worker，并且新创建一个workers集合。<br>然后使用leader.prototype = new worker();这段代码继承父类的副本实例对象，接下来就可以重写父类的startWork成员方法了，不过这里面写的一大段东西我都不太明白是什么意思<br>接下来就是实例化父类和子类了，事实证明，接下来的代码里面，tom.startWork();这段代码是没有用处的，感觉仅仅是个开关功能，不知道有没有执行到for循环，接着再下下面的代码就没什么可以分析的了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/20/nodeJS入门基础/" itemprop="url">
-                  nodeJS入门基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-07-20T11:27:57+08:00" content="2016-07-20">
-              2016-07-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">in</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/20/nodeJS入门基础/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/20/nodeJS入门基础/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="什么是NodeJS？"><a href="#什么是NodeJS？" class="headerlink" title="什么是NodeJS？"></a>什么是NodeJS？</h2><p>Node是一个服务器端的javascript解释器,它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。<br>Node解决并发连接最大数量的方法是：每个连接发射一个在 Node 引擎的进程中运行的事件，而不是为每个连接生成一个新的 OS 线程（并为其分配一些配套内存）。Node 声称它绝不会死锁，因为它根本不允许使用锁，它不会直接阻塞 I/O 调用。Node 还宣称，运行它的服务器能支持数万个并发连接。</p>
-<p>在学习react-native的时候发现有些后备知识不太健全，于是按照学习入门的要求就来看了一下nodejs的入门，但是这里我就不详细说学习步骤了，网上有一大堆步骤，我只说我遇到的一些问题和解决办法</p>
-<h2 id="有关函数传递"><a href="#有关函数传递" class="headerlink" title="有关函数传递"></a>有关函数传递</h2><hr>
-<p>写好一个以http服务器的server之后，我们如果想要模块化这个功能，在其他js文件里面调用这个server模块的时候就要在对应的server结尾处添加一段代码；</p>
-<h2 id="server-js"><a href="#server-js" class="headerlink" title="server.js"></a>server.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var http = require("http");</span><br><span class="line"></span><br><span class="line">function start() &#123;</span><br><span class="line">  function onRequest(request, response) &#123;</span><br><span class="line">    console.log("Request received.");</span><br><span class="line">    response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">    response.write("Hello World");</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  http.createServer(onRequest).listen(8888);</span><br><span class="line">  console.log("Server has started.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br></pre></td></tr></table></figure>
-<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var server = require("./server");</span><br><span class="line"></span><br><span class="line">server.start();</span><br></pre></td></tr></table></figure>
-<p>这里只需要关注一下server.js的function的名字和对应导出去的那个start方法。<br>我在测试的时候相应的改动了三处：</p>
-<blockquote>
-<p>修改function的start，改为starter，报错为在server.js中的ReferenceError: start is not defined，意思是引用错误，start方法未被定义。<br>修改了一下function的start为starter还有末尾的exports.start = start改为exports.start = starter,此时服务器正常启动<br>根据程序员的正常嗅觉可以知道这时候要改动的就是exports.starter = start为exports.starter = start，另外修改了index.js的server.start为server.starter,很明显这时候正常运行<br>通过自己的测试可以知道这里的引用对象是exports函数通过声明一个新的start变量来存储在server.js中的start方法，因此最后一句是赋值语句，呃，这个好像不说大家也知道。<br>最后在index中通过requie将函数传递进来，通过“函数.方法”方法来调用传递过来的方法。</p>
-</blockquote>
-<h2 id="入门第二天"><a href="#入门第二天" class="headerlink" title="入门第二天"></a>入门第二天</h2><hr>
-<p>我开始学到函数式编程，也就是我们把一个函数当作是参数来传递，在我写好的index文件中，将router对象传递技进去，服务器随后可以调用这个对象的route函数。也就是不把函数看作是一个名词，而是一个动词。</p>
-<p>这次新创建了一个requestHandlers的模块，并且对于每一个请求处理程序，添加一个占位用函数，并随后将函数导出：</p>
-<h2 id="requestHandlers-js"><a href="#requestHandlers-js" class="headerlink" title="requestHandlers.js"></a>requestHandlers.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function start() &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function upload() &#123;</span><br><span class="line">  console.log("Request handler 'upload' was called.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br><span class="line">exports.upload = upload;</span><br></pre></td></tr></table></figure>
-<h2 id="index-js-1"><a href="#index-js-1" class="headerlink" title="index.js"></a>index.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var server = require("./server");</span><br><span class="line">var router = require("./router");</span><br><span class="line">var requestHandlers = require("./requestHandlers");</span><br><span class="line"></span><br><span class="line">var handle = &#123;&#125;</span><br><span class="line">handle["/"] = requestHandlers.start;</span><br><span class="line">handle["/start"] = requestHandlers.start;</span><br><span class="line">handle["/upload"] = requestHandlers.upload;</span><br><span class="line"></span><br><span class="line">server.start(router.route, handle);</span><br></pre></td></tr></table></figure>
-<h2 id="server-js-1"><a href="#server-js-1" class="headerlink" title="server.js"></a>server.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var http = require("http");</span><br><span class="line">var url = require("url");</span><br><span class="line"></span><br><span class="line">function start(route, handle) &#123;</span><br><span class="line">  function onRequest(request, response) &#123;</span><br><span class="line">    var pathname = url.parse(request.url).pathname;</span><br><span class="line">    console.log("Request for " + pathname + " received.");</span><br><span class="line"></span><br><span class="line">    route(handle, pathname);</span><br><span class="line"></span><br><span class="line">    response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">    response.write("Hello World");</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  http.createServer(onRequest).listen(8888);</span><br><span class="line">  console.log("Server has started.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br></pre></td></tr></table></figure>
-<h2 id="route-js"><a href="#route-js" class="headerlink" title="route.js"></a>route.js</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function route(handle, pathname) &#123;</span><br><span class="line">  console.log("About to route a request for " + pathname);</span><br><span class="line">  if (typeof handle[pathname] === 'function') &#123;</span><br><span class="line">    handle[pathname]();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log("No request handler found for " + pathname);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.route = route;</span><br></pre></td></tr></table></figure>
-<p>从上到下观察改动的对象和函数可以知道一些东西，例如，首先为了能低耦合的方式将对象注入到route函数中，我们需要将requestHandlers.js写好的两个函数导出去，外部调用。<br>然后是看到index.js，注意这里的handle是一个包装了请求处理程序的集合，我直接照搬书里的话，正如所见，将不同的url映射到相同的请求处理程序上是是很容易的：只要在对象中添加一个键为”/“的属性，对应requestHandlers.start即可，这样我们就可以干净简洁地配置/start和/的请求都交由start这一处理程序处理。<br>接着就是server.js，在start里面添加了一个新的参数，然后通过参数传入到route回调函数里面去，因此我们也要修改一下route函数。<br>route函数的代码我们可以这样来阅读，首先判断给定的路径对应的请求程序也就是这里的方法function是否存在，如果存在的话就直接调用相应的函数。这样一来就很好解释简洁流畅的形如handle<a href="">pathname</a>;的表达式了<br>也就是说，如果传进去的pathname是刚刚在index集合中某一个，就会触发对应的函数，我们在index可以把这些集合和我们安卓的map相关起来，就是通过键值对来解释对应的pathname和函数程序。</p>
-<h3 id="阻塞与非阻塞"><a href="#阻塞与非阻塞" class="headerlink" title="阻塞与非阻塞"></a>阻塞与非阻塞</h3><hr>
-<p>首先更改掉start请求处理程序，我们让它等待10秒之后再返回hello Start，由于javascript没有sleep的操作，所以只能自己创建一个方法。</p>
-<h2 id="修改requestHandlers-js修改如下"><a href="#修改requestHandlers-js修改如下" class="headerlink" title="修改requestHandlers.js修改如下"></a>修改requestHandlers.js修改如下</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function start() &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line"></span><br><span class="line">  function sleep(milliSeconds) &#123;</span><br><span class="line">    var startTime = new Date().getTime();</span><br><span class="line">    while (new Date().getTime() <span class="tag">&lt; <span class="attr">startTime</span> + <span class="attr">milliSeconds</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="attr">sleep</span>(<span class="attr">10000</span>);</span><br><span class="line">  <span class="attr">return</span> "<span class="attr">Hello</span> <span class="attr">Start</span>";</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">function</span> <span class="attr">upload</span>() &#123;</span><br><span class="line">  <span class="attr">console.log</span>("<span class="attr">Request</span> <span class="attr">handler</span> '<span class="attr">upload</span>' <span class="attr">was</span> <span class="attr">called.</span>");</span><br><span class="line">  <span class="attr">return</span> "<span class="attr">Hello</span> <span class="attr">Upload</span>";</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">exports.start</span> = <span class="attr">start</span>;</span><br><span class="line"><span class="attr">exports.upload</span> = <span class="attr">upload</span>;</span></span><br></pre></td></tr></table></figure>
-<p>当我们单独打开<a href="http://localhost:8888/start和http://localhost:8888/upload的时候，按照程序的逻辑，start函数会先等待10秒，然后再返回hello" target="_blank" rel="external">http://localhost:8888/start和http://localhost:8888/upload的时候，按照程序的逻辑，start函数会先等待10秒，然后再返回hello</a> start。而upload则会立即返回。<br>但是当我们重启浏览器，然后开启两个窗口，分别输入上面的两个地址但是不要打开，现在“/start”按下回车，快速切换到第二个窗口“/upload”也按下回车，这里发生了点事情，/start URl花了10秒，/upload也花了10秒，这就非常奇怪了，到底为什么？<br>原因是start()包含了阻塞操作，node实行的是并行执行，也就是node在不增加额外线程的情况下，依然可以对人物进行并行处理，node是单线程的，通过<a href="http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/" target="_blank" rel="external">事件轮询</a>来实现并行操作，一个队列如果阻塞了之后就会导致线程被占用而后面需要处理的程序被阻塞。</p>
-<p>为了尽可能的避免阻塞操作，我们需要使用非阻塞操作，将函数作为参数传递给其他需要花时间做处理的函数，在完成之后使用回调传回到主线程上。ok，开始初步更改：<br>还是更改requestHandlers.js<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var exec = require("child_process").exec;</span><br><span class="line"></span><br><span class="line">function start() &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line">  var content = "empty";</span><br><span class="line"></span><br><span class="line">  exec("ls -lah", function (error, stdout, stderr) &#123;</span><br><span class="line">    content = stdout;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  return content;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function upload() &#123;</span><br><span class="line">  console.log("Request handler 'upload' was called.");</span><br><span class="line">  return "Hello Upload";</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br><span class="line">exports.upload = upload;</span><br></pre></td></tr></table></figure></p>
-<p>上述代码使用了一个叫做child_process的nodejs模块，使用它是为了实现一个非常简单的非阻塞操作：exec().它能做什么，它能使用node的一天shell指令来遍历当前目录下的所有文件(“ls -lah”)，当/startURl的时候将文件信息输出到浏览器中。<br>上述代码访问呢“<a href="http://localhost:8888/start”" target="_blank" rel="external">http://localhost:8888/start”</a> 的运行结果是只出现了一个empty，这时候很明显就是想到了新添加的exec()函数发挥作用了，有了它，我们可以在执行非常耗时的操作的时候无需等待，如果换成”/find”会更加明显，因为find/，一般情况下执行时间会非常久，但是这并不是我们想要的效果。<br>我们先来分析一下exec()函数的，在例子中，回调函数function (error, stdout, stderr)是作为第二个参数传递给exec()的匿名函数。当代码执行到exec()之后，node就立即执行了return content；而这个时候，content依旧是“empty”，因为传递给exec()的回调函数还没有执行到——因为exec()的操作是异步的。<br>所以尽管只要耗时稍微比较长的话，都会交给node在后天继续执行下去，但是函数却调到下一条代码了，那么要怎么才能将检索好的目录呈现给用户呢？</p>
-<h3 id="用非阻塞的方式进行请求响应"><a href="#用非阻塞的方式进行请求响应" class="headerlink" title="用非阻塞的方式进行请求响应"></a>用非阻塞的方式进行请求响应</h3><p>鉴于上面那种只实现了将耗时的操作交给回调函数处理，但是处理好的结果却没有很好的呈现出来，因此我们需要其他的计划和解决方法。刚好，nodeJS就有一种实现方案：函数传递。<br>这种新的方式是通过和旧的方式将内容传递给服务器想比，我们采用将服务器传递给内容的方式。从实践的角度来看，就是将response对象（从回调函数onRequest（）获取）通过请求路由传递给处理程序。随后。处理程序就可以采用该对象上的函数来对请求做出响应。</p>
-<h3 id="首先是server-js函数："><a href="#首先是server-js函数：" class="headerlink" title="首先是server.js函数："></a>首先是server.js函数：</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var http = require("http");</span><br><span class="line">var url  = require("url");</span><br><span class="line"></span><br><span class="line">function start(route, handle)&#123;</span><br><span class="line">	function onRequest(request, response)&#123;</span><br><span class="line">		var pathname = url.parse(request.url).pathname;</span><br><span class="line">		console.log("Request for " + pathname + " received.");</span><br><span class="line">		</span><br><span class="line">		route(handle, pathname, response);</span><br><span class="line">	&#125;</span><br><span class="line">	http.createServer(onRequest).listen(8888);</span><br><span class="line">	console.log("Server has started.");</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br></pre></td></tr></table></figure>
-<p>route.js<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function route(handle, pathname, response)&#123;</span><br><span class="line">	console.log("About to route a request for " + pathname);</span><br><span class="line">	if(typeof handle[pathname] == 'function')&#123;</span><br><span class="line">		handle[pathname](response);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		console.log("No request handler found for " + pathname);</span><br><span class="line">		response.writeHead(404,&#123;"Content-type":"text/plain"&#125;);</span><br><span class="line">		response.write("404 Not found");</span><br><span class="line">		response.end();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.route = route;</span><br></pre></td></tr></table></figure></p>
-<p>最后是requestHandler.js函数<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var exec = require("child_process").exec;</span><br><span class="line"></span><br><span class="line">function start(response) &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line"></span><br><span class="line">  exec("ls -lah", function (error, stdout, stderr) &#123;</span><br><span class="line">    response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">    response.write(stdout);</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function upload(response) &#123;</span><br><span class="line">  console.log("Request handler 'upload' was called.");</span><br><span class="line">  response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">  response.write("Hello Upload");</span><br><span class="line">  response.end();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br><span class="line">exports.upload = upload;</span><br></pre></td></tr></table></figure></p>
-<p>参考文章：[Node.js 究竟是什么？]{<a href="http://www.ibm.com/developerworks/cn/opensource/os-nodejs/index.html?ca=drs#icomments}" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/opensource/os-nodejs/index.html?ca=drs#icomments}</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1872,7 +1859,7 @@ undefined
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">46</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
