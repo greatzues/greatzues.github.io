@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>String.format（）的使用 | zues blog</title>
+  <title>zues blog</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -41,26 +41,14 @@
 <main class="content" role="main">
   <article class="post">
     <span class="post-meta">
-      <time datetime="2016-04-25T09:21:26.000Z" itemprop="datePublished">
-          2016-04-25
+      <time datetime="2016-10-16T00:56:48.271Z" itemprop="datePublished">
+          2016-10-16
       </time>
     
-    
-    | 
-    <a href='/tags/android入门/'>android入门</a>
-    
-    
 </span>
-    <h1 class="post-title">String.format（）的使用</h1>
+    <h1 class="post-title"></h1>
     <section class="post-content">
-      <p>在我模仿一个下拉刷新的时候遇到这段代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updateAtValue = String.format(getResources().getString(R.string.updated_at), value)</span><br></pre></td></tr></table></figure></p>
-<p>其中，getResources().getString(R.string.updated_at是一段字符串，内容是<string name="updated_at">上次更新于%1$s前</string>，比较好奇的是为什么会有%1$s这个特殊字符，所以谷歌了一下科普了一些知识，发现原来是可以替换一些内容的功能。</p>
-<p>例如上面的代码可以出现的其中一条结果是，上传更新与2小时前，那么这时候后面传进去的value的值就是2小时了，通过谷歌可以知道%s属于字符串类型，所以可以替换传进来的“2小时”这个字符串。</p>
-<p>所以上面那句话的理解就是，因为%s是字符串替换符，然后$是被格式化的参数索引，因此这时候被格式化的就是传进来的第一个value值会被格式化。如果把1改成2的话，就会出现，需要传入第二个value值，如果不传两个的话，就会出现Exception in thread “main” java.util.MissingFormatArgumentException: Format specifier ‘%2$s’，这个错误，提示缺少第二个声明。</p>
-<p>我google了很多篇博文，发现这篇博文很不错，献上地址<a href="http://blog.csdn.net/lonely_fireworks/article/details/7962171" target="_blank" rel="external">http://blog.csdn.net/lonely_fireworks/article/details/7962171</a></p>
-<p>博主强调了未经允许不可以转载，所以上面给个网址自己去看吧！很简单，一看就能懂。</p>
-<p>主要的功能是动态替换，以前看过C语言的一点东西，感觉和C语言的一些写法相似，其实我觉得如果在实际开发中应该很少会应用到这个，可能使用这个的话代码会简洁很多，提高代码复用，不使用这个的话似乎也可以很漂亮的替换。</p>
-
+      google-site-verification: googlec86c9eb992d34312.html
     </section>
     <footer class="post-footer">
       <section class="author">
@@ -69,15 +57,15 @@
 </section>
       <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/04/25/String-format（）的使用/"
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/googlec86c9eb992d34312.html"
        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/25/String-format（）的使用/"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/googlec86c9eb992d34312.html"
        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/25/String-format（）的使用/"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/googlec86c9eb992d34312.html"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>
@@ -86,15 +74,7 @@
   </article>
   <nav class="pagination" role="pagination">
     
-    <a class="newer-posts" href="/2016/04/25/简单实现定位功能/">
-        ← 简单实现定位功能
-    </a>
-    
     <span class="page-number">•</span>
-    
-    <a class="older-posts" href="/2016/04/13/NavigationView和DrawerLayout实现抽屉式设计/">
-        NavigationView和DrawerLayout实现抽屉式设计 →
-    </a>
     
 </nav>
   <div id="comment" class="comments-area">
