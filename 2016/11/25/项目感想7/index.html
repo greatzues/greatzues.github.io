@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>项目感想7 | zues blog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+  <meta name="generator" content="zues blog">
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  
+</head>
+
+
+<body class="post-template">
+
+  <header class="site-head"  style="background-image: url(http://pic1.win4000.com/wallpaper/b/4fcec6ce626d2.jpg)" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">zues blog</h1>
+            <h2 class="blog-description"></h2>
+        </div>
+    </div>
+</header>
+  
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2016-11-25T08:12:16.000Z" itemprop="datePublished">
+          2016-11-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/react-native/'>react-native</a>
+    
+    
+</span>
+    <h1 class="post-title">项目感想7</h1>
+    <section class="post-content">
+      <h2 id="react-native-pop之后数据更新"><a href="#react-native-pop之后数据更新" class="headerlink" title="react-native pop之后数据更新"></a>react-native pop之后数据更新</h2><hr>
+<p>一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。</p>
+<p>首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：</p>
+<h3 id="Home-js"><a href="#Home-js" class="headerlink" title="Home.js"></a>Home.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">       this.autoLogin();</span><br><span class="line">       DeviceEventEmitter.addListener(&apos;test&apos;,this.test);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   componentWillUnmount()&#123;</span><br><span class="line">       this.subscription.remove();</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line">test(data)&#123;</span><br><span class="line">       alert(&quot;good&quot;+data);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Login-js"><a href="#Login-js" class="headerlink" title="Login.js"></a>Login.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">backToHome()&#123;</span><br><span class="line">        DeviceEventEmitter.emit(&apos;test&apos;,&apos;hello&apos;); //最主要是这段代码，其他的可以忽略</span><br><span class="line">        const &#123; navigator &#125; = this.props;</span><br><span class="line">        if (navigator)&#123;</span><br><span class="line">            navigator.popToTop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>现象是，当点击页面左上角的返回之后，就会在home页面alert出一个”goodhello”，当然test方法也可以不带参，直接被监听调用。</p>
+<h2 id="页面间数据传递"><a href="#页面间数据传递" class="headerlink" title="页面间数据传递"></a>页面间数据传递</h2><hr>
+<p>在A页面导航到B页面可以传递一些参数，方法如下代码：</p>
+<h3 id="A-js"><a href="#A-js" class="headerlink" title="A.js"></a>A.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.props.navigator.push(&#123;</span><br><span class="line">                    name:&apos;Login&apos;,</span><br><span class="line">                    component:Login,</span><br><span class="line">					key:object</span><br><span class="line">                &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="B-js"><a href="#B-js" class="headerlink" title="B.js"></a>B.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.props.key</span><br></pre></td></tr></table></figure>
+<p>其中这里的key为键值，自己可以随意命名。另一方面，这里的object可以是常用数据类型，字符数字，还可以是方法对象，一般情况行都是使用简单的id传递，所以一般都是传递数字。</p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>漏雨</h4>
+    <p>生活不只是眼前的苟且，还有程序和代码，诗和远方也不错</p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/11/25/项目感想7/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/25/项目感想7/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/25/项目感想7/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2016/10/24/react-native升级/">
+        react-native升级 →
+    </a>
+    
+</nav>
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+</div>
+</main>
+
+
+  
+<footer class="site-footer">
+  
+  <a class="subscribe icon-feed" href="atom.xml"><span class="tooltip">Subscribe!</span></a>
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">zues blog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+
+
+
+
+
+
+</body>
+</html>

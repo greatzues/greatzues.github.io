@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-24T12:58:30.438Z</updated>
+  <updated>2016-11-25T08:43:38.565Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目感想7</title>
+    <link href="http://yoursite.com/2016/11/25/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B37/"/>
+    <id>http://yoursite.com/2016/11/25/项目感想7/</id>
+    <published>2016-11-25T08:12:16.000Z</published>
+    <updated>2016-11-25T08:43:38.565Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据更新&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。&lt;/p&gt;
+&lt;p&gt;首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：&lt;/p&gt;
+&lt;h3 id=&quot;Home-js&quot;&gt;&lt;a href=&quot;#Home-js&quot; class=&quot;headerlink&quot; title=&quot;Home.js&quot;&gt;&lt;/a&gt;Home.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;componentDidMount() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.autoLogin();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       DeviceEventEmitter.addListener(&amp;apos;test&amp;apos;,this.test);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   componentWillUnmount()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.subscription.remove();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test(data)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       alert(&amp;quot;good&amp;quot;+data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Login-js&quot;&gt;&lt;a href=&quot;#Login-js&quot; class=&quot;headerlink&quot; title=&quot;Login.js&quot;&gt;&lt;/a&gt;Login.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;backToHome()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        DeviceEventEmitter.emit(&amp;apos;test&amp;apos;,&amp;apos;hello&amp;apos;); //最主要是这段代码，其他的可以忽略&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        const &amp;#123; navigator &amp;#125; = this.props;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        if (navigator)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            navigator.popToTop();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;现象是，当点击页面左上角的返回之后，就会在home页面alert出一个”goodhello”，当然test方法也可以不带参，直接被监听调用。&lt;/p&gt;
+&lt;h2 id=&quot;页面间数据传递&quot;&gt;&lt;a href=&quot;#页面间数据传递&quot; class=&quot;headerlink&quot; title=&quot;页面间数据传递&quot;&gt;&lt;/a&gt;页面间数据传递&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;在A页面导航到B页面可以传递一些参数，方法如下代码：&lt;/p&gt;
+&lt;h3 id=&quot;A-js&quot;&gt;&lt;a href=&quot;#A-js&quot; class=&quot;headerlink&quot; title=&quot;A.js&quot;&gt;&lt;/a&gt;A.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.props.navigator.push(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    name:&amp;apos;Login&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    component:Login,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					key:object&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;B-js&quot;&gt;&lt;a href=&quot;#B-js&quot; class=&quot;headerlink&quot; title=&quot;B.js&quot;&gt;&lt;/a&gt;B.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.props.key&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中这里的key为键值，自己可以随意命名。另一方面，这里的object可以是常用数据类型，字符数字，还可以是方法对象，一般情况行都是使用简单的id传递，所以一般都是传递数字。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据
+    
+    </summary>
+    
+      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+    
+    
+      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+    
+  </entry>
   
   <entry>
     <title>react-native升级</title>
@@ -954,246 +987,6 @@ undefined
     <summary type="html">
     
       &lt;h2 id=&quot;编写Hello-World&quot;&gt;&lt;a href=&quot;#编写Hello-World&quot; class=&quot;headerlink&quot; title=&quot;编写Hello World&quot;&gt;&lt;/a&gt;编写Hello World&lt;/h2&gt;&lt;figure class=&quot;highlight plai
-    
-    </summary>
-    
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
-    
-    
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式笔记</title>
-    <link href="http://yoursite.com/2016/07/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2016/07/29/正则表达式笔记/</id>
-    <published>2016-07-29T09:46:27.000Z</published>
-    <updated>2016-08-05T01:39:48.894Z</updated>
-    
-    <content type="html">&lt;p&gt;正则表达式是为了记录文本规则的代码，在编写处理字符串或者网页的时候，经常会查找符合某些复杂规则的字符串而生。&lt;/p&gt;
-&lt;p&gt;首先举个例子，当我们需要查找某一个目录下的Word文档，我们会搜索&lt;strong&gt;*&lt;/strong&gt;.doc，而这里的*就会变解释成任意的字符串，但是这里的&lt;strong&gt;*&lt;/strong&gt;或者经常使用的&lt;strong&gt;?&lt;/strong&gt;我们称做通配符。ok，开始学习&lt;/p&gt;
-&lt;h2 id=&quot;开始&quot;&gt;&lt;a href=&quot;#开始&quot; class=&quot;headerlink&quot; title=&quot;开始&quot;&gt;&lt;/a&gt;开始&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;假如我们需要在一边小说中查找一个单词“he”，一般情况下会怎么做呢？在我看来不管在什么情况下，我们都可以使用&lt;strong&gt;ctrl+f&lt;/strong&gt;就会弹出查找的框。不过有时候比较糟糕的是很多单词都会有这两个字母，例如hello，head，heel等等，那么这时候就会有很多的he被找出来了，那当我们会使用正则表达式的话就可以使用&lt;strong&gt;\bhe\b&lt;/strong&gt;.&lt;br&gt;&lt;strong&gt;\b&lt;/strong&gt;是正则表达式里面规定的一个特殊的代码，人称&lt;strong&gt;元字符&lt;/strong&gt;，代表的那次的开头或者结尾，也就是单词的分界处。&lt;/p&gt;
-&lt;p&gt;假如这里he的后面不远处有一个Lucy，就可以使用&lt;strong&gt;\bhe\b.*\bLucy\b&lt;/strong&gt;。&lt;br&gt;可以注意这里的&lt;strong&gt;.&lt;/strong&gt;，它也是一个元字符，匹配除了换行符意外的任意字符。&lt;strong&gt;*&lt;/strong&gt;同样是元字符，不过它代表的不是字符，也不是位置，而是指&lt;strong&gt;数量&lt;/strong&gt;，它指定&lt;strong&gt;*&lt;/strong&gt;号前边的内容可以连续重复使用任意次以使整个表达式得到匹配。&lt;br&gt;因此，&lt;strong&gt;.*&lt;/strong&gt;就意味着&lt;strong&gt;任意数量的不包含换行的字符&lt;/strong&gt;。那么现在&lt;strong&gt;\bhe\b.*\bLucy\b&lt;/strong&gt;的意思就非常明显了：先是一个单词he，然后是任意字符串（不含换行）最后是lucy这个单词&lt;/p&gt;
-&lt;p&gt;这时候就可以联想肯定还有很多元字符，如果将其全部构造在一起那将是最强大的正则表达式。例如下面的例子：&lt;br&gt;&lt;strong&gt;0\d\d-\d\d\d\d\d\d\d\d&lt;/strong&gt;能匹配怎样的字符串呢：以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字，我们的国家的电话号码就是这样的区号。&lt;br&gt;这里的&lt;strong&gt;\d&lt;/strong&gt;是一个新的元字符，匹配一个&lt;strong&gt;数字&lt;/strong&gt;（数字0-9）.但是这里的“-”号不是元字符，它只匹配一个符号，为了简便和避免出错，我们也可以用&lt;strong&gt;0\d{2}-\d{8}&lt;/strong&gt;，{8}（或者{2}）表示连续重复。把&lt;strong&gt;{n}&lt;/strong&gt;放在了\d前面，也就意味着前面的\d符号必须连续重复n次，相当于被copy了n次，于是就构造出了和上面区号一样的效果。&lt;/p&gt;
-&lt;h3 id=&quot;小总结：&quot;&gt;&lt;a href=&quot;#小总结：&quot; class=&quot;headerlink&quot; title=&quot;小总结：&quot;&gt;&lt;/a&gt;小总结：&lt;/h3&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;元字符&lt;strong&gt;\b&lt;/strong&gt;，代表着单词的口头或者结尾，记住是单词，而不是字符，它只匹配一个位置。&lt;/li&gt;
-&lt;li&gt;元字符&lt;strong&gt;.&lt;/strong&gt;，匹配除了换行符以外的任意字符，记住只是单个字符。&lt;/li&gt;
-&lt;li&gt;元字符&lt;strong&gt;*&lt;/strong&gt;，匹配的不是字符，也不是位置，肯定不能和别人抢饭碗对吧，所以它匹配的是数量，任意数量，它指定它前面的内容可以连续使用任意次从而使整个表达式得到匹配。&lt;/li&gt;
-&lt;li&gt;元字符&lt;strong&gt;\d&lt;/strong&gt;，匹配的也是数量，但是这里它可以控制字符串多少，第一种比较傻，使用多少个“\d”就匹配多少个，而“\d{n}”，n是多少就能匹配多少次&lt;strong&gt;连续&lt;/strong&gt;且重复。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;认识更多&quot;&gt;&lt;a href=&quot;#认识更多&quot; class=&quot;headerlink&quot; title=&quot;认识更多&quot;&gt;&lt;/a&gt;认识更多&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;\ba\w*\b&lt;/strong&gt;，首先看到\b就知道可以匹配以字母a开头的单词，然后是&lt;strong&gt;\w*&lt;/strong&gt;，\w这个元字符的作用是可以匹配单个字母数字下划线或者汉字，和数量&lt;strong&gt;**相结合后就相当于任意数量的字母或者数字，最后\b是字母的结尾处。
-&lt;/strong&gt;\d+&lt;strong&gt;，可以匹配一个或更多连续的&lt;/strong&gt;数字&lt;strong&gt;。这里的+是和&lt;em&gt;类似的元字符，不同的是不同的是&lt;/em&gt;匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。
-&lt;/strong&gt;\b\w{6}\b**，可以匹配刚好6个字符的单词。&lt;/p&gt;
-&lt;h3 id=&quot;常用元字符&quot;&gt;&lt;a href=&quot;#常用元字符&quot; class=&quot;headerlink&quot; title=&quot;常用元字符&quot;&gt;&lt;/a&gt;常用元字符&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;代码&lt;/th&gt;
-&lt;th style=&quot;text-align:right&quot;&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;.&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配除换行符以外的任意字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\w&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配字母或数字或下划线或汉字&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\s&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配任意的空白符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\d&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配数字&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\b&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配单词的开始或结束&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;^&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配字符串的开始&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;$&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配字符串的结束&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;关于&lt;strong&gt;^&lt;/strong&gt;和&lt;strong&gt;$&lt;/strong&gt;令我有点蛋疼，因为\b也是可以匹配开头，不过这个是单词，但是^是匹配字符串，那也就是意味着^匹配的范围会更大，不过精确程度肯定是\b，另外这两个元字符还可以在允许处理多行的情况下变成匹配行的开始处和结尾处。&lt;br&gt;先来看一个表达式：&lt;strong&gt;^\d{5,12}$&lt;/strong&gt;，这个表达式可以类似一个网站验证qq号，并且qq号必须为数字的重复次数不少于5次，不能多于12次。否则都匹配不成功。这里的&lt;strong&gt;{5，12}&lt;/strong&gt;和前面\b的一样，意味着&lt;strong&gt;重复的次数不能少于5次，不能多于12次&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;转义字符&quot;&gt;&lt;a href=&quot;#转义字符&quot; class=&quot;headerlink&quot; title=&quot;转义字符&quot;&gt;&lt;/a&gt;转义字符&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;当我们需要查找的是正则里面的元符本身的话，正常情况下肯定找不到，这时候就要用&lt;strong&gt;\&lt;/strong&gt;来消除这些字符的特殊意义，因此需要找.或者&lt;em&gt;的时候就要用.和\&lt;/em&gt;。当然需要找&lt;strong&gt;\&lt;/strong&gt;本身也需要使用\，因此在以后可以看到一些\\这样类型的，表示的是\。&lt;br&gt;例如：deerchao.net匹配deerchao.net，C:\Windows匹配C:\Windows。&lt;/p&gt;
-&lt;h2 id=&quot;重复&quot;&gt;&lt;a href=&quot;#重复&quot; class=&quot;headerlink&quot; title=&quot;重复&quot;&gt;&lt;/a&gt;重复&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;前面已经知道了&lt;em&gt;表示前边的内容可以连续重复使用任意次以使整个表达式得到匹配，而+是和&lt;/em&gt;类似但是匹配的次数重复1次或者更多，意味着一定会重复。另外{n}还有{5，12}我就不解释了，这个比较好记。&lt;/p&gt;
-&lt;h3 id=&quot;常用的限定符&quot;&gt;&lt;a href=&quot;#常用的限定符&quot; class=&quot;headerlink&quot; title=&quot;常用的限定符&quot;&gt;&lt;/a&gt;常用的限定符&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;代码/语法&lt;/th&gt;
-&lt;th style=&quot;text-align:right&quot;&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;*&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;重复零次或更多次&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;+&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;重复一次或更多次&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;?&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;重复零次或一次&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;{n}&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;重复n次&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;{n,}&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;重复n次或更多次&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;{n,m}&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;重复n到m次&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;例子：Windows\d+匹配Windows后面跟1个或更多数字，^\w+匹配一行的第一个单词(或整个字符串的第一个单词，具体匹配哪个意思得看选项设置)。&lt;/p&gt;
-&lt;h2 id=&quot;字符类&quot;&gt;&lt;a href=&quot;#字符类&quot; class=&quot;headerlink&quot; title=&quot;字符类&quot;&gt;&lt;/a&gt;字符类&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;如果需要查找单个数字，字母都是比较简单的，但是如果需要找一些集合的时候，例如元音字母aeiou的时候怎么办，这时候只需要在方括号里面列出它们就可以了，就像这样[aeiou]就能匹配任何一个英文元音字母，[.?!]匹配标点里面的符号，从这里也可以看出在方括号里面是可以放元字符的，而无须转义。&lt;br&gt;当然也可以指定一个字符范围，[0-9]这个的含义就是和\d一样了：表示一个数字。同样这个例子[a-z0-9A-Z]，其实一开始我是没有看懂的，这里我们把里面的字符分开来看就可以看到a-z,0-9,A-Z这样就等同于\w了。&lt;/p&gt;
-&lt;p&gt;接下来是一个更加复杂的表达式：(?0\d{2}[) -]?\d{8}&lt;br&gt;这个表达式可以匹配集中格式的电话号码，像(010)88886666，或022-22334455，或02912345678等，对立面的字符进行分析，首先是转义的&lt;strong&gt;(&lt;/strong&gt;，因为“（”和“）”都是元字符，它可能重复0次或者1次（？），然后是一个数字0，后面接着两个数字（\d{2}）,然后是方括号里面有-或者空格（要看到是有空格的）或者是“）”，也是出现一次或者零次，最后是8个重复的\d,也就是后面接着8个数字。&lt;/p&gt;
-&lt;h2 id=&quot;分支条件&quot;&gt;&lt;a href=&quot;#分支条件&quot; class=&quot;headerlink&quot; title=&quot;分支条件&quot;&gt;&lt;/a&gt;分支条件&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;在上面的例子中是不是会出现一种情况，那就是假如是010)12345678或(022-87654321也是可以的，但是格式不是我们想要的，要解决这个问题需要使用到这节的标题。使用符号&lt;strong&gt;|&lt;/strong&gt;把不同的规则分开，然后满足其中一种就可以完成匹配。&lt;br&gt;0\d{2}-\d{8}|0\d{3}-\d{7}这个表达式能匹配两种以连字号分隔的电话号码：一种是三位区号，8位本地号(如010-12345678)，一种是4位区号，7位本地号(0376-2233445)&lt;br&gt;(?0\d{2})?[- ]?\d{8}|0\d{2}[- ]?\d{8}这个表达式匹配3位区号的电话号码，其中区号可以用小括号括起来，也可以不用，区号与本地号间可以用连字号或空格间隔，也可以没有间隔。&lt;/p&gt;
-&lt;p&gt;\d{5}-\d{4}|\d{5}这个表达式用于匹配美国的邮政编码。美国邮编的规则是5位数字，或者用连字号间隔的9位数字。之所以要给出这个例子是因为它能说明一个问题：使用&lt;strong&gt;分枝条件时&lt;/strong&gt;，要&lt;strong&gt;注意各个条件的顺序&lt;/strong&gt;。如果你把它改成\d{5}|\d{5}-\d{4}的话，那么就只会匹配5位的邮编(以及9位邮编的前5位)。原因是匹配分枝条件时，将会从左到右地测试每个条件，如果满足了某个分枝的话，就不会去再管其它的条件了。&lt;br&gt;对于上面一段话我有一点想法，那就是在分支匹配的时候要吧负责的匹配放在前面。不然的话复杂里面夹杂着简单的匹配的时候就会出现部分满足导致匹配不理想。还有就是&lt;strong&gt;|&lt;/strong&gt;分支符号的左右都是完整的表达式，因此写这个的时候会显得和上面的方括号麻烦一些。&lt;/p&gt;
-&lt;h2 id=&quot;分组-子表达式&quot;&gt;&lt;a href=&quot;#分组-子表达式&quot; class=&quot;headerlink&quot; title=&quot;分组/子表达式&quot;&gt;&lt;/a&gt;分组/子表达式&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;在前面我们知道了怎么重复单个字符，也就是前面那张表。但是如果需要重复多个字符的时候应该怎么办呢！这时候就要使用到标题，用小括号()来指定&lt;strong&gt;子表达式&lt;/strong&gt;，然后就可以制定子表达式的重复次数。&lt;br&gt;(\d{1,3}.){3}\d{1,3}，这是一个ip地址的表达式，要理解这个表达式，我们一个一个来分析：既然是子表达式，所以肯定先分析括号里面的表达式，\d{1,3}匹配至少重复1到3位的数字，那么(\d{1,3}.){3}就是表示三位数字加一个英文句号（用了转义）重复三次，最后再加一个至少重复一次或者三次的数字（\d{1,3}）。&lt;br&gt;但是像上面的表达式避免不了匹配类似错误的ip256.300.888.999，因为正则没有提供关于数学的功能，因此需要冗长的表达式才可以正确描述：((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5])&lt;br&gt;可以发现最主要的分析对象是2[0-4]\d|25[0-5]|[01]?\d\d?，因为ip是1-255的，所以需要有几种情况，第一个分支2[0-4]，就是200-249，一看就看明白了，第二个分支25[0-5]，就是250-255，第三个分支有点难度[01]?\d\d?，意思是0或者1可能重复1次或者0次（不出现），后面接一个0-9的数字，再后面接着最多出现1次或者0次（不出现）的数字，也就是可以构造出两位数。&lt;/p&gt;
-&lt;h2 id=&quot;反义&quot;&gt;&lt;a href=&quot;#反义&quot; class=&quot;headerlink&quot; title=&quot;反义&quot;&gt;&lt;/a&gt;反义&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;有时候需要找除了某一个字符以外的其他字符，于是这时候就要使用到反义。我个人觉得这样的情况很少见，除非一篇文章都差不多使用那么几种字符&lt;/p&gt;
-&lt;h3 id=&quot;常用的反义字符&quot;&gt;&lt;a href=&quot;#常用的反义字符&quot; class=&quot;headerlink&quot; title=&quot;常用的反义字符&quot;&gt;&lt;/a&gt;常用的反义字符&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;代码/语法&lt;/th&gt;
-&lt;th style=&quot;text-align:right&quot;&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;\W&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配任意不是字母，数字，下划线，汉字的字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\S&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配任意不是空白符的字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\D&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配任意非数字的字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;\B&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配不是单词开头或者结束的位置&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;[^x]&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配除了x以外的任意字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;[^aeiou]&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;匹配除了aeiou这几个字母以外的任意字符&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;例子：\S+匹配不包含空白符的字符串，因为\S匹配不是空白符，而+要求至少要有重复，加在\S后面表示，不能有一个空白符或者多个空白符，理解下来就是没有任何空白符的&lt;strong&gt;字符串&lt;/strong&gt;。&lt;a[^&gt;]+&amp;gt;匹配用尖括号括起来的以a开头的字符串。&lt;br&gt;&lt;a[^&gt;]+&amp;gt;匹配用尖括号括起来的以a开头的字符串，这里需要注意尖括号不是元字符，所以就直接理解就可以了，而a[^&amp;gt;]+表示a开头的字符串，并且a后面匹配除了&amp;gt;符号的字符串，最后再加上最后那一个尖括号，于是就成为了用尖括号括起来的以a开头的字符串。&lt;/a[^&gt;&lt;/a[^&gt;&lt;/p&gt;
-&lt;h2 id=&quot;后向引用&quot;&gt;&lt;a href=&quot;#后向引用&quot; class=&quot;headerlink&quot; title=&quot;后向引用&quot;&gt;&lt;/a&gt;后向引用&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;我的理解是通过后向对于已经被解释过的分组进行数字替代。用于重复搜索前面某个分组匹配的文本。例如， \1代表分组1匹配的文本。&lt;br&gt;例如：&lt;strong&gt;\b(\w+)\b\s+\1\b&lt;/strong&gt;，可以用来匹配重复的单词，例如 go go，或者是kitty kitty。这个表达式先是一个单词，也就是单词开头和结尾处之间多余一个字母或数字的（\b(\w+)\b），这个单词在组号分配的时候会被捕获到编号为1的分组，然后是1个或几个空白符\s+，最后是分组1中捕获的内容。&lt;br&gt;除了可以自动陪匹配组号，还可以指定子表达式的组号，可以使用这样的语法：(?&lt;word&gt;\w+)(或者把尖括号换成’也是可以得:(?’Word’\w+))，这样就可以把\w+的组名指定为Word了，当需要反向指定这个分组的时候就可以使用\k&lt;word&gt;，所以上一个例子也可以写成这样：\b(?&lt;word&gt;\w)\b\s+\k&lt;word&gt;\b。)&lt;/word&gt;&lt;/word&gt;&lt;/word&gt;&lt;/word&gt;&lt;/p&gt;
-&lt;p&gt;为什么分组会从1开始呢！因为分组0对应的是整个正则表达式，而不是某一个分组，当然这里还有一个规则，就像上面说的除了那些没有命名被自动赋名的分组，还有已经被命名的分组，而组号分配是从左到右扫描两边，第一遍只给未命名组分配，第二次只给命名组分配，那么久可以很简单推测出所有命名组的组号都大于为命名组号。&lt;/p&gt;
-&lt;h3 id=&quot;常用分组语法&quot;&gt;&lt;a href=&quot;#常用分组语法&quot; class=&quot;headerlink&quot; title=&quot;常用分组语法&quot;&gt;&lt;/a&gt;常用分组语法&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;分类&lt;/th&gt;
-&lt;th style=&quot;text-align:right&quot;&gt;代码/语法&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;捕获&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;(exp)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;匹配exp,并捕获文本到自动命名的组里&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;(?&lt;name&gt;exp)&lt;/name&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;匹配exp,并捕获文本到名称为name的组里，也可以写成(?’name’exp)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;(?:exp)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;匹配exp,不捕获匹配的文本，也不给此分组分配组号&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;——&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;——&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;——–&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;零宽断言&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;(?=exp)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;匹配exp前面的位置&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;(?&amp;lt;=exp)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;匹配exp后面的位置&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;(?!exp)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;匹配后面跟的不是exp的位置&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;(?&amp;lt;!exp)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;匹配前面不是exp的位置&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;—–&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;—-&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;——–&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;注释&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;(?#comment)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;例如可以使用(?:exp)这样的语法来剥夺一个分组对组号分配的参与权，其中exp是一个表达式，有效阻断组号分配，不过为什么要剥夺呢？我暂时还没有想到应用场景。&lt;/p&gt;
-&lt;h2 id=&quot;零宽断言&quot;&gt;&lt;a href=&quot;#零宽断言&quot; class=&quot;headerlink&quot; title=&quot;零宽断言&quot;&gt;&lt;/a&gt;零宽断言&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;断言也就是可以预测位置，和\b,^,$一样具有指定位置的功能，并且这个位置具备一定的条件，在左边表示是前面，而在右边则是后面后面会一直持续提到这两个位置，因此被称作零宽断言。&lt;/p&gt;
-&lt;p&gt;(?=exp)也叫做&lt;strong&gt;零宽都正预测先行断言&lt;/strong&gt;，它能断言&lt;strong&gt;表达式exp前面的位置&lt;/strong&gt;。比如\b\w+(?=ing\b)，匹配以ing结尾的单词的前面部分除ing以外，加入查找I’m singing while you’re dancing.时，它会匹配sing和danc。&lt;/p&gt;
-&lt;p&gt;(?&amp;lt;=exp)也叫做&lt;strong&gt;零宽度正回顾后发断言&lt;/strong&gt;，它能断言&lt;strong&gt;表达式exp后面的位置&lt;/strong&gt;。比如(?&amp;lt;=\bre)\w+\b会匹配以re开头的单词的后半部分除re以外，例如在查找reading a book时，它能匹配ading。&lt;/p&gt;
-&lt;p&gt;假如你想要给一个很长的数字中每三位间加一个逗号(当然是从右边加起了)，你可以这样查找需要在前面和里面添加逗号的部分：((?&amp;lt;=\d)\d{3})+\b，用它对1234567890进行查找时结果是234567890。&lt;br&gt;&lt;strong&gt;说实话，上面这句话没看懂&lt;/strong&gt;,不过还是可以分析：首先是分组里面的是匹配表达式\d后面的位置，然后是匹配三个数字(\d{3}),然后又是一个分组表示至少重复一次(+)，最后是就是结尾字符(\b)。&lt;br&gt;最后是是下面这个例子同时使用了这两种断言：(?&amp;lt;=\s)\d+(?=\s)匹配以空白符间隔的数字(再次强调，不包括这些空白符)。&lt;/p&gt;
-&lt;h2 id=&quot;负向零宽断言&quot;&gt;&lt;a href=&quot;#负向零宽断言&quot; class=&quot;headerlink&quot; title=&quot;负向零宽断言&quot;&gt;&lt;/a&gt;负向零宽断言&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;负向零宽断言正好和零宽断言相反，也分为先行和回顾断言两种。&lt;br&gt;零宽度负预测先行断言(?!exp),意思是断言此位置的后面不能匹配表达式exp。例如：\d{3}(?!\d)匹配三位数字，而且这三位数字的后面不能是数字。\b((?!abc)\w)+\b匹配不包含连续字符串abc的单词。同理很好理解接下来的。&lt;/p&gt;
-&lt;p&gt;零宽度负回顾后发断言(?&amp;lt;!exp),意思是断言此位置的前面不能匹配表达式exp，(?&amp;lt;![a-z])\d{7}匹配前面不是小写字母的七位数字。我觉得以后每次看都可能需要思考一下，因为一下子有可能理解不了。&lt;/p&gt;
-&lt;p&gt;我们来看一下一个例子，&lt;strong&gt;\b\w&lt;em&gt;q[^u]\w&lt;/em&gt;\b&lt;/strong&gt;，这个表达式可以匹配一个不含换行符的单词，在前面已经知道任意数量的字母或数字是(\w&lt;em&gt;)，按正常情况下是可以的，但是在一些特殊情况下，例如Iraq,Benq，因为[^u]肯定会匹配一个字符，因此加入q是最后一个字符的话就会出现两个单词连在一起匹配结果。&lt;br&gt;但是使用了我们的负向零宽断言就不一样了，因为它完全不会消费任何字符，只匹配一个位置，因此可以使用这个表达式来轻松搞定：**\b\w&lt;/em&gt;q(?!u)\w&lt;em&gt;\b*&lt;/em&gt;,只要u前面不是q的话，那么表达式成立，同时匹配不成功&lt;/p&gt;
-&lt;h2 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;我觉得直接看例子就可以看明白了，&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;正则表达式是为了记录文本规则的代码，在编写处理字符串或者网页的时候，经常会查找符合某些复杂规则的字符串而生。&lt;/p&gt;
-&lt;p&gt;首先举个例子，当我们需要查找某一个目录下的Word文档，我们会搜索&lt;strong&gt;*&lt;/strong&gt;.doc，而这里的*就会变解释成任意的字符串，但
     
     </summary>
     
