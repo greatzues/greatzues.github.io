@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>项目感想8 | zues blog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+  <meta name="generator" content="zues blog">
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  
+</head>
+
+
+<body class="post-template">
+
+  <header class="site-head"  style="background-image: url(http://pic1.win4000.com/wallpaper/b/4fcec6ce626d2.jpg)" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">zues blog</h1>
+            <h2 class="blog-description"></h2>
+        </div>
+    </div>
+</header>
+  
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2016-11-27T03:20:14.000Z" itemprop="datePublished">
+          2016-11-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/react-native/'>react-native</a>
+    
+    
+</span>
+    <h1 class="post-title">项目感想8</h1>
+    <section class="post-content">
+      <h2 id="BIG-FOUND"><a href="#BIG-FOUND" class="headerlink" title="BIG FOUND"></a>BIG FOUND</h2><hr>
+<p>写了那么久的react native才发现这个，感觉有点羞愧，因为当时刚学的时候没看懂，现在重新倒回来看发现有新的体会，不用猜了，就是这个教程<a href="http://bbs.reactnative.cn/topic/20/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3navigator%E7%9A%84%E6%95%99%E7%A8%8B/2" target="_blank" rel="external">新手理解navigator的教程</a></p>
+<p>开始写点我个人觉得比较棒的事情了，写下这段文字的时候，刚刚优化好代码并且搞定了登录之后返回到原来页面的时候实现页面重新渲染，我渲染数据和普通的pop之后返回数据不太一样，我这里需要将数据在登录之后传递给home页面的时候在与子类通信，传递头像和姓名的数据到drawerView。</p>
+<p>一开始的时候，我使用了事件监听<code>DeviceEventEmitter</code>,这个事件监听可以监听给同一个父类下的所有子组件，也就是说当我在login中使用<code>DeviceEventEmitter.emit(&#39;test&#39;,&#39;hello&#39;);</code>然后在home和drawer注册监听，接着两个都能执行回调，这个当时给我灵感，但是后来发现，在执行回调的时候，本来想使用<code>setState</code>改变数据重新渲染的，但是确报错说<code>undefine setState</code>，于是这个灵感就被这样白白扼杀了。</p>
+<p>然后感觉百般困难的时候，无意中看到以前这篇教程，深有启发。先说一说这篇教程中我学到的用法，我直接摘抄原文了，自己写得不是太好。</p>
+<p>在我登录成功返回到home页面的时候，需要传递参数回到home页面，但是navigator.pop()并没有提供参数，因为pop()只是从 [路由1,路由2，路由3。。。]里把最后一个路由踢出去的操作，并不支持传递参数给倒数第二个路由，这里要用到一个概念，把上一个页面的实例或者回调方法，作为参数传递到当前页面来，在当前页面操作上一个页面的state。</p>
+<h3 id="Login-js"><a href="#Login-js" class="headerlink" title="Login.js"></a>Login.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//我只贴出关键代码</span><br><span class="line">const &#123; navigator &#125; = this.props;</span><br><span class="line">if(this.props.update)&#123;</span><br><span class="line">    this.props.update(true);</span><br><span class="line">&#125;</span><br><span class="line">if (navigator)&#123;</span><br><span class="line">    navigator.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当登录成功之后执行上面这段代码就会跳转回去home页面，接下里看home页面</p>
+<h3 id="Home-js"><a href="#Home-js" class="headerlink" title="Home.js"></a>Home.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//上面忽略很多代码。。。</span><br><span class="line">			&lt;DrawerView</span><br><span class="line">                   quitLogin=&#123;this.quitLogin.bind(this)&#125;</span><br><span class="line">                   quitApp=&#123;this.quitApp.bind(this)&#125;</span><br><span class="line">                   avatar=&#123;this.state.avatar&#125;</span><br><span class="line">                   username=&#123;this.state.username&#125;</span><br><span class="line">               /&gt;</span><br><span class="line">//这里也忽略很代码。。。</span><br><span class="line"></span><br><span class="line">toLogin()&#123;</span><br><span class="line">       storage.load(&#123;key:&apos;loginState&apos;&#125;).then(r =&gt;&#123;</span><br><span class="line">           this.refs.drawer.openDrawer();</span><br><span class="line">       &#125;).catch(e =&gt; &#123;</span><br><span class="line">           var params = &#123;update:(ifRefresh) =&gt; this.reRenderData(ifRefresh)&#125;;</span><br><span class="line">           new Net().toOther(this.props,&apos;Login&apos;,Login,params);</span><br><span class="line">           console.log(e);</span><br><span class="line">       &#125;)</span><br><span class="line">   &#125;</span><br><span class="line">//登录成功回调一个true，打开开关</span><br><span class="line">reRenderData(ifRefresh)&#123;</span><br><span class="line">       if(ifRefresh === true)&#123;</span><br><span class="line">           new Net().getMethod(INFO).then((r) =&gt; &#123;</span><br><span class="line">               this.setState(&#123;</span><br><span class="line">                   username:r.response.realname,</span><br><span class="line">                   avatar:r.response.avatar</span><br><span class="line">               &#125;);</span><br><span class="line">           &#125;).catch(error =&gt; &#123;</span><br><span class="line">               console.log(error);</span><br><span class="line">           &#125;);</span><br><span class="line">       &#125;</span><br><span class="line">       return null;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="DrawerView-js"><a href="#DrawerView-js" class="headerlink" title="DrawerView.js"></a>DrawerView.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;Image</span><br><span class="line">                  source=&#123;require(&apos;../img/UserBackground.jpg&apos;)&#125;</span><br><span class="line">                  style=&#123;styles.userBackground&#125;&gt;</span><br><span class="line">                  &lt;View&gt;</span><br><span class="line">                      &#123; this.props.avatar === null ?</span><br><span class="line">                          &lt;Image source=&#123;require(&apos;../img/UserDafault.png&apos;)&#125; style=&#123;styles.avatar&#125;&gt;&lt;/Image&gt; :</span><br><span class="line">                          &lt;Image style=&#123;styles.avatar&#125; source=&#123;&#123;uri:&apos;http://119.29.184.235:8080/jd/avatar/&apos;+this.props.avatar&#125;&#125; /&gt;</span><br><span class="line">                      &#125;</span><br><span class="line">                  &lt;/View&gt;</span><br><span class="line">                  &lt;Text style=&#123;&#123;color:&apos;white&apos;&#125;&#125;&gt;你好，&#123;this.props.username===null?this.state.myResponse:this.props.username&#125;&lt;/Text&gt;</span><br><span class="line">                  &#123;this.props.avatar === null?null:&lt;Text style=&#123;&#123;color:&apos;gray&apos;&#125;&#125;&gt;您已登录&lt;/Text&gt;&#125;</span><br><span class="line">            &lt;/Image&gt;</span><br></pre></td></tr></table></figure>
+<p>ok，其实就是使用页面传参的方式，在导航倒转的时候带一个方法进去，在那个方法中可以修改原来页面的state，这个原理很好理解。<br>为什么当时没有想到，自己还真的有点笨，今天的博客写到这里下次学到新的东西再继续更新。</p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>漏雨</h4>
+    <p>生活不只是眼前的苟且，还有程序和代码，诗和远方也不错</p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/11/27/项目感想8/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/27/项目感想8/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/27/项目感想8/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2016/11/25/项目感想7/">
+        项目感想7 →
+    </a>
+    
+</nav>
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+</div>
+</main>
+
+
+  
+<footer class="site-footer">
+  
+  <a class="subscribe icon-feed" href="atom.xml"><span class="tooltip">Subscribe!</span></a>
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">zues blog</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+
+
+
+
+
+
+</body>
+</html>
