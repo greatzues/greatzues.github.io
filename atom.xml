@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-14T08:14:44.283Z</updated>
+  <updated>2016-12-15T01:37:21.276Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,12 @@
     <link href="http://yoursite.com/2016/12/14/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B39/"/>
     <id>http://yoursite.com/2016/12/14/项目感想9/</id>
     <published>2016-12-14T08:03:58.000Z</published>
-    <updated>2016-12-14T08:14:44.283Z</updated>
+    <updated>2016-12-15T01:37:21.276Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Type-Error-Network-request-failed&quot;&gt;&lt;a href=&quot;#Type-Error-Network-request-failed&quot; class=&quot;headerlink&quot; title=&quot;Type Error: Network request failed&quot;&gt;&lt;/a&gt;Type Error: Network request failed&lt;/h2&gt;&lt;p&gt;重新遇到ios的fetch API报错，Type Error: Network request failed问题&lt;br&gt;这一次我还是按照上次的有过的经验改了一下，可是一开始用文本编辑器修改了&lt;code&gt;appName/ios/appName/Info.plist&lt;/code&gt;还是改了之后没生效，我试过将模拟器重启，还有无数次reload，还是没生效，甚至我还试过长时间等待，再重新reboot模拟器，还是不行&lt;/p&gt;
 &lt;p&gt;最后使用Xcode直接打开&lt;code&gt;Info.plist&lt;/code&gt;来修改，在对应的&lt;code&gt;AppTransportSecurity&lt;/code&gt;中点击一个&lt;code&gt;+&lt;/code&gt;号，会直接添加一个子key，找到key的名字为&lt;code&gt;Allow Arbitrary Loads&lt;/code&gt;就可以了。&lt;br&gt;对应&lt;code&gt;info.plist&lt;/code&gt;如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;key&amp;gt;NSAppTransportSecurity&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;key&amp;gt;NSAllowsArbitraryLoads&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;true/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;key&amp;gt;NSExceptionDomains&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;key&amp;gt;localhost&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;lt;key&amp;gt;NSTemporaryExceptionAllowsInsecureHTTPLoads&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;lt;true/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;/dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;/dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;xcode打开如下&lt;br&gt;&lt;img src=&quot;http://bbs.reactnative.cn/uploads/files/1473409969387-bd986712-10a5-4a38-9deb-f5b45d7fd16d.png&quot; alt=&quot;info.plist&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最后重新安装到模拟器，&lt;code&gt;react-native run-ios&lt;/code&gt;，应用的网络就跑起来了。&lt;br&gt;至于为什么要修改原来默认的AppTransportSecurity的属性，可以参考这篇博客&lt;a href=&quot;http://www.pluto-y.com/ios9-nsapptransportsecurity/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS9 - NSAppTransportSecurity&lt;/a&gt;,我觉得写得蛮详细。&lt;/p&gt;
 </content>
     
     <summary type="html">

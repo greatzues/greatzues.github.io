@@ -56,6 +56,7 @@
       <h2 id="Type-Error-Network-request-failed"><a href="#Type-Error-Network-request-failed" class="headerlink" title="Type Error: Network request failed"></a>Type Error: Network request failed</h2><p>重新遇到ios的fetch API报错，Type Error: Network request failed问题<br>这一次我还是按照上次的有过的经验改了一下，可是一开始用文本编辑器修改了<code>appName/ios/appName/Info.plist</code>还是改了之后没生效，我试过将模拟器重启，还有无数次reload，还是没生效，甚至我还试过长时间等待，再重新reboot模拟器，还是不行</p>
 <p>最后使用Xcode直接打开<code>Info.plist</code>来修改，在对应的<code>AppTransportSecurity</code>中点击一个<code>+</code>号，会直接添加一个子key，找到key的名字为<code>Allow Arbitrary Loads</code>就可以了。<br>对应<code>info.plist</code>如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;</span><br><span class="line">&lt;dict&gt;</span><br><span class="line">	&lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;</span><br><span class="line">	&lt;true/&gt;</span><br><span class="line">	&lt;key&gt;NSExceptionDomains&lt;/key&gt;</span><br><span class="line">	&lt;dict&gt;</span><br><span class="line">		&lt;key&gt;localhost&lt;/key&gt;</span><br><span class="line">		&lt;dict&gt;</span><br><span class="line">			&lt;key&gt;NSTemporaryExceptionAllowsInsecureHTTPLoads&lt;/key&gt;</span><br><span class="line">			&lt;true/&gt;</span><br><span class="line">		&lt;/dict&gt;</span><br><span class="line">	&lt;/dict&gt;</span><br><span class="line">&lt;/dict&gt;</span><br></pre></td></tr></table></figure></p>
 <p>xcode打开如下<br><img src="http://bbs.reactnative.cn/uploads/files/1473409969387-bd986712-10a5-4a38-9deb-f5b45d7fd16d.png" alt="info.plist"></p>
+<p>最后重新安装到模拟器，<code>react-native run-ios</code>，应用的网络就跑起来了。<br>至于为什么要修改原来默认的AppTransportSecurity的属性，可以参考这篇博客<a href="http://www.pluto-y.com/ios9-nsapptransportsecurity/" target="_blank" rel="external">iOS9 - NSAppTransportSecurity</a>,我觉得写得蛮详细。</p>
 
     </section>
     <footer class="post-footer">
@@ -93,6 +94,10 @@
     <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
 
     
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    
 </div>
 </main>
 
@@ -114,6 +119,18 @@
 <script type="text/javascript" src="/js/index.js"></script>
 
 
+
+<script type="text/javascript">
+    var disqus_shortname = 'SnG53qEhZd';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
