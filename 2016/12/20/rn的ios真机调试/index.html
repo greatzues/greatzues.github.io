@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Fragment的高级应用 | zues blog</title>
+  <title>rn的ios真机调试 | zues blog</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -41,19 +41,31 @@
 <main class="content" role="main">
   <article class="post">
     <span class="post-meta">
-      <time datetime="2016-03-29T06:48:57.000Z" itemprop="datePublished">
-          2016-03-29
+      <time datetime="2016-12-20T06:58:30.000Z" itemprop="datePublished">
+          2016-12-20
       </time>
     
     
     | 
-    <a href='/tags/android入门/'>android入门</a>
+    <a href='/tags/react-native/'>react-native</a>
     
     
 </span>
-    <h1 class="post-title">Fragment的高级应用</h1>
+    <h1 class="post-title">rn的ios真机调试</h1>
     <section class="post-content">
-      
+      <h2 id="RN的ios真机调试"><a href="#RN的ios真机调试" class="headerlink" title="RN的ios真机调试"></a>RN的ios真机调试</h2><hr>
+<p>在没使用之前我就已经能猜到会出现无数的bug，果然不出我所料，但是对于开发安卓已经一年的我来说，这点小坑难不倒我，还是瞬间给我解决掉了，不久，也就花了两天而已。</p>
+<p>我是在虚拟机上安装的mac系统，首先借了一台ipone来调试，手机的系统是ios 10.2，很明显我的Xcode刚好是8.1不支持ios 10.2，无奈只好去更新版本。</p>
+<p>虚拟机网速慢是出了名的，于是一天就过去了。</p>
+<p>开始来真东西了，手机连接电脑，首先识别不了设备。于是在网上看到了这个解决办法<a href="http://www.wuji8.com/meta/201556592.html" target="_blank" rel="external">我的ipone不能被虚拟机识别</a></p>
+<p>接着按照里面的步骤，将ipone连接电脑，在虚拟系统没有全屏的时候，鼠标右键点击右下角灰色usb设备图标和ipone图标，点击<code>连接（断开与主机的连接）</code>，接着修改虚拟机的usb版本，重启。</p>
+<h2 id="应用签名"><a href="#应用签名" class="headerlink" title="应用签名"></a>应用签名</h2><hr>
+<p>在上一步完成之后打开虚拟机这时候就可以连接到iphone了，但是这还不够，你还需要调试出来，选择了run的设备为真机之后开始运行，这时候弹出一个错误：<code>Code signing is required for product type &#39;Application&#39; in SDK &#39;iOS 10.2</code></p>
+<p>过程我就不说了，直接说结果吧！我后面找了很多篇国内的博客还是不如stack overflow的问答好，尽管看英文有点蛋疼，不过耐心翻译之后基本问题就解决了。</p>
+<blockquote>
+<p>1,在Xcode上打开项目，然后点击自己项目的根目录，可以看到</p>
+</blockquote>
+
     </section>
     <footer class="post-footer">
       <section class="author">
@@ -62,15 +74,15 @@
 </section>
       <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/03/29/Fragment的高级应用/"
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/12/20/rn的ios真机调试/"
        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/03/29/Fragment的高级应用/"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/20/rn的ios真机调试/"
        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/03/29/Fragment的高级应用/"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/20/rn的ios真机调试/"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>
@@ -79,14 +91,10 @@
   </article>
   <nav class="pagination" role="pagination">
     
-    <a class="newer-posts" href="/2016/03/31/Toolbar基础/">
-        ← Toolbar基础
-    </a>
-    
     <span class="page-number">•</span>
     
-    <a class="older-posts" href="/2016/03/29/Fragment基础（下）/">
-        Fragment基础（下） →
+    <a class="older-posts" href="/2016/12/14/项目感想9/">
+        项目感想9 →
     </a>
     
 </nav>

@@ -42,6 +42,39 @@
   <article class="post">
     <header class="post-header">
       <span class="post-meta">
+      <time datetime="2016-12-20T06:58:30.000Z" itemprop="datePublished">
+          2016-12-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/react-native/'>react-native</a>
+    
+    
+</span>
+      <h2 class="post-title"><a href="/2016/12/20/rn的ios真机调试/">rn的ios真机调试</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+      
+        RN的ios真机调试
+在没使用之前我就已经能猜到会出现无数的bug，果然不出我所料，但是对于开发安卓已经一年的我来说，这点小坑难不倒我，还是瞬间给我解决掉了，不久，也就花了两天而已。
+我是在虚拟机上安装的mac系统，首先借了一台ipone来调试，手机的系统是ios 10.2，很明显我的Xcode刚好是8.1不支持ios 10.2，无奈只好去更新版本。
+虚拟机网速慢是出了名的，于是一天就过去了。
+开始来真东西了，手机连接电脑，首先识别不了
+      
+      </p>
+      
+      <p>
+          <a href="/2016/12/20/rn的ios真机调试/" class="excerpt-link">Read More...</a>
+      </p>
+      
+    </section>
+  </article>
+  
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
       <time datetime="2016-12-14T08:03:58.000Z" itemprop="datePublished">
           2016-12-14
       </time>
@@ -57,7 +90,10 @@
     <section class="post-excerpt">
       <p>
       
-        Type Error: Network request failed重新遇到ios的fetch API报错，Type Error: Network request failed问题这一次我还是按照上次的有过的经验改了一下，可是一开始用文本编辑器修改了appName/ios/appName/Info.plist还是改了之后没生效，我试过将模拟器重启，还有无数次reload，还是没生效，甚至我还试过长时间等待，再重新reboot模拟器，还是
+        关于ref的一点坑
+今天在使用ref来调用自组件的时候发现了一个东西，可能我这个问题是特例吧！因为我是用了别人的库才发现这个问题的，不过我还是要记录一下。
+我使用的库是react-native-tab-navigator，一个很优秀的底部导航栏。
+问题：当我在底部栏的home位置时，home对应的component也是home，home里面有一个按钮导航到分享页面.下面的DOM均为模拟12345678910111213141516171
       
       </p>
       
@@ -319,38 +355,6 @@ index.android.js123456789101112131415161718192021render() &#123;      let defaul
     </section>
   </article>
   
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2016-08-22T00:25:55.000Z" itemprop="datePublished">
-          2016-08-22
-      </time>
-    
-    
-    | 
-    <a href='/tags/react-native/'>react-native</a>
-    
-    
-</span>
-      <h2 class="post-title"><a href="/2016/08/22/深度解析rn知乎日报/">深度解析rn知乎日报</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        推荐：
-文章的开始之前我要先推荐一篇博客，写得非常清晰，笔者看完瞬间觉得逻辑清晰了很多，献上地址：React 组件构造方法: ES5 (createClass) 还是 ES6 (class)？ | 程序员的资料库。
-正文：index.android.js
-首先看到入口index.android.js,这里是用ES5写的代码，在ES6中默认是使用严格方式，因此这里的ues strict在ES6中就可以省略了。然后是ES5以前导入其他函数的
-      
-      </p>
-      
-      <p>
-          <a href="/2016/08/22/深度解析rn知乎日报/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
   <nav class="pagination" role="pagination">
     
     <span class="page-number">Page 1 of 3</span>
@@ -376,18 +380,6 @@ index.android.js123456789101112131415161718192021render() &#123;      let defaul
 <script type="text/javascript" src="/js/index.js"></script>
 
 
-
-<script type="text/javascript">
-    var disqus_shortname = 'greatzuesgithubio';
-
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 
 
 
