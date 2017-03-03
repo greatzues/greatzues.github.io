@@ -1,54 +1,250 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>优先使用组合而非继承 | zues blog</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
-
-  <meta name="generator" content="zues blog">
-
-  
-  
-  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
-  
-  
-
-  
-</head>
-
-
-<body class="post-template">
-
-  <header class="site-head"  style="background-image: url(http://pic1.win4000.com/wallpaper/b/4fcec6ce626d2.jpg)" >
-    <div class="vertical">
-        <div class="site-head-content inner">
-             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
-            <h1 class="blog-title">zues blog</h1>
-            <h2 class="blog-description"></h2>
-        </div>
-    </div>
-</header>
-  
-
-<main class="content" role="main">
-  <article class="post">
-    <span class="post-meta">
-      <time datetime="2016-10-18T06:35:38.000Z" itemprop="datePublished">
-          2016-10-18
-      </time>
     
-</span>
+
+    <title>
+      优先使用组合而非继承 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="有一个需求，需要构建一个鸟的世界，很明显这里需要很多种鸟，包括会飞的麻雀，老鹰，不会飞的鸵鸟，企鹅。吃虫子的麻雀，燕子，吃肉的老鹰。当然，所有的小鸟都会筑巢，鸣叫。
+一般情况下将父类声明为abstract是因为在父类里面有一些非常独特的个体，他们具有的特点是唯一的，也就是不说很多个子类都具有的特点，例如，每一种鸟长的都不一样，所有我们可以在父类里面添加display方法，用于展示不同的小鸟的形象。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="优先使用组合而非继承 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/10/18/优先使用组合而非继承/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="有一个需求，需要构建一个鸟的世界，很明显这里需要很多种鸟，包括会飞的麻雀，老鹰，不会飞的鸵鸟，企鹅。吃虫子的麻雀，燕子，吃肉的老鹰。当然，所有的小鸟都会筑巢，鸣叫。
+一般情况下将父类声明为abstract是因为在父类里面有一些非常独特的个体，他们具有的特点是唯一的，也就是不说很多个子类都具有的特点，例如，每一种鸟长的都不一样，所有我们可以在父类里面添加display方法，用于展示不同的小鸟的形象。">
+<meta property="og:updated_time" content="2016-10-20T02:11:38.716Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="优先使用组合而非继承 | zues blog">
+<meta name="twitter:description" content="有一个需求，需要构建一个鸟的世界，很明显这里需要很多种鸟，包括会飞的麻雀，老鹰，不会飞的鸵鸟，企鹅。吃虫子的麻雀，燕子，吃肉的老鹰。当然，所有的小鸟都会筑巢，鸣叫。
+一般情况下将父类声明为abstract是因为在父类里面有一些非常独特的个体，他们具有的特点是唯一的，也就是不说很多个子类都具有的特点，例如，每一种鸟长的都不一样，所有我们可以在父类里面添加display方法，用于展示不同的小鸟的形象。">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
     <h1 class="post-title">优先使用组合而非继承</h1>
-    <section class="post-content">
-      <p>有一个需求，需要构建一个鸟的世界，很明显这里需要很多种鸟，包括会飞的麻雀，老鹰，不会飞的鸵鸟，企鹅。吃虫子的麻雀，燕子，吃肉的老鹰。当然，所有的小鸟都会筑巢，鸣叫。</p>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-10-18" class="post-meta__date date">2016-10-18</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>有一个需求，需要构建一个鸟的世界，很明显这里需要很多种鸟，包括会飞的麻雀，老鹰，不会飞的鸵鸟，企鹅。吃虫子的麻雀，燕子，吃肉的老鹰。当然，所有的小鸟都会筑巢，鸣叫。</p>
 <p>一般情况下将父类声明为abstract是因为在父类里面有一些非常独特的个体，他们具有的特点是唯一的，也就是不说很多个子类都具有的特点，例如，每一种鸟长的都不一样，所有我们可以在父类里面添加display方法，用于展示不同的小鸟的形象。但是我们为什么要使用到接口把其他不同的地方，例如吃虫子和吃肉分开呢！这不也是不同的子类不一样吗？其实，这里的区别在于，吃虫子的鸟类不仅仅只有麻雀，还有小燕子啦，翠鸟啦！而display确实每一种鸟唯一的，如果使用接口的话，一样要实现每一种鸟的display，但是使用abstract继承的话就可以少写一点点代码了，总体上说，还是通过abstract好一些，其实，abstract也是特殊的接口类型啦！只不过没有接口那么严格。</p>
 <p>于是我新建了一个父类Brid，他有大家都有的筑巢和鸣叫属性。<br>Brid.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Brid</span> </span>&#123;</span><br><span class="line">	<span class="comment">//筑巢</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"we all have home"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//鸣叫</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">scream</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"we all can scream"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>根据代码复用的原则，我要尽量使用多一点组合，也就是说将共有的代码写在父类，然后将私有的属性通过组合的方式在类创建的时候初始化。</p>
@@ -60,70 +256,62 @@
 <p>EatMeat.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EatMeat</span> <span class="keyword">implements</span> <span class="title">FoodBehavior</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"我吃肉"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>然后就可以开始造物了，首先创造出一个鸵鸟，麻雀会飞并且吃的是虫子。<br>MaQue.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MaQue</span> <span class="keyword">extends</span> <span class="title">Brid</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MaQue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated constructor stub</span></span><br><span class="line">		foodBehavior = <span class="keyword">new</span> EatWorm();</span><br><span class="line">		flyBehavior = <span class="keyword">new</span> FlyWithout();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-    </section>
-    <footer class="post-footer">
-      <section class="author">
-    <h4>漏雨</h4>
-    <p>生活不只是眼前的苟且，还有程序和代码，诗和远方也不错</p>
-</section>
-      <section class="share">
-    <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/10/18/优先使用组合而非继承/"
-       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-        <span class="hidden">Twitter</span>
-    </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/10/18/优先使用组合而非继承/"
-       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-        <span class="hidden">Facebook</span>
-    </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/10/18/优先使用组合而非继承/"
-       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-        <span class="hidden">Google+</span>
-    </a>
-</section>
-    </footer>
-  </article>
-  <nav class="pagination" role="pagination">
-    
-    <a class="newer-posts" href="/2016/10/24/react-native升级/">
-        ← react-native升级
-    </a>
-    
-    <span class="page-number">•</span>
-    
-    <a class="older-posts" href="/2016/10/15/项目感想6/">
-        项目感想6 →
-    </a>
-    
-</nav>
-  <div id="comment" class="comments-area">
-    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
-
-    
-</div>
-</main>
-
+  </section>
 
   
-<footer class="site-footer">
   
-  <a class="subscribe icon-feed" href="atom.xml"><span class="tooltip">Subscribe!</span></a>
-  
-  <div class="inner">
-     <section class="copyright">All content copyright <a href="/">zues blog</a> &copy; 2014 &bull; All rights reserved.</section>
-     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
-  </div>
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
 </footer>
+        </div>
+    </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
 
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
 
 
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
 
 
+    
+    
 
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
 
 </body>
 </html>

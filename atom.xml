@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>zues blog</title>
-  
+  <subtitle>为技术而生</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://zuesblog.xyz/"/>
   <updated>2016-12-21T09:36:33.365Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://zuesblog.xyz/</id>
   
   <author>
     <name>漏雨</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>rn的ios真机调试</title>
-    <link href="http://yoursite.com/2016/12/20/rn%E7%9A%84ios%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/"/>
-    <id>http://yoursite.com/2016/12/20/rn的ios真机调试/</id>
+    <link href="http://zuesblog.xyz/2016/12/20/rn%E7%9A%84ios%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/"/>
+    <id>http://zuesblog.xyz/2016/12/20/rn的ios真机调试/</id>
     <published>2016-12-20T06:58:30.000Z</published>
     <updated>2016-12-21T09:36:33.365Z</updated>
     
@@ -43,17 +43,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>项目感想9</title>
-    <link href="http://yoursite.com/2016/12/14/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B39/"/>
-    <id>http://yoursite.com/2016/12/14/项目感想9/</id>
+    <link href="http://zuesblog.xyz/2016/12/14/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B39/"/>
+    <id>http://zuesblog.xyz/2016/12/14/项目感想9/</id>
     <published>2016-12-14T08:03:58.000Z</published>
     <updated>2016-12-21T10:06:13.222Z</updated>
     
@@ -76,17 +76,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>一个python小常识</title>
-    <link href="http://yoursite.com/2016/12/05/%E4%B8%80%E4%B8%AApython%E5%B0%8F%E5%B8%B8%E8%AF%86/"/>
-    <id>http://yoursite.com/2016/12/05/一个python小常识/</id>
+    <link href="http://zuesblog.xyz/2016/12/05/%E4%B8%80%E4%B8%AApython%E5%B0%8F%E5%B8%B8%E8%AF%86/"/>
+    <id>http://zuesblog.xyz/2016/12/05/一个python小常识/</id>
     <published>2016-12-05T05:57:41.000Z</published>
     <updated>2016-12-05T05:58:23.823Z</updated>
     
@@ -119,17 +119,17 @@
     
     </summary>
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="python" scheme="http://zuesblog.xyz/categories/python/"/>
     
     
-      <category term="python入门" scheme="http://yoursite.com/tags/python%E5%85%A5%E9%97%A8/"/>
+      <category term="python入门" scheme="http://zuesblog.xyz/tags/python%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络入门</title>
-    <link href="http://yoursite.com/2016/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/"/>
-    <id>http://yoursite.com/2016/12/05/计算机网络入门/</id>
+    <link href="http://zuesblog.xyz/2016/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/"/>
+    <id>http://zuesblog.xyz/2016/12/05/计算机网络入门/</id>
     <published>2016-12-05T05:56:53.000Z</published>
     <updated>2016-12-06T12:56:38.077Z</updated>
     
@@ -198,17 +198,17 @@
     
     </summary>
     
-      <category term="The Fundamental Skills" scheme="http://yoursite.com/categories/The-Fundamental-Skills/"/>
+      <category term="The Fundamental Skills" scheme="http://zuesblog.xyz/categories/The-Fundamental-Skills/"/>
     
     
-      <category term="Computer Network" scheme="http://yoursite.com/tags/Computer-Network/"/>
+      <category term="Computer Network" scheme="http://zuesblog.xyz/tags/Computer-Network/"/>
     
   </entry>
   
   <entry>
     <title>项目感想8</title>
-    <link href="http://yoursite.com/2016/11/27/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B38/"/>
-    <id>http://yoursite.com/2016/11/27/项目感想8/</id>
+    <link href="http://zuesblog.xyz/2016/11/27/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B38/"/>
+    <id>http://zuesblog.xyz/2016/11/27/项目感想8/</id>
     <published>2016-11-27T03:20:14.000Z</published>
     <updated>2016-11-28T15:09:20.890Z</updated>
     
@@ -232,17 +232,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>项目感想7</title>
-    <link href="http://yoursite.com/2016/11/25/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B37/"/>
-    <id>http://yoursite.com/2016/11/25/项目感想7/</id>
+    <link href="http://zuesblog.xyz/2016/11/25/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B37/"/>
+    <id>http://zuesblog.xyz/2016/11/25/项目感想7/</id>
     <published>2016-11-25T08:12:16.000Z</published>
     <updated>2016-11-26T06:01:18.521Z</updated>
     
@@ -274,17 +274,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>react-native升级</title>
-    <link href="http://yoursite.com/2016/10/24/react-native%E5%8D%87%E7%BA%A7/"/>
-    <id>http://yoursite.com/2016/10/24/react-native升级/</id>
+    <link href="http://zuesblog.xyz/2016/10/24/react-native%E5%8D%87%E7%BA%A7/"/>
+    <id>http://zuesblog.xyz/2016/10/24/react-native升级/</id>
     <published>2016-10-24T09:09:28.000Z</published>
     <updated>2016-10-24T12:58:30.438Z</updated>
     
@@ -313,17 +313,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>优先使用组合而非继承</title>
-    <link href="http://yoursite.com/2016/10/18/%E4%BC%98%E5%85%88%E4%BD%BF%E7%94%A8%E7%BB%84%E5%90%88%E8%80%8C%E9%9D%9E%E7%BB%A7%E6%89%BF/"/>
-    <id>http://yoursite.com/2016/10/18/优先使用组合而非继承/</id>
+    <link href="http://zuesblog.xyz/2016/10/18/%E4%BC%98%E5%85%88%E4%BD%BF%E7%94%A8%E7%BB%84%E5%90%88%E8%80%8C%E9%9D%9E%E7%BB%A7%E6%89%BF/"/>
+    <id>http://zuesblog.xyz/2016/10/18/优先使用组合而非继承/</id>
     <published>2016-10-18T06:35:38.000Z</published>
     <updated>2016-10-20T02:11:38.716Z</updated>
     
@@ -352,8 +352,8 @@
   
   <entry>
     <title>项目感想6</title>
-    <link href="http://yoursite.com/2016/10/15/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B36/"/>
-    <id>http://yoursite.com/2016/10/15/项目感想6/</id>
+    <link href="http://zuesblog.xyz/2016/10/15/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B36/"/>
+    <id>http://zuesblog.xyz/2016/10/15/项目感想6/</id>
     <published>2016-10-15T03:08:26.000Z</published>
     <updated>2016-11-26T06:32:06.174Z</updated>
     
@@ -384,17 +384,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>项目感想5</title>
-    <link href="http://yoursite.com/2016/09/28/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B35/"/>
-    <id>http://yoursite.com/2016/09/28/项目感想5/</id>
+    <link href="http://zuesblog.xyz/2016/09/28/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B35/"/>
+    <id>http://zuesblog.xyz/2016/09/28/项目感想5/</id>
     <published>2016-09-28T07:51:09.000Z</published>
     <updated>2016-10-07T03:06:23.849Z</updated>
     
@@ -417,17 +417,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>项目感想4</title>
-    <link href="http://yoursite.com/2016/09/17/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B34/"/>
-    <id>http://yoursite.com/2016/09/17/项目感想4/</id>
+    <link href="http://zuesblog.xyz/2016/09/17/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B34/"/>
+    <id>http://zuesblog.xyz/2016/09/17/项目感想4/</id>
     <published>2016-09-17T00:53:36.000Z</published>
     <updated>2016-09-25T06:48:14.368Z</updated>
     
@@ -456,17 +456,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>项目感想2</title>
-    <link href="http://yoursite.com/2016/09/06/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B32/"/>
-    <id>http://yoursite.com/2016/09/06/项目感想2/</id>
+    <link href="http://zuesblog.xyz/2016/09/06/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B32/"/>
+    <id>http://zuesblog.xyz/2016/09/06/项目感想2/</id>
     <published>2016-09-06T06:05:57.000Z</published>
     <updated>2016-09-06T07:40:32.523Z</updated>
     
@@ -486,17 +486,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>项目感想</title>
-    <link href="http://yoursite.com/2016/08/28/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B3/"/>
-    <id>http://yoursite.com/2016/08/28/项目感想/</id>
+    <link href="http://zuesblog.xyz/2016/08/28/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B3/"/>
+    <id>http://zuesblog.xyz/2016/08/28/项目感想/</id>
     <published>2016-08-28T00:44:51.000Z</published>
     <updated>2016-08-29T06:11:54.632Z</updated>
     
@@ -539,17 +539,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>深度解析rn知乎日报</title>
-    <link href="http://yoursite.com/2016/08/22/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90rn%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5/"/>
-    <id>http://yoursite.com/2016/08/22/深度解析rn知乎日报/</id>
+    <link href="http://zuesblog.xyz/2016/08/22/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90rn%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5/"/>
+    <id>http://zuesblog.xyz/2016/08/22/深度解析rn知乎日报/</id>
     <published>2016-08-22T00:25:55.000Z</published>
     <updated>2016-08-24T08:16:15.388Z</updated>
     
@@ -620,17 +620,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>react-native学习笔记7</title>
-    <link href="http://yoursite.com/2016/08/20/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/"/>
-    <id>http://yoursite.com/2016/08/20/react-native学习笔记7/</id>
+    <link href="http://zuesblog.xyz/2016/08/20/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/"/>
+    <id>http://zuesblog.xyz/2016/08/20/react-native学习笔记7/</id>
     <published>2016-08-20T12:39:46.000Z</published>
     <updated>2016-08-20T14:31:01.063Z</updated>
     
@@ -668,17 +668,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>react-native学习笔记6</title>
-    <link href="http://yoursite.com/2016/08/19/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06/"/>
-    <id>http://yoursite.com/2016/08/19/react-native学习笔记6/</id>
+    <link href="http://zuesblog.xyz/2016/08/19/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06/"/>
+    <id>http://zuesblog.xyz/2016/08/19/react-native学习笔记6/</id>
     <published>2016-08-19T13:19:25.000Z</published>
     <updated>2016-08-20T12:37:31.068Z</updated>
     
@@ -710,17 +710,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>react-native学习笔记5</title>
-    <link href="http://yoursite.com/2016/08/18/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/"/>
-    <id>http://yoursite.com/2016/08/18/react-native学习笔记5/</id>
+    <link href="http://zuesblog.xyz/2016/08/18/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/"/>
+    <id>http://zuesblog.xyz/2016/08/18/react-native学习笔记5/</id>
     <published>2016-08-18T12:36:57.000Z</published>
     <updated>2016-08-23T13:36:50.180Z</updated>
     
@@ -767,17 +767,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>react-native学习笔记4</title>
-    <link href="http://yoursite.com/2016/08/13/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/"/>
-    <id>http://yoursite.com/2016/08/13/react-native学习笔记4/</id>
+    <link href="http://zuesblog.xyz/2016/08/13/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/"/>
+    <id>http://zuesblog.xyz/2016/08/13/react-native学习笔记4/</id>
     <published>2016-08-13T09:12:46.000Z</published>
     <updated>2016-08-18T14:16:42.424Z</updated>
     
@@ -817,17 +817,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>react-native学习笔记3</title>
-    <link href="http://yoursite.com/2016/08/09/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/"/>
-    <id>http://yoursite.com/2016/08/09/react-native学习笔记3/</id>
+    <link href="http://zuesblog.xyz/2016/08/09/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/"/>
+    <id>http://zuesblog.xyz/2016/08/09/react-native学习笔记3/</id>
     <published>2016-08-09T02:18:32.000Z</published>
     <updated>2016-09-03T03:38:22.822Z</updated>
     
@@ -880,17 +880,17 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>ES入门5</title>
-    <link href="http://yoursite.com/2016/08/06/ES%E5%85%A5%E9%97%A85/"/>
-    <id>http://yoursite.com/2016/08/06/ES入门5/</id>
+    <link href="http://zuesblog.xyz/2016/08/06/ES%E5%85%A5%E9%97%A85/"/>
+    <id>http://zuesblog.xyz/2016/08/06/ES入门5/</id>
     <published>2016-08-06T08:22:30.000Z</published>
     <updated>2016-08-06T08:48:26.021Z</updated>
     
@@ -909,10 +909,10 @@
     
     </summary>
     
-      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://yoursite.com/tags/react-native/"/>
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   

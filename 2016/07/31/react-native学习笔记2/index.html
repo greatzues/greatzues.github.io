@@ -1,59 +1,257 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>react-native学习笔记2 | zues blog</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+    
 
-  <meta name="generator" content="zues blog">
+    <title>
+      react-native学习笔记2 | zues blog 
+    </title>
 
-  
-  
-  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
-  
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
 
-  
+    <meta name="description" content="编写Hello World12345678910111213import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;import &amp;#123; AppRegistry, Text &amp;#125; from &amp;apos;react-native&amp;apos;class HelloWorldApp extends Component &amp;#1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native学习笔记2 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/07/31/react-native学习笔记2/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="编写Hello World12345678910111213import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;import &amp;#123; AppRegistry, Text &amp;#125; from &amp;apos;react-native&amp;apos;class HelloWorldApp extends Component &amp;#1">
+<meta property="og:updated_time" content="2016-08-08T14:45:32.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native学习笔记2 | zues blog">
+<meta name="twitter:description" content="编写Hello World12345678910111213import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;import &amp;#123; AppRegistry, Text &amp;#125; from &amp;apos;react-native&amp;apos;class HelloWorldApp extends Component &amp;#1">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
 </head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
 
 
-<body class="post-template">
+  <div class="panel-main">
 
-  <header class="site-head"  style="background-image: url(http://pic1.win4000.com/wallpaper/b/4fcec6ce626d2.jpg)" >
-    <div class="vertical">
-        <div class="site-head-content inner">
-             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
-            <h1 class="blog-title">zues blog</h1>
-            <h2 class="blog-description"></h2>
-        </div>
-    </div>
-</header>
   
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
 
-<main class="content" role="main">
-  <article class="post">
-    <span class="post-meta">
-      <time datetime="2016-07-31T02:45:15.000Z" itemprop="datePublished">
-          2016-07-31
-      </time>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
     
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
     
-    | 
-    <a href='/tags/react-native/'>react-native</a>
+
+    <!-- China social icon -->
+    <!--
     
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
     
-</span>
     <h1 class="post-title">react-native学习笔记2</h1>
-    <section class="post-content">
-      <h2 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry, Text &#125; from &apos;react-native&apos;</span><br><span class="line"></span><br><span class="line">class HelloWorldApp extends Component &#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		return (</span><br><span class="line">			&lt;Text&gt;Hello World!&lt;/Text&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//注意，这里用引号括起来的&apos;HelloWorldApp&apos;必须和你init创建的项目名一致</span><br><span class="line">AppRegistry.registerComponent(&apos;HelloWorldApp&apos;, () =&gt; HelloWorldApp);</span><br></pre></td></tr></table></figure>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-31" class="post-meta__date date">2016-07-31</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; AppRegistry, Text &#125; from &apos;react-native&apos;</span><br><span class="line"></span><br><span class="line">class HelloWorldApp extends Component &#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		return (</span><br><span class="line">			&lt;Text&gt;Hello World!&lt;/Text&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//注意，这里用引号括起来的&apos;HelloWorldApp&apos;必须和你init创建的项目名一致</span><br><span class="line">AppRegistry.registerComponent(&apos;HelloWorldApp&apos;, () =&gt; HelloWorldApp);</span><br></pre></td></tr></table></figure>
 <p>然后一个简单的HelloWorldApp就完成了，不过鉴于第一次接触，所以要一步一步来分析每一步的意义。</p>
 <p>首先需要了解上面的代码是我曾经学过的语言javascript，但是很明显这和我想象中javascript不像好不好，不过这确实是“未来”的javascript，最新的javascript官方标准是ES2015（也叫做ES6）.没错，在完全进行开发之前我还需要了解一下ES6.</p>
 <p>简单看了一些ES6之后就要开始真干了，</p>
@@ -95,70 +293,62 @@
 <p>上面的代码不是react-native,而是react，不过还是可以先学习一下代码里面对于父类和子类之间的通信关系。<br>首先看child，代码很简单就是在渲染的时候直接返回一个span标签，里面是child的名字属性。<br>然后是父类，首先是创建一个click函数，暂时先不分析方法里面的细节，再看render函数，创建了一个div函数，并且在div的onClick方法中嗲用click函数。接着是直接使用child实例标签，这个实例里面含有一个那么的属性，关于属性的赋值是this.props.name，注意，这里认真一想还是很好理解的，那就是这个this是指向parent的，因此这里是先的到parent的name属性再赋值给child实例，这样一来就清晰很多了。<br>另外可以看到ref，我们可以把这个属性看成是标签作用，用来标记一个实例，我觉得可以把ref看成是id，回到click函数，函数里面的详细内容是this.refs.child.getDOMNode(),this.refs是找到有ref属性的实例，然后指向已经标记的实例，也就是child，刚刚命名的那个。去到对应的DOM节点，之后就可以对这个实例进行方法或者样式的变换了。这里是直接更改child的颜色，当然也可以写一个函数。</p>
 <p>更加详细的属性列表<a href="http://reactnative.cn/docs/0.31/layout-props.html" target="_blank" rel="external">布局样式属性</a></p>
 
-    </section>
-    <footer class="post-footer">
-      <section class="author">
-    <h4>漏雨</h4>
-    <p>生活不只是眼前的苟且，还有程序和代码，诗和远方也不错</p>
-</section>
-      <section class="share">
-    <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/07/31/react-native学习笔记2/"
-       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-        <span class="hidden">Twitter</span>
-    </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/07/31/react-native学习笔记2/"
-       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-        <span class="hidden">Facebook</span>
-    </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/07/31/react-native学习笔记2/"
-       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-        <span class="hidden">Google+</span>
-    </a>
-</section>
-    </footer>
-  </article>
-  <nav class="pagination" role="pagination">
-    
-    <a class="newer-posts" href="/2016/07/31/ES6入门/">
-        ← ES6入门
-    </a>
-    
-    <span class="page-number">•</span>
-    
-    <a class="older-posts" href="/2016/07/29/正则表达式笔记/">
-        正则表达式笔记 →
-    </a>
-    
-</nav>
-  <div id="comment" class="comments-area">
-    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
-
-    
-</div>
-</main>
-
+  </section>
 
   
-<footer class="site-footer">
   
-  <a class="subscribe icon-feed" href="atom.xml"><span class="tooltip">Subscribe!</span></a>
-  
-  <div class="inner">
-     <section class="copyright">All content copyright <a href="/">zues blog</a> &copy; 2014 &bull; All rights reserved.</section>
-     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
-  </div>
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
 </footer>
+        </div>
+    </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
 
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
 
 
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
 
 
+    
+    
 
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
 
 </body>
 </html>

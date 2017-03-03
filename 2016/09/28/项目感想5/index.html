@@ -1,59 +1,266 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>项目感想5 | zues blog</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+    
 
-  <meta name="generator" content="zues blog">
+    <title>
+      项目感想5 | zues blog 
+    </title>
 
-  
-  
-  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
-  
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
 
-  
+    <meta name="description" content="listview上犯了个本不该犯的错误
+哎呀！，当时没有写完整，现在重新写发现忘记当时犯了什么错误！
+图片的毛玻璃效果
+当然在使用这个效果之前，我还尝试过其他例如在listview中使用字母导航的效果，也就是sunnylqm/react-native-alphabetlistview，当时已经添加依赖之后发现这个效果是静态的，需要自己获取首字母，但是我写的不是国外app，所以还需要将汉字转化为拼音">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目感想5 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/09/28/项目感想5/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="listview上犯了个本不该犯的错误
+哎呀！，当时没有写完整，现在重新写发现忘记当时犯了什么错误！
+图片的毛玻璃效果
+当然在使用这个效果之前，我还尝试过其他例如在listview中使用字母导航的效果，也就是sunnylqm/react-native-alphabetlistview，当时已经添加依赖之后发现这个效果是静态的，需要自己获取首字母，但是我写的不是国外app，所以还需要将汉字转化为拼音">
+<meta property="og:updated_time" content="2016-10-07T03:06:23.849Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目感想5 | zues blog">
+<meta name="twitter:description" content="listview上犯了个本不该犯的错误
+哎呀！，当时没有写完整，现在重新写发现忘记当时犯了什么错误！
+图片的毛玻璃效果
+当然在使用这个效果之前，我还尝试过其他例如在listview中使用字母导航的效果，也就是sunnylqm/react-native-alphabetlistview，当时已经添加依赖之后发现这个效果是静态的，需要自己获取首字母，但是我写的不是国外app，所以还需要将汉字转化为拼音">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
 </head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
 
 
-<body class="post-template">
+  <div class="panel-main">
 
-  <header class="site-head"  style="background-image: url(http://pic1.win4000.com/wallpaper/b/4fcec6ce626d2.jpg)" >
-    <div class="vertical">
-        <div class="site-head-content inner">
-             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
-            <h1 class="blog-title">zues blog</h1>
-            <h2 class="blog-description"></h2>
-        </div>
-    </div>
-</header>
   
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
 
-<main class="content" role="main">
-  <article class="post">
-    <span class="post-meta">
-      <time datetime="2016-09-28T07:51:09.000Z" itemprop="datePublished">
-          2016-09-28
-      </time>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
     
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
     
-    | 
-    <a href='/tags/react-native/'>react-native</a>
+
+    <!-- China social icon -->
+    <!--
     
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
     
-</span>
     <h1 class="post-title">项目感想5</h1>
-    <section class="post-content">
-      <h2 id="listview上犯了个本不该犯的错误"><a href="#listview上犯了个本不该犯的错误" class="headerlink" title="listview上犯了个本不该犯的错误"></a>listview上犯了个本不该犯的错误</h2><hr>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-09-28" class="post-meta__date date">2016-09-28</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="listview上犯了个本不该犯的错误"><a href="#listview上犯了个本不该犯的错误" class="headerlink" title="listview上犯了个本不该犯的错误"></a>listview上犯了个本不该犯的错误</h2><hr>
 <p>哎呀！，当时没有写完整，现在重新写发现忘记当时犯了什么错误！</p>
 <h2 id="图片的毛玻璃效果"><a href="#图片的毛玻璃效果" class="headerlink" title="图片的毛玻璃效果"></a>图片的毛玻璃效果</h2><hr>
 <p>当然在使用这个效果之前，我还尝试过其他例如在listview中使用字母导航的效果，也就是<a href="https://github.com/sunnylqm/react-native-alphabetlistview" target="_blank" rel="external">sunnylqm/react-native-alphabetlistview</a>，当时已经添加依赖之后发现这个效果是静态的，需要自己获取首字母，但是我写的不是国外app，所以还需要将汉字转化为拼音，于是我又找到了这个库<a href="https://github.com/hotoo/pinyin" target="_blank" rel="external">hotoo/pinyin</a>,可惜老天并不眷顾我（其实是我自己能力问题），一致没有install成功，最后只能放弃这个想法了。</p>
@@ -64,70 +271,62 @@
     Path in archive: lib/x86/libRSSupport.so</code><br>这个答案我在google中找到了github上的一些回答<a href="https://github.com/wasabeef/glide-transformations/issues/24" target="_blank" rel="external">Duplicate files during packaging of APK #24</a>，然后就搞定这个了。其实过程也没有文字说得那么顺利，我还是花了不少时间的。因为在android的文件夹下有两个<code>build.gradle</code>，一个在app同级目录，一个在app子目录里面。</p>
 <p>最后就搞定其他的细节bug就成功跑起效果来了。</p>
 
-    </section>
-    <footer class="post-footer">
-      <section class="author">
-    <h4>漏雨</h4>
-    <p>生活不只是眼前的苟且，还有程序和代码，诗和远方也不错</p>
-</section>
-      <section class="share">
-    <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/09/28/项目感想5/"
-       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-        <span class="hidden">Twitter</span>
-    </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/09/28/项目感想5/"
-       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-        <span class="hidden">Facebook</span>
-    </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/09/28/项目感想5/"
-       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-        <span class="hidden">Google+</span>
-    </a>
-</section>
-    </footer>
-  </article>
-  <nav class="pagination" role="pagination">
-    
-    <a class="newer-posts" href="/2016/10/15/项目感想6/">
-        ← 项目感想6
-    </a>
-    
-    <span class="page-number">•</span>
-    
-    <a class="older-posts" href="/2016/09/17/项目感想4/">
-        项目感想4 →
-    </a>
-    
-</nav>
-  <div id="comment" class="comments-area">
-    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
-
-    
-</div>
-</main>
-
+  </section>
 
   
-<footer class="site-footer">
   
-  <a class="subscribe icon-feed" href="atom.xml"><span class="tooltip">Subscribe!</span></a>
-  
-  <div class="inner">
-     <section class="copyright">All content copyright <a href="/">zues blog</a> &copy; 2014 &bull; All rights reserved.</section>
-     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
-  </div>
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
 </footer>
+        </div>
+    </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
 
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
 
 
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
 
 
+    
+    
 
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
 
 </body>
 </html>

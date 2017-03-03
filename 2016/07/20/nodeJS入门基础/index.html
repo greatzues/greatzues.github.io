@@ -1,59 +1,257 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>nodeJS入门基础 | zues blog</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+    
 
-  <meta name="generator" content="zues blog">
+    <title>
+      nodeJS入门基础 | zues blog 
+    </title>
 
-  
-  
-  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
-  
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
 
-  
+    <meta name="description" content="什么是NodeJS？Node是一个服务器端的javascript解释器,它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。Node解决并发连接最大数量的方法是：每个连接发射一个在 Node 引擎的进程中运行的事件，而不是为每个连接生成一个新的 OS 线程（并为其分配一些配套内存）。Node 声称它绝不会死锁">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodeJS入门基础 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/07/20/nodeJS入门基础/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="什么是NodeJS？Node是一个服务器端的javascript解释器,它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。Node解决并发连接最大数量的方法是：每个连接发射一个在 Node 引擎的进程中运行的事件，而不是为每个连接生成一个新的 OS 线程（并为其分配一些配套内存）。Node 声称它绝不会死锁">
+<meta property="og:updated_time" content="2016-07-23T04:13:27.522Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodeJS入门基础 | zues blog">
+<meta name="twitter:description" content="什么是NodeJS？Node是一个服务器端的javascript解释器,它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。Node解决并发连接最大数量的方法是：每个连接发射一个在 Node 引擎的进程中运行的事件，而不是为每个连接生成一个新的 OS 线程（并为其分配一些配套内存）。Node 声称它绝不会死锁">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
 </head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
 
 
-<body class="post-template">
+  <div class="panel-main">
 
-  <header class="site-head"  style="background-image: url(http://pic1.win4000.com/wallpaper/b/4fcec6ce626d2.jpg)" >
-    <div class="vertical">
-        <div class="site-head-content inner">
-             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
-            <h1 class="blog-title">zues blog</h1>
-            <h2 class="blog-description"></h2>
-        </div>
-    </div>
-</header>
   
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
 
-<main class="content" role="main">
-  <article class="post">
-    <span class="post-meta">
-      <time datetime="2016-07-20T03:27:57.000Z" itemprop="datePublished">
-          2016-07-20
-      </time>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
     
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
     
-    | 
-    <a href='/tags/react-native/'>react-native</a>
+
+    <!-- China social icon -->
+    <!--
     
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
     
-</span>
     <h1 class="post-title">nodeJS入门基础</h1>
-    <section class="post-content">
-      <h2 id="什么是NodeJS？"><a href="#什么是NodeJS？" class="headerlink" title="什么是NodeJS？"></a>什么是NodeJS？</h2><p>Node是一个服务器端的javascript解释器,它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。<br>Node解决并发连接最大数量的方法是：每个连接发射一个在 Node 引擎的进程中运行的事件，而不是为每个连接生成一个新的 OS 线程（并为其分配一些配套内存）。Node 声称它绝不会死锁，因为它根本不允许使用锁，它不会直接阻塞 I/O 调用。Node 还宣称，运行它的服务器能支持数万个并发连接。</p>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-20" class="post-meta__date date">2016-07-20</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="什么是NodeJS？"><a href="#什么是NodeJS？" class="headerlink" title="什么是NodeJS？"></a>什么是NodeJS？</h2><p>Node是一个服务器端的javascript解释器,它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。<br>Node解决并发连接最大数量的方法是：每个连接发射一个在 Node 引擎的进程中运行的事件，而不是为每个连接生成一个新的 OS 线程（并为其分配一些配套内存）。Node 声称它绝不会死锁，因为它根本不允许使用锁，它不会直接阻塞 I/O 调用。Node 还宣称，运行它的服务器能支持数万个并发连接。</p>
 <p>在学习react-native的时候发现有些后备知识不太健全，于是按照学习入门的要求就来看了一下nodejs的入门，但是这里我就不详细说学习步骤了，网上有一大堆步骤，我只说我遇到的一些问题和解决办法</p>
 <h2 id="有关函数传递"><a href="#有关函数传递" class="headerlink" title="有关函数传递"></a>有关函数传递</h2><hr>
 <p>写好一个以http服务器的server之后，我们如果想要模块化这个功能，在其他js文件里面调用这个server模块的时候就要在对应的server结尾处添加一段代码；</p>
@@ -83,70 +281,62 @@
 <p>最后是requestHandler.js函数<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var exec = require("child_process").exec;</span><br><span class="line"></span><br><span class="line">function start(response) &#123;</span><br><span class="line">  console.log("Request handler 'start' was called.");</span><br><span class="line"></span><br><span class="line">  exec("ls -lah", function (error, stdout, stderr) &#123;</span><br><span class="line">    response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">    response.write(stdout);</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function upload(response) &#123;</span><br><span class="line">  console.log("Request handler 'upload' was called.");</span><br><span class="line">  response.writeHead(200, &#123;"Content-Type": "text/plain"&#125;);</span><br><span class="line">  response.write("Hello Upload");</span><br><span class="line">  response.end();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.start = start;</span><br><span class="line">exports.upload = upload;</span><br></pre></td></tr></table></figure></p>
 <p>参考文章：[Node.js 究竟是什么？]{<a href="http://www.ibm.com/developerworks/cn/opensource/os-nodejs/index.html?ca=drs#icomments}" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/opensource/os-nodejs/index.html?ca=drs#icomments}</a></p>
 
-    </section>
-    <footer class="post-footer">
-      <section class="author">
-    <h4>漏雨</h4>
-    <p>生活不只是眼前的苟且，还有程序和代码，诗和远方也不错</p>
-</section>
-      <section class="share">
-    <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2016/07/20/nodeJS入门基础/"
-       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-        <span class="hidden">Twitter</span>
-    </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/07/20/nodeJS入门基础/"
-       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-        <span class="hidden">Facebook</span>
-    </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2016/07/20/nodeJS入门基础/"
-       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-        <span class="hidden">Google+</span>
-    </a>
-</section>
-    </footer>
-  </article>
-  <nav class="pagination" role="pagination">
-    
-    <a class="newer-posts" href="/2016/07/25/学习javascript有感/">
-        ← 学习javascript有感
-    </a>
-    
-    <span class="page-number">•</span>
-    
-    <a class="older-posts" href="/2016/07/19/react-native学习笔记/">
-        react-native学习笔记 →
-    </a>
-    
-</nav>
-  <div id="comment" class="comments-area">
-    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
-
-    
-</div>
-</main>
-
+  </section>
 
   
-<footer class="site-footer">
   
-  <a class="subscribe icon-feed" href="atom.xml"><span class="tooltip">Subscribe!</span></a>
-  
-  <div class="inner">
-     <section class="copyright">All content copyright <a href="/">zues blog</a> &copy; 2014 &bull; All rights reserved.</section>
-     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
-  </div>
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
 </footer>
+        </div>
+    </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
 
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
 
 
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
 
 
+    
+    
 
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
 
 </body>
 </html>
