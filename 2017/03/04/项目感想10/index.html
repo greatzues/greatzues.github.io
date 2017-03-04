@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      项目感想10 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="关于ios新的坑
+今天刚部署最新的项目到ios上时，发现一点问题：一，由于上次我使用react-native-upgrade更新过版本，于是在一些文件夹里面会出现冲突，找到自己需要的，删除不需要的即可，我按照我自己想法，把their保留了下来，删了我以前的our，我认为更新之后应该是这样的二，然后，使用xcode重新编译之后，开始报第一个错，发现少了react-native-root-toast这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目感想10 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2017/03/04/项目感想10/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="关于ios新的坑
+今天刚部署最新的项目到ios上时，发现一点问题：一，由于上次我使用react-native-upgrade更新过版本，于是在一些文件夹里面会出现冲突，找到自己需要的，删除不需要的即可，我按照我自己想法，把their保留了下来，删了我以前的our，我认为更新之后应该是这样的二，然后，使用xcode重新编译之后，开始报第一个错，发现少了react-native-root-toast这">
+<meta property="og:image" content="http://zuesblog.xyz/./img/updateAvatar1.png">
+<meta property="og:image" content="http://zuesblog.xyz/./img/updateAvatar2.png">
+<meta property="og:updated_time" content="2017-03-04T12:23:00.400Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目感想10 | zues blog">
+<meta name="twitter:description" content="关于ios新的坑
+今天刚部署最新的项目到ios上时，发现一点问题：一，由于上次我使用react-native-upgrade更新过版本，于是在一些文件夹里面会出现冲突，找到自己需要的，删除不需要的即可，我按照我自己想法，把their保留了下来，删了我以前的our，我认为更新之后应该是这样的二，然后，使用xcode重新编译之后，开始报第一个错，发现少了react-native-root-toast这">
+<meta name="twitter:image" content="http://zuesblog.xyz/./img/updateAvatar1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">项目感想10</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-03-04" class="post-meta__date date">2017-03-04</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="关于ios新的坑"><a href="#关于ios新的坑" class="headerlink" title="关于ios新的坑"></a>关于ios新的坑</h2><hr>
+<p>今天刚部署最新的项目到ios上时，发现一点问题：<br>一，由于上次我使用react-native-upgrade更新过版本，于是在一些文件夹里面会出现冲突，找到自己需要的，删除不需要的即可，我按照我自己想法，把their保留了下来，删了我以前的our，我认为更新之后应该是这样的<br>二，然后，使用xcode重新编译之后，开始报第一个错，发现少了react-native-root-toast这个库，install之后就可以正常运行了<br>三，接着是react-native-blur这个库，同样方法执行就可以了<br>四，项目正常打开之后发现一个问题，缺少对应的Material Icons，于是找到react-native-icons这个库，里面有对应的解决办法，这就轻松很多了，也就是将<code>node_modules/react-native-vector-icons</code>里面的<code>Fonts</code>文件夹添加到Xcode的项目中，正确执行方法是，在xcode中项目根目录下右键，选中Add flies to project，找到对应的fonts加进去即可<br>五，fonts加进去之后还有一个问题，按照react-native-vector-icons的说法，还有编辑一下Info.plist，添加对应的字体进去，顺手就把网络问题改了一下，也就是App Transport Security Settings中添加并修改一个属性Allow Arbitrary Loads，改为YES，ok， done！</p>
+<p>第四个问题可以参见这里：<a href="https://github.com/oblador/react-native-vector-icons" target="_blank" rel="external">https://github.com/oblador/react-native-vector-icons</a></p>
+<h3 id="访问相册和获取拍照功能"><a href="#访问相册和获取拍照功能" class="headerlink" title="访问相册和获取拍照功能"></a>访问相册和获取拍照功能</h3><hr>
+<p>昨天在ios上访问不了图册和照相功能，于是在<code>react-native-image-crop-picker</code>的github上找到原因，缺少对应的权限，需要做一下几步来获取：</p>
+<blockquote>
+<ul>
+<li>在xcode上打开info.plist添加相应的key和string，按照github上的指引，我添加了三个权限，分别是<code>NSPhotoLibraryUsageDescription</code>、<code>NSCameraUsageDescription</code>和<code>NSMicrophoneUsageDescription</code>,来获取相册、照相机和用户多媒体的权限，来上传照片还有视频，不过这里我是不需要多媒体的，因为我没有用到上传视频</li>
+<li>接着是判断自己电脑有没有安装cocoapods，如果有的话，在podfile上修改<code>platform:ios, &#39;8.0&#39;</code>，再添加<code>pod &#39;RSKImageCropper&#39;</code>和<code>pod &#39;QBImagePickerController&#39;</code>到pobfile中</li>
+<li>先来补充一下，CocoaPods是iOS最常用最有名的类库管理工具，当项目中用到的类库有更新，要下载新版本并且要加到项目中，使用它就可以一条命令行就解决了</li>
+<li>不过我没有安装这个，于是按照提示，我把<code>react-native-image-crop-picker</code>模型中的ios/ImageCropPickerSDK文件夹拖到xcode项目中</li>
+<li>点击项目根目录，在xcode的主界面会有一个General界面，在里面将<code>Deployment Info</code>设置<code>Deployment Target</code>为8.0，我这里好像默认就是8.0了</li>
+<li>最后就是在<code>Embedded Binariesz</code>中点击<code>+</code>添加对应<code>RSKImageCropper.framework</code>和<code>QBImagePicker.framework</code>框架，这里我要提醒自己，需要提前将对应的RSKImageCropper和QBImagePicker文件drap到xcode上，方法同上</li>
+</ul>
+</blockquote>
+<p><img src="./img/updateAvatar1.png" alt="配置权限详情"><br><img src="./img/updateAvatar2.png" alt="配置对应的框架"> </p>
+<h3 id="值得注意"><a href="#值得注意" class="headerlink" title="值得注意"></a>值得注意</h3><p>再次提醒一下自己，当把项目部署到ios上的时候，git clone之后，只用命令行<code>npm install</code>即可以安装好对应的modal，然后使用<code>react-native link</code>添加相关的依赖，接着就可以使用<code>react-native run-android</code>就可以跑起来了，有可能会遇到上面的那些情况</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

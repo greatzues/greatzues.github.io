@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zuesblog.xyz/"/>
-  <updated>2016-12-21T09:36:33.365Z</updated>
+  <updated>2017-03-04T12:23:00.400Z</updated>
   <id>http://zuesblog.xyz/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目感想10</title>
+    <link href="http://zuesblog.xyz/2017/03/04/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B310/"/>
+    <id>http://zuesblog.xyz/2017/03/04/项目感想10/</id>
+    <published>2017-03-04T12:16:05.000Z</published>
+    <updated>2017-03-04T12:23:00.400Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;关于ios新的坑&quot;&gt;&lt;a href=&quot;#关于ios新的坑&quot; class=&quot;headerlink&quot; title=&quot;关于ios新的坑&quot;&gt;&lt;/a&gt;关于ios新的坑&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;今天刚部署最新的项目到ios上时，发现一点问题：&lt;br&gt;一，由于上次我使用react-native-upgrade更新过版本，于是在一些文件夹里面会出现冲突，找到自己需要的，删除不需要的即可，我按照我自己想法，把their保留了下来，删了我以前的our，我认为更新之后应该是这样的&lt;br&gt;二，然后，使用xcode重新编译之后，开始报第一个错，发现少了react-native-root-toast这个库，install之后就可以正常运行了&lt;br&gt;三，接着是react-native-blur这个库，同样方法执行就可以了&lt;br&gt;四，项目正常打开之后发现一个问题，缺少对应的Material Icons，于是找到react-native-icons这个库，里面有对应的解决办法，这就轻松很多了，也就是将&lt;code&gt;node_modules/react-native-vector-icons&lt;/code&gt;里面的&lt;code&gt;Fonts&lt;/code&gt;文件夹添加到Xcode的项目中，正确执行方法是，在xcode中项目根目录下右键，选中Add flies to project，找到对应的fonts加进去即可&lt;br&gt;五，fonts加进去之后还有一个问题，按照react-native-vector-icons的说法，还有编辑一下Info.plist，添加对应的字体进去，顺手就把网络问题改了一下，也就是App Transport Security Settings中添加并修改一个属性Allow Arbitrary Loads，改为YES，ok， done！&lt;/p&gt;
+&lt;p&gt;第四个问题可以参见这里：&lt;a href=&quot;https://github.com/oblador/react-native-vector-icons&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/oblador/react-native-vector-icons&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;访问相册和获取拍照功能&quot;&gt;&lt;a href=&quot;#访问相册和获取拍照功能&quot; class=&quot;headerlink&quot; title=&quot;访问相册和获取拍照功能&quot;&gt;&lt;/a&gt;访问相册和获取拍照功能&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;昨天在ios上访问不了图册和照相功能，于是在&lt;code&gt;react-native-image-crop-picker&lt;/code&gt;的github上找到原因，缺少对应的权限，需要做一下几步来获取：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;在xcode上打开info.plist添加相应的key和string，按照github上的指引，我添加了三个权限，分别是&lt;code&gt;NSPhotoLibraryUsageDescription&lt;/code&gt;、&lt;code&gt;NSCameraUsageDescription&lt;/code&gt;和&lt;code&gt;NSMicrophoneUsageDescription&lt;/code&gt;,来获取相册、照相机和用户多媒体的权限，来上传照片还有视频，不过这里我是不需要多媒体的，因为我没有用到上传视频&lt;/li&gt;
+&lt;li&gt;接着是判断自己电脑有没有安装cocoapods，如果有的话，在podfile上修改&lt;code&gt;platform:ios, &amp;#39;8.0&amp;#39;&lt;/code&gt;，再添加&lt;code&gt;pod &amp;#39;RSKImageCropper&amp;#39;&lt;/code&gt;和&lt;code&gt;pod &amp;#39;QBImagePickerController&amp;#39;&lt;/code&gt;到pobfile中&lt;/li&gt;
+&lt;li&gt;先来补充一下，CocoaPods是iOS最常用最有名的类库管理工具，当项目中用到的类库有更新，要下载新版本并且要加到项目中，使用它就可以一条命令行就解决了&lt;/li&gt;
+&lt;li&gt;不过我没有安装这个，于是按照提示，我把&lt;code&gt;react-native-image-crop-picker&lt;/code&gt;模型中的ios/ImageCropPickerSDK文件夹拖到xcode项目中&lt;/li&gt;
+&lt;li&gt;点击项目根目录，在xcode的主界面会有一个General界面，在里面将&lt;code&gt;Deployment Info&lt;/code&gt;设置&lt;code&gt;Deployment Target&lt;/code&gt;为8.0，我这里好像默认就是8.0了&lt;/li&gt;
+&lt;li&gt;最后就是在&lt;code&gt;Embedded Binariesz&lt;/code&gt;中点击&lt;code&gt;+&lt;/code&gt;添加对应&lt;code&gt;RSKImageCropper.framework&lt;/code&gt;和&lt;code&gt;QBImagePicker.framework&lt;/code&gt;框架，这里我要提醒自己，需要提前将对应的RSKImageCropper和QBImagePicker文件drap到xcode上，方法同上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;./img/updateAvatar1.png&quot; alt=&quot;配置权限详情&quot;&gt;&lt;br&gt;&lt;img src=&quot;./img/updateAvatar2.png&quot; alt=&quot;配置对应的框架&quot;&gt; &lt;/p&gt;
+&lt;h3 id=&quot;值得注意&quot;&gt;&lt;a href=&quot;#值得注意&quot; class=&quot;headerlink&quot; title=&quot;值得注意&quot;&gt;&lt;/a&gt;值得注意&lt;/h3&gt;&lt;p&gt;再次提醒一下自己，当把项目部署到ios上的时候，git clone之后，只用命令行&lt;code&gt;npm install&lt;/code&gt;即可以安装好对应的modal，然后使用&lt;code&gt;react-native link&lt;/code&gt;添加相关的依赖，接着就可以使用&lt;code&gt;react-native run-android&lt;/code&gt;就可以跑起来了，有可能会遇到上面的那些情况&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;关于ios新的坑&quot;&gt;&lt;a href=&quot;#关于ios新的坑&quot; class=&quot;headerlink&quot; title=&quot;关于ios新的坑&quot;&gt;&lt;/a&gt;关于ios新的坑&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;今天刚部署最新的项目到ios上时，发现一点问题：&lt;br&gt;一，由于上次我使用reac
+    
+    </summary>
+    
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
+    
+    
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
+    
+  </entry>
   
   <entry>
     <title>rn的ios真机调试</title>
@@ -877,35 +917,6 @@
     
       &lt;p&gt;这一次的将要学习文本输入的处理，scrollView，listView以及网络和导航器的操作使用。&lt;/p&gt;
 &lt;h2 id=&quot;处理文本输入&quot;&gt;&lt;a href=&quot;#处理文本输入&quot; class=&quot;headerlink&quot; title=&quot;处理文本输入&quot;&gt;&lt;/a&gt;处理文本输入&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
-    
-    
-      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES入门5</title>
-    <link href="http://zuesblog.xyz/2016/08/06/ES%E5%85%A5%E9%97%A85/"/>
-    <id>http://zuesblog.xyz/2016/08/06/ES入门5/</id>
-    <published>2016-08-06T08:22:30.000Z</published>
-    <updated>2016-08-06T08:48:26.021Z</updated>
-    
-    <content type="html">&lt;p&gt;为了加快进度，我要忽略很多内容，现在直接跳到函数这一部分来学习了，因为在初学reactnative的时候就遇到了箭头函数。&lt;/p&gt;
-&lt;h2 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot; title=&quot;基本用法&quot;&gt;&lt;/a&gt;基本用法&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;在ES6中允许使用箭头(=&amp;gt;)来定义函数。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; f = v =&amp;gt; v;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//等同于&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; f = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;v&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; v;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;小结一下：对比可以看出一点端倪，首先是分析结构：&lt;strong&gt;var 变量名字 = 参数列表 =&amp;gt; 返回的数值;&lt;/strong&gt;。也就是“=&amp;gt;”可以替代function这个词语使用并且前后省略了return这个关键字，方便了许多。&lt;/p&gt;
-&lt;p&gt;另外如果箭头函数&lt;strong&gt;不需要参数&lt;/strong&gt;或者是需要&lt;strong&gt;多个参数&lt;/strong&gt;的时候，就可以使用一个圆括号代表参数部分。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; f = () =&amp;gt; &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 等同于&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; f = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sum = (num1, num2) =&amp;gt; num1 + num2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 等同于&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sum = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;num1, num2&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; num1 + num2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;当然如果箭头函数的代码块多于一条语句，就需要用大括号括起来，并且使用return语句返回。由此我可以联想到假如在return之前还需要做一些事情的话，有了这个功能就很好办了。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sum = (num1, num2) =&amp;gt; &amp;#123;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; num1 + num2;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//记住最后是有分号结尾的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;为了加快进度，我要忽略很多内容，现在直接跳到函数这一部分来学习了，因为在初学reactnative的时候就遇到了箭头函数。&lt;/p&gt;
-&lt;h2 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot; title=&quot;基本用法&quot;&gt;&lt;/a&gt;基本用法&lt;
     
     </summary>
     
