@@ -30,7 +30,9 @@
 我是在虚拟机上安装的mac系统，首先借了一台ipone来调试，手机的系统是ios 10.2，很明显我的Xcode刚好是8.1不支持ios 10.2，无奈只好去更新版本。
 虚拟机网速慢是出了名的，于是一天就过去了。
 开">
-<meta property="og:updated_time" content="2016-12-21T09:36:33.365Z">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/710856/201510/710856-20151029223326169-1014964687.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/710856/201510/710856-20151029223332700-636849598.png">
+<meta property="og:updated_time" content="2017-03-14T01:34:44.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rn的ios真机调试 | zues blog">
 <meta name="twitter:description" content="RN的ios真机调试
@@ -38,6 +40,7 @@
 我是在虚拟机上安装的mac系统，首先借了一台ipone来调试，手机的系统是ios 10.2，很明显我的Xcode刚好是8.1不支持ios 10.2，无奈只好去更新版本。
 虚拟机网速慢是出了名的，于是一天就过去了。
 开">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/710856/201510/710856-20151029223326169-1014964687.png">
     
     
     
@@ -275,6 +278,21 @@ classes that you can use:
 <blockquote>
 <p>1,在Xcode上打开项目，然后点击自己项目的根目录，可以看到</p>
 </blockquote>
+<h2 id="在VMWare上的mac-os共享win-10的文件夹"><a href="#在VMWare上的mac-os共享win-10的文件夹" class="headerlink" title="在VMWare上的mac os共享win 10的文件夹"></a>在VMWare上的mac os共享win 10的文件夹</h2><hr>
+<p>首先我是在这篇<a href="http://blog.csdn.net/limm33/article/details/52879761" target="_blank" rel="external">如何在vmware中安装mac OS系统</a>博客上找到的解决方法，非常感谢！</p>
+<p>一开始的时候，我启用共享文件夹之后，发现按照步骤，在mac虚拟机的桌面上看不到共享的文件夹，当时没在意，因为暂时还用不上共享的功能</p>
+<p>后来发现非常需要，因为本地的文件想要共享到mac上需要上传到云，再下载下来，得花不少时间。</p>
+<p>设置共享文件夹之前的步骤我就不聊了，google一下到处都会有教，其实最关键的一个步骤就是在启用文件共享之后</p>
+<blockquote>
+<ul>
+<li>1.确保左上角苹果标志的旁边是”Finder”</li>
+<li>2.点击”Finder”</li>
+<li>3.选择”偏好设置”</li>
+<li>4.然后在 “通用” 标签下勾选”已连接服务器”</li>
+</ul>
+</blockquote>
+<p><img src="http://images2015.cnblogs.com/blog/710856/201510/710856-20151029223326169-1014964687.png" alt="左上角的finder"><br><img src="http://images2015.cnblogs.com/blog/710856/201510/710856-20151029223332700-636849598.png" alt="finder的偏好设置"></p>
+<p>然后就能看到桌面出现了VMware Shared Folders的图标了。</p>
 
   </section>
 
