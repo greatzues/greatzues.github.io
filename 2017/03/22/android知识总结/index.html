@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      android知识总结 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="三种命名空间
+123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
+
+
+1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android知识总结 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2017/03/22/android知识总结/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="三种命名空间
+123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
+
+
+1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用">
+<meta property="og:updated_time" content="2017-03-26T13:22:33.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android知识总结 | zues blog">
+<meta name="twitter:description" content="三种命名空间
+123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
+
+
+1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">android知识总结</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-03-22" class="post-meta__date date">2017-03-22</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/android/">android</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="三种命名空间"><a href="#三种命名空间" class="headerlink" title="三种命名空间"></a>三种命名空间</h2><hr>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xmlns:android=”http://schemas.android.com/apk/res/android”</span><br><span class="line">xmlns:tools=”http://schemas.android.com/tools”</span><br><span class="line">xmlns:app=”http://schemas.android.com/apk/res-auto”</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用户自定义的<br>详情看这篇博客：<a href="http://blog.csdn.net/xx326664162/article/details/63254622" target="_blank" rel="external"> Android中XML的命名空间</a></li>
+</ul>
+</blockquote>
+<h2 id="CoordinatorLayout用法"><a href="#CoordinatorLayout用法" class="headerlink" title="CoordinatorLayout用法"></a>CoordinatorLayout用法</h2><hr>
+<p>这个部分比较难，不过大体上知道效果是怎样的，先放着<br><code>CoordinatorLayout</code>可以给自己的子组件制造出一种折叠的效果，例如可以产生有视觉差的详情页，还有可以扩展用户视图的tarbar，当用互手势上划的时候，会将顶部的toolbar隐藏，等用户向下滑动的时候，显示出来。</p>
+<h2 id="java的protect关键字"><a href="#java的protect关键字" class="headerlink" title="java的protect关键字"></a>java的protect关键字</h2><hr>
+<p>一直被这个关键困扰着，本来以为自己已经熟练掌握了，但是才发现，protect还没理解好，关于public和private两个极端就不说了</p>
+<blockquote>
+<ul>
+<li>priavte          本类可见</li>
+<li>public            所有类可见</li>
+<li>protected      本包和所有子类都可见</li>
+<li>friendly          本包可见（即默认的形式）<br>也就是protected：protected对于子女、朋友来说，就是public的，可以自由使用，没有任何限制，而对于其他的外部class，protected就变成private。</li>
+</ul>
+</blockquote>
+<h2 id="java的assert关键字"><a href="#java的assert关键字" class="headerlink" title="java的assert关键字"></a>java的assert关键字</h2><hr>
+<p>assert关键字语法很简单，有两种用法：</p>
+<p>1、assert <boolean表达式><br>如果<boolean表达式>为true，则程序继续执行。<br>如果为false，则程序抛出AssertionError，并终止执行。</boolean表达式></boolean表达式></p>
+<p>2、assert <boolean表达式> : &lt;错误信息表达式&gt;<br>如果<boolean表达式>为true，则程序继续执行。<br>如果为false，则程序抛出java.lang.AssertionError，并输入&lt;错误信息表达式&gt;。</boolean表达式></boolean表达式></p>
+<pre><code>使用assert断言有陷阱，详情可以看这篇博客[Java陷阱之assert关键字详解](http://m.jb51.net/article/41155.htm)
+</code></pre><h2 id="LayoutInflater与MenuInflater"><a href="#LayoutInflater与MenuInflater" class="headerlink" title="LayoutInflater与MenuInflater"></a>LayoutInflater与MenuInflater</h2><hr>
+<h3 id="Inflater方法"><a href="#Inflater方法" class="headerlink" title="Inflater方法"></a>Inflater方法</h3><p><code>public View inflate (int resource, ViewGroup root)</code></p>
+<blockquote>
+<ul>
+<li>参数resource：将要加载的XML布局id，例如R.layout.list_item</li>
+<li>参数root：父视图，可选项，一般为Null,不过在填充menu的时候父视图就是menu对象了</li>
+</ul>
+</blockquote>
+<h3 id="关于LayoutInflater可以在运行是加载一个xml文件，这样可以减少在onCreate的时候对应用的加载造成太大的负担，有三种方式可以获取LayoutInflater"><a href="#关于LayoutInflater可以在运行是加载一个xml文件，这样可以减少在onCreate的时候对应用的加载造成太大的负担，有三种方式可以获取LayoutInflater" class="headerlink" title="关于LayoutInflater可以在运行是加载一个xml文件，这样可以减少在onCreate的时候对应用的加载造成太大的负担，有三种方式可以获取LayoutInflater"></a>关于LayoutInflater可以在运行是加载一个xml文件，这样可以减少在onCreate的时候对应用的加载造成太大的负担，有三种方式可以获取LayoutInflater</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是第一种</span></span><br><span class="line">LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)</span><br><span class="line"><span class="comment">//这是第二种，from方法封装了getSystemService(...)</span></span><br><span class="line">LayoutInflater inflater = LayoutInflater.from(context);</span><br><span class="line"><span class="comment">//这是第三种</span></span><br><span class="line">LayoutInflater inflater = getLayoutInflater();</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取之后，就可以调用inflater获取一个View对象了</span></span><br><span class="line">View myView = inflater.inflate(R.layout.main, <span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="MenuInflater用法要简单很多，它只有Activity-getMenuInflater-方法"><a href="#MenuInflater用法要简单很多，它只有Activity-getMenuInflater-方法" class="headerlink" title="MenuInflater用法要简单很多，它只有Activity.getMenuInflater()方法"></a>MenuInflater用法要简单很多，它只有Activity.getMenuInflater()方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreateOptionsMenu</span><span class="params">(Menu menu)</span> </span>&#123;</span><br><span class="line">        getMenuInflater().inflater.inflate(R.menu.mymenu, menu);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onCreateOptionsMenu(menu);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>更多详情参考：<a href="http://www.bozhiyue.com/anroid/boke/2016/0330/12683.html" target="_blank" rel="external">Android菜单详解（二）——创建并响应选项菜单</a></p>
+<h2 id="onSaveInstanceState方法"><a href="#onSaveInstanceState方法" class="headerlink" title="onSaveInstanceState方法"></a>onSaveInstanceState方法</h2><hr>
+<p>在每一个<code>activity</code>的<code>onCreate</code>函数重都会带一个<code>bundle</code>参数，也就是<code>bundle SaveInstanceState</code>，拆分单词为Save Instance State，也就是保存实例状态，不过其实这个是保存<code>activity</code>状态的</p>
+<p>使用的话，可以通过下面的代码来理解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">                <span class="keyword">super</span>.onCreate(saveInstanceState);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码很经常可以见到，可是saveInstanceState中的数据中怎么拿到的呢！<br>在一个<code>activity</code>生命周期结束的时候，会调用<code>onSaveInstanceState</code>方法,如下面的代码所示<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSaveInstanceState</span><span class="params">(Bundle saveInstanceState)</span></span>&#123;</span><br><span class="line">       <span class="keyword">super</span>.onSaveInstanceState(saveInstanceState);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果需要保存状态，就在onsaveInstanceState中，将状态数据以key-value的形式放入到saveInstanceState中，如果需要手动将数据保存到状态中，可以通过下面的代码实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSaveInstanceState</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">      savedInstanceState.putInt(<span class="string">"IntTest"</span>, <span class="number">0</span>);</span><br><span class="line">      savedInstanceState.putString(<span class="string">"StrTest"</span>, <span class="string">"savedInstanceState test"</span>);</span><br><span class="line">      <span class="keyword">super</span>.onSaveInstanceState(savedInstanceState);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>手动将activity传进来的的savedInstanceState参数，添加key，value值，下次要取值的时候就可以调用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">super</span>.onRestoreInstanceState(savedInstanceState);</span><br><span class="line">      <span class="keyword">int</span> IntTest = savedInstanceState.getInt(<span class="string">"IntTest"</span>);</span><br><span class="line">      String StrTest = savedInstanceState.getString(<span class="string">"StrTest"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="setRetainInstance-作用"><a href="#setRetainInstance-作用" class="headerlink" title="setRetainInstance()作用"></a>setRetainInstance()作用</h2><hr>
+<p>可以让fragment在重新创建activity的时候，不完全被销毁，以便恢复<br>我看到的代码是在onCreate中调用setRetainInstance()的，返回true的时候，fragment会被保存到内存中<br>在销毁时，直接从onDestroyView()到onDeatch()，跳过了onDestroy()；<br>在创建的时候，直接从onAttach()到onCreateView()，跳过了onCreate()；<br>这时候就不适宜在在onCreate()中放置一些初始化逻辑</p>
+<p>详情见<a href="http://blog.csdn.net/weihan1314/article/details/7997421" target="_blank" rel="external">Android4.0-Fragment框架实现方式剖析</a></p>
+<h2 id="adapter简单使用"><a href="#adapter简单使用" class="headerlink" title="adapter简单使用"></a>adapter简单使用</h2><hr>
+<p>常用的有 BaseAdapter，SimpleAdapter，ArrayAdapter，SimpleCursorAdapter<br>1、ArrayAdapter是最简单的adapter了，只显示纯文本，<code>ArrayAdapter(Context context, int textViewResourceId, List&lt;T&gt; objects)</code>的第一个参数是上下文，一般都是this；第二个参数比如<code>android.R.layout.simple_list_item_1</code>，就是每一个text的排列方式，第三个就是数据列表了</p>
+<p>2、SimpleAdapter的扩展性最好,可以定义各种不同的<code>item view</code>布局，<code>SimpleAdapter adapter = new SimpleAdapter(this, getData(), R.layout.simple, new String[] { &quot;title&quot;,  &quot;img&quot; }, new int[] { R.id.title, R.id.img });</code><br>同样，this代表上下文，getData是要适配进去的数据，第三个是每一个item view的xml文件，接着就是数据中的不同数组对象的键，通过键可以读取对应的值，放到第五个参数对应的<code>child view</code>中，第五个是<code>item view</code>不同的<code>child view id</code>;</p>
+<p>3、SimpleCursorAdapter，这个我没用过，不过也很好理解，一定要以数据库作为数据源的时候,才能使用SimpleCursorAdapter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleCursorAdapterActivity</span> <span class="keyword">extends</span> <span class="title">ListActivity</span> </span>&#123;</span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">         <span class="comment">//获得一个指向系统通讯录数据库的Cursor对象获得数据来源</span></span><br><span class="line">         Cursor cur = getContentResolver().query(People.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">         startManagingCursor(cur);</span><br><span class="line">         <span class="comment">//实例化列表适配器</span></span><br><span class="line">         <span class="comment">//上下文，显示的view形式，数据源，数据源的键获取对应的值，适配到id为text1的位置上</span></span><br><span class="line">         ListAdapter adapter = <span class="keyword">new</span> SimpleCursorAdapter(<span class="keyword">this</span>, android.R.layout.simple_list_item_1, cur, <span class="keyword">new</span> String[] &#123;People.NAME&#125;, <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;android.R.id.text1&#125;);</span><br><span class="line">         setListAdapter(adapter);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>要在AndroidManifest.xml文件中加入权限，<code>&lt;uses-permission android:name=&quot;android.permission.READ_CONTACTS&quot;&gt;&lt;/uses-permission&gt;</code></p>
+<h2 id="区别final变量、final方法、final类"><a href="#区别final变量、final方法、final类" class="headerlink" title="区别final变量、final方法、final类"></a>区别final变量、final方法、final类</h2><hr>
+<blockquote>
+<ul>
+<li>fianl变量，一般和static关键字一起使用声明一个常量,这样可以保证共享内存，最关键的是，final变量是只读的</li>
+<li>final方法，如果一个方法的功能已经很完整了，子类不需要改变，可以声明为final方法，值得注意的是，final方法比非final方法更快，因为在编译的时候已经静态绑定，不需要在运行时动态绑定</li>
+<li>final类的功能是完整的，不能被继承，    例如String、Interger</li>
+</ul>
+</blockquote>
+<p>final有几个优点</p>
+<blockquote>
+<ul>
+<li>final关键字提高了性能。JVM和Java应用都会缓存final变量。</li>
+<li>final变量可以安全的在多线程环境下进行共享，而不需要额外的同步开销。</li>
+<li>使用final关键字，JVM会对方法、变量及类进行优化。</li>
+</ul>
+</blockquote>
+<p>参考<a href="http://www.importnew.com/7553.html" target="_blank" rel="external">深入理解Java中的final关键字</a></p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      rxAndroid基础入门 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="这篇博客参考给 Android 开发者的 RxJava 详解
+创建Observer
+12345678910111213141516Observer&amp;lt;String&amp;gt; observer = new Observer&amp;lt;String&amp;gt;()&amp;#123;	@Override                public void onCompleted() &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rxAndroid基础入门 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2017/03/26/rxAndroid基础入门/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="这篇博客参考给 Android 开发者的 RxJava 详解
+创建Observer
+12345678910111213141516Observer&amp;lt;String&amp;gt; observer = new Observer&amp;lt;String&amp;gt;()&amp;#123;	@Override                public void onCompleted() &amp;#123;">
+<meta property="og:updated_time" content="2017-03-27T08:23:42.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rxAndroid基础入门 | zues blog">
+<meta name="twitter:description" content="这篇博客参考给 Android 开发者的 RxJava 详解
+创建Observer
+12345678910111213141516Observer&amp;lt;String&amp;gt; observer = new Observer&amp;lt;String&amp;gt;()&amp;#123;	@Override                public void onCompleted() &amp;#123;">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">rxAndroid基础入门</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-03-26" class="post-meta__date date">2017-03-26</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/android/">android</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>这篇博客参考<a href="https://gank.io/post/560e15be2dca930e00da1083#toc_5" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a></p>
+<h2 id="创建Observer"><a href="#创建Observer" class="headerlink" title="创建Observer"></a>创建Observer</h2><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Observer&lt;String&gt; observer = <span class="keyword">new</span> Observer&lt;String&gt;()&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br></pre></td></tr></table></figure>
+<p>另外还有一个抽象类<code>Subscriber</code>也实现了Observer接口，源码中可以看到<code>Subscriber</code>中没有实现<code>Observer</code>的三个方法，而是新增了一些新的方法。因此创建一个<code>Subscriber</code>能实现同样的方法，而且还可以使用新增的<code>onStart</code>和<code>unsubscribe</code>方法</p>
+<blockquote>
+<ul>
+<li><code>onStart()</code>能在事件未发送之前调用，可以做一些准备的事件，例如数据的清零，更多详情还是看文章一开始的链接</li>
+<li><code>unsubscribe()</code>可以取消订阅，使用了这个方法之前使用<code>isUnsubscribed()</code>判断状态，可以防止内存泄漏</li>
+</ul>
+</blockquote>
+<h2 id="创建Observable"><a href="#创建Observable" class="headerlink" title="创建Observable"></a>创建Observable</h2><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Observable observable = Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;String&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> String&gt; subscriber)</span> </span>&#123;</span><br><span class="line">        subscriber.onNext(<span class="string">"Hello"</span>);</span><br><span class="line">        subscriber.onNext(<span class="string">"Hi"</span>);</span><br><span class="line">        subscriber.onNext(<span class="string">"Aloha"</span>);</span><br><span class="line">        subscriber.onCompleted();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>可以看到，create里面的参数是一个<code>OnSubscribe</code>参数，从字面理解就是正在注册着广播的观察者，查看源码，<code>OnSubscribe</code>是一个接口继承了一个叫<code>Action1&lt;Subscriber&lt;? super T&gt;&gt;</code>的接口<br>当call方法被调用的时候，已经注册的观察者会依次执行三个<code>onNext()</code>和<code>onCompleted()</code>方法</p>
+<h3 id="just-方法和from-方法"><a href="#just-方法和from-方法" class="headerlink" title="just()方法和from()方法"></a>just()方法和from()方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Observable observable = Observable.just(<span class="string">"hello"</span>,<span class="string">"my"</span>,<span class="string">"name"</span>,<span class="string">"is"</span>,<span class="string">"zues"</span>);</span><br><span class="line"><span class="comment">//等价于依次调用create的onNext("hello");onNext("my");onNext("name");onNext("is");onNext("zues");onCompleted();</span></span><br><span class="line"></span><br><span class="line">String[] words = &#123;<span class="string">"hello"</span>,<span class="string">"my"</span>,<span class="string">"name"</span>,<span class="string">"is"</span>,<span class="string">"zues"</span>&#125;;</span><br><span class="line">Observable observable = Observable.from(words);</span><br><span class="line"><span class="comment">//同样等价于依次调用create的onNext("hello");onNext("my");onNext("name");onNext("is");onNext("zues");onCompleted();</span></span><br></pre></td></tr></table></figure>
+<h2 id="建立订阅关系"><a href="#建立订阅关系" class="headerlink" title="建立订阅关系"></a>建立订阅关系</h2><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(observer);</span><br><span class="line"><span class="comment">//或者是observeable.subscribe(subscriber);</span></span><br></pre></td></tr></table></figure>
+<p>查看源码可以发现，在<code>subscribe()</code>方法中，传入一个<code>Subscriber</code>参数,在方法中调用<code>onStart()</code>和<code>call()</code>方法，也就是<code>observable</code>不是在创建的时候就开始发送事件，而是在被订阅的时候才开始执行。</p>
+<h2 id="自定义创建出Subscriber"><a href="#自定义创建出Subscriber" class="headerlink" title="自定义创建出Subscriber"></a>自定义创建出Subscriber</h2><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Action1&lt;String&gt; onNextAction = <span class="keyword">new</span> Action1&lt;String&gt;()&#123;</span><br><span class="line">	<span class="meta">@override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Action1&lt;Throwable&gt; onErrorAction = <span class="keyword">new</span> Action1&lt;Throwable&gt;()&#123;</span><br><span class="line">	<span class="meta">@override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Throwable throwable)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Action0 onCompletedAction = <span class="keyword">new</span> Action0()&#123;</span><br><span class="line">	<span class="meta">@override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自动创建 Subscriber ，并使用 onNextAction 来定义 onNext()</span></span><br><span class="line">observable.subscribe(onNextAction);</span><br><span class="line"><span class="comment">// 自动创建 Subscriber ，并使用 onNextAction 和 onErrorAction 来定义 onNext() 和 onError()</span></span><br><span class="line">observable.subscribe(onNextAction, onErrorAction);</span><br><span class="line"><span class="comment">// 自动创建 Subscriber ，并使用 onNextAction、 onErrorAction 和 onCompletedAction 来定义 onNext()、 onError() 和 onCompleted()</span></span><br><span class="line">observable.subscribe(onNextAction, onErrorAction, onCompletedAction);</span><br></pre></td></tr></table></figure>
+<h2 id="调度器Scheduler的使用"><a href="#调度器Scheduler的使用" class="headerlink" title="调度器Scheduler的使用"></a>调度器Scheduler的使用</h2><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">	.subscribeOn(Schedulers.io()) <span class="comment">//指定subscribe()发生在IO线程</span></span><br><span class="line">	.observeOn(AndroidSchedulers.mainThread()) <span class="comment">//指定Subscriber的回调发生在主线程</span></span><br><span class="line">	.subscribe(<span class="keyword">new</span> Action1&lt;Integer&gt;()&#123;</span><br><span class="line">		<span class="meta">@override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Integer number)</span> </span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+<p>在<code>Scheduler</code>中,默认在当前线程运行，也就是<code>Scheduler.immediate()</code>，另外还可以新开一个线程，在新的线程操作的<code>Scheduler.newThread()</code>方法，以及比较常用的io流上工作的<code>Scheduler.io()</code>，原理我解释不清楚，但是这个比<code>newThread()</code>更有效率，因为我没有读懂博客的内容</p>
+<p>除此之外，还有<code>Schedulers.computation()</code>主要CPU-bound(计算密集型)操作和指定在Android主线程运行的<code>AndroidSchedulers.mainThread()</code>。</p>
+<p>关于密集型操作是指用来计算、逻辑判断，例如计算圆周率、开根号、图形的计算等大型操作。</p>
+<h2 id="区分subscribeOn-和observeOn-区分"><a href="#区分subscribeOn-和observeOn-区分" class="headerlink" title="区分subscribeOn()和observeOn()区分"></a>区分subscribeOn()和observeOn()区分</h2><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Observeable.just(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">	.subscribeOn(Sbhedules.io())</span><br><span class="line">	.observeOn(AndroidSchedulers.mainThread())</span><br><span class="line">	.subscribe(<span class="keyword">new</span> Action1&lt;Integer&gt;()&#123;</span><br><span class="line">		<span class="meta">@override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Integer number)</span> </span>&#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>subscribeOn(Schedulers.io())</code>指定的是事件的创建也就是观察者发生在IO线程<br><code>observeOn(AndroidSchedulers.mainThread())</code>指定Subscriber的回调，也就是订阅者的回调运行在Android主线程</p>
+<h2 id="map-和flatMap"><a href="#map-和flatMap" class="headerlink" title="map()和flatMap()"></a>map()和flatMap()</h2><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(<span class="string">"images/logo.png"</span>)</span><br><span class="line">	.map(<span class="keyword">new</span> Func1&lt;String, Bitmap&gt;()&#123;</span><br><span class="line">		<span class="meta">@override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> Bitmap <span class="title">call</span><span class="params">(String filePath)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> getBitmapFromPath(filePath);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">	.subscribe(<span class="keyword">new</span> Action1&lt;Bitmap&gt;()&#123;</span><br><span class="line">		<span class="meta">@override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Bitmap bitmap)</span></span>&#123;</span><br><span class="line">			<span class="comment">//showBitmap(bitmap); 展示图片</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<p><code>map()方法</code>同样不说原理了，在new Fun1中传入的键值对是自定义的，由传入just的数据类型来定义键，对应的值由自己的需求来更换，这里需要返回Bitmap对象，然后将返回的类型传入subscribe中去，传入call函数使用</p>
+<p>当直接传入的对象不是一对一的单个对象，而是一对多的转化，怎样才能把一个Student转化为多个Course，这时候就可以用到<code>flatMap()</code>了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Student[] students = ...;</span><br><span class="line">Subacriber&lt;Corese&gt; subscriber = <span class="keyword">new</span> Subscriber&lt;Course&gt;()&#123;</span><br><span class="line">	<span class="meta">@override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(Course course)</span></span>&#123;</span><br><span class="line">		Log.d(tag, course.getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Observable.from(students)</span><br><span class="line">	.flatMap(<span class="keyword">new</span> Func1&lt;Student, Observable&lt;Course&gt;&gt;()&#123;</span><br><span class="line">		<span class="meta">@override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> Observable&lt;Couese&gt; <span class="title">call</span><span class="params">(Student student)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> Observable.from(student.getCourses());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">	.subscribe(subscriber);</span><br></pre></td></tr></table></figure></p>
+<p>看了几遍，终于搞懂了这里的逻辑，首先将学生对象传进去，接着就是转化为一个Observable对象，返回的是每一个遍历好的student.getCourses，也就是返回course数组，最后在<code>Observable.from()</code>中将数组对象再依次遍历出来</p>
+<p>逻辑：students—传入—&gt;&gt;通过<code>Observable.from</code>遍历数组每一个<code>students</code>的值拿到每一个学生对应的课程<code>Course</code>—返回—&gt;&gt;student.getCourses—传入—&gt;&gt;通过<code>Observable.from</code>遍历数组每一个<code>Course</code>的值拿到每一个学生对应的课程<code>Course.getName()</code></p>
+<h2 id="关于interface的理解"><a href="#关于interface的理解" class="headerlink" title="关于interface的理解"></a>关于interface的理解</h2><hr>
+<h3 id="1、关于接口的匿名内部类"><a href="#1、关于接口的匿名内部类" class="headerlink" title="1、关于接口的匿名内部类"></a>1、关于接口的匿名内部类</h3><p>今天看到rxJava中的一个方法<code>Observer&lt;String&gt; observer = new Observer&lt;String&gt;(){...}</code>是直接内部类，然后看了一下Observer的源码，发现是一个接口，突然想了一想，觉得接口不是不可以new的吗</p>
+<p>接着就去看了知乎的一些解释，其实就是另一种隐藏的实现了对应Observer接口的匿名内部类，类似如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">observer</span> <span class="keyword">implements</span> <span class="title">Observer</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String s)</span> </span>&#123;&#125;;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也就是在new的时候会自动实现一个匿名的内部类，而里面的内部类实现了Observer接口</p>
+<h3 id="2、关于接口的意义"><a href="#2、关于接口的意义" class="headerlink" title="2、关于接口的意义"></a>2、关于接口的意义</h3><p>我们都知道接口是一个规范，也就是只有空的方法，但是没有实现，非抽象类一旦实现了接口的话就要实现接口的所有方法，但是抽象类可以不用是实现接口的所有方法。</p>
+<p>关于接口的意义，在知乎看到一个网友这么说，感觉很贴切：<br>`接口就是个招牌。比如说你今年放假出去杭州旅游，玩了一上午，你也有点饿了，突然看到前面有个店子，上面挂着KFC，然后你就知道今天中饭有着落了。KFC就是接口，我们看到了这个接口，就知道这个店会卖炸鸡腿（实现接口）。那么为神马我们要去定义一个接口涅，这个店可以直接卖炸鸡腿啊（直接写实现方法），是的，这个店可以直接卖炸鸡腿，但没有挂KFC的招牌，我们就不能直接简单粗暴的冲进去叫服务员给两个炸鸡腿了。要么，我们就要进去问，你这里卖不卖炸鸡腿啊，卖不卖汉堡啊，卖不卖圣代啊（这就是反射）。很显然，这样一家家的问实在是非常麻烦（反射性能很差）。要么，我们就要记住，中山路108号卖炸鸡，黄山路45号卖炸鸡（硬编码），很显然这样我们要记住的很多很多东西（代码量剧增），而且，如果有新的店卖炸鸡腿，我们也不可能知道（不利于扩展）。</p>
+<p>（上面那句回答来自<a href="https://www.zhihu.com/question/20111251/answer/16585393" target="_blank" rel="external">Java 中的接口有什么作用？</a>,作者：Ivony）</p>
+<p>我又看了一下，rxAndroid中一个比较重要的东西<code>Subscriber</code>，<code>Subscriber</code>是抽象类并且实现了<code>Observer</code>的接口，<code>Subscriber</code>没有实现Observer的方法，不过当我实现<code>Subscriber</code>的时候，也一样要实现Observer的三个方法</p>
+<p>也就是，一个实现了接口的抽象类可以实现接口的方法，但是一个一个普通类实现了接口或者是继承了抽象类就要实现所有的父类实现接口的那些方法，也要实现抽象类的抽象方法。</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
