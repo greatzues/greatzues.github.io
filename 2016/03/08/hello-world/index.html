@@ -24,7 +24,7 @@ Quick">
 <meta property="og:site_name" content="zues blog">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick">
-<meta property="og:updated_time" content="2016-03-08T02:45:02.325Z">
+<meta property="og:updated_time" content="2017-07-24T10:13:38.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World | zues blog">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
@@ -253,6 +253,24 @@ classes that you can use:
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<hr>
+<h3 id="我是时间线2017-0724，我来添加一点关于git使用的新知识"><a href="#我是时间线2017-0724，我来添加一点关于git使用的新知识" class="headerlink" title="我是时间线2017/0724，我来添加一点关于git使用的新知识"></a>我是时间线2017/0724，我来添加一点关于git使用的新知识</h3><hr>
+<p>在开发设计联盟的时候，当时是新建了一个分支<code>zues</code>在仓库上，也就是除了<code>master</code>之外，还有另外一个分支，而我开发主要是在<code>zues</code>分支上，由于项目赶得紧，所以陶醉在分支上一直没有合并。</p>
+<p>这里需要提醒我自己的是合并的三部曲，配上每一条指令的含义，虽然这很基础啊，但我记住真的不好（其实是很少用这些指令，平时都是用commit、push、pull），所以记录下来防止下次忘记了找不到笔记看</p>
+<h3 id="克隆分支仓库三部曲："><a href="#克隆分支仓库三部曲：" class="headerlink" title="克隆分支仓库三部曲："></a>克隆分支仓库三部曲：</h3><blockquote>
+<ul>
+<li>git clone &lt;仓库地址&gt; ，这个我就不解释了 </li>
+<li>git checkout origin/zues , 切换到远程仓库的zues分支上，这时候就把对应zues仓库的代码同步到本地了</li>
+<li>git checkout -b zues , 本地新建了一个zues分支用来对应远程仓库的zues分支</li>
+<li>git checkout master , 切换会本地master分支</li>
+<li>git merge zues , 这一步是关键，用来合并本地zues，如果这时候代码之间有冲突的话就要继续解决冲突了，但由于我是直接基于zues分支开发，没有并行开发，所以就没有解决冲突这一步</li>
+<li>git branch -d zues , 删除本地zues分支</li>
+<li>git branch ,查看当前分支情况，可以发现当前分支只剩下master了</li>
+<li>git commit -m “”, commit代码到工作区</li>
+<li>git push origin master ,推送代码到github</li>
+</ul>
+</blockquote>
+<p>ok，就几个步骤，完成代码本地合并问题，希望后面我用不上这里的笔记，可以通过这次记录永久记忆下来，哈哈！</p>
 
   </section>
 

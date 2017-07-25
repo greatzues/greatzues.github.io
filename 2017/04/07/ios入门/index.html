@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ios入门 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="IOS基础入门
+ios的开发使用Objective C语言，和java一样，它页是一种面向对象的语言消息传递在java中我们把Objective-C的消息传递叫做调用方法
+不带参数1[obj method]
+带一个参数1[obj method:value];
+例如：1[counter increse:1];
+对应java版本1counter.increse(1);
+带多个参数12- void se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios入门 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2017/04/07/ios入门/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="IOS基础入门
+ios的开发使用Objective C语言，和java一样，它页是一种面向对象的语言消息传递在java中我们把Objective-C的消息传递叫做调用方法
+不带参数1[obj method]
+带一个参数1[obj method:value];
+例如：1[counter increse:1];
+对应java版本1counter.increse(1);
+带多个参数12- void se">
+<meta property="og:updated_time" content="2017-04-12T07:10:36.986Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ios入门 | zues blog">
+<meta name="twitter:description" content="IOS基础入门
+ios的开发使用Objective C语言，和java一样，它页是一种面向对象的语言消息传递在java中我们把Objective-C的消息传递叫做调用方法
+不带参数1[obj method]
+带一个参数1[obj method:value];
+例如：1[counter increse:1];
+对应java版本1counter.increse(1);
+带多个参数12- void se">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ios入门</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-04-07" class="post-meta__date date">2017-04-07</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ios/">ios</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="IOS基础入门"><a href="#IOS基础入门" class="headerlink" title="IOS基础入门"></a>IOS基础入门</h2><hr>
+<h2 id="ios的开发使用Objective-C语言，和java一样，它页是一种面向对象的语言"><a href="#ios的开发使用Objective-C语言，和java一样，它页是一种面向对象的语言" class="headerlink" title="ios的开发使用Objective C语言，和java一样，它页是一种面向对象的语言"></a>ios的开发使用Objective C语言，和java一样，它页是一种面向对象的语言</h2><h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><p>在java中我们把Objective-C的消息传递叫做调用方法</p>
+<h4 id="不带参数"><a href="#不带参数" class="headerlink" title="不带参数"></a>不带参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[obj method]</span><br></pre></td></tr></table></figure>
+<h3 id="带一个参数"><a href="#带一个参数" class="headerlink" title="带一个参数"></a>带一个参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[obj method:value];</span><br></pre></td></tr></table></figure>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[counter increse:1];</span><br></pre></td></tr></table></figure></p>
+<p>对应java版本<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">counter.increse(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="带多个参数"><a href="#带多个参数" class="headerlink" title="带多个参数"></a>带多个参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- void setColorToRed: (float)red Green:(float)green Blue:(float)blue&#123;...&#125; //定义方法</span><br><span class="line">[Obj setColorToRed: 1.0 Green:0.8 Blue: 0.2]; //调用方法</span><br></pre></td></tr></table></figure>
+<p>对应的java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColorToRedGreenBlue</span><span class="params">(<span class="keyword">float</span> red, <span class="keyword">float</span> green, <span class="keyword">float</span> blue)</span></span>&#123;...&#125;</span><br><span class="line">Obj.setColorToRedGreenBlue(<span class="number">1.0</span>, <span class="number">0.8</span>, <span class="number">0.2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>我找了几个博客，对比了一下，看到了别人总结的规律<br>定义：<code>-(void) setWord1:(NSString *) word1 setWord2:(NSString *) word2</code><br>也就是：<code>-(方法返回类型) 方法名:(参数1的数据类型) 参数1的变量名 参数2名称:(参数2的数据类型) 参数2的变量名 ...</code></p>
+<p>然后调用方法是这样的:<code>[obj setWord1:&quot;parameter1&quot; setWord2:&quot;parameter2&quot;]</code></p>
+<pre><code>我简单粗暴的总结了下来，发现非常容易记，那就是把方法名直接记忆为参数1的名称，也就是通过`参数名:参数值`调用即可
+</code></pre><hr>
+<h4 id="消息嵌套"><a href="#消息嵌套" class="headerlink" title="消息嵌套"></a>消息嵌套</h4><p>对比上面的带多个参数，消息嵌套就灰常简单了，完全有据可循<br>直接就是把一个<code>[]</code>符号当作java中的<code>.</code>符号即可，只是<code>[]</code>是包括了对象和消息，而<code>.</code>是将对象和方法连接起来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Obj *obj = [[[Obj methodOne] methodTwo] methodThree];</span><br></pre></td></tr></table></figure></p>
+<p>对应的java就是<code>Obj obj = Obj.methodOne().methodTwo().methodThree();</code></p>
+<p>可以看到对于变量名字前面是带了一个<code>*</code>号的，在Onjective中，是代表一个指针，也就是说，可以指向一个内存地址，关于<code>*</code>号的放置其实有四种方式，我采用其中一种就可以，也就是这里的这种，当然也有人会喜欢这种<code>NSString* obj = @&quot;Hello&quot;</code>，因为使用obj的时候是不用带*号的</p>
+<hr>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>在Objective-C中关于@符号，似乎是一种象征，字符串也一样，由双引号包裹，并且在引号前面加一个@符号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title = @&quot;Hello&quot;;</span><br><span class="line">if(title == @&quot;Hello&quot;)&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>在Objective-C中类可以分为接口定义和实现两个部分，接口定义(Interface)放在头文件中，文件扩展名是.h，实现(implementation)放在实现文件中，文件扩展名是.m，网上不建议将接口定义写在.m中，最好是分开两个文件写。</p>
+<h4 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@interface Myclass &#123;</span><br><span class="line">	int menberVar1;</span><br><span class="line">	id memberVar2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(return_type) instance_method1;</span><br><span class="line">-(return_type) instance_method2: (int) p1;</span><br><span class="line">-(return_type) instance_method3: (int) p1 parameter2: (int) p2;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h4 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@implementation MyClass &#123;</span><br><span class="line">	int memberVar3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(return_type) instance_method1 &#123; ... &#125;</span><br><span class="line">-(return_type) instance)method2: (int) p1 &#123; ... &#125;</span><br><span class="line">-(return_type) instance_method3: (int) p1 parameter2: (int) p2 &#123; ... &#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>可以看到接口还有实现都是以@interface、@implementation开头，都以@end结束。</p>
+<p>如果用java来写是这样的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">int</span> memberVar1;</span><br><span class="line">	<span class="keyword">protected</span> pointer memberVar2;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> memberVar3;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> (return_type) instance_method1() &#123;</span><br><span class="line">		....</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> (return_type) instance_method2(<span class="keyword">int</span> p1) &#123;</span><br><span class="line">		....</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> (return_type) instance_method3andPar(<span class="keyword">int</span> p1, <span class="keyword">int</span> p2) &#123;</span><br><span class="line">		....</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在Objective-C中，对于<code>Interface</code>没有私有方法，都是公共的。我还不清楚变量的<code>protected</code>和<code>private</code>，后面慢慢写到应该会理解的</p>
+<hr>
+<h3 id="类方法和实例方法"><a href="#类方法和实例方法" class="headerlink" title="类方法和实例方法"></a>类方法和实例方法</h3><p>类方法就是在<code>java</code>中使用<code>static</code>修饰的方法，不用实例化就可以直接调用，类方法的声明用一个<code>+</code>号修饰。</p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@interface MyClass</span><br><span class="line">	+(void) sayHello;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@implementation MyClass</span><br><span class="line">+(void) sayHello &#123;</span><br><span class="line">	NSLog(@&quot;Hello&quot;);</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[MyClass sayHello];</span><br></pre></td></tr></table></figure>
+<p>实例方法就是需要实例化一个对象才可以调用的普通方法，实例方法使用一个<code>-</code>号修饰。</p>
+<h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@interface MyClass : NSObject</span><br><span class="line">-(void) sayHello;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@implementation MyClass</span><br><span class="line">-(void) sayHello &#123;</span><br><span class="line">	NSLog(@&quot;Hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myCls = [MyClass new];</span><br><span class="line">[myCls sayHello]</span><br></pre></td></tr></table></figure>
+<p>这里的myCls前面没有类来修饰，在java中实例是这样的，<code>MyClass myCls = new MyClass();</code>，这个应该是区别。</p>
+<hr>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承和java是一样的原理，不同的是Objective-C是写在Interface定义里面的。语法为：子类名:父类名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@interface MyClass : NSObject</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>在java中：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> MyClass extends NSObject&#123;...&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="协议（Protocol）"><a href="#协议（Protocol）" class="headerlink" title="协议（Protocol）"></a>协议（Protocol）</h3><p>Objective-C的协议就相当于java中的Interface。</p>
+<h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@protocol Printable</span><br><span class="line">	-(void)print:(NSString)str;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>在java中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Printable</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String str)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="协议的继承"><a href="#协议的继承" class="headerlink" title="协议的继承"></a>协议的继承</h4><p>协议本身可以实现别的协议，通过两个尖括号包裹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@protocol Printable &lt;NSObject&gt;</span><br><span class="line">	-(void)print:(NSString)str;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>在java中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Printable</span> <span class="title">entends</span> <span class="title">NSObject</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String str)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="可选方法"><a href="#可选方法" class="headerlink" title="可选方法"></a>可选方法</h4><p>和java中的abstract声明的抽象类相反，java抽象类里面的抽象方法必须被重写，Objective-C的协议也可以包含可选方法，通过@optional关键字标识的方法，可以不被类实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@protocol Printable</span><br><span class="line">@optional</span><br><span class="line">	-(void)print:(NSString)str;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<h4 id="协议的实现"><a href="#协议的实现" class="headerlink" title="协议的实现"></a>协议的实现</h4><p>语法：协议名用尖括号包裹，多个协议名用逗号隔开，协议写在父类的右边。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@ interface class Myclass : NSObject &lt;Printable,Drawable&gt;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>其中Printable和Drawable就是两个协议。在java中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Public <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">NSObject</span> <span class="keyword">implements</span> <span class="title">Printable</span>, <span class="title">Drawable</span> </span>&#123; ... &#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="分类（Category）"><a href="#分类（Category）" class="headerlink" title="分类（Category）"></a>分类（Category）</h3><p>分类可以给一个已经存在的类增加方法，而不用去修改它的源码，这在java中可没有这样的特性。</p>
+<p>例如，NSObject是一个Objective-C内置的系统类，我们想给它增加toJson方法，就像这样：<br>头文件：NSObject+Json.h<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@interface NSObject (Json)</span><br><span class="line">	-(NSString)toJson;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>实现文件：NSObject+Json.m<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@implementation NSObject (Json)</span><br><span class="line">	-(NSString)toJson&#123; ... &#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>使用的时候，只要包含NSObject+Json.h，实例化NSObject类，就可以使用toJson方法了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &quot;NSObject+Json.h&quot;</span><br><span class="line">@implementation XYZController</span><br><span class="line">	-(void)test &#123;</span><br><span class="line">		NSObject *obj = [[NSObject alloc]init];</span><br><span class="line">		NSString *str = [obj toJson]</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="分类多个方法"><a href="#分类多个方法" class="headerlink" title="分类多个方法"></a>分类多个方法</h4><p>头文件：NSObject+Json+XML.h<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@interface NSObject (Json)</span><br><span class="line">	-(NSString)toJson;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface NSObject(XML)</span><br><span class="line">	-(NSString)toXML;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>实现文件：NSObject+Json+XML.m<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">implementation NSObject (Json)</span><br><span class="line">	-(NSString)toJson &#123; ... &#125;</span><br><span class="line"></span><br><span class="line">	-(NSString)toXML &#123; ... &#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import &quot;NSObject+Json+XML.h&quot;</span><br><span class="line">@implementation XYZController</span><br><span class="line">	-(void)test &#123;</span><br><span class="line">		NSObject *obj = [[NSObject alloc]init];</span><br><span class="line">		NSString *json = [obj toJson];</span><br><span class="line">		NSString *xml = [obj toXML];</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a>Selector</h3>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

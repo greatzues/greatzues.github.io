@@ -17,27 +17,21 @@
     
 
     <meta name="description" content="三种命名空间
-123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
-
-
-1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用">
+作用：我的理解是标识属性的命名，解决命名上的冲突。123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
+1和2命名空间里的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android知识总结 | zues blog">
 <meta property="og:url" content="http://zuesblog.xyz/2017/03/22/android知识总结/index.html">
 <meta property="og:site_name" content="zues blog">
 <meta property="og:description" content="三种命名空间
-123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
-
-
-1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用">
-<meta property="og:updated_time" content="2017-03-26T13:22:33.308Z">
+作用：我的理解是标识属性的命名，解决命名上的冲突。123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
+1和2命名空间里的">
+<meta property="og:updated_time" content="2017-04-02T16:40:12.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android知识总结 | zues blog">
 <meta name="twitter:description" content="三种命名空间
-123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
-
-
-1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用">
+作用：我的理解是标识属性的命名，解决命名上的冲突。123xmlns:android=”http://schemas.android.com/apk/res/android”xmlns:tools=”http://schemas.android.com/tools”xmlns:app=”http://schemas.android.com/apk/res-auto”
+1和2命名空间里的">
     
     
     
@@ -259,12 +253,13 @@ classes that you can use:
 
   <section id="post-content" class="article-content post">
     <h2 id="三种命名空间"><a href="#三种命名空间" class="headerlink" title="三种命名空间"></a>三种命名空间</h2><hr>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xmlns:android=”http://schemas.android.com/apk/res/android”</span><br><span class="line">xmlns:tools=”http://schemas.android.com/tools”</span><br><span class="line">xmlns:app=”http://schemas.android.com/apk/res-auto”</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用户自定义的<br>详情看这篇博客：<a href="http://blog.csdn.net/xx326664162/article/details/63254622" target="_blank" rel="external"> Android中XML的命名空间</a></li>
-</ul>
-</blockquote>
+<p>作用：我的理解是标识属性的命名，解决命名上的冲突。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xmlns:android=”http://schemas.android.com/apk/res/android”</span><br><span class="line">xmlns:tools=”http://schemas.android.com/tools”</span><br><span class="line">xmlns:app=”http://schemas.android.com/apk/res-auto”</span><br></pre></td></tr></table></figure></p>
+<p>1和2命名空间里的属性是系统封装好的，第3种命名空间里的属性是用户自定义的</p>
+<p>对于第三种，自定义的xmlns的来源其实是自定义view里面的自己定义的属性，而那个app只是一个名字，可以把xmlns:app改成xmlns:test,效果都是一样<br>举一个比较典型的例子，我们现在都在用的一个<code>android.support.design.widget.CoordinatorLayout</code>,它属于一个自定义的viewGroud，它有自己专属的属性，例如layout_behavior属性，可以用来控制子组件的滚动效果，但是安卓预定义没有这个属性名字，那么我们用来表示标识的时候就要用到自己的自定义的命名空间了，所以才出现了xmlns:app=”…”，可以用来区分属性。</p>
+<p>我也可能说错了吧！不过我确实是这样认为的。</p>
+<p>详情看这篇博客：<a href="http://xiroid.com/post/android/ru-he-li-jie-androidzhong-de-xmlns" target="_blank" rel="external"> Android中XML的命名空间</a></p>
+<h2 id="id与-id的区别"><a href="#id与-id的区别" class="headerlink" title="@id与@+id的区别"></a>@id与@+id的区别</h2><hr>
+<p>同样的地方就是都可以标识一个组件，但是@id是引用在<code>R.java</code>中已经创建过的id，而@+id则是假如不存在对应的id，就创建新的id<br>其实按照我的想法，那么使用@+id不就一劳永逸？或许可以考虑到代码复用的情况，不过我还是喜欢用@+id，哈哈，这样不用考虑太多</p>
 <h2 id="CoordinatorLayout用法"><a href="#CoordinatorLayout用法" class="headerlink" title="CoordinatorLayout用法"></a>CoordinatorLayout用法</h2><hr>
 <p>这个部分比较难，不过大体上知道效果是怎样的，先放着<br><code>CoordinatorLayout</code>可以给自己的子组件制造出一种折叠的效果，例如可以产生有视觉差的详情页，还有可以扩展用户视图的tarbar，当用互手势上划的时候，会将顶部的toolbar隐藏，等用户向下滑动的时候，显示出来。</p>
 <h2 id="java的protect关键字"><a href="#java的protect关键字" class="headerlink" title="java的protect关键字"></a>java的protect关键字</h2><hr>
@@ -307,12 +302,16 @@ classes that you can use:
 <p>2、SimpleAdapter的扩展性最好,可以定义各种不同的<code>item view</code>布局，<code>SimpleAdapter adapter = new SimpleAdapter(this, getData(), R.layout.simple, new String[] { &quot;title&quot;,  &quot;img&quot; }, new int[] { R.id.title, R.id.img });</code><br>同样，this代表上下文，getData是要适配进去的数据，第三个是每一个item view的xml文件，接着就是数据中的不同数组对象的键，通过键可以读取对应的值，放到第五个参数对应的<code>child view</code>中，第五个是<code>item view</code>不同的<code>child view id</code>;</p>
 <p>3、SimpleCursorAdapter，这个我没用过，不过也很好理解，一定要以数据库作为数据源的时候,才能使用SimpleCursorAdapter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleCursorAdapterActivity</span> <span class="keyword">extends</span> <span class="title">ListActivity</span> </span>&#123;</span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">         <span class="comment">//获得一个指向系统通讯录数据库的Cursor对象获得数据来源</span></span><br><span class="line">         Cursor cur = getContentResolver().query(People.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">         startManagingCursor(cur);</span><br><span class="line">         <span class="comment">//实例化列表适配器</span></span><br><span class="line">         <span class="comment">//上下文，显示的view形式，数据源，数据源的键获取对应的值，适配到id为text1的位置上</span></span><br><span class="line">         ListAdapter adapter = <span class="keyword">new</span> SimpleCursorAdapter(<span class="keyword">this</span>, android.R.layout.simple_list_item_1, cur, <span class="keyword">new</span> String[] &#123;People.NAME&#125;, <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;android.R.id.text1&#125;);</span><br><span class="line">         setListAdapter(adapter);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <p>要在AndroidManifest.xml文件中加入权限，<code>&lt;uses-permission android:name=&quot;android.permission.READ_CONTACTS&quot;&gt;&lt;/uses-permission&gt;</code></p>
+<h2 id="为什么findViewById之后要强制转化"><a href="#为什么findViewById之后要强制转化" class="headerlink" title="为什么findViewById之后要强制转化"></a>为什么findViewById之后要强制转化</h2><hr>
+<p>这时候可以查看源码，下面的源码可以看到findViewById返回的基本类型是View<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> View <span class="title">findViewById</span><span class="params">(@IdRes <span class="keyword">int</span> id)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>然后随便找一个组件，例如Button，继承的是TextView，而TextView又是View子类，在java中，子类由于继承于父类并且比父类更多一些属性，所以当向下转化的时候就需要强制变成子类了</p>
+<p>ok，好像就是这些了！</p>
 <h2 id="区别final变量、final方法、final类"><a href="#区别final变量、final方法、final类" class="headerlink" title="区别final变量、final方法、final类"></a>区别final变量、final方法、final类</h2><hr>
 <blockquote>
 <ul>
-<li>fianl变量，一般和static关键字一起使用声明一个常量,这样可以保证共享内存，最关键的是，final变量是只读的</li>
-<li>final方法，如果一个方法的功能已经很完整了，子类不需要改变，可以声明为final方法，值得注意的是，final方法比非final方法更快，因为在编译的时候已经静态绑定，不需要在运行时动态绑定</li>
-<li>final类的功能是完整的，不能被继承，    例如String、Interger</li>
+<li><code>fianl</code>变量，一般和<code>static</code>关键字一起使用声明一个常量,这样可以保证共享内存，最关键的是，<code>final</code>变量是只读的</li>
+<li><code>final</code>方法，如果一个方法的功能已经很完整了，子类不需要改变，可以声明为<code>final</code>方法，值得注意的是，<code>final</code>方法比非<code>final</code>方法更快，因为在编译的时候已经静态绑定，不需要在运行时动态绑定</li>
+<li><code>final</code>类的功能是完整的，不能被继承，    例如<code>String</code>、<code>Interger</code></li>
 </ul>
 </blockquote>
 <p>final有几个优点</p>
@@ -324,6 +323,28 @@ classes that you can use:
 </ul>
 </blockquote>
 <p>参考<a href="http://www.importnew.com/7553.html" target="_blank" rel="external">深入理解Java中的final关键字</a></p>
+<h2 id="Application类的用法"><a href="#Application类的用法" class="headerlink" title="Application类的用法"></a>Application类的用法</h2><hr>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>通过单例创造整个应用中唯一的<code>Application</code>类，生命周期就是应用的生命周期，应用内所有的<code>activity</code>都运行在该<code>application</code>所在的进程上。<br>因为所有组件都可以使用<code>getApplication</code>来获取<code>application</code>对象，而且这个对象都是相同的，所有<code>application</code>也可以进行数据共享、数据缓存</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>安卓应用创建的时候会自定义一个<code>application</code>，作为该程序的入口，可以通过继承<code>Application</code>来自定义自己的<code>application</code>对象，<code>getApplication()</code>这个方法可以用来获取<code>applicaltion</code>对象。</p>
+<p>通过继承<code>Application</code>类来实现应用程序级的全局变量，这种全局变量方法相对静态类更有保障，直到应用的所有<code>Activity</code>全部被<code>destory</code>掉之后才会被释放掉</p>
+<h2 id="SharedPreferences对象"><a href="#SharedPreferences对象" class="headerlink" title="SharedPreferences对象"></a>SharedPreferences对象</h2><hr>
+<p>在整个应用中，可以通过<code>SharedPreferences</code>来保存对象，实现方式有很多，我陈列几种：</p>
+<blockquote>
+<ul>
+<li><code>Context.getSharedPreferences()</code>，获取的数据可以被同一应用</li>
+<li><code>Activity.getPreferences()</code>，数据只能在该Activity中共享</li>
+<li><code>PreferenceManager.getDefaultSharedPreferences()</code>，与<code>getSharedPreferences()</code>不同的是，这个使用默认名称，例如：com.example.something_prefer</li>
+</ul>
+</blockquote>
+<h2 id="操作模式"><a href="#操作模式" class="headerlink" title="操作模式"></a>操作模式</h2><blockquote>
+<ul>
+<li><code>Context.MOED_PRIVATE</code>，默认操作模式，只能在应用本身访问，写入的内容会覆盖原文件的内容</li>
+<li><code>Context.MOED_APPEND</code>，检查文件是否存在，存在则追加内容，否则就新创建</li>
+<li><code>Context.MOED_WORLD_READABLE</code>，表示当前文件可以被其它应用阅读</li>
+<li><code>Context.MODE_WORLD_WRITAEBLE</code>，表示当前文件可以被其它应用写入</li>
+</ul>
+</blockquote>
+<p>更多用法自己google，我只是记载一些基本内容唤醒记忆而已！</p>
 
   </section>
 

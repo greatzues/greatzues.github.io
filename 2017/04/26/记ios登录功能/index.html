@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      记ios登录功能 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="入门ios一个星期，开始写ios，对于Xcode有点懵逼，我要写一篇博客来理清楚整个流程的顺序，为后面的编写加印象
+前提
+封装好网路请求库，创建model、controller、Operation事件处理三者的父类，然后开始干活
+创建model
+继承父类BaseModel，根据和服务器说好的协议，也就是根据返回的json来创建变量，通过传入有网络请求拿到的数据，用NSDictionary字典将其保">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记ios登录功能 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2017/04/26/记ios登录功能/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="入门ios一个星期，开始写ios，对于Xcode有点懵逼，我要写一篇博客来理清楚整个流程的顺序，为后面的编写加印象
+前提
+封装好网路请求库，创建model、controller、Operation事件处理三者的父类，然后开始干活
+创建model
+继承父类BaseModel，根据和服务器说好的协议，也就是根据返回的json来创建变量，通过传入有网络请求拿到的数据，用NSDictionary字典将其保">
+<meta property="og:updated_time" content="2017-04-26T08:03:10.266Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记ios登录功能 | zues blog">
+<meta name="twitter:description" content="入门ios一个星期，开始写ios，对于Xcode有点懵逼，我要写一篇博客来理清楚整个流程的顺序，为后面的编写加印象
+前提
+封装好网路请求库，创建model、controller、Operation事件处理三者的父类，然后开始干活
+创建model
+继承父类BaseModel，根据和服务器说好的协议，也就是根据返回的json来创建变量，通过传入有网络请求拿到的数据，用NSDictionary字典将其保">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          为技术而生
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues/greatzues.github.io" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">友情链接</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">记ios登录功能</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-04-26" class="post-meta__date date">2017-04-26</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ios/">ios</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>入门ios一个星期，开始写ios，对于Xcode有点懵逼，我要写一篇博客来理清楚整个流程的顺序，为后面的编写加印象</p>
+<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><hr>
+<p>封装好网路请求库，创建model、controller、Operation事件处理三者的父类，然后开始干活</p>
+<h3 id="创建model"><a href="#创建model" class="headerlink" title="创建model"></a>创建model</h3><hr>
+<p>继承父类BaseModel，根据和服务器说好的协议，也就是根据返回的json来创建变量，通过传入有网络请求拿到的数据，用NSDictionary字典将其保存起来并且传入到infoFromDict函数，返回一个UserModel对象，完成整个model层的创建。</p>
+<h4 id="UserModel-h"><a href="#UserModel-h" class="headerlink" title="UserModel.h"></a>UserModel.h</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;DABaseModel.h&quot;</span><br><span class="line"></span><br><span class="line">@interface UserModel : DABaseModel</span><br><span class="line"></span><br><span class="line">@property (nonatomic, strong) NSString *sex;</span><br><span class="line">@property (nonatomic, strong) NSString *avatar;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h4 id="UserModel-m"><a href="#UserModel-m" class="headerlink" title="UserModel.m"></a>UserModel.m</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;UserModel.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation UserModel</span><br><span class="line"></span><br><span class="line">+ (UserModel *)infoFromDict:(NSDictionary *)dict&#123;</span><br><span class="line">    UserModel *user = [[UserModel alloc] init];</span><br><span class="line">    </span><br><span class="line">    user.ID = [dict objectForKey:@&quot;userId&quot;];</span><br><span class="line">    user.name = [dict objectForKey:@&quot;username&quot;];</span><br><span class="line">    user.sex = [dict objectForKey:@&quot;sex&quot;];</span><br><span class="line">    user.avatar = [dict objectForKey:@&quot;avatar&quot;];</span><br><span class="line">    </span><br><span class="line">    return user;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="创建Controller"><a href="#创建Controller" class="headerlink" title="创建Controller"></a>创建Controller</h3><hr>
+<p>Controller类与view类关联，处理的是对应的username，password的获取，登录按钮的操作，以后还包括将数据呈现在view上。</p>
+<p>其中，处理数据的类就交给了Operation代理类，在Operation类中将请求上传到服务器，并且将返回的数据拿到。</p>
+<h4 id="LoginPage-h"><a href="#LoginPage-h" class="headerlink" title="LoginPage.h"></a>LoginPage.h</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;DABasePage.h&quot;</span><br><span class="line"></span><br><span class="line">@interface LoginPage : DABasePage&#123;</span><br><span class="line">    IBOutlet UITextField    *username;</span><br><span class="line">    IBOutlet UITextField    *password;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h4 id="LoginPage-m"><a href="#LoginPage-m" class="headerlink" title="LoginPage.m"></a>LoginPage.m</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;LoginPage.h&quot;</span><br><span class="line">#import &quot;DALogin.h&quot;</span><br><span class="line">#import &quot;UserModel.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@implementation LoginPage</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)didReceiveMemoryWarning &#123;</span><br><span class="line">    [super didReceiveMemoryWarning];</span><br><span class="line">&#125;</span><br><span class="line">//此行为和用户的行为关联，当用户按下确定按钮，触发这个方法</span><br><span class="line">- (IBAction)doLoginEvent:(id)sender&#123;</span><br><span class="line">    </span><br><span class="line">    if([self checkValidate])&#123;</span><br><span class="line">        return ;</span><br><span class="line">    &#125;</span><br><span class="line">    //构造请求</span><br><span class="line">    NSString *body = [NSString stringWithFormat:@&quot;phone=%@&amp;password=%@&quot;,username.text,password.text];    </span><br><span class="line">	NSDictionary *opInfo = @&#123;@&quot;url&quot;:LoginURL,</span><br><span class="line">                             @&quot;body&quot;:body&#125;;</span><br><span class="line">    </span><br><span class="line">    _operation = [[DALogin alloc] initWithDelegate:self opInfo:opInfo]; //初始化代理</span><br><span class="line">    [_operation executeOp];	//执行代理</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//请求成功执行下面的代码</span><br><span class="line">- (void)opSuccess:(UserModel *)data&#123;</span><br><span class="line">    [super opSuccess:data];</span><br><span class="line">    BASE_INFO_FUN(data.name);</span><br><span class="line">    BASE_INFO_FUN(data.sex);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">//检查数据有效性</span><br><span class="line">- (BOOL)checkValidate&#123;</span><br><span class="line">    if (![username.text  isEqual: @&quot;&quot;]&amp;&amp;![password.text  isEqual: @&quot;&quot;])&#123;</span><br><span class="line">        BASE_INFO_FUN(@&quot;用户名或者密码为空&quot;);</span><br><span class="line">        return YES;</span><br><span class="line">    &#125;</span><br><span class="line">    return NO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="创建DALogin数据代理类"><a href="#创建DALogin数据代理类" class="headerlink" title="创建DALogin数据代理类"></a>创建DALogin数据代理类</h3><hr>
+<p>在父类中请求数据，加载数据，解析数据，处理成功或者失败之后的操作，DALogin只需要进行重写解析成功之后的操作即可。</p>
+<h4 id="DALogin-h"><a href="#DALogin-h" class="headerlink" title="DALogin.h"></a>DALogin.h</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;DABaseOperation.h&quot;</span><br><span class="line"></span><br><span class="line">@interface DALogin : DABaseOperation</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h4 id="DALogin-m"><a href="#DALogin-m" class="headerlink" title="DALogin.m"></a>DALogin.m</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;DALogin.h&quot;</span><br><span class="line">#import &quot;UserModel.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation DALogin</span><br><span class="line"></span><br><span class="line">- (void)parseSuccess:(NSDictionary *)dict jsonString:(NSString *)jsonString&#123;</span><br><span class="line">    NSDictionary *dictData = [dict objectForKey:NetData];</span><br><span class="line">    UserModel *info = [UserModel infoFromDict:dictData];</span><br><span class="line">    </span><br><span class="line">    [_delegate opSuccess:info]; //告诉代理登录成功</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>上面的代码显示了，将请求拿到数据，传入到model类，通过model类转化为本地的json数据，可以填充到view上，这里用来告知用户登录成功，也就是这里的opSuccess函数</p>
+<p>通过opSuccess函数，我们可以把传进来的info，也就是服务器返回的数据展示到view上，通过alert等形式告诉用户登录成功了，也可以在这里执行页面跳转的操作。</p>
+<h3 id="创建和展示View"><a href="#创建和展示View" class="headerlink" title="创建和展示View"></a>创建和展示View</h3><hr>
+<p>新建一个view，也就是这里的LoginPage.xib，通过拖拽和配置图片的方式将需要的控件拼接进去</p>
+<p>然后将控件调整到合适的位置，我这里其实有点疑惑，因为这里是通过在界面使用某一种iphone设备来调试，也就是说，我觉得是绝对定位，主要是控件的长度宽度到时遇到适配就可能很蛋疼了。</p>
+<p>这里来介绍一下关于最左边的六个顶部按钮的作用</p>
+<blockquote>
+<ul>
+<li>show the file inspector译为“显示文件检查器”，可以查看view文件名字、类型、相对位置、绝对路径、界面构建器文档、本地化</li>
+<li>show Quick help inspector译为“显示帮助检查器”，有声明和描述，反正是一大段英文</li>
+<li>show the indentity inspector译为“显示身份检查器”，可以定制一个类和模块，暂时还不知道怎么用</li>
+<li>show the attribute inspector译为“显示属性检查器”，可以显示对应选中控件的所有属性，例如Button有button type有Custom、system、Detail Disclosure、info Light、info Dark，还有颜色等等</li>
+<li>show the size inspector译为“显示尺寸检查器”，定制组件的大小和位置</li>
+<li>show the connection inspector译为“显示连接检查器”，可以将对应组件在这里与对应的代码相关联</li>
+</ul>
+</blockquote>
+<p>很多具体的用法还不知道，这里只是为了加深印象，理清后面要写的思路。</p>
+<p>最后通过点击Placeholders还有view来完成对应的关联操作，关联也相当简单，只需要像连线一样，把控件连接起来就可以了。</p>
+<h3 id="预编译头文件"><a href="#预编译头文件" class="headerlink" title="预编译头文件"></a>预编译头文件</h3><hr>
+<p>为了更方便在全局使用一些需要经常要用到的类，可以在Xcode中创建一个pch的预编译头文件，然后在文件中添加的类就可以不需要导入，都可以使用了，超级方便。</p>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>然后在项目的Build Settings中找到Apple LLVM 8.0 - Language<br>选中Prefix Header并且将pch文件路径写进去<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#ifndef name</span><br><span class="line">#define name</span><br><span class="line"></span><br><span class="line">//在此处导入要预编译的头文件</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
