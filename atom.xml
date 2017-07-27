@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>zues blog</title>
-  <subtitle>为技术而生</subtitle>
+  <subtitle>浅呼吸，深思考</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zuesblog.xyz/"/>
-  <updated>2017-07-20T03:10:32.461Z</updated>
+  <updated>2017-07-05T13:48:16.373Z</updated>
   <id>http://zuesblog.xyz/</id>
   
   <author>
@@ -14,22 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>产品经理之路_绪论</title>
-    <link href="http://zuesblog.xyz/2017/07/20/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA/"/>
-    <id>http://zuesblog.xyz/2017/07/20/产品经理之路-绪论/</id>
-    <published>2017-07-20T03:10:32.000Z</published>
-    <updated>2017-07-20T03:10:32.461Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Axure</title>
@@ -48,11 +32,11 @@
   </entry>
   
   <entry>
-    <title>Axure学习笔记之轮播图</title>
+    <title>Axure笔记之轮播图</title>
     <link href="http://zuesblog.xyz/2017/07/05/Axure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%BD%AE%E6%92%AD%E5%9B%BE/"/>
     <id>http://zuesblog.xyz/2017/07/05/Axure学习笔记之轮播图/</id>
     <published>2017-07-05T08:07:01.000Z</published>
-    <updated>2017-07-05T13:47:52.400Z</updated>
+    <updated>2017-07-26T11:51:09.983Z</updated>
     
     <content type="html">&lt;p&gt;参考教程：&lt;a href=&quot;http://weidublog.com/index.php/2017/03/12/57/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;axure原型设计之轮播图&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;准备步骤&quot;&gt;&lt;a href=&quot;#准备步骤&quot; class=&quot;headerlink&quot; title=&quot;准备步骤&quot;&gt;&lt;/a&gt;准备步骤&lt;/h2&gt;&lt;p&gt;1、三张图片&lt;/p&gt;
@@ -70,6 +54,8 @@
     
     
       <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
   </entry>
   
@@ -267,7 +253,7 @@
     <link href="http://zuesblog.xyz/2017/04/05/Axure%E4%B8%AD%E8%8B%B1%E8%BD%AC%E6%8D%A2/"/>
     <id>http://zuesblog.xyz/2017/04/05/Axure中英转换/</id>
     <published>2017-04-05T13:49:40.000Z</published>
-    <updated>2017-07-25T02:52:35.143Z</updated>
+    <updated>2017-07-26T11:51:21.478Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这篇博客不是因为我不会汉化Axure，而是想用更接近原著的方式使用一款国外的工具，虽然我已经学习Axure一个星期有余，但由于刚接触不久，需要记录下中英转换词，但我不一定会翻看，可能在写的过程中，我已经完全记住每一个文字标签对应的功能了，从本质上去理解，这比单纯的背更持久更具备重复利用性。&lt;/p&gt;
 &lt;hr&gt;
@@ -275,16 +261,111 @@
 &lt;blockquote&gt;
 &lt;p&gt;1、逻辑清晰;&lt;br&gt;2、事先策划;&lt;br&gt;3，用最简约的载体展示最丰富的内容;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;因此下面的中英转换我会尊造一个原则：&lt;code&gt;文字&amp;lt;图表&amp;lt;图片&lt;/code&gt;,同时按照Axure的框架来管理不同功能标签&lt;/p&gt;
-&lt;p&gt;ok,let go!&lt;/p&gt;
-&lt;h2 id=&quot;整体流程&quot;&gt;&lt;a href=&quot;#整体流程&quot; class=&quot;headerlink&quot; title=&quot;整体流程&quot;&gt;&lt;/a&gt;整体流程&lt;/h2&gt;&lt;p&gt;追求简单易懂，就直接用一个脑图来代替了！&lt;br&gt;&lt;img src=&quot;/img/Axure RP 8.png&quot; alt=&quot;AXURE RP 8&quot;&gt;&lt;/p&gt;
-&lt;p&gt;我会按照比较经常用的部分来转换中英文。&lt;/p&gt;
+&lt;p&gt;因此下面的中英转换我会尊造一个原则：&lt;code&gt;文字&amp;lt;图表&amp;lt;图片&lt;/code&gt;,同时按照Axure的框架来管理不同功能标签，ok,let go!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;整体流程&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/img/Axure RP 8.png&quot; alt=&quot;AXURE RP 8&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;右面板&quot;&gt;&lt;a href=&quot;#右面板&quot; class=&quot;headerlink&quot; title=&quot;右面板&quot;&gt;&lt;/a&gt;右面板&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;检查器&quot;&gt;&lt;a href=&quot;#检查器&quot; class=&quot;headerlink&quot; title=&quot;检查器&quot;&gt;&lt;/a&gt;检查器&lt;/h3&gt;&lt;p&gt;这部分可以说是整个Axure中的交互核心，这里汇聚了一个组件的事件监听和样式设计&lt;/p&gt;
-&lt;h4 id=&quot;1、PROPERTIES（属性）&quot;&gt;&lt;a href=&quot;#1、PROPERTIES（属性）&quot; class=&quot;headerlink&quot; title=&quot;1、PROPERTIES（属性）&quot;&gt;&lt;/a&gt;1、PROPERTIES（属性）&lt;/h4&gt;&lt;p&gt;Interactions-&amp;gt;交互，还好学过，在云南旅行时这个词被一对般配的法国情侣说出来了，他们是做虚拟现实的素材采集的，男主很帅气女主很美，真的，哎呀走偏了！&lt;br&gt;Adaptive-&amp;gt;适配，点击了Enable之后可以适配很多不同终端设备，点最右边的突变之后，有一些参数可以挑包括：&lt;br&gt;Presets-&amp;gt;预设，可以提前设定适配的是不同的尺寸的视角，这个和苹果开发的时候，制作启动页的图考虑的差不多，如果想要适配每一种的话就不断点击“+”号添加就行。&lt;br&gt;Large Display -&amp;gt;大型显示屏,屏幕宽度大于1200像素&lt;br&gt;Landscape Tablet-&amp;gt;广角平板，屏幕宽度小于1024像素&lt;br&gt;Portrait Tablet-&amp;gt;普通平板，屏幕宽度小于768像素&lt;br&gt;Landscape Phone-&amp;gt;广角iphone 6plus的尺寸，屏幕宽度小于480像素&lt;br&gt;Portrait Phone-&amp;gt;普通尺寸手机，屏幕宽度小于320像素&lt;/p&gt;
+&lt;h3 id=&quot;一、检查器&quot;&gt;&lt;a href=&quot;#一、检查器&quot; class=&quot;headerlink&quot; title=&quot;一、检查器&quot;&gt;&lt;/a&gt;一、检查器&lt;/h3&gt;&lt;p&gt;为什么从这部分说起，因为我认为这里是整个Axure中的交互核心，汇聚了各种事件监听和样式设计。&lt;/p&gt;
+&lt;h4 id=&quot;1、PROPERTIES-gt-属性&quot;&gt;&lt;a href=&quot;#1、PROPERTIES-gt-属性&quot; class=&quot;headerlink&quot; title=&quot;1、PROPERTIES-&amp;gt;属性&quot;&gt;&lt;/a&gt;1、PROPERTIES-&amp;gt;属性&lt;/h4&gt;&lt;p&gt;Interactions-&amp;gt;交互，还好学过，在云南旅行时这个词被一对般配的法国情侣说出来了，他们是做虚拟现实的素材采集的，男主很帅气女主很美，真的，哎呀走偏了！&lt;br&gt;回到刚刚说的，在交互这里我按照&lt;code&gt;事件种类-&amp;gt;共有的事件监听-&amp;gt;每一种监听的详细实现&lt;/code&gt;步骤来翻译这里。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;事件种类&lt;/strong&gt;&lt;br&gt;事件种类按照&lt;code&gt;page&lt;/code&gt;和&lt;code&gt;libraries&lt;/code&gt;来分，两者有不同的&lt;code&gt;Event&lt;/code&gt;。&lt;strong&gt;首先是&lt;code&gt;page&lt;/code&gt;的事件种类&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;OnPageLoad&lt;/li&gt;
+&lt;li&gt;OnWindowResize&lt;/li&gt;
+&lt;li&gt;OnWindowScroll&lt;/li&gt;
+&lt;li&gt;OnPageClick&lt;/li&gt;
+&lt;li&gt;OnpageDoubleClick&lt;/li&gt;
+&lt;li&gt;OnPageContextMenu&lt;/li&gt;
+&lt;li&gt;OnPageMouseMove&lt;/li&gt;
+&lt;li&gt;OnPageKeyDowm&lt;/li&gt;
+&lt;li&gt;OnPageKeyUp&lt;/li&gt;
+&lt;li&gt;OnwindowScrollUp&lt;/li&gt;
+&lt;li&gt;OnWindowScrollDown&lt;/li&gt;
+&lt;li&gt;OnAdaptiveViewChange&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;然后是&lt;code&gt;libraries&lt;/code&gt;的事件种类&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;OnClick&lt;/li&gt;
+&lt;li&gt;OnMouseEnter&lt;/li&gt;
+&lt;li&gt;OnMouseOut&lt;/li&gt;
+&lt;li&gt;OnDoubleClick&lt;/li&gt;
+&lt;li&gt;OnContextMenu&lt;/li&gt;
+&lt;li&gt;OnMouseDown&lt;/li&gt;
+&lt;li&gt;OnMouseUp&lt;/li&gt;
+&lt;li&gt;OnMouseMove&lt;/li&gt;
+&lt;li&gt;OnMouseHover&lt;/li&gt;
+&lt;li&gt;OnLongClick&lt;/li&gt;
+&lt;li&gt;OnKeyDown&lt;/li&gt;
+&lt;li&gt;OnkeyUp&lt;/li&gt;
+&lt;li&gt;OnMove&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Adaptive-&amp;gt;适配，点击了Enable之后可以适配很多不同终端设备，点最右边的突变之后，有一些参数可以挑包括：&lt;br&gt;Presets-&amp;gt;预设，可以提前设定适配的是不同的尺寸的视角，这个和苹果开发的时候，制作启动页的图考虑的差不多，如果想要适配每一种的话就不断点击“+”号添加就行。&lt;br&gt;Large Display -&amp;gt;大型显示屏,屏幕宽度大于1200像素&lt;br&gt;Landscape Tablet-&amp;gt;横屏平板，屏幕宽度小于1024像素&lt;br&gt;Portrait Tablet-&amp;gt;竖屏平板，屏幕宽度小于768像素&lt;br&gt;Landscape Phone-&amp;gt;横屏手机，屏幕宽度小于480像素&lt;br&gt;Portrait Phone-&amp;gt;竖屏手机，屏幕宽度小于320像素&lt;/p&gt;
+&lt;p&gt;提到这个我就想起了开发iphone的时候，在设计LaunchImage的时候，刚开始被弄糊涂了，怎么一个启动页可以有这么多尺寸图片来组成，原来，这是为了保证在不同的屏幕下图片都可以在不丢失长宽比且保持最佳分辨率展示，说实话很喜欢这样的标准，或许这就是苹果公司的产品原则吧，哈哈，体现了苹果公司的严谨团队理念和用户体验至上价值观。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/ios_launchImage_size.png&quot; alt=&quot;ios_launch_image_size&quot;&gt;&lt;br&gt;在上图中可以看到，在侧边的检查器部分是有四个不同的iphone/ipad尺寸，认真看，其实就是不同分辨率的Portrait和Landscape，因为我开发的是iphone竖屏应用，所以我没有勾选其它ipad或者landscape的启动页适配。&lt;br&gt;看到中间面板，可以发现尽管是ios5、6，也有1x、2x和Retina（视网膜屏）。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;ios_version&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;type&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;size&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;just like&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;ios 5、6&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1x&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;320 x 480 pixel&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;iPhone 3GS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;ios 5、6&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2x&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;640 x 960 pixel&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;iPhone 4、iPhone 4s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;ios 5、6&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Retina 4&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;640 x 1136 pixel&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;iPhone 4、iPhone 4s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;ios 8、9&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Retina HD 5.5&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;1242 x 2208 pixel&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;iPhone 6 plus&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;ios 8、9&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Retina HD 4.7&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;750 x 1334 pixel&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;iPhone 6、iPhone 6s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;ios 7-9&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2x&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;320 x 480 pixel&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;iPhone 5、iPhone 5c、iPhone 5s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;ios 7-9&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Retina 4&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;640 x 1136 pixel&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;iPhone 5、iPhone 5c、iPhone 5s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;当然这个是不属于这次的中英文转化，因此我把这部分放到最后面，作为额外奖励看完整篇博客的读者，哈哈，当然也为加深自己印象。&lt;/p&gt;
 &lt;p&gt;当浏览器大小不满足任何其他视图的尺寸时，将显示基本视图。基本视图的宽度和高度仅影响画布上显示的指南。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;Axure原型设计之tab选项卡&quot;&gt;&lt;a href=&quot;#Axure原型设计之tab选项卡&quot; class=&quot;headerlink&quot; title=&quot;Axure原型设计之tab选项卡&quot;&gt;&lt;/a&gt;Axure原型设计之tab选项卡&lt;/h3&gt;&lt;p&gt;第一步：拖拉摆放相关的控件&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;/img/Axure RP 8_Panel.png&quot; alt=&quot;Axure_Panel&quot;&gt;&lt;/h2&gt;&lt;h3 id=&quot;Axure原型设计之tab选项卡&quot;&gt;&lt;a href=&quot;#Axure原型设计之tab选项卡&quot; class=&quot;headerlink&quot; title=&quot;Axure原型设计之tab选项卡&quot;&gt;&lt;/a&gt;Axure原型设计之tab选项卡&lt;/h3&gt;&lt;p&gt;第一步：拖拉摆放相关的控件&lt;/p&gt;
 &lt;p&gt;1、三个同样大小的矩形控件(Rectangle)，分别命名为“tab1”，“tab2”和“tab3”，均设置为无底边(STYLE-&amp;gt;Border-&amp;gt;Border Visibility)、黑边(STYLE-&amp;gt;Border-&amp;gt;line color)、灰底(STYLE-&amp;gt;Fill-&amp;gt;Fill Type)矩形，整齐横排在动态面板的左上方；&lt;/p&gt;
 &lt;p&gt;2、一个动态面板控件(Libraries-&amp;gt;Dynamic Panel)，并为其设置3个相对应面板状态(state)，分别命名为“面板1”，“面板2”和“面板3”，这3个面板状态中都放置一个黑边白底的矩形和一张各不相同的图片，其中矩形与动态面板一样大小。&lt;/p&gt;
 &lt;p&gt;第二步：设置选项卡的样式&lt;/p&gt;
@@ -316,6 +397,8 @@
     
     
       <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
   </entry>
   
@@ -572,6 +655,70 @@
   </entry>
   
   <entry>
+    <title>产品经理之路_绪论（三）</title>
+    <link href="http://zuesblog.xyz/2016/12/24/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://zuesblog.xyz/2016/12/24/产品经理之路-绪论（三）/</id>
+    <published>2016-12-24T09:43:32.000Z</published>
+    <updated>2017-07-27T13:35:26.768Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品经理之路_绪论（二）</title>
+    <link href="http://zuesblog.xyz/2016/12/23/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://zuesblog.xyz/2016/12/23/产品经理之路-绪论（二）/</id>
+    <published>2016-12-23T01:41:30.000Z</published>
+    <updated>2017-07-27T09:46:27.339Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;a href=&quot;#我为什么希望成为产品经理？&quot; class=&quot;headerlink&quot; title=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;/a&gt;我为什么希望成为产品经理？&lt;/h2&gt;&lt;p&gt;这是续之前&lt;a href=&quot;&quot;&gt;产品经理之路_绪论&lt;/a&gt;目录写的第二篇，别人都说我像猪，倒头就能睡着，或许没毛病，哈哈，因为我好懒，真的没法一下子把四篇博客写完。&lt;/p&gt;
+&lt;p&gt;转入正题，热爱产品经理这个职业是因为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;挑战性&lt;/li&gt;
+&lt;li&gt;创造价值&lt;/li&gt;
+&lt;li&gt;发现问题&lt;/li&gt;
+&lt;li&gt;数据分析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;挑战性&quot;&gt;&lt;a href=&quot;#挑战性&quot; class=&quot;headerlink&quot; title=&quot;挑战性&quot;&gt;&lt;/a&gt;挑战性&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;“将杰出人物和我们其他人区分开来的主要因素是：他们经过年复一年的练习，已经改变了大脑中的神经回路，以创建高度专业化的心理表征，这些心理表征反过来使得令人难以置信的记忆、规律的识别、问题的解决成为可能”&lt;/strong&gt;,在读安德斯·艾利克森的《刻意练习》被这句话所吸引，书中分析为何平凡人一直平凡，并非他们缺乏勤奋和练习，而是他们一直在舒服区间反复练习，与老鼠和猫、麋鹿和豹子甚至是互联网的竞争对手互相挑战互相进步不一样，保持安逸意味着止步不前，大脑也一样，不刻意挑战更高难度，终将变得迟钝，尽管很勤奋反复练习。PM作为产品核心，不仅要和公司内部各部门打交道，还要和外部的客户访谈获取一手数据，富有挑战。&lt;/p&gt;
+&lt;h3 id=&quot;创造价值&quot;&gt;&lt;a href=&quot;#创造价值&quot; class=&quot;headerlink&quot; title=&quot;创造价值&quot;&gt;&lt;/a&gt;创造价值&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;7点45分，又该起床了，有时候我会苦恼，可不可以呆在宿舍，不去工作室，脑子充斥着重复造车轮的消极心理。程序员喜欢不断尝试新技术，我骨子里也流淌着这样的血液，渴望创造价值，不管是写一款富有创意的应用，亦或是一个酷炫的交互特效。产品经理要从0到1创造一个作品，而产品的定义，便是价值创造的过程，为解决现实问题提出需求，用更加人性化的简易操作解决问题。&lt;/p&gt;
+&lt;h3 id=&quot;发现问题&quot;&gt;&lt;a href=&quot;#发现问题&quot; class=&quot;headerlink&quot; title=&quot;发现问题&quot;&gt;&lt;/a&gt;发现问题&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;在《人人都是产品经理》中提到了一个产品的职业病，虽说是调侃，但却令我非常向往那种细腻的观察力，能快速觉察到一个产品哪里不足，看一场春晚都会挑出很多毛病，唱一次K也会一直吐槽点歌系统，甚至是一群产品吃饭都会对菜单指指点点，提出很多改善的建议，刻意挑毛病固然简单，但若能发现问题，并提出有效的优化方案就很有趣了，方法总比问题多，而PM却能在众多可行解中找到最优解。&lt;/p&gt;
+&lt;h3 id=&quot;数据分析&quot;&gt;&lt;a href=&quot;#数据分析&quot; class=&quot;headerlink&quot; title=&quot;数据分析&quot;&gt;&lt;/a&gt;数据分析&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;数据分析界中有一句名言：&lt;strong&gt;字&amp;lt;表&amp;lt;图&lt;/strong&gt;，数据可视化是数据分析的目的，挖掘数据只是第一步，能把复杂繁多的数据简化为让人几分钟甚至几十秒能看懂的报表非常困难，数据分析的价值不仅仅是报表，更多的是报表中了解用户真实需要的不是更快的马，或许是一辆车。透过现象看本质，从海量数据中还原最核心的需求，没有什么比这更具洞察力了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;或许产品经理还有更多优点，而我只是一个大三的菜鸟，哈哈哈！希望能下学期多点实战，下面附上整理好的PM特质，结束这一章的博客！&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/983P-jYpLAih-67194.png&quot; alt=&quot;PM_advantage&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;a href=&quot;#我为什么希望成为产品经理？&quot; class=&quot;headerlink&quot; title=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;/a&gt;我为什么希望成为产品经理？&lt;/h2&gt;&lt;p&gt;这是续之前&lt;a href=&quot;&quot;&gt;产品经理之路_绪论&lt;
+    
+    </summary>
+    
+      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>rn的ios真机调试</title>
     <link href="http://zuesblog.xyz/2016/12/20/rn%E7%9A%84ios%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/"/>
     <id>http://zuesblog.xyz/2016/12/20/rn的ios真机调试/</id>
@@ -618,6 +765,62 @@
     
     
       <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品经理之路_绪论</title>
+    <link href="http://zuesblog.xyz/2016/12/20/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA/"/>
+    <id>http://zuesblog.xyz/2016/12/20/产品经理之路-绪论/</id>
+    <published>2016-12-20T03:10:32.000Z</published>
+    <updated>2017-07-26T11:56:05.879Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;这是我慎重思考后的一次感悟，希望会是一个起点，因为我发现眼前的灯，被点亮了！&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;我对当前的生活满意吗？（赶时间的小伙伴可以跳过这章作者扯淡环节）&lt;/li&gt;
+&lt;li&gt;我为什么希望成为产品经理？&lt;/li&gt;
+&lt;li&gt;产品经理的定位是什么？&lt;/li&gt;
+&lt;li&gt;这个过程中，我要怎么做？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;围着这四个问题，我写下这篇心得。有兴趣的程序员可以借鉴一下我的想法，哈哈。&lt;/p&gt;
+&lt;h2 id=&quot;我对当前的生活满意吗？&quot;&gt;&lt;a href=&quot;#我对当前的生活满意吗？&quot; class=&quot;headerlink&quot; title=&quot;我对当前的生活满意吗？&quot;&gt;&lt;/a&gt;我对当前的生活满意吗？&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;第一阶段——起源&quot;&gt;&lt;a href=&quot;#第一阶段——起源&quot; class=&quot;headerlink&quot; title=&quot;第一阶段——起源&quot;&gt;&lt;/a&gt;第一阶段——起源&lt;/h3&gt;&lt;p&gt;就读于江门最高学府，大二学生，听起来还是蛮不错的，但其实选这所学校之前我觉得校名很LOW，但命运之轮将我推向了它，还能怎么办，凉拌啊！&lt;/p&gt;
+&lt;p&gt;我喜欢技术，但我也喜欢管理类的专业，听起来像是两门交叉学科，但确实学校有一门专业刚好在这两者之间找到了平衡，也就是我现在就读的电子商务专业，认为专业比学校重要的我在“物超所值”影响下（其实更多的是我发现马云也是电商领域的），毫不犹豫把它放在第一志愿。&lt;/p&gt;
+&lt;p&gt;当然现实没有让我失望，幸运的我由于专业优势，在面试最高大上的电子商务研究开发实验室（&lt;strong&gt;袂卓工作室&lt;/strong&gt;）开发组中脱颖而出，原因是我提前学了HTML和CSS，不过HTML和移动开发真的差别挺大，为什么能被录取，哈哈哈。&lt;/p&gt;
+&lt;h3 id=&quot;第二阶段——挣扎与反思&quot;&gt;&lt;a href=&quot;#第二阶段——挣扎与反思&quot; class=&quot;headerlink&quot; title=&quot;第二阶段——挣扎与反思&quot;&gt;&lt;/a&gt;第二阶段——挣扎与反思&lt;/h3&gt;&lt;p&gt;听着工作室二十位不到的“大牛”轻快的键盘敲击声，让我一刻都不敢放松，觉得空气都在挤压着我，两个星期下来发现加入之后学习效率反而比之前还慢，觉得宿舍学更轻松。&lt;/p&gt;
+&lt;p&gt;舍友打机的声音很吵，有时还爆粗口，进去工作室后虽然被大部分的同学投以羡慕的眼光，但我内心却极度浮躁，面试之前的学习激情没有了，我不喜欢打游戏于是那个下午看了两部电影，倒头睡了一觉，晚上又看了一部电影，我当时咱这么能看啊#哭笑不得。&lt;/p&gt;
+&lt;p&gt;睡前洗漱，突然一想，“糟糕，今天什么都没学，可能睡多了，头好疼”，在高中形成的习惯，睡前回忆今天学了什么。由于下午忙着睡觉，竟毫无睡意，脑海冒出一堆乱糟糟的东西，眼睛盯着蚊帐，开始慢慢平静下来，在思维垃圾堆中发现高考前最初的志向，就算考不到重点大学，我也要成为最让家人自豪的孩子。&lt;/p&gt;
+&lt;h3 id=&quot;第三阶段——起色&quot;&gt;&lt;a href=&quot;#第三阶段——起色&quot; class=&quot;headerlink&quot; title=&quot;第三阶段——起色&quot;&gt;&lt;/a&gt;第三阶段——起色&lt;/h3&gt;&lt;p&gt;其实第二阶段我并没有记忆那么仔细，而是在工作室中，我反复做过同样的挣扎，最后是家人的力量让我重新战斗，我没细数有过多少这样的夜晚，能肯定的是我慢慢适应了工作室的氛围，现在的我总结出了当时呼吸困难的原因：&lt;code&gt;没实力自己又非常倔强，担心自己学校进度比其它计算机专业小伙伴慢&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;但事实证明了，尽管我努力了很久，在技术方面我有很多地方都不及同时招进来的其它小伙伴，因为他们也不比我懒，局面很糟糕，但我依然入门了人生中第一门计算机语言&lt;code&gt;JAVA&lt;/code&gt;，为什么我敢肯定，因为我不断的实践失败总结复习、实践失败总结复习、实践失败总结复习……以至于后面上手安卓时读代码觉得很轻松，在博客上看到零基础的人学安卓都比较痛苦，而我就只是在看文档，与学会英语语法之后不断的练习词组使用场景一样。&lt;/p&gt;
+&lt;h3 id=&quot;第四阶段——转折点&quot;&gt;&lt;a href=&quot;#第四阶段——转折点&quot; class=&quot;headerlink&quot; title=&quot;第四阶段——转折点&quot;&gt;&lt;/a&gt;第四阶段——转折点&lt;/h3&gt;&lt;p&gt;学会安卓之后写过几个简单的作品，包括2048，还不错哈哈，没忍住向班上同学灌输了我是大牛的假象，&lt;strong&gt;终于知道为什么越没能力越喜欢炫耀了，当时太急迫想得到别人肯定了&lt;/strong&gt;，工作室的都是大牛，其它组员也比我厉害得多，虽然那时候做法很笨，但也为我带来了机遇，由于技术知名度在班上的提高，女同学（男同学也有啦）都来问我电脑问题，碍于面子问题几乎没拒绝过，因为开发中精通了google大法，动手解决问题变得轻松许多，而在帮她们解决问题同时我也不断发现了一些优质的平台，类似知乎、简书、豆瓣、CSDN、维基百科等等，更重要的是，我开始被学生创业团队邀请成为他们的核心开发人员，有幸以程序员身份参加了商业比赛。&lt;/p&gt;
+&lt;p&gt;不过早在大一开学不久我就开始参加创业比赛，那时很幸运能和几个大三师姐组队，获得了校内二等奖。大二下学期被邀请加入了一个四人女生的宿舍团队，或许我有经验并且逻辑思维较好，非常荣幸成为队长。从没充当过这个角色的我，显得有点焦虑，本来以为写好app和搭建网站就可以，不过队长要干的事情恐怕没有这么简单。&lt;/p&gt;
+&lt;p&gt;项目的idea提出前，我看了小米应用商店的app种类，收集每个种类前3名的应用，整理它们的核心功能，希望能在现有的产品基础上获得项目灵感。收集好后我向团队成员发了一条通知：小伙伴们在早上收集一下社会痛点，整理好私聊发给我，下午3点书吧大家聚一聚，来个头脑风暴。&lt;/p&gt;
+&lt;p&gt;于是这样的聚会就持续了几天，知识地点不一样，虽然讨论过程中大家的想法都比较好，而且还时而跑题，但我们聚会的目标很专注，就是想一个具有社会价值并具备可行性的项目。最终我们确定了项目核心，并把项目成功做了出来，在多项比赛中都获得了优秀的名次。&lt;/p&gt;
+&lt;h3 id=&quot;第五阶段——认识自己&quot;&gt;&lt;a href=&quot;#第五阶段——认识自己&quot; class=&quot;headerlink&quot; title=&quot;第五阶段——认识自己&quot;&gt;&lt;/a&gt;第五阶段——认识自己&lt;/h3&gt;&lt;p&gt;当队长那段时间里，我经常反思，包括工作室的自卑心理，也是我最希望和大家分享的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;虽然我只会JAVA和移动开发，技术水平比小伙伴们差，但我有他们不可比拟的优势，想起选专业时的初衷，我喜欢管理学，正是专业优势，我的商业意识比技术小伙伴们要敏锐得多，这也奠定了我现在的优势，我现在开发着一个签到系统，除了实现细节，更多会考虑app的实用性。工作室写过很多产品，都是突然想到一个绝佳的想法，然后开始干活，没有经过市场验证，这也带来过高人力成本的损失，当然交给师弟练手是不错的，但我们都已经有开发经验，除了在项目中用新学的技术，还要进行可靠性的市场调研，当然在当队长时我也只是做问卷调查，然后做数据透析表汇总再分析数据。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;又扯远了！遇上坏事突然用爱因斯坦的相对论来思考问题往往会很舒服，至少能很全面的认识自己，一件事情很糟糕？那肯定也很积极，换个角度想想，其实生活not bad。&lt;/p&gt;
+&lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;为什么我会突然写下这篇文章，灵感来自&lt;a href=&quot;http://developer.51cto.com/art/201211/364725.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从程序员到项目经理成长历程&lt;/a&gt;，今天花了早上两大节课才看完#哭笑不得。&lt;/p&gt;
+&lt;p&gt;文章虽然讲述的是项目经理，但也阐述了一个观点，如果自身具备其它程序员所没有商业嗅觉和全局思维，为何不尝试做管理，我技术渣渣但我热爱生活，愿我能创造一款改变世界的产品。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;这是我慎重思考后的一次感悟，希望会是一个起点，因为我发现眼前的灯，被点亮了！&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;我对当前的生活满意吗？（赶时间的小伙伴可以跳过这章作者扯淡环节）&lt;/li&gt;
+&lt;li&gt;我为什么希望成为产品经理？
+    
+    </summary>
+    
+      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
   </entry>
   
@@ -800,87 +1003,6 @@
     
       &lt;h2 id=&quot;BIG-FOUND&quot;&gt;&lt;a href=&quot;#BIG-FOUND&quot; class=&quot;headerlink&quot; title=&quot;BIG FOUND&quot;&gt;&lt;/a&gt;BIG FOUND&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;写了那么久的react native才发现这个，感觉有点羞愧，因为当时刚学
-    
-    </summary>
-    
-      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
-    
-    
-      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>项目感想7</title>
-    <link href="http://zuesblog.xyz/2016/11/25/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B37/"/>
-    <id>http://zuesblog.xyz/2016/11/25/项目感想7/</id>
-    <published>2016-11-25T08:12:16.000Z</published>
-    <updated>2016-11-26T06:01:18.521Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据更新&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。&lt;/p&gt;
-&lt;p&gt;首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：&lt;/p&gt;
-&lt;h3 id=&quot;Home-js&quot;&gt;&lt;a href=&quot;#Home-js&quot; class=&quot;headerlink&quot; title=&quot;Home.js&quot;&gt;&lt;/a&gt;Home.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;componentDidMount() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.autoLogin();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       DeviceEventEmitter.addListener(&amp;apos;test&amp;apos;,this.test);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   componentWillUnmount()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.subscription.remove();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test(data)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       alert(&amp;quot;good&amp;quot;+data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Login-js&quot;&gt;&lt;a href=&quot;#Login-js&quot; class=&quot;headerlink&quot; title=&quot;Login.js&quot;&gt;&lt;/a&gt;Login.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;backToHome()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        DeviceEventEmitter.emit(&amp;apos;test&amp;apos;,&amp;apos;hello&amp;apos;); //最主要是这段代码，其他的可以忽略&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        const &amp;#123; navigator &amp;#125; = this.props;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        if (navigator)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            navigator.popToTop();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;现象是，当点击页面左上角的返回之后，就会在home页面alert出一个”goodhello”，当然test方法也可以不带参，直接被监听调用。&lt;/p&gt;
-&lt;h2 id=&quot;页面间数据传递&quot;&gt;&lt;a href=&quot;#页面间数据传递&quot; class=&quot;headerlink&quot; title=&quot;页面间数据传递&quot;&gt;&lt;/a&gt;页面间数据传递&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;在A页面导航到B页面可以传递一些参数，方法如下代码：&lt;/p&gt;
-&lt;h3 id=&quot;A-js&quot;&gt;&lt;a href=&quot;#A-js&quot; class=&quot;headerlink&quot; title=&quot;A.js&quot;&gt;&lt;/a&gt;A.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.props.navigator.push(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    name:&amp;apos;Login&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    component:Login,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					key:object&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;B-js&quot;&gt;&lt;a href=&quot;#B-js&quot; class=&quot;headerlink&quot; title=&quot;B.js&quot;&gt;&lt;/a&gt;B.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.props.key&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;其中这里的key为键值，自己可以随意命名。另一方面，这里的object可以是常用数据类型，字符数字，还可以是方法对象，一般情况行都是使用简单的id传递，所以一般都是传递数字。&lt;/p&gt;
-&lt;h3 id=&quot;全局变量AsyncStorage的用法&quot;&gt;&lt;a href=&quot;#全局变量AsyncStorage的用法&quot; class=&quot;headerlink&quot; title=&quot;全局变量AsyncStorage的用法&quot;&gt;&lt;/a&gt;全局变量&lt;code&gt;AsyncStorage&lt;/code&gt;的用法&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;全局变量，一定是先声明后使用，我怀疑我以前是没有先声明然后再使用，而是随便创建一个类然后就使用，所以不能读取到。&lt;br&gt;但是我假如将一个类导入到需要使用的类里面，然后就可以用了，那是因为在初始化类的时候先将&lt;code&gt;import&lt;/code&gt;的类里面的静态变量的初始化，所以可以用。&lt;/p&gt;
-&lt;p&gt;当然官方是推荐我使用的是&lt;a href=&quot;https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react-native-storage&lt;/a&gt;开源库的持久化储存，一开始导入之后其实我是没使用成功的，后面无缘无故不断改写法然后就可以正常使用了，官方的介绍不太仔细，我这里说一下：&lt;br&gt;首先是初始化，因为全局变量要先声明才能使用，所以这个&lt;code&gt;AsyncStorage&lt;/code&gt;也不例外，我把它的初始化放在了&lt;code&gt;index.android.js&lt;/code&gt;中。&lt;/p&gt;
-&lt;h3 id=&quot;index-android-js&quot;&gt;&lt;a href=&quot;#index-android-js&quot; class=&quot;headerlink&quot; title=&quot;index.android.js&quot;&gt;&lt;/a&gt;index.android.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import Storage from &amp;apos;react-native-storage&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var storage = new Storage(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    size: 1000,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    storageBackend: AsyncStorage,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    defaultExpires: 1000 * 3600 * 24,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enableCache: true,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;global.storage = storage;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;A-js-1&quot;&gt;&lt;a href=&quot;#A-js-1&quot; class=&quot;headerlink&quot; title=&quot;A.js&quot;&gt;&lt;/a&gt;A.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;storage.save(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            key: &amp;apos;testKey&amp;apos;,  // 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            rawData: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				username:123456&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;B-js-1&quot;&gt;&lt;a href=&quot;#B-js-1&quot; class=&quot;headerlink&quot; title=&quot;B.js&quot;&gt;&lt;/a&gt;B.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;storage.load(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    key: &amp;apos;testKey&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).then(ret =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    console.log(ret.username); //此处打印出123456&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).catch(err =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    console.warn(err.message);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    switch (err.name) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        case &amp;apos;NotFoundError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            // TODO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        case &amp;apos;ExpiredError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            // TODO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;建议将其封装，我提供我自己的封装。&lt;/p&gt;
-&lt;h3 id=&quot;Test-js&quot;&gt;&lt;a href=&quot;#Test-js&quot; class=&quot;headerlink&quot; title=&quot;Test.js&quot;&gt;&lt;/a&gt;Test.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;saveKey(key, rowData)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       //使用例子：new Test().saveKey(&amp;apos;loginState&amp;apos;,&amp;#123;username: &amp;apos;1234567&amp;apos;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       storage.save(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           key: key,  // 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           rawData: rowData,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   loadKey(key)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       //使用例子：new Test().loadKey(&amp;apos;loginState&amp;apos;).then(r =&amp;gt; alert(r.username));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       return storage.load(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           key: key,	// 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;).catch(e =&amp;gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           console.warn(e.message);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           switch (e.name) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               case &amp;apos;NotFoundError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   // TODO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               case &amp;apos;ExpiredError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   // TODO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;当然还有其他的封装方法，也有其他更多关于&lt;code&gt;react-native-storage&lt;/code&gt;库的用法，这里我就不去详细说了，有兴趣自己新建一个demo试一试。&lt;br&gt;不过&lt;code&gt;react-native-storage&lt;/code&gt;库的亮点功能我似乎还没用上，就是同步的方法asyc，我这里没有对应的json数据返回，所以我还没有用上，我觉得如果有数据，加上同步的方法会更灵活。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据
-    
-    </summary>
-    
-      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
-    
-    
-      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>react-native升级</title>
-    <link href="http://zuesblog.xyz/2016/10/24/react-native%E5%8D%87%E7%BA%A7/"/>
-    <id>http://zuesblog.xyz/2016/10/24/react-native升级/</id>
-    <published>2016-10-24T09:09:28.000Z</published>
-    <updated>2016-10-24T12:58:30.438Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;升级react-native引发的一系列bug&quot;&gt;&lt;a href=&quot;#升级react-native引发的一系列bug&quot; class=&quot;headerlink&quot; title=&quot;升级react-native引发的一系列bug&quot;&gt;&lt;/a&gt;升级react-native引发的一系列bug&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;我不是标题党啊！我新建文件的时候偷懒就没有把版本输进去。然后记录这篇博客。&lt;/p&gt;
-&lt;p&gt;因为要使用到多张图片上传，所以在github里面输入关键字multiple images picker，找到最多star的库，我也想过自己写的，但是考虑到编写和测试的时间成本，果断放弃了。&lt;/p&gt;
-&lt;p&gt;使用&lt;a href=&quot;https://github.com/ivpusic/react-native-image-crop-picker&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ivpusic/react-native-image-crop-picker&lt;/a&gt;的时候出了一个bug，当时没有截图，是说需要的react-native版本在0.32.0以上，我的版本还在0.30.0，npm install会出现警告。&lt;/p&gt;
-&lt;p&gt;于是我开始备份了项目然后去升级版本，首先是去react-native中文网上查找升级的步骤&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;使用&lt;code&gt;npm info react-native&lt;/code&gt;查看最新的依赖包版本。然后在项目目录下打开&lt;code&gt;package.json&lt;/code&gt;文件，找到&lt;code&gt;react-native&lt;/code&gt;修改到最新版本号，我这里是0.35.0.最后使用&lt;code&gt;npm install&lt;/code&gt;开始更新。&lt;br&gt;开始警告，说我的react版本也应该更新，然后重新使用&lt;code&gt;npm info react-native&lt;/code&gt;找到对应的版本号为15.3.1。ok，继续修改一下&lt;code&gt;react&lt;/code&gt;版本，ok。这样就算更新好了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;开始使用&lt;code&gt;react-native run-android&lt;/code&gt;跑原来程序，第一次跑失败了，因为原来的&lt;code&gt;react-native-blur&lt;/code&gt;库，也就是用来是实现毛玻璃效果的库说打开不了扩展文件&lt;code&gt;..\node_modules\react-native-blur\android\build\outputs\aar\react-native-blur-release.aar&lt;/code&gt;，于是我又开始了fix bug之旅。&lt;/p&gt;
-&lt;p&gt;在&lt;code&gt;Could not expand ZIP&lt;/code&gt;关键词情况下我找到了&lt;a href=&quot;http://www.wangchenlong.org/2016/04/07/1604/071-rn-uiexplorer/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mystra的博客文章&lt;/a&gt;，里面说只需要删掉原来的重新下载就可以了，果然&lt;code&gt;npm uninstall react-native-blur&lt;/code&gt;之后再重新install就没报这个错了。&lt;/p&gt;
-&lt;p&gt;可是随之而来的是另外一个bug，那就是当我使用react-native-image-crop-picker里面的命令时，当我输入&lt;code&gt;npm i react-native-image-crop-picker --save&lt;/code&gt;这条命令时开始报这个错了&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;failed to find Build Tools revision 23.0.3 reactnative&lt;br&gt;根据google拿到的解决办法，我打开了android SDK将&lt;code&gt;android SDK build-tools 23.0.3&lt;/code&gt;给勾上了。再次跑一次程序，又出现bug了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这次是这个bug,&lt;code&gt;The error is &amp;quot;Error: Width (0) and height (0) cannot be &amp;lt; = 0&lt;/code&gt;,这个bug在uCrop里面很多人都说可以参考这里的方法来解决&lt;a href=&quot;https://github.com/Yalantis/uCrop/issues/84&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Using v1.4.1, could not build because of an error. #84&lt;/a&gt;&lt;br&gt;由于我比较笨，怎么试都没有试成功。我也按照里面说的&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Gradle Plugin 2.0+  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; android &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   defaultConfig &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     vectorDrawables.useSupportLibrary = &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;or this to Gradle Plugin 1.5&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Gradle Plugin 1.5  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; android &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   defaultConfig &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     generatedDensities = []  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// This is handled for you by the 2.0+ Gradle Plugin  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  aaptOptions &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    additionalParameters &lt;span class=&quot;string&quot;&gt;&quot;--no-version-vectors&quot;&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;我的gradle是1.5版本的，所以我一直都试下面那个方法，可是一样还是报错。后面无意中想到，要不更新一下gradle试一下上面一个的方法，然后就借鉴简书的这篇博客&lt;a href=&quot;http://www.jianshu.com/p/00beddbe3dbc#&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;【Android】升级Gradle版本（Android Studio）&lt;/a&gt;。&lt;br&gt;按照里面的说法我用androidstudio打开了我的项目，将目录&lt;code&gt;gradle\wrapper\gradle-wrapper.properties&lt;/code&gt;里的这个文件由原来的&lt;code&gt;2.4.0&lt;/code&gt;修改成&lt;code&gt;2.10.0&lt;/code&gt;,接着sync一下，重新编译项目，就跑起来了。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;升级react-native引发的一系列bug&quot;&gt;&lt;a href=&quot;#升级react-native引发的一系列bug&quot; class=&quot;headerlink&quot; title=&quot;升级react-native引发的一系列bug&quot;&gt;&lt;/a&gt;升级react-native引发的
     
     </summary>
     
