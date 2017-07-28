@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zuesblog.xyz/"/>
-  <updated>2017-07-05T13:48:16.373Z</updated>
+  <updated>2017-07-28T00:54:11.545Z</updated>
   <id>http://zuesblog.xyz/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Axure</title>
-    <link href="http://zuesblog.xyz/2017/07/05/Axure/"/>
-    <id>http://zuesblog.xyz/2017/07/05/Axure/</id>
-    <published>2017-07-05T13:48:16.000Z</published>
-    <updated>2017-07-05T13:48:16.373Z</updated>
+    <title>产品经理之路——-PRD撰写-信息结构图</title>
+    <link href="http://zuesblog.xyz/2017/07/28/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF%E2%80%94%E2%80%94-PRD%E6%92%B0%E5%86%99-%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
+    <id>http://zuesblog.xyz/2017/07/28/产品经理之路——-PRD撰写-信息结构图/</id>
+    <published>2017-07-28T00:54:11.000Z</published>
+    <updated>2017-07-28T00:54:11.545Z</updated>
     
     <content type="html"></content>
     
@@ -28,34 +28,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Axure笔记之轮播图</title>
-    <link href="http://zuesblog.xyz/2017/07/05/Axure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%BD%AE%E6%92%AD%E5%9B%BE/"/>
-    <id>http://zuesblog.xyz/2017/07/05/Axure学习笔记之轮播图/</id>
-    <published>2017-07-05T08:07:01.000Z</published>
-    <updated>2017-07-26T11:51:09.983Z</updated>
-    
-    <content type="html">&lt;p&gt;参考教程：&lt;a href=&quot;http://weidublog.com/index.php/2017/03/12/57/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;axure原型设计之轮播图&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;准备步骤&quot;&gt;&lt;a href=&quot;#准备步骤&quot; class=&quot;headerlink&quot; title=&quot;准备步骤&quot;&gt;&lt;/a&gt;准备步骤&lt;/h2&gt;&lt;p&gt;1、三张图片&lt;/p&gt;
-&lt;h2 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步骤&quot;&gt;&lt;/a&gt;步骤&lt;/h2&gt;&lt;p&gt;拖一个动态面板到画布,设置大小按照教程上的670X320,命名为轮播图；&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;参考教程：&lt;a href=&quot;http://weidublog.com/index.php/2017/03/12/57/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;axure原型设计之轮播图&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;准备步骤&quot;&gt;&lt;a href=&quot;
-    
-    </summary>
-    
-      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
-    
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
   </entry>
   
@@ -659,13 +631,20 @@
     <link href="http://zuesblog.xyz/2016/12/24/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA%EF%BC%88%E4%B8%89%EF%BC%89/"/>
     <id>http://zuesblog.xyz/2016/12/24/产品经理之路-绪论（三）/</id>
     <published>2016-12-24T09:43:32.000Z</published>
-    <updated>2017-07-27T13:35:26.768Z</updated>
+    <updated>2017-07-27T16:01:06.965Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;</content>
+    <content type="html">&lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;&lt;p&gt;PM的轨迹穿透整个产品的生命周期，从我收集的资料显示，从需求开始，经历产品评估、产品定义、产品开发、产品发布、产品迭代开发、产品发布…&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/YG45-nMhabmo-74916.png&quot; alt=&quot;PM route&quot;&gt;&lt;/p&gt;
+&lt;p&gt;千里之行始于足下，不难想象最为困难并且最重要的是&lt;strong&gt;产品评估&lt;/strong&gt;和&lt;strong&gt;产品定义环节&lt;/strong&gt;，如果这一道棋下错，后面损失的利益是难以衡量，甚至是致命的。&lt;/p&gt;
+&lt;h3 id=&quot;定位&quot;&gt;&lt;a href=&quot;#定位&quot; class=&quot;headerlink&quot; title=&quot;定位&quot;&gt;&lt;/a&gt;定位&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;因此我认为产品经理的定位是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一名定义产品的技术可行性、市场可用性，通过开发团队输出成品，并站在用户角度，不断优化完善产品的团队灵魂。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;
+      &lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;&lt;p&gt;PM的轨迹穿透整个产品的生命周期，从我收集的资料显示，从需求开始，经历产品评估、产品定义、产品开发、
     
     </summary>
     
@@ -1003,6 +982,48 @@
     
       &lt;h2 id=&quot;BIG-FOUND&quot;&gt;&lt;a href=&quot;#BIG-FOUND&quot; class=&quot;headerlink&quot; title=&quot;BIG FOUND&quot;&gt;&lt;/a&gt;BIG FOUND&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;写了那么久的react native才发现这个，感觉有点羞愧，因为当时刚学
+    
+    </summary>
+    
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
+    
+    
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>项目感想7</title>
+    <link href="http://zuesblog.xyz/2016/11/25/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B37/"/>
+    <id>http://zuesblog.xyz/2016/11/25/项目感想7/</id>
+    <published>2016-11-25T08:12:16.000Z</published>
+    <updated>2016-11-26T06:01:18.521Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据更新&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。&lt;/p&gt;
+&lt;p&gt;首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：&lt;/p&gt;
+&lt;h3 id=&quot;Home-js&quot;&gt;&lt;a href=&quot;#Home-js&quot; class=&quot;headerlink&quot; title=&quot;Home.js&quot;&gt;&lt;/a&gt;Home.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;componentDidMount() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.autoLogin();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       DeviceEventEmitter.addListener(&amp;apos;test&amp;apos;,this.test);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   componentWillUnmount()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.subscription.remove();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test(data)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       alert(&amp;quot;good&amp;quot;+data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Login-js&quot;&gt;&lt;a href=&quot;#Login-js&quot; class=&quot;headerlink&quot; title=&quot;Login.js&quot;&gt;&lt;/a&gt;Login.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;backToHome()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        DeviceEventEmitter.emit(&amp;apos;test&amp;apos;,&amp;apos;hello&amp;apos;); //最主要是这段代码，其他的可以忽略&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        const &amp;#123; navigator &amp;#125; = this.props;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        if (navigator)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            navigator.popToTop();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;现象是，当点击页面左上角的返回之后，就会在home页面alert出一个”goodhello”，当然test方法也可以不带参，直接被监听调用。&lt;/p&gt;
+&lt;h2 id=&quot;页面间数据传递&quot;&gt;&lt;a href=&quot;#页面间数据传递&quot; class=&quot;headerlink&quot; title=&quot;页面间数据传递&quot;&gt;&lt;/a&gt;页面间数据传递&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;在A页面导航到B页面可以传递一些参数，方法如下代码：&lt;/p&gt;
+&lt;h3 id=&quot;A-js&quot;&gt;&lt;a href=&quot;#A-js&quot; class=&quot;headerlink&quot; title=&quot;A.js&quot;&gt;&lt;/a&gt;A.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.props.navigator.push(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    name:&amp;apos;Login&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    component:Login,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					key:object&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;B-js&quot;&gt;&lt;a href=&quot;#B-js&quot; class=&quot;headerlink&quot; title=&quot;B.js&quot;&gt;&lt;/a&gt;B.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.props.key&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中这里的key为键值，自己可以随意命名。另一方面，这里的object可以是常用数据类型，字符数字，还可以是方法对象，一般情况行都是使用简单的id传递，所以一般都是传递数字。&lt;/p&gt;
+&lt;h3 id=&quot;全局变量AsyncStorage的用法&quot;&gt;&lt;a href=&quot;#全局变量AsyncStorage的用法&quot; class=&quot;headerlink&quot; title=&quot;全局变量AsyncStorage的用法&quot;&gt;&lt;/a&gt;全局变量&lt;code&gt;AsyncStorage&lt;/code&gt;的用法&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;全局变量，一定是先声明后使用，我怀疑我以前是没有先声明然后再使用，而是随便创建一个类然后就使用，所以不能读取到。&lt;br&gt;但是我假如将一个类导入到需要使用的类里面，然后就可以用了，那是因为在初始化类的时候先将&lt;code&gt;import&lt;/code&gt;的类里面的静态变量的初始化，所以可以用。&lt;/p&gt;
+&lt;p&gt;当然官方是推荐我使用的是&lt;a href=&quot;https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react-native-storage&lt;/a&gt;开源库的持久化储存，一开始导入之后其实我是没使用成功的，后面无缘无故不断改写法然后就可以正常使用了，官方的介绍不太仔细，我这里说一下：&lt;br&gt;首先是初始化，因为全局变量要先声明才能使用，所以这个&lt;code&gt;AsyncStorage&lt;/code&gt;也不例外，我把它的初始化放在了&lt;code&gt;index.android.js&lt;/code&gt;中。&lt;/p&gt;
+&lt;h3 id=&quot;index-android-js&quot;&gt;&lt;a href=&quot;#index-android-js&quot; class=&quot;headerlink&quot; title=&quot;index.android.js&quot;&gt;&lt;/a&gt;index.android.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import Storage from &amp;apos;react-native-storage&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var storage = new Storage(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    size: 1000,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    storageBackend: AsyncStorage,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    defaultExpires: 1000 * 3600 * 24,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enableCache: true,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;global.storage = storage;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;A-js-1&quot;&gt;&lt;a href=&quot;#A-js-1&quot; class=&quot;headerlink&quot; title=&quot;A.js&quot;&gt;&lt;/a&gt;A.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;storage.save(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            key: &amp;apos;testKey&amp;apos;,  // 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            rawData: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				username:123456&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;B-js-1&quot;&gt;&lt;a href=&quot;#B-js-1&quot; class=&quot;headerlink&quot; title=&quot;B.js&quot;&gt;&lt;/a&gt;B.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;storage.load(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    key: &amp;apos;testKey&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).then(ret =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    console.log(ret.username); //此处打印出123456&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).catch(err =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    console.warn(err.message);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    switch (err.name) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        case &amp;apos;NotFoundError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            // TODO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        case &amp;apos;ExpiredError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            // TODO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;建议将其封装，我提供我自己的封装。&lt;/p&gt;
+&lt;h3 id=&quot;Test-js&quot;&gt;&lt;a href=&quot;#Test-js&quot; class=&quot;headerlink&quot; title=&quot;Test.js&quot;&gt;&lt;/a&gt;Test.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;saveKey(key, rowData)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       //使用例子：new Test().saveKey(&amp;apos;loginState&amp;apos;,&amp;#123;username: &amp;apos;1234567&amp;apos;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       storage.save(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           key: key,  // 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           rawData: rowData,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   loadKey(key)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       //使用例子：new Test().loadKey(&amp;apos;loginState&amp;apos;).then(r =&amp;gt; alert(r.username));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       return storage.load(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           key: key,	// 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;).catch(e =&amp;gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           console.warn(e.message);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           switch (e.name) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               case &amp;apos;NotFoundError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   // TODO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               case &amp;apos;ExpiredError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   // TODO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;当然还有其他的封装方法，也有其他更多关于&lt;code&gt;react-native-storage&lt;/code&gt;库的用法，这里我就不去详细说了，有兴趣自己新建一个demo试一试。&lt;br&gt;不过&lt;code&gt;react-native-storage&lt;/code&gt;库的亮点功能我似乎还没用上，就是同步的方法asyc，我这里没有对应的json数据返回，所以我还没有用上，我觉得如果有数据，加上同步的方法会更灵活。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据
     
     </summary>
     
