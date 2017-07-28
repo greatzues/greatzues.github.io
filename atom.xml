@@ -137,22 +137,6 @@
   </entry>
   
   <entry>
-    <title>IOS开发_Swift入门</title>
-    <link href="http://zuesblog.xyz/2017/04/12/IOS%E5%BC%80%E5%8F%91_Swift%E5%85%A5%E9%97%A8/"/>
-    <id>http://zuesblog.xyz/2017/04/12/IOS开发_Swift入门/</id>
-    <published>2017-04-12T12:57:04.000Z</published>
-    <updated>2017-07-28T05:26:17.273Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>IOS开发_ios入门</title>
     <link href="http://zuesblog.xyz/2017/04/07/IOS%E5%BC%80%E5%8F%91_ios%E5%85%A5%E9%97%A8/"/>
     <id>http://zuesblog.xyz/2017/04/07/IOS开发_ios入门/</id>
@@ -376,50 +360,9 @@
       <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
       <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
     
-  </entry>
-  
-  <entry>
-    <title>产品经理之路-PRD撰写-信息结构图</title>
-    <link href="http://zuesblog.xyz/2017/03/28/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
-    <id>http://zuesblog.xyz/2017/03/28/产品经理之路-PRD撰写-信息结构图/</id>
-    <published>2017-03-28T00:54:11.000Z</published>
-    <updated>2017-07-28T16:10:15.526Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;信息结构设计&quot;&gt;&lt;a href=&quot;#信息结构设计&quot; class=&quot;headerlink&quot; title=&quot;信息结构设计&quot;&gt;&lt;/a&gt;信息结构设计&lt;/h3&gt;&lt;p&gt;信息结构是产品呈现的信息层次（也有人把信息结构称为信息架构），而我认为主要是信息，因为大多数人都把它与功能结构图混在一起。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;在&lt;a href=&quot;https://www.zhihu.com/question/21252588&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎上整理了两个优质的答案&lt;/a&gt;，个人觉得醍醐灌顶很提神。&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;信息结构关注的是单个页面的元素、信息来源、字段限制等，而非结构化的信息，不符合思维导图的特点，建议用表格来展示。&lt;br&gt;在PRD中，信息结构是供开发建数据库的参考依据，这里引用UML里面类的概念，一个类包含属性和方法，而信息就是类的属性，举个例子，博客系统有最主要的文章类、评论类，文章类包含的信息有：标题、作者、发布时间、摘要、正文、访问量等；评论类包含的信息有评论者头像、昵称、回复内容、邮件、QQ等。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;相比之下，我会更倾向于理解第二个，因为在java设计中也采用到了类的概念,另外类似ANDROID开发中的model来理解信息结构对我来说更具优势，按照对象来划分属性，这个分类觉得是最好的了。&lt;/p&gt;
-&lt;h3 id=&quot;个人理解&quot;&gt;&lt;a href=&quot;#个人理解&quot; class=&quot;headerlink&quot; title=&quot;个人理解&quot;&gt;&lt;/a&gt;个人理解&lt;/h3&gt;&lt;p&gt;那我可不可以这样来理解，如果信息结构设计是供数据库设计人员而做，那么流程设计和功能设计则是为了开发者编码而做，交互设计和视觉设计是为用户体验师而做，这样总结下来一个信息结构图，就可以简单的理解为给不同角色提供不同的前期判断帮助而做，那么由于处理的对象不同功能就区分下来了！&lt;/p&gt;
-&lt;p&gt;依据上面的分析，做了自己博客的信息结构图（最好是使用表格来显示）：&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/vGVD-VFKVufj-94527.png&quot; alt=&quot;zues blog信息结构图&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;流程设计&quot;&gt;&lt;a href=&quot;#流程设计&quot; class=&quot;headerlink&quot; title=&quot;流程设计&quot;&gt;&lt;/a&gt;流程设计&lt;/h2&gt;&lt;p&gt;细致描述用户在使用产品的流程，同时也在时间的角度上规定各个部分之间的关系，如下图是我的博客操作流程，采用visio设计：&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/b20bb1456dadee37139795021249d327?fid=3375241367-250528-251413492401602&amp;amp;time=1501232400&amp;amp;rt=yt&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-dsWiXiqNp0qWGjTLa3s%2BBYwY4ZM%3D&amp;amp;expires=2h&amp;amp;chkv=0&amp;amp;chkbd=0&amp;amp;chkpc=&amp;amp;dp-logid=4840558639286715197&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=100&amp;amp;vuk=-&amp;amp;ft=video&quot; alt=&quot;博客流程图&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;功能设计&quot;&gt;&lt;a href=&quot;#功能设计&quot; class=&quot;headerlink&quot; title=&quot;功能设计&quot;&gt;&lt;/a&gt;功能设计&lt;/h2&gt;&lt;p&gt;在功能上，整个博客核心是展示文章，因此更多的是首页功能，显示文章列表，进而可以查看文章详情。&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/W7kL-lbQAbyQ-95290.png&quot; alt=&quot;zues blog 功能设计&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;由于是个人的博客，所以没有很负责的业务逻辑，只有寥寥几张粗暴的图，哈哈哈，产品小白第一次做难免非常粗糙，希望我有机会在项目中成长！&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
-&lt;hr&gt;
-
-    
-    </summary>
-    
-      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
-    
-    
       <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
-      <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
     
   </entry>
   
@@ -597,6 +540,47 @@
     
     
       <category term="android" scheme="http://zuesblog.xyz/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品经理之路-PRD撰写-信息结构图</title>
+    <link href="http://zuesblog.xyz/2017/03/07/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
+    <id>http://zuesblog.xyz/2017/03/07/产品经理之路-PRD撰写-信息结构图/</id>
+    <published>2017-03-07T00:54:11.000Z</published>
+    <updated>2017-07-28T16:14:25.335Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;信息结构设计&quot;&gt;&lt;a href=&quot;#信息结构设计&quot; class=&quot;headerlink&quot; title=&quot;信息结构设计&quot;&gt;&lt;/a&gt;信息结构设计&lt;/h3&gt;&lt;p&gt;信息结构是产品呈现的信息层次（也有人把信息结构称为信息架构），而我认为主要是信息，因为大多数人都把它与功能结构图混在一起。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在&lt;a href=&quot;https://www.zhihu.com/question/21252588&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎上整理了两个优质的答案&lt;/a&gt;，个人觉得醍醐灌顶很提神。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;信息结构关注的是单个页面的元素、信息来源、字段限制等，而非结构化的信息，不符合思维导图的特点，建议用表格来展示。&lt;br&gt;在PRD中，信息结构是供开发建数据库的参考依据，这里引用UML里面类的概念，一个类包含属性和方法，而信息就是类的属性，举个例子，博客系统有最主要的文章类、评论类，文章类包含的信息有：标题、作者、发布时间、摘要、正文、访问量等；评论类包含的信息有评论者头像、昵称、回复内容、邮件、QQ等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;相比之下，我会更倾向于理解第二个，因为在java设计中也采用到了类的概念,另外类似ANDROID开发中的model来理解信息结构对我来说更具优势，按照对象来划分属性，这个分类觉得是最好的了。&lt;/p&gt;
+&lt;h3 id=&quot;个人理解&quot;&gt;&lt;a href=&quot;#个人理解&quot; class=&quot;headerlink&quot; title=&quot;个人理解&quot;&gt;&lt;/a&gt;个人理解&lt;/h3&gt;&lt;p&gt;那我可不可以这样来理解，如果信息结构设计是供数据库设计人员而做，那么流程设计和功能设计则是为了开发者编码而做，交互设计和视觉设计是为用户体验师而做，这样总结下来一个信息结构图，就可以简单的理解为给不同角色提供不同的前期判断帮助而做，那么由于处理的对象不同功能就区分下来了！&lt;/p&gt;
+&lt;p&gt;依据上面的分析，做了自己博客的信息结构图（最好是使用表格来显示）：&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/vGVD-VFKVufj-94527.png&quot; alt=&quot;zues blog信息结构图&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;流程设计&quot;&gt;&lt;a href=&quot;#流程设计&quot; class=&quot;headerlink&quot; title=&quot;流程设计&quot;&gt;&lt;/a&gt;流程设计&lt;/h2&gt;&lt;p&gt;细致描述用户在使用产品的流程，同时也在时间的角度上规定各个部分之间的关系，如下图是我的博客操作流程，采用visio设计：&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/b20bb1456dadee37139795021249d327?fid=3375241367-250528-251413492401602&amp;amp;time=1501232400&amp;amp;rt=yt&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-dsWiXiqNp0qWGjTLa3s%2BBYwY4ZM%3D&amp;amp;expires=2h&amp;amp;chkv=0&amp;amp;chkbd=0&amp;amp;chkpc=&amp;amp;dp-logid=4840558639286715197&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=100&amp;amp;vuk=-&amp;amp;ft=video&quot; alt=&quot;博客流程图&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;功能设计&quot;&gt;&lt;a href=&quot;#功能设计&quot; class=&quot;headerlink&quot; title=&quot;功能设计&quot;&gt;&lt;/a&gt;功能设计&lt;/h2&gt;&lt;p&gt;在功能上，整个博客核心是展示文章，因此更多的是首页功能，显示文章列表，进而可以查看文章详情。&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/W7kL-lbQAbyQ-95290.png&quot; alt=&quot;zues blog 功能设计&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;由于是个人的博客，所以没有很负责的业务逻辑，只有寥寥几张粗暴的图，哈哈哈，产品小白第一次做难免非常粗糙，希望我有机会在项目中成长！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
+&lt;hr&gt;
+
+    
+    </summary>
+    
+      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
+      <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
     
   </entry>
   
@@ -1073,6 +1057,45 @@
     <summary type="html">
     
       &lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据
+    
+    </summary>
+    
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
+    
+    
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>REACT-NATIVE开发_react-native升级</title>
+    <link href="http://zuesblog.xyz/2016/10/24/REACT-NATIVE%E5%BC%80%E5%8F%91_react-native%E5%8D%87%E7%BA%A7/"/>
+    <id>http://zuesblog.xyz/2016/10/24/REACT-NATIVE开发_react-native升级/</id>
+    <published>2016-10-24T09:09:28.000Z</published>
+    <updated>2017-07-28T05:28:25.610Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;升级react-native引发的一系列bug&quot;&gt;&lt;a href=&quot;#升级react-native引发的一系列bug&quot; class=&quot;headerlink&quot; title=&quot;升级react-native引发的一系列bug&quot;&gt;&lt;/a&gt;升级react-native引发的一系列bug&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;我不是标题党啊！我新建文件的时候偷懒就没有把版本输进去。然后记录这篇博客。&lt;/p&gt;
+&lt;p&gt;因为要使用到多张图片上传，所以在github里面输入关键字multiple images picker，找到最多star的库，我也想过自己写的，但是考虑到编写和测试的时间成本，果断放弃了。&lt;/p&gt;
+&lt;p&gt;使用&lt;a href=&quot;https://github.com/ivpusic/react-native-image-crop-picker&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ivpusic/react-native-image-crop-picker&lt;/a&gt;的时候出了一个bug，当时没有截图，是说需要的react-native版本在0.32.0以上，我的版本还在0.30.0，npm install会出现警告。&lt;/p&gt;
+&lt;p&gt;于是我开始备份了项目然后去升级版本，首先是去react-native中文网上查找升级的步骤&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用&lt;code&gt;npm info react-native&lt;/code&gt;查看最新的依赖包版本。然后在项目目录下打开&lt;code&gt;package.json&lt;/code&gt;文件，找到&lt;code&gt;react-native&lt;/code&gt;修改到最新版本号，我这里是0.35.0.最后使用&lt;code&gt;npm install&lt;/code&gt;开始更新。&lt;br&gt;开始警告，说我的react版本也应该更新，然后重新使用&lt;code&gt;npm info react-native&lt;/code&gt;找到对应的版本号为15.3.1。ok，继续修改一下&lt;code&gt;react&lt;/code&gt;版本，ok。这样就算更新好了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;开始使用&lt;code&gt;react-native run-android&lt;/code&gt;跑原来程序，第一次跑失败了，因为原来的&lt;code&gt;react-native-blur&lt;/code&gt;库，也就是用来是实现毛玻璃效果的库说打开不了扩展文件&lt;code&gt;..\node_modules\react-native-blur\android\build\outputs\aar\react-native-blur-release.aar&lt;/code&gt;，于是我又开始了fix bug之旅。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;Could not expand ZIP&lt;/code&gt;关键词情况下我找到了&lt;a href=&quot;http://www.wangchenlong.org/2016/04/07/1604/071-rn-uiexplorer/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mystra的博客文章&lt;/a&gt;，里面说只需要删掉原来的重新下载就可以了，果然&lt;code&gt;npm uninstall react-native-blur&lt;/code&gt;之后再重新install就没报这个错了。&lt;/p&gt;
+&lt;p&gt;可是随之而来的是另外一个bug，那就是当我使用react-native-image-crop-picker里面的命令时，当我输入&lt;code&gt;npm i react-native-image-crop-picker --save&lt;/code&gt;这条命令时开始报这个错了&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;failed to find Build Tools revision 23.0.3 reactnative&lt;br&gt;根据google拿到的解决办法，我打开了android SDK将&lt;code&gt;android SDK build-tools 23.0.3&lt;/code&gt;给勾上了。再次跑一次程序，又出现bug了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这次是这个bug,&lt;code&gt;The error is &amp;quot;Error: Width (0) and height (0) cannot be &amp;lt; = 0&lt;/code&gt;,这个bug在uCrop里面很多人都说可以参考这里的方法来解决&lt;a href=&quot;https://github.com/Yalantis/uCrop/issues/84&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Using v1.4.1, could not build because of an error. #84&lt;/a&gt;&lt;br&gt;由于我比较笨，怎么试都没有试成功。我也按照里面说的&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Gradle Plugin 2.0+  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; android &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   defaultConfig &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     vectorDrawables.useSupportLibrary = &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;or this to Gradle Plugin 1.5&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Gradle Plugin 1.5  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; android &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   defaultConfig &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     generatedDensities = []  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// This is handled for you by the 2.0+ Gradle Plugin  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  aaptOptions &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    additionalParameters &lt;span class=&quot;string&quot;&gt;&quot;--no-version-vectors&quot;&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;我的gradle是1.5版本的，所以我一直都试下面那个方法，可是一样还是报错。后面无意中想到，要不更新一下gradle试一下上面一个的方法，然后就借鉴简书的这篇博客&lt;a href=&quot;http://www.jianshu.com/p/00beddbe3dbc#&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;【Android】升级Gradle版本（Android Studio）&lt;/a&gt;。&lt;br&gt;按照里面的说法我用androidstudio打开了我的项目，将目录&lt;code&gt;gradle\wrapper\gradle-wrapper.properties&lt;/code&gt;里的这个文件由原来的&lt;code&gt;2.4.0&lt;/code&gt;修改成&lt;code&gt;2.10.0&lt;/code&gt;,接着sync一下，重新编译项目，就跑起来了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;升级react-native引发的一系列bug&quot;&gt;&lt;a href=&quot;#升级react-native引发的一系列bug&quot; class=&quot;headerlink&quot; title=&quot;升级react-native引发的一系列bug&quot;&gt;&lt;/a&gt;升级react-native引发的
     
     </summary>
     
