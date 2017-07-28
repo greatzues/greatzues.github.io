@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      python的学习历程1 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="安装距离自己安装python的时间比较长，不过安装的话没有遇到什么困难，所以这里就不写安装的过程了
+第一个python程序至今为止我还不知道我的第一个hello.py是怎么在经过多次的sublime text中成功跑起来的，时间过得太久，都已经忘记了怎么成功用ctrl b来run第一个python的程序，反正当时是换过很多姿势。
+另外就是在cmd中运行时有两种形式的第一种是直接在cmd中输入pyt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python的学习历程1 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/05/06/python学习_历程/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="安装距离自己安装python的时间比较长，不过安装的话没有遇到什么困难，所以这里就不写安装的过程了
+第一个python程序至今为止我还不知道我的第一个hello.py是怎么在经过多次的sublime text中成功跑起来的，时间过得太久，都已经忘记了怎么成功用ctrl b来run第一个python的程序，反正当时是换过很多姿势。
+另外就是在cmd中运行时有两种形式的第一种是直接在cmd中输入pyt">
+<meta property="og:updated_time" content="2016-08-11T02:31:19.115Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python的学习历程1 | zues blog">
+<meta name="twitter:description" content="安装距离自己安装python的时间比较长，不过安装的话没有遇到什么困难，所以这里就不写安装的过程了
+第一个python程序至今为止我还不知道我的第一个hello.py是怎么在经过多次的sublime text中成功跑起来的，时间过得太久，都已经忘记了怎么成功用ctrl b来run第一个python的程序，反正当时是换过很多姿势。
+另外就是在cmd中运行时有两种形式的第一种是直接在cmd中输入pyt">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">python的学习历程1</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-05-06" class="post-meta__date date">2016-05-06</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/python/">python</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/python入门/">python入门</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>距离自己安装python的时间比较长，不过安装的话没有遇到什么困难，所以这里就不写安装的过程了</p>
+<h2 id="第一个python程序"><a href="#第一个python程序" class="headerlink" title="第一个python程序"></a>第一个python程序</h2><p>至今为止我还不知道我的第一个hello.py是怎么在经过多次的sublime text中成功跑起来的，时间过得太久，都已经忘记了怎么成功用ctrl b来run第一个python的程序，反正当时是换过很多姿势。</p>
+<p>另外就是在cmd中运行时有两种形式的<br>第一种是直接在cmd中输入python，无论在哪个位置都可以简单run出python代码的结果，优点是很快，缺点是不方便编写程序，对，非常不方便。<br>第二种是进入已经写好的python目录，直接执行python <em>*</em>.py,就可以运行了</p>
+<p>因为我是用的python 3.5的版本，很多2.*的版本的方法已经过时，所以我才专门用一个笔记记录下我的学习过程，看能踩到多少的坑，然后分享给需要帮助的人。<br>另外我基本上学习的教程来自<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的官方网站</a>，大家也可以在这里面学习，非常受用。</p>
+<h2 id="各种用法和需要注意的地方"><a href="#各种用法和需要注意的地方" class="headerlink" title="各种用法和需要注意的地方"></a>各种用法和需要注意的地方</h2><p>因为我也学过java，所以学起python不觉得很吃力，唯一觉得比较困难的是太多不一样的方法，要记住用法需要花很多时间，所以在写笔记的过程中顺便记忆，以后要用到的时候忘记了的知识点也可以回来查找。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'hello world'</span>) <span class="comment">#所有的程序入门都是hello world，一句简单的入门输出就打印出来了</span></span><br><span class="line">print(<span class="number">100</span> + <span class="number">200</span>) <span class="comment">#输出的结果是300</span></span><br><span class="line">print(<span class="string">'100 + 200 ='</span>,<span class="number">100</span>+<span class="number">200</span>) <span class="comment">#英文字符的,号和java中的+连接符在连接字符串的时候功能是一样的，这样就可以打印得漂亮一点</span></span><br><span class="line"><span class="comment">#使用变量</span></span><br><span class="line">name = <span class="string">'jack'</span></span><br><span class="line">print(name)</span><br><span class="line"><span class="comment">#使用输入值为变量赋值</span></span><br><span class="line">name = input() </span><br><span class="line">print(<span class="string">'hello, '</span>,name)</span><br><span class="line"><span class="comment">#程序一开始运行就会先打印出input的参数内容</span></span><br><span class="line">name = input(<span class="string">'请输入你的姓名'</span>)</span><br><span class="line">print(<span class="string">'hello,'</span>,name)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下面主要是转义字符</span></span><br><span class="line">print(<span class="string">'I\'m ok.'</span>) <span class="comment">#打印出I'm ok.就能打印出特殊符号*'*。</span></span><br><span class="line">print(<span class="string">')</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用pip命令"><a href="#使用pip命令" class="headerlink" title="使用pip命令"></a>使用pip命令</h2><p>参考：<a href="https://taizilongxu.gitbooks.io/stackoverflow-about-python/content/8/README.html" target="_blank" rel="external">怎样在window下安装pip？</a><br>首先下载<a href="http://www.pip-installer.org/en/latest/installing.html" target="_blank" rel="external">get-pip.py</a>,直接打开之后保存网页就可以了。<br>打开命令提示符输入<code>python get-pip.py</code><br>最后一步折腾的时间久一点，我们需要把pip所在的目录添加到path中，这样才能随时执行pip命令，于是找到pyhton安装目录，*\Python35-32\Scripts，就是在script文件夹下，里面会有pip的执行文件，添加这个路径到系统path，开启命令提示符就执行pip指令了。</p>
+<p>因为有新的项目开始做，所以等空余时间抽出来之后再继续写…</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

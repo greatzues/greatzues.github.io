@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      react-native学习笔记 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="首先配置环境就配了两天才跑出来welcome to React Native（呃，我的图是盗来的[鬼脸.jpg]）
+直接登陆官网按照步骤下载需要的nodeJS，React，还有python2，另外我是学安卓的，很早就开始用androidstudio了，所以直接俄就省了很多步骤，该下载的东西下载好之后就可以开始新建一个项目了
+AwesomePreject的创建这个项目的名字是直接根据官网提供来创建的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native学习笔记 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/07/19/REACT-NATIVE开发_学习_笔记/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="首先配置环境就配了两天才跑出来welcome to React Native（呃，我的图是盗来的[鬼脸.jpg]）
+直接登陆官网按照步骤下载需要的nodeJS，React，还有python2，另外我是学安卓的，很早就开始用androidstudio了，所以直接俄就省了很多步骤，该下载的东西下载好之后就可以开始新建一个项目了
+AwesomePreject的创建这个项目的名字是直接根据官网提供来创建的">
+<meta property="og:image" content="http://vczero.github.io/react_native/1_1.png">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2015/1010/145457_0VIT_2320053.png">
+<meta property="og:updated_time" content="2016-08-05T01:28:24.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native学习笔记 | zues blog">
+<meta name="twitter:description" content="首先配置环境就配了两天才跑出来welcome to React Native（呃，我的图是盗来的[鬼脸.jpg]）
+直接登陆官网按照步骤下载需要的nodeJS，React，还有python2，另外我是学安卓的，很早就开始用androidstudio了，所以直接俄就省了很多步骤，该下载的东西下载好之后就可以开始新建一个项目了
+AwesomePreject的创建这个项目的名字是直接根据官网提供来创建的">
+<meta name="twitter:image" content="http://vczero.github.io/react_native/1_1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">react-native学习笔记</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-19" class="post-meta__date date">2016-07-19</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>首先配置环境就配了两天才跑出来welcome to React Native（呃，我的图是盗来的[鬼脸.jpg]）<br><img src="http://vczero.github.io/react_native/1_1.png" alt="welcome to React native"></p>
+<p>直接登陆官网按照步骤下载需要的nodeJS，React，还有python2，另外我是学安卓的，很早就开始用androidstudio了，所以直接俄就省了很多步骤，该下载的东西下载好之后就可以开始新建一个项目了</p>
+<h2 id="AwesomePreject的创建"><a href="#AwesomePreject的创建" class="headerlink" title="AwesomePreject的创建"></a>AwesomePreject的创建</h2><p>这个项目的名字是直接根据官网提供来创建的，使用这几个命令行：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">react-native init AwesomeProject</span><br><span class="line">cd AwesomeProject</span><br><span class="line">react-native run-android</span><br></pre></td></tr></table></figure></p>
+<p>前两步非常顺利就执行下来了，剩下的是第三步，开始出差错了。</p>
+<h2 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h2><p>一开始报错是这样的：<br>    err(一串数字)：项目路径（一般直接用命令行创建的都会在C盘的windows/system32目录下）…ERROR:Unable to open file.<br>这个就非常蛋疼了，google上搜索一下，在stack overflow中给出的解释翻译过来就是说文件的目录路径太长了，window下规定最长文件的读取路径长度是255 个字符，然而项目的某一张安卓的资源图片刚好长度就超过了，这就非常尴尬了，我一开始采取的措施是直接更改文件夹的名字，当时有点头脑发热，这完全行不通啊！用脑袋想想也知道，路径是代码里面写好的，你改文件夹的名字有什么用。<br>然后我就开始第二个方案，我竟然把项目放在了一个含有中文的文件夹下，导致还是读取不了。<br>最后我直接将项目放在D盘下，不过听说直接放在C盘也可以，因为只要把路径的字符数减少就可以了。最后才React-native android-start之后就可以运行了，但是此时还是出现了下面的错误<br><img src="http://static.oschina.net/uploads/space/2015/1010/145457_0VIT_2320053.png" alt="红色报错提示"><br>出现这个错误的原因我不太清楚，不过我还是按照我的想法写下来我的理解<br>它当时建议的步骤是这样的，查看你的模拟器或者真机是否已经开启debug，然后检查一下接口是否真确连接，最后是调试的wifi必须在同一个局域网内，最后可以之后就重新start。<br>我当时按照这些之后根据官网的一句代码react-native start，虽然我不太懂这句代码的作用，不过根据官网的翻译应该是如果使用react-native run-android包没有被正确启动的时候就可以使用这段代码来运行<br>结果又报错了，说是端口被占用，本来应该使用8801端口的，又去网上找了一下修改native端口的方法，下面是在ubuntu上才去的命令行，没想到window也适用<br>参考：<a href="http://stackoverflow.com/questions/32572399/react-native-android-failed-to-load-js-bundle" target="_blank" rel="external">修改权限</a></p>
+<p>最后的最后无意中重新启动了一次，然后竟然看到模拟器出现了新情况，那就是提示正在获取jscript，所以上面的我觉得大部分是废话，这句才是经典。原来是打包的时候出错了。</p>
+<p>后面就继续根据官网的提示改动了一下代码，<strong>使用快捷方式直接在模拟器上双击两次R键，瞬间就刷新了</strong>。</p>
+<p>最后就是我的小米3在react-native的调试中很明显控制台是有信息输出的，但是却只出现一片空白，而模拟器却能正常调试，解决方式是打开悬浮窗权限<br>以为小米默认是屏蔽悬浮窗权限的，方法：<a href="http://jingyan.baidu.com/article/f25ef25466c0fc482d1b824d.html" target="_blank" rel="external">打开小米悬浮窗权限</a><br>至此，react-native就配置成功了，如果刚好可以帮助到你，我将非常荣幸，如果没有帮上忙，那我也没办法。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

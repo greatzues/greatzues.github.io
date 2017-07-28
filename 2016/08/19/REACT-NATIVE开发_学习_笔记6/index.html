@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      react-native学习笔记6 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="image组件仿照视频顺便改了一点代码写了一个图片查看器
+Image.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native学习笔记6 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/08/19/REACT-NATIVE开发_学习_笔记6/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="image组件仿照视频顺便改了一点代码写了一个图片查看器
+Image.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+<meta property="og:updated_time" content="2016-08-20T12:37:31.068Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native学习笔记6 | zues blog">
+<meta name="twitter:description" content="image组件仿照视频顺便改了一点代码写了一个图片查看器
+Image.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">react-native学习笔记6</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-08-19" class="post-meta__date date">2016-08-19</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="image组件"><a href="#image组件" class="headerlink" title="image组件"></a>image组件</h2><p>仿照视频顺便改了一点代码写了一个图片查看器</p>
+<p>Image.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Image, TouchableOpacity &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">export default class ImageDemo extends Component &#123;</span><br><span class="line">	//本地图片引用方法：source = &#123;require(&apos;./img/xxx.png&apos;)&#125;</span><br><span class="line">	//网络图片引用方法：source = &#123;&#123;uri : &apos;http://host/path//.png&apos;&#125;&#125;</span><br><span class="line">	constructor (props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			count: 1,</span><br><span class="line">			imgs:this.props.imgs,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	goPreview()&#123;</span><br><span class="line">		var Count = this.state.count;</span><br><span class="line">		Count--;</span><br><span class="line">		if(Count &gt;= 0 )&#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:Count,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:this.state.imgs.length -1,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	goNext()&#123;</span><br><span class="line">		var Count = this.state.count;</span><br><span class="line">		Count++;</span><br><span class="line">		if(Count &lt; this.state.imgs.length)&#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:Count,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			this.setState(&#123;</span><br><span class="line">				count:0,</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;View style = &#123;[styles.flex, &#123;alignItems:&apos;center&apos;&#125;]&#125;&gt;</span><br><span class="line">				&lt;View style = &#123;styles.image&#125;&gt;</span><br><span class="line">					&lt;Image style = &#123;styles.img&#125;</span><br><span class="line">						resizeMode = &quot;contain&quot;</span><br><span class="line">						source = &#123;&#123;uri:this.state.imgs[this.state.count]&#125;&#125;</span><br><span class="line">					/&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line"></span><br><span class="line">				&lt;View style = &#123;styles.btns&#125;&gt;</span><br><span class="line">					&lt;TouchableOpacity onPress = &#123;this.goPreview.bind(this)&#125;&gt;&lt;View style = &#123;styles.btn&#125;&gt;&lt;Text&gt;上一张&lt;/Text&gt;&lt;/View&gt;&lt;/TouchableOpacity&gt;</span><br><span class="line"></span><br><span class="line">					&lt;TouchableOpacity onPress = &#123;this.goNext.bind(this)&#125;&gt;&lt;View style = &#123;styles.btn&#125;&gt;&lt;Text&gt;下一张&lt;/Text&gt;&lt;/View&gt;&lt;/TouchableOpacity&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	flex: &#123;</span><br><span class="line">		flex:1,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	image: &#123;</span><br><span class="line">		borderWidth:1,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	img: &#123;</span><br><span class="line">		height:150,</span><br><span class="line">		width:200,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	btn: &#123;</span><br><span class="line">		width:60,</span><br><span class="line">		height: 30,</span><br><span class="line">		borderColor: &apos;#0089FF&apos;,</span><br><span class="line">		borderWidth: 1,</span><br><span class="line">		justifyContent: &apos;center&apos;,</span><br><span class="line">		alignItems:&apos;center&apos;,</span><br><span class="line">		borderRadius:3,</span><br><span class="line">		marginRight:20,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	btns: &#123;</span><br><span class="line">		flexDirection: &apos;row&apos;, //设置主轴方向为水平</span><br><span class="line">		marginTop: 20,</span><br><span class="line">		justifyContent: &apos;center&apos; //设置主轴方向居中也就是水平居中了</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在构造函数中初始化使用图片地址数字选择count，已及<code>imgs:this.props.imgs</code>，这句代码的意思和前面所学的<code>const {imgs} = this.props;</code>作用是一样的，都是把imgs作为一个灵活的组件属性，然后就可以将图片uri数组传递进去。</p>
+<p>看到<image>组件，里面有一个resizeMode属性，这个属性有三个可选择的值，分别是stretch(拉伸：不保留原始分辨率)，cover(平铺：按照原图平铺)，contain(包裹：等比例放大缩小平铺),因此一般都会选择第三个，具体效果自己去测试。</image></p>
+<p>关于source，在代码的注释已经解释的比较清楚了，需要注意的是source里面放的必须是静态字符串，所以不可以在source里面进行动态选择uri，要选择的话在source外面慢慢搞。</p>
+</blockquote>
+<p>然后就是看到goPreview和goNext方法了，这里只需要将一种就可以了，其中看到两处都用var声明的Count变量，因此知道var的作用域是整个同级节点和子节点，这个在以前的<a href="http://greatzues.github.io/2016/07/31/ES6%E5%85%A5%E9%97%A8/" target="_blank" rel="external">ES学习</a>中也提到过这个块级作用域的知识点。</p>
+<h2 id="最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。"><a href="#最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。" class="headerlink" title="最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。"></a>最后就是看到一些新的函数的使用了，也就是length函数返回对应对象的长度，可以通过setState对state的变量进行动态赋值。</h2><h3 id="引用的时候就只需要这样写："><a href="#引用的时候就只需要这样写：" class="headerlink" title="引用的时候就只需要这样写："></a>引用的时候就只需要这样写：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import ImageDemo from &apos;./Image&apos;;</span><br><span class="line"></span><br><span class="line">var imgs = [</span><br><span class="line">  &apos;http://misc.360buyimg.com/lib/img/e/logo-201305.png&apos;,</span><br><span class="line">  &apos;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png&apos;,</span><br><span class="line">  &apos;http://www.csdn.net/css/logo.png&apos;  </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">class Main extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;ImageDemo imgs = &#123;imgs&#125;&gt;&lt;/ImageDemo&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(&apos;YourProject&apos;, () =&gt; Main);</span><br></pre></td></tr></table></figure>
+<h2 id="Picker函数"><a href="#Picker函数" class="headerlink" title="Picker函数"></a>Picker函数</h2><hr>
+<p>这个比较简单，等会记下一点东西就可以了。直接上代码吧！</p>
+<h3 id="Picker-js"><a href="#Picker-js" class="headerlink" title="Picker.js"></a>Picker.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Picker, ProgressBarAndroid &#125; from &apos;react-native&apos;</span><br><span class="line"></span><br><span class="line">export default class PickerDemo extends Component &#123;</span><br><span class="line">	constructor(props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			language:null,</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	render()&#123;</span><br><span class="line">		return(</span><br><span class="line">			&lt;View&gt;</span><br><span class="line">				&lt;Text&gt;Picker组件&lt;/Text&gt;</span><br><span class="line"></span><br><span class="line">				&lt;Picker </span><br><span class="line">				selectedValue = &#123;this.state.language&#125;</span><br><span class="line">				onValueChange = &#123;(lang) =&gt; this.setState(&#123;language: lang&#125;)&#125;</span><br><span class="line">				mode = &quot;dropdown&quot;</span><br><span class="line">				style = &#123;&#123;color:&apos;#f00&apos;&#125;&#125;&gt;</span><br><span class="line"></span><br><span class="line">					&lt;Picker.Item label = &quot;Jave&quot; value = &quot;java&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Javascript&quot; value = &quot;js&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;C语言&quot; value = &quot;C&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Php开发&quot; value = &quot;Php&quot; /&gt;</span><br><span class="line">					&lt;Picker.Item label = &quot;Python开发&quot; value = &quot;Python&quot; /&gt;</span><br><span class="line">				&lt;/Picker&gt;</span><br><span class="line"></span><br><span class="line">				&lt;Text&gt;&#123;this.state.language&#125;&lt;/Text&gt;</span><br><span class="line"></span><br><span class="line">				&#123;/**</span><br><span class="line">					styleAttr（进度条样式）： Horizontal Small Large Inverse SmallInverse LargeInverse </span><br><span class="line">					progress： 进度值在0-1之间</span><br><span class="line">				**/&#125;</span><br><span class="line">				&lt;ProgressBarAndroid styleAttr = &quot;Horizontal&quot; /&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>直接看到<code>onValueChange = {(lang) =&gt; this.setState({language:lang})}</code>这段代码，这里需要注意的是将改变的value值传递给回调函数的自定义参数lang，我们可以这么想，这里少了一个步骤，就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onValueChange = &#123;</span><br><span class="line">	lang = value,</span><br><span class="line">	(lang) =&gt; this.setState(&#123;language: lang&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然而这仅仅是我为了理解想出来的一个步骤而已，因此上面的onValueChange改变的是value值，而不是label值，所以这段代码在模拟器上运行起来的时候就可以很明显的看到了，最下面的<text>组件显示的text是Picker.Item的value值，而在picker上显示的是label值。</text></p>
+<p>最后是mode，这个mode除了“dialog（对话框）”以外还有<code>dropdown</code>（下拉），默认是dialog。其他属性请看<a href="https://facebook.github.io/react-native/docs/picker.html" target="_blank" rel="external">官方帮助文档</a>。</p>
+<h2 id="ProgressBarAndroid-和-ProgressViewIOS"><a href="#ProgressBarAndroid-和-ProgressViewIOS" class="headerlink" title="ProgressBarAndroid 和 ProgressViewIOS"></a>ProgressBarAndroid 和 ProgressViewIOS</h2><hr>
+<p>代码在上面，因为progress分android和ios的，所以以后是需要自定义封装好在一个组件里面使用的。</p>
+<p>主要有两个属性，分别是styleAttr和progress。<br>styleAttr（进度条样式）： Normal(普通) Horizontal(水平) Small(小圆圈) Large(大圆圈) Inverse(中圆圈) SmallInverse(也是小圆圈) LargeInverse(大圆圈) ，哈哈，好像Small和SmallInverse以及Large和LargeInverse是一样的<br>progress： 进度值在0-1之间</p>
+<p>了解<a href="https://facebook.github.io/react-native/docs/progressbarandroid.html" target="_blank" rel="external">其他属性访问这里</a></p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

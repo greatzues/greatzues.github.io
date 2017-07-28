@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      项目感想7 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="react-native pop之后数据更新
+一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。
+首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：
+Home.js123456789101112componentDidMount() &amp;#123;       this.autoLogin();       DeviceEventEm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目感想7 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/11/25/REACT-NATIVE开发_项目感想7/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="react-native pop之后数据更新
+一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。
+首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：
+Home.js123456789101112componentDidMount() &amp;#123;       this.autoLogin();       DeviceEventEm">
+<meta property="og:updated_time" content="2016-11-26T06:01:18.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目感想7 | zues blog">
+<meta name="twitter:description" content="react-native pop之后数据更新
+一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。
+首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：
+Home.js123456789101112componentDidMount() &amp;#123;       this.autoLogin();       DeviceEventEm">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">项目感想7</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-25" class="post-meta__date date">2016-11-25</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="react-native-pop之后数据更新"><a href="#react-native-pop之后数据更新" class="headerlink" title="react-native pop之后数据更新"></a>react-native pop之后数据更新</h2><hr>
+<p>一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。</p>
+<p>首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：</p>
+<h3 id="Home-js"><a href="#Home-js" class="headerlink" title="Home.js"></a>Home.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">       this.autoLogin();</span><br><span class="line">       DeviceEventEmitter.addListener(&apos;test&apos;,this.test);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   componentWillUnmount()&#123;</span><br><span class="line">       this.subscription.remove();</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line">test(data)&#123;</span><br><span class="line">       alert(&quot;good&quot;+data);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Login-js"><a href="#Login-js" class="headerlink" title="Login.js"></a>Login.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">backToHome()&#123;</span><br><span class="line">        DeviceEventEmitter.emit(&apos;test&apos;,&apos;hello&apos;); //最主要是这段代码，其他的可以忽略</span><br><span class="line">        const &#123; navigator &#125; = this.props;</span><br><span class="line">        if (navigator)&#123;</span><br><span class="line">            navigator.popToTop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>现象是，当点击页面左上角的返回之后，就会在home页面alert出一个”goodhello”，当然test方法也可以不带参，直接被监听调用。</p>
+<h2 id="页面间数据传递"><a href="#页面间数据传递" class="headerlink" title="页面间数据传递"></a>页面间数据传递</h2><hr>
+<p>在A页面导航到B页面可以传递一些参数，方法如下代码：</p>
+<h3 id="A-js"><a href="#A-js" class="headerlink" title="A.js"></a>A.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.props.navigator.push(&#123;</span><br><span class="line">                    name:&apos;Login&apos;,</span><br><span class="line">                    component:Login,</span><br><span class="line">					key:object</span><br><span class="line">                &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="B-js"><a href="#B-js" class="headerlink" title="B.js"></a>B.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.props.key</span><br></pre></td></tr></table></figure>
+<p>其中这里的key为键值，自己可以随意命名。另一方面，这里的object可以是常用数据类型，字符数字，还可以是方法对象，一般情况行都是使用简单的id传递，所以一般都是传递数字。</p>
+<h3 id="全局变量AsyncStorage的用法"><a href="#全局变量AsyncStorage的用法" class="headerlink" title="全局变量AsyncStorage的用法"></a>全局变量<code>AsyncStorage</code>的用法</h3><hr>
+<p>全局变量，一定是先声明后使用，我怀疑我以前是没有先声明然后再使用，而是随便创建一个类然后就使用，所以不能读取到。<br>但是我假如将一个类导入到需要使用的类里面，然后就可以用了，那是因为在初始化类的时候先将<code>import</code>的类里面的静态变量的初始化，所以可以用。</p>
+<p>当然官方是推荐我使用的是<a href="https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md" target="_blank" rel="external">react-native-storage</a>开源库的持久化储存，一开始导入之后其实我是没使用成功的，后面无缘无故不断改写法然后就可以正常使用了，官方的介绍不太仔细，我这里说一下：<br>首先是初始化，因为全局变量要先声明才能使用，所以这个<code>AsyncStorage</code>也不例外，我把它的初始化放在了<code>index.android.js</code>中。</p>
+<h3 id="index-android-js"><a href="#index-android-js" class="headerlink" title="index.android.js"></a>index.android.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">import Storage from &apos;react-native-storage&apos;;</span><br><span class="line"></span><br><span class="line">var storage = new Storage(&#123;</span><br><span class="line">    size: 1000,</span><br><span class="line">    storageBackend: AsyncStorage,</span><br><span class="line">    defaultExpires: 1000 * 3600 * 24,</span><br><span class="line">    enableCache: true,</span><br><span class="line">&#125;);</span><br><span class="line">global.storage = storage;</span><br></pre></td></tr></table></figure>
+<h3 id="A-js-1"><a href="#A-js-1" class="headerlink" title="A.js"></a>A.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">storage.save(&#123;</span><br><span class="line">            key: &apos;testKey&apos;,  // 注意:请不要在key中使用_下划线符号!</span><br><span class="line">            rawData: &#123;</span><br><span class="line">				username:123456</span><br><span class="line">			&#125;,</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="B-js-1"><a href="#B-js-1" class="headerlink" title="B.js"></a>B.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">storage.load(&#123;</span><br><span class="line">    key: &apos;testKey&apos;,</span><br><span class="line">&#125;).then(ret =&gt; &#123;</span><br><span class="line">    console.log(ret.username); //此处打印出123456</span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line">    console.warn(err.message);</span><br><span class="line">    switch (err.name) &#123;</span><br><span class="line">        case &apos;NotFoundError&apos;:</span><br><span class="line">            // TODO;</span><br><span class="line">            break;</span><br><span class="line">        case &apos;ExpiredError&apos;:</span><br><span class="line">            // TODO</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>建议将其封装，我提供我自己的封装。</p>
+<h3 id="Test-js"><a href="#Test-js" class="headerlink" title="Test.js"></a>Test.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">saveKey(key, rowData)&#123;</span><br><span class="line">       //使用例子：new Test().saveKey(&apos;loginState&apos;,&#123;username: &apos;1234567&apos;&#125;);</span><br><span class="line">       storage.save(&#123;</span><br><span class="line">           key: key,  // 注意:请不要在key中使用_下划线符号!</span><br><span class="line">           rawData: rowData,</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   loadKey(key)&#123;</span><br><span class="line">       //使用例子：new Test().loadKey(&apos;loginState&apos;).then(r =&gt; alert(r.username));</span><br><span class="line">       return storage.load(&#123;</span><br><span class="line">           key: key,	// 注意:请不要在key中使用_下划线符号!</span><br><span class="line">       &#125;).catch(e =&gt;&#123;</span><br><span class="line">           console.warn(e.message);</span><br><span class="line">           switch (e.name) &#123;</span><br><span class="line">               case &apos;NotFoundError&apos;:</span><br><span class="line">                   // TODO;</span><br><span class="line">                   break;</span><br><span class="line">               case &apos;ExpiredError&apos;:</span><br><span class="line">                   // TODO</span><br><span class="line">                   break;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>当然还有其他的封装方法，也有其他更多关于<code>react-native-storage</code>库的用法，这里我就不去详细说了，有兴趣自己新建一个demo试一试。<br>不过<code>react-native-storage</code>库的亮点功能我似乎还没用上，就是同步的方法asyc，我这里没有对应的json数据返回，所以我还没有用上，我觉得如果有数据，加上同步的方法会更灵活。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

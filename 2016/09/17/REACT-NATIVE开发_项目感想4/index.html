@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      项目感想4 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="使用listview
+在此之前我使用listview只是简单的适配数据到listview上，不过其实看官方文档的话会发现其实关于listview还有很多好处没有注意到，在写这篇博客之前我看过不少关于reactnative的listview文章，不过鉴于我现在的知识暂时还写不上非常优质的分析博文，所以我还是按照我原来的思路写我在项目中要用到的listview的其他属性吧！
+ListView data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目感想4 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/09/17/REACT-NATIVE开发_项目感想4/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="使用listview
+在此之前我使用listview只是简单的适配数据到listview上，不过其实看官方文档的话会发现其实关于listview还有很多好处没有注意到，在写这篇博客之前我看过不少关于reactnative的listview文章，不过鉴于我现在的知识暂时还写不上非常优质的分析博文，所以我还是按照我原来的思路写我在项目中要用到的listview的其他属性吧！
+ListView data">
+<meta property="og:image" content="http://reactnative.cn/static/docs/0.31/img/components/listview3.png">
+<meta property="og:updated_time" content="2016-09-25T06:48:14.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目感想4 | zues blog">
+<meta name="twitter:description" content="使用listview
+在此之前我使用listview只是简单的适配数据到listview上，不过其实看官方文档的话会发现其实关于listview还有很多好处没有注意到，在写这篇博客之前我看过不少关于reactnative的listview文章，不过鉴于我现在的知识暂时还写不上非常优质的分析博文，所以我还是按照我原来的思路写我在项目中要用到的listview的其他属性吧！
+ListView data">
+<meta name="twitter:image" content="http://reactnative.cn/static/docs/0.31/img/components/listview3.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">项目感想4</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-09-17" class="post-meta__date date">2016-09-17</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="使用listview"><a href="#使用listview" class="headerlink" title="使用listview"></a>使用listview</h2><hr>
+<p>在此之前我使用listview只是简单的适配数据到listview上，不过其实看官方文档的话会发现其实关于listview还有很多好处没有注意到，在写这篇博客之前我看过不少关于reactnative的listview文章，不过鉴于我现在的知识暂时还写不上非常优质的分析博文，所以我还是按照我原来的思路写我在项目中要用到的listview的其他属性吧！</p>
+<h3 id="ListView-dataSource"><a href="#ListView-dataSource" class="headerlink" title="ListView dataSource"></a>ListView dataSource</h3><hr>
+<p>在官方文档里面有专门介绍ListView dataSource的帮助文档，根据翻译很容易理解这是数据源，也就是传入到listview的每一条数据，这里规定传入的数据必须是<strong>数组</strong>,或者是字典里面嵌入数组，上面是字典，我后面会提到。在这里无须像原生那样显式声明section和row的个数，系统会根据传入的数据自动生成section和row，每一个字典的key会被listview标识为一个section，如果没有指定sectionId。那么key就是sectionId。</p>
+<p>什么是section（字典）？section，能为每个小节渲染一个粘性的标题，粘性是指当它刚出现时，会处在对应小节的内容的顶部，继续下滑当它到达屏幕顶端的时候，它会停留在屏幕顶端，一直到对应的位置被下一个小节的标题占据为止，效果如下图：<br><img src="http://reactnative.cn/static/docs/0.31/img/components/listview3.png" alt="官网描述section的图片"></p>
+<p>但是这里我要提醒一下，这个特效只在ios上才会出现，如果也想在android中实现这个特性，可以参考这篇博文：<a href="http://lyan.me/2016/07/07/react-native%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">react-native使用</a>.</p>
+<p>使用dataSource的步骤一般情况下时这样的：<code>var ds = new ListView.DataSource();</code>，其中DataSource中的参数可以是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created by zues on 2016/8/26.</span><br><span class="line"> */</span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Image, Navigator &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">export default class BottomTap extends Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">		const ds = new ListView.DataSource(&#123;</span><br><span class="line">            rowHasChanged: (r1, r2) =&gt; r1 !== r2,</span><br><span class="line">            sectionHeaderHasChanged: (s1, s2) =&gt; s1 !== s2</span><br><span class="line">        &#125;);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            dataSource: ds.cloneWithRowsAndSections(&#123;</span><br><span class="line">				&apos;section1&apos;:[&apos;test1&apos;,&apos;test2&apos;,&apos;test3&apos;,&apos;test4&apos;,&apos;test5&apos;,&apos;test6&apos;,&apos;test7&apos;]</span><br><span class="line">				&apos;section2&apos;:[&apos;test8&apos;,&apos;test9&apos;,&apos;test10&apos;,&apos;test11&apos;,&apos;test12&apos;,&apos;test13&apos;,&apos;test14&apos;]</span><br><span class="line">			&#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;ListView</span><br><span class="line">                    renderSectionHeader = &#123;this.sectionHeader&#125;</span><br><span class="line">                    dataSource=&#123;this.state.dataSource&#125;</span><br><span class="line">                    renderRow=&#123;this.myRenderRow&#125;</span><br><span class="line">                    /&gt;</span><br><span class="line">		)</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	myRenderRow(rowData,sectionID,rowID,highlightRow)&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;View style = &#123;styles.input&#125;&gt;</span><br><span class="line">                &lt;Text style=&#123;&#123;marginLeft:10&#125;&#125;&gt;&#123;rowData&#125;&lt;/Text&gt;</span><br><span class="line">                &lt;TextInput style=&#123;&#123;flex:1&#125;&#125;</span><br><span class="line">                           value=&#123;this.state.postData.key[rowID]&#125;</span><br><span class="line">                           onChangeText=&#123;this.myOnChangeText&#125;</span><br><span class="line">                &gt;&#123;&apos;请输入&apos;+rowData&#125;&lt;/TextInput&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	//分隔线，我觉得不加进去会更好看一点 使用方法：renderSeparator=&#123;this.renderSeparator&#125;</span><br><span class="line">    renderSeparator(sectionID, rowID, highlightRow)&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;View style=&#123;&#123;height:2,width:deviceWidth,backgroundColor:&apos;skyblue&apos;&#125;&#125;&gt;&lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	sectionHeader(sectionData, sectionID)&#123;</span><br><span class="line">            return(</span><br><span class="line">                &lt;View style=&#123;styles.rowTitle&#125;&gt;</span><br><span class="line">                    &lt;Text&gt;&#123;sectionID&#125;&lt;/Text&gt;</span><br><span class="line">                &lt;/View&gt;</span><br><span class="line">            );</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">    input:&#123;</span><br><span class="line">        flexDirection: &apos;row&apos;,</span><br><span class="line">        width:deviceWidth,</span><br><span class="line">        alignItems:&apos;center&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    rowTitle:&#123;</span><br><span class="line">        height:30,</span><br><span class="line">        alignItems:&apos;center&apos;,</span><br><span class="line">        justifyContent:&apos;center&apos;,</span><br><span class="line">        backgroundColor:&apos;#ccc&apos;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h2 id="自动登录"><a href="#自动登录" class="headerlink" title="自动登录"></a>自动登录</h2><hr>
+<p>趁着刚刚写完这个功能我要说一下我学的新东西，首先我在用户第一次登录的时候保存用户的账号和密码，然后在全局里面通过账号和密码判断是否是第一次登录，为了实现登录,我使用了react native自带的储存AsyncStorage，在一开始实现取出username和password之前遇到不少坑，例如单纯的取一个会有异步而失败，为了防止这个情况发生，我要保证一次性取出两个值，然后将这个两个值传入到登录方法里面。</p>
+<p>然后按照自己脑补的做法一直没有成功，最后看了官方文档，发现使用multiGet方法取出的键值是保存在一个二维数组，然后就出现了下面的代码。我也在代码里面注释过了，就这样简单实现了取两个保存值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">autoLogin()&#123;</span><br><span class="line">        var URL = &apos;/student/login&apos;;</span><br><span class="line">        var username = &apos;&apos;;</span><br><span class="line">        var password = &apos;&apos;;</span><br><span class="line">        //分别拿到在AsyncStorage中储存的username和password，这里取的方式比较特别，是在数组里面取。</span><br><span class="line">        AsyncStorage.multiGet([&apos;username&apos;,&apos;password&apos;],(error, result) =&gt; &#123;</span><br><span class="line">            username=result[0][1];</span><br><span class="line">            password =result[1][1];</span><br><span class="line">            new Net().postLoginMethod(URL,username,password).then((responseData) =&gt; &#123;</span><br><span class="line">                console.log(responseData.status);</span><br><span class="line">            &#125;).catch(error =&gt; &#123;</span><br><span class="line">                alert(&quot;网络出现错误&quot;);</span><br><span class="line">                console.error(error);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="页面值通信实现pop之后重渲染"><a href="#页面值通信实现pop之后重渲染" class="headerlink" title="页面值通信实现pop之后重渲染"></a>页面值通信实现pop之后重渲染</h2><hr>
+<p>在A页面中的push里面声明一个参数，在参数里面将A的回调函数传递过去，然后在B页面修改数据之后通过<code>this.props.callback();</code>，也就是在pop之前调用刚刚A传递过来的组件，这条语句要在pop之前使用，因为这样才会在跳转之前通过通信告诉A页面要执行多一次刚刚的回调方法嘛！下面开始贴代码：</p>
+<h3 id="A页面"><a href="#A页面" class="headerlink" title="A页面"></a>A页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const &#123; navigator &#125; = this.props;</span><br><span class="line">if( navigator ) &#123;</span><br><span class="line">    navigator.push(&#123;</span><br><span class="line">        name: &apos;Login&apos;,</span><br><span class="line">        component: Login,</span><br><span class="line">        params:&#123;</span><br><span class="line">            callback:() =&gt; this.reRenderData(),</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">				</span><br><span class="line">	reRenderData()&#123;</span><br><span class="line">        this.setState(&#123;selectTab:&apos;home&apos;&#125;);</span><br><span class="line">        this.refs.user.componentDidMount();</span><br><span class="line">        this.refs.drawerView.componentDidMount();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="B页面"><a href="#B页面" class="headerlink" title="B页面"></a>B页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const &#123; navigator &#125; = this.props;</span><br><span class="line">    if (navigator)&#123;</span><br><span class="line">        this.props.callback();</span><br><span class="line">         navigator.pop();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：A和B页面的callback要名字对应，也就是key要对应才能正确通信。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

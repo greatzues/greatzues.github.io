@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ANDROID开发_Fragment基础（下） | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="静态使用fragment就是把fragment当作一个简单的view一样生命在activity中使用，然后所有的代码都有各自的Fragment处理，瞬间觉得Activity非常干净，很清爽，代码的可读性,复用性以及可维护性也瞬间搞逼格了有木有。效果自己写代码运行起来试一试简单在fragment中写一个button，然后再fragment中获取监听，使用Toast吐出几个字来。noact_fragm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANDROID开发_Fragment基础（下） | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/03/29/ANDROID开发_Fragment基础（下）/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="静态使用fragment就是把fragment当作一个简单的view一样生命在activity中使用，然后所有的代码都有各自的Fragment处理，瞬间觉得Activity非常干净，很清爽，代码的可读性,复用性以及可维护性也瞬间搞逼格了有木有。效果自己写代码运行起来试一试简单在fragment中写一个button，然后再fragment中获取监听，使用Toast吐出几个字来。noact_fragm">
+<meta property="og:image" content="http://img.blog.csdn.net/20140720002532641">
+<meta property="og:updated_time" content="2017-07-28T05:18:55.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ANDROID开发_Fragment基础（下） | zues blog">
+<meta name="twitter:description" content="静态使用fragment就是把fragment当作一个简单的view一样生命在activity中使用，然后所有的代码都有各自的Fragment处理，瞬间觉得Activity非常干净，很清爽，代码的可读性,复用性以及可维护性也瞬间搞逼格了有木有。效果自己写代码运行起来试一试简单在fragment中写一个button，然后再fragment中获取监听，使用Toast吐出几个字来。noact_fragm">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20140720002532641">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ANDROID开发_Fragment基础（下）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-03-29" class="post-meta__date date">2016-03-29</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/android/">android</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/android入门/">android入门</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="静态使用fragment"><a href="#静态使用fragment" class="headerlink" title="静态使用fragment"></a>静态使用fragment</h2><p>就是把fragment当作一个简单的view一样生命在activity中使用，然后所有的代码都有各自的Fragment处理，瞬间觉得Activity非常干净，很清爽，代码的可读性,复用性以及可维护性也瞬间搞逼格了有木有。效果自己写代码运行起来试一试<br>简单在fragment中写一个button，然后再fragment中获取监听，使用Toast吐出几个字来。<br>noact_fragment的布局文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">tools:context</span>=<span class="string">"com.example.zues.bolg_fragment.MainActivity"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/bt"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>NoActFragment<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NoActFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.bt)</span><br><span class="line">    ImageView bt;</span><br><span class="line">    <span class="keyword">private</span> LayoutInflater inflater;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, <span class="keyword">final</span> ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        View view = inflater.inflate(R.layout.noact_fragment, container, <span class="keyword">false</span>);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>, view);</span><br><span class="line">        imgHome.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                Toast.makeText(getActivity(),<span class="string">"哈哈，我是button"</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>activity_main布局文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">tools:context</span>=<span class="string">"com.example.zues.bolg_fragment.MainActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!--下面的name是fragment的标识，是fargment所在的目录名字，不可以不写--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">fragment</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:name</span>=<span class="string">"com.example.zues.bolg_fragment.fragment.NoActFragment"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/tab_bottom"</span></span><br><span class="line">        <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="好啦，简单的静态fragment就写好了，是不是觉得就像设计照片墙一样，想把自己的照片放哪儿就放哪儿。不过静态的添加不能移除，这种方式在Activity需要的时候就被创建出来，灵活性差，仅仅是作为简单的视图展示就可以了。"><a href="#好啦，简单的静态fragment就写好了，是不是觉得就像设计照片墙一样，想把自己的照片放哪儿就放哪儿。不过静态的添加不能移除，这种方式在Activity需要的时候就被创建出来，灵活性差，仅仅是作为简单的视图展示就可以了。" class="headerlink" title="好啦，简单的静态fragment就写好了，是不是觉得就像设计照片墙一样，想把自己的照片放哪儿就放哪儿。不过静态的添加不能移除，这种方式在Activity需要的时候就被创建出来，灵活性差，仅仅是作为简单的视图展示就可以了。"></a>好啦，简单的静态fragment就写好了，是不是觉得就像设计照片墙一样，想把自己的照片放哪儿就放哪儿。不过静态的添加不能移除，这种方式在Activity需要的时候就被创建出来，灵活性差，仅仅是作为简单的视图展示就可以了。</h2><h2 id="动态使用fragment"><a href="#动态使用fragment" class="headerlink" title="动态使用fragment"></a>动态使用fragment</h2><p>动态使用fragment可以进行动态的添加，更新，以及删除操作<br>为了更好的实现动态使用fragment的效果，我改了一下布局，添加了底部tab，xml比较长我就不写出来了，基本图就像微信的底部tab一样。<br>先上一个fragment,另外一个除了类名不一样之外，其他都是一样的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> inflater.inflate(R.layout.home_fragment,container,<span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tab_home)</span><br><span class="line">    RelativeLayout tabHome;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tab_search)</span><br><span class="line">    RelativeLayout tabSearch;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tab_friend)</span><br><span class="line">    RelativeLayout tabFriend;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tab_mine)</span><br><span class="line">    RelativeLayout tabMine;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.content)</span><br><span class="line">    LinearLayout linearLayout;</span><br><span class="line">    <span class="keyword">private</span> NoActFragment fragment1;</span><br><span class="line">    <span class="keyword">private</span> HomeFragment fragment2;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line">        tabHome.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line">        tabSearch.setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFragment</span><span class="params">(<span class="keyword">int</span> res, Fragment fragment)</span> </span>&#123;</span><br><span class="line">        FragmentManager fragmentManager = getFragmentManager();</span><br><span class="line">        FragmentTransaction transaction = fragmentManager.beginTransaction();</span><br><span class="line">        transaction.replace(res, fragment);</span><br><span class="line">        transaction.commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (v.getId())&#123;</span><br><span class="line">            <span class="keyword">case</span> R.id.tab_home:</span><br><span class="line">                <span class="keyword">if</span> (fragment1 == <span class="keyword">null</span>)fragment1 = <span class="keyword">new</span> NoActFragment();</span><br><span class="line">                addFragment(R.id.content,fragment1);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> R.id.tab_search:</span><br><span class="line">                <span class="keyword">if</span> (fragment2 == <span class="keyword">null</span>)fragment2 = <span class="keyword">new</span> HomeFragment();</span><br><span class="line">                addFragment(R.id.content,fragment2);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后我再借以前看过的一篇博客的图片，来展示一下写好之后的效果<br><img src="http://img.blog.csdn.net/20140720002532641" alt="Fragmeng的动态调用"></p>
+<h2 id="嗯，就这样完成了fragment动态调用，是不是感觉非常好用呢！"><a href="#嗯，就这样完成了fragment动态调用，是不是感觉非常好用呢！" class="headerlink" title="嗯，就这样完成了fragment动态调用，是不是感觉非常好用呢！"></a>嗯，就这样完成了fragment动态调用，是不是感觉非常好用呢！</h2><h3 id="动态使用fragment的几个重要方法详解"><a href="#动态使用fragment的几个重要方法详解" class="headerlink" title="动态使用fragment的几个重要方法详解"></a>动态使用fragment的几个重要方法详解</h3><p>首先在上面的addFragment方法中可以看到几个重要的方法，也就是Fragment常用的三个类：</p>
+<blockquote>
+<ul>
+<li>android.app.Fragment </li>
+<li>android.app.FragmentManager </li>
+<li>android.app.FragmentTransaction<br>  注意：这里一定要保证所有导入的包名一样的，不然的话就会报错，以前刚开始学的时候就是一直犯这个错误，心痛啊！</li>
+<li>FragmentManager fragmentManager = getFragmentManager(); //获取fragment管理者</li>
+<li>FragmentTransaction transaction = fragmentManager.beginTransaction(); //开启一个事务</li>
+<li>transaction.commit(); //提交事务请求，这个方法是最后才使用的，就好像网页的表单中的提交按钮一样<br>另外还有动态添加删除以及更新<br><strong>transaction.add()</strong>,往activity中加入一个fragment<br><strong>transaction.remove()</strong>,从activity中移除一个Fragment<br><strong>transaction.replace()</strong>,使用其他的Fargment来替换当前的fragment<br><strong>transaction.hide()</strong>,隐藏当前的Fragment，但仅仅是设为不可见，并没有销毁这个对象<br><strong>transaction.show()</strong>,显示之前隐藏的fragment，一般和hide一起配合使用<br><strong>detach</strong>,见view从ui中移除，和remove()不太一样，detach()方法能ui销毁，没有销毁fragment实例，在栈中还是划有一块内存空间给这个fragment，但是此时的fragment依旧被FragmentManager维护，这也意味着你可以重新使用这个Fragment通过回调onAttach()方法。但是remove()方法移除之后的实例不能被reAttached,你必须重新add it到fragment transaction事务。<br>如果你的当前activity一直存在，那么在不保留数据的情况下，可以优先使用detach。</li>
+</ul>
+</blockquote>
+<p>关于hide和show方法，当切换Fragment是，如果希望在切换回来之后数据和面板依然存在，就可以使用这两个方法了，不需要一直new，可以进行非null判断，就不会浪费内存空间了。</p>
+<h2 id="不希望保留用户数据，就可以使用remove，然后使用add方法。这里就可以想一想replace其实就是remove和add的结合体，还蛮有趣的。"><a href="#不希望保留用户数据，就可以使用remove，然后使用add方法。这里就可以想一想replace其实就是remove和add的结合体，还蛮有趣的。" class="headerlink" title="不希望保留用户数据，就可以使用remove，然后使用add方法。这里就可以想一想replace其实就是remove和add的结合体，还蛮有趣的。"></a>不希望保留用户数据，就可以使用remove，然后使用add方法。这里就可以想一想replace其实就是remove和add的结合体，还蛮有趣的。</h2><h3 id="fragment的回退栈"><a href="#fragment的回退栈" class="headerlink" title="fragment的回退栈"></a>fragment的回退栈</h3><p>如果想要你的fragment能使用返回键返回从不可见重新返回栈顶的话，就可以在commit()之前声明transaction.addToBackStack(null);<br>有关括号的参数是</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

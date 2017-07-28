@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      学习javascript有感-2 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="事件function
+事件也是面向对象开发中的一个环节，javascript的强大功能肯定少不了事件的实现。
+function作为参数
+首先看一段代码：1234567891011121314function test(a,b,fn)&amp;#123;	fn(a,b);&amp;#125;;function test(a,b,fn)&amp;#123;	if(typeof(fn) == &quot;function&quot;)&amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习javascript有感-2 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/07/27/REACT-NATIVE开发_学习_javascript有感-2/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="事件function
+事件也是面向对象开发中的一个环节，javascript的强大功能肯定少不了事件的实现。
+function作为参数
+首先看一段代码：1234567891011121314function test(a,b,fn)&amp;#123;	fn(a,b);&amp;#125;;function test(a,b,fn)&amp;#123;	if(typeof(fn) == &quot;function&quot;)&amp;#123;">
+<meta property="og:updated_time" content="2016-07-27T04:49:00.916Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习javascript有感-2 | zues blog">
+<meta name="twitter:description" content="事件function
+事件也是面向对象开发中的一个环节，javascript的强大功能肯定少不了事件的实现。
+function作为参数
+首先看一段代码：1234567891011121314function test(a,b,fn)&amp;#123;	fn(a,b);&amp;#125;;function test(a,b,fn)&amp;#123;	if(typeof(fn) == &quot;function&quot;)&amp;#123;">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">学习javascript有感-2</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-27" class="post-meta__date date">2016-07-27</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="事件function"><a href="#事件function" class="headerlink" title="事件function"></a>事件function</h2><hr>
+<p>事件也是面向对象开发中的一个环节，javascript的强大功能肯定少不了事件的实现。</p>
+<h2 id="function作为参数"><a href="#function作为参数" class="headerlink" title="function作为参数"></a>function作为参数</h2><hr>
+<p>首先看一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">a,b,fn</span>)</span>&#123;</span><br><span class="line">	fn(a,b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">a,b,fn</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span>(fn) == <span class="string">"function"</span>)&#123;</span><br><span class="line">		fn(a,b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">test(<span class="number">3</span>,<span class="number">4</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(a+b);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//输出7</span></span><br></pre></td></tr></table></figure></p>
+<p>记得在调用test的时候直接用<strong>test(arguments);</strong>就可以了</p>
+<h2 id="设计一个时间对象"><a href="#设计一个时间对象" class="headerlink" title="设计一个时间对象"></a>设计一个时间对象</h2><p>目标：设计一个事件对象。实现添加监听，移除监听，清空监听，发起事件信号。思路：1，定义一个对象，包含一个实例成员listeners，用于记录所有的监听者；2，为对象的原型增加，新增，删除，清空和执行四个成员。<br>整理好之后就可以具体来实现了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myEvent</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.listeners = [];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//添加一个监听者</span></span><br><span class="line">myEvent.prototype.addListener = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.listeners.push(fn)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//移除一个监听者</span></span><br><span class="line">myEvent.prototype.removeListener = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> index = <span class="keyword">this</span>.insteners.indexOf(fn);</span><br><span class="line">	<span class="keyword">this</span>.listeners.splice(index,<span class="number">0</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//清除所有监听者</span></span><br><span class="line">myEvent.prototype.clearListeners = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.listeners = [];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//发出执行信号，并告知所有监听者</span></span><br><span class="line">myEvent.prototype.raise = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> l = <span class="keyword">this</span>.listeners.length;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;l;i++)&#123;</span><br><span class="line">		<span class="keyword">this</span>.listeners[i](e); <span class="comment">//执行所有监听方法</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;；</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> me = <span class="keyword">new</span> myEvent();</span><br><span class="line">me.addListener(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"我是第一个监听者："</span> + e);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">me.addListener(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"我是第二个监听者："</span> + e);</span><br><span class="line">&#125;);</span><br><span class="line">me.raise(<span class="string">"a"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>代码输出的结果是：<br>我是第一个监听者 : a<br>我是第二个监听者 : a</p>
+<p>我先写出我开始明白的一些东西，一不小心google了一下，知道了<strong>push()</strong>的用法，直接调用w3c的解释：push() 方法可把它的参数顺序添加到 arrayObject 的尾部。它直接修改 arrayObject，而不是创建一个新的数组。push() 方法和 pop() 方法使用数组提供的先进后出栈的功能。<br>也就是可以不断在一开始的空集合listeners添加object，这也很好理解上一篇的其中一段代码的执行含义了。</p>
+<p>另外就是移除一个监听者的成员方法里面的两段代码也需要解释一下，首先要科普一下indexOf和splice分别的用法。</p>
+<blockquote>
+<ul>
+<li>indexOf(searchvalue,fromindex)，此方法可以返回字符串首次出现的位置，其中searchvalue表示要检索的字符串值，而fromindex表示从字符串的哪个位置开始检索，如果检索的字符串没有出现，则返回-1。</li>
+<li>splice(index,howmany,item1,…..,itemX)，此方法可以从数组添加或者删除项目，然后返回被删除的项目。index表示添加或者删除项目的位置，使用附属可以从数组结尾处规定位置。howmany 必需。规定应该删除多少元素。如果设置为0则不进行删除操作，item1,…..,itemX分别表示想数组添加元素.<br>所以在上面的代码块中</li>
+</ul>
+</blockquote>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

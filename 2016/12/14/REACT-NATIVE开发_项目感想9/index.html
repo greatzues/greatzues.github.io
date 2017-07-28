@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      项目感想9 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="关于ref的一点坑
+今天在使用ref来调用自组件的时候发现了一个东西，可能我这个问题是特例吧！因为我是用了别人的库才发现这个问题的，不过我还是要记录一下。
+我使用的库是react-native-tab-navigator，一个很优秀的底部导航栏。
+问题：当我在底部栏的home位置时，home对应的component也是home，home里面有一个按钮导航到分享页面.下面的DOM均为模拟123456">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目感想9 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/12/14/REACT-NATIVE开发_项目感想9/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="关于ref的一点坑
+今天在使用ref来调用自组件的时候发现了一个东西，可能我这个问题是特例吧！因为我是用了别人的库才发现这个问题的，不过我还是要记录一下。
+我使用的库是react-native-tab-navigator，一个很优秀的底部导航栏。
+问题：当我在底部栏的home位置时，home对应的component也是home，home里面有一个按钮导航到分享页面.下面的DOM均为模拟123456">
+<meta property="og:image" content="http://bbs.reactnative.cn/uploads/files/1473409969387-bd986712-10a5-4a38-9deb-f5b45d7fd16d.png">
+<meta property="og:updated_time" content="2016-12-21T10:06:13.222Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目感想9 | zues blog">
+<meta name="twitter:description" content="关于ref的一点坑
+今天在使用ref来调用自组件的时候发现了一个东西，可能我这个问题是特例吧！因为我是用了别人的库才发现这个问题的，不过我还是要记录一下。
+我使用的库是react-native-tab-navigator，一个很优秀的底部导航栏。
+问题：当我在底部栏的home位置时，home对应的component也是home，home里面有一个按钮导航到分享页面.下面的DOM均为模拟123456">
+<meta name="twitter:image" content="http://bbs.reactnative.cn/uploads/files/1473409969387-bd986712-10a5-4a38-9deb-f5b45d7fd16d.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">项目感想9</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-12-14" class="post-meta__date date">2016-12-14</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="关于ref的一点坑"><a href="#关于ref的一点坑" class="headerlink" title="关于ref的一点坑"></a>关于ref的一点坑</h2><hr>
+<p>今天在使用ref来调用自组件的时候发现了一个东西，可能我这个问题是特例吧！因为我是用了别人的库才发现这个问题的，不过我还是要记录一下。</p>
+<p>我使用的库是<a href="https://github.com/exponent/react-native-tab-navigator" target="_blank" rel="external">react-native-tab-navigator</a>，一个很优秀的底部导航栏。</p>
+<p>问题：当我在底部栏的home位置时，home对应的component也是home，home里面有一个按钮导航到分享页面.下面的DOM均为模拟<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">	return(</span><br><span class="line">		&lt;View&gt;</span><br><span class="line">			&lt;TabNavigator&gt;</span><br><span class="line">			  &lt;TabNavigator.Item</span><br><span class="line">				selected=&#123;this.state.selectedTab === &apos;home&apos;&#125;</span><br><span class="line">				title=&quot;Home&quot;</span><br><span class="line">				renderIcon=&#123;() =&gt; &lt;Image source=&#123;...&#125; /&gt;&#125;</span><br><span class="line">				renderSelectedIcon=&#123;() =&gt; &lt;Image source=&#123;...&#125; /&gt;&#125;</span><br><span class="line">				badgeText=&quot;1&quot;</span><br><span class="line">				onPress=&#123;this.toShare.bind(this)&#125;&gt;</span><br><span class="line">				&lt;home ref=&#123;c =&gt; this._home = c&#125; /&gt;</span><br><span class="line">			  &lt;/TabNavigator.Item&gt;</span><br><span class="line">			  </span><br><span class="line">			  &lt;TabNavigator.Item</span><br><span class="line">				selected=&#123;this.state.selectedTab === &apos;user&apos;&#125;</span><br><span class="line">				title=&quot;user&quot;</span><br><span class="line">				renderIcon=&#123;() =&gt; &lt;Image source=&#123;...&#125; /&gt;&#125;</span><br><span class="line">				renderSelectedIcon=&#123;() =&gt; &lt;Image source=&#123;...&#125; /&gt;&#125;</span><br><span class="line">				badgeText=&quot;1&quot;</span><br><span class="line">				onPress=&#123;this.toShare.bind(this)&#125;&gt;</span><br><span class="line">				&lt;user ref=&#123;c =&gt; this._user = c&#125; /&gt;</span><br><span class="line">			  &lt;/TabNavigator.Item&gt;</span><br><span class="line">			&lt;/TabNavigator&gt;</span><br><span class="line">		&lt;/View&gt;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toShare()&#123;</span><br><span class="line">	this._home.testRef();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后在home里面有一个<code>testRef()</code>方法。这时候点击home里面的onPress的时候就会有一个alert。<br>但是当我在user里面使用ref的时候，因为使用ref的时候需要先初始化，所以当我在select tab为home的时候使用<code>this._user.testRef()</code>就警告说undefined了。</p>
+<h2 id="Type-Error-Network-request-failed"><a href="#Type-Error-Network-request-failed" class="headerlink" title="Type Error: Network request failed"></a>Type Error: Network request failed</h2><hr>
+<p>重新遇到ios的fetch API报错，Type Error: Network request failed问题<br>这一次我还是按照上次的有过的经验改了一下，可是一开始用文本编辑器修改了<code>appName/ios/appName/Info.plist</code>还是改了之后没生效，我试过将模拟器重启，还有无数次reload，还是没生效，甚至我还试过长时间等待，再重新reboot模拟器，还是不行</p>
+<p>最后使用Xcode直接打开<code>Info.plist</code>来修改，在对应的<code>AppTransportSecurity</code>中点击一个<code>+</code>号，会直接添加一个子key，找到key的名字为<code>Allow Arbitrary Loads</code>就可以了。<br>对应<code>info.plist</code>如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;</span><br><span class="line">&lt;dict&gt;</span><br><span class="line">	&lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;</span><br><span class="line">	&lt;true/&gt;</span><br><span class="line">	&lt;key&gt;NSExceptionDomains&lt;/key&gt;</span><br><span class="line">	&lt;dict&gt;</span><br><span class="line">		&lt;key&gt;localhost&lt;/key&gt;</span><br><span class="line">		&lt;dict&gt;</span><br><span class="line">			&lt;key&gt;NSTemporaryExceptionAllowsInsecureHTTPLoads&lt;/key&gt;</span><br><span class="line">			&lt;true/&gt;</span><br><span class="line">		&lt;/dict&gt;</span><br><span class="line">	&lt;/dict&gt;</span><br><span class="line">&lt;/dict&gt;</span><br></pre></td></tr></table></figure></p>
+<p>xcode打开如下<br><img src="http://bbs.reactnative.cn/uploads/files/1473409969387-bd986712-10a5-4a38-9deb-f5b45d7fd16d.png" alt="info.plist"></p>
+<p>最后重新安装到模拟器，<code>react-native run-ios</code>，应用的网络就跑起来了。<br>至于为什么要修改原来默认的AppTransportSecurity的属性，可以参考这篇博客<a href="http://www.pluto-y.com/ios9-nsapptransportsecurity/" target="_blank" rel="external">iOS9 - NSAppTransportSecurity</a>,我觉得写得蛮详细。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ANDROID开发_Toolbar基础 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="为什么要使用toolbar在Android5.0以后谷歌大力推崇Material Design设计，之后，在世界各地疯狂地掀起一阵material design热。Material design不仅看起来令人惊叹，也是一个前所未有的设计理念。不仅对设计师的影响深大，对开发人员亦是。
+第一步在build.gradle下添加相关库的依赖1compile &apos;com.android.support:app">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANDROID开发_Toolbar基础 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/03/31/ANDROID开发_Toolbar基础/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="为什么要使用toolbar在Android5.0以后谷歌大力推崇Material Design设计，之后，在世界各地疯狂地掀起一阵material design热。Material design不仅看起来令人惊叹，也是一个前所未有的设计理念。不仅对设计师的影响深大，对开发人员亦是。
+第一步在build.gradle下添加相关库的依赖1compile &apos;com.android.support:app">
+<meta property="og:image" content="http://img.blog.csdn.net/20150611160308224">
+<meta property="og:image" content="http://img.blog.csdn.net/20150611165509495">
+<meta property="og:image" content="http://img.blog.csdn.net/20150611164426768">
+<meta property="og:updated_time" content="2017-07-28T05:19:18.356Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ANDROID开发_Toolbar基础 | zues blog">
+<meta name="twitter:description" content="为什么要使用toolbar在Android5.0以后谷歌大力推崇Material Design设计，之后，在世界各地疯狂地掀起一阵material design热。Material design不仅看起来令人惊叹，也是一个前所未有的设计理念。不仅对设计师的影响深大，对开发人员亦是。
+第一步在build.gradle下添加相关库的依赖1compile &apos;com.android.support:app">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20150611160308224">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ANDROID开发_Toolbar基础</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-03-31" class="post-meta__date date">2016-03-31</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/android/">android</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/android入门/">android入门</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="为什么要使用toolbar"><a href="#为什么要使用toolbar" class="headerlink" title="为什么要使用toolbar"></a>为什么要使用toolbar</h2><p>在Android5.0以后谷歌大力推崇Material Design设计，之后，在世界各地疯狂地掀起一阵material design热。Material design不仅看起来令人惊叹，也是一个前所未有的设计理念。不仅对设计师的影响深大，对开发人员亦是。</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>在build.gradle下添加相关库的依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile 'com.android.support:appcompat-v7:22.2.0'</span><br></pre></td></tr></table></figure></p>
+<p>当然稳定版的androidstudio在创建项目的时候也默认添加了这个库。</p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>在xml中新建一个toolbar的标签，然后在style中改掉theme，编写一个menu的菜单，如下：<br>另外有一个提醒，就是在V7的支持包里面没有android:showAsAction和android:actionViewClass这两个属性，所以一直在这两个属性的困惑下打滚了两天。</p>
+<p>style样式，把之前的主题风格<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;</span><span class="undefined"></span></span><br></pre></td></tr></table></figure></p>
+<p>改成这个<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></span><br></pre></td></tr></table></figure></p>
+<p>因为v7支持包中默认是appcompatActivity所以默认是自带有actionbar的，如果不把action取消掉的话就会有冲突了，会报actionbar不能强制转换为toolbar的提示，下面我也会详细提到报错的原因。</p>
+<p>下面是menu.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--注意在V7支持包中加入上面导入的apk/res-auto包--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/action_search"</span></span><br><span class="line">        <span class="attr">app:actionViewClass</span>=<span class="string">"android.widget.SearchView"</span></span><br><span class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/actionbar_search_icon"</span></span><br><span class="line">        <span class="attr">app:showAsAction</span>=<span class="string">"ifRoom"</span></span><br><span class="line">        <span class="attr">android:title</span>=<span class="string">"搜索"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/action_plus"</span></span><br><span class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ofm_add_icon"</span></span><br><span class="line">        <span class="attr">app:actionProviderClass</span>=<span class="string">"com.example.zues.toolbar_demo.PlusActionProvider"</span></span><br><span class="line">        <span class="attr">android:title</span>=<span class="string">"添加"</span></span><br><span class="line">        <span class="attr">app:showAsAction</span>=<span class="string">"ifRoom"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/photo"</span></span><br><span class="line">        <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span><br><span class="line">        <span class="attr">android:title</span>=<span class="string">"拍照"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/group"</span></span><br><span class="line">        <span class="attr">app:icon</span>=<span class="string">"@drawable/ofm_group_chat_icon"</span></span><br><span class="line">        <span class="attr">android:title</span>=<span class="string">"群聊"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面不同的item标签中，简单的我就不解释了，主要是讲几个比较重要的</p>
+<blockquote>
+<ul>
+<li>actionViewClass主要用来关联操作的item的添加操作，也就是可以创建一个类继承ActionProvider然后覆写其中的方法进行设置title，icon以及设置监听等操作</li>
+<li>showAsAction这个标签有五个可以选的属性，分别是never,ifroom,collapseActionView,withText,always,具体功能自己测试一下，这样的效果比自己看别人写好的经验好几倍</li>
+</ul>
+</blockquote>
+<p>接下来就是继承了actionbar之后的类了，也就是上面第二个actionProviderClass关联的class，这个类可以动态添加一些icon和title，直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.zues.toolbar_demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.support.v4.view.ActionProvider;</span><br><span class="line"><span class="keyword">import</span> android.view.MenuItem;</span><br><span class="line"><span class="keyword">import</span> android.view.SubMenu;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by zues on 2016/4/7.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlusActionProvider</span> <span class="keyword">extends</span> <span class="title">ActionProvider</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Context context;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Creates a new instance. ActionProvider classes should always implement a</span><br><span class="line">     * constructor that takes a single Context parameter for inflating from menu XML.</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@param</span> context Context for accessing resources.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PlusActionProvider</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">        <span class="keyword">this</span>.context =context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateActionView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPrepareSubMenu</span><span class="params">(SubMenu subMenu)</span> </span>&#123;</span><br><span class="line">        subMenu.clear();</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_group_chat))</span><br><span class="line">                .setIcon(R.drawable.ofm_group_chat_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        Intent intent = <span class="keyword">new</span> Intent(context,TestActivity.class);</span><br><span class="line">                        context.startActivity(intent);</span><br><span class="line">						<span class="keyword">return</span> <span class="keyword">true</span>; <span class="comment">//这里把返回值设为true</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_add_friend))</span><br><span class="line">                .setIcon(R.drawable.ofm_add_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_video_chat))</span><br><span class="line">                .setIcon(R.drawable.ofm_video_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_scan))</span><br><span class="line">                .setIcon(R.drawable.ofm_qrcode_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        subMenu.add(context.getString(R.string.plus_take_photo))</span><br><span class="line">                .setIcon(R.drawable.ofm_camera_icon)</span><br><span class="line">                .setOnMenuItemClickListener(<span class="keyword">new</span> MenuItem.OnMenuItemClickListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasSubMenu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面值得注意的是里面的几个包的导入，我在这里折腾了一个多小时，因为跑起来一直在报错<br>一开始报错的原因是下面这段代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.ClassCastException: com.example.zues.toolbar_demo.PlusActionProvider cannot be cast to android.support.v4.view.ActionProvider</span><br><span class="line">                                                     at android.support.v7.internal.view.SupportMenuInflater$MenuState</span><br></pre></td></tr></table></figure></p>
+<p>意思是在V7支持MenuInflater$MenuState包下的PlusActionProvider不能强制转换为V4支持包的ActionProvider，所以出现exception。<br>解决的办法就是把原来在v7包下的ActionProvider改成导入V4的包，然后就能运行起来了。<br>然后是另外一个报错，就是This Activity already has an action bar supplied by the window decor，也就是说原来的activity已经自带了activity，所以就不可以再添加其他的windowbar了<br>这里的解决办法就是直接将资源目录下的style.xml文件中的主题改成&lt; …  parent=”Theme.AppCompat.Light.NoActionBar”&gt;就不会有冲突了。</p>
+<p>然后是分析里面的方法：</p>
+<blockquote>
+<ul>
+<li>继承之后在构造方法中传入上下文，然后开始在onPrepareSubMenu中准备menu的子item，主要方法是add方法，</li>
+<li>在setOnMenuItemClickListener进行设置相关的监听事件，返回true的话在安卓开发者文档中查找之后的解释是：</li>
+<li>Called when a menu item has been invoked. This is the first code that is executed; if it returns true, no other callbacks will be executed.也就是返回时true的话，其他的回调函数将不会被执行，虽然好像很厉害的样子，但是依然理解不了是什么意思</li>
+<li>可以看到我在第一个item的onMenuItemClick中添加了intent，并且返回true，另外我也在第二个onMenuItemClick中也添加了intent，但是返回的是false，似乎真的没什么差别</li>
+<li>其中在一片博文中看到过一篇文章说的是在调用过程中有优先级之分，将菜单项和intent关联，用户点击后，系统将自动执行startActivity(intent)。intent的优先级别低于onOptionItemSelected()</li>
+</ul>
+</blockquote>
+<p>最后是activity_main的xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"#f51630"</span></span><br><span class="line">        <span class="attr">app:elevation</span>=<span class="string">"4dp"</span></span><br><span class="line">        <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.ActionBar"</span></span><br><span class="line">        <span class="attr">app:popupTheme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>还有就是style.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Base application theme. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.DarkActionBar"</span>&gt;</span><span class="xml"></span><br><span class="line">        <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>@color/colorAccent<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>MainActivity<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Toolbar toolbar;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        toolbar = findView(R.id.toolbar);</span><br><span class="line">        setSupportActionBar(toolbar);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后就可以看到下面的图像了<br><img src="http://img.blog.csdn.net/20150611160308224" alt="toolbar的图像"></p>
+<p>详细的style中各个属性的作用请看下面的代码以及注释，因为注释已经很明确了，所以自己慢慢体会一下，敲一下就行。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="xml"></span><br><span class="line">       <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--导航栏底色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/accent_material_dark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--状态栏底色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/accent_material_light<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--导航栏上的标题颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColorPrimary"</span>&gt;</span>@android:color/black<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--Activity窗口的颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowBackground"</span>&gt;</span>@color/material_blue_grey_800<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--按钮选中或者点击获得焦点后的颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorAccent"</span>&gt;</span>#00ff00<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--和 colorAccent相反，正常状态下按钮的颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorControlNormal"</span>&gt;</span>#ff0000<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--Button按钮正常状态颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorButtonNormal"</span>&gt;</span>@color/accent_material_light<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--EditText 输入框中字体的颜色--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"editTextColor"</span>&gt;</span>@android:color/white<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>为了更好的理解上面的特效，可以看下图<br><img src="http://img.blog.csdn.net/20150611165509495" alt="toolbar的各种属性"></p>
+<h2 id="三，添加点击事件"><a href="#三，添加点击事件" class="headerlink" title="三，添加点击事件"></a>三，添加点击事件</h2><p>理解了添加和设计toolbar的设计之后，我们就应该处理里面的逻辑事件了，不担心，谷歌肯定会给我们设置监听事件的。<br>    通过Activity继承Toolbar的OnMenuItemClickListener接口<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现接口</span></span><br><span class="line">toolbar.setOnMenuItemClickListener(<span class="keyword">this</span>);</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onMenuItemClick</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</span><br><span class="line">            <span class="comment">//详细每个item的监听</span></span><br><span class="line">			...</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>通过看toolbar的源码可以知道toolbar是继承了viewgroup的一个容器空间，这样一来很多事情就好办了。<br>这个是自定义的xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"?attr/colorPrimary"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">RelativeLayout</span></span><br><span class="line">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:gravity</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">                <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:text</span>=<span class="string">"add"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">                <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_centerInParent</span>=<span class="string">"true"</span></span><br><span class="line">                <span class="attr">android:layout_gravity</span>=<span class="string">"center_vertical"</span></span><br><span class="line">                <span class="attr">android:text</span>=<span class="string">"标题"</span></span><br><span class="line">                <span class="attr">android:textSize</span>=<span class="string">"18sp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">                <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">                <span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span></span><br><span class="line">                <span class="attr">android:background</span>=<span class="string">"@drawable/abc_ic_menu_share_mtrl_alpha"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">android.support.v7.widget.Toolbar</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>另外注意一下一个数值，类似这个的?attr/<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span><br><span class="line">	<span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span><br><span class="line">       <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">       <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></span><br><span class="line">       <span class="attr">android:background</span>=<span class="string">"?attr/colorPrimary"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的android:attr只是一个数值，这个肯定大家都知道。特别的要说一下<strong>?attr/actionBarSize</strong>这个的意思是定义actionbar的高度为一个特定的值，这个值是安卓自定义好的数字，也就是内部定义好的数值，专门用来在一些没有专业美工妹子设计的demo中使用的数值，这样一来就不用程序员自己花心思去想了，直接使用谷歌写好的标准数值。<br>类似的?attr/colorPrimary也一样的，这个是material design定义好的默认标准背景，看起来其实蛮舒服的。</p>
+<p>不要忘记在ctivity中关联toolbar，这个跑起来的效果如下图<br><img src="http://img.blog.csdn.net/20150611164426768" alt="自定义toolbar"><br>任由你想象，各种toolbar特效都ok。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ANDROID开发_图片轮播详解 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="这篇博文的起源，因为现在很多客户端都要实现一个图片轮播的效果，用来展示一些广告和最新消息。另外，我经常会忘记一些东西怎么写，所以写下这篇博文，巩固一下自己的知识。首先在做轮播图之前先想一下逻辑，在一个轮播图的表面，我们首先要有图片，构造一个imageView容器用来适配图片在viewpager上，最后还要具有导航的dot来引导用户现在处于哪个banner页面，还有多少banner页面可以看。其次就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANDROID开发_图片轮播详解 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/04/01/ANDROID开发_图片轮播详解/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="这篇博文的起源，因为现在很多客户端都要实现一个图片轮播的效果，用来展示一些广告和最新消息。另外，我经常会忘记一些东西怎么写，所以写下这篇博文，巩固一下自己的知识。首先在做轮播图之前先想一下逻辑，在一个轮播图的表面，我们首先要有图片，构造一个imageView容器用来适配图片在viewpager上，最后还要具有导航的dot来引导用户现在处于哪个banner页面，还有多少banner页面可以看。其次就">
+<meta property="og:updated_time" content="2017-07-28T05:19:42.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ANDROID开发_图片轮播详解 | zues blog">
+<meta name="twitter:description" content="这篇博文的起源，因为现在很多客户端都要实现一个图片轮播的效果，用来展示一些广告和最新消息。另外，我经常会忘记一些东西怎么写，所以写下这篇博文，巩固一下自己的知识。首先在做轮播图之前先想一下逻辑，在一个轮播图的表面，我们首先要有图片，构造一个imageView容器用来适配图片在viewpager上，最后还要具有导航的dot来引导用户现在处于哪个banner页面，还有多少banner页面可以看。其次就">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ANDROID开发_图片轮播详解</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-01" class="post-meta__date date">2016-04-01</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/android/">android</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/android入门/">android入门</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>这篇博文的起源，因为现在很多客户端都要实现一个图片轮播的效果，用来展示一些广告和最新消息。另外，我经常会忘记一些东西怎么写，所以写下这篇博文，巩固一下自己的知识。<br>首先在做轮播图之前先想一下逻辑，在一个轮播图的<strong>表面</strong>，我们首先要有图片，构造一个imageView容器用来适配图片在viewpager上，最后还要具有导航的dot来引导用户现在处于哪个banner页面，还有多少banner页面可以看。<br>其次就是在轮播图背后的逻辑是：</p>
+<blockquote>
+<ul>
+<li><p>实现循环滚动：<br>  1，将PagerAdapter的getCount方法返回值设为无穷大，这样就可以实现无限制的滑动，因为getCount方法返回的是viewpager的子view的数目，所以就不会出现滑倒尽头的时候。<br>  2，在每次添加新的view的时候，都是对当前的position对当前的总页数的取余，当时我还不太理解当小的数目取余大的数目的时候，如3%5的时候，原来这样取余的结果也是和8%5一样都是3，看来真的是小学水平有待提高了。然后就能得到要显示的view进行添加，删除也是一样。<br>  3，设定最开始要显示的Viewpager的currentItem为Integ.MAX的一半左右，这样可以保证向左循环滑动。</p>
+</li>
+<li><p>实现自动循环<br>  创建一个变量position来记录当前的Viewpager的位置，开启一个新的线程，每隔一定时间对position加1，并发送一个Message给Handler，在Handler中重新setCurrentItem();</p>
+</li>
+<li>手动滑动和自动滑动结合<br>  1，利用一个boolean变量isTouch来记录当前是否在触摸Viewpager，在Viewpager的setOntouchListener中更新该值，只有在isTouch为false中时才能对handler发送message。<br>  2，在手动滑动页面的时候要改变position值，否则在下次自动滑动的时候position的只没有更新会报错，所以在setOnPagerChangeListener中来更新position。<br>下面是布局：<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/container"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- ViewPager --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/viewpager"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"180dip"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_alignBottom</span>=<span class="string">"@id/viewpager"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"#44000000"</span></span><br><span class="line">        <span class="attr">android:gravity</span>=<span class="string">"center"</span></span><br><span class="line">        <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span><br><span class="line">        <span class="attr">android:padding</span>=<span class="string">"5dip"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- Banner的文字描述 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/tv_banner_text_desc"</span></span><br><span class="line">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:textColor</span>=<span class="string">"@android:color/white"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 小圆点的父控件 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">            <span class="attr">android:id</span>=<span class="string">"@+id/ll_dot_group"</span></span><br><span class="line">            <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></span><br><span class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:layout_gravity</span>=<span class="string">"center_horizontal"</span></span><br><span class="line">            <span class="attr">android:layout_marginTop</span>=<span class="string">"5dip"</span></span><br><span class="line">            <span class="attr">android:gravity</span>=<span class="string">"center_horizontal"</span></span><br><span class="line">            <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>这里我是直接在fragment中使用的轮播，所以下面是一个fragment<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BannerFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.viewpager)</span><br><span class="line">    ViewPager viewpager;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.tv_banner_text_desc)</span><br><span class="line">    TextView tvBannerTextDesc;</span><br><span class="line">    <span class="meta">@Bind</span>(R.id.ll_dot_group)</span><br><span class="line">    LinearLayout llDotGroup;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * viewPager中的ImageView容器</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;ImageView&gt; imageViewContainer = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 上一个被选中的小圆点的索引，默认值为0</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> preDotPosition = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * banner的文字描述数组</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> String[] bannerTextDescArray = &#123;</span><br><span class="line">            <span class="string">"愚人节笑话，哈哈"</span>,</span><br><span class="line">            <span class="string">"你真无聊，哈哈哈"</span>,</span><br><span class="line">            <span class="string">"左边那副图是傻逼，哈哈哈哈"</span>,</span><br><span class="line">            <span class="string">"右边的才是真正的傻逼，哈哈哈哈哈"</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * banner滚动线程受否销毁的标志，默认不销毁</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isStop = <span class="keyword">false</span>;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * banner的切换下一个page的间隔时间</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">long</span> scrollTimeOffset = <span class="number">4000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ScheduledExecutorService scheduledExecutorService;</span><br><span class="line">    <span class="keyword">private</span> android.os.Handler handler;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        View view = inflater.inflate(R.layout.banner_fragment, container, <span class="keyword">false</span>);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>, view);</span><br><span class="line"></span><br><span class="line">        imageViewContainer = <span class="keyword">new</span> ArrayList&lt;ImageView&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] imageIDS = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;</span><br><span class="line">                R.drawable.bigbang,</span><br><span class="line">                R.drawable.hannibal,</span><br><span class="line">                R.drawable.ellipsis,</span><br><span class="line">                R.drawable.game_of_thrones</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        ImageView imageView =<span class="keyword">null</span>;</span><br><span class="line">        View dot = <span class="keyword">null</span>;</span><br><span class="line">        LinearLayout.LayoutParams params = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> id:imageIDS)&#123;</span><br><span class="line">            imageView = <span class="keyword">new</span> ImageView(getActivity());</span><br><span class="line">            imageView.setBackgroundResource(id);</span><br><span class="line">            imageViewContainer.add(imageView);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//每循环一次添加一个点到线性布局</span></span><br><span class="line">            dot = <span class="keyword">new</span> View(getActivity());</span><br><span class="line">            dot.setBackgroundResource(R.drawable.dot_bg_selector);</span><br><span class="line">            params = <span class="keyword">new</span> LinearLayout.LayoutParams(<span class="number">5</span>,<span class="number">5</span>);</span><br><span class="line">            params.leftMargin =<span class="number">10</span>;</span><br><span class="line">            dot.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">            dot.setLayoutParams(params);</span><br><span class="line">            llDotGroup.addView(dot);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        viewpager.setAdapter(<span class="keyword">new</span> BannerAdapter());</span><br><span class="line">        viewpager.setOnPageChangeListener(<span class="keyword">new</span> BannerPageChangeListener());</span><br><span class="line"></span><br><span class="line">        tvBannerTextDesc.setText(bannerTextDescArray[<span class="number">0</span>]);</span><br><span class="line">        llDotGroup.getChildAt(<span class="number">0</span>).setEnabled(<span class="keyword">true</span>);<span class="comment">//设为可见</span></span><br><span class="line">        viewpager.setCurrentItem(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroyView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroyView();</span><br><span class="line">        ButterKnife.unbind(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">BannerAdapter</span> <span class="keyword">extends</span> <span class="title">PagerAdapter</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isViewFromObject</span><span class="params">(View view, Object object)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> view == object;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Object <span class="title">instantiateItem</span><span class="params">(ViewGroup container, <span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">            View view = imageViewContainer.get(position % imageViewContainer.size());</span><br><span class="line"></span><br><span class="line">            view.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                    Toast.makeText(getActivity(), <span class="string">"page被点击了"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            container.addView(view);</span><br><span class="line">            <span class="keyword">return</span> view;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroyItem</span><span class="params">(ViewGroup container, <span class="keyword">int</span> position, Object object)</span> </span>&#123;</span><br><span class="line">            container.removeView(imageViewContainer.get(position%imageViewContainer.size()));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">BannerPageChangeListener</span> <span class="keyword">implements</span> <span class="title">ViewPager</span>.<span class="title">OnPageChangeListener</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> position, <span class="keyword">float</span> positionOffset, <span class="keyword">int</span> positionOffsetPixels)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> state)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> newPosition  = state % imageViewContainer.size();</span><br><span class="line">            tvBannerTextDesc.setText(bannerTextDescArray[newPosition]);</span><br><span class="line">            llDotGroup.getChildAt(preDotPosition).setEnabled(<span class="keyword">false</span>);</span><br><span class="line">            llDotGroup.getChildAt(newPosition).setEnabled(<span class="keyword">true</span>);</span><br><span class="line">            preDotPosition = newPosition;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在上面的程序中，我们定义了Viewpager，banner下面的TextView，已经轮播的导航点Dotgroup。还有就是装载viewpager的imageView的容器list，以及上一个被选中的小圆点</p>
+<p>未完待续…</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

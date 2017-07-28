@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      java垃圾回收机制 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="我也不知道以我现在的水平来讨论java的自动垃圾回收是否合理，因为我自己还没深入过JVM去研究过，只是想用自己的想法理解一下GC的工作原理，以帮助我写出更好的程序，包括java和安卓的应用
+垃圾收集的好处：比起以往的C,C++来说，java的自动垃圾回收机制的可靠性高，能使内存管理与开发过程设计相分离，减少开发者跟踪内存错误的时间。比如著名的悬空指针和内存泄漏就不会在java中发生(但是java的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java垃圾回收机制 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/03/18/JAVA开发_自动垃圾回收/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="我也不知道以我现在的水平来讨论java的自动垃圾回收是否合理，因为我自己还没深入过JVM去研究过，只是想用自己的想法理解一下GC的工作原理，以帮助我写出更好的程序，包括java和安卓的应用
+垃圾收集的好处：比起以往的C,C++来说，java的自动垃圾回收机制的可靠性高，能使内存管理与开发过程设计相分离，减少开发者跟踪内存错误的时间。比如著名的悬空指针和内存泄漏就不会在java中发生(但是java的">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201210/06/1349489545_2949.png">
+<meta property="og:updated_time" content="2016-03-19T06:25:15.712Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java垃圾回收机制 | zues blog">
+<meta name="twitter:description" content="我也不知道以我现在的水平来讨论java的自动垃圾回收是否合理，因为我自己还没深入过JVM去研究过，只是想用自己的想法理解一下GC的工作原理，以帮助我写出更好的程序，包括java和安卓的应用
+垃圾收集的好处：比起以往的C,C++来说，java的自动垃圾回收机制的可靠性高，能使内存管理与开发过程设计相分离，减少开发者跟踪内存错误的时间。比如著名的悬空指针和内存泄漏就不会在java中发生(但是java的">
+<meta name="twitter:image" content="http://img.my.csdn.net/uploads/201210/06/1349489545_2949.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">java垃圾回收机制</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-03-18" class="post-meta__date date">2016-03-18</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/java/">java</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/java/">java</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>我也不知道以我现在的水平来讨论java的自动垃圾回收是否合理，因为我自己还没深入过JVM去研究过，只是想用自己的想法理解一下GC的工作原理，以帮助我写出更好的程序，包括java和安卓的应用</p>
+<p>垃圾收集的好处：比起以往的C,C++来说，java的自动垃圾回收机制的可靠性高，能使内存管理与开发过程设计相分离，减少开发者跟踪内存错误的时间。比如著名的悬空指针和内存泄漏就不会在java中发生(但是java的内存泄漏还是会以某种形式泄漏，准确的说是非故意的对象保留)。</p>
+<p>理想的垃圾收集实现，没有垃圾收集暂停，没有因为垃圾收集而产生的CPU时间损失，垃圾收集器不会与虚拟内存或者缓存有负面的互动，另外堆不需要大于应用程序的驻留空间即堆占用，不过肯定是没有十全十美的垃圾回收实现。</p>
+<p>在正式谈到垃圾回收之前，先记住一个单词：<strong>stop-the-world</strong>。stop-the-wrold会在任何一个GC算法中发生，当stop-the-world发生，意味着除GC所需的线程，所有的线程都处于等待状态，应用程序停止执行，知道GC任务完成。而GC优化则是指减少stop-the-world发生的时间，还有就是了解一下堆（heap）和堆栈（stack）</p>
+<blockquote>
+<ul>
+<li>堆heap）**，是一个运行时的数据区，类的对象主要存储在这里，也就是通过new、newarray、anewarray和multianewarray等指令建立，他们不需要程序代码显现的释放。优点：动态分配内存大小，灵活的生存期，因为是在运行时分配内存，java垃圾收集器会自动收走不再使用的数据。缺点：因为是动态的分配内存，也就是需要的时候才去取，比如商品进货，需要的时候才去批发商那里进货当然速度就比一开始就储备好的商品慢的得多。`</li>
+<li>栈（stack）<strong>，是静态的数据区，也就是和上面的比喻中的储备好的商品一样，主要存放一些基本的数据类型(int,short,long,byte,float,double,boolean,char)和对象句柄，由于栈中数据在编译器中就可以确定（不理解可以看下面的例子），所以存钱速度比堆快，而且仅次于寄存器，</strong>栈数据可以共享<strong>。<br>  这里必须举个例子：String s;和String s = new String(“哈哈”)；这两个代码中第一个s就是一个句柄，就好比是电视和电视的遥控，s可以控制电视，也就是第二个代码的“哈哈”，但是如果没有电视，遥控依然可以独立存在，也就是说s就和遥控一样，只是拥有一个句柄，并不表示有一个对象和它连接，所以第一段代码只是创建一个句柄，并不是对象。而第二个代码中的s则被初始化了，但是s依旧是遥控，而“哈哈”则是电视，所以两者的区别就是s是一个句柄保存在堆栈（stack）中，而new String(“哈哈”)保存在堆（heap）中。<br>  处理过程：编译器处理String s = “哈哈”的时候，先在栈中创建一个变量为s的内存空间，然后查找有没有字符串为“哈哈”的地址，没有的话，就在</strong>栈**（因为在这里不是用new()创建的对象）中开辟一个存放“哈哈”的地址，然后将s指向“哈哈”的地址。</li>
+</ul>
+</blockquote>
+<h3 id="什么是垃圾回收"><a href="#什么是垃圾回收" class="headerlink" title="什么是垃圾回收"></a>什么是垃圾回收</h3><pre><code>java中没有被对象句柄所引用的对象和长时间没有被使用的对象均可被视为“垃圾”。
+</code></pre><p>如String s = new String(“哈哈”)<br>a = null;<br>那么此时右边new出来的对象就没有句柄指向他，理所当然就成为了“垃圾”，会被自动回收内存。这里可以发现垃圾回收几乎只存在堆空间中，而栈中不存在垃圾回收（后面再慢慢解释为什么栈中为什么不存在垃圾回收）。</p>
+<h2 id="垃圾回收机制的类型"><a href="#垃圾回收机制的类型" class="headerlink" title="垃圾回收机制的类型"></a>垃圾回收机制的类型</h2><h3 id="按代的垃圾回收机制"><a href="#按代的垃圾回收机制" class="headerlink" title="按代的垃圾回收机制"></a>按代的垃圾回收机制</h3><p>java程序中不能显性的分配和注销内存，看到有些人把对象设置为null或者调用System.gc()来显性清理内存。设置为null至少没什么坏处，但是System.gc必须杜绝，对系统性能影响太大。</p>
+<p><strong>我按照我自己的理解说一下按代垃圾回收的过程：</strong><br>首先java存在两种下面的假设</p>
+<blockquote>
+<ul>
+<li>假设大多数对象会很快变得不可达</li>
+<li>假设只有很少的由老对象（创建时间较长的对象）指向新生对象的引用<br>这些假设我们称之为<strong>弱年代假设（ weak generational hypothesis）</strong>。为了强化这一假设，HotSpot虚拟机将其物理上划分为两个–<strong>新生代（young generation）</strong>和<strong>老年代（old generation）</strong>。<br>  新生代（Young generation）:绝大多是的最新被创建的对象被分配到新生代，由于在假设中假设大部分对象在创建后很快不可达，所以在新生代是最多短暂的对象出生和毁灭的地方。<br>  老年代（Old generation）: 对象没有变成不可达,在新生代中存活下来的都会被拷贝到老年代，因为老年代的空间比较大，所以在老年代的GC要比新生代少得多。<br><img src="http://img.my.csdn.net/uploads/201210/06/1349489545_2949.png" alt="垃圾回收机制"><br><strong>新生代的构成</strong><br>在一个<strong>伊甸园空间（Eden ）</strong>和两个<strong>幸存者空间（Survivor ）</strong>这三个空间中</li>
+<li>绝大多数刚刚被创建的对象会存放在伊甸园空间。</li>
+<li>在伊甸园空间执行了第一次GC之后，存活的对象被移动到其中一个幸存者空间</li>
+<li>此后，在伊甸园空间执行GC之后，存活的对象会被堆积在同一个幸存者空间</li>
+<li>当一个幸存者空间饱和，还在存活的对象会被移动到另一个幸存者空间。之后会清空已经饱和的那个幸存者空间</li>
+<li>在以上的步骤中重复几次依然存活的对象，就会被移动到老年代<br>其实我还不太理解第四个，有不同见解的可以互相交流一下。</li>
+</ul>
+</blockquote>
+<p>另外还有各种GC的类型，因为我尚且知识短浅，理解不下来，所以在这里也是为了给以后的我做个标记，让未来的我完善。</p>
+<p>参考文章：<a href="http://www.importnew.com/1993.html" target="_blank" rel="external">深入浅出Java垃圾回收机制</a></p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

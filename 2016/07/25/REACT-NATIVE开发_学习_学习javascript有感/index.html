@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      学习javascript有感 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="前言
+基础的东西我就不想记在我的博客里面上了，大家也可以在w3c里面自己练习一下，我主要是为了记一下现在刚刚学习完javascript的思维方式，因为学好的东西一般情况下基础的东西会记得，但是总会得了新伤就忘记久痛，忘记以前学习的心得。
+开始
+javascript的try-catch语法在javasscript中，使用try-catch语句的用法：在try里面将可能出现抛出的错误做个判断，然后做出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习javascript有感 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/07/25/REACT-NATIVE开发_学习_学习javascript有感/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="前言
+基础的东西我就不想记在我的博客里面上了，大家也可以在w3c里面自己练习一下，我主要是为了记一下现在刚刚学习完javascript的思维方式，因为学好的东西一般情况下基础的东西会记得，但是总会得了新伤就忘记久痛，忘记以前学习的心得。
+开始
+javascript的try-catch语法在javasscript中，使用try-catch语句的用法：在try里面将可能出现抛出的错误做个判断，然后做出">
+<meta property="og:updated_time" content="2016-07-27T02:52:24.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习javascript有感 | zues blog">
+<meta name="twitter:description" content="前言
+基础的东西我就不想记在我的博客里面上了，大家也可以在w3c里面自己练习一下，我主要是为了记一下现在刚刚学习完javascript的思维方式，因为学好的东西一般情况下基础的东西会记得，但是总会得了新伤就忘记久痛，忘记以前学习的心得。
+开始
+javascript的try-catch语法在javasscript中，使用try-catch语句的用法：在try里面将可能出现抛出的错误做个判断，然后做出">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">学习javascript有感</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-25" class="post-meta__date date">2016-07-25</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>基础的东西我就不想记在我的博客里面上了，大家也可以在w3c里面自己练习一下，我主要是为了记一下现在刚刚学习完javascript的思维方式，因为学好的东西一般情况下基础的东西会记得，但是总会得了新伤就忘记久痛，忘记以前学习的心得。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><hr>
+<h3 id="javascript的try-catch语法"><a href="#javascript的try-catch语法" class="headerlink" title="javascript的try-catch语法"></a>javascript的try-catch语法</h3><p>在javasscript中，使用try-catch语句的用法：在try里面将可能出现抛出的错误做个判断，然后做出对应的throw信息，并会将这个信息传递给err这个变量，然后在catch(err)语句里面做相应的处理。</p>
+<h3 id="javascript的原始对象"><a href="#javascript的原始对象" class="headerlink" title="javascript的原始对象"></a>javascript的原始对象</h3><p>javascript是一门面向对象的语言，因此我可以将很多知识和我现有知道的java语言相对比。在面向对象中，最重要的是封装。直接看代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var worker = new Object();</span><br><span class="line">worker.name = "tom";</span><br><span class="line">worker.age = 10;</span><br><span class="line">worker.isWorking = false;</span><br><span class="line">worker.startWork = function()&#123;</span><br><span class="line">	if(this.isWorking) return;</span><br><span class="line">    this.isWorking = true;</span><br><span class="line">&#125;;</span><br><span class="line">worker["position"] = "worker";</span><br><span class="line"></span><br><span class="line">document.write("Worker的名字是 : " + worker["name"]);</span><br><span class="line">worker.startWork();</span><br><span class="line">document.write("<span class="tag">&lt;<span class="name">br</span>/&gt;</span>Worker的职位是 : " + worker.position);</span><br></pre></td></tr></table></figure></p>
+<p>上面这段代码输出的结果是：<br>    Worker的名字是 : tom<br>    Worker的职位是 : worker<br>再看一下另外一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> worker = &#123;</span><br><span class="line">        name : <span class="string">"John"</span>,</span><br><span class="line">        age : <span class="number">30</span>,</span><br><span class="line">        isWorking : <span class="literal">false</span>,</span><br><span class="line">        startWork : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="keyword">this</span>.isWorking)&#123;</span><br><span class="line">                <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在上面的两段代码可以看出构建一个object和我们java是很不一样的，它们不需要再额外的声明一个变量来存储这个object的属性，另外和java一样的是也可以在实例里面添加字符，数字，布尔值甚至是一个方法的成员，这个特点在上面两段代码中都很明显的显示了出来。</p>
+<p>在第一段代码中能发现创建属性的两种方式分别是<strong>实例名.成员名 = 内容</strong>,当然可以用<strong>实例名.[“成员名”] = 内容</strong>。而这里思想我觉得可以和java的map联系起来，就是通过键值对来存储属性，使用的时候javascript通过键解释对应的值。</p>
+<p>不过认真看一下代码就知道，上面的单纯创建实例很呆板，仅仅是创建好一个可以吃的月饼，但是我们创建实例是为了方便我们后面的开发，所以这种方法肯定不提倡，我们应该创建以一个做月饼的模板，当相同的面团来的时候就可以直接用模板做好一个月饼，省去很多开发成本。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newHuman</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">    	name : name,</span><br><span class="line">        age : age,</span><br><span class="line">        sayHello : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        	<span class="built_in">document</span>.write(<span class="string">"Hello World! I'm "</span> + <span class="keyword">this</span>.name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> h = newHuman(<span class="string">"jim"</span>,<span class="number">30</span>);</span><br><span class="line">h.sayHello(); <span class="comment">//输出结果是：Hello World! I'm jim</span></span><br></pre></td></tr></table></figure></p>
+<p>这段代码声明了三个属性，分别是name，age，sayHello方法，最后实例化这个方法，调用里面的sayHello方法，当然在再外部使用实例好的h.age也是可以得。至于为什么要直接return才可以创建成员我就不知道了，用一句老话说应该是：javascript就规定这样。我试过在return外卖加this.iswork = false;或者在实例好newHuman之后添加h.iswork = false。最后还是输出underfined。</p>
+<p>然后继续看下面一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">this</span>.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> worker(<span class="string">"tom"</span>, <span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(tom.startWork == jim.startWork);</span><br><span class="line"><span class="comment">//最终输出的结果是：false</span></span><br></pre></td></tr></table></figure></p>
+<p>对于我来说，上面这段代码消除了我原来在上面的代码的疑问，因为这里没有return，可是依然可以访问到实例后的成员属性，不过我在上面一段代码中其实是用试过这样改的，但是输出的结果一样。<br>但是我们从最终的输出结果来看，可以知道最终实例好的tom和jim其实值得内存是不一样的，这样意味着当我们需要创建很多实例的时候，内存的开销会非常大。于是我们看下一段代码进行改善：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> worker(<span class="string">"tom"</span>, <span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> </span><br><span class="line">				+ (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br></pre></td></tr></table></figure></p>
+<p>run上面的代码的时候输出的结果是tom和jim两个实例的startWork方法是否共用内存 : true。这下两个不同实例的startwork是指向相同的地址了，说明了不同的实例共用了该方法。</p>
+<p>在设计javascript的时候遵循下面两条规则<br>1，因为实例不同而不同的内容，用this关键字声明<br>2，无论实例怎样内容完全相同的成员，定义在prototype上</p>
+<p>而上面第二条所说的prototype其实就是原型，<strong>任何类型都会有属于自己的原型，并且原型上定义的成员，可以在每个实例中引用，并且是共用的</strong>，其实我不太明白这句话，不过初步理解肯定是定义的成员能共用同一块内存。</p>
+<p>然后对比相面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.startWith = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str.indexOf(str) == <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"abc"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(str.startWith(<span class="string">"ab"</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">String</span>.prototype.endWith = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str.indexOf(str) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="string">"test"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(test.endWith(<span class="string">"a"</span>));</span><br></pre></td></tr></table></figure></p>
+<p>这里可以看出一些规律，首先是上面哪一段代码里面是worker.prototype.startWork通过使用new worker来创建一个实例，但是这里是String.prototype.endWith来创建的方法，自然就是使用String类来创建变量。当然把String改成Boolean的话，声明变量就只能用true和false了。</p>
+<p>看了一天，总算是明白了这里的意思：就是javascript的成员定义是写在定义域外面的，这和我们java的不一样，因此尽管已经是定义好的String或者Data类型，我们依然可以使用javascript这种特殊的语法结构进行扩展和修改。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1，其实，写了上述那么多例子，应该能看出点什么？作为一名写java写了两年的小程序员，在学习javascript过程中我一直在想象这两门语言的不同之处和相同之处，其实这里我们可以把父function看作java的类，也就是javascript所说的对象，然后父function所嵌入的function就是我们一直都知道的方法这个概念了，只不过奇特的是javascript在设计的时候会遵循一些规则，其中一条就是定义内容相同的成员，要定义在外部的prototype上，所以才会看到如上面的代码这样把方法写出来。<br>语法结构可以概括为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(父<span class="function"><span class="keyword">function</span>).<span class="title">prototype</span>.(<span class="params">成员方法名字</span>) = <span class="title">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//此处编写代码逻辑</span></span><br><span class="line">	<span class="comment">//在此方法内部使用成员变量需要加关键字this</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>2，另外一种定义父类的方法就是直接通过var关键字定义一个实例对象，通过键值对来存储，存储类型可以是：String，boolean，Integer，function等基本类型。<br>语法结构：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里需要注意一些语法问题，例如一些标点符号的使用</span></span><br><span class="line"><span class="keyword">var</span> objName = &#123;</span><br><span class="line">	key1 : <span class="string">"String"</span>,</span><br><span class="line">	key2 : <span class="number">3</span>,</span><br><span class="line">	key3 : <span class="literal">false</span>,</span><br><span class="line">	key4 : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>关于javascript的继承我们同样有两种方法来实现，首先是对原始对象使用<strong>$.entend</strong>关键字，继承之后可以拥有父类对象也可以重写父类型还可以自定义自己的成员。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个工人</span></span><br><span class="line">    <span class="keyword">var</span> worker = &#123;</span><br><span class="line">        name : <span class="string">""</span>,</span><br><span class="line">        age : <span class="number">0</span>,</span><br><span class="line">        isWorking : <span class="literal">false</span>,</span><br><span class="line">        startWork : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">//some code here</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//定义一个工头，工头本身也是工人，但他有一个额外的属性，用于记录他所管理的员工列表，并且可以指挥一名工人开工</span></span><br><span class="line">    <span class="keyword">var</span> leader = $.extend(worker,&#123;</span><br><span class="line">        workers : [],</span><br><span class="line">        callStart : <span class="function"><span class="keyword">function</span>(<span class="params">worker</span>)</span>&#123;</span><br><span class="line">            <span class="comment">//指挥一名工人开工</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//此时的leader除了拥有name，age，isWorking，startWork这四项属性之外，还拥有workers和callStart成员。</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="父类的构造函数调用"><a href="#父类的构造函数调用" class="headerlink" title="父类的构造函数调用"></a>父类的构造函数调用</h2><p>对于function创建的类型，其自身是无法进行$.extend的，这时候我就可以想到java的父类调用了，java是可以使用super关键字对于已经继承了父类进行构造函数的调用。而这里是使用：[function的名字].apply(this, arguments);其中这里的arguments是参数列表。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baseClass</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.a = a;</span><br><span class="line">    <span class="keyword">this</span>.b = b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aClass</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	baseClass.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> aClass(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">document</span>.write(test.a);</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line"><span class="built_in">document</span>.write(test.b);</span><br><span class="line"><span class="comment">//输出1 2</span></span><br></pre></td></tr></table></figure></p>
+<p>对于刚学javascript的我需要在开始的时候仔细整理一下我的思路：<br>首先是apply关键字，我可以把它看作是java中的super关键字，就好像是指针指向对应创建的构造函数的内存空间，相当于反射。<br>而通过baseClass.apply(this,arguments);相当于使用当前的实例和当前函数执行一次baseClass方法,这样看起来好像没有什么作用，仅仅是可以节省一些代码来调用另外一个函数。</p>
+<p>直接继承：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;;</span><br><span class="line">worker.prototype.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"hello ! &lt;br/&gt;"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;;</span><br><span class="line">leader.prototype = worker.prototype;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> l = <span class="keyword">new</span> leader(<span class="string">"jim"</span>);</span><br><span class="line">l.sayHello();</span><br><span class="line"><span class="comment">//输出 hello！</span></span><br></pre></td></tr></table></figure></p>
+<p>而直接继承成员会有缺陷：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.workers = [];</span><br><span class="line">&#125;</span><br><span class="line">leader.prototype = worker.prototype;</span><br><span class="line">leader.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//重写工人的开始工作方法，工头开工时，下属工人也要开工</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> workerLength = <span class="keyword">this</span>.workers.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; workerLength; i++)&#123;</span><br><span class="line">    	<span class="keyword">this</span>.workers[i].startWork();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> leader(<span class="string">"tom"</span>,<span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line">tom.workers.push(jim);</span><br><span class="line">tom.startWork();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> + (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码其实我没有读太明白，我知道因为在leader中他新创建了一个空的workers集合，而他的父类没有workers集合，但是在startWork里面调用的isWorking里面的，因此会由于在worker里面找不到workers集合，会出现异常。呃，我只能这样理解不知道正不正确。</p>
+<p>另外还有一点就是倒数第四句的<strong>tom.workers.push(jim);</strong>是什么意思，删掉之后也对程序没什么影响，我觉得学到后面才可以知道它的作用。另外经过证实我的理解可能是正确的是，我通过在worker中加入一句<strong>this.workers = [];</strong>然后程序就跑起来了，输出的结果是tom和jim两个实例的startWork方法是否共用内存 : true。</p>
+<p>我们再看下一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">worker</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">worker.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.isWorking = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leader</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">	worker.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.workers = [];</span><br><span class="line">&#125;</span><br><span class="line">leader.prototype = <span class="keyword">new</span> worker();	<span class="comment">//重点</span></span><br><span class="line">leader.prototype.startWork = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//重写工人的开始工作方法，工头开工时，下属工人也要开工</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.isWorking) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> workerLength = <span class="keyword">this</span>.workers.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; workerLength; i++)&#123;</span><br><span class="line">    	<span class="keyword">this</span>.workers[i].startWork();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> leader(<span class="string">"tom"</span>,<span class="number">40</span>);</span><br><span class="line"><span class="keyword">var</span> jim = <span class="keyword">new</span> worker(<span class="string">"jim"</span>,<span class="number">20</span>);</span><br><span class="line">tom.workers.push(jim);</span><br><span class="line">tom.startWork();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> html = <span class="string">"tom和jim两个实例的startWork方法是否共用内存 : "</span> + (tom.startWork == jim.startWork).toString();</span><br><span class="line"><span class="built_in">document</span>.write(html);</span><br><span class="line"><span class="comment">//输出的结果是：tom和jim两个实例的startWork方法是否共用内存 : false</span></span><br></pre></td></tr></table></figure></p>
+<p>对比上面哪一段代码，这段代码增加了一段<strong>leader.prototype = new worker();</strong>，我们先看一下其他代码和上面的一样，另外worker方法里面也没有对应的workers集合，再运行一下代码，可以运行，没有抛出异常。<br>另外看一下输出的结果也不是true，通过现象看本质，可以看到现在leader和worker对应的内存空间肯定不一样了。我们来听一下比较官方的解释：通过leader.prototype = new worker();这段代码相当于创建了一个worker实例，并将这个实例中的各个成员复制给leader的原型，这样一来对子类的修改仅仅是影响worker的实例，而不会影响worker的原型。</p>
+<p>学完这些之后要好好分析一下上面的代码才可以，根据代码解释的顺序来分析；<br>首先是创建了一个worker父类方法，然后使用方法的规则创建一个内存共享的startWork成员方法，将新建的leader使用apply关键字继承worker，并且新创建一个workers集合。<br>然后使用leader.prototype = new worker();这段代码继承父类的副本实例对象，接下来就可以重写父类的startWork成员方法了，不过这里面写的一大段东西我都不太明白是什么意思<br>接下来就是实例化父类和子类了，事实证明，接下来的代码里面，tom.startWork();这段代码是没有用处的，感觉仅仅是个开关功能，不知道有没有执行到for循环，接着再下下面的代码就没什么可以分析的了。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

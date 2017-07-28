@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      react-native学习笔记5 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="仿百度搜索框仅仅是模仿ui，在输入词的时候会弹出提示。
+TextInput.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native学习笔记5 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/08/18/REACT-NATIVE开发_学习_笔记5/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="仿百度搜索框仅仅是模仿ui，在输入词的时候会弹出提示。
+TextInput.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+<meta property="og:updated_time" content="2016-08-23T13:36:50.180Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native学习笔记5 | zues blog">
+<meta name="twitter:description" content="仿百度搜索框仅仅是模仿ui，在输入词的时候会弹出提示。
+TextInput.js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">react-native学习笔记5</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-08-18" class="post-meta__date date">2016-08-18</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="仿百度搜索框"><a href="#仿百度搜索框" class="headerlink" title="仿百度搜索框"></a>仿百度搜索框</h2><p>仅仅是模仿ui，在输入词的时候会弹出提示。</p>
+<p>TextInput.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">import React , &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, TextInput, PixelRatio &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">var onePt = 1 / PixelRatio.get();//或许安卓设备的一个最小单位，方便适配</span><br><span class="line"></span><br><span class="line">export default class TextInputDemo extends Component &#123;</span><br><span class="line"></span><br><span class="line">	//show boolean this.state</span><br><span class="line">	//value 显示的值</span><br><span class="line">	constructor(props) &#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123;</span><br><span class="line">			show : false,</span><br><span class="line">			value: null,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	getValue = (text) =&gt; &#123;</span><br><span class="line">		this.setState(&#123;</span><br><span class="line">			show : true,</span><br><span class="line">			value : text,</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	hide = (val) =&gt; &#123;</span><br><span class="line">		this.setState (&#123;</span><br><span class="line">			show : false, 	</span><br><span class="line">			value : val,</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	render() &#123;</span><br><span class="line">		return (</span><br><span class="line">			&lt;View style = &#123;styles.flex&#125;&gt;</span><br><span class="line">				&lt;View style = &#123;styles.flexDirection&#125;&gt;</span><br><span class="line">					&lt;View style = &#123;[styles.flex,styles.input]&#125;&gt;</span><br><span class="line">						&lt;TextInput </span><br><span class="line">							keyboardType = &quot;web-search&quot;</span><br><span class="line">							value = &#123;this.state.value&#125; </span><br><span class="line">							onChangeText=&#123;this.getValue.bind(this)&#125;</span><br><span class="line">							placeholder = &quot;请输入关键词&quot;/&gt;</span><br><span class="line">					&lt;/View&gt;</span><br><span class="line"></span><br><span class="line">					&lt;View style = &#123;styles.btn&#125;&gt;</span><br><span class="line">						&lt;Text style = &#123;styles.search&#125; onPress = &#123;this.hide.bind(this, this.state.value)&#125;&gt;搜索&lt;/Text&gt;</span><br><span class="line">					&lt;/View&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">				&#123;this.state.show?</span><br><span class="line">						&lt;View style = &#123;styles.result&#125;&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, this.state.value + &apos;哈哈哈哈&apos;)&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt; &#123;this.state.value&#125;哈哈哈哈&lt;/Text&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, this.state.value + &apos;北京&apos;)&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt; &#123;this.state.value&#125;北京&lt;/Text&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, 80 + this.state.value + &apos;综合商店&apos;)&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt; 80&#123;this.state.value&#125;综合商店&lt;/Text&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, this.state.value + &apos;cool&apos;)&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt; &#123;this.state.value&#125;cool&lt;/Text&gt;</span><br><span class="line">							&lt;Text onPress = &#123;this.hide.bind(this, &apos;吃饭&apos; + this.state.value )&#125;</span><br><span class="line">							style = &#123;styles.item&#125; numberOfLines = &#123;1&#125; &gt;吃饭&#123;this.state.value&#125;&lt;/Text&gt;</span><br><span class="line">						&lt;/View&gt;</span><br><span class="line">						: null</span><br><span class="line">					&#125;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	flex: &#123;</span><br><span class="line">		flex:1,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	flexDirection: &#123;</span><br><span class="line">		flexDirection:&apos;row&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	btn: &#123;</span><br><span class="line">		width:45,</span><br><span class="line">		marginLeft:-5,</span><br><span class="line">		marginRight:5,</span><br><span class="line">		backgroundColor:&apos;#23BEFF&apos;,</span><br><span class="line">		height:50,</span><br><span class="line">		justifyContent:&apos;center&apos;,</span><br><span class="line">		alignItems:&apos;center&apos;</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	search: &#123;</span><br><span class="line">		color:&apos;#fff&apos;,</span><br><span class="line">		fontSize:15,</span><br><span class="line">		fontWeight:&apos;bold&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	item: &#123;</span><br><span class="line">		fontSize:16,</span><br><span class="line">		paddingTop:5,</span><br><span class="line">		paddingBottom:10,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	result: &#123;</span><br><span class="line">		marginTop:onePt,</span><br><span class="line">		marginLeft:18,</span><br><span class="line">		marginRight:5,</span><br><span class="line">		height:200.</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	input: &#123;</span><br><span class="line">		height:50,</span><br><span class="line">		borderColor:&apos;red&apos;,</span><br><span class="line">		borderWidth:1,</span><br><span class="line">		marginLeft:10,</span><br><span class="line">		paddingLeft:5,</span><br><span class="line">		borderRadius:5,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	topStatue: &#123;</span><br><span class="line">		marginTop:25,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在构造函数中创建一个value值用来传递，以及提示框的开关show，显示的时候为true。</p>
+<p>在 <code>&lt;TextInput&gt;</code>中<code>keyboardType = &quot;web-search&quot;</code>表示的是<strong>显示便于在网页上书写的虚拟键盘</strong>,而placeholder则是占位符，一般填写请输入关键字之类的，value是框里面显示的文字，为空的时候显示的是占位符（假如有占位符）。</p>
+<p>最后是onChangeText属性，这个属性在value值改变的时候触发，返回改变之后的value给回调函数，因此这里的代码：<code>onChangeText={this.getValue.bind(this)}</code>意思就是在text改变的时候返回参数给回调函数getValue，可以看到该函数记接收到函数之后，将其作为参数赋值给value了。</p>
+<blockquote>
+<p>同理可以看到下面<text>的代码：<code>onPress = {this.hide.bind(this, this.state.value + &#39;哈哈哈哈&#39;)</code>,这句代码和刚刚的bind只有一个参数的明显不一样，这句代码的意思是在<code>onPress(this, i)</code>被调用的时候传递调用的参数<code>i</code>，这个绑定参数的做法我是比较少见到的。然而这不是React的新概念，而是javascript的。</text></p>
+</blockquote>
+<p>于是后面的代码就基本上可以不用看了，在hide将onPress传递过去的参数赋值到value，于是就有了提示的词取代了原来的值。</p>
+<h2 id="animated使用"><a href="#animated使用" class="headerlink" title="animated使用"></a>animated使用</h2><hr>
+<p>首先推荐这篇博客： <a href="http://www.cnblogs.com/vajoy/p/5299315.html" target="_blank" rel="external">ReactNative入门 —— 动画篇（上）</a>,里面介绍的非常详细，我这里是为了自己加深印象，所以结合代码再整理一下思路。</p>
+<blockquote>
+<p>基本的Animated组件有Animated.View、Animated.Image、Animated.Text三种，animated支持三种动画效果：<code>spring``decay``timing</code>。<code>Interpolation插值函数</code>，4种动画组合：同时、顺序、错峰、延迟,动画执行回调，跟踪动态值，animated.event输入事件，响应当前的动画值等功能。</p>
+<p>将初始值绑定到动画目标属性上，如style。调用start启动动画stop停止动画，同时可以在start里面回调相关功能。</p>
+<ul>
+<li><p>Animated.timing(animateValue, conf<object>) ,透明效果,第二个conf<object>设置参数参考：</object></object></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  duration: 动画持续的时间（单位是毫秒），默认为500。</span><br><span class="line">  easing：一个用于定义曲线的渐变函数。阅读Easing模块可以找到许多预定义的函数。iOS默认为Easing.inOut(Easing.ease)。</span><br><span class="line">  delay: 在一段时间之后开始动画（单位是毫秒），默认为0。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Animated.spring(animateValue, conf<object>) ,基础的单次弹跳物理模型,conf<object>设置参数参考：</object></object></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  friction: 控制“弹跳系数”、夸张系数，默认为7。</span><br><span class="line">  tension: 控制速度，默认40。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Animated.decay(animateValue, conf<object>) ,以一个初始速度开始并且逐渐减慢停止,conf<object>设置参数参考：</object></object></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  velocity: 起始速度，必填参数。</span><br><span class="line">  deceleration: 速度衰减比例，默认为0.997。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>第一个参数是实例化动画的初始值，一般会在构造函数中声明，将初始值赋给state里面的变量。其中使用Animated.Value设定一个或多个初始值，例如位置属性，透明属性，角度属性等。</p>
+<h3 id="监听动画"><a href="#监听动画" class="headerlink" title="监听动画"></a>监听动画</h3><p>使用<code>animateValue.stopAnimation(callback&lt;Function&gt;)</code>或者是<code>animateValue.addListener(callback&lt;Function&gt;)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, Animated, TouchableOpacity, Easing&#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">var animteHandler;</span><br><span class="line">export default class AnimatedDemo extends Component &#123;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        animateHandler = Animated.timing(this.state.opacityAnmValue, &#123;</span><br><span class="line">            toValue: 1,  //透明度动画最终值</span><br><span class="line">            duration: 3000,   //动画时长3000毫秒</span><br><span class="line">            easing: Easing.bezier(0.15, 0.73, 0.37, 1.2)  //缓动函数</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            opacityAnmValue : new Animated.Value(0)   //设置透明度动画初始值</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _onPress() &#123;</span><br><span class="line">       animateHandler.start &amp;&amp; animateHandler.start()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">                &lt;Animated.View ref=&quot;view&quot; style=&#123;[styles.content, &#123;width: 200, height: 20, opacity: this.state.opacityAnmValue&#125;]&#125;&gt;</span><br><span class="line">                    &lt;Text style=&#123;[&#123;textAlign: &apos;center&apos;&#125;]&#125;&gt;Hi, here is VaJoy&lt;/Text&gt;</span><br><span class="line">                &lt;/Animated.View&gt;</span><br><span class="line">                &lt;TouchableOpacity onPress=&#123;this._onPress&#125;&gt;</span><br><span class="line">                    &lt;View style=&#123;styles.button&#125;&gt;</span><br><span class="line">                        &lt;Text style=&#123;styles.buttonText&#125;&gt;Press me!&lt;/Text&gt;</span><br><span class="line">                    &lt;/View&gt;</span><br><span class="line">                &lt;/TouchableOpacity&gt;</span><br><span class="line">                &lt;TouchableOpacity &gt;</span><br><span class="line">                    &lt;View style=&#123;styles.button&#125;&gt;</span><br><span class="line">                        &lt;Text style=&#123;styles.buttonText&#125;&gt;忽略本按钮&lt;/Text&gt;</span><br><span class="line">                    &lt;/View&gt;</span><br><span class="line">                &lt;/TouchableOpacity&gt;</span><br><span class="line">            &lt;/View&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">	container:&#123;</span><br><span class="line">		flex:1,</span><br><span class="line">		justifyContent: &apos;center&apos;,</span><br><span class="line">		alignItems: &apos;center&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">	buttonText:&#123;</span><br><span class="line">		fontSize:16,</span><br><span class="line">		color: &apos;white&apos;,</span><br><span class="line">		fontWeight: &apos;bold&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">	button:&#123;</span><br><span class="line">		marginTop: 10,</span><br><span class="line">		paddingVertical: 10,</span><br><span class="line">		paddingHorizontal: 20,</span><br><span class="line">		backgroundColor: &apos;black&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">	content: &#123;</span><br><span class="line">		justifyContent: &apos;center&apos;,</span><br><span class="line">		backgroundColor: &apos;yellow&apos;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>经过我一日一夜的探索，终于找到一点技巧了，首先在构造函数中设置state的成员变量<code>opacityAnmValue</code>为<code>new Animated.Value(0)</code>,正如注释所说，这是设置透明度初始值。</p>
+<p>然后是render函数中在对应的<code>&lt;Animated.View&gt;</code>中绑定opacity传入到style中，编写onPress方法，在按下按钮的时候调用start()方法开始动画，因为有了开始的方法，当然也会有动画的设置参数。</p>
+<p>因此最后是在componentDidMount中设置动画启动前的参数，因为是timming，所以会有duration和<a href="https://github.com/facebook/react-native/blob/master/Libraries/Animated/src/Easing.js" target="_blank" rel="external">Easing</a>（Easing动画函数模块会在<code>react-native/Libraries/Animated/src/</code>目录下，该模块与预设了linear，ease，elastic，bezier等缓动特性。）,toVlaue是透明度动画的最终值，这里的1代表的是100%不透明。</p>
+<p>呃，还是提一下好，一开始写demo的时候一直在报错<code>underfined is not an object(&#39;animatehandler.start&#39;)</code>，而animatehandler这个变量只有在ComponentDidMount和_onPress使用到，后来折腾了一下午，卧槽，原来是ComponentDidMount的首字母写成大写了，导致赋值函数一直没有被调用，其实是小写componentDidMount，我都快哭出来了，浪费了我一个下午，这是个血淋林的教训啊！</p>
+<p>ok,以后复习的时候就结合自己这篇博客的分析逻辑和开头分享的博客一对一找回感觉，这篇博客就先到这里，有问题欢迎提出来。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

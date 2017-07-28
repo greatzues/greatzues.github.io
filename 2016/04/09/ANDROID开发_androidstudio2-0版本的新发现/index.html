@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ANDROID开发_androidstudio2.0版本的新发现 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="起因在使用稳定版的时候弹出一个提示说有update，于是点开之后跳转到android develop的页面，所以就更新了新版本的androidstudio，今天本着尝试的原则用了一下这个新版本的androidstudio的新特性因为在官网的视频中经过我不太厉害的英语听力听到几个单词，说是新版本和旧版本可以use side by side,也就是可以同时下载两个版本，而且可以互不影响。我们可以在稳定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANDROID开发_androidstudio2.0版本的新发现 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/04/09/ANDROID开发_androidstudio2-0版本的新发现/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="起因在使用稳定版的时候弹出一个提示说有update，于是点开之后跳转到android develop的页面，所以就更新了新版本的androidstudio，今天本着尝试的原则用了一下这个新版本的androidstudio的新特性因为在官网的视频中经过我不太厉害的英语听力听到几个单词，说是新版本和旧版本可以use side by side,也就是可以同时下载两个版本，而且可以互不影响。我们可以在稳定">
+<meta property="og:updated_time" content="2017-07-28T05:19:45.758Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ANDROID开发_androidstudio2.0版本的新发现 | zues blog">
+<meta name="twitter:description" content="起因在使用稳定版的时候弹出一个提示说有update，于是点开之后跳转到android develop的页面，所以就更新了新版本的androidstudio，今天本着尝试的原则用了一下这个新版本的androidstudio的新特性因为在官网的视频中经过我不太厉害的英语听力听到几个单词，说是新版本和旧版本可以use side by side,也就是可以同时下载两个版本，而且可以互不影响。我们可以在稳定">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ANDROID开发_androidstudio2.0版本的新发现</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-09" class="post-meta__date date">2016-04-09</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/android/">android</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/android入门/">android入门</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在使用稳定版的时候弹出一个提示说有update，于是点开之后跳转到android develop的页面，所以就更新了新版本的androidstudio，今天本着尝试的原则用了一下这个新版本的androidstudio的新特性<br>因为在官网的视频中经过我不太厉害的英语听力听到几个单词，说是新版本和旧版本可以use side by side,也就是可以同时下载两个版本，而且可以互不影响。<br>我们可以在稳定版的settings-&gt;System Settings-&gt;updates中设置为Stable Channel，而在2.0版本中的settings-&gt;System Settings-&gt;updates设置为Canary Channel，也就是有最新的更新就会有提示。当然你也可以自己在Help-&gt;Check For Update…中更新<br>如果在新版本中发现了bug，可以在Help-&gt;Submit Feedback中写好出现的bug详情，这样有利于谷歌更好的收集漏洞不断完善功能。<br>我们可以把两个版本的androidstudio放在不同的文件夹，把新版本的命名添加有2.0之类的关键字用来鉴别，顺便也新建一个新的workplace来装载新版本的工作区。好了，前期工作基本就做好了。</p>
+<h2 id="新的安卓模拟器"><a href="#新的安卓模拟器" class="headerlink" title="新的安卓模拟器"></a>新的安卓模拟器</h2><p>当我用新版本的studio写好一个程序之后开始运行，在select虚拟机的时候弹出一个提示框说我没有安装HAXM，于是上了一下google之后发现原来这个HAXM来头不小</p>
+<h3 id="Intel-HAXM"><a href="#Intel-HAXM" class="headerlink" title="Intel HAXM"></a>Intel HAXM</h3><p>以前开发安卓是绝对不会想用安卓自带的虚拟机开发的，因为炒鸡炒鸡慢，而新版本的studio为了解决这个问题就想使用Intel HAXM来为模拟器加速，使模拟器运行度媲美真机， 彻底解决模拟器运行慢的问题。</p>
+<p>Intel HAXM (Hardware Accelerated Execution Manager) 使用基于 Intel(R) Virtualization Technology (VT) 的硬件加速， 因此需要 CPU 支持 VT ， 而且仅限于 Intel CPU， 与 AMD CPU 无缘， Intel HAXM 的描述如下：</p>
+<blockquote>
+<ul>
+<li>使用 Intel VT 技术；</li>
+<li>为 Android x86 虚拟设备的模拟运行提供硬件加速；</li>
+<li>与 Android SDK 集成；<br>硬件需求如下：</li>
+<li>支持 VT-x, EM64T 以及 Execute Disable Bit 的 Intel 处理器；</li>
+<li>至少 1GB 可用内存<br>支持的操作系统：</li>
+<li>Windows 7 (32/64-bit)</li>
+<li>Windows Vista (32/64-bit)</li>
+<li>Windows XP (32-bit only)</li>
+<li>OS X 10.6 or 10.7 (32/64-bit)</li>
+</ul>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>网上介绍一大堆安装过程，其实并没啥卵用，因为androidstudio已经可以一件安装并集成到模拟器上，所以可以省很多心水。</p>
+<h2 id="个人体会"><a href="#个人体会" class="headerlink" title="个人体会"></a>个人体会</h2><p>我没啥优点，但是有一个很大的缺点就是太诚实，我想说，加速了之后的安卓自带的模拟器之后，速度确实比以前的快很多了，但是和genymotion还有真机调试比起来还是有段距离，不要打我啊！不过界面还是和以前自带的模拟器一样很美。</p>
+<p>ok，基本就是这些了，剩余的我会在后期发现再推上来的。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

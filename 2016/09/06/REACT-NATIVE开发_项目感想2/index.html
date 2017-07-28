@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      项目感想2 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="只是单纯的记录一下我的坑，我是为了获取登录的cookie才记下的这博客，我也不是弄了很久，也就两天而已，两天啊！
+我以为只是简单的像拿数组那样取数组里面的数组那样来拿，所以直接用response[3],因为我在遍历response.headers之后返回的object中cookie是第四个，所以我计划用这个拿，但是取不到cookie。我直接用response.headers.cookie，这个也拿">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目感想2 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/09/06/REACT-NATIVE开发_项目感想2/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="只是单纯的记录一下我的坑，我是为了获取登录的cookie才记下的这博客，我也不是弄了很久，也就两天而已，两天啊！
+我以为只是简单的像拿数组那样取数组里面的数组那样来拿，所以直接用response[3],因为我在遍历response.headers之后返回的object中cookie是第四个，所以我计划用这个拿，但是取不到cookie。我直接用response.headers.cookie，这个也拿">
+<meta property="og:updated_time" content="2016-09-06T07:40:32.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目感想2 | zues blog">
+<meta name="twitter:description" content="只是单纯的记录一下我的坑，我是为了获取登录的cookie才记下的这博客，我也不是弄了很久，也就两天而已，两天啊！
+我以为只是简单的像拿数组那样取数组里面的数组那样来拿，所以直接用response[3],因为我在遍历response.headers之后返回的object中cookie是第四个，所以我计划用这个拿，但是取不到cookie。我直接用response.headers.cookie，这个也拿">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">项目感想2</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-09-06" class="post-meta__date date">2016-09-06</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>只是单纯的记录一下我的坑，我是为了获取登录的cookie才记下的这博客，我也不是弄了很久，也就两天而已，两天啊！</p>
+<p>我以为只是简单的像拿数组那样取数组里面的数组那样来拿，所以直接用response[3],因为我在遍历response.headers之后返回的object中cookie是第四个，所以我计划用这个拿，但是取不到cookie。我直接用response.headers.cookie，这个也拿不到，很桑心啊！因为在变量打印出来的object中cookie是用set-cookie打印出来的，所以我又用response.headers.setCookie来取，反正就是试过很多，最后看我的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">postLoginMethod(url,myUsername,myPassword) &#123;</span><br><span class="line">        var myHeaders = [];</span><br><span class="line">        var first = [];</span><br><span class="line">        return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">            fetch(BASEURL+url, &#123;</span><br><span class="line">                method: &apos;post&apos;,</span><br><span class="line">                headers: &#123;</span><br><span class="line">                    &apos;Accept&apos;: &apos;application/json&apos;,</span><br><span class="line">                    &apos;Content-Type&apos;: &apos;application/json&apos;,</span><br><span class="line">                &#125;,</span><br><span class="line">                body:JSON.stringify(&#123;</span><br><span class="line">                    username: myUsername,</span><br><span class="line">                    password: myPassword,</span><br><span class="line">                &#125;),</span><br><span class="line">            &#125;)</span><br><span class="line">                .then((response) =&gt; &#123;</span><br><span class="line">                    myHeaders = response.headers;</span><br><span class="line">                    console.log(...myHeaders); //遍历headers拿到数组对象</span><br><span class="line">                    console.log(&apos;Content-Type:&apos;+ response.headers.get(&apos;Content-Type&apos;)); </span><br><span class="line">                    console.log(&apos;cookie是:&apos;+response.headers.get(&apos;set-cookie&apos;)); //第一次登陆可以拿到cookie</span><br><span class="line">                    console.log(&apos;server:&apos;+response.headers.get(&apos;server&apos;));</span><br><span class="line">                    resolve(response.json());</span><br><span class="line">                &#125;)</span><br><span class="line">                .catch(error =&gt; &#123;</span><br><span class="line">                    alert(&quot;网络出现异常&quot;);</span><br><span class="line">                    reject(error);</span><br><span class="line">                &#125;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以看到上面的代码就应该知道了，其实只需要用<code>response.headers.get(&#39;set-cookie&#39;)</code>，这个安卓里面几乎是一模一样的，我咋就没想到呢！</p>
+<p>然后也看到我的代码旁边的注释，不知道为什么在reactnative中是自动在第一次登陆之后就可以携带cookie去访问其他uri了，但是我还是先保存cookies，以防万一。因为在我第二次用同样的账号密码登录的时候就没返回cookie对象，取而代之的只是server信息，说明已经被标记为已登录状态了。</p>
+<h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><hr>
+<p>我参照<a href="http://blog.qiniu.com/archives/5806" target="_blank" rel="external">用纯JAVASCRIPT实现REACT NATIVE的文件上传</a>，顺便修改一些代码然后就完成了reactnative的头像上传功能，呃，其实里面有一些bug，还好我和后台的小伙伴互相商量解决了一点，但是还是出现返回的状态码不正常的情况，如果有完美上传头像的办法，记得要告诉我啊！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">postFile(url, imgUri,filename)&#123;</span><br><span class="line">        //用来包装响应头的数组</span><br><span class="line">        //构造request的body里面的东西</span><br><span class="line">        let formData = new FormData();</span><br><span class="line">        formData.append(&apos;avatar&apos;, &#123;uri: imgUri, type: &apos;image/jpeg&apos;, name:filename&#125;);</span><br><span class="line"></span><br><span class="line">        let options = &#123;&#125;;</span><br><span class="line">        options.body = formData;</span><br><span class="line">        options.method = &apos;post&apos;;</span><br><span class="line">        return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">            fetch(BASEURL+ url, options).then((response) =&gt; &#123;</span><br><span class="line">                resolve(response)</span><br><span class="line">            &#125;)</span><br><span class="line">                .catch(error =&gt; &#123;</span><br><span class="line">                    alert(&quot;上传失败&quot;);</span><br><span class="line">                    reject(error);</span><br><span class="line">                &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个封装的函数返回一个promise对象，可以在调用的时候使用返回的response作为回调参数。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

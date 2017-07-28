@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      react-native升级 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="升级react-native引发的一系列bug
+我不是标题党啊！我新建文件的时候偷懒就没有把版本输进去。然后记录这篇博客。
+因为要使用到多张图片上传，所以在github里面输入关键字multiple images picker，找到最多star的库，我也想过自己写的，但是考虑到编写和测试的时间成本，果断放弃了。
+使用ivpusic/react-native-image-crop-picker的时候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native升级 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/10/24/REACT-NATIVE开发_react-native升级/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="升级react-native引发的一系列bug
+我不是标题党啊！我新建文件的时候偷懒就没有把版本输进去。然后记录这篇博客。
+因为要使用到多张图片上传，所以在github里面输入关键字multiple images picker，找到最多star的库，我也想过自己写的，但是考虑到编写和测试的时间成本，果断放弃了。
+使用ivpusic/react-native-image-crop-picker的时候">
+<meta property="og:updated_time" content="2016-10-24T12:58:30.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native升级 | zues blog">
+<meta name="twitter:description" content="升级react-native引发的一系列bug
+我不是标题党啊！我新建文件的时候偷懒就没有把版本输进去。然后记录这篇博客。
+因为要使用到多张图片上传，所以在github里面输入关键字multiple images picker，找到最多star的库，我也想过自己写的，但是考虑到编写和测试的时间成本，果断放弃了。
+使用ivpusic/react-native-image-crop-picker的时候">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">react-native升级</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-10-24" class="post-meta__date date">2016-10-24</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="升级react-native引发的一系列bug"><a href="#升级react-native引发的一系列bug" class="headerlink" title="升级react-native引发的一系列bug"></a>升级react-native引发的一系列bug</h2><hr>
+<p>我不是标题党啊！我新建文件的时候偷懒就没有把版本输进去。然后记录这篇博客。</p>
+<p>因为要使用到多张图片上传，所以在github里面输入关键字multiple images picker，找到最多star的库，我也想过自己写的，但是考虑到编写和测试的时间成本，果断放弃了。</p>
+<p>使用<a href="https://github.com/ivpusic/react-native-image-crop-picker" target="_blank" rel="external">ivpusic/react-native-image-crop-picker</a>的时候出了一个bug，当时没有截图，是说需要的react-native版本在0.32.0以上，我的版本还在0.30.0，npm install会出现警告。</p>
+<p>于是我开始备份了项目然后去升级版本，首先是去react-native中文网上查找升级的步骤</p>
+<blockquote>
+<p>使用<code>npm info react-native</code>查看最新的依赖包版本。然后在项目目录下打开<code>package.json</code>文件，找到<code>react-native</code>修改到最新版本号，我这里是0.35.0.最后使用<code>npm install</code>开始更新。<br>开始警告，说我的react版本也应该更新，然后重新使用<code>npm info react-native</code>找到对应的版本号为15.3.1。ok，继续修改一下<code>react</code>版本，ok。这样就算更新好了。</p>
+</blockquote>
+<p>开始使用<code>react-native run-android</code>跑原来程序，第一次跑失败了，因为原来的<code>react-native-blur</code>库，也就是用来是实现毛玻璃效果的库说打开不了扩展文件<code>..\node_modules\react-native-blur\android\build\outputs\aar\react-native-blur-release.aar</code>，于是我又开始了fix bug之旅。</p>
+<p>在<code>Could not expand ZIP</code>关键词情况下我找到了<a href="http://www.wangchenlong.org/2016/04/07/1604/071-rn-uiexplorer/" target="_blank" rel="external">Mystra的博客文章</a>，里面说只需要删掉原来的重新下载就可以了，果然<code>npm uninstall react-native-blur</code>之后再重新install就没报这个错了。</p>
+<p>可是随之而来的是另外一个bug，那就是当我使用react-native-image-crop-picker里面的命令时，当我输入<code>npm i react-native-image-crop-picker --save</code>这条命令时开始报这个错了</p>
+<blockquote>
+<p>failed to find Build Tools revision 23.0.3 reactnative<br>根据google拿到的解决办法，我打开了android SDK将<code>android SDK build-tools 23.0.3</code>给勾上了。再次跑一次程序，又出现bug了。</p>
+</blockquote>
+<p>这次是这个bug,<code>The error is &quot;Error: Width (0) and height (0) cannot be &lt; = 0</code>,这个bug在uCrop里面很多人都说可以参考这里的方法来解决<a href="https://github.com/Yalantis/uCrop/issues/84" target="_blank" rel="external">Using v1.4.1, could not build because of an error. #84</a><br>由于我比较笨，怎么试都没有试成功。我也按照里面说的<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Gradle Plugin 2.0+  </span></span><br><span class="line"> android &#123;  </span><br><span class="line">   defaultConfig &#123;  </span><br><span class="line">     vectorDrawables.useSupportLibrary = <span class="keyword">true</span>  </span><br><span class="line">    &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>or this to Gradle Plugin 1.5<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Gradle Plugin 1.5  </span></span><br><span class="line"> android &#123;  </span><br><span class="line">   defaultConfig &#123;  </span><br><span class="line">     generatedDensities = []  </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  <span class="comment">// This is handled for you by the 2.0+ Gradle Plugin  </span></span><br><span class="line">  aaptOptions &#123;  </span><br><span class="line">    additionalParameters <span class="string">"--no-version-vectors"</span>  </span><br><span class="line">  &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>我的gradle是1.5版本的，所以我一直都试下面那个方法，可是一样还是报错。后面无意中想到，要不更新一下gradle试一下上面一个的方法，然后就借鉴简书的这篇博客<a href="http://www.jianshu.com/p/00beddbe3dbc#" target="_blank" rel="external">【Android】升级Gradle版本（Android Studio）</a>。<br>按照里面的说法我用androidstudio打开了我的项目，将目录<code>gradle\wrapper\gradle-wrapper.properties</code>里的这个文件由原来的<code>2.4.0</code>修改成<code>2.10.0</code>,接着sync一下，重新编译项目，就跑起来了。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

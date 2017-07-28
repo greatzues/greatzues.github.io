@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ES6入门 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="前言
+我是在学习react-native官网的时候说开发react-native需要用到ES6的时候才开始学的，一切都还是刚刚开始，我标记一下我是在阮一峰老师的书中学习的，非常棒的一本书，习惯看书学习的同学可以自己去买一本来看，链接之后就有购买途径了。
+简介
+ES6是ECMAScript 6.0的简称，也是javascript的下一代标准，尽管这套标准目前还没有在所有的浏览器上完整实现，所以目前而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6入门 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/07/31/REACT-NATIVE开发_ES6入门/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="前言
+我是在学习react-native官网的时候说开发react-native需要用到ES6的时候才开始学的，一切都还是刚刚开始，我标记一下我是在阮一峰老师的书中学习的，非常棒的一本书，习惯看书学习的同学可以自己去买一本来看，链接之后就有购买途径了。
+简介
+ES6是ECMAScript 6.0的简称，也是javascript的下一代标准，尽管这套标准目前还没有在所有的浏览器上完整实现，所以目前而">
+<meta property="og:updated_time" content="2016-08-05T01:51:27.338Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6入门 | zues blog">
+<meta name="twitter:description" content="前言
+我是在学习react-native官网的时候说开发react-native需要用到ES6的时候才开始学的，一切都还是刚刚开始，我标记一下我是在阮一峰老师的书中学习的，非常棒的一本书，习惯看书学习的同学可以自己去买一本来看，链接之后就有购买途径了。
+简介
+ES6是ECMAScript 6.0的简称，也是javascript的下一代标准，尽管这套标准目前还没有在所有的浏览器上完整实现，所以目前而">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ES6入门</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-31" class="post-meta__date date">2016-07-31</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>我是在学习react-native官网的时候说开发react-native需要用到ES6的时候才开始学的，一切都还是刚刚开始，我标记一下我是在<a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">阮一峰老师的书</a>中学习的，非常棒的一本书，习惯看书学习的同学可以自己去买一本来看，链接之后就有购买途径了。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+<p>ES6是ECMAScript 6.0的简称，也是javascript的下一代标准，尽管这套标准目前还没有在所有的浏览器上完整实现，所以目前而言web开发中还很少使用，但是React Native内置了对ES2015(也就是ES6)标准的支持，你可以放心使用而无需担心兼容性问题。</p>
+<h2 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h2><hr>
+<p>先看一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let a = 10;</span><br><span class="line">  var b = 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a // ReferenceError: a is not defined.</span><br><span class="line">b // 1</span><br></pre></td></tr></table></figure></p>
+<p>我们能看到注释，在代码快使用var和let声明两个变量，在代码块外调用，let声明的变量报错而var声明的会返回正确的值。这也能看出，let声明的变量只在它所在的代码块有效。</p>
+<p>因此我们可以使用let命令写for循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; arr.length; i++) &#123;&#125;</span><br><span class="line"></span><br><span class="line">console.log(i);</span><br><span class="line">//ReferenceError: i is not defined</span><br></pre></td></tr></table></figure></p>
+<p>可以看到在循环体外log是会报错的。再看下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 10</span><br></pre></td></tr></table></figure></p>
+<p>for循环的i是var声明的，在全局范围内有效，每一次循环都会覆盖旧的值，因此最后输出的是最后一轮的i值。而使用let的话，最后输出的是6，那为什么会是6呢！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line">for (let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] = function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[6](); // 6</span><br></pre></td></tr></table></figure></p>
+<p>因为在每一次for循环中，每一次的i都只会在该次循环中存在并且有效，而循环结束到下一次循环开始，又会进行let i = i + 1的操作，从而跳出该次循环，但是同时又重新为i赋了一个值。导致最后的数组a[]方法在每一次循环生成不同的function。</p>
+<pre><code>不管是用let还是var声明，变量都要在声明后使用，否则就会报错。
+</code></pre><h3 id="暂时性死区（temporal-dead-zone，简称TDZ）"><a href="#暂时性死区（temporal-dead-zone，简称TDZ）" class="headerlink" title="暂时性死区（temporal dead zone，简称TDZ）"></a>暂时性死区（temporal dead zone，简称TDZ）</h3><p>如果在局部代码块中使用<strong>let</strong>和<strong>const</strong>命令，这些区块就会形成封闭作用域，在变量声明之前使用这些变量就会报错，尽管可能在代码块外面已经用var声明过同名变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var tmp = 123;</span><br><span class="line"></span><br><span class="line">if (true) &#123;</span><br><span class="line">  tmp = &apos;abc&apos;; // ReferenceError</span><br><span class="line">  let tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">  // TDZ开始</span><br><span class="line">  tmp = &apos;abc&apos;; // ReferenceError</span><br><span class="line">  console.log(tmp); // ReferenceError</span><br><span class="line"></span><br><span class="line">  let tmp; // TDZ结束</span><br><span class="line">  console.log(tmp); // undefined</span><br><span class="line"></span><br><span class="line">  tmp = 123;</span><br><span class="line">  console.log(tmp); // 123</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有些死区比较难以被发现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function bar(x = y, y = 2) &#123;</span><br><span class="line">  return [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar(); // 报错</span><br></pre></td></tr></table></figure></p>
+<p>因为在参数里面声明的x直接就调用y，而y此时还没被声明。因此这时候调用bar()就会报错，其实我写这个例子主要是不明白为什么在调用bar的时候不用带参，我写java的时候如果函数有参的话调用的时候也要带参，不管，我先标记一下！！！<br>反正不管怎样就是要先声明在使用变量就对了。</p>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var tmp = new Date();</span><br><span class="line"></span><br><span class="line">function f() &#123;</span><br><span class="line">  console.log(tmp);</span><br><span class="line">  if (false) &#123;</span><br><span class="line">    var tmp = &quot;hello world&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(); // undefined</span><br></pre></td></tr></table></figure>
+<p>上面代码执行之后会输出undefined，因为变量提升，导致内层tmp覆盖外层的tmp。但是这里我的重心是这段代码是不是写错了，if()的false参数怎样传进去，如果不传进去怎么执行里面的函数，好奇怪，又得标记一下了。</p>
+<p>第二种场景，用来计数的循环变量泄露为全局变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">for (var i = 0; i &lt; s.length; i++) &#123;</span><br><span class="line">  console.log(s[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(i); // 5</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，变量i只用来控制循环，但是循环结束后，它并没有消失，泄露成了全局变量。</p>
+<h3 id="ES6的块状作用域"><a href="#ES6的块状作用域" class="headerlink" title="ES6的块状作用域"></a>ES6的块状作用域</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> n = <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> n = <span class="number">10</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(n); <span class="comment">// 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码最后输出5，表示let声明的变量外层代码块不受内层代码块的影响，但是使用var定义变量n，也就是把两个let都变成var，最后输出10.上面同一段代码我尝试了四种情况</p>
+<blockquote>
+<p>用let声明第一个n，用let声明第二个n，输出的是：5<br>用let声明第一个n，用var声明第二个n，输出的是：无任何输出结果<br>用var声明第一个n，用var声明第二个n，输出的是：10<br>用var声明第一个n，用let声明第二个n，输出的是：5<br>可以看出不允许将let放在比var等级更高的代码层，不然会报错。<br>
+至于ES允许的块级作用域任意嵌套，**{{{{{let insane = 'Hello World'}}}}};**，我觉得没什么用处，但是可以知道一些，这时候外层作用域无法读取内层作用域的变量。
+不过也正是块级作用域的出现，就可以逐渐淘汰掉现在被广泛使用的匿名函数(IIFE)不再必要了
+undefined
+
+块级作用域与函数声明
+在ES6中，允许在块级作用域中声明函数，而这在ES5之前是不被允许的，规定函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。
+undefined
+
+很重要的一点是，ES6规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。
+undefined
+
+上面代码中，会得到“i am inside!”，因为在if内声明的函数f会被提升到函数头部。
+> * 允许在块级作用域内声明函数。
+> * 函数声明类似于var，即会提升到全局作用域或函数作用域的头部
+> * 同时，函数声明还会提升到所在的块级作用域的头部
+
+注意：上面三条规则只对ES6的浏览器实现有效，其他环境的实现不用遵守，还是将块级作用域的函数声明当作let处理。
+
+前面的代码在老版本的chrome环境在运行时会报错的。
+因为在老版的chrome环境下被编译的时候会被解释成。
+undefined
+
+因为考虑到环境导致的行为差异太大，应避免在块级作用域内声明函数。加入确实需要也应该写成函数表达式，而不是声明语句。
+undefined
+
+另外，还有一个需要注意的地方。ES6的块级作用域允许声明函数的规则，只在使用大括号的情况下成立，如果没有使用大括号，就会报错。
+undefined
+
+</p>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p>const声明一个只读的常量。一旦声明，常量的值就不能改变。哈哈，记忆的时候就可以将这个词和我们java的final一起记忆了。<br>const声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo;</span><br><span class="line"><span class="comment">// SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>上面的代码表示，对于const一旦表明变量，就必修立即初始化，不能留到以后赋值，不然就会报错。</p>
+<blockquote>
+<ul>
+<li>const的作用域与let命令相同：只在声明所在的块级作用域内有效。</li>
+<li>const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。</li>
+<li>const声明的常量，也与let一样不可重复声明。</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line">foo.prop = <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line">foo.prop</span><br><span class="line"><span class="comment">// 123</span></span><br><span class="line"></span><br><span class="line">foo = &#123;&#125;; <span class="comment">// TypeError: "foo" is read-only</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，常量foo存储的是一个地址，这个地址指向一个对象。不可变的这个地址，而最后一句代码foo = {}相当于把foo指向另一个地址，于是就会报错，但那时对象本身是可变的，所以可以为期添加新属性。<br>下面是另一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = [];</span><br><span class="line">a.push(<span class="string">'Hello'</span>); <span class="comment">// 可执行</span></span><br><span class="line">a.length = <span class="number">0</span>;    <span class="comment">// 可执行</span></span><br><span class="line">a = [<span class="string">'Dave'</span>];    <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，常量a是一个数组，这个数组本身是可以写的，但是如果将另一个数组赋值给a，就会报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 常规模式时，下面一行不起作用；</span></span><br><span class="line"><span class="comment">// 严格模式时，该行会报错</span></span><br><span class="line">foo.prop = <span class="number">123</span>;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中使用了一个<strong>Object.freeze</strong>方法，将常量foo指向一个冻结的对象，所以添加新属性不起作用，严格模式下还会报错。</p>
+<p>除了将对象本身冻结，对象的属性也可以被冻结，虽然我不知福冻结的用法在什么情况下会被用到。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> constantize = (obj) =&gt; &#123;</span><br><span class="line">  <span class="built_in">Object</span>.freeze(obj);</span><br><span class="line">  <span class="built_in">Object</span>.keys(obj).forEach( (key, value) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</span><br><span class="line">      constantize( obj[key] );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>扩展</strong>：ES5只有两种声明变量的方法：var命令和function，命令。ES6除了添加let和const命令之外，还有其他声明变量的方法：import和class命令，而这些也是我要写react-native需要用到的，因此ES6一共会有6中声明变量的方法。</p>
+<h3 id="全局对象的属性"><a href="#全局对象的属性" class="headerlink" title="全局对象的属性"></a>全局对象的属性</h3><p>全局对象是最顶层的对象，在浏览器环境指的是window对象，在nodejs中指的是global对象。ES5之中，全局对象的属性和全局变量是等价的,就像下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.a = <span class="number">1</span>;</span><br><span class="line">a <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">window</span>.a <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，全局对象的属性赋值和全局变量的赋值，被看做事同一件事（对于Node来说，这一条只对REPL环境适用，模块环境之中，全局变量必须显式声明成global对象的属性。这句不太明白，还是先标记一下以后明白之后再改正！！）</p>
+<p>到了ES6之后就开始改变了，为了保持兼容性，var命令和function命令声明发的全局变量，依旧是全局变量的属性，另外有let命令，const命令class命令声明的全局变量，不属于全局变量的属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 如果在Node的REPL环境，可以写成global.a</span></span><br><span class="line"><span class="comment">// 或者采用通用方法，写成this.a</span></span><br><span class="line"><span class="built_in">window</span>.a <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">window</span>.b <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码中，全局变量a由var命令声明，所以他是全局变量的属性；而全局变量b由let声明，所以它不是全局变量的属性，返回undefined(未定义)。</p>
+<p>终于看完这一章了，好多知识点啊！！</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

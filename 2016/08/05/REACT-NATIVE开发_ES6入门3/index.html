@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ES入门3 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="Module因为项目进度比较赶，所以我要先跳着学了，现在直接跳到Module这一章来学。首先直接看标题就知道是围绕模块化，因为ES6的class只是面向对象的语法糖，但是没有解决模块化问题。
+ES6的模块的思想，是尽量的静态化，使得编译的时候就能确定模块的依赖关系，以及输入和输出的变量。CommonJS和AMD模块，都只能在运行时确定这些东西。比如，CommonJS模块就是对象，输入时必须查找对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES入门3 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/08/05/REACT-NATIVE开发_ES6入门3/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="Module因为项目进度比较赶，所以我要先跳着学了，现在直接跳到Module这一章来学。首先直接看标题就知道是围绕模块化，因为ES6的class只是面向对象的语法糖，但是没有解决模块化问题。
+ES6的模块的思想，是尽量的静态化，使得编译的时候就能确定模块的依赖关系，以及输入和输出的变量。CommonJS和AMD模块，都只能在运行时确定这些东西。比如，CommonJS模块就是对象，输入时必须查找对象">
+<meta property="og:updated_time" content="2016-08-06T02:46:26.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES入门3 | zues blog">
+<meta name="twitter:description" content="Module因为项目进度比较赶，所以我要先跳着学了，现在直接跳到Module这一章来学。首先直接看标题就知道是围绕模块化，因为ES6的class只是面向对象的语法糖，但是没有解决模块化问题。
+ES6的模块的思想，是尽量的静态化，使得编译的时候就能确定模块的依赖关系，以及输入和输出的变量。CommonJS和AMD模块，都只能在运行时确定这些东西。比如，CommonJS模块就是对象，输入时必须查找对象">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ES入门3</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-08-05" class="post-meta__date date">2016-08-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h1><p>因为项目进度比较赶，所以我要先跳着学了，现在直接跳到Module这一章来学。<br>首先直接看标题就知道是围绕模块化，因为ES6的class只是面向对象的语法糖，但是没有解决模块化问题。</p>
+<p>ES6的模块的思想，是尽量的静态化，使得编译的时候就能确定模块的依赖关系，以及输入和输出的变量。CommonJS和AMD模块，都只能在运行时确定这些东西。比如，CommonJS模块就是对象，输入时必须查找对象属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonJS模块</span></span><br><span class="line"><span class="keyword">let</span> &#123; stat, exists, readFile &#125; = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">let</span> _fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">let</span> stat = _fs.stat, exists = _fs.exists, readfile = _fs.readfile;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码实质是整体加载fs模块（也就是加载fs的所有方法），生成一个对象_fs,然后再从这个对象上面读取3个发那个发，这种加载的方式成为“运行时加载”，因为只有运行时才能得到这个对象。</p>
+<p><strong>ES6</strong>不是对象，而是通过<strong>export</strong>命令显示指定输出的代码，输入时也采用静态命令的形式。(其实我不明白这句话的意思)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6模块</span></span><br><span class="line"><span class="keyword">import</span> &#123; stat, exists, readFile &#125; <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码是从fs模块加载3个方法，其他方法不加载。这种加载方式称为“编译时加载”，也就是在编译的时候就会完成加载，效率要比CommonJS的要高。当然这样导致没法引用ES6模块本身，因为它不是对象，从这里可以理解到ES6不可以引用对象。</p>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><hr>
+<p>ES6的模块自动采用严格模式，不管你是否在模块头部加上“use strict”;。<br>严格模式有以下限制：</p>
+<blockquote>
+<p>变量必须声明后再使用<br>函数的参数不能有同名属性，否则报错<br>不能使用with语句<br>不能对只读属性赋值，否则报错<br>不能使用前缀0表示八进制数，否则报错<br>不能删除不可删除的属性，否则报错<br>不能删除变量delete prop，会报错，只能删除属性delete global[prop]<br>eval不会在它的外层作用域引入变量<br>eval和arguments不能被重新赋值<br>arguments不会自动反映函数参数的变化<br>不能使用arguments.callee<br>不能使用arguments.caller<br>禁止this指向全局对象<br>不能使用fn.caller和fn.arguments获取函数调用的堆栈<br>增加了保留字（比如protected、static和interface）</p>
+</blockquote>
+<h2 id="export命令"><a href="#export命令" class="headerlink" title="export命令"></a>export命令</h2><hr>
+<pre><code>模块功能主要由两个命令组成：**export和import**。&apos;export&apos;命令用于规定模块的对外接口，&apos;import&apos;用于输入其他模块提供的功能。
+</code></pre><p>一个模块就是一个独立的文件。该文件内部的所有变量，外部都无法获取。如果你希望外部能够读取模块内部的某个变量，就要使用export关键字暑输出该变量。下面代码输出了三个变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="string">``</span><span class="string">`	</span><br><span class="line">另一种写法(推荐)：</span><br><span class="line">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>第二种方法应该被优先考虑使用，因为这样就可以在脚本的底部一看就清楚输出了哪些变量。</p>
+<p>通常情况下，export输出的变量就是本来的名字，但是可以使用as关键字重命名。另外export还可以输出函数或者是类（class）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">v1</span>(<span class="params"></span>) </span>&#123; ... &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">v2</span>(<span class="params"></span>) </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line">  v1 <span class="keyword">as</span> streamV1,</span><br><span class="line">  v2 <span class="keyword">as</span> streamV2,</span><br><span class="line">  v2 <span class="keyword">as</span> streamLatestVersion</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码使用了as关键字，重命名了函数v1和v2的对外接口，重命名之后，v2可以用不同的名字输出两次，可是我不知道输出两次的用处是什么。</p>
+<p><strong>export命令规定的是对外的接口，必须与模块内部的变量建立一一对应的关系。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">export</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> m;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确写法一</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确写法二</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;m&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确写法三</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;n <span class="keyword">as</span> m&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> f;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;f&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>第一种写法直接输出1，第二种写法通过变量m，还是直接输出1，1只是一个值，不是接口。因此正确的写法应该是下面三种。</p>
+<p>不过第三种写法我觉得和第二种差不多，但是确不会报错，好奇怪。其实质都是规定了对外的接口m。其他脚本可以通过这个借口取到值1.</p>
+<p>同样，参考最后三种可以知道function和class的输出也遵循这样的写法。另外export语句输出的接口，与其对应的值是动态绑定的关系。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> foo = <span class="string">'bar'</span>;</span><br><span class="line">setTimeout(() =&gt; foo = <span class="string">'baz'</span>, <span class="number">500</span>);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码输出foo变量，值为bar，但是500毫秒之后就会变成baz。export语句输出的接口，与其对应的值是动态绑定关系，即通过该接口可以取到模块内部实时的值。</p>
+<p>export只能处于模块顶层任何位置，但是不能处于块级作用域内，也就是括号()和大括号{}内都不可以。</p>
+<h2 id="import命令"><a href="#import命令" class="headerlink" title="import命令"></a>import命令</h2><hr>
+<p>在使用export命令定义好模块的对外接口之后，其他的js文件就可以通过import命令加载对应的模块。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;firstName, lastName, year&#125; <span class="keyword">from</span> <span class="string">'./profile'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  element.textContent = firstName + <span class="string">' '</span> + lastName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码使用import命令，加载profile.js文件，并从中输入变量。import命令接受一个对象也就是{},里面指定要从其他模块导入的变量名，其变量名需要被导入的对外接口变量名相同。</p>
+<p>当然也可以用as来改写名字，如下面代码所示，另外，<strong>import命令</strong>具有提升效果，会提升到整个模块的头部，首先执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; lastName <span class="keyword">as</span> surname &#125; <span class="keyword">from</span> <span class="string">'./profile'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>下面的代码尽管import在使用的方法后面，但是不会报错，因为import会先被执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo();</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; foo &#125; <span class="keyword">from</span> <span class="string">'my_module'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如果在一个模块内，先输入后输出同一个模块，import可以和export语句写在一起。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123; es6 <span class="keyword">as</span> <span class="keyword">default</span> &#125; <span class="keyword">from</span> <span class="string">'./someModule'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">import</span> &#123; es6 &#125; <span class="keyword">from</span> <span class="string">'./someModule'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> es6;</span><br></pre></td></tr></table></figure></p>
+<p>但是不建议使用连在一行的写法，因为这样不利于阅读。<br>不过这里我有一个问题，那就是使用这样导出之后，对外接口的名字是什么？default还是es6？</p>
+<h2 id="模块整体加载"><a href="#模块整体加载" class="headerlink" title="模块整体加载"></a>模块整体加载</h2><p>和指定加载某个模块不一样，可以用（*）号指定一个对象，所有的输出值都加载在上面。</p>
+<p>假如现在有一个circle.js文件，它export两个方法area和circumstance。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">area</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * radius * radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">circumference</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span> * <span class="built_in">Math</span>.PI * radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后我们来加载这个模块到main.js：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; area, circumference &#125; <span class="keyword">from</span> <span class="string">'./circle'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆面积：'</span> + area(<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆周长：'</span> + circumference(<span class="number">14</span>));</span><br></pre></td></tr></table></figure></p>
+<p>然后我们也可以使用这一节介绍的方法将所有导出的函数加载进去，写法参考下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> circle <span class="keyword">from</span> <span class="string">'./circle'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆面积：'</span> + circle.area(<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆周长：'</span> + circle.circumference(<span class="number">14</span>));</span><br></pre></td></tr></table></figure></p>
+<p>这里我还有一个疑问，那就是为什么不直接import  * from ‘./circle’呢，当然这里我可以理解为实例化了circle对象来调用circle.js里面的方法。</p>
+<h2 id="export-default命令"><a href="#export-default命令" class="headerlink" title="export default命令"></a>export default命令</h2><p>紧张，我刚刚还在疑问这个命令的用法，没想到就开始介绍到了。</p>
+<p>从前面的例子可以看出，使用import命令的时候，用户需要知道所要加载的变量名或函数名，否则无法加载。但是，用户肯定希望快速上手，未必愿意阅读文档，去了解模块有哪些属性和方法。</p>
+<p>为了给用户方便，使用户不用阅读就能加载模块，于是export就应运而生了，为模块指定默认输出，也就是不需要明显生成输出接口就默认需要输出，这对于我来联想java就可以想象到java的接口的应用，也是有一些使用abstract抽象化的接口是必须要实现的，我觉得差不多，仅仅是觉得而已。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>假设上面的代码是模块文件export-default.js.它输出的是一个函数。其他模块加载这个模块的时候，import命令可以为该匿名函数指定任意名字。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br><span class="line">customName(); <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是，上面的import命令可以用任意名称指向export-default.js模块输出的方法，而这时候就就不需要知道原模块输出的函数名，并且此时不需要使用<strong>大括号</strong>。</p>
+<p>‘export default’命令用在匿名函数前，也是可以得。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者写成</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> foo;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码中，使用default输出之后，在模块的外部是无效的，加载的时候视同匿名函数加载。</p>
+<p>下面通过代码比较一下默认的输出和正常情况下的输出：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">crc32</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输入</span></span><br><span class="line"><span class="keyword">import</span> crc32 <span class="keyword">from</span> <span class="string">'crc32'</span>;</span><br><span class="line"><span class="comment">//--------------》》此处是分界线》》----------------</span></span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">crc32</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 输入</span></span><br><span class="line"><span class="keyword">import</span> &#123;crc32&#125; <span class="keyword">from</span> <span class="string">'crc32'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>和下午需要讲到的一样，此时我也已经想到一件事，那就是，那假如一个模块里面如果有两个默认输出那该怎么办，很好，如果此时你想到这个的时候就不用顾虑了，因为ES6中，一个模块只允许有一个默认的输出。</p>
+<p>本质上，export default就是输出一个叫做default的变量或方法，然后系统允许你为它取任意名字。所以，下面的写法也是有效的，不过繁琐了一点，但是理解起来会比较容易一点。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// modules.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;add <span class="keyword">as</span> <span class="keyword">default</span>&#125;;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="comment">// export default add;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// app.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">default</span> <span class="keyword">as</span> xxx &#125; <span class="keyword">from</span> <span class="string">'modules'</span>;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="comment">// import xxx from 'modules';</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码有一处地方值得被发现，那就是’export default add;’，根据注释，很明显知道这句代码的含义是将函数（有时候是变量）add的值赋给变量default。因此我们看下一段的代码，看上去像是正确的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+<p>但是由于default已经赋值过了，这时候再赋值就重复了，因此会报错。</p>
+<p>如果想在一条import语句中，同时输出默认方法和其他变量，就可以写成下面这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> customName, &#123; otherMethod &#125; <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>哈哈，react-native的第一句就是和这句差不多，当时一直不理解为什么第一个react会没有大括号，现在明白了。</p>
+<p>如果需要输出默认的值，只需将值跟跟在export default之后即可，这里可以相信到一些应用场景，假如某一段任务实现之后，返回true或者是其他的默认值，想想就觉得蛮有作用的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="number">42</span>;</span><br></pre></td></tr></table></figure></p>
+<p>前面也已经提到过一点，export可以输出一个类class，export default也可以实现。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MyClass.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> MyClass <span class="keyword">from</span> <span class="string">'MyClass'</span>;</span><br><span class="line"><span class="keyword">let</span> o = <span class="keyword">new</span> MyClass();</span><br></pre></td></tr></table></figure></p>
+<p>最后是一个例子，输入jQuery，不过我不怎么懂那个’$’符号是什么意思，我自己的理解就是仅仅是一个custom name，仅仅而已，不管，先标记一下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'jquery'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>最后，真的是最后，我还有一个疑问，就是加入使用’export *’来导出所有输出的时候，那么是不是默认的也输出了呢！假如输出了，那么输出之后的接口名字是什么？</p>
+<h2 id="模块的继承"><a href="#模块的继承" class="headerlink" title="模块的继承"></a>模块的继承</h2><p>模块之间可以继承。假设有一个circleplus模块，继承了circle模块：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// circleplus.js</span></span><br><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">'circle'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> e = <span class="number">2.71828182846</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.exp(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>竟然那么快又看到答案了，不过我上面的那个问题后半段问得有点傻逼，加入输出之后对应的接口名字就在import了改模块之后自定义了啊！天哪，又犯老糊涂了。</p>
+<p>不过上面这段代码中的’export <em>‘,表示输出circle也就是父类的所有属性和方法，但是’export </em>‘会忽略circle模块的default方法。然后，上面的代码又输出了circleplue自定义的e变量和默认方法。</p>
+<p>对应需要加载上面的模块写法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> math <span class="keyword">from</span> <span class="string">'circleplus'</span>;</span><br><span class="line"><span class="keyword">import</span> exp <span class="keyword">from</span> <span class="string">'circleplus'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(exp(math.e));</span><br></pre></td></tr></table></figure></p>
+<p>结合前面写的东西就可以知道上面代码中的’import exp’表示，将circleplus模块的默认方法加载为exp方法。</p>
+<p>剩下还有ES6模块加载的实质，还有好多好多。暂时不写先，想睡觉了。</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

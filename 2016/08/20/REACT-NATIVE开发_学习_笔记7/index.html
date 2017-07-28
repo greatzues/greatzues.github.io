@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      react-native学习笔记7 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="DrawerLayoutAndroid使用这个是抽屉式布局，像我这种熟练安卓的人自然就知道所有基本的属性了。不说太多，亮代码：
+DrawerLayout.js12345678910111213141516171819202122232425import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;import &amp;#123; View,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native学习笔记7 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/08/20/REACT-NATIVE开发_学习_笔记7/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="DrawerLayoutAndroid使用这个是抽屉式布局，像我这种熟练安卓的人自然就知道所有基本的属性了。不说太多，亮代码：
+DrawerLayout.js12345678910111213141516171819202122232425import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;import &amp;#123; View,">
+<meta property="og:image" content="http://zuesblog.xyz/../img/drawer.png">
+<meta property="og:image" content="http://zuesblog.xyz/../img/drawer2.png">
+<meta property="og:updated_time" content="2016-08-20T14:31:01.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native学习笔记7 | zues blog">
+<meta name="twitter:description" content="DrawerLayoutAndroid使用这个是抽屉式布局，像我这种熟练安卓的人自然就知道所有基本的属性了。不说太多，亮代码：
+DrawerLayout.js12345678910111213141516171819202122232425import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;import &amp;#123; View,">
+<meta name="twitter:image" content="http://zuesblog.xyz/../img/drawer.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">react-native学习笔记7</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-08-20" class="post-meta__date date">2016-08-20</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/react/">react</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/react-native/">react-native</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="DrawerLayoutAndroid使用"><a href="#DrawerLayoutAndroid使用" class="headerlink" title="DrawerLayoutAndroid使用"></a>DrawerLayoutAndroid使用</h2><p>这个是抽屉式布局，像我这种熟练安卓的人自然就知道所有基本的属性了。不说太多，亮代码：</p>
+<p>DrawerLayout.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, DrawerLayoutAndroid &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">export default class DrawerLayoutDemo extends Component &#123;</span><br><span class="line">	render()&#123;</span><br><span class="line">		var navigationView = (</span><br><span class="line">			&lt;View style = &#123;&#123;flex:1,backgroundColor:&apos;#ff0&apos;&#125;&#125;&gt;</span><br><span class="line">				&lt;Text style = &#123;&#123;margin: 10, fontSize: 15, textAlign: &apos;left&apos;&#125;&#125;&gt;我是抽屉&lt;/Text&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line"></span><br><span class="line">		return (</span><br><span class="line">			&lt;DrawerLayoutAndroid</span><br><span class="line">				drawerWidth = &#123;100&#125;</span><br><span class="line">				drawerPosition = &#123;DrawerLayoutAndroid.positions.Right&#125;</span><br><span class="line">				renderNavigationView = &#123;() =&gt; navigationView&#125;&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;View style = &#123;&#123;flex:1,alignItems: &apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">					&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;Hello&lt;/Text&gt;</span><br><span class="line">					&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;React native cool world!&lt;/Text&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">			&lt;/DrawerLayoutAndroid&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>drawerWidth是抽屉拉开之后展开的宽度，这里的100是比较小的，反正设计需要多大自己改就可以了。<br>drawerPosition是抽屉的位置，默认是left，这里我设置成右边，因此手势需要向左划才可以拉出抽屉。</p>
+</blockquote>
+<p>然后需要注意的是在使用这个已经封装好的组件的话需要单独使用，并且展示内容要在<code>&lt;DrawerLayoutAndroid&gt;&lt;/DrawerLayoutAndroid&gt;</code>。什么意思呢？就是我刚刚在我已经写过的图片选择组件下直接填加这个抽屉组件，发现拉出抽屉有效的距离仅仅是含有下面这段代码的地方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;View style = &#123;&#123;flex:1,alignItems: &apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">	&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;Hello&lt;/Text&gt;</span><br><span class="line">	&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;React native cool world!&lt;/Text&gt;</span><br><span class="line">&lt;/View&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>而一旦离开这段代码的区域，就不能滑动出来抽屉，而且抽屉也仅仅是一部分的，总的来说就像qq的列表那样的效果那样，只在一部分地方可以滑动出抽屉</p>
+<p>如果强行给DrawerLayoutAndroid添加height，想下面这样的话就会造成加入抽屉后原来的组件内容被覆盖，假设原来的组件是有按钮的话，按钮的点击效果就会无效。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;DrawerLayoutAndroid</span><br><span class="line">				style = &#123;&#123;height:200&#125;&#125;</span><br><span class="line">				drawerWidth = &#123;100&#125;</span><br><span class="line">				drawerPosition = &#123;DrawerLayoutAndroid.positions.Right&#125;</span><br><span class="line">				renderNavigationView = &#123;() =&gt; navigationView&#125;&gt;</span><br><span class="line">				</span><br><span class="line">				...</span><br><span class="line">&lt;DrawerLayoutAndroid&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="../img/drawer.png" alt="抽屉屏蔽掉图片选择器的点击效果"></p>
+<p>因此建议初学的我如果需要写出想安卓那样高度铺满整个屏幕的抽屉的话，就需要在<code>&lt;DrawerLayoutAndroid&gt;&lt;/DrawerLayoutAndroid&gt;</code>里面编写了，省时便宜又实惠。就像下面的代码,就可以使用图片选择器的按钮了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; View, Text, StyleSheet, DrawerLayoutAndroid &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">import ImageDemo from &apos;./Image&apos;</span><br><span class="line"></span><br><span class="line">var imgs = [</span><br><span class="line">  &apos;http://misc.360buyimg.com/lib/img/e/logo-201305.png&apos;,</span><br><span class="line">  &apos;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png&apos;,</span><br><span class="line">  &apos;http://www.csdn.net/css/logo.png&apos;  </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">export default class DrawerLayoutDemo extends Component &#123;</span><br><span class="line">	render()&#123;</span><br><span class="line">		var navigationView = (</span><br><span class="line">			&lt;View style = &#123;&#123;flex:1,backgroundColor:&apos;#fff&apos;&#125;&#125;&gt;</span><br><span class="line">				&lt;Text style = &#123;&#123;margin: 10, fontSize: 15, textAlign: &apos;left&apos;&#125;&#125;&gt;我是抽屉&lt;/Text&gt;</span><br><span class="line">			&lt;/View&gt;</span><br><span class="line">		);</span><br><span class="line"></span><br><span class="line">		return (</span><br><span class="line">			&lt;DrawerLayoutAndroid</span><br><span class="line">				drawerWidth = &#123;100&#125;</span><br><span class="line">				drawerPosition = &#123;DrawerLayoutAndroid.positions.Right&#125;</span><br><span class="line">				renderNavigationView = &#123;() =&gt; navigationView&#125;&gt;</span><br><span class="line"></span><br><span class="line">				&lt;View style = &#123;&#123;flex:1,alignItems: &apos;center&apos;&#125;&#125;&gt;</span><br><span class="line">					&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;Hello&lt;/Text&gt;</span><br><span class="line">					&lt;Text style = &#123;&#123;margin:10,fontSize:15,textAlign: &apos;right&apos;&#125;&#125;&gt;我是抽屉1&lt;/Text&gt;</span><br><span class="line">				&lt;/View&gt;</span><br><span class="line">				</span><br><span class="line">				&lt;ImageDemo imgs = &#123;imgs&#125;&gt;&lt;/ImageDemo&gt;</span><br><span class="line">			&lt;/DrawerLayoutAndroid&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行起来是这样的：<br><img src="../img/drawer2.png" alt="在drawerlayoutandroid里面编写视图"></p>
+<p>刚刚说到可以写出像qq那样的抽屉列表，感觉真的好像用这个方法写简单多了，不过我试过，在一个页面写上两个封装好的上面的组件是不行的，同时直接在上面的组件内写多个<drawerlayoutandroid></drawerlayoutandroid>也是运行出来是一片空白。</p>
+<p>以后能力强了之后再尝试一下。</p>
+<h2 id="ViewPager组件"><a href="#ViewPager组件" class="headerlink" title="ViewPager组件"></a>ViewPager组件</h2><hr>
+<p>基本属性：</p>
+<blockquote>
+<ul>
+<li>initialPage 这是初始选中页的下标</li>
+<li>onPageScroll 页面滚动的回调函数，不管是动画还是用户在页面滑动/拖拽都会执行，回调参数中的<code>event.nativeEvent</code>对象会包含这些数据：<code>position</code>（位置）是一个数字，而 <code>offset</code>（偏移量）是一个在[0,1)大于等于0小于1之间的范围，很明显就是页面当前切换的状态了</li>
+<li>onPageScrollStateChanged  idle(不动) dragging(拖拽) settling(停靠)</li>
+<li>onPageSelected 这个回调会在页面切换完成之后（当用户在页面滑动）调用回调函数中的event.nativeEvent对象返回：position</li>
+<li>onPageEnabled 滚动功能的开启与否，true表示开启，默认是true</li>
+</ul>
+</blockquote>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

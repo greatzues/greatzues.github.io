@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ANDROID开发_安卓shape的使用 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="Shape可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。
+如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANDROID开发_安卓shape的使用 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/04/10/ANDROID开发_安卓shape的使用/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="Shape可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。
+如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示">
+<meta property="og:image" content="http://zuesblog.xyz/./img/layer.png">
+<meta property="og:updated_time" content="2017-07-28T05:19:32.193Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ANDROID开发_安卓shape的使用 | zues blog">
+<meta name="twitter:description" content="Shape可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。
+如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示">
+<meta name="twitter:image" content="http://zuesblog.xyz/./img/layer.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ANDROID开发_安卓shape的使用</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-10" class="post-meta__date date">2016-04-10</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/android/">android</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/android入门/">android入门</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="Shape"><a href="#Shape" class="headerlink" title="Shape"></a>Shape</h2><p>可以定义xml的几何形状，在代码中可以使用Android:background=”@drawable/文件的名称”来使用。</p>
+<p>如果你想做一个圆形的图片，在安卓中除了可以让美工的妹子帮忙做之外iain，还可以自己用代码自己实现原型图片，这个就是Shape的用法了<br>在shape中有4个主要的属性，分别是rectagle代表矩形，oval代表椭圆，line代表水平直线，ring代表环形，代码显示<shape>  android:shape=[“rectangle” | “oval” | “line” | “ring”]</shape></p>
+<p>另外Shape子节点的常用属性：<br>1，<gradient>  渐变</gradient></p>
+<blockquote>
+<ul>
+<li>android:startColor  起始颜色</li>
+<li>android:endColor  结束颜色            </li>
+<li>android:angle  渐变角度，0从上到下，90表示从左到右，数值为45的整数倍默认为0；</li>
+<li>android:type  渐变的样式 liner线性渐变 radial环形渐变 sweep</li>
+</ul>
+</blockquote>
+<p>2,<solid>  填充</solid></p>
+<blockquote>
+<ul>
+<li>android:color  填充的颜色</li>
+</ul>
+</blockquote>
+<p>3,<stroke> 描边</stroke></p>
+<blockquote>
+<ul>
+<li>android:width 描边的宽度</li>
+<li>android:color 描边的颜色</li>
+<li>android:dashWidth 表示’-‘横线的宽度</li>
+<li>android:dashGap 表示’-‘横线之间的距离</li>
+</ul>
+</blockquote>
+<p>4,<corners> 圆角</corners></p>
+<blockquote>
+<ul>
+<li>android:radius  圆角的半径 值越大角越圆</li>
+<li>android:topRightRadius  右上圆角半径</li>
+<li>android:bottomLeftRadius 右下圆角角半径</li>
+<li>android:topLeftRadius 左上圆角半径</li>
+<li>android:bottomRightRadius 左下圆角半径</li>
+</ul>
+</blockquote>
+<p>5，<padding>填充</padding></p>
+<blockquote>
+<ul>
+<li>android:bottom=”1.0dip” 底部填充</li>
+<li>android:left=”1.0dip” 左边填充</li>
+<li>android:right=”1.0dip” 右边填充</li>
+<li>android:top=”0.0dip” 上面填充</li>
+</ul>
+</blockquote>
+<p>关于如何使用请看下文</p>
+<h2 id="Selector的应用场景"><a href="#Selector的应用场景" class="headerlink" title="Selector的应用场景"></a>Selector的应用场景</h2><p>我们经常会需要在用户点击某个按钮或者图片按钮之后图片改变颜色表示响应操作，从而和用户进行交互。</p>
+<h2 id="Selector的用法"><a href="#Selector的用法" class="headerlink" title="Selector的用法"></a>Selector的用法</h2><p>一，selector的四大属性</p>
+<blockquote>
+<ul>
+<li>android:state_selected 是选中</li>
+<li>android:state_focused 是获得焦点</li>
+<li>android:state_pressed 是点击</li>
+<li>android:state_enabled 是设置是否响应事件,指所有事件</li>
+<li>android:state_window_focused 默认时的背景图片</li>
+</ul>
+</blockquote>
+<p>xml demo如下,测试的时候自己用不同颜色的图片，这样才能看出效果<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">selector</span> <span class="attr">xmlns:Android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- 默认时的背景图片--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span> <span class="attr">Android:drawable</span>=<span class="string">"@drawable/pic1"</span> /&gt;</span>        </span><br><span class="line"><span class="comment">&lt;!-- 没有焦点时的背景图片 --&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_window_focused</span>=<span class="string">"false"</span>        </span><br><span class="line">   <span class="attr">android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="comment">&lt;!-- 非触摸模式下获得焦点并单击时的背景图片 --&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">android:state_pressed</span>=<span class="string">"true"</span>     </span><br><span class="line">   <span class="attr">android:drawable</span>= "@<span class="attr">drawable</span>/<span class="attr">ic_launcher</span>"   /&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- 触摸模式下单击时的背景图片--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"false"</span>   </span><br><span class="line">   <span class="attr">Android:state_pressed</span>=<span class="string">"true"</span>     </span><br><span class="line">   <span class="attr">Android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>      </span><br><span class="line"><span class="comment">&lt;!--选中时的图片背景--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_selected</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="comment">&lt;!--获得焦点时的图片背景--&gt;</span>      </span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>   </span><br><span class="line">   <span class="attr">Android:state_focused</span>=<span class="string">"true"</span>   </span><br><span class="line">   <span class="attr">Android:drawable</span>=<span class="string">"@drawable/ic_launcher"</span>   /&gt;</span>       </span><br><span class="line"><span class="tag">&lt;/<span class="name">selector</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>然后接下来是在一个项目里面需要用到的一个功能</p>
+<h2 id="layer-list"><a href="#layer-list" class="headerlink" title="layer-list"></a>layer-list</h2><p>当你需要把多张图片按照顺序层层叠起来的时候就能用上了，这个可以用来制造倒影的效果，用的好的话会很酷炫的。</p>
+<p>xml代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"0dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/#44000000"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:bottom</span>=<span class="string">"2dp"</span> <span class="attr">android:left</span>=<span class="string">"2dp"</span> <span class="attr">android:right</span>=<span class="string">"2dp"</span> <span class="attr">android:top</span>=<span class="string">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span> <span class="attr">android:shape</span>=<span class="string">"oval"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/color_primary_red"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>效果<br><img src="./img/layer.png" alt="layer-list"></p>
+<p>值得参考的文章:<a href="http://keeganlee.me/post/android/20150830" target="_blank" rel="external">Keegan小钢</a></p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
