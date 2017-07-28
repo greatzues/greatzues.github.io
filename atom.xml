@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zuesblog.xyz/"/>
-  <updated>2017-07-28T03:36:31.617Z</updated>
+  <updated>2017-07-28T09:05:59.825Z</updated>
   <id>http://zuesblog.xyz/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://zuesblog.xyz/2017/07/28/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
     <id>http://zuesblog.xyz/2017/07/28/产品经理之路-PRD撰写-信息结构图/</id>
     <published>2017-07-28T00:54:11.000Z</published>
-    <updated>2017-07-28T03:36:31.617Z</updated>
+    <updated>2017-07-28T09:05:59.825Z</updated>
     
     <content type="html">&lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
 &lt;hr&gt;
@@ -29,12 +29,14 @@
 &lt;blockquote&gt;
 &lt;p&gt;信息结构关注的是单个页面的元素、信息来源、字段限制等，而非结构化的信息，不符合思维导图的特点，建议用表格来展示。&lt;br&gt;在PRD中，信息结构是供开发建数据库的参考依据，这里引用UML里面类的概念，一个类包含属性和方法，而信息就是类的属性，举个例子，博客系统有最主要的文章类、评论类，文章类包含的信息有：标题、作者、发布时间、摘要、正文、访问量等；评论类包含的信息有评论者头像、昵称、回复内容、邮件、QQ等。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;相比之下，我会更倾向于理解第二个，因为在java设计中也采用到了类的概念，按照对象来划分属性，这个分类觉得是最好的了。&lt;/p&gt;
+&lt;p&gt;相比之下，我会更倾向于理解第二个，因为在java设计中也采用到了类的概念,另外类似ANDROID开发中的model来理解信息结构对我来说更具优势，按照对象来划分属性，这个分类觉得是最好的了。&lt;/p&gt;
 &lt;h3 id=&quot;个人理解&quot;&gt;&lt;a href=&quot;#个人理解&quot; class=&quot;headerlink&quot; title=&quot;个人理解&quot;&gt;&lt;/a&gt;个人理解&lt;/h3&gt;&lt;p&gt;那我可不可以这样来理解，如果信息结构设计是供数据库设计人员而做，那么流程设计和功能设计则是为了开发者编码而做，交互设计和视觉设计是为用户体验师而做，这样总结下来一个信息结构图，就可以简单的理解为给不同角色提供不同的前期判断帮助而做，那么由于处理的对象不同功能就区分下来了！&lt;/p&gt;
 &lt;p&gt;依据上面的分析，做了自己博客的信息结构图（最好是使用表格来显示）：&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/vGVD-VFKVufj-94527.png&quot; alt=&quot;zues blog信息结构图&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;流程设计&quot;&gt;&lt;a href=&quot;#流程设计&quot; class=&quot;headerlink&quot; title=&quot;流程设计&quot;&gt;&lt;/a&gt;流程设计&lt;/h2&gt;&lt;p&gt;细致描述用户在使用产品的流程，同时也在时间的角度上规定各个部分之间的关系，如下图是我的博客操作流程，采用visio设计：&lt;/p&gt;
+&lt;h2 id=&quot;流程设计&quot;&gt;&lt;a href=&quot;#流程设计&quot; class=&quot;headerlink&quot; title=&quot;流程设计&quot;&gt;&lt;/a&gt;流程设计&lt;/h2&gt;&lt;p&gt;细致描述用户在使用产品的流程，同时也在时间的角度上规定各个部分之间的关系，如下图是我的博客操作流程，采用visio设计：&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/b20bb1456dadee37139795021249d327?fid=3375241367-250528-251413492401602&amp;amp;time=1501232400&amp;amp;rt=yt&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-dsWiXiqNp0qWGjTLa3s%2BBYwY4ZM%3D&amp;amp;expires=2h&amp;amp;chkv=0&amp;amp;chkbd=0&amp;amp;chkpc=&amp;amp;dp-logid=4840558639286715197&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=100&amp;amp;vuk=-&amp;amp;ft=video&quot; alt=&quot;博客流程图&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;功能设计&quot;&gt;&lt;a href=&quot;#功能设计&quot; class=&quot;headerlink&quot; title=&quot;功能设计&quot;&gt;&lt;/a&gt;功能设计&lt;/h2&gt;&lt;p&gt;在功能上，整个博客核心是展示文章，因此更多的是首页功能，显示文章列表，进而可以查看文章详情。&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/W7kL-lbQAbyQ-95290.png&quot; alt=&quot;zues blog 功能设计&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;由于是个人的博客，所以没有很负责的业务逻辑，只有寥寥几张粗暴的图，哈哈哈，产品小白第一次做难免非常粗糙，希望我有机会在项目中成长！&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -391,9 +393,9 @@
       <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
-    
       <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
+      <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
     
   </entry>
   
