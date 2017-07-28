@@ -55,50 +55,11 @@
   </entry>
   
   <entry>
-    <title>产品经理之路-PRD撰写-信息结构图</title>
-    <link href="http://zuesblog.xyz/2017/07/28/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF%E2%80%94%E2%80%94-PRD%E6%92%B0%E5%86%99-%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
-    <id>http://zuesblog.xyz/2017/07/28/产品经理之路——-PRD撰写-信息结构图/</id>
-    <published>2017-07-28T00:54:11.000Z</published>
-    <updated>2017-07-28T05:18:19.799Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;信息结构设计&quot;&gt;&lt;a href=&quot;#信息结构设计&quot; class=&quot;headerlink&quot; title=&quot;信息结构设计&quot;&gt;&lt;/a&gt;信息结构设计&lt;/h3&gt;&lt;p&gt;信息结构是产品呈现的信息层次（也有人把信息结构称为信息架构），而我认为主要是信息，因为大多数人都把它与功能结构图混在一起。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;在&lt;a href=&quot;https://www.zhihu.com/question/21252588&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎上整理了两个优质的答案&lt;/a&gt;，个人觉得醍醐灌顶很提神。&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;信息结构关注的是单个页面的元素、信息来源、字段限制等，而非结构化的信息，不符合思维导图的特点，建议用表格来展示。&lt;br&gt;在PRD中，信息结构是供开发建数据库的参考依据，这里引用UML里面类的概念，一个类包含属性和方法，而信息就是类的属性，举个例子，博客系统有最主要的文章类、评论类，文章类包含的信息有：标题、作者、发布时间、摘要、正文、访问量等；评论类包含的信息有评论者头像、昵称、回复内容、邮件、QQ等。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;相比之下，我会更倾向于理解第二个，因为在java设计中也采用到了类的概念，按照对象来划分属性，这个分类觉得是最好的了。&lt;/p&gt;
-&lt;h3 id=&quot;个人理解&quot;&gt;&lt;a href=&quot;#个人理解&quot; class=&quot;headerlink&quot; title=&quot;个人理解&quot;&gt;&lt;/a&gt;个人理解&lt;/h3&gt;&lt;p&gt;那我可不可以这样来理解，如果信息结构设计是供数据库设计人员而做，那么流程设计和功能设计则是为了开发者编码而做，交互设计和视觉设计是为用户体验师而做，这样总结下来一个信息结构图，就可以简单的理解为给不同角色提供不同的前期判断帮助而做，那么由于处理的对象不同功能就区分下来了！&lt;/p&gt;
-&lt;p&gt;依据上面的分析，做了自己博客的信息结构图（最好是使用表格来显示）：&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/vGVD-VFKVufj-94527.png&quot; alt=&quot;zues blog信息结构图&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;流程设计&quot;&gt;&lt;a href=&quot;#流程设计&quot; class=&quot;headerlink&quot; title=&quot;流程设计&quot;&gt;&lt;/a&gt;流程设计&lt;/h2&gt;&lt;p&gt;细致描述用户在使用产品的流程，同时也在时间的角度上规定各个部分之间的关系，如下图是我的博客操作流程，采用visio设计：&lt;/p&gt;
-&lt;h2 id=&quot;功能设计&quot;&gt;&lt;a href=&quot;#功能设计&quot; class=&quot;headerlink&quot; title=&quot;功能设计&quot;&gt;&lt;/a&gt;功能设计&lt;/h2&gt;&lt;p&gt;在功能上，整个博客核心是展示文章，因此更多的是首页功能，显示文章列表，进而可以查看文章详情。&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/W7kL-lbQAbyQ-95290.png&quot; alt=&quot;zues blog 功能设计&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
-&lt;hr&gt;
-
-    
-    </summary>
-    
-      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
-      <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记ios登录功能</title>
+    <title>IOS开发_记ios登录功能</title>
     <link href="http://zuesblog.xyz/2017/04/26/IOS%E5%BC%80%E5%8F%91_ios%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD/"/>
     <id>http://zuesblog.xyz/2017/04/26/IOS开发_ios登录功能/</id>
     <published>2017-04-26T05:30:56.000Z</published>
-    <updated>2017-04-26T08:03:10.266Z</updated>
+    <updated>2017-07-28T05:26:27.193Z</updated>
     
     <content type="html">&lt;p&gt;入门ios一个星期，开始写ios，对于Xcode有点懵逼，我要写一篇博客来理清楚整个流程的顺序，为后面的编写加印象&lt;/p&gt;
 &lt;h3 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h3&gt;&lt;hr&gt;
@@ -153,11 +114,11 @@
   </entry>
   
   <entry>
-    <title>Objective-C指针</title>
+    <title>IOS开发_Objective-C指针</title>
     <link href="http://zuesblog.xyz/2017/04/19/IOS%E5%BC%80%E5%8F%91_Objective-C%E6%8C%87%E9%92%88/"/>
     <id>http://zuesblog.xyz/2017/04/19/IOS开发_Objective-C指针/</id>
     <published>2017-04-19T09:10:38.000Z</published>
-    <updated>2017-04-19T09:58:47.062Z</updated>
+    <updated>2017-07-28T05:26:20.554Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Objective-C指针和property关键字&quot;&gt;&lt;a href=&quot;#Objective-C指针和property关键字&quot; class=&quot;headerlink&quot; title=&quot;Objective-C指针和property关键字&quot;&gt;&lt;/a&gt;Objective-C指针和property关键字&lt;/h2&gt;&lt;p&gt;在java中也有指针的说法，当然Objective-C中也有，指针的学习可以更好的分配内存。&lt;/p&gt;
 &lt;p&gt;这里是保存刚刚写的地图数据，我现在要自己看文档写一下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//  ViewController.m&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//  DesignAlliance&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//  Created by zues on 17/4/18.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//  Copyright © 2017年 zues. All rights reserved.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#import &amp;quot;ViewController.h&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#import &amp;lt;MAMapKit/MAMapKit.h&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#import &amp;lt;AMapFoundationKit/AMapFoundationKit.h&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#import &amp;lt;AMapSearchKit/AMapSearchAPI.h&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#define APIKey      @&amp;quot;843b615d0689c272594bb226b4efa96d&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@interface ViewController ()&amp;lt;MAMapViewDelegate&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    MAMapView* mapView;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    AMapSearchAPI* search;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    UIButton* locationButton;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@end&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@implementation ViewController&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//配置控制按钮&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)initControls&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    locationButton = [UIButton buttonWithType:UIButtonTypeCustom];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    locationButton.frame = CGRectMake(20, CGRectGetHeight(mapView.bounds) - 80, 40, 40);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    locationButton.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    locationButton.backgroundColor = [UIColor whiteColor];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    locationButton.layer.cornerRadius = 5;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [locationButton addTarget:self action:@selector(locateAction) forControlEvents:UIControlEventTouchUpInside];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [locationButton setImage:[UIImage imageNamed:@&amp;quot;location_no&amp;quot;] forState:UIControlStateNormal];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [mapView addSubview:locationButton];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//修改用户的定位模式&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)locateAction&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if(mapView.userTrackingMode != MAUserTrackingModeFollow)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [mapView setUserTrackingMode:MAUserTrackingModeFollow animated:YES];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)mapView:(MAMapView *)mapView didChangeUserTrackingMode:(MAUserTrackingMode)mode animated:(BOOL)animated&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if(mode == MAUserTrackingModeNone)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [locationButton setImage:[UIImage imageNamed:@&amp;quot;location_no&amp;quot;] forState:UIControlStateNormal];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;else&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [locationButton setImage:[UIImage imageNamed:@&amp;quot;location_yes&amp;quot;] forState:UIControlStateNormal];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)initSearch&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//初始化View&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)initView &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [AMapServices sharedServices].apiKey = APIKey;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    //配置mapView对象&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mapView.delegate = self;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mapView.compassOrigin = CGPointMake(mapView.compassOrigin.x, 22);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mapView.scaleOrigin = CGPointMake(mapView.scaleOrigin.x, 22);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [self.view addSubview:mapView];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mapView.showsUserLocation = YES;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewDidLoad &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [super viewDidLoad];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    // Do any additional setup after loading the view, typically from a nib.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [self initView];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [self initControls];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)didReceiveMemoryWarning &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [super didReceiveMemoryWarning];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    // Dispose of any resources that can be recreated.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -175,11 +136,11 @@
   </entry>
   
   <entry>
-    <title>CocoaPods的安装和使用</title>
+    <title>IOS开发_CocoaPods的安装和使用</title>
     <link href="http://zuesblog.xyz/2017/04/16/IOS%E5%BC%80%E5%8F%91_CocoaPods%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
     <id>http://zuesblog.xyz/2017/04/16/IOS开发_CocoaPods的安装和使用/</id>
     <published>2017-04-16T14:00:08.000Z</published>
-    <updated>2017-04-16T14:00:08.091Z</updated>
+    <updated>2017-07-28T05:26:11.321Z</updated>
     
     <content type="html"></content>
     
@@ -191,11 +152,11 @@
   </entry>
   
   <entry>
-    <title>Swift入门</title>
+    <title>IOS开发_Swift入门</title>
     <link href="http://zuesblog.xyz/2017/04/12/IOS%E5%BC%80%E5%8F%91_Swift%E5%85%A5%E9%97%A8/"/>
     <id>http://zuesblog.xyz/2017/04/12/IOS开发_Swift入门/</id>
     <published>2017-04-12T12:57:04.000Z</published>
-    <updated>2017-04-12T12:57:04.127Z</updated>
+    <updated>2017-07-28T05:26:17.273Z</updated>
     
     <content type="html"></content>
     
@@ -207,11 +168,11 @@
   </entry>
   
   <entry>
-    <title>ios入门</title>
+    <title>IOS开发_ios入门</title>
     <link href="http://zuesblog.xyz/2017/04/07/IOS%E5%BC%80%E5%8F%91_ios%E5%85%A5%E9%97%A8/"/>
     <id>http://zuesblog.xyz/2017/04/07/IOS开发_ios入门/</id>
     <published>2017-04-07T01:28:47.000Z</published>
-    <updated>2017-04-12T07:10:36.986Z</updated>
+    <updated>2017-07-28T05:26:24.131Z</updated>
     
     <content type="html">&lt;h2 id=&quot;IOS基础入门&quot;&gt;&lt;a href=&quot;#IOS基础入门&quot; class=&quot;headerlink&quot; title=&quot;IOS基础入门&quot;&gt;&lt;/a&gt;IOS基础入门&lt;/h2&gt;&lt;hr&gt;
 &lt;h2 id=&quot;ios的开发使用Objective-C语言，和java一样，它页是一种面向对象的语言&quot;&gt;&lt;a href=&quot;#ios的开发使用Objective-C语言，和java一样，它页是一种面向对象的语言&quot; class=&quot;headerlink&quot; title=&quot;ios的开发使用Objective C语言，和java一样，它页是一种面向对象的语言&quot;&gt;&lt;/a&gt;ios的开发使用Objective C语言，和java一样，它页是一种面向对象的语言&lt;/h2&gt;&lt;h3 id=&quot;消息传递&quot;&gt;&lt;a href=&quot;#消息传递&quot; class=&quot;headerlink&quot; title=&quot;消息传递&quot;&gt;&lt;/a&gt;消息传递&lt;/h3&gt;&lt;p&gt;在java中我们把Objective-C的消息传递叫做调用方法&lt;/p&gt;
@@ -283,11 +244,11 @@
   </entry>
   
   <entry>
-    <title>Axure中英转换</title>
+    <title>产品经理之路-Axure中英转换</title>
     <link href="http://zuesblog.xyz/2017/04/05/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-Axure%E4%B8%AD%E8%8B%B1%E8%BD%AC%E6%8D%A2/"/>
     <id>http://zuesblog.xyz/2017/04/05/产品经理之路-Axure中英转换/</id>
     <published>2017-04-05T13:49:40.000Z</published>
-    <updated>2017-07-26T11:51:21.478Z</updated>
+    <updated>2017-07-28T05:34:30.348Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这篇博客不是因为我不会汉化Axure，而是想用更接近原著的方式使用一款国外的工具，虽然我已经学习Axure一个星期有余，但由于刚接触不久，需要记录下中英转换词，但我不一定会翻看，可能在写的过程中，我已经完全记住每一个文字标签对应的功能了，从本质上去理解，这比单纯的背更持久更具备重复利用性。&lt;/p&gt;
 &lt;hr&gt;
@@ -430,9 +391,9 @@
       <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
       <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
   </entry>
   
@@ -614,11 +575,11 @@
   </entry>
   
   <entry>
-    <title>项目感想11</title>
+    <title>REACT-NATIVE开发_项目感想11</title>
     <link href="http://zuesblog.xyz/2017/03/05/REACT-NATIVE%E5%BC%80%E5%8F%91_%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B311/"/>
     <id>http://zuesblog.xyz/2017/03/05/REACT-NATIVE开发_项目感想11/</id>
     <published>2017-03-05T08:56:10.000Z</published>
-    <updated>2017-03-11T02:52:29.349Z</updated>
+    <updated>2017-07-28T05:29:03.118Z</updated>
     
     <content type="html">&lt;h3 id=&quot;记录map方法&quot;&gt;&lt;a href=&quot;#记录map方法&quot; class=&quot;headerlink&quot; title=&quot;记录map方法&quot;&gt;&lt;/a&gt;记录map方法&lt;/h3&gt;&lt;hr&gt;
 &lt;p&gt;map方法可以很轻松的迭代数组中的每一个元素，并且根据回调函数来处理每一个元素，最后返回一个新的数组。这个方法不会改变原始数组。&lt;/p&gt;
@@ -645,11 +606,11 @@
   </entry>
   
   <entry>
-    <title>项目感想10</title>
+    <title>REACT-NATIVE开发_项目感想10</title>
     <link href="http://zuesblog.xyz/2017/03/04/REACT-NATIVE%E5%BC%80%E5%8F%91_%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B310/"/>
     <id>http://zuesblog.xyz/2017/03/04/REACT-NATIVE开发_项目感想10/</id>
     <published>2017-03-04T12:16:05.000Z</published>
-    <updated>2017-03-04T12:51:24.314Z</updated>
+    <updated>2017-07-28T05:29:05.474Z</updated>
     
     <content type="html">&lt;h2 id=&quot;关于ios新的坑&quot;&gt;&lt;a href=&quot;#关于ios新的坑&quot; class=&quot;headerlink&quot; title=&quot;关于ios新的坑&quot;&gt;&lt;/a&gt;关于ios新的坑&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;今天刚部署最新的项目到ios上时，发现一点问题：&lt;br&gt;一，由于上次我使用&lt;code&gt;react-native-upgrade&lt;/code&gt;更新过版本，于是在一些文件夹里面会出现冲突，找到自己需要的，删除不需要的即可，我按照我自己想法，把their保留了下来，删了我以前的our，我认为更新之后应该是这样的&lt;/p&gt;
@@ -689,11 +650,11 @@
   </entry>
   
   <entry>
-    <title>产品经理之路_绪论（三）</title>
+    <title>产品经理之路-绪论（三）</title>
     <link href="http://zuesblog.xyz/2016/12/24/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA%EF%BC%88%E4%B8%89%EF%BC%89/"/>
     <id>http://zuesblog.xyz/2016/12/24/产品经理之路-绪论（三）/</id>
     <published>2016-12-24T09:43:32.000Z</published>
-    <updated>2017-07-27T16:01:06.965Z</updated>
+    <updated>2017-07-28T05:34:40.901Z</updated>
     
     <content type="html">&lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;&lt;p&gt;PM的轨迹穿透整个产品的生命周期，从我收集的资料显示，从需求开始，经历产品评估、产品定义、产品开发、产品发布、产品迭代开发、产品发布…&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/YG45-nMhabmo-74916.png&quot; alt=&quot;PM route&quot;&gt;&lt;/p&gt;
 &lt;p&gt;千里之行始于足下，不难想象最为困难并且最重要的是&lt;strong&gt;产品评估&lt;/strong&gt;和&lt;strong&gt;产品定义环节&lt;/strong&gt;，如果这一道棋下错，后面损失的利益是难以衡量，甚至是致命的。&lt;/p&gt;
@@ -718,11 +679,11 @@
   </entry>
   
   <entry>
-    <title>产品经理之路_绪论（二）</title>
+    <title>产品经理之路-绪论（二）</title>
     <link href="http://zuesblog.xyz/2016/12/23/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
     <id>http://zuesblog.xyz/2016/12/23/产品经理之路-绪论（二）/</id>
     <published>2016-12-23T01:41:30.000Z</published>
-    <updated>2017-07-27T09:46:27.339Z</updated>
+    <updated>2017-07-28T05:34:21.851Z</updated>
     
     <content type="html">&lt;h2 id=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;a href=&quot;#我为什么希望成为产品经理？&quot; class=&quot;headerlink&quot; title=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;/a&gt;我为什么希望成为产品经理？&lt;/h2&gt;&lt;p&gt;这是续之前&lt;a href=&quot;&quot;&gt;产品经理之路_绪论&lt;/a&gt;目录写的第二篇，别人都说我像猪，倒头就能睡着，或许没毛病，哈哈，因为我好懒，真的没法一下子把四篇博客写完。&lt;/p&gt;
 &lt;p&gt;转入正题，热爱产品经理这个职业是因为：&lt;/p&gt;
@@ -760,11 +721,11 @@
   </entry>
   
   <entry>
-    <title>rn的ios真机调试</title>
+    <title>REACT-NATIVE开发_rn的ios真机调试</title>
     <link href="http://zuesblog.xyz/2016/12/20/REACT-NATIVE%E5%BC%80%E5%8F%91_ios%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/"/>
     <id>http://zuesblog.xyz/2016/12/20/REACT-NATIVE开发_ios真机调试/</id>
     <published>2016-12-20T06:58:30.000Z</published>
-    <updated>2017-03-14T01:34:44.888Z</updated>
+    <updated>2017-07-28T05:28:43.026Z</updated>
     
     <content type="html">&lt;h2 id=&quot;RN的ios真机调试&quot;&gt;&lt;a href=&quot;#RN的ios真机调试&quot; class=&quot;headerlink&quot; title=&quot;RN的ios真机调试&quot;&gt;&lt;/a&gt;RN的ios真机调试&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;在没使用之前我就已经能猜到会出现无数的bug，果然不出我所料，但是对于开发安卓已经一年的我来说，这点小坑难不倒我，还是瞬间给我解决掉了，不久，也就花了两天而已。&lt;/p&gt;
@@ -810,11 +771,11 @@
   </entry>
   
   <entry>
-    <title>产品经理之路_绪论</title>
+    <title>产品经理之路-绪论</title>
     <link href="http://zuesblog.xyz/2016/12/20/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA/"/>
     <id>http://zuesblog.xyz/2016/12/20/产品经理之路-绪论/</id>
     <published>2016-12-20T03:10:32.000Z</published>
-    <updated>2017-07-26T11:56:05.879Z</updated>
+    <updated>2017-07-28T05:34:36.932Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;这是我慎重思考后的一次感悟，希望会是一个起点，因为我发现眼前的灯，被点亮了！&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -866,11 +827,11 @@
   </entry>
   
   <entry>
-    <title>项目感想9</title>
+    <title>REACT-NATIVE开发_项目感想9</title>
     <link href="http://zuesblog.xyz/2016/12/14/REACT-NATIVE%E5%BC%80%E5%8F%91_%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B39/"/>
     <id>http://zuesblog.xyz/2016/12/14/REACT-NATIVE开发_项目感想9/</id>
     <published>2016-12-14T08:03:58.000Z</published>
-    <updated>2016-12-21T10:06:13.222Z</updated>
+    <updated>2017-07-28T05:29:07.456Z</updated>
     
     <content type="html">&lt;h2 id=&quot;关于ref的一点坑&quot;&gt;&lt;a href=&quot;#关于ref的一点坑&quot; class=&quot;headerlink&quot; title=&quot;关于ref的一点坑&quot;&gt;&lt;/a&gt;关于ref的一点坑&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;今天在使用ref来调用自组件的时候发现了一个东西，可能我这个问题是特例吧！因为我是用了别人的库才发现这个问题的，不过我还是要记录一下。&lt;/p&gt;
@@ -899,11 +860,11 @@
   </entry>
   
   <entry>
-    <title>一个python小常识</title>
+    <title>python学习_一个python小常识</title>
     <link href="http://zuesblog.xyz/2016/12/05/python%E5%AD%A6%E4%B9%A0_%E5%B0%8F%E5%B8%B8%E8%AF%86/"/>
     <id>http://zuesblog.xyz/2016/12/05/python学习_小常识/</id>
     <published>2016-12-05T05:57:41.000Z</published>
-    <updated>2016-12-05T05:58:23.823Z</updated>
+    <updated>2017-07-28T05:27:33.458Z</updated>
     
     <content type="html">&lt;h2 id=&quot;python程序开头-usr-bin-python3&quot;&gt;&lt;a href=&quot;#python程序开头-usr-bin-python3&quot; class=&quot;headerlink&quot; title=&quot;python程序开头#!/usr/bin/python3&quot;&gt;&lt;/a&gt;python程序开头#!/usr/bin/python3&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;这是脚本语言共同遵循的一个规则，用来指定脚本的解释器。&lt;/p&gt;
@@ -942,11 +903,11 @@
   </entry>
   
   <entry>
-    <title>计算机网络入门</title>
+    <title>计算机网络_入门</title>
     <link href="http://zuesblog.xyz/2016/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_%E5%85%A5%E9%97%A8/"/>
     <id>http://zuesblog.xyz/2016/12/05/计算机网络_入门/</id>
     <published>2016-12-05T05:56:53.000Z</published>
-    <updated>2016-12-06T12:56:38.077Z</updated>
+    <updated>2017-07-28T05:34:55.513Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;谈起计算机网络，很多人都是一头雾水，我们都只知道怎么使用电脑，但是不知道怎么改变电脑，除了硬件的改变，还有网络。&lt;/p&gt;
@@ -1021,11 +982,11 @@
   </entry>
   
   <entry>
-    <title>项目感想8</title>
+    <title>REACT-NATIVE开发_项目感想8</title>
     <link href="http://zuesblog.xyz/2016/11/27/REACT-NATIVE%E5%BC%80%E5%8F%91_%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B38/"/>
     <id>http://zuesblog.xyz/2016/11/27/REACT-NATIVE开发_项目感想8/</id>
     <published>2016-11-27T03:20:14.000Z</published>
-    <updated>2016-11-28T15:09:20.890Z</updated>
+    <updated>2017-07-28T05:29:09.698Z</updated>
     
     <content type="html">&lt;h2 id=&quot;BIG-FOUND&quot;&gt;&lt;a href=&quot;#BIG-FOUND&quot; class=&quot;headerlink&quot; title=&quot;BIG FOUND&quot;&gt;&lt;/a&gt;BIG FOUND&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;写了那么久的react native才发现这个，感觉有点羞愧，因为当时刚学的时候没看懂，现在重新倒回来看发现有新的体会，不用猜了，就是这个教程&lt;a href=&quot;http://bbs.reactnative.cn/topic/20/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3navigator%E7%9A%84%E6%95%99%E7%A8%8B/2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;新手理解navigator的教程&lt;/a&gt;&lt;/p&gt;
@@ -1044,6 +1005,48 @@
     
       &lt;h2 id=&quot;BIG-FOUND&quot;&gt;&lt;a href=&quot;#BIG-FOUND&quot; class=&quot;headerlink&quot; title=&quot;BIG FOUND&quot;&gt;&lt;/a&gt;BIG FOUND&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;写了那么久的react native才发现这个，感觉有点羞愧，因为当时刚学
+    
+    </summary>
+    
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
+    
+    
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>REACT-NATIVE开发_项目感想7</title>
+    <link href="http://zuesblog.xyz/2016/11/25/REACT-NATIVE%E5%BC%80%E5%8F%91_%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B37/"/>
+    <id>http://zuesblog.xyz/2016/11/25/REACT-NATIVE开发_项目感想7/</id>
+    <published>2016-11-25T08:12:16.000Z</published>
+    <updated>2017-07-28T05:29:39.543Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据更新&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;一段时间没更新博客了，最近都比较懒，今天突然诗兴大发，想来一发，于是就写下这篇博客。&lt;/p&gt;
+&lt;p&gt;首先是使用原生模块DeviceEventEmitter进行页面数据更新，代码如下：&lt;/p&gt;
+&lt;h3 id=&quot;Home-js&quot;&gt;&lt;a href=&quot;#Home-js&quot; class=&quot;headerlink&quot; title=&quot;Home.js&quot;&gt;&lt;/a&gt;Home.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;componentDidMount() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.autoLogin();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       DeviceEventEmitter.addListener(&amp;apos;test&amp;apos;,this.test);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   componentWillUnmount()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       this.subscription.remove();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test(data)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       alert(&amp;quot;good&amp;quot;+data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Login-js&quot;&gt;&lt;a href=&quot;#Login-js&quot; class=&quot;headerlink&quot; title=&quot;Login.js&quot;&gt;&lt;/a&gt;Login.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;backToHome()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        DeviceEventEmitter.emit(&amp;apos;test&amp;apos;,&amp;apos;hello&amp;apos;); //最主要是这段代码，其他的可以忽略&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        const &amp;#123; navigator &amp;#125; = this.props;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        if (navigator)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            navigator.popToTop();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;现象是，当点击页面左上角的返回之后，就会在home页面alert出一个”goodhello”，当然test方法也可以不带参，直接被监听调用。&lt;/p&gt;
+&lt;h2 id=&quot;页面间数据传递&quot;&gt;&lt;a href=&quot;#页面间数据传递&quot; class=&quot;headerlink&quot; title=&quot;页面间数据传递&quot;&gt;&lt;/a&gt;页面间数据传递&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;在A页面导航到B页面可以传递一些参数，方法如下代码：&lt;/p&gt;
+&lt;h3 id=&quot;A-js&quot;&gt;&lt;a href=&quot;#A-js&quot; class=&quot;headerlink&quot; title=&quot;A.js&quot;&gt;&lt;/a&gt;A.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.props.navigator.push(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    name:&amp;apos;Login&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    component:Login,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					key:object&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;B-js&quot;&gt;&lt;a href=&quot;#B-js&quot; class=&quot;headerlink&quot; title=&quot;B.js&quot;&gt;&lt;/a&gt;B.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;this.props.key&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中这里的key为键值，自己可以随意命名。另一方面，这里的object可以是常用数据类型，字符数字，还可以是方法对象，一般情况行都是使用简单的id传递，所以一般都是传递数字。&lt;/p&gt;
+&lt;h3 id=&quot;全局变量AsyncStorage的用法&quot;&gt;&lt;a href=&quot;#全局变量AsyncStorage的用法&quot; class=&quot;headerlink&quot; title=&quot;全局变量AsyncStorage的用法&quot;&gt;&lt;/a&gt;全局变量&lt;code&gt;AsyncStorage&lt;/code&gt;的用法&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;全局变量，一定是先声明后使用，我怀疑我以前是没有先声明然后再使用，而是随便创建一个类然后就使用，所以不能读取到。&lt;br&gt;但是我假如将一个类导入到需要使用的类里面，然后就可以用了，那是因为在初始化类的时候先将&lt;code&gt;import&lt;/code&gt;的类里面的静态变量的初始化，所以可以用。&lt;/p&gt;
+&lt;p&gt;当然官方是推荐我使用的是&lt;a href=&quot;https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react-native-storage&lt;/a&gt;开源库的持久化储存，一开始导入之后其实我是没使用成功的，后面无缘无故不断改写法然后就可以正常使用了，官方的介绍不太仔细，我这里说一下：&lt;br&gt;首先是初始化，因为全局变量要先声明才能使用，所以这个&lt;code&gt;AsyncStorage&lt;/code&gt;也不例外，我把它的初始化放在了&lt;code&gt;index.android.js&lt;/code&gt;中。&lt;/p&gt;
+&lt;h3 id=&quot;index-android-js&quot;&gt;&lt;a href=&quot;#index-android-js&quot; class=&quot;headerlink&quot; title=&quot;index.android.js&quot;&gt;&lt;/a&gt;index.android.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import Storage from &amp;apos;react-native-storage&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var storage = new Storage(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    size: 1000,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    storageBackend: AsyncStorage,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    defaultExpires: 1000 * 3600 * 24,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enableCache: true,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;global.storage = storage;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;A-js-1&quot;&gt;&lt;a href=&quot;#A-js-1&quot; class=&quot;headerlink&quot; title=&quot;A.js&quot;&gt;&lt;/a&gt;A.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;storage.save(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            key: &amp;apos;testKey&amp;apos;,  // 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            rawData: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				username:123456&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;B-js-1&quot;&gt;&lt;a href=&quot;#B-js-1&quot; class=&quot;headerlink&quot; title=&quot;B.js&quot;&gt;&lt;/a&gt;B.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;storage.load(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    key: &amp;apos;testKey&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).then(ret =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    console.log(ret.username); //此处打印出123456&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).catch(err =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    console.warn(err.message);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    switch (err.name) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        case &amp;apos;NotFoundError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            // TODO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        case &amp;apos;ExpiredError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            // TODO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;建议将其封装，我提供我自己的封装。&lt;/p&gt;
+&lt;h3 id=&quot;Test-js&quot;&gt;&lt;a href=&quot;#Test-js&quot; class=&quot;headerlink&quot; title=&quot;Test.js&quot;&gt;&lt;/a&gt;Test.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;saveKey(key, rowData)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       //使用例子：new Test().saveKey(&amp;apos;loginState&amp;apos;,&amp;#123;username: &amp;apos;1234567&amp;apos;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       storage.save(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           key: key,  // 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           rawData: rowData,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   loadKey(key)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       //使用例子：new Test().loadKey(&amp;apos;loginState&amp;apos;).then(r =&amp;gt; alert(r.username));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       return storage.load(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           key: key,	// 注意:请不要在key中使用_下划线符号!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;).catch(e =&amp;gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           console.warn(e.message);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           switch (e.name) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               case &amp;apos;NotFoundError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   // TODO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               case &amp;apos;ExpiredError&amp;apos;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   // TODO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   break;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;当然还有其他的封装方法，也有其他更多关于&lt;code&gt;react-native-storage&lt;/code&gt;库的用法，这里我就不去详细说了，有兴趣自己新建一个demo试一试。&lt;br&gt;不过&lt;code&gt;react-native-storage&lt;/code&gt;库的亮点功能我似乎还没用上，就是同步的方法asyc，我这里没有对应的json数据返回，所以我还没有用上，我觉得如果有数据，加上同步的方法会更灵活。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;react-native-pop之后数据更新&quot;&gt;&lt;a href=&quot;#react-native-pop之后数据更新&quot; class=&quot;headerlink&quot; title=&quot;react-native pop之后数据更新&quot;&gt;&lt;/a&gt;react-native pop之后数据
     
     </summary>
     
