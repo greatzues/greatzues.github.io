@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zuesblog.xyz/"/>
-  <updated>2017-07-31T13:26:29.613Z</updated>
+  <updated>2017-08-01T14:06:48.718Z</updated>
   <id>http://zuesblog.xyz/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IOS开发_机电E家人</title>
+    <link href="http://zuesblog.xyz/2017/08/01/IOS%E5%BC%80%E5%8F%91%E2%80%94-%E6%9C%BA%E7%94%B5E%E5%AE%B6%E4%BA%BA/"/>
+    <id>http://zuesblog.xyz/2017/08/01/IOS开发—-机电E家人/</id>
+    <published>2017-08-01T13:58:12.000Z</published>
+    <updated>2017-08-01T14:06:48.718Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;应用截图&quot;&gt;&lt;a href=&quot;#应用截图&quot; class=&quot;headerlink&quot; title=&quot;应用截图&quot;&gt;&lt;/a&gt;应用截图&lt;/h2&gt;&lt;hr&gt;
+&lt;h2 id=&quot;下载地址&quot;&gt;&lt;a href=&quot;#下载地址&quot; class=&quot;headerlink&quot; title=&quot;下载地址&quot;&gt;&lt;/a&gt;下载地址&lt;/h2&gt;&lt;p&gt;&lt;strong&gt; &lt;a href=&quot;https://fir.im/69an&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;机电E家人下载地址&lt;/a&gt; &lt;/strong&gt; ，测试账号：3114001414，密码：123456。&lt;/p&gt;
+&lt;p&gt;我将apk放到fir.im上了，这样很方便更新并且无需提交很多资料到应用商店审核。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;应用截图&quot;&gt;&lt;a href=&quot;#应用截图&quot; class=&quot;headerlink&quot; title=&quot;应用截图&quot;&gt;&lt;/a&gt;应用截图&lt;/h2&gt;&lt;hr&gt;
+&lt;h2 id=&quot;下载地址&quot;&gt;&lt;a href=&quot;#下载地址&quot; class=&quot;headerlink&quot; title=&quot;下载地址
+    
+    </summary>
+    
+      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
+    
+    
+      <category term="ios" scheme="http://zuesblog.xyz/tags/ios/"/>
+    
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
+    
+  </entry>
   
   <entry>
     <title>鲈鱼的奇思妙想日记</title>
@@ -59,6 +87,54 @@
     
     
       <category term="日记" scheme="http://zuesblog.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品经理之之路-PRD撰写-产品结构图</title>
+    <link href="http://zuesblog.xyz/2017/04/30/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
+    <id>http://zuesblog.xyz/2017/04/30/产品经理之之路-PRD撰写-产品结构图/</id>
+    <published>2017-04-30T07:17:07.000Z</published>
+    <updated>2017-08-01T06:46:01.837Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在参考&lt;a href=&quot;http://www.woshipm.com/it/80078.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;产品需求文档的写作(二) – 梳理需求(产品结构图和用户流程图)&lt;/a&gt;这篇文章时，可能是我太笨，没看懂这里的信息结构中对频道的解释。&lt;/p&gt;
+&lt;p&gt;我的理解是这样的，因为文章中说到产品结构图是在设计原型之前做的一种思路梳理方式，并不是给所有人看的，因为这一步或许和微信的设计一样，按照不同的维度来设计，并且参考用户习惯来排列哪些频道应该先展示。&lt;/p&gt;
+&lt;p&gt;在微信的设计中，之前有一个很经典的问题是这样的，为什么微信不把朋友圈放在首页，基于这个问题的回答在PMCAFF和人人都是产品经理等社区的讨论都炸开了花，感谢我一位非常好的朋友，她的思维水平高我几个台阶。&lt;/p&gt;
+&lt;p&gt;我整理总结了一下她的思考方式：手机流行时，大家最习以为常的社交恐怕就是手机电话和短信了，相信80年代的大学生都经历过和男/女朋友用手机打电话/发短信聊天，那是IM雏形。回想一下，那时候的IM只有通讯记录和通讯列表，这不刚好对应的微信的前两个tab，而社区功能在互联网盛行时出现，人们使用社区来讨论话题，对于那时候的手机用户，最核心的功能是电话/短信，其次按照马斯洛的需求理论，才会使用社区功能，而朋友圈则更像是一个社区。&lt;/p&gt;
+&lt;p&gt;好了，通过上面的逻辑，在用户习惯上思考，就不难想到为什么把朋友圈放在第三个tab了。不过这是基于单独朋友圈的功能来思考，另一方面按照微信的定位来分析，我的想法是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;微信是基于点对点的IM应用，从核心功能上分析朋友圈就不会被放在首页&lt;/li&gt;
+&lt;li&gt;第三个tab发现是一系列社交功能的集合，在IM的基础上，增强用户体验，如果说微信能让人们用来通讯，那么朋友圈能让人增加使用微信的频率&lt;/li&gt;
+&lt;li&gt;部分特殊人群不喜欢看朋友圈、发朋友圈，而朋友圈的路径深的话可以很好的规避这类用户的散失。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;除此之外，在网上有很多不一样的想法，例如朋友圈带来导流”的效果，通过朋友圈来曝光“发现”中的其它功能。&lt;/p&gt;
+&lt;p&gt;不过我还是先回到今天的主题，按照上面的思考，产品结构图给PM带来的是如何将最核心的功能放在首页，并且每一个模块的不同功能路径深浅要如何安排才能最大符合用户习惯，并且带来持续的用户转化，这就是产品结构图的功能了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步骤&quot;&gt;&lt;/a&gt;步骤&lt;/h2&gt;&lt;p&gt;那么如何来做产品结构图呢，我个人想法是因人而异，因业务而异，具体做法的话参考网上的一些资深回复，或许不合适我，但肯定比自己摸索能少走很多弯路：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1、确定产品所有的功能&lt;/li&gt;
+&lt;li&gt;2、将多个功能组合为一个模块&lt;/li&gt;
+&lt;li&gt;3、在组合中确定子模块或子功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其实还是有点迷茫，不清楚怎么做，我用我的博客做一个test版本试一试，哈哈哈！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在参考&lt;a href=&quot;http://www.woshipm.com/it/80078.html&quot; target=&quot;_blank&quot; rel=
+    
+    </summary>
+    
+      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
+      <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
     
   </entry>
   
@@ -126,7 +202,7 @@
     <link href="http://zuesblog.xyz/2017/04/24/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E8%AE%BE%E8%AE%A1%E8%81%94%E7%9B%9F%E9%A1%B9%E7%9B%AE/"/>
     <id>http://zuesblog.xyz/2017/04/24/产品经理之路-PRD撰写-设计联盟项目/</id>
     <published>2017-04-24T09:09:14.000Z</published>
-    <updated>2017-07-31T15:43:08.865Z</updated>
+    <updated>2017-08-01T09:47:44.307Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;看了比较多的产品类书籍，包括《启示录》《人人都是产品经理》，都明确提出了需求文档的重要性，而作为团队负责人，更加应该对目标不明确而导致的后期变更需求，产生的成本负责，为了尽量避免这种事情发现，在写设计联盟之前已经开始和美工的汉子（这次的美工是大一的师弟，真可惜本以为可以和妹子合作）合作把高保真的原型做了出来，图片很不错。&lt;/p&gt;
 &lt;p&gt;而我也继续将机会转化为锻炼不断完善自己的全面产品技能，反正尽量不会让用户思考就对了。我将从以下几点记录我这次的PRD撰写。&lt;/p&gt;
@@ -139,8 +215,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;信息结构设计&quot;&gt;&lt;a href=&quot;#信息结构设计&quot; class=&quot;headerlink&quot; title=&quot;信息结构设计&quot;&gt;&lt;/a&gt;信息结构设计&lt;/h2&gt;&lt;p&gt;为了更快的梳理信息架构，这里我直接采用表格形式进行描述。&lt;/p&gt;
-&lt;p&gt;在网上会有人说使用MindManage或是Xmind来制作信息架构图，我觉得这之间有一个误会，工具只是为人而生的，当然我不否认使用脑图工具看上去会更专业，也更清晰，但有时候可能追求专业的同时会增加了时间成本，工具是为方便快捷而生，只有最适合自己的才是最好的。&lt;/p&gt;
+&lt;h2 id=&quot;信息结构设计&quot;&gt;&lt;a href=&quot;#信息结构设计&quot; class=&quot;headerlink&quot; title=&quot;信息结构设计&quot;&gt;&lt;/a&gt;信息结构设计&lt;/h2&gt;&lt;p&gt;为了更快的梳理信息架构，这里我直接采用表格形式进行描述。&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/78b73778ec2e90096af4542489f74c40?fid=3375241367-250528-555073912746463&amp;amp;time=1501578000&amp;amp;rt=pr&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-6fNdgYBvumy81PY%2bxHss8KzIzcY%3d&amp;amp;expires=8h&amp;amp;chkbd=0&amp;amp;chkv=0&amp;amp;dp-logid=4934020424568972768&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=90&amp;amp;vuk=3375241367&amp;amp;ft=image&quot; alt=&quot;DesignAliance Information structor&quot;&gt;&lt;br&gt;在网上会有人说使用MindManage或是Xmind来制作信息架构图，我觉得这之间有一个误会，工具只是为人而生的，当然我不否认使用脑图工具看上去会更专业，也更清晰，但有时候可能追求专业的同时会增加了时间成本，工具是为方便快捷而生，只有最适合自己的才是最好的。&lt;/p&gt;
 &lt;h2 id=&quot;产品原型&quot;&gt;&lt;a href=&quot;#产品原型&quot; class=&quot;headerlink&quot; title=&quot;产品原型&quot;&gt;&lt;/a&gt;产品原型&lt;/h2&gt;&lt;p&gt;最快并且直观了解PRD的方式估计就是看原型图了，这里我用Axure做了一个原型，在阿里买的服务器到期了，没办法，只能托管到Axure share空间了。&lt;br&gt;如需查看可以点击这里打开,&lt;a href=&quot;http://4hf2wg.axshare.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;设计联盟APP产品原型&lt;/a&gt;&lt;/p&gt;
 </content>
     
@@ -409,57 +484,9 @@
       <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
     
     
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
       <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
-    
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>产品经理之之路-PRD撰写-产品结构图</title>
-    <link href="http://zuesblog.xyz/2017/03/30/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
-    <id>http://zuesblog.xyz/2017/03/30/产品经理之之路-PRD撰写-产品结构图/</id>
-    <published>2017-03-30T07:17:07.000Z</published>
-    <updated>2017-07-31T13:26:38.827Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在参考&lt;a href=&quot;http://www.woshipm.com/it/80078.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;产品需求文档的写作(二) – 梳理需求(产品结构图和用户流程图)&lt;/a&gt;这篇文章时，可能是我太笨，没看懂这里的信息结构中对频道的解释。&lt;/p&gt;
-&lt;p&gt;我的理解是这样的，因为文章中说到产品结构图是在设计原型之前做的一种思路梳理方式，并不是给所有人看的，因为这一步或许和微信的设计一样，按照不同的维度来设计，并且参考用户习惯来排列哪些频道应该先展示。&lt;/p&gt;
-&lt;p&gt;在微信的设计中，之前有一个很经典的问题是这样的，为什么微信不把朋友圈放在首页，基于这个问题的回答在PMCAFF和人人都是产品经理等社区的讨论都炸开了花，感谢我一位非常好的朋友，她的思维水平高我几个台阶。&lt;/p&gt;
-&lt;p&gt;我整理总结了一下她的思考方式：手机流行时，大家最习以为常的社交恐怕就是手机电话和短信了，相信80年代的大学生都经历过和男/女朋友用手机打电话/发短信聊天，那是IM雏形。回想一下，那时候的IM只有通讯记录和通讯列表，这不刚好对应的微信的前两个tab，而社区功能在互联网盛行时出现，人们使用社区来讨论话题，对于那时候的手机用户，最核心的功能是电话/短信，其次按照马斯洛的需求理论，才会使用社区功能，而朋友圈则更像是一个社区。&lt;/p&gt;
-&lt;p&gt;好了，通过上面的逻辑，在用户习惯上思考，就不难想到为什么把朋友圈放在第三个tab了。不过这是基于单独朋友圈的功能来思考，另一方面按照微信的定位来分析，我的想法是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;微信是基于点对点的IM应用，从核心功能上分析朋友圈就不会被放在首页&lt;/li&gt;
-&lt;li&gt;第三个tab发现是一系列社交功能的集合，在IM的基础上，增强用户体验，如果说微信能让人们用来通讯，那么朋友圈能让人增加使用微信的频率&lt;/li&gt;
-&lt;li&gt;部分特殊人群不喜欢看朋友圈、发朋友圈，而朋友圈的路径深的话可以很好的规避这类用户的散失。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;除此之外，在网上有很多不一样的想法，例如朋友圈带来导流”的效果，通过朋友圈来曝光“发现”中的其它功能。&lt;/p&gt;
-&lt;p&gt;不过我还是先回到今天的主题，按照上面的思考，产品结构图给PM带来的是如何将最核心的功能放在首页，并且每一个模块的不同功能路径深浅要如何安排才能最大符合用户习惯，并且带来持续的用户转化，这就是产品结构图的功能了。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步骤&quot;&gt;&lt;/a&gt;步骤&lt;/h2&gt;&lt;p&gt;那么如何来做产品结构图呢，我个人想法是因人而异，因业务而异，具体做法的话参考网上的一些资深回复，或许不合适我，但肯定比自己摸索能少走很多弯路：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;1、确定产品所有的功能&lt;/li&gt;
-&lt;li&gt;2、将多个功能组合为一个模块&lt;/li&gt;
-&lt;li&gt;3、在组合中确定子模块或子功能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;其实还是有点迷茫，不清楚怎么做，我用我的博客做一个test版本试一试，哈哈哈！&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在参考&lt;a href=&quot;http://www.woshipm.com/it/80078.html&quot; target=&quot;_blank&quot; rel=
-    
-    </summary>
-    
-      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
-      <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
     
   </entry>
   
@@ -1085,40 +1112,6 @@
     
     
       <category term="Computer Network" scheme="http://zuesblog.xyz/tags/Computer-Network/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>REACT-NATIVE开发_项目感想8</title>
-    <link href="http://zuesblog.xyz/2016/11/27/REACT-NATIVE%E5%BC%80%E5%8F%91_%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B38/"/>
-    <id>http://zuesblog.xyz/2016/11/27/REACT-NATIVE开发_项目感想8/</id>
-    <published>2016-11-27T03:20:14.000Z</published>
-    <updated>2017-07-28T05:29:09.698Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;BIG-FOUND&quot;&gt;&lt;a href=&quot;#BIG-FOUND&quot; class=&quot;headerlink&quot; title=&quot;BIG FOUND&quot;&gt;&lt;/a&gt;BIG FOUND&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;写了那么久的react native才发现这个，感觉有点羞愧，因为当时刚学的时候没看懂，现在重新倒回来看发现有新的体会，不用猜了，就是这个教程&lt;a href=&quot;http://bbs.reactnative.cn/topic/20/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3navigator%E7%9A%84%E6%95%99%E7%A8%8B/2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;新手理解navigator的教程&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;开始写点我个人觉得比较棒的事情了，写下这段文字的时候，刚刚优化好代码并且搞定了登录之后返回到原来页面的时候实现页面重新渲染，我渲染数据和普通的pop之后返回数据不太一样，我这里需要将数据在登录之后传递给home页面的时候在与子类通信，传递头像和姓名的数据到drawerView。&lt;/p&gt;
-&lt;p&gt;一开始的时候，我使用了事件监听&lt;code&gt;DeviceEventEmitter&lt;/code&gt;,这个事件监听可以监听给同一个父类下的所有子组件，也就是说当我在login中使用&lt;code&gt;DeviceEventEmitter.emit(&amp;#39;test&amp;#39;,&amp;#39;hello&amp;#39;);&lt;/code&gt;然后在home和drawer注册监听，接着两个都能执行回调，这个当时给我灵感，但是后来发现，在执行回调的时候，本来想使用&lt;code&gt;setState&lt;/code&gt;改变数据重新渲染的，但是确报错说&lt;code&gt;undefine setState&lt;/code&gt;，于是这个灵感就被这样白白扼杀了。&lt;/p&gt;
-&lt;p&gt;然后感觉百般困难的时候，无意中看到以前这篇教程，深有启发。先说一说这篇教程中我学到的用法，我直接摘抄原文了，自己写得不是太好。&lt;/p&gt;
-&lt;p&gt;在我登录成功返回到home页面的时候，需要传递参数回到home页面，但是navigator.pop()并没有提供参数，因为pop()只是从 [路由1,路由2，路由3。。。]里把最后一个路由踢出去的操作，并不支持传递参数给倒数第二个路由，这里要用到一个概念，把上一个页面的实例或者回调方法，作为参数传递到当前页面来，在当前页面操作上一个页面的state。&lt;/p&gt;
-&lt;h3 id=&quot;Login-js&quot;&gt;&lt;a href=&quot;#Login-js&quot; class=&quot;headerlink&quot; title=&quot;Login.js&quot;&gt;&lt;/a&gt;Login.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//我只贴出关键代码&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;const &amp;#123; navigator &amp;#125; = this.props;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;if(this.props.update)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    this.props.update(true);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;if (navigator)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    navigator.pop();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;当登录成功之后执行上面这段代码就会跳转回去home页面，接下里看home页面&lt;/p&gt;
-&lt;h3 id=&quot;Home-js&quot;&gt;&lt;a href=&quot;#Home-js&quot; class=&quot;headerlink&quot; title=&quot;Home.js&quot;&gt;&lt;/a&gt;Home.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//上面忽略很多代码。。。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;lt;DrawerView&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   quitLogin=&amp;#123;this.quitLogin.bind(this)&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   quitApp=&amp;#123;this.quitApp.bind(this)&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   avatar=&amp;#123;this.state.avatar&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   username=&amp;#123;this.state.username&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//这里也忽略很代码。。。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;toLogin()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       storage.load(&amp;#123;key:&amp;apos;loginState&amp;apos;&amp;#125;).then(r =&amp;gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           this.refs.drawer.openDrawer();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;).catch(e =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           var params = &amp;#123;update:(ifRefresh) =&amp;gt; this.reRenderData(ifRefresh)&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           new Net().toOther(this.props,&amp;apos;Login&amp;apos;,Login,params);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           console.log(e);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//登录成功回调一个true，打开开关&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;reRenderData(ifRefresh)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       if(ifRefresh === true)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           new Net().getMethod(INFO).then((r) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               this.setState(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   username:r.response.realname,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                   avatar:r.response.avatar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &amp;#125;).catch(error =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               console.log(error);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       return null;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;DrawerView-js&quot;&gt;&lt;a href=&quot;#DrawerView-js&quot; class=&quot;headerlink&quot; title=&quot;DrawerView.js&quot;&gt;&lt;/a&gt;DrawerView.js&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;Image&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  source=&amp;#123;require(&amp;apos;../img/UserBackground.jpg&amp;apos;)&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  style=&amp;#123;styles.userBackground&amp;#125;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  &amp;lt;View&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                      &amp;#123; this.props.avatar === null ?&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                          &amp;lt;Image source=&amp;#123;require(&amp;apos;../img/UserDafault.png&amp;apos;)&amp;#125; style=&amp;#123;styles.avatar&amp;#125;&amp;gt;&amp;lt;/Image&amp;gt; :&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                          &amp;lt;Image style=&amp;#123;styles.avatar&amp;#125; source=&amp;#123;&amp;#123;uri:&amp;apos;http://119.29.184.235:8080/jd/avatar/&amp;apos;+this.props.avatar&amp;#125;&amp;#125; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  &amp;lt;/View&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  &amp;lt;Text style=&amp;#123;&amp;#123;color:&amp;apos;white&amp;apos;&amp;#125;&amp;#125;&amp;gt;你好，&amp;#123;this.props.username===null?this.state.myResponse:this.props.username&amp;#125;&amp;lt;/Text&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  &amp;#123;this.props.avatar === null?null:&amp;lt;Text style=&amp;#123;&amp;#123;color:&amp;apos;gray&amp;apos;&amp;#125;&amp;#125;&amp;gt;您已登录&amp;lt;/Text&amp;gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;lt;/Image&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;ok，其实就是使用页面传参的方式，在导航倒转的时候带一个方法进去，在那个方法中可以修改原来页面的state，这个原理很好理解。&lt;br&gt;为什么当时没有想到，自己还真的有点笨，今天的博客写到这里下次学到新的东西再继续更新。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;BIG-FOUND&quot;&gt;&lt;a href=&quot;#BIG-FOUND&quot; class=&quot;headerlink&quot; title=&quot;BIG FOUND&quot;&gt;&lt;/a&gt;BIG FOUND&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;写了那么久的react native才发现这个，感觉有点羞愧，因为当时刚学
-    
-    </summary>
-    
-      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
-    
-    
-      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
