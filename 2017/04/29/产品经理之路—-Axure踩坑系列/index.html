@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      产品经理之路—-Axure踩坑系列 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="Axure踩坑系列1 、编辑条件的时候，一开始没看到edit Condition弹出框的顶部，Satify的下拉框，有一个all和any，表示全部满足或者满足其中一条就可以
+2、使用fire功能可以触发其它事件，这个因为做的原型小组件中使用到这个比较少，容易被遗忘，希望这次记下来之后没有下一次犯错了，必须没有下次。
+3、在设计联盟的资讯页面原型中，一开始其实犯了一个错误，明明设计师都给了图片，一开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品经理之路—-Axure踩坑系列 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2017/04/29/产品经理之路—-Axure踩坑系列/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="Axure踩坑系列1 、编辑条件的时候，一开始没看到edit Condition弹出框的顶部，Satify的下拉框，有一个all和any，表示全部满足或者满足其中一条就可以
+2、使用fire功能可以触发其它事件，这个因为做的原型小组件中使用到这个比较少，容易被遗忘，希望这次记下来之后没有下一次犯错了，必须没有下次。
+3、在设计联盟的资讯页面原型中，一开始其实犯了一个错误，明明设计师都给了图片，一开">
+<meta property="og:updated_time" content="2017-08-03T13:36:18.416Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="产品经理之路—-Axure踩坑系列 | zues blog">
+<meta name="twitter:description" content="Axure踩坑系列1 、编辑条件的时候，一开始没看到edit Condition弹出框的顶部，Satify的下拉框，有一个all和any，表示全部满足或者满足其中一条就可以
+2、使用fire功能可以触发其它事件，这个因为做的原型小组件中使用到这个比较少，容易被遗忘，希望这次记下来之后没有下一次犯错了，必须没有下次。
+3、在设计联盟的资讯页面原型中，一开始其实犯了一个错误，明明设计师都给了图片，一开">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">产品经理之路—-Axure踩坑系列</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-04-29" class="post-meta__date date">2017-04-29</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="Axure踩坑系列"><a href="#Axure踩坑系列" class="headerlink" title="Axure踩坑系列"></a>Axure踩坑系列</h2><p>1 、编辑条件的时候，一开始没看到<code>edit Condition</code>弹出框的顶部，<code>Satify</code>的下拉框，有一个<code>all</code>和<code>any</code>，表示全部满足或者满足其中一条就可以</p>
+<p>2、使用<code>fire</code>功能可以触发其它事件，这个因为做的原型小组件中使用到这个比较少，容易被遗忘，希望这次记下来之后没有下一次犯错了，必须没有下次。</p>
+<p>3、在设计联盟的资讯页面原型中，一开始其实犯了一个错误，明明设计师都给了图片，一开始应该先放一个动态面板的，不然跳转到详情页的时候就不能左移切换面板状态了，后面重新加上去就好比突然改需求一样，感觉挺麻烦的</p>
+<p>4、哈哈哈，在做顶部<code>tab</code>的时候，一开始不清楚如何拿到对应组件的Y坐标，然后乱猜，竟然才对了，在声明变量<code>LVAR1</code>的时候赋值为对应的<code>target</code>组件，然后拿Y坐标的时候直接用<code>LVAR1.y</code>就ok了！哈哈，有时候不得不被自己的机智所陶醉。不过当然这样的逻辑是不灵活的，因为被限定死了，如果突然添加新的顶部<code>tab</code>的话就会导致原来的代码无法复用</p>
+<p>5、做圆形头像图片的时候，一直没做成功，后来去知乎上搜索了一下答案，真的被自己笨到了，知乎上的回答是这样的，<code>在图片左上角有一个倒三角按钮，往右拖图片就会变圆</code>，我试了一下，以为自己被骗了，这不是设置圆角的灵活按钮吗？然后那个回答点赞数挺高的，就试一下图形变换，把图片宽高设置为相等就可以显示为圆形了。</p>
+<h2 id="发散思维不够强"><a href="#发散思维不够强" class="headerlink" title="发散思维不够强"></a>发散思维不够强</h2><p>这里我暴露了自己的一个缺点，以前在开发RN时做圆形头像设置一定的<code>corner Radirus</code>之后就变成圆形了。这里我也尝试过，但是一开始的时候仅仅设置<code>corner Radirus</code>确不是圆角时我放弃了下一步尝试，这是一个失败的决定，如果我当时能考虑到开发时图片已经被调整为正方形的话，我就能理所当然的把圆形图片做出来了，我的发散思维能力不够强，这是一个机会，如果弥补这个缺点，以后遇到不懂的东西说不定尝试的付出的时间成本会随着融会贯通的程度逐渐减少。在这里我自己标记一下</p>
+<hr>
+<p>6、将一系列<code>Radio Button</code>结合新城一个单选框的秘诀是：选中所有单选框，右键鼠标，点击<code>Assign Radio Group</code>。</p>
+<p>7、在做轮播图的时候一开始一直想着在<code>panel state</code>改变时，<code>onSelect</code>轮播图下方对应的导航点，但是发现不能单独设置每一个<code>state</code>的<code>panelStateChange</code>，在图标上做的<code>Interactive style</code>白用了，一直在这个状态想了好久，最后发现还是直接用一个<code>dynamic panel</code>来做轮播图下方的点好了，不过做好一开始预览的时候还是出现发了问题，那就是点并没有随着轮播图移动，最后检查了一遍轮播图，发现是没有设置循环时间，因为我使用的是<code>next</code>模式，设置时间为2000毫秒之后就可以循环播放了。</p>
+<p>8、在使用<code>Inline Frame</code>时候，一直隐藏不了网页右边的滚动条，这就太影响美观了，最后在检查器中不断的试，发现只要把<code>Frame Scrollbars</code>设置为<code>never show</code>就可以了！</p>
+<p>9、制作获取验证码时，一直出现错误，一开始的时候设置<code>onLoadVariable</code>是设置在最大的动态面板上的，这里我发现了<code>Axure</code>的一个不好的地方，那就是假如这个时候在多个<code>state</code>中单独设置某一个<code>state</code>的事件，其它事件也会被复制该事件，因此我一直在预览的时候接收到事件冲突提示，因为我多个页面使用了同一个<code>onLoadVariable</code>，最后我单独在对应的获取验证码矩形框设置它的<code>OnLoad</code>事件之后，一切都可以正常run了。</p>
+<hr>
+<h4 id="踩坑系列将会持续更新…"><a href="#踩坑系列将会持续更新…" class="headerlink" title="踩坑系列将会持续更新…"></a>踩坑系列将会持续更新…</h4>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

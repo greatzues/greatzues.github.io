@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zuesblog.xyz/"/>
-  <updated>2017-08-01T14:06:48.718Z</updated>
+  <updated>2017-08-03T14:25:44.100Z</updated>
   <id>http://zuesblog.xyz/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>产品经理之路-PRD撰写-流程设计</title>
+    <link href="http://zuesblog.xyz/2017/08/03/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://zuesblog.xyz/2017/08/03/产品经理之路-PRD撰写-流程设计/</id>
+    <published>2017-08-03T14:15:45.000Z</published>
+    <updated>2017-08-03T14:25:44.100Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B5%81%E7%A8%8B%E5%9B%BE&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;流程图&lt;/a&gt;，标识算法、工作流或者流程的一种框图表示，它以不同类型的框代表不同种类的步骤，每两个步骤之间则以箭头连接。这种表示方法便于说明解决已知问题的方法。&lt;/p&gt;
+&lt;p&gt;很喜欢wiki上的这个定义，超级简练。这句话阐述了几个要点，那就是流程图具备一定的规则，同时每一个步骤之间都有联系不可能单独孤立，同时做这个流程图的时候已经知道了问题，一个穷游学生在陌生城市（起始点），知道景区位置（目标）但是不知道怎么过去，这时候导航路线就好比流程图的一个分支了，为什么这么说，因为流程图的目标经常都是矛盾的，常表现为是否对立面。因此目标是不定项的，也就是如果学生发现过去景区的路费太贵，就可能突然选择放弃。&lt;/p&gt;
+&lt;p&gt;看过知乎上不少的定义，整理之后我的理解是：流程图只能针对用户做一件事而设计，不能统筹所有事情，因此流程我认为是为了应用核心功能的使用流程而生的，因为在产品开发中，马云曾经说过一句话，少就是多，也就是能把每一次要迭代的功能专注做好其实就非常不错了，做太多可能由于个人经验不足，反而容易兼顾不周，做得一团糟。因此如果能考虑到一个核心功能的使用流程所有问题，那么应用逻辑设计就会更人性化，也就是常说的智能。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;流程图能为谁服务：&quot;&gt;&lt;a href=&quot;#流程图能为谁服务：&quot; class=&quot;headerlink&quot; title=&quot;流程图能为谁服务：&quot;&gt;&lt;/a&gt;流程图能为谁服务：&lt;/h2&gt;&lt;h3 id=&quot;流程图分类&quot;&gt;&lt;a href=&quot;#流程图分类&quot; class=&quot;headerlink&quot; title=&quot;流程图分类&quot;&gt;&lt;/a&gt;流程图分类&lt;/h3&gt;&lt;p&gt;不同的流程图为不同的对象服务，而流程图的分类有三种，引用&lt;a href=&quot;http://www.woshipm.com/pd/441557.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;人人中关于三种流程图的概念&lt;/a&gt;分别是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;业务流程图（Transaction Flow）：一般设计多个主体，一般会用泳道图的形式去表示业务在多方协作下是如何运行的，设计产品最初先绘制业务流程图&lt;/li&gt;
+&lt;li&gt;任务流程图（Mission Flow）：反映出用户完成某个具体任务时的操作流程。任务流程图可以是业务流程图作为表现方式之一衍生出来的分支，因为下文的对象比较多层次，因此这里列了出来。&lt;/li&gt;
+&lt;li&gt;页面流程图（Page Flow）：包含页面、行动点、连接线，是产品从抽象到具象的关键点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;服务角色&quot;&gt;&lt;a href=&quot;#服务角色&quot; class=&quot;headerlink&quot; title=&quot;服务角色&quot;&gt;&lt;/a&gt;服务角色&lt;/h3&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1、设计师，页面流程图能提供设计师在满足流程设计中添加自己独特的交互和美观&lt;/li&gt;
+&lt;li&gt;2、开发者，任务流程图能更好梳理开发中的业务逻辑细节设计&lt;/li&gt;
+&lt;li&gt;3、上司，业务流程图能让上司清晰知道产品不同部门在协作某件任务时的业务流程&lt;/li&gt;
+&lt;li&gt;4、自己，任务流程图能在产品上线之后，验证用户的真实操作是否按自己的逻辑来，能帮助自己更全面了解用户&lt;/li&gt;
+&lt;li&gt;5、新员工，快速了解业务如何运作的视图，明白业务的最终目标是什么，中有哪些角色在参与以及他们的职责，以及彼此之间的联接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;如何做流程图&quot;&gt;&lt;a href=&quot;#如何做流程图&quot; class=&quot;headerlink&quot; title=&quot;如何做流程图&quot;&gt;&lt;/a&gt;如何做流程图&lt;/h2&gt;&lt;p&gt;首先最重要的一点就是要遵守规则，虽然时代倡导要具备创新意识，但有时候统一规则还是非常有好处的，那就是方便交流，不然辛苦做好的流程图发现别人根本看不懂，那就真的是对牛弹琴了！由于人人都是PM中的流程规则图太美，就盗了过来，希望能不追究！&lt;br&gt;&lt;img src=&quot;http://image.woshipm.com/wp-files/2016/11/l9c0hJu6wmNWtQl4oR6T.png&quot; alt=&quot;Flow此图来源在人人都是产品经理&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;业务流程图&quot;&gt;&lt;a href=&quot;#业务流程图&quot; class=&quot;headerlink&quot; title=&quot;业务流程图&quot;&gt;&lt;/a&gt;业务流程图&lt;/h3&gt;&lt;p&gt;业务流程图一般会使用泳道图表示，泳道图是一个二维的表格，因为和游泳池的比赛道类似，因此被称为泳道图（净说些废话充字数），在泳道图的X轴为涉及到的主题，相当于游泳比赛参赛者，而Y轴则是一个业务中每一个连续的环节。&lt;/p&gt;
+&lt;p&gt;我平时在项目中也没有用过这个流程图，这里因为是学习过程所以肯定要先基于理论之后做一个图，加深学习印象。&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/4df6a8175757778f190e6acc6449d689?fid=3375241367-250528-475166661980917&amp;amp;time=1501761600&amp;amp;rt=pr&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-CgpOvB%2bB9KN2MDLwN0xKusvyETg%3d&amp;amp;expires=8h&amp;amp;chkbd=0&amp;amp;chkv=0&amp;amp;dp-logid=4983124670850609264&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=90&amp;amp;vuk=3375241367&amp;amp;ft=image&quot; alt=&quot;狼人杀业务流程图&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;任务流程图&quot;&gt;&lt;a href=&quot;#任务流程图&quot; class=&quot;headerlink&quot; title=&quot;任务流程图&quot;&gt;&lt;/a&gt;任务流程图&lt;/h3&gt;&lt;p&gt;任务流程图一般比较简单，因为是核心是为某一环的操作而模仿用户行为的图解，这里我直接用我博客的流程图举例子&lt;br&gt;&lt;img src=&quot;https://pcs.baidu.com/rest/2.0/pcs/thumbnail?method=generate&amp;amp;app_id=250528&amp;amp;path=%2F%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E5%9B%BE.png&amp;amp;quality=90&amp;amp;size=c1280_u1024&quot; alt=&quot;zues blog flow&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;页面流程图&quot;&gt;&lt;a href=&quot;#页面流程图&quot; class=&quot;headerlink&quot; title=&quot;页面流程图&quot;&gt;&lt;/a&gt;页面流程图&lt;/h3&gt;&lt;p&gt;页面流程图我真的没做过，这是一个好机会，又能有机会学一个新东西，因为理论已经在脑海中形成一个抽象的概念，手动模仿一个例子做出来的话能在脑海中形成更长久的记忆，希望到工作时不会忘记，哈哈！&lt;/p&gt;
+&lt;p&gt;google的结果很大部分都是用Axure做的，基本都是低保真矩形框加箭头的线框图，看到一些复制的页面流程图，整体看起来非常帅，但其实线头非常多，如果想要做好我觉得需要提前脑海有一个整体的每部分图形，不然没拍好每一个页面的位置，恐怕箭头的指向都让其它看的人会晕，如果时那样觉得或许直接做原型会更好，不过做原型又要和设计师协作，我也不清楚怎么分情况讨论，没有经验也不敢随意参考别人的博客，还是自己以后亲手经历之后再说。&lt;br&gt;&lt;img src=&quot;https://s-media-cache-ak0.pinimg.com/736x/56/06/76/560676051a2970d8ae5c13f615962979--flowchart-service-design.jpg&quot; alt=&quot;page flow&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;持续更新&quot;&gt;&lt;a href=&quot;#持续更新&quot; class=&quot;headerlink&quot; title=&quot;持续更新&quot;&gt;&lt;/a&gt;持续更新&lt;/h2&gt;&lt;p&gt;mark一下自己，因为这里好多都只是个人理解，还有很多不懂的东西，以后就业之后会不断更新。谢谢各位来看我博客的小伙伴！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
+      <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
+    
+  </entry>
   
   <entry>
     <title>IOS开发_机电E家人</title>
@@ -37,9 +94,9 @@
       <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="ios" scheme="http://zuesblog.xyz/tags/ios/"/>
-    
       <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
+    
+      <category term="ios" scheme="http://zuesblog.xyz/tags/ios/"/>
     
   </entry>
   
@@ -80,6 +137,46 @@
     
       &lt;h2 id=&quot;做梦&quot;&gt;&lt;a href=&quot;#做梦&quot; class=&quot;headerlink&quot; title=&quot;做梦&quot;&gt;&lt;/a&gt;做梦&lt;/h2&gt;&lt;p&gt;在睡觉的时候，明明梦里过去一天了，但是醒来发现就只有几个小时。&lt;/p&gt;
 &lt;p&gt;就像今天中午，我挑了一个12分钟的闹钟，这是我长期积累下来的最
+    
+    </summary>
+    
+      <category term="日记" scheme="http://zuesblog.xyz/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="日记" scheme="http://zuesblog.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>鲈鱼的奇思妙想日记_我心中的教育</title>
+    <link href="http://zuesblog.xyz/2017/05/03/%E9%B2%88%E9%B1%BC%E7%9A%84%E5%A5%87%E6%80%9D%E5%A6%99%E6%83%B3%E6%97%A5%E8%AE%B0-%E6%88%91%E5%BF%83%E4%B8%AD%E7%9A%84%E6%95%99%E8%82%B2/"/>
+    <id>http://zuesblog.xyz/2017/05/03/鲈鱼的奇思妙想日记-我心中的教育/</id>
+    <published>2017-05-03T13:38:07.000Z</published>
+    <updated>2017-08-03T14:13:27.969Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;看电影&quot;&gt;&lt;a href=&quot;#看电影&quot; class=&quot;headerlink&quot; title=&quot;看电影&quot;&gt;&lt;/a&gt;看电影&lt;/h2&gt;&lt;p&gt;今天看了由&lt;code&gt;阿米尔汗&lt;/code&gt;自导的一部电影——&lt;strong&gt;《Like Stars on Earth》&lt;/strong&gt;，故事发生在印度两个似同非同学校，详情我就不剧透了，看过的人就会知道里面描述着巨大的教育意义。&lt;br&gt;&lt;img src=&quot;https://img3.doubanio.com/view/photo/photo/public/p2197898056.webp&quot; alt=&quot;Like Stars on Earth&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;略剧透的故事简介&quot;&gt;&lt;a href=&quot;#略剧透的故事简介&quot; class=&quot;headerlink&quot; title=&quot;略剧透的故事简介&quot;&gt;&lt;/a&gt;略剧透的故事简介&lt;/h2&gt;&lt;p&gt;童年的&lt;code&gt;伊夏&lt;/code&gt;在生活中对各种事物都充满好奇的想象力，一切都和常人无异常的的他唯一难以掌握的确是上学的知识，不管怎样他都不能理解课堂上老师讲的大多数公式、单词和文章。故事中与之形成鲜明对比的是他哥哥勤奋的读书插曲，尽管描述的寥寥无几，但是依然备受影响力。&lt;/p&gt;
+&lt;p&gt;当然故事中不止这一处的对比，而最鲜明的只能是两个，至少我认为是两个地方，除了上面提到的他和哥哥之间的对比，还有普通老师和尼克的对比。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;思考&quot;&gt;&lt;a href=&quot;#思考&quot; class=&quot;headerlink&quot; title=&quot;思考&quot;&gt;&lt;/a&gt;思考&lt;/h2&gt;&lt;p&gt;好比小学生写作文，有些时候真觉得作文命题人有点傻逼，让小学生写作文的要求竟然需要有生活感悟，小学生拿来这么多生活经历啊，智力水平和情绪触觉都还在不断的形成，就这样被强制的要求下，开始写“有深度”的作文，于是就出现了很多&lt;code&gt;爸爸/妈妈/亲人在作文死掉的悲剧引发的感想&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;拿我自己来说，或许是我自身的原因，反正我童年最讨厌写作，一味的模仿别人的文章但却不知道别人文章哪里好，为什么好。老师竟然还倡导我们抄好词好句，如果这样抄下来有用的话，那为什么还会出现很大一批朴实、语言浅显易懂的作家。&lt;/p&gt;
+&lt;p&gt;我也知道不能埋怨谁，但孩童年纪确实需要一位非常好的导师。&lt;strong&gt;有一句话是这么说的：目光长远的人把目标当成手段，而目光短浅的人把手段当成目标。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;教师是一门职业？&quot;&gt;&lt;a href=&quot;#教师是一门职业？&quot; class=&quot;headerlink&quot; title=&quot;教师是一门职业？&quot;&gt;&lt;/a&gt;教师是一门职业？&lt;/h2&gt;&lt;p&gt;辽阔的社会下，当然不缺乏好老师，但更多的是把教师当成职业的老师，我不认为老师应该把教师当成是一门职业，为指标而活，被工资驱动着做起培育一大堆知识大众者的责任，甚至为了完成上头的指标把整个教育流程完善为最优解的更可怕，这样的教师无疑把学生当成自己的产品，尽管是不断优化教授的手段，但最后还是培育出一大批缺乏创新，只能按图索骥的“机器人”，这个过程老师就像硬件程序员，嵌入一份优雅的代码到硬件之后，通过反复的测试淘汰掉一生产下来就是质量比较差的硬件，过滤掉之后剩余性能优质的硬件，不断重复解决淘汰学生问题。&lt;/p&gt;
+&lt;p&gt;我不针对程序员，程序员这么干是对的，因为我也是程序员，我想表达的教师不应该是被当成一门职业，而应该是父母的角色，用发展的眼光来培育小孩，按照兴趣做出不同创意的作品来判断期末成绩，同时成绩不应该非常差，也不能太优秀，多问问孩子为什么作品要这么做，而不是建议他怎么做，或许这样的老师能从孩子身上学会更多东西！&lt;/p&gt;
+&lt;p&gt;当然要成为差异化对待孩纸的教师会累，毕竟每一个小孩都是独特的存在，而且老师也需要养活自己，为指标而活不是错，我只是想说明，如果想当教师那就多为孩子着想，我也只是空口说梦话，我没有调查实践得出过结论是否这样的教育方法会好一点，不过我还是要解释一下我的想法，是看了电影之后的感悟&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;结合电影故事&quot;&gt;&lt;a href=&quot;#结合电影故事&quot; class=&quot;headerlink&quot; title=&quot;结合电影故事&quot;&gt;&lt;/a&gt;结合电影故事&lt;/h2&gt;&lt;p&gt;故事中伊夏的老师观察到他的不寻常情况后，通过作业调查和家庭访谈，经过仔细分析之后将自己的想法告诉给伊夏父母，从而征得单独辅导伊夏的权利，倘若这件事情发生在中国，我觉得没有哪位家长会反对，因为孩子被收到关注。我更倡导这样老师以学生为驱动的教育。&lt;/p&gt;
+&lt;p&gt;世间万物皆是矛盾体，普通教师也一样，口口声声说我们读好书就可以成就不凡的人生，但却将我们大部分学生教育成按部就班的社会中级阶层。而当下为什么企业招聘会如此注重创新力，因为这方面的人才供不应求，导师中国的劳动力非常廉价，可替代性高。&lt;/p&gt;
+&lt;p&gt;我认为，学习好的学生可以鼓励他们用心的学，但不能过分好学生主意，认为坏学生就不是社会栋梁的苗子，如果可以在布置作业的时候按照期末作业对社会价值和影响力，那该有多好，每个人都有可能利用自己特长成为优等生。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;我心中的教育流程&quot;&gt;&lt;a href=&quot;#我心中的教育流程&quot; class=&quot;headerlink&quot; title=&quot;我心中的教育流程&quot;&gt;&lt;/a&gt;我心中的教育流程&lt;/h2&gt;&lt;p&gt;我认为学生和用户一样，一开始都是不知道自己喜欢什么，而孩童时期的大脑接纳能力、成长力和记忆力也是最旺盛的，我认为这时候的老师应该都要学会和数据挖掘师一样细腻的观察力，懂得如何在日常不同实践作业中挖掘学生优势。&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/69e8a5da0c291f717a05d6aa508656ee?fid=3375241367-250528-809718320989208&amp;amp;time=1501768800&amp;amp;rt=pr&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-Irh6WYZNYhnASz4krmmeD1346EA%3d&amp;amp;expires=8h&amp;amp;chkbd=0&amp;amp;chkv=0&amp;amp;dp-logid=4984693297551179141&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=90&amp;amp;vuk=3375241367&amp;amp;ft=image&quot; alt=&quot;children power&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;看电影&quot;&gt;&lt;a href=&quot;#看电影&quot; class=&quot;headerlink&quot; title=&quot;看电影&quot;&gt;&lt;/a&gt;看电影&lt;/h2&gt;&lt;p&gt;今天看了由&lt;code&gt;阿米尔汗&lt;/code&gt;自导的一部电影——&lt;strong&gt;《Like Stars on Earth》&lt;/stro
     
     </summary>
     
@@ -135,6 +232,36 @@
       <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
       <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品经理之路—-Axure踩坑系列</title>
+    <link href="http://zuesblog.xyz/2017/04/29/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF%E2%80%94-Axure%E8%B8%A9%E5%9D%91%E7%B3%BB%E5%88%97/"/>
+    <id>http://zuesblog.xyz/2017/04/29/产品经理之路—-Axure踩坑系列/</id>
+    <published>2017-04-29T13:28:52.000Z</published>
+    <updated>2017-08-03T13:36:18.416Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Axure踩坑系列&quot;&gt;&lt;a href=&quot;#Axure踩坑系列&quot; class=&quot;headerlink&quot; title=&quot;Axure踩坑系列&quot;&gt;&lt;/a&gt;Axure踩坑系列&lt;/h2&gt;&lt;p&gt;1 、编辑条件的时候，一开始没看到&lt;code&gt;edit Condition&lt;/code&gt;弹出框的顶部，&lt;code&gt;Satify&lt;/code&gt;的下拉框，有一个&lt;code&gt;all&lt;/code&gt;和&lt;code&gt;any&lt;/code&gt;，表示全部满足或者满足其中一条就可以&lt;/p&gt;
+&lt;p&gt;2、使用&lt;code&gt;fire&lt;/code&gt;功能可以触发其它事件，这个因为做的原型小组件中使用到这个比较少，容易被遗忘，希望这次记下来之后没有下一次犯错了，必须没有下次。&lt;/p&gt;
+&lt;p&gt;3、在设计联盟的资讯页面原型中，一开始其实犯了一个错误，明明设计师都给了图片，一开始应该先放一个动态面板的，不然跳转到详情页的时候就不能左移切换面板状态了，后面重新加上去就好比突然改需求一样，感觉挺麻烦的&lt;/p&gt;
+&lt;p&gt;4、哈哈哈，在做顶部&lt;code&gt;tab&lt;/code&gt;的时候，一开始不清楚如何拿到对应组件的Y坐标，然后乱猜，竟然才对了，在声明变量&lt;code&gt;LVAR1&lt;/code&gt;的时候赋值为对应的&lt;code&gt;target&lt;/code&gt;组件，然后拿Y坐标的时候直接用&lt;code&gt;LVAR1.y&lt;/code&gt;就ok了！哈哈，有时候不得不被自己的机智所陶醉。不过当然这样的逻辑是不灵活的，因为被限定死了，如果突然添加新的顶部&lt;code&gt;tab&lt;/code&gt;的话就会导致原来的代码无法复用&lt;/p&gt;
+&lt;p&gt;5、做圆形头像图片的时候，一直没做成功，后来去知乎上搜索了一下答案，真的被自己笨到了，知乎上的回答是这样的，&lt;code&gt;在图片左上角有一个倒三角按钮，往右拖图片就会变圆&lt;/code&gt;，我试了一下，以为自己被骗了，这不是设置圆角的灵活按钮吗？然后那个回答点赞数挺高的，就试一下图形变换，把图片宽高设置为相等就可以显示为圆形了。&lt;/p&gt;
+&lt;h2 id=&quot;发散思维不够强&quot;&gt;&lt;a href=&quot;#发散思维不够强&quot; class=&quot;headerlink&quot; title=&quot;发散思维不够强&quot;&gt;&lt;/a&gt;发散思维不够强&lt;/h2&gt;&lt;p&gt;这里我暴露了自己的一个缺点，以前在开发RN时做圆形头像设置一定的&lt;code&gt;corner Radirus&lt;/code&gt;之后就变成圆形了。这里我也尝试过，但是一开始的时候仅仅设置&lt;code&gt;corner Radirus&lt;/code&gt;确不是圆角时我放弃了下一步尝试，这是一个失败的决定，如果我当时能考虑到开发时图片已经被调整为正方形的话，我就能理所当然的把圆形图片做出来了，我的发散思维能力不够强，这是一个机会，如果弥补这个缺点，以后遇到不懂的东西说不定尝试的付出的时间成本会随着融会贯通的程度逐渐减少。在这里我自己标记一下&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;6、将一系列&lt;code&gt;Radio Button&lt;/code&gt;结合新城一个单选框的秘诀是：选中所有单选框，右键鼠标，点击&lt;code&gt;Assign Radio Group&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;7、在做轮播图的时候一开始一直想着在&lt;code&gt;panel state&lt;/code&gt;改变时，&lt;code&gt;onSelect&lt;/code&gt;轮播图下方对应的导航点，但是发现不能单独设置每一个&lt;code&gt;state&lt;/code&gt;的&lt;code&gt;panelStateChange&lt;/code&gt;，在图标上做的&lt;code&gt;Interactive style&lt;/code&gt;白用了，一直在这个状态想了好久，最后发现还是直接用一个&lt;code&gt;dynamic panel&lt;/code&gt;来做轮播图下方的点好了，不过做好一开始预览的时候还是出现发了问题，那就是点并没有随着轮播图移动，最后检查了一遍轮播图，发现是没有设置循环时间，因为我使用的是&lt;code&gt;next&lt;/code&gt;模式，设置时间为2000毫秒之后就可以循环播放了。&lt;/p&gt;
+&lt;p&gt;8、在使用&lt;code&gt;Inline Frame&lt;/code&gt;时候，一直隐藏不了网页右边的滚动条，这就太影响美观了，最后在检查器中不断的试，发现只要把&lt;code&gt;Frame Scrollbars&lt;/code&gt;设置为&lt;code&gt;never show&lt;/code&gt;就可以了！&lt;/p&gt;
+&lt;p&gt;9、制作获取验证码时，一直出现错误，一开始的时候设置&lt;code&gt;onLoadVariable&lt;/code&gt;是设置在最大的动态面板上的，这里我发现了&lt;code&gt;Axure&lt;/code&gt;的一个不好的地方，那就是假如这个时候在多个&lt;code&gt;state&lt;/code&gt;中单独设置某一个&lt;code&gt;state&lt;/code&gt;的事件，其它事件也会被复制该事件，因此我一直在预览的时候接收到事件冲突提示，因为我多个页面使用了同一个&lt;code&gt;onLoadVariable&lt;/code&gt;，最后我单独在对应的获取验证码矩形框设置它的&lt;code&gt;OnLoad&lt;/code&gt;事件之后，一切都可以正常run了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;踩坑系列将会持续更新…&quot;&gt;&lt;a href=&quot;#踩坑系列将会持续更新…&quot; class=&quot;headerlink&quot; title=&quot;踩坑系列将会持续更新…&quot;&gt;&lt;/a&gt;踩坑系列将会持续更新…&lt;/h4&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Axure踩坑系列&quot;&gt;&lt;a href=&quot;#Axure踩坑系列&quot; class=&quot;headerlink&quot; title=&quot;Axure踩坑系列&quot;&gt;&lt;/a&gt;Axure踩坑系列&lt;/h2&gt;&lt;p&gt;1 、编辑条件的时候，一开始没看到&lt;code&gt;edit Condition&lt;/cod
+    
+    </summary>
+    
     
   </entry>
   
@@ -202,9 +329,12 @@
     <link href="http://zuesblog.xyz/2017/04/24/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E8%AE%BE%E8%AE%A1%E8%81%94%E7%9B%9F%E9%A1%B9%E7%9B%AE/"/>
     <id>http://zuesblog.xyz/2017/04/24/产品经理之路-PRD撰写-设计联盟项目/</id>
     <published>2017-04-24T09:09:14.000Z</published>
-    <updated>2017-08-01T09:47:44.307Z</updated>
+    <updated>2017-08-03T14:13:57.286Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;看了比较多的产品类书籍，包括《启示录》《人人都是产品经理》，都明确提出了需求文档的重要性，而作为团队负责人，更加应该对目标不明确而导致的后期变更需求，产生的成本负责，为了尽量避免这种事情发现，在写设计联盟之前已经开始和美工的汉子（这次的美工是大一的师弟，真可惜本以为可以和妹子合作）合作把高保真的原型做了出来，图片很不错。&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;时间线（保持更新到ios上线）&quot;&gt;&lt;a href=&quot;#时间线（保持更新到ios上线）&quot; class=&quot;headerlink&quot; title=&quot;时间线（保持更新到ios上线）&quot;&gt;&lt;/a&gt;时间线（保持更新到ios上线）&lt;/h2&gt;&lt;p&gt;这里的内容是后面增加上去的，为了节省上线时间，我将安卓端首先发布在阿里应用分发平台，上线过程中比较颠簸，审核中遇到很多突发事件，不过成功上线之后都幸运的成为了自己的经验。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://m.pp.cn/detail.html?appid=7627447&amp;amp;ch_src=pp_dev&amp;amp;ch=default&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;设计联盟安卓端下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;看了比较多的产品类书籍，包括《启示录》《人人都是产品经理》，都明确提出了需求文档的重要性，而作为团队负责人，更加应该对目标不明确而导致的后期变更需求，产生的成本负责，为了尽量避免这种事情发现，在写设计联盟之前已经开始和美工的汉子（这次的美工是大一的师弟，真可惜本以为可以和妹子合作）合作把高保真的原型做了出来，图片很不错。&lt;/p&gt;
 &lt;p&gt;而我也继续将机会转化为锻炼不断完善自己的全面产品技能，反正尽量不会让用户思考就对了。我将从以下几点记录我这次的PRD撰写。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -215,13 +345,13 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;信息结构设计&quot;&gt;&lt;a href=&quot;#信息结构设计&quot; class=&quot;headerlink&quot; title=&quot;信息结构设计&quot;&gt;&lt;/a&gt;信息结构设计&lt;/h2&gt;&lt;p&gt;为了更快的梳理信息架构，这里我直接采用表格形式进行描述。&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/78b73778ec2e90096af4542489f74c40?fid=3375241367-250528-555073912746463&amp;amp;time=1501578000&amp;amp;rt=pr&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-6fNdgYBvumy81PY%2bxHss8KzIzcY%3d&amp;amp;expires=8h&amp;amp;chkbd=0&amp;amp;chkv=0&amp;amp;dp-logid=4934020424568972768&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=90&amp;amp;vuk=3375241367&amp;amp;ft=image&quot; alt=&quot;DesignAliance Information structor&quot;&gt;&lt;br&gt;在网上会有人说使用MindManage或是Xmind来制作信息架构图，我觉得这之间有一个误会，工具只是为人而生的，当然我不否认使用脑图工具看上去会更专业，也更清晰，但有时候可能追求专业的同时会增加了时间成本，工具是为方便快捷而生，只有最适合自己的才是最好的。&lt;/p&gt;
+&lt;h2 id=&quot;信息结构设计&quot;&gt;&lt;a href=&quot;#信息结构设计&quot; class=&quot;headerlink&quot; title=&quot;信息结构设计&quot;&gt;&lt;/a&gt;信息结构设计&lt;/h2&gt;&lt;p&gt;在知乎网友的建议下，为了更快的梳理信息架构，开发前我就直接采用表格形式进行描述好了。&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/d5dd60363198329ce3af0ddada56b57a?fid=3375241367-250528-555763392663296&amp;amp;time=1501765200&amp;amp;rt=pr&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-oiJVDfrZbZKXuKQximaLO0ta7CQ%3d&amp;amp;expires=8h&amp;amp;chkbd=0&amp;amp;chkv=0&amp;amp;dp-logid=4983945965219799693&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=90&amp;amp;vuk=3375241367&amp;amp;ft=image&quot; alt=&quot;DesignAliance Information structor&quot;&gt;&lt;br&gt;在网上会有人说使用MindManage或是Xmind来制作信息架构图，我觉得这之间有一个误会，工具只是为人而生的，当然我不否认使用脑图工具看上去会更专业，也更清晰，但有时候可能追求专业的同时会增加了时间成本，工具是为方便快捷而生，只有最适合自己的才是最好的。&lt;/p&gt;
 &lt;h2 id=&quot;产品原型&quot;&gt;&lt;a href=&quot;#产品原型&quot; class=&quot;headerlink&quot; title=&quot;产品原型&quot;&gt;&lt;/a&gt;产品原型&lt;/h2&gt;&lt;p&gt;最快并且直观了解PRD的方式估计就是看原型图了，这里我用Axure做了一个原型，在阿里买的服务器到期了，没办法，只能托管到Axure share空间了。&lt;br&gt;如需查看可以点击这里打开,&lt;a href=&quot;http://4hf2wg.axshare.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;设计联盟APP产品原型&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;看了比较多的产品类书籍，包括《启示录》《人人都是产品经理》，都明确提出了需求文档的重要性，而作为团队负责人，更加应该对目标不明确而导致的后期
+      &lt;h2 id=&quot;时间线（保持更新到ios上线）&quot;&gt;&lt;a href=&quot;#时间线（保持更新到ios上线）&quot; class=&quot;headerlink&quot; title=&quot;时间线（保持更新到ios上线）&quot;&gt;&lt;/a&gt;时间线（保持更新到ios上线）&lt;/h2&gt;&lt;p&gt;这里的内容是后面增加上去的，为了节省
     
     </summary>
     
@@ -672,18 +802,21 @@
     <link href="http://zuesblog.xyz/2017/03/07/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
     <id>http://zuesblog.xyz/2017/03/07/产品经理之路-PRD撰写-信息结构图/</id>
     <published>2017-03-07T00:54:11.000Z</published>
-    <updated>2017-07-28T16:14:25.335Z</updated>
+    <updated>2017-08-03T14:28:31.460Z</updated>
     
     <content type="html">&lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;个人理解&quot;&gt;&lt;a href=&quot;#个人理解&quot; class=&quot;headerlink&quot; title=&quot;个人理解&quot;&gt;&lt;/a&gt;个人理解&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;在整个应用中，按照模块来区分每一个模块中展示的信息，和&lt;code&gt;功能具备交互性&lt;/code&gt;不同，&lt;code&gt;信息是可以在页面中被呈现出来的元素&lt;/code&gt;，常见的信息包括数字、文字、图片等具象。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;那我的博客来说明的话，入口启动页就是一个模块，它有一个背景图，有我的头像、个性签名、首页通道、关于通道、归类通道，还有我的github、facebook地址和instagram地址，以及友情链接。因为友情链接下的两个是属于统一维度的，所以在这里就没有被细分，而是直接当成同一个信息层来区分&lt;/p&gt;
+&lt;p&gt;那我可不可以这样来理解，如果信息结构设计是供数据库设计人员而做，那么流程设计和功能设计则是为了开发者编码而做，交互设计和视觉设计是为用户体验师而做，这样总结下来一个信息结构图，就可以简单的理解为给不同角色提供不同的前期判断帮助而做，那么由于处理的对象不同功能就区分下来了！&lt;/p&gt;
+&lt;p&gt;依据上面的分析，做了自己博客的信息结构图（最好是使用表格来显示）：&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/vGVD-VFKVufj-94527.png&quot; alt=&quot;zues blog信息结构图&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&quot;信息结构设计&quot;&gt;&lt;a href=&quot;#信息结构设计&quot; class=&quot;headerlink&quot; title=&quot;信息结构设计&quot;&gt;&lt;/a&gt;信息结构设计&lt;/h3&gt;&lt;p&gt;信息结构是产品呈现的信息层次（也有人把信息结构称为信息架构），而我认为主要是信息，因为大多数人都把它与功能结构图混在一起。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;在&lt;a href=&quot;https://www.zhihu.com/question/21252588&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎上整理了两个优质的答案&lt;/a&gt;，个人觉得醍醐灌顶很提神。&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;信息结构关注的是单个页面的元素、信息来源、字段限制等，而非结构化的信息，不符合思维导图的特点，建议用表格来展示。&lt;br&gt;在PRD中，信息结构是供开发建数据库的参考依据，这里引用UML里面类的概念，一个类包含属性和方法，而信息就是类的属性，举个例子，博客系统有最主要的文章类、评论类，文章类包含的信息有：标题、作者、发布时间、摘要、正文、访问量等；评论类包含的信息有评论者头像、昵称、回复内容、邮件、QQ等。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;相比之下，我会更倾向于理解第二个，因为在java设计中也采用到了类的概念,另外类似ANDROID开发中的model来理解信息结构对我来说更具优势，按照对象来划分属性，这个分类觉得是最好的了。&lt;/p&gt;
-&lt;h3 id=&quot;个人理解&quot;&gt;&lt;a href=&quot;#个人理解&quot; class=&quot;headerlink&quot; title=&quot;个人理解&quot;&gt;&lt;/a&gt;个人理解&lt;/h3&gt;&lt;p&gt;那我可不可以这样来理解，如果信息结构设计是供数据库设计人员而做，那么流程设计和功能设计则是为了开发者编码而做，交互设计和视觉设计是为用户体验师而做，这样总结下来一个信息结构图，就可以简单的理解为给不同角色提供不同的前期判断帮助而做，那么由于处理的对象不同功能就区分下来了！&lt;/p&gt;
-&lt;p&gt;依据上面的分析，做了自己博客的信息结构图（最好是使用表格来显示）：&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/vGVD-VFKVufj-94527.png&quot; alt=&quot;zues blog信息结构图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;相比之下，我会更倾向于理解第二个，因为在&lt;code&gt;java&lt;/code&gt;设计中也采用到了类的概念,另外类似&lt;code&gt;ANDROID&lt;/code&gt;开发中的&lt;code&gt;model&lt;/code&gt;来理解信息结构对我来说更具优势，按照对象来划分属性，这个分类觉得是最好的了。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;流程设计&quot;&gt;&lt;a href=&quot;#流程设计&quot; class=&quot;headerlink&quot; title=&quot;流程设计&quot;&gt;&lt;/a&gt;流程设计&lt;/h2&gt;&lt;p&gt;细致描述用户在使用产品的流程，同时也在时间的角度上规定各个部分之间的关系，如下图是我的博客操作流程，采用visio设计：&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/b20bb1456dadee37139795021249d327?fid=3375241367-250528-251413492401602&amp;amp;time=1501232400&amp;amp;rt=yt&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-dsWiXiqNp0qWGjTLa3s%2BBYwY4ZM%3D&amp;amp;expires=2h&amp;amp;chkv=0&amp;amp;chkbd=0&amp;amp;chkpc=&amp;amp;dp-logid=4840558639286715197&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=100&amp;amp;vuk=-&amp;amp;ft=video&quot; alt=&quot;博客流程图&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;功能设计&quot;&gt;&lt;a href=&quot;#功能设计&quot; class=&quot;headerlink&quot; title=&quot;功能设计&quot;&gt;&lt;/a&gt;功能设计&lt;/h2&gt;&lt;p&gt;在功能上，整个博客核心是展示文章，因此更多的是首页功能，显示文章列表，进而可以查看文章详情。&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/W7kL-lbQAbyQ-95290.png&quot; alt=&quot;zues blog 功能设计&quot;&gt;&lt;/p&gt;
@@ -957,161 +1090,6 @@
     
     
       <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>REACT-NATIVE开发_项目感想9</title>
-    <link href="http://zuesblog.xyz/2016/12/14/REACT-NATIVE%E5%BC%80%E5%8F%91_%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%83%B39/"/>
-    <id>http://zuesblog.xyz/2016/12/14/REACT-NATIVE开发_项目感想9/</id>
-    <published>2016-12-14T08:03:58.000Z</published>
-    <updated>2017-07-28T05:29:07.456Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;关于ref的一点坑&quot;&gt;&lt;a href=&quot;#关于ref的一点坑&quot; class=&quot;headerlink&quot; title=&quot;关于ref的一点坑&quot;&gt;&lt;/a&gt;关于ref的一点坑&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;今天在使用ref来调用自组件的时候发现了一个东西，可能我这个问题是特例吧！因为我是用了别人的库才发现这个问题的，不过我还是要记录一下。&lt;/p&gt;
-&lt;p&gt;我使用的库是&lt;a href=&quot;https://github.com/exponent/react-native-tab-navigator&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react-native-tab-navigator&lt;/a&gt;，一个很优秀的底部导航栏。&lt;/p&gt;
-&lt;p&gt;问题：当我在底部栏的home位置时，home对应的component也是home，home里面有一个按钮导航到分享页面.下面的DOM均为模拟&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;render()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	return(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;View&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;lt;TabNavigator&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			  &amp;lt;TabNavigator.Item&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				selected=&amp;#123;this.state.selectedTab === &amp;apos;home&amp;apos;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				title=&amp;quot;Home&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				renderIcon=&amp;#123;() =&amp;gt; &amp;lt;Image source=&amp;#123;...&amp;#125; /&amp;gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				renderSelectedIcon=&amp;#123;() =&amp;gt; &amp;lt;Image source=&amp;#123;...&amp;#125; /&amp;gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				badgeText=&amp;quot;1&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				onPress=&amp;#123;this.toShare.bind(this)&amp;#125;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;lt;home ref=&amp;#123;c =&amp;gt; this._home = c&amp;#125; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			  &amp;lt;/TabNavigator.Item&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			  &amp;lt;TabNavigator.Item&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				selected=&amp;#123;this.state.selectedTab === &amp;apos;user&amp;apos;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				title=&amp;quot;user&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				renderIcon=&amp;#123;() =&amp;gt; &amp;lt;Image source=&amp;#123;...&amp;#125; /&amp;gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				renderSelectedIcon=&amp;#123;() =&amp;gt; &amp;lt;Image source=&amp;#123;...&amp;#125; /&amp;gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				badgeText=&amp;quot;1&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				onPress=&amp;#123;this.toShare.bind(this)&amp;#125;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;lt;user ref=&amp;#123;c =&amp;gt; this._user = c&amp;#125; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			  &amp;lt;/TabNavigator.Item&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;lt;/TabNavigator&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;/View&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;toShare()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	this._home.testRef();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;然后在home里面有一个&lt;code&gt;testRef()&lt;/code&gt;方法。这时候点击home里面的onPress的时候就会有一个alert。&lt;br&gt;但是当我在user里面使用ref的时候，因为使用ref的时候需要先初始化，所以当我在select tab为home的时候使用&lt;code&gt;this._user.testRef()&lt;/code&gt;就警告说undefined了。&lt;/p&gt;
-&lt;h2 id=&quot;Type-Error-Network-request-failed&quot;&gt;&lt;a href=&quot;#Type-Error-Network-request-failed&quot; class=&quot;headerlink&quot; title=&quot;Type Error: Network request failed&quot;&gt;&lt;/a&gt;Type Error: Network request failed&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;重新遇到ios的fetch API报错，Type Error: Network request failed问题&lt;br&gt;这一次我还是按照上次的有过的经验改了一下，可是一开始用文本编辑器修改了&lt;code&gt;appName/ios/appName/Info.plist&lt;/code&gt;还是改了之后没生效，我试过将模拟器重启，还有无数次reload，还是没生效，甚至我还试过长时间等待，再重新reboot模拟器，还是不行&lt;/p&gt;
-&lt;p&gt;最后使用Xcode直接打开&lt;code&gt;Info.plist&lt;/code&gt;来修改，在对应的&lt;code&gt;AppTransportSecurity&lt;/code&gt;中点击一个&lt;code&gt;+&lt;/code&gt;号，会直接添加一个子key，找到key的名字为&lt;code&gt;Allow Arbitrary Loads&lt;/code&gt;就可以了。&lt;br&gt;对应&lt;code&gt;info.plist&lt;/code&gt;如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;key&amp;gt;NSAppTransportSecurity&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;key&amp;gt;NSAllowsArbitraryLoads&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;true/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;key&amp;gt;NSExceptionDomains&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;key&amp;gt;localhost&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;lt;key&amp;gt;NSTemporaryExceptionAllowsInsecureHTTPLoads&amp;lt;/key&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;lt;true/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;lt;/dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;lt;/dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;xcode打开如下&lt;br&gt;&lt;img src=&quot;http://bbs.reactnative.cn/uploads/files/1473409969387-bd986712-10a5-4a38-9deb-f5b45d7fd16d.png&quot; alt=&quot;info.plist&quot;&gt;&lt;/p&gt;
-&lt;p&gt;最后重新安装到模拟器，&lt;code&gt;react-native run-ios&lt;/code&gt;，应用的网络就跑起来了。&lt;br&gt;至于为什么要修改原来默认的AppTransportSecurity的属性，可以参考这篇博客&lt;a href=&quot;http://www.pluto-y.com/ios9-nsapptransportsecurity/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS9 - NSAppTransportSecurity&lt;/a&gt;,我觉得写得蛮详细。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;关于ref的一点坑&quot;&gt;&lt;a href=&quot;#关于ref的一点坑&quot; class=&quot;headerlink&quot; title=&quot;关于ref的一点坑&quot;&gt;&lt;/a&gt;关于ref的一点坑&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;今天在使用ref来调用自组件的时候发现了一个东西，可能我这个问题是特例吧！
-    
-    </summary>
-    
-      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
-    
-    
-      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python学习_一个python小常识</title>
-    <link href="http://zuesblog.xyz/2016/12/05/python%E5%AD%A6%E4%B9%A0_%E5%B0%8F%E5%B8%B8%E8%AF%86/"/>
-    <id>http://zuesblog.xyz/2016/12/05/python学习_小常识/</id>
-    <published>2016-12-05T05:57:41.000Z</published>
-    <updated>2017-07-28T05:27:33.458Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;python程序开头-usr-bin-python3&quot;&gt;&lt;a href=&quot;#python程序开头-usr-bin-python3&quot; class=&quot;headerlink&quot; title=&quot;python程序开头#!/usr/bin/python3&quot;&gt;&lt;/a&gt;python程序开头#!/usr/bin/python3&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;这是脚本语言共同遵循的一个规则，用来指定脚本的解释器。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;必须是在代码的首行&lt;/li&gt;
-&lt;li&gt;使用&lt;code&gt;#!&lt;/code&gt;标记&lt;/li&gt;
-&lt;li&gt;后面的字符串表示的是脚本解释器的路径&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;在linus中，shell是通过读取第一行来判断执行文件的类型。如果是&lt;code&gt;#!&lt;/code&gt;开头，被标记为脚本。而windows下则是通过文件后缀做类型关联，例如&lt;code&gt;hello.py&lt;/code&gt;，然后才确定使用什么程序去执行或者打开文件。&lt;/p&gt;
-&lt;p&gt;下面是一些常见的脚本标记例子：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;#!/bin/sh        shell脚本&lt;/li&gt;
-&lt;li&gt;#!/usr/perl        perl脚本&lt;/li&gt;
-&lt;li&gt;#!/usr/bin/python        python脚本&lt;/li&gt;
-&lt;li&gt;#!/usr/bin/python2        python2脚本&lt;/li&gt;
-&lt;li&gt;#!/usr/bin/python3        python3脚本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果不清楚脚本解释器的具体路径，或者开发环境与运行路径的安装路径不同，为了保证兼容性，可以使用&lt;code&gt;#!/usr/bin/env python3&lt;/code&gt;,这句标记可以在运行时自动搜索脚本解释器的绝对路径&lt;br&gt;这里是stackoverflow的详细解释，英文功底不错的同学可以点进去看&lt;a href=&quot;http://stackoverflow.com/questions/7670303/purpose-of-usr-bin-python3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Purpose of #!/usr/bin/python3&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;python程序开头-usr-bin-python3&quot;&gt;&lt;a href=&quot;#python程序开头-usr-bin-python3&quot; class=&quot;headerlink&quot; title=&quot;python程序开头#!/usr/bin/python3&quot;&gt;&lt;/a&gt;python
-    
-    </summary>
-    
-      <category term="python" scheme="http://zuesblog.xyz/categories/python/"/>
-    
-    
-      <category term="python入门" scheme="http://zuesblog.xyz/tags/python%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络_入门</title>
-    <link href="http://zuesblog.xyz/2016/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C_%E5%85%A5%E9%97%A8/"/>
-    <id>http://zuesblog.xyz/2016/12/05/计算机网络_入门/</id>
-    <published>2016-12-05T05:56:53.000Z</published>
-    <updated>2017-07-28T05:34:55.513Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;谈起计算机网络，很多人都是一头雾水，我们都只知道怎么使用电脑，但是不知道怎么改变电脑，除了硬件的改变，还有网络。&lt;/p&gt;
-&lt;p&gt;在使用互联网的时候，电脑市如何通过这台电脑给另一台局域网内的电脑或者是外网的电脑通信的呢？&lt;/p&gt;
-&lt;p&gt;打个比方，我们人与人之间交流，如果是面对面的话，一般情况下我要知道我想和谁聊天，我们用什么语言来聊天，这个语言必须是我们都知道的，通过聊天我根据朋友回应的信息反馈一些动作给他，例如击掌或者点头。&lt;/p&gt;
-&lt;p&gt;如果不是面对面，那就要采取写信的形式与对方交流了，我们寄一封信给亲人，信封必须提到的几个内容，发件人，发件人地址，邮编，收件人姓名，收件人地址，收件人邮编，以及承载内容的信。&lt;/p&gt;
-&lt;p&gt;网络中的协议就相当于我们交流的语言，世界上规定了一系列标准的协议，负责让不同的电脑识别出来对方电脑在讲什么。而网络中有五个层，每一层都有不同的专业术语来描述，类似生活中每一个行业都有自己的专业术语类似。&lt;/p&gt;
-&lt;p&gt;ok，开始学习！&lt;/p&gt;
-&lt;h2 id=&quot;OSI模型&quot;&gt;&lt;a href=&quot;#OSI模型&quot; class=&quot;headerlink&quot; title=&quot;OSI模型&quot;&gt;&lt;/a&gt;OSI模型&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;在开放的互联网模型中，根据不同的功能将其分为7层，也有其他的资料将其分为五层，这里运用OSI模型用七层来描述计算机网络结构。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;数据单元&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;层&lt;/th&gt;
-&lt;th&gt;功能&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;数据&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;应用层&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;数据&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;表示层&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;数据&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;会话层&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;数据段&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;传输层&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;网络分组&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;网络层&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;数据帧&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;数据链路&lt;/td&gt;
-&lt;td&gt;将电信号组成一个数据包，规定多少电信号为一组&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;比特&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;物理层&lt;/td&gt;
-&lt;td&gt;提供传送数据的通路，作为传输介质，类似马路作为物理基础提供环境给汽车，传输0和1的电信号&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;谈起计算机网络，很多人都是一头雾水，我们都只知道怎么使用电脑，但是不知道怎么改变电脑，除了硬件的改变，还有网络。&lt;/p&gt;
-&lt;p&gt;在
-    
-    </summary>
-    
-      <category term="The Fundamental Skills" scheme="http://zuesblog.xyz/categories/The-Fundamental-Skills/"/>
-    
-    
-      <category term="Computer Network" scheme="http://zuesblog.xyz/tags/Computer-Network/"/>
     
   </entry>
   
