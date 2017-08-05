@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zuesblog.xyz/"/>
-  <updated>2017-08-03T14:25:44.100Z</updated>
+  <updated>2017-08-04T05:40:02.580Z</updated>
   <id>http://zuesblog.xyz/</id>
   
   <author>
@@ -16,59 +16,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>产品经理之路-PRD撰写-流程设计</title>
-    <link href="http://zuesblog.xyz/2017/08/03/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
-    <id>http://zuesblog.xyz/2017/08/03/产品经理之路-PRD撰写-流程设计/</id>
-    <published>2017-08-03T14:15:45.000Z</published>
-    <updated>2017-08-03T14:25:44.100Z</updated>
+    <title>产品经理之路-PRD撰写-TD传媒教育</title>
+    <link href="http://zuesblog.xyz/2017/08/04/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-TD%E4%BC%A0%E5%AA%92%E6%95%99%E8%82%B2/"/>
+    <id>http://zuesblog.xyz/2017/08/04/产品经理之路-PRD撰写-TD传媒教育/</id>
+    <published>2017-08-04T05:40:02.000Z</published>
+    <updated>2017-08-04T05:40:02.580Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B5%81%E7%A8%8B%E5%9B%BE&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;流程图&lt;/a&gt;，标识算法、工作流或者流程的一种框图表示，它以不同类型的框代表不同种类的步骤，每两个步骤之间则以箭头连接。这种表示方法便于说明解决已知问题的方法。&lt;/p&gt;
-&lt;p&gt;很喜欢wiki上的这个定义，超级简练。这句话阐述了几个要点，那就是流程图具备一定的规则，同时每一个步骤之间都有联系不可能单独孤立，同时做这个流程图的时候已经知道了问题，一个穷游学生在陌生城市（起始点），知道景区位置（目标）但是不知道怎么过去，这时候导航路线就好比流程图的一个分支了，为什么这么说，因为流程图的目标经常都是矛盾的，常表现为是否对立面。因此目标是不定项的，也就是如果学生发现过去景区的路费太贵，就可能突然选择放弃。&lt;/p&gt;
-&lt;p&gt;看过知乎上不少的定义，整理之后我的理解是：流程图只能针对用户做一件事而设计，不能统筹所有事情，因此流程我认为是为了应用核心功能的使用流程而生的，因为在产品开发中，马云曾经说过一句话，少就是多，也就是能把每一次要迭代的功能专注做好其实就非常不错了，做太多可能由于个人经验不足，反而容易兼顾不周，做得一团糟。因此如果能考虑到一个核心功能的使用流程所有问题，那么应用逻辑设计就会更人性化，也就是常说的智能。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;流程图能为谁服务：&quot;&gt;&lt;a href=&quot;#流程图能为谁服务：&quot; class=&quot;headerlink&quot; title=&quot;流程图能为谁服务：&quot;&gt;&lt;/a&gt;流程图能为谁服务：&lt;/h2&gt;&lt;h3 id=&quot;流程图分类&quot;&gt;&lt;a href=&quot;#流程图分类&quot; class=&quot;headerlink&quot; title=&quot;流程图分类&quot;&gt;&lt;/a&gt;流程图分类&lt;/h3&gt;&lt;p&gt;不同的流程图为不同的对象服务，而流程图的分类有三种，引用&lt;a href=&quot;http://www.woshipm.com/pd/441557.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;人人中关于三种流程图的概念&lt;/a&gt;分别是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;业务流程图（Transaction Flow）：一般设计多个主体，一般会用泳道图的形式去表示业务在多方协作下是如何运行的，设计产品最初先绘制业务流程图&lt;/li&gt;
-&lt;li&gt;任务流程图（Mission Flow）：反映出用户完成某个具体任务时的操作流程。任务流程图可以是业务流程图作为表现方式之一衍生出来的分支，因为下文的对象比较多层次，因此这里列了出来。&lt;/li&gt;
-&lt;li&gt;页面流程图（Page Flow）：包含页面、行动点、连接线，是产品从抽象到具象的关键点&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;服务角色&quot;&gt;&lt;a href=&quot;#服务角色&quot; class=&quot;headerlink&quot; title=&quot;服务角色&quot;&gt;&lt;/a&gt;服务角色&lt;/h3&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;1、设计师，页面流程图能提供设计师在满足流程设计中添加自己独特的交互和美观&lt;/li&gt;
-&lt;li&gt;2、开发者，任务流程图能更好梳理开发中的业务逻辑细节设计&lt;/li&gt;
-&lt;li&gt;3、上司，业务流程图能让上司清晰知道产品不同部门在协作某件任务时的业务流程&lt;/li&gt;
-&lt;li&gt;4、自己，任务流程图能在产品上线之后，验证用户的真实操作是否按自己的逻辑来，能帮助自己更全面了解用户&lt;/li&gt;
-&lt;li&gt;5、新员工，快速了解业务如何运作的视图，明白业务的最终目标是什么，中有哪些角色在参与以及他们的职责，以及彼此之间的联接。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;如何做流程图&quot;&gt;&lt;a href=&quot;#如何做流程图&quot; class=&quot;headerlink&quot; title=&quot;如何做流程图&quot;&gt;&lt;/a&gt;如何做流程图&lt;/h2&gt;&lt;p&gt;首先最重要的一点就是要遵守规则，虽然时代倡导要具备创新意识，但有时候统一规则还是非常有好处的，那就是方便交流，不然辛苦做好的流程图发现别人根本看不懂，那就真的是对牛弹琴了！由于人人都是PM中的流程规则图太美，就盗了过来，希望能不追究！&lt;br&gt;&lt;img src=&quot;http://image.woshipm.com/wp-files/2016/11/l9c0hJu6wmNWtQl4oR6T.png&quot; alt=&quot;Flow此图来源在人人都是产品经理&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;业务流程图&quot;&gt;&lt;a href=&quot;#业务流程图&quot; class=&quot;headerlink&quot; title=&quot;业务流程图&quot;&gt;&lt;/a&gt;业务流程图&lt;/h3&gt;&lt;p&gt;业务流程图一般会使用泳道图表示，泳道图是一个二维的表格，因为和游泳池的比赛道类似，因此被称为泳道图（净说些废话充字数），在泳道图的X轴为涉及到的主题，相当于游泳比赛参赛者，而Y轴则是一个业务中每一个连续的环节。&lt;/p&gt;
-&lt;p&gt;我平时在项目中也没有用过这个流程图，这里因为是学习过程所以肯定要先基于理论之后做一个图，加深学习印象。&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/4df6a8175757778f190e6acc6449d689?fid=3375241367-250528-475166661980917&amp;amp;time=1501761600&amp;amp;rt=pr&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-CgpOvB%2bB9KN2MDLwN0xKusvyETg%3d&amp;amp;expires=8h&amp;amp;chkbd=0&amp;amp;chkv=0&amp;amp;dp-logid=4983124670850609264&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=90&amp;amp;vuk=3375241367&amp;amp;ft=image&quot; alt=&quot;狼人杀业务流程图&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;任务流程图&quot;&gt;&lt;a href=&quot;#任务流程图&quot; class=&quot;headerlink&quot; title=&quot;任务流程图&quot;&gt;&lt;/a&gt;任务流程图&lt;/h3&gt;&lt;p&gt;任务流程图一般比较简单，因为是核心是为某一环的操作而模仿用户行为的图解，这里我直接用我博客的流程图举例子&lt;br&gt;&lt;img src=&quot;https://pcs.baidu.com/rest/2.0/pcs/thumbnail?method=generate&amp;amp;app_id=250528&amp;amp;path=%2F%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E5%9B%BE.png&amp;amp;quality=90&amp;amp;size=c1280_u1024&quot; alt=&quot;zues blog flow&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;页面流程图&quot;&gt;&lt;a href=&quot;#页面流程图&quot; class=&quot;headerlink&quot; title=&quot;页面流程图&quot;&gt;&lt;/a&gt;页面流程图&lt;/h3&gt;&lt;p&gt;页面流程图我真的没做过，这是一个好机会，又能有机会学一个新东西，因为理论已经在脑海中形成一个抽象的概念，手动模仿一个例子做出来的话能在脑海中形成更长久的记忆，希望到工作时不会忘记，哈哈！&lt;/p&gt;
-&lt;p&gt;google的结果很大部分都是用Axure做的，基本都是低保真矩形框加箭头的线框图，看到一些复制的页面流程图，整体看起来非常帅，但其实线头非常多，如果想要做好我觉得需要提前脑海有一个整体的每部分图形，不然没拍好每一个页面的位置，恐怕箭头的指向都让其它看的人会晕，如果时那样觉得或许直接做原型会更好，不过做原型又要和设计师协作，我也不清楚怎么分情况讨论，没有经验也不敢随意参考别人的博客，还是自己以后亲手经历之后再说。&lt;br&gt;&lt;img src=&quot;https://s-media-cache-ak0.pinimg.com/736x/56/06/76/560676051a2970d8ae5c13f615962979--flowchart-service-design.jpg&quot; alt=&quot;page flow&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;持续更新&quot;&gt;&lt;a href=&quot;#持续更新&quot; class=&quot;headerlink&quot; title=&quot;持续更新&quot;&gt;&lt;/a&gt;持续更新&lt;/h2&gt;&lt;p&gt;mark一下自己，因为这里好多都只是个人理解，还有很多不懂的东西，以后就业之后会不断更新。谢谢各位来看我博客的小伙伴！&lt;/p&gt;
-</content>
+    <content type="html"></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！&lt;/p&gt;
-
-    
     </summary>
     
-      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
-      <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
     
   </entry>
   
@@ -94,9 +53,9 @@
       <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
-    
       <category term="ios" scheme="http://zuesblog.xyz/tags/ios/"/>
+    
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
@@ -148,6 +107,50 @@
   </entry>
   
   <entry>
+    <title>鲈鱼的奇思妙想日记-小程序运营技巧总结</title>
+    <link href="http://zuesblog.xyz/2017/06/05/%E9%B2%88%E9%B1%BC%E7%9A%84%E5%A5%87%E6%80%9D%E5%A6%99%E6%83%B3%E6%97%A5%E8%AE%B0-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%90%A5%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/"/>
+    <id>http://zuesblog.xyz/2017/06/05/鲈鱼的奇思妙想日记-小程序运营技巧总结/</id>
+    <published>2017-06-05T12:39:48.000Z</published>
+    <updated>2017-08-05T13:18:54.529Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;鲈鱼的小程序技巧总结&quot;&gt;&lt;a href=&quot;#鲈鱼的小程序技巧总结&quot; class=&quot;headerlink&quot; title=&quot;鲈鱼的小程序技巧总结&quot;&gt;&lt;/a&gt;鲈鱼的小程序技巧总结&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;互联网发展轨迹&lt;/strong&gt;：工具（百度/导航网站）-&amp;gt;功能性产品（社交/游戏）&lt;br&gt;&lt;strong&gt;案例&lt;/strong&gt;：群名片，围绕行业人群，提供高效率/协作办公的工具&lt;br&gt;&lt;strong&gt;技巧&lt;/strong&gt;：由于容易被模仿，需要围绕用户需求小步快跑迭代出高粘性的附属功能/内容，提高壁垒&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;单独APP&lt;/strong&gt;：分拆功能满足用户需求&lt;br&gt;&lt;strong&gt;案例&lt;/strong&gt;：流畅的交互衔接，超简约的用户体验，仅需3步完成预服务阶段&lt;br&gt;&lt;strong&gt;流程&lt;/strong&gt;：福利引流→验证/注册→进入小程序，同比H5少了6步，提高了30%*6的转化率&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;如何利用小程序新功能？&quot;&gt;&lt;a href=&quot;#如何利用小程序新功能？&quot; class=&quot;headerlink&quot; title=&quot;如何利用小程序新功能？&quot;&gt;&lt;/a&gt;如何利用小程序新功能？&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;一、基于产品特性深挖用户喜好：排名-荣誉-占便宜&quot;&gt;&lt;a href=&quot;#一、基于产品特性深挖用户喜好：排名-荣誉-占便宜&quot; class=&quot;headerlink&quot; title=&quot;一、基于产品特性深挖用户喜好：排名/荣誉/占便宜&quot;&gt;&lt;/a&gt;一、基于产品特性深挖用户喜好：排名/荣誉/占便宜&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;新功能&lt;/strong&gt;：支持识别记录每个群的唯一ID&lt;br&gt;&lt;strong&gt;案例&lt;/strong&gt;：王者荣耀结合用户数据，微信群Pk排名技巧：可以结合产品的用户数据在用户社群做引爆（类似支付宝十年账单/我和微信的故事）&lt;br&gt;&lt;strong&gt;预测&lt;/strong&gt;：围绕社群需求的工具可能引起又一波爆发，例如群投票选举/群三观匹配/群匿名/群等级/群打卡/群分类搜索…&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;二、新展示形式在微信公众号-朋友圈的高转化红利&quot;&gt;&lt;a href=&quot;#二、新展示形式在微信公众号-朋友圈的高转化红利&quot; class=&quot;headerlink&quot; title=&quot;二、新展示形式在微信公众号/朋友圈的高转化红利&quot;&gt;&lt;/a&gt;二、新展示形式在微信公众号/朋友圈的高转化红利&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;新功能&lt;/strong&gt;：可在公众号文中展示，复用用户地址信息&lt;br&gt;&lt;strong&gt;案例&lt;/strong&gt;：玩物志发起“三行丧诗”活动，将小程序入口暴露在推文，用户看完想进入活动页面可以直接在推文进入小程序，转化率比点击原文、长按二维码高出几倍&lt;br&gt;&lt;strong&gt;技巧&lt;/strong&gt;：通过小程序，浏览商品体验如原生，同时商城自动保存到用户小程序列表，因此如果人脉广的话，可以圈到一大批用户。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;三、更强的运营工具支持：模板消息-客服消息-二维码&quot;&gt;&lt;a href=&quot;#三、更强的运营工具支持：模板消息-客服消息-二维码&quot; class=&quot;headerlink&quot; title=&quot;三、更强的运营工具支持：模板消息/客服消息/二维码&quot;&gt;&lt;/a&gt;三、更强的运营工具支持：模板消息/客服消息/二维码&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;新功能&lt;/strong&gt;：模板消息/客服消息/二维码&lt;br&gt;&lt;strong&gt;案例&lt;/strong&gt;：姨妈日历，通过模版消息提醒设置时间；群应用互动小程序，作者离开小程序收到对话消息&lt;br&gt;&lt;strong&gt;技巧&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过模版消息／客服消息，运营者可以主动接触用户，更接近一个微信好友的身份，假如提醒时间恰当，可以收获一大批忠实用户。&lt;/li&gt;
+&lt;li&gt;另外小程序的传播途径，除了推文入口，小程序搜索框，还有二维码和添加分享，可快速实现病毒营销。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;四、小程序监管机制暂不完善的漏洞&quot;&gt;&lt;a href=&quot;#四、小程序监管机制暂不完善的漏洞&quot; class=&quot;headerlink&quot; title=&quot;四、小程序监管机制暂不完善的漏洞&quot;&gt;&lt;/a&gt;四、小程序监管机制暂不完善的漏洞&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;新功能&lt;/strong&gt;：无&lt;br&gt;&lt;strong&gt;案例&lt;/strong&gt;：某直播小程序，诱导用户转发小程序获点击赚佣金，引流用户到公众号兑换体现佣金&lt;br&gt;&lt;strong&gt;技巧&lt;/strong&gt;：小程序属于新物种，用户并未开始抵触广告意识，因此可通过小测试或小游戏诱导分享，通过有趣或有用的小程序增长用户&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;五、开放更多的入口，附近-菜单栏-蓝牙-朋友圈-广点通-应用宝-QQ&quot;&gt;&lt;a href=&quot;#五、开放更多的入口，附近-菜单栏-蓝牙-朋友圈-广点通-应用宝-QQ&quot; class=&quot;headerlink&quot; title=&quot;五、开放更多的入口，附近/菜单栏/蓝牙/朋友圈/广点通/应用宝/QQ&quot;&gt;&lt;/a&gt;五、开放更多的入口，附近/菜单栏/蓝牙/朋友圈/广点通/应用宝/QQ&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;新功能&lt;/strong&gt;：更多入口&lt;br&gt;&lt;strong&gt;案例&lt;/strong&gt;：线下门店做二维码入口引流，可带来可观流量；&lt;br&gt;&lt;strong&gt;技巧&lt;/strong&gt;：类似以前派传单，现在通过一张二维码可以更快将自己产品注入用户微信中；发展物联网智能控制小程序；有足够资金可投放入口到广点通、应用宝和qq多渠道引流&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;特别鸣谢有礼貌的兜兜&quot;&gt;&lt;a href=&quot;#特别鸣谢有礼貌的兜兜&quot; class=&quot;headerlink&quot; title=&quot;特别鸣谢有礼貌的兜兜&quot;&gt;&lt;/a&gt;特别鸣谢有礼貌的兜兜&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;amp;quality=100&amp;amp;size=b4000_4000&amp;amp;sec=1495432626&amp;amp;di=973c93b1d7b2db6c0883f096f5c3e837&amp;amp;src=http://d.hiphotos.baidu.com/zhidao/pic/item/9c16fdfaaf51f3de8751d74797eef01f3a297935.jpg&quot; alt=&quot;兜兜&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;鲈鱼的小程序技巧总结&quot;&gt;&lt;a href=&quot;#鲈鱼的小程序技巧总结&quot; class=&quot;headerlink&quot; title=&quot;鲈鱼的小程序技巧总结&quot;&gt;&lt;/a&gt;鲈鱼的小程序技巧总结&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;互联网发展轨迹&lt;/strong&gt;：工具（百度/导航
+    
+    </summary>
+    
+      <category term="日记" scheme="http://zuesblog.xyz/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="日记" scheme="http://zuesblog.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>鲈鱼的奇思妙想日记_我心中的教育</title>
     <link href="http://zuesblog.xyz/2017/05/03/%E9%B2%88%E9%B1%BC%E7%9A%84%E5%A5%87%E6%80%9D%E5%A6%99%E6%83%B3%E6%97%A5%E8%AE%B0-%E6%88%91%E5%BF%83%E4%B8%AD%E7%9A%84%E6%95%99%E8%82%B2/"/>
     <id>http://zuesblog.xyz/2017/05/03/鲈鱼的奇思妙想日记-我心中的教育/</id>
@@ -184,6 +187,63 @@
     
     
       <category term="日记" scheme="http://zuesblog.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品经理之路-PRD撰写-流程设计</title>
+    <link href="http://zuesblog.xyz/2017/05/02/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://zuesblog.xyz/2017/05/02/产品经理之路-PRD撰写-流程设计/</id>
+    <published>2017-05-02T14:15:45.000Z</published>
+    <updated>2017-08-04T00:53:55.629Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B5%81%E7%A8%8B%E5%9B%BE&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;流程图&lt;/a&gt;，标识算法、工作流或者流程的一种框图表示，它以不同类型的框代表不同种类的步骤，每两个步骤之间则以箭头连接。这种表示方法便于说明解决已知问题的方法。&lt;/p&gt;
+&lt;p&gt;很喜欢wiki上的这个定义，超级简练。这句话阐述了几个要点，那就是流程图具备一定的规则，同时每一个步骤之间都有联系不可能单独孤立，同时做这个流程图的时候已经知道了问题，一个穷游学生在陌生城市（起始点），知道景区位置（目标）但是不知道怎么过去，这时候导航路线就好比流程图的一个分支了，为什么这么说，因为流程图的目标经常都是矛盾的，常表现为是否对立面。因此目标是不定项的，也就是如果学生发现过去景区的路费太贵，就可能突然选择放弃。&lt;/p&gt;
+&lt;p&gt;看过知乎上不少的定义，整理之后我的理解是：流程图只能针对用户做一件事而设计，不能统筹所有事情，因此流程我认为是为了应用核心功能的使用流程而生的，因为在产品开发中，马云曾经说过一句话，少就是多，也就是能把每一次要迭代的功能专注做好其实就非常不错了，做太多可能由于个人经验不足，反而容易兼顾不周，做得一团糟。因此如果能考虑到一个核心功能的使用流程所有问题，那么应用逻辑设计就会更人性化，也就是常说的智能。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;流程图能为谁服务：&quot;&gt;&lt;a href=&quot;#流程图能为谁服务：&quot; class=&quot;headerlink&quot; title=&quot;流程图能为谁服务：&quot;&gt;&lt;/a&gt;流程图能为谁服务：&lt;/h2&gt;&lt;h3 id=&quot;流程图分类&quot;&gt;&lt;a href=&quot;#流程图分类&quot; class=&quot;headerlink&quot; title=&quot;流程图分类&quot;&gt;&lt;/a&gt;流程图分类&lt;/h3&gt;&lt;p&gt;不同的流程图为不同的对象服务，而流程图的分类有三种，引用&lt;a href=&quot;http://www.woshipm.com/pd/441557.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;人人中关于三种流程图的概念&lt;/a&gt;分别是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;业务流程图（Transaction Flow）：一般设计多个主体，一般会用泳道图的形式去表示业务在多方协作下是如何运行的，设计产品最初先绘制业务流程图&lt;/li&gt;
+&lt;li&gt;任务流程图（Mission Flow）：反映出用户完成某个具体任务时的操作流程。任务流程图可以是业务流程图作为表现方式之一衍生出来的分支，因为下文的对象比较多层次，因此这里列了出来。&lt;/li&gt;
+&lt;li&gt;页面流程图（Page Flow）：包含页面、行动点、连接线，是产品从抽象到具象的关键点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;服务角色&quot;&gt;&lt;a href=&quot;#服务角色&quot; class=&quot;headerlink&quot; title=&quot;服务角色&quot;&gt;&lt;/a&gt;服务角色&lt;/h3&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1、设计师，页面流程图能提供设计师在满足流程设计中添加自己独特的交互和美观&lt;/li&gt;
+&lt;li&gt;2、开发者，任务流程图能更好梳理开发中的业务逻辑细节设计&lt;/li&gt;
+&lt;li&gt;3、上司，业务流程图能让上司清晰知道产品不同部门在协作某件任务时的业务流程&lt;/li&gt;
+&lt;li&gt;4、自己，任务流程图能在产品上线之后，验证用户的真实操作是否按自己的逻辑来，能帮助自己更全面了解用户&lt;/li&gt;
+&lt;li&gt;5、新员工，快速了解业务如何运作的视图，明白业务的最终目标是什么，中有哪些角色在参与以及他们的职责，以及彼此之间的联接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;如何做流程图&quot;&gt;&lt;a href=&quot;#如何做流程图&quot; class=&quot;headerlink&quot; title=&quot;如何做流程图&quot;&gt;&lt;/a&gt;如何做流程图&lt;/h2&gt;&lt;p&gt;首先最重要的一点就是要遵守规则，虽然时代倡导要具备创新意识，但有时候统一规则还是非常有好处的，那就是方便交流，不然辛苦做好的流程图发现别人根本看不懂，那就真的是对牛弹琴了！由于人人都是PM中的流程规则图太美，就盗了过来，希望能不追究！&lt;br&gt;&lt;img src=&quot;http://image.woshipm.com/wp-files/2016/11/l9c0hJu6wmNWtQl4oR6T.png&quot; alt=&quot;Flow此图来源在人人都是产品经理&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;业务流程图&quot;&gt;&lt;a href=&quot;#业务流程图&quot; class=&quot;headerlink&quot; title=&quot;业务流程图&quot;&gt;&lt;/a&gt;业务流程图&lt;/h3&gt;&lt;p&gt;业务流程图一般会使用泳道图表示，泳道图是一个二维的表格，因为和游泳池的比赛道类似，因此被称为泳道图（净说些废话充字数），在泳道图的X轴为涉及到的主题，相当于游泳比赛参赛者，而Y轴则是一个业务中每一个连续的环节。&lt;/p&gt;
+&lt;p&gt;我平时在项目中也没有用过这个流程图，这里因为是学习过程所以肯定要先基于理论之后做一个图，加深学习印象。&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/4df6a8175757778f190e6acc6449d689?fid=3375241367-250528-475166661980917&amp;amp;time=1501761600&amp;amp;rt=pr&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-CgpOvB%2bB9KN2MDLwN0xKusvyETg%3d&amp;amp;expires=8h&amp;amp;chkbd=0&amp;amp;chkv=0&amp;amp;dp-logid=4983124670850609264&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=90&amp;amp;vuk=3375241367&amp;amp;ft=image&quot; alt=&quot;狼人杀业务流程图&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;任务流程图&quot;&gt;&lt;a href=&quot;#任务流程图&quot; class=&quot;headerlink&quot; title=&quot;任务流程图&quot;&gt;&lt;/a&gt;任务流程图&lt;/h3&gt;&lt;p&gt;任务流程图一般比较简单，因为是核心是为某一环的操作而模仿用户行为的图解，这里我直接用我博客的流程图举例子&lt;br&gt;&lt;img src=&quot;https://pcs.baidu.com/rest/2.0/pcs/thumbnail?method=generate&amp;amp;app_id=250528&amp;amp;path=%2F%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E5%9B%BE.png&amp;amp;quality=90&amp;amp;size=c1280_u1024&quot; alt=&quot;zues blog flow&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;页面流程图&quot;&gt;&lt;a href=&quot;#页面流程图&quot; class=&quot;headerlink&quot; title=&quot;页面流程图&quot;&gt;&lt;/a&gt;页面流程图&lt;/h3&gt;&lt;p&gt;页面流程图我真的没做过，这是一个好机会，又能学新东西，理论已经在脑海中形成抽象的概念，手动模仿一个例子做出来的话能在脑海中形成更长久的记忆，希望到工作时不会忘记，哈哈！&lt;/p&gt;
+&lt;p&gt;google的结果很大部分都是用Axure做的，基本都是低保真矩形框加箭头的线框图，看到一些复制的页面流程图，整体看起来非常帅，但其实线头非常多，如果想要做好我觉得需要提前脑海有一个整体的每部分图形，不然没拍好每一个页面的位置，恐怕箭头的指向都让其它看的人会晕，如果时那样觉得或许直接做原型会更好，不过做原型又要和设计师协作，我也不清楚怎么分情况讨论，没有经验也不敢随意参考别人的博客，还是自己以后亲手经历之后再说。&lt;br&gt;&lt;img src=&quot;https://s-media-cache-ak0.pinimg.com/736x/56/06/76/560676051a2970d8ae5c13f615962979--flowchart-service-design.jpg&quot; alt=&quot;page flow&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;持续更新&quot;&gt;&lt;a href=&quot;#持续更新&quot; class=&quot;headerlink&quot; title=&quot;持续更新&quot;&gt;&lt;/a&gt;持续更新&lt;/h2&gt;&lt;p&gt;mark一下，因为这里好多都只是个人理解，还有很多不懂的东西，以后就业之后会不断更新。谢谢各位来看我博客的小伙伴！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
+      <category term="PRD" scheme="http://zuesblog.xyz/tags/PRD/"/>
     
   </entry>
   
@@ -614,9 +674,9 @@
       <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
       <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
   </entry>
   
@@ -680,6 +740,60 @@
     
     
       <category term="android" scheme="http://zuesblog.xyz/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>鲈鱼的奇思妙想日记-珠三角东部发展优势</title>
+    <link href="http://zuesblog.xyz/2017/03/23/%E9%B2%88%E9%B1%BC%E7%9A%84%E5%A5%87%E6%80%9D%E5%A6%99%E6%83%B3%E6%97%A5%E8%AE%B0-1/"/>
+    <id>http://zuesblog.xyz/2017/03/23/鲈鱼的奇思妙想日记-1/</id>
+    <published>2017-03-23T12:32:45.000Z</published>
+    <updated>2017-08-05T12:42:13.179Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;珠三角东部&quot;&gt;&lt;a href=&quot;#珠三角东部&quot; class=&quot;headerlink&quot; title=&quot;珠三角东部&quot;&gt;&lt;/a&gt;珠三角东部&lt;/h2&gt;&lt;p&gt;在整个珠三角地区，最发达和竞争最大的地区，只能是珠东地区，想起上次有趣的一组数据，前8名珠三角城市排名，深圳广州稳居前10，佛山和东莞前20，中山和珠海排前30，江门和惠州前60，主要是名次之间层次分明。&lt;/p&gt;
+&lt;p&gt;而这节课不仅仅是讲这个，更重要的是为什么珠东会是最好的个人发展地方，而这里的关键是在于深港一体。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;深港一体&quot;&gt;&lt;a href=&quot;#深港一体&quot; class=&quot;headerlink&quot; title=&quot;深港一体&quot;&gt;&lt;/a&gt;深港一体&lt;/h2&gt;&lt;p&gt;深港一体具备得天独厚的优势，甚至在全球内也可以名列前茅，结合后的深港地区，可以和纽约、伦敦、东京、新加坡有得一拼，未来10几年将会发展为全世界最高科技、繁荣之一的地方。&lt;/p&gt;
+&lt;p&gt;回顾历史，在深圳没有发展起来时，香港除了发展金融业、服务业还发展制造业，但由于香港地少，制造业过于密集，于是被迁移到珠三角其他地区了，当然制造业也阻碍香港的发展，不过香港也并非发展得一帆风顺。&lt;/p&gt;
+&lt;p&gt;因为还存在几个劣势，除了土地少、水资源，还有很重要的两点：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;香港的&lt;strong&gt;教育资源尚未开发完全&lt;/strong&gt;，尤其是新界那边&lt;/li&gt;
+&lt;li&gt;这也导致了第二个问题，&lt;strong&gt;产业结构不完善，缺乏高科技&lt;/strong&gt;，这也是为什么香港会落后于新加坡的原因&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;仅仅是高速发展金融和房地产行业只能做到短时间繁荣，而不能赶超新加坡。于是这时候深圳出现了&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;深圳重视科技，主张科技创新的定位，这对深港优劣势互补的天作之合，香港依靠深圳的科技人才优势，成就了在全球都享有地位的优势。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;如何定居香港&quot;&gt;&lt;a href=&quot;#如何定居香港&quot; class=&quot;headerlink&quot; title=&quot;如何定居香港&quot;&gt;&lt;/a&gt;如何定居香港&lt;/h2&gt;&lt;p&gt;由于香港得独特优势，能过去香港发展的话将是难得一遇的机会，曾经在课堂上听过老师强调要&lt;strong&gt;抓住机会，要快&lt;/strong&gt;，我倒觉得没有这个必要，香港太挤了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关于留学香港的方法&lt;/strong&gt;：前面我也没听清楚老师说什么，他吐字不清，不过应该是通过优才计划，也就是类似留学的方式申请在香港定居7年后，可以获得香港本地居民身份证。&lt;/p&gt;
+&lt;p&gt;不过从下表可以看出，香港是属于超一线城市，在珠东地区地位不可替代。&lt;br&gt;| 城市        | 地位    |&lt;br&gt;| ——–   | —–:   |&lt;br&gt;| 香港        | 超一线    |&lt;br&gt;| 深圳        | 一线      |&lt;br&gt;| 东莞        | 二线      |&lt;br&gt;| 惠州        | 三线      |&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;选择&quot;&gt;&lt;a href=&quot;#选择&quot; class=&quot;headerlink&quot; title=&quot;选择&quot;&gt;&lt;/a&gt;选择&lt;/h2&gt;&lt;p&gt;如何选择城市发展，根据自己的抗压和期待的生活节奏决定，老师不赞同我们走出珠东发展，这里已经是全广东，甚至是全国最好的了。&lt;/p&gt;
+&lt;p&gt;如果选择的话香港和深圳可以首选，次选择东莞、然后是惠州。东莞由于背靠广州，邻屿深港，会相对繁荣，但人口也不少，由于发展较快，在300多万人口中，有200多万都是外地人，节奏较快压力相对小一点&lt;/p&gt;
+&lt;p&gt;惠州的话就生活节奏在整个珠东最慢，人口相对不那么密集，老师好像说适合我们学校的人在惠州发展[捂脸]，我就是惠州人啊，并不觉得很适合我发展。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;问题环节&quot;&gt;&lt;a href=&quot;#问题环节&quot; class=&quot;headerlink&quot; title=&quot;问题环节&quot;&gt;&lt;/a&gt;问题环节&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;佛山和东光排名相近，为什么东光能成为新一线城市，佛山却没有？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;通过地理位置可以发现，东光依靠良好的地理优势，不仅距离广州近，而且与深港也近。而佛山则没有那么好的地理优势了，除广州外，比较近的只能是中山和江门，给城市带来的优势远不及东莞的地理位置，在交通上已经输掉了，所以这也比较正常。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;江门如何才能崛起？&lt;/strong&gt;&lt;br&gt;在短暂时间内基本不能，江门在80年代时发展的趋势非常可观，全省GDP排第3，而东莞只不过是一个农业城市，但三十年河东三十年河西，比较失望的是后面几十年的发展急速落后，变成现在的三线城市，这和交通有关系，那就是虎门大桥一直堵车，交通不方便，不利于江门和珠东地区城市贸易，而江门所在的珠西地区，能依靠的城市不能企及东莞、惠州。&lt;/p&gt;
+&lt;p&gt;不过按照不可靠消息，7月1日，港珠澳大桥的成功通车或许可以拯救珠西地区，也能拯救江门，成功通车的话可以增加珠西和珠东之间的贸易。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;鼓励&quot;&gt;&lt;a href=&quot;#鼓励&quot; class=&quot;headerlink&quot; title=&quot;鼓励&quot;&gt;&lt;/a&gt;鼓励&lt;/h2&gt;&lt;p&gt;由于珠东地区人口密集，外来人口比本地人更多，所以在珠东地区主流语言已经是普通话和粤语，单单会两个语言中的一种都可能会吃亏，最好是两门都精通，当然英语最好是精通，哈哈哈！&lt;/p&gt;
+&lt;p&gt;而我的理想工作地点已经定好了，那就是到深圳，离家不远而且技术氛围浓厚，希望能成功找到深圳的岗位！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;珠三角东部&quot;&gt;&lt;a href=&quot;#珠三角东部&quot; class=&quot;headerlink&quot; title=&quot;珠三角东部&quot;&gt;&lt;/a&gt;珠三角东部&lt;/h2&gt;&lt;p&gt;在整个珠三角地区，最发达和竞争最大的地区，只能是珠东地区，想起上次有趣的一组数据，前8名珠三角城市排名，深圳广州稳居
+    
+    </summary>
+    
+      <category term="日记" scheme="http://zuesblog.xyz/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="日记" scheme="http://zuesblog.xyz/tags/%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
@@ -798,11 +912,59 @@
   </entry>
   
   <entry>
+    <title>ANDROID开发_KJMusic源码分析心得</title>
+    <link href="http://zuesblog.xyz/2017/03/15/ANDROID%E5%BC%80%E5%8F%91-KJMusic%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%BF%83%E5%BE%97/"/>
+    <id>http://zuesblog.xyz/2017/03/15/ANDROID开发-KJMusic源码分析心得/</id>
+    <published>2017-03-15T13:04:42.000Z</published>
+    <updated>2017-08-05T13:13:14.502Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;透明度&quot;&gt;&lt;a href=&quot;#透明度&quot; class=&quot;headerlink&quot; title=&quot;透明度&quot;&gt;&lt;/a&gt;透明度&lt;/h3&gt;&lt;p&gt;android:fromAlpha=”0.4”&lt;br&gt;android:toAlpha=”1”&lt;br&gt;分别表示从透明度为0.4到最终变成透明度为1&lt;/p&gt;
+&lt;h3 id=&quot;获取设备媒体资源&quot;&gt;&lt;a href=&quot;#获取设备媒体资源&quot; class=&quot;headerlink&quot; title=&quot;获取设备媒体资源&quot;&gt;&lt;/a&gt;获取设备媒体资源&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;下面这个函数可以用来获取设备上所有的媒体资源（URL），通过游标定位进行数据访问&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ContentResolver contentResolver = getContentResolver();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Cursor cursor = contentResolver.query(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;MediaStore.Audio.Media.****&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;不同的位置就可以读取不同的资源信息，例如手机联系人就是&lt;code&gt;android.provider.ContactsContract.Contacts.CONTENT_URI&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;KJDB db  = KJDB.create(this, Config.DB_NAME,Config.isDebug);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在安卓中添加依赖，compile ‘org.kymjs.kjframe:kjframe:2.6’ 使用&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;KJDB db  = KJDB.create(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, Config.DB_NAME,Config.isDebug);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;db.deleteByWhere(Music.class,&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//根据第二参数来删除数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;遍历循环&quot;&gt;&lt;a href=&quot;#遍历循环&quot; class=&quot;headerlink&quot; title=&quot;遍历循环&quot;&gt;&lt;/a&gt;遍历循环&lt;/h3&gt;&lt;p&gt;for(cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext()){&lt;/p&gt;
+&lt;p&gt;在用完corsor之后记得关闭游标，节省资源&lt;br&gt;cursor.close();&lt;/p&gt;
+&lt;h3 id=&quot;mrark标记&quot;&gt;&lt;a href=&quot;#mrark标记&quot; class=&quot;headerlink&quot; title=&quot;mrark标记&quot;&gt;&lt;/a&gt;mrark标记&lt;/h3&gt;&lt;p&gt;在一开始的时候忘记了怎么理解下面这段代码的意思，现在mark一下&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;String action = result ? Config.RECEIVER_UPDATE_MUSIC_LIST : Config.RECEIVER_MUSIC_SCAN_FAIL;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;当布朗值&lt;code&gt;result&lt;/code&gt;为&lt;code&gt;true&lt;/code&gt;的时候则&lt;code&gt;action&lt;/code&gt;等于&lt;code&gt;Config&lt;/code&gt;。&lt;code&gt;RECEIVER_UPDATE_MUSIC_LIST&lt;/code&gt;的值，反之就是另外一个的值。&lt;/p&gt;
+&lt;h3 id=&quot;overridePendingTransition&quot;&gt;&lt;a href=&quot;#overridePendingTransition&quot; class=&quot;headerlink&quot; title=&quot;overridePendingTransition&quot;&gt;&lt;/a&gt;overridePendingTransition&lt;/h3&gt;&lt;p&gt;这个函数有两个参数，一个参数是第一个&lt;code&gt;activity&lt;/code&gt;进入时的动画，另外一个参数则是第二个&lt;code&gt;activity&lt;/code&gt;退出时的动画。&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;PreferenceHelper.write(this, Config.FIRSTINSTALL_FILE,Config.FIRSTINSTALL_KEY,false);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```java&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;通过上面那条代码执行将安装信息写入本地记录，参数分别是上下文，目标文件夹，目标文件夹的关键字（标识），&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;### 实现textview的跑马灯的效果&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```java&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;android:ellipsize=&quot;marquee&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;android:focusable=&quot;true&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;android:focusableInTouchMode=&quot;true&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;android:marqueeRepeatLimit=&quot;marquee_forever&quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;最后一段代码实现无线联动&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;android:scrollHorizontally=&amp;quot;true&amp;quot;&lt;/code&gt;表示一个&lt;code&gt;EditText&lt;/code&gt;满了后是自动横着移动不是默认的换行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;adjustViewBounds&lt;/code&gt;: 是否去调整这个视图的界限去保存绘制的初始范围比例；&lt;/p&gt;
+&lt;p&gt;上面解释是Android API中说的。我百度了一下，得出如下结果：&lt;br&gt;&lt;code&gt;android:adjustViewBounds&lt;/code&gt; 是否保持宽高比。需要与&lt;code&gt;maxWidth&lt;/code&gt;、&lt;code&gt;MaxHeight&lt;/code&gt;一起使用，否则单独使用没有效果。&lt;/p&gt;
+&lt;h3 id=&quot;ViewGroup拦截触摸事件详解&quot;&gt;&lt;a href=&quot;#ViewGroup拦截触摸事件详解&quot; class=&quot;headerlink&quot; title=&quot;ViewGroup拦截触摸事件详解&quot;&gt;&lt;/a&gt;ViewGroup拦截触摸事件详解&lt;/h3&gt;&lt;p&gt;触摸事件拦截就是在触摸事件被&lt;code&gt;parent view&lt;/code&gt;拦截，而不会分发给其&lt;code&gt;child&lt;/code&gt;，即使触摸发生在该&lt;code&gt;child&lt;/code&gt;身上。被拦截的事件会转到&lt;code&gt;parent view&lt;/code&gt;的&lt;code&gt;onTouchEvent&lt;/code&gt;方法中进行处理。&lt;/p&gt;
+&lt;h3 id=&quot;Android-屏幕手势滑动中onFling-函数的技巧&quot;&gt;&lt;a href=&quot;#Android-屏幕手势滑动中onFling-函数的技巧&quot; class=&quot;headerlink&quot; title=&quot;Android 屏幕手势滑动中onFling()函数的技巧&quot;&gt;&lt;/a&gt;Android 屏幕手势滑动中onFling()函数的技巧&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://jcodecraeer.com/a/anzhuokaifa/androidkaifa/2012/1020/448.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;e1： The first down motion event that started the fling.手势起点的移动事件
+e2： The move motion event that triggered the current onFling.当前手势点的移动事件
+velocityX： The velocity of this fling measured in pixels per second along the x axis.每秒x轴方向移动的像素
+velocityY： The velocity of this fling measured in pixels per second along the y axis.每秒y轴方向移动的像素
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;说的更简单点就是，鼠标手势相当于一个向量（当然有可能手势是曲线），e1为向量的起点，e2为向量的终点，velocityX为向量水平方向的速度，velocityY为向量垂直方向的速度&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(e1.getX() - e2.getX() &amp;gt; verticalMinDistance &amp;amp;&amp;amp; Math.abs(velocityX) &amp;gt; minVelocity)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt; 则上面的语句能知道啥意思了吧，就是说向量的水平长度（滑了有多长）必须大于&lt;code&gt;verticalMinDistance&lt;/code&gt;，并且水平方向速度大于&lt;code&gt;minVelocity&lt;/code&gt;。&lt;br&gt;从而我们可以如此判断手势是否满足一定的条件从而进行相应响应，也可以根据这个写出更复杂的手势判断。&lt;/p&gt;
+&lt;p&gt;集中不同的进入形式&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;switch&lt;/span&gt; (position) &amp;#123;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//加速进入  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                a.setInterpolator(AnimationUtils.loadInterpolator(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        android.R.anim.accelerate_interpolator));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//减速进入  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                a.setInterpolator(AnimationUtils.loadInterpolator(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        android.R.anim.decelerate_interpolator));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//加速进入.与第一个的区别为当repeatMode为reverse时,仍为加速返回原点  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                a.setInterpolator(AnimationUtils.loadInterpolator(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        android.R.anim.accelerate_decelerate_interpolator));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;:  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//先往后退一点再加速前进  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                a.setInterpolator(AnimationUtils.loadInterpolator(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        android.R.anim.anticipate_interpolator));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;:  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//减速前进,冲过终点前再后退  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                a.setInterpolator(AnimationUtils.loadInterpolator(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        android.R.anim.overshoot_interpolator));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;:  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//case 3,4的结合体  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                a.setInterpolator(AnimationUtils.loadInterpolator(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        android.R.anim.anticipate_overshoot_interpolator));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;:  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//停止前来回振几下  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                a.setInterpolator(AnimationUtils.loadInterpolator(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        android.R.anim.bounce_interpolator));  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;startForeground&lt;/code&gt;让服务前台运行，当&lt;code&gt;stopservice&lt;/code&gt;的时候通过&lt;code&gt;stopForeground&lt;/code&gt;去掉&lt;br&gt;意思是当音乐播放的时候，使用&lt;code&gt;foreground&lt;/code&gt;机制使服务不会在手机休眠长时间之后被kill掉&lt;br&gt;要想实现需求，我们只需要在&lt;code&gt;onStartCommand&lt;/code&gt;里面调用 &lt;code&gt;startForeground&lt;/code&gt;，然后再&lt;code&gt;onDestroy&lt;/code&gt;里面调用&lt;code&gt;stopForeground&lt;/code&gt;即可！&lt;br&gt;&lt;code&gt;startForeground(1,new Notification());&lt;/code&gt;&lt;br&gt;第一个参数是唯一的服务的标识符，用来表示这个&lt;code&gt;NOtification&lt;/code&gt;.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;透明度&quot;&gt;&lt;a href=&quot;#透明度&quot; class=&quot;headerlink&quot; title=&quot;透明度&quot;&gt;&lt;/a&gt;透明度&lt;/h3&gt;&lt;p&gt;android:fromAlpha=”0.4”&lt;br&gt;android:toAlpha=”1”&lt;br&gt;分别表示从透明度为0.4到最终变
+    
+    </summary>
+    
+      <category term="android" scheme="http://zuesblog.xyz/categories/android/"/>
+    
+    
+      <category term="android进阶" scheme="http://zuesblog.xyz/tags/android%E8%BF%9B%E9%98%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>产品经理之路-PRD撰写-信息结构图</title>
     <link href="http://zuesblog.xyz/2017/03/07/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%84%E5%9B%BE/"/>
     <id>http://zuesblog.xyz/2017/03/07/产品经理之路-PRD撰写-信息结构图/</id>
     <published>2017-03-07T00:54:11.000Z</published>
-    <updated>2017-08-03T14:28:31.460Z</updated>
+    <updated>2017-08-04T00:48:50.860Z</updated>
     
     <content type="html">&lt;h2 id=&quot;信息架构&quot;&gt;&lt;a href=&quot;#信息架构&quot; class=&quot;headerlink&quot; title=&quot;信息架构&quot;&gt;&lt;/a&gt;信息架构&lt;/h2&gt;&lt;p&gt;在产品设计中，按照对产品决定作用大小排列，依次为：信息结构设计、流程设计、功能设计、交互设计、视觉设计!&lt;/p&gt;
 &lt;hr&gt;
@@ -818,7 +980,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;相比之下，我会更倾向于理解第二个，因为在&lt;code&gt;java&lt;/code&gt;设计中也采用到了类的概念,另外类似&lt;code&gt;ANDROID&lt;/code&gt;开发中的&lt;code&gt;model&lt;/code&gt;来理解信息结构对我来说更具优势，按照对象来划分属性，这个分类觉得是最好的了。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;流程设计&quot;&gt;&lt;a href=&quot;#流程设计&quot; class=&quot;headerlink&quot; title=&quot;流程设计&quot;&gt;&lt;/a&gt;流程设计&lt;/h2&gt;&lt;p&gt;细致描述用户在使用产品的流程，同时也在时间的角度上规定各个部分之间的关系，如下图是我的博客操作流程，采用visio设计：&lt;br&gt;&lt;img src=&quot;https://thumbnail0.baidupcs.com/thumbnail/b20bb1456dadee37139795021249d327?fid=3375241367-250528-251413492401602&amp;amp;time=1501232400&amp;amp;rt=yt&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-dsWiXiqNp0qWGjTLa3s%2BBYwY4ZM%3D&amp;amp;expires=2h&amp;amp;chkv=0&amp;amp;chkbd=0&amp;amp;chkpc=&amp;amp;dp-logid=4840558639286715197&amp;amp;dp-callid=0&amp;amp;size=c1280_u1024&amp;amp;quality=100&amp;amp;vuk=-&amp;amp;ft=video&quot; alt=&quot;博客流程图&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;流程设计&quot;&gt;&lt;a href=&quot;#流程设计&quot; class=&quot;headerlink&quot; title=&quot;流程设计&quot;&gt;&lt;/a&gt;流程设计&lt;/h2&gt;&lt;p&gt;细致描述用户在使用产品的流程，同时也在时间的角度上规定各个部分之间的关系，如下图是我的博客操作流程，采用visio设计：&lt;br&gt;&lt;img src=&quot;https://pcs.baidu.com/rest/2.0/pcs/thumbnail?method=generate&amp;amp;app_id=250528&amp;amp;path=%2F%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E5%9B%BE.png&amp;amp;quality=90&amp;amp;size=c1280_u1024&quot; alt=&quot;博客流程图&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;功能设计&quot;&gt;&lt;a href=&quot;#功能设计&quot; class=&quot;headerlink&quot; title=&quot;功能设计&quot;&gt;&lt;/a&gt;功能设计&lt;/h2&gt;&lt;p&gt;在功能上，整个博客核心是展示文章，因此更多的是首页功能，显示文章列表，进而可以查看文章详情。&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/W7kL-lbQAbyQ-95290.png&quot; alt=&quot;zues blog 功能设计&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;由于是个人的博客，所以没有很负责的业务逻辑，只有寥寥几张粗暴的图，哈哈哈，产品小白第一次做难免非常粗糙，希望我有机会在项目中成长！&lt;/p&gt;
@@ -913,183 +1075,6 @@
     
     
       <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>产品经理之路-绪论（三）</title>
-    <link href="http://zuesblog.xyz/2016/12/24/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA%EF%BC%88%E4%B8%89%EF%BC%89/"/>
-    <id>http://zuesblog.xyz/2016/12/24/产品经理之路-绪论（三）/</id>
-    <published>2016-12-24T09:43:32.000Z</published>
-    <updated>2017-07-28T05:34:40.901Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;&lt;p&gt;PM的轨迹穿透整个产品的生命周期，从我收集的资料显示，从需求开始，经历产品评估、产品定义、产品开发、产品发布、产品迭代开发、产品发布…&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/YG45-nMhabmo-74916.png&quot; alt=&quot;PM route&quot;&gt;&lt;/p&gt;
-&lt;p&gt;千里之行始于足下，不难想象最为困难并且最重要的是&lt;strong&gt;产品评估&lt;/strong&gt;和&lt;strong&gt;产品定义环节&lt;/strong&gt;，如果这一道棋下错，后面损失的利益是难以衡量，甚至是致命的。&lt;/p&gt;
-&lt;h3 id=&quot;定位&quot;&gt;&lt;a href=&quot;#定位&quot; class=&quot;headerlink&quot; title=&quot;定位&quot;&gt;&lt;/a&gt;定位&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;因此我认为产品经理的定位是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一名定义产品的技术可行性、市场可用性，通过开发团队输出成品，并站在用户角度，不断优化完善产品的团队灵魂。&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;&lt;p&gt;PM的轨迹穿透整个产品的生命周期，从我收集的资料显示，从需求开始，经历产品评估、产品定义、产品开发、
-    
-    </summary>
-    
-      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>产品经理之路-绪论（二）</title>
-    <link href="http://zuesblog.xyz/2016/12/23/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://zuesblog.xyz/2016/12/23/产品经理之路-绪论（二）/</id>
-    <published>2016-12-23T01:41:30.000Z</published>
-    <updated>2017-07-28T05:34:21.851Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;a href=&quot;#我为什么希望成为产品经理？&quot; class=&quot;headerlink&quot; title=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;/a&gt;我为什么希望成为产品经理？&lt;/h2&gt;&lt;p&gt;这是续之前&lt;a href=&quot;&quot;&gt;产品经理之路_绪论&lt;/a&gt;目录写的第二篇，别人都说我像猪，倒头就能睡着，或许没毛病，哈哈，因为我好懒，真的没法一下子把四篇博客写完。&lt;/p&gt;
-&lt;p&gt;转入正题，热爱产品经理这个职业是因为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;挑战性&lt;/li&gt;
-&lt;li&gt;创造价值&lt;/li&gt;
-&lt;li&gt;发现问题&lt;/li&gt;
-&lt;li&gt;数据分析&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;挑战性&quot;&gt;&lt;a href=&quot;#挑战性&quot; class=&quot;headerlink&quot; title=&quot;挑战性&quot;&gt;&lt;/a&gt;挑战性&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;“将杰出人物和我们其他人区分开来的主要因素是：他们经过年复一年的练习，已经改变了大脑中的神经回路，以创建高度专业化的心理表征，这些心理表征反过来使得令人难以置信的记忆、规律的识别、问题的解决成为可能”&lt;/strong&gt;,在读安德斯·艾利克森的《刻意练习》被这句话所吸引，书中分析为何平凡人一直平凡，并非他们缺乏勤奋和练习，而是他们一直在舒服区间反复练习，与老鼠和猫、麋鹿和豹子甚至是互联网的竞争对手互相挑战互相进步不一样，保持安逸意味着止步不前，大脑也一样，不刻意挑战更高难度，终将变得迟钝，尽管很勤奋反复练习。PM作为产品核心，不仅要和公司内部各部门打交道，还要和外部的客户访谈获取一手数据，富有挑战。&lt;/p&gt;
-&lt;h3 id=&quot;创造价值&quot;&gt;&lt;a href=&quot;#创造价值&quot; class=&quot;headerlink&quot; title=&quot;创造价值&quot;&gt;&lt;/a&gt;创造价值&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;7点45分，又该起床了，有时候我会苦恼，可不可以呆在宿舍，不去工作室，脑子充斥着重复造车轮的消极心理。程序员喜欢不断尝试新技术，我骨子里也流淌着这样的血液，渴望创造价值，不管是写一款富有创意的应用，亦或是一个酷炫的交互特效。产品经理要从0到1创造一个作品，而产品的定义，便是价值创造的过程，为解决现实问题提出需求，用更加人性化的简易操作解决问题。&lt;/p&gt;
-&lt;h3 id=&quot;发现问题&quot;&gt;&lt;a href=&quot;#发现问题&quot; class=&quot;headerlink&quot; title=&quot;发现问题&quot;&gt;&lt;/a&gt;发现问题&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;在《人人都是产品经理》中提到了一个产品的职业病，虽说是调侃，但却令我非常向往那种细腻的观察力，能快速觉察到一个产品哪里不足，看一场春晚都会挑出很多毛病，唱一次K也会一直吐槽点歌系统，甚至是一群产品吃饭都会对菜单指指点点，提出很多改善的建议，刻意挑毛病固然简单，但若能发现问题，并提出有效的优化方案就很有趣了，方法总比问题多，而PM却能在众多可行解中找到最优解。&lt;/p&gt;
-&lt;h3 id=&quot;数据分析&quot;&gt;&lt;a href=&quot;#数据分析&quot; class=&quot;headerlink&quot; title=&quot;数据分析&quot;&gt;&lt;/a&gt;数据分析&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;数据分析界中有一句名言：&lt;strong&gt;字&amp;lt;表&amp;lt;图&lt;/strong&gt;，数据可视化是数据分析的目的，挖掘数据只是第一步，能把复杂繁多的数据简化为让人几分钟甚至几十秒能看懂的报表非常困难，数据分析的价值不仅仅是报表，更多的是报表中了解用户真实需要的不是更快的马，或许是一辆车。透过现象看本质，从海量数据中还原最核心的需求，没有什么比这更具洞察力了。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;或许产品经理还有更多优点，而我只是一个大三的菜鸟，哈哈哈！希望能下学期多点实战，下面附上整理好的PM特质，结束这一章的博客！&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/983P-jYpLAih-67194.png&quot; alt=&quot;PM_advantage&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;a href=&quot;#我为什么希望成为产品经理？&quot; class=&quot;headerlink&quot; title=&quot;我为什么希望成为产品经理？&quot;&gt;&lt;/a&gt;我为什么希望成为产品经理？&lt;/h2&gt;&lt;p&gt;这是续之前&lt;a href=&quot;&quot;&gt;产品经理之路_绪论&lt;
-    
-    </summary>
-    
-      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>REACT-NATIVE开发_rn的ios真机调试</title>
-    <link href="http://zuesblog.xyz/2016/12/20/REACT-NATIVE%E5%BC%80%E5%8F%91_ios%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/"/>
-    <id>http://zuesblog.xyz/2016/12/20/REACT-NATIVE开发_ios真机调试/</id>
-    <published>2016-12-20T06:58:30.000Z</published>
-    <updated>2017-07-28T05:28:43.026Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;RN的ios真机调试&quot;&gt;&lt;a href=&quot;#RN的ios真机调试&quot; class=&quot;headerlink&quot; title=&quot;RN的ios真机调试&quot;&gt;&lt;/a&gt;RN的ios真机调试&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;在没使用之前我就已经能猜到会出现无数的bug，果然不出我所料，但是对于开发安卓已经一年的我来说，这点小坑难不倒我，还是瞬间给我解决掉了，不久，也就花了两天而已。&lt;/p&gt;
-&lt;p&gt;我是在虚拟机上安装的mac系统，首先借了一台ipone来调试，手机的系统是ios 10.2，很明显我的Xcode刚好是8.1不支持ios 10.2，无奈只好去更新版本。&lt;/p&gt;
-&lt;p&gt;虚拟机网速慢是出了名的，于是一天就过去了。&lt;/p&gt;
-&lt;p&gt;开始来真东西了，手机连接电脑，首先识别不了设备。于是在网上看到了这个解决办法&lt;a href=&quot;http://www.wuji8.com/meta/201556592.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我的ipone不能被虚拟机识别&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;接着按照里面的步骤，将ipone连接电脑，在虚拟系统没有全屏的时候，鼠标右键点击右下角灰色usb设备图标和ipone图标，点击&lt;code&gt;连接（断开与主机的连接）&lt;/code&gt;，接着修改虚拟机的usb版本，重启。&lt;/p&gt;
-&lt;h2 id=&quot;应用签名&quot;&gt;&lt;a href=&quot;#应用签名&quot; class=&quot;headerlink&quot; title=&quot;应用签名&quot;&gt;&lt;/a&gt;应用签名&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;在上一步完成之后打开虚拟机这时候就可以连接到iphone了，但是这还不够，你还需要调试出来，选择了run的设备为真机之后开始运行，这时候弹出一个错误：&lt;code&gt;Code signing is required for product type &amp;#39;Application&amp;#39; in SDK &amp;#39;iOS 10.2&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;过程我就不说了，直接说结果吧！我后面找了很多篇国内的博客还是不如stack overflow的问答好，尽管看英文有点蛋疼，不过耐心翻译之后基本问题就解决了。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1,在Xcode上打开项目，然后点击自己项目的根目录，可以看到&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;在VMWare上的mac-os共享win-10的文件夹&quot;&gt;&lt;a href=&quot;#在VMWare上的mac-os共享win-10的文件夹&quot; class=&quot;headerlink&quot; title=&quot;在VMWare上的mac os共享win 10的文件夹&quot;&gt;&lt;/a&gt;在VMWare上的mac os共享win 10的文件夹&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;首先我是在这篇&lt;a href=&quot;http://blog.csdn.net/limm33/article/details/52879761&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何在vmware中安装mac OS系统&lt;/a&gt;博客上找到的解决方法，非常感谢！&lt;/p&gt;
-&lt;p&gt;一开始的时候，我启用共享文件夹之后，发现按照步骤，在mac虚拟机的桌面上看不到共享的文件夹，当时没在意，因为暂时还用不上共享的功能&lt;/p&gt;
-&lt;p&gt;后来发现非常需要，因为本地的文件想要共享到mac上需要上传到云，再下载下来，得花不少时间。&lt;/p&gt;
-&lt;p&gt;设置共享文件夹之前的步骤我就不聊了，google一下到处都会有教，其实最关键的一个步骤就是在启用文件共享之后&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;1.确保左上角苹果标志的旁边是”Finder”&lt;/li&gt;
-&lt;li&gt;2.点击”Finder”&lt;/li&gt;
-&lt;li&gt;3.选择”偏好设置”&lt;/li&gt;
-&lt;li&gt;4.然后在 “通用” 标签下勾选”已连接服务器”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://images2015.cnblogs.com/blog/710856/201510/710856-20151029223326169-1014964687.png&quot; alt=&quot;左上角的finder&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://images2015.cnblogs.com/blog/710856/201510/710856-20151029223332700-636849598.png&quot; alt=&quot;finder的偏好设置&quot;&gt;&lt;/p&gt;
-&lt;p&gt;然后就能看到桌面出现了VMware Shared Folders的图标了。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;RN的ios真机调试&quot;&gt;&lt;a href=&quot;#RN的ios真机调试&quot; class=&quot;headerlink&quot; title=&quot;RN的ios真机调试&quot;&gt;&lt;/a&gt;RN的ios真机调试&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;在没使用之前我就已经能猜到会出现无数的bug，果然不出我所料，但是
-    
-    </summary>
-    
-      <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
-    
-    
-      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>产品经理之路-绪论</title>
-    <link href="http://zuesblog.xyz/2016/12/20/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA/"/>
-    <id>http://zuesblog.xyz/2016/12/20/产品经理之路-绪论/</id>
-    <published>2016-12-20T03:10:32.000Z</published>
-    <updated>2017-07-28T05:34:36.932Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;strong&gt;这是我慎重思考后的一次感悟，希望会是一个起点，因为我发现眼前的灯，被点亮了！&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;我对当前的生活满意吗？（赶时间的小伙伴可以跳过这章作者扯淡环节）&lt;/li&gt;
-&lt;li&gt;我为什么希望成为产品经理？&lt;/li&gt;
-&lt;li&gt;产品经理的定位是什么？&lt;/li&gt;
-&lt;li&gt;这个过程中，我要怎么做？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;围着这四个问题，我写下这篇心得。有兴趣的程序员可以借鉴一下我的想法，哈哈。&lt;/p&gt;
-&lt;h2 id=&quot;我对当前的生活满意吗？&quot;&gt;&lt;a href=&quot;#我对当前的生活满意吗？&quot; class=&quot;headerlink&quot; title=&quot;我对当前的生活满意吗？&quot;&gt;&lt;/a&gt;我对当前的生活满意吗？&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;第一阶段——起源&quot;&gt;&lt;a href=&quot;#第一阶段——起源&quot; class=&quot;headerlink&quot; title=&quot;第一阶段——起源&quot;&gt;&lt;/a&gt;第一阶段——起源&lt;/h3&gt;&lt;p&gt;就读于江门最高学府，大二学生，听起来还是蛮不错的，但其实选这所学校之前我觉得校名很LOW，但命运之轮将我推向了它，还能怎么办，凉拌啊！&lt;/p&gt;
-&lt;p&gt;我喜欢技术，但我也喜欢管理类的专业，听起来像是两门交叉学科，但确实学校有一门专业刚好在这两者之间找到了平衡，也就是我现在就读的电子商务专业，认为专业比学校重要的我在“物超所值”影响下（其实更多的是我发现马云也是电商领域的），毫不犹豫把它放在第一志愿。&lt;/p&gt;
-&lt;p&gt;当然现实没有让我失望，幸运的我由于专业优势，在面试最高大上的电子商务研究开发实验室（&lt;strong&gt;袂卓工作室&lt;/strong&gt;）开发组中脱颖而出，原因是我提前学了HTML和CSS，不过HTML和移动开发真的差别挺大，为什么能被录取，哈哈哈。&lt;/p&gt;
-&lt;h3 id=&quot;第二阶段——挣扎与反思&quot;&gt;&lt;a href=&quot;#第二阶段——挣扎与反思&quot; class=&quot;headerlink&quot; title=&quot;第二阶段——挣扎与反思&quot;&gt;&lt;/a&gt;第二阶段——挣扎与反思&lt;/h3&gt;&lt;p&gt;听着工作室二十位不到的“大牛”轻快的键盘敲击声，让我一刻都不敢放松，觉得空气都在挤压着我，两个星期下来发现加入之后学习效率反而比之前还慢，觉得宿舍学更轻松。&lt;/p&gt;
-&lt;p&gt;舍友打机的声音很吵，有时还爆粗口，进去工作室后虽然被大部分的同学投以羡慕的眼光，但我内心却极度浮躁，面试之前的学习激情没有了，我不喜欢打游戏于是那个下午看了两部电影，倒头睡了一觉，晚上又看了一部电影，我当时咱这么能看啊#哭笑不得。&lt;/p&gt;
-&lt;p&gt;睡前洗漱，突然一想，“糟糕，今天什么都没学，可能睡多了，头好疼”，在高中形成的习惯，睡前回忆今天学了什么。由于下午忙着睡觉，竟毫无睡意，脑海冒出一堆乱糟糟的东西，眼睛盯着蚊帐，开始慢慢平静下来，在思维垃圾堆中发现高考前最初的志向，就算考不到重点大学，我也要成为最让家人自豪的孩子。&lt;/p&gt;
-&lt;h3 id=&quot;第三阶段——起色&quot;&gt;&lt;a href=&quot;#第三阶段——起色&quot; class=&quot;headerlink&quot; title=&quot;第三阶段——起色&quot;&gt;&lt;/a&gt;第三阶段——起色&lt;/h3&gt;&lt;p&gt;其实第二阶段我并没有记忆那么仔细，而是在工作室中，我反复做过同样的挣扎，最后是家人的力量让我重新战斗，我没细数有过多少这样的夜晚，能肯定的是我慢慢适应了工作室的氛围，现在的我总结出了当时呼吸困难的原因：&lt;code&gt;没实力自己又非常倔强，担心自己学校进度比其它计算机专业小伙伴慢&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;但事实证明了，尽管我努力了很久，在技术方面我有很多地方都不及同时招进来的其它小伙伴，因为他们也不比我懒，局面很糟糕，但我依然入门了人生中第一门计算机语言&lt;code&gt;JAVA&lt;/code&gt;，为什么我敢肯定，因为我不断的实践失败总结复习、实践失败总结复习、实践失败总结复习……以至于后面上手安卓时读代码觉得很轻松，在博客上看到零基础的人学安卓都比较痛苦，而我就只是在看文档，与学会英语语法之后不断的练习词组使用场景一样。&lt;/p&gt;
-&lt;h3 id=&quot;第四阶段——转折点&quot;&gt;&lt;a href=&quot;#第四阶段——转折点&quot; class=&quot;headerlink&quot; title=&quot;第四阶段——转折点&quot;&gt;&lt;/a&gt;第四阶段——转折点&lt;/h3&gt;&lt;p&gt;学会安卓之后写过几个简单的作品，包括2048，还不错哈哈，没忍住向班上同学灌输了我是大牛的假象，&lt;strong&gt;终于知道为什么越没能力越喜欢炫耀了，当时太急迫想得到别人肯定了&lt;/strong&gt;，工作室的都是大牛，其它组员也比我厉害得多，虽然那时候做法很笨，但也为我带来了机遇，由于技术知名度在班上的提高，女同学（男同学也有啦）都来问我电脑问题，碍于面子问题几乎没拒绝过，因为开发中精通了google大法，动手解决问题变得轻松许多，而在帮她们解决问题同时我也不断发现了一些优质的平台，类似知乎、简书、豆瓣、CSDN、维基百科等等，更重要的是，我开始被学生创业团队邀请成为他们的核心开发人员，有幸以程序员身份参加了商业比赛。&lt;/p&gt;
-&lt;p&gt;不过早在大一开学不久我就开始参加创业比赛，那时很幸运能和几个大三师姐组队，获得了校内二等奖。大二下学期被邀请加入了一个四人女生的宿舍团队，或许我有经验并且逻辑思维较好，非常荣幸成为队长。从没充当过这个角色的我，显得有点焦虑，本来以为写好app和搭建网站就可以，不过队长要干的事情恐怕没有这么简单。&lt;/p&gt;
-&lt;p&gt;项目的idea提出前，我看了小米应用商店的app种类，收集每个种类前3名的应用，整理它们的核心功能，希望能在现有的产品基础上获得项目灵感。收集好后我向团队成员发了一条通知：小伙伴们在早上收集一下社会痛点，整理好私聊发给我，下午3点书吧大家聚一聚，来个头脑风暴。&lt;/p&gt;
-&lt;p&gt;于是这样的聚会就持续了几天，知识地点不一样，虽然讨论过程中大家的想法都比较好，而且还时而跑题，但我们聚会的目标很专注，就是想一个具有社会价值并具备可行性的项目。最终我们确定了项目核心，并把项目成功做了出来，在多项比赛中都获得了优秀的名次。&lt;/p&gt;
-&lt;h3 id=&quot;第五阶段——认识自己&quot;&gt;&lt;a href=&quot;#第五阶段——认识自己&quot; class=&quot;headerlink&quot; title=&quot;第五阶段——认识自己&quot;&gt;&lt;/a&gt;第五阶段——认识自己&lt;/h3&gt;&lt;p&gt;当队长那段时间里，我经常反思，包括工作室的自卑心理，也是我最希望和大家分享的：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;虽然我只会JAVA和移动开发，技术水平比小伙伴们差，但我有他们不可比拟的优势，想起选专业时的初衷，我喜欢管理学，正是专业优势，我的商业意识比技术小伙伴们要敏锐得多，这也奠定了我现在的优势，我现在开发着一个签到系统，除了实现细节，更多会考虑app的实用性。工作室写过很多产品，都是突然想到一个绝佳的想法，然后开始干活，没有经过市场验证，这也带来过高人力成本的损失，当然交给师弟练手是不错的，但我们都已经有开发经验，除了在项目中用新学的技术，还要进行可靠性的市场调研，当然在当队长时我也只是做问卷调查，然后做数据透析表汇总再分析数据。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;又扯远了！遇上坏事突然用爱因斯坦的相对论来思考问题往往会很舒服，至少能很全面的认识自己，一件事情很糟糕？那肯定也很积极，换个角度想想，其实生活not bad。&lt;/p&gt;
-&lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;为什么我会突然写下这篇文章，灵感来自&lt;a href=&quot;http://developer.51cto.com/art/201211/364725.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从程序员到项目经理成长历程&lt;/a&gt;，今天花了早上两大节课才看完#哭笑不得。&lt;/p&gt;
-&lt;p&gt;文章虽然讲述的是项目经理，但也阐述了一个观点，如果自身具备其它程序员所没有商业嗅觉和全局思维，为何不尝试做管理，我技术渣渣但我热爱生活，愿我能创造一款改变世界的产品。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;这是我慎重思考后的一次感悟，希望会是一个起点，因为我发现眼前的灯，被点亮了！&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;我对当前的生活满意吗？（赶时间的小伙伴可以跳过这章作者扯淡环节）&lt;/li&gt;
-&lt;li&gt;我为什么希望成为产品经理？
-    
-    </summary>
-    
-      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
   </entry>
   

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ANDROID开发_KJMusic源码分析心得 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="透明度android:fromAlpha=”0.4”android:toAlpha=”1”分别表示从透明度为0.4到最终变成透明度为1
+获取设备媒体资源下面这个函数可以用来获取设备上所有的媒体资源（URL），通过游标定位进行数据访问1234ContentResolver contentResolver = getContentResolver();Cursor cursor = contentRe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANDROID开发_KJMusic源码分析心得 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2017/03/15/ANDROID开发-KJMusic源码分析心得/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="透明度android:fromAlpha=”0.4”android:toAlpha=”1”分别表示从透明度为0.4到最终变成透明度为1
+获取设备媒体资源下面这个函数可以用来获取设备上所有的媒体资源（URL），通过游标定位进行数据访问1234ContentResolver contentResolver = getContentResolver();Cursor cursor = contentRe">
+<meta property="og:updated_time" content="2017-08-05T13:13:14.502Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ANDROID开发_KJMusic源码分析心得 | zues blog">
+<meta name="twitter:description" content="透明度android:fromAlpha=”0.4”android:toAlpha=”1”分别表示从透明度为0.4到最终变成透明度为1
+获取设备媒体资源下面这个函数可以用来获取设备上所有的媒体资源（URL），通过游标定位进行数据访问1234ContentResolver contentResolver = getContentResolver();Cursor cursor = contentRe">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ANDROID开发_KJMusic源码分析心得</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-03-15" class="post-meta__date date">2017-03-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/android/">android</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/android进阶/">android进阶</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h3><p>android:fromAlpha=”0.4”<br>android:toAlpha=”1”<br>分别表示从透明度为0.4到最终变成透明度为1</p>
+<h3 id="获取设备媒体资源"><a href="#获取设备媒体资源" class="headerlink" title="获取设备媒体资源"></a>获取设备媒体资源</h3><p><strong>下面这个函数可以用来获取设备上所有的媒体资源（URL），通过游标定位进行数据访问</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ContentResolver contentResolver = getContentResolver();</span><br><span class="line">Cursor cursor = contentResolver.query(</span><br><span class="line">        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,<span class="keyword">null</span>,<span class="keyword">null</span>,<span class="keyword">null</span>,<span class="keyword">null</span>);</span><br><span class="line">MediaStore.Audio.Media.****</span><br></pre></td></tr></table></figure></p>
+<p>不同的位置就可以读取不同的资源信息，例如手机联系人就是<code>android.provider.ContactsContract.Contacts.CONTENT_URI</code></p>
+<pre><code>KJDB db  = KJDB.create(this, Config.DB_NAME,Config.isDebug);
+</code></pre><p>在安卓中添加依赖，compile ‘org.kymjs.kjframe:kjframe:2.6’ 使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">KJDB db  = KJDB.create(<span class="keyword">this</span>, Config.DB_NAME,Config.isDebug);</span><br><span class="line">db.deleteByWhere(Music.class,<span class="keyword">null</span>);<span class="comment">//根据第二参数来删除数据</span></span><br></pre></td></tr></table></figure>
+<h3 id="遍历循环"><a href="#遍历循环" class="headerlink" title="遍历循环"></a>遍历循环</h3><p>for(cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext()){</p>
+<p>在用完corsor之后记得关闭游标，节省资源<br>cursor.close();</p>
+<h3 id="mrark标记"><a href="#mrark标记" class="headerlink" title="mrark标记"></a>mrark标记</h3><p>在一开始的时候忘记了怎么理解下面这段代码的意思，现在mark一下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String action = result ? Config.RECEIVER_UPDATE_MUSIC_LIST : Config.RECEIVER_MUSIC_SCAN_FAIL;</span><br></pre></td></tr></table></figure></p>
+<p>当布朗值<code>result</code>为<code>true</code>的时候则<code>action</code>等于<code>Config</code>。<code>RECEIVER_UPDATE_MUSIC_LIST</code>的值，反之就是另外一个的值。</p>
+<h3 id="overridePendingTransition"><a href="#overridePendingTransition" class="headerlink" title="overridePendingTransition"></a>overridePendingTransition</h3><p>这个函数有两个参数，一个参数是第一个<code>activity</code>进入时的动画，另外一个参数则是第二个<code>activity</code>退出时的动画。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PreferenceHelper.write(this, Config.FIRSTINSTALL_FILE,Config.FIRSTINSTALL_KEY,false);</span><br><span class="line">```java</span><br><span class="line">通过上面那条代码执行将安装信息写入本地记录，参数分别是上下文，目标文件夹，目标文件夹的关键字（标识），</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 实现textview的跑马灯的效果</span><br><span class="line">```java</span><br><span class="line">android:ellipsize="marquee"</span><br><span class="line">android:focusable="true"</span><br><span class="line">android:focusableInTouchMode="true"</span><br><span class="line">android:marqueeRepeatLimit="marquee_forever"</span><br></pre></td></tr></table></figure>
+<p>最后一段代码实现无线联动</p>
+<p><code>android:scrollHorizontally=&quot;true&quot;</code>表示一个<code>EditText</code>满了后是自动横着移动不是默认的换行</p>
+<p><code>adjustViewBounds</code>: 是否去调整这个视图的界限去保存绘制的初始范围比例；</p>
+<p>上面解释是Android API中说的。我百度了一下，得出如下结果：<br><code>android:adjustViewBounds</code> 是否保持宽高比。需要与<code>maxWidth</code>、<code>MaxHeight</code>一起使用，否则单独使用没有效果。</p>
+<h3 id="ViewGroup拦截触摸事件详解"><a href="#ViewGroup拦截触摸事件详解" class="headerlink" title="ViewGroup拦截触摸事件详解"></a>ViewGroup拦截触摸事件详解</h3><p>触摸事件拦截就是在触摸事件被<code>parent view</code>拦截，而不会分发给其<code>child</code>，即使触摸发生在该<code>child</code>身上。被拦截的事件会转到<code>parent view</code>的<code>onTouchEvent</code>方法中进行处理。</p>
+<h3 id="Android-屏幕手势滑动中onFling-函数的技巧"><a href="#Android-屏幕手势滑动中onFling-函数的技巧" class="headerlink" title="Android 屏幕手势滑动中onFling()函数的技巧"></a>Android 屏幕手势滑动中onFling()函数的技巧</h3><p><a href="http://jcodecraeer.com/a/anzhuokaifa/androidkaifa/2012/1020/448.html" target="_blank" rel="external">参考文章</a></p>
+<pre><code>e1： The first down motion event that started the fling.手势起点的移动事件
+e2： The move motion event that triggered the current onFling.当前手势点的移动事件
+velocityX： The velocity of this fling measured in pixels per second along the x axis.每秒x轴方向移动的像素
+velocityY： The velocity of this fling measured in pixels per second along the y axis.每秒y轴方向移动的像素
+</code></pre><p>说的更简单点就是，鼠标手势相当于一个向量（当然有可能手势是曲线），e1为向量的起点，e2为向量的终点，velocityX为向量水平方向的速度，velocityY为向量垂直方向的速度<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(e1.getX() - e2.getX() &gt; verticalMinDistance &amp;&amp; Math.abs(velocityX) &gt; minVelocity)</span><br></pre></td></tr></table></figure></p>
+<p> 则上面的语句能知道啥意思了吧，就是说向量的水平长度（滑了有多长）必须大于<code>verticalMinDistance</code>，并且水平方向速度大于<code>minVelocity</code>。<br>从而我们可以如此判断手势是否满足一定的条件从而进行相应响应，也可以根据这个写出更复杂的手势判断。</p>
+<p>集中不同的进入形式<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (position) &#123;  </span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:  </span><br><span class="line">                <span class="comment">//加速进入  </span></span><br><span class="line">                a.setInterpolator(AnimationUtils.loadInterpolator(<span class="keyword">this</span>,  </span><br><span class="line">                        android.R.anim.accelerate_interpolator));  </span><br><span class="line">                <span class="keyword">break</span>;  </span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:  </span><br><span class="line">                <span class="comment">//减速进入  </span></span><br><span class="line">                a.setInterpolator(AnimationUtils.loadInterpolator(<span class="keyword">this</span>,  </span><br><span class="line">                        android.R.anim.decelerate_interpolator));  </span><br><span class="line">                <span class="keyword">break</span>;  </span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:  </span><br><span class="line">                <span class="comment">//加速进入.与第一个的区别为当repeatMode为reverse时,仍为加速返回原点  </span></span><br><span class="line">                a.setInterpolator(AnimationUtils.loadInterpolator(<span class="keyword">this</span>,  </span><br><span class="line">                        android.R.anim.accelerate_decelerate_interpolator));  </span><br><span class="line">                <span class="keyword">break</span>;  </span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:  </span><br><span class="line">                <span class="comment">//先往后退一点再加速前进  </span></span><br><span class="line">                a.setInterpolator(AnimationUtils.loadInterpolator(<span class="keyword">this</span>,  </span><br><span class="line">                        android.R.anim.anticipate_interpolator));  </span><br><span class="line">                <span class="keyword">break</span>;  </span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:  </span><br><span class="line">                <span class="comment">//减速前进,冲过终点前再后退  </span></span><br><span class="line">                a.setInterpolator(AnimationUtils.loadInterpolator(<span class="keyword">this</span>,  </span><br><span class="line">                        android.R.anim.overshoot_interpolator));  </span><br><span class="line">                <span class="keyword">break</span>;  </span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:  </span><br><span class="line">                <span class="comment">//case 3,4的结合体  </span></span><br><span class="line">                a.setInterpolator(AnimationUtils.loadInterpolator(<span class="keyword">this</span>,  </span><br><span class="line">                        android.R.anim.anticipate_overshoot_interpolator));  </span><br><span class="line">                <span class="keyword">break</span>;  </span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>:  </span><br><span class="line">                <span class="comment">//停止前来回振几下  </span></span><br><span class="line">                a.setInterpolator(AnimationUtils.loadInterpolator(<span class="keyword">this</span>,  </span><br><span class="line">                        android.R.anim.bounce_interpolator));  </span><br><span class="line">                <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure></p>
+<p>通过<code>startForeground</code>让服务前台运行，当<code>stopservice</code>的时候通过<code>stopForeground</code>去掉<br>意思是当音乐播放的时候，使用<code>foreground</code>机制使服务不会在手机休眠长时间之后被kill掉<br>要想实现需求，我们只需要在<code>onStartCommand</code>里面调用 <code>startForeground</code>，然后再<code>onDestroy</code>里面调用<code>stopForeground</code>即可！<br><code>startForeground(1,new Notification());</code><br>第一个参数是唯一的服务的标识符，用来表示这个<code>NOtification</code>.</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

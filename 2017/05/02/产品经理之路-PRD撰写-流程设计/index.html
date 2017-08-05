@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      产品经理之路-PRD撰写-流程设计 | zues blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="漏雨">
+    
+    
+
+    <meta name="description" content="前言由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！
+
+定义流程图，标识算法、工作流或者流程的一种框图表示，它以不同类型的框代表不同种类的步骤，每两个步骤之间则以箭头连接。这种表示方法便于说明解决已知问题的方法。
+很喜欢wiki上的这个定义，超级简练。这句话阐述了几个要点，那就是流程图具备一定的规则，同时每一个步骤之">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品经理之路-PRD撰写-流程设计 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2017/05/02/产品经理之路-PRD撰写-流程设计/index.html">
+<meta property="og:site_name" content="zues blog">
+<meta property="og:description" content="前言由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！
+
+定义流程图，标识算法、工作流或者流程的一种框图表示，它以不同类型的框代表不同种类的步骤，每两个步骤之间则以箭头连接。这种表示方法便于说明解决已知问题的方法。
+很喜欢wiki上的这个定义，超级简练。这句话阐述了几个要点，那就是流程图具备一定的规则，同时每一个步骤之">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2016/11/l9c0hJu6wmNWtQl4oR6T.png">
+<meta property="og:image" content="https://thumbnail0.baidupcs.com/thumbnail/4df6a8175757778f190e6acc6449d689?fid=3375241367-250528-475166661980917&time=1501761600&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-CgpOvB%2bB9KN2MDLwN0xKusvyETg%3d&expires=8h&chkbd=0&chkv=0&dp-logid=4983124670850609264&dp-callid=0&size=c1280_u1024&quality=90&vuk=3375241367&ft=image">
+<meta property="og:image" content="https://pcs.baidu.com/rest/2.0/pcs/thumbnail?method=generate&app_id=250528&path=%2F%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E5%9B%BE.png&quality=90&size=c1280_u1024">
+<meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/56/06/76/560676051a2970d8ae5c13f615962979--flowchart-service-design.jpg">
+<meta property="og:updated_time" content="2017-08-04T00:53:55.629Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="产品经理之路-PRD撰写-流程设计 | zues blog">
+<meta name="twitter:description" content="前言由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！
+
+定义流程图，标识算法、工作流或者流程的一种框图表示，它以不同类型的框代表不同种类的步骤，每两个步骤之间则以箭头连接。这种表示方法便于说明解决已知问题的方法。
+很喜欢wiki上的这个定义，超级简练。这句话阐述了几个要点，那就是流程图具备一定的规则，同时每一个步骤之">
+<meta name="twitter:image" content="http://image.woshipm.com/wp-files/2016/11/l9c0hJu6wmNWtQl4oR6T.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/logo.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for zues blog"><img src="/covey.jpg" width="80" alt="zues blog logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">zues blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          浅呼吸，深思考
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/greatzues" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+	  <li class="navigation__item">
+        <a href="https://www.facebook.com/zues.greater" title="zues facebook">
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">facebook</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/greaterzues/" title="zues instagram">
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">INS</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+  </ul>
+</nav>
+
+<div >
+    <h4 style="color:white">FRIEND LINK</h4>
+      <ul style="margin-left: 1.0em">
+        <li class="navigation__item">
+			<a href="https://blog.yangxitian.cn/" title="">
+			  <span>yang</span>
+			</a>
+		  </li>
+		  
+		  <li class="navigation__item">
+			<a href="https://blog.bensonwu.cn/" title="">
+			  <span>benson</span>
+			</a>
+		  </li>
+      </ul>
+ </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">产品经理之路-PRD撰写-流程设计</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-05-02" class="post-meta__date date">2017-05-02</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/产品经理之路/">产品经理之路</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/PM/">PM</a>, <a class="tags-link" href="/tags/PRD/">PRD</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于我还是学生，这些都是自己结合项目经历和参考互联网一些知名的PM文章感悟而成，如果有错误的地方欢迎随时邮箱骚扰我，保证一定回复！</p>
+<hr>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><a href="https://zh.wikipedia.org/wiki/%E6%B5%81%E7%A8%8B%E5%9B%BE" target="_blank" rel="external">流程图</a>，标识算法、工作流或者流程的一种框图表示，它以不同类型的框代表不同种类的步骤，每两个步骤之间则以箭头连接。这种表示方法便于说明解决已知问题的方法。</p>
+<p>很喜欢wiki上的这个定义，超级简练。这句话阐述了几个要点，那就是流程图具备一定的规则，同时每一个步骤之间都有联系不可能单独孤立，同时做这个流程图的时候已经知道了问题，一个穷游学生在陌生城市（起始点），知道景区位置（目标）但是不知道怎么过去，这时候导航路线就好比流程图的一个分支了，为什么这么说，因为流程图的目标经常都是矛盾的，常表现为是否对立面。因此目标是不定项的，也就是如果学生发现过去景区的路费太贵，就可能突然选择放弃。</p>
+<p>看过知乎上不少的定义，整理之后我的理解是：流程图只能针对用户做一件事而设计，不能统筹所有事情，因此流程我认为是为了应用核心功能的使用流程而生的，因为在产品开发中，马云曾经说过一句话，少就是多，也就是能把每一次要迭代的功能专注做好其实就非常不错了，做太多可能由于个人经验不足，反而容易兼顾不周，做得一团糟。因此如果能考虑到一个核心功能的使用流程所有问题，那么应用逻辑设计就会更人性化，也就是常说的智能。</p>
+<hr>
+<h2 id="流程图能为谁服务："><a href="#流程图能为谁服务：" class="headerlink" title="流程图能为谁服务："></a>流程图能为谁服务：</h2><h3 id="流程图分类"><a href="#流程图分类" class="headerlink" title="流程图分类"></a>流程图分类</h3><p>不同的流程图为不同的对象服务，而流程图的分类有三种，引用<a href="http://www.woshipm.com/pd/441557.html" target="_blank" rel="external">人人中关于三种流程图的概念</a>分别是：</p>
+<blockquote>
+<ul>
+<li>业务流程图（Transaction Flow）：一般设计多个主体，一般会用泳道图的形式去表示业务在多方协作下是如何运行的，设计产品最初先绘制业务流程图</li>
+<li>任务流程图（Mission Flow）：反映出用户完成某个具体任务时的操作流程。任务流程图可以是业务流程图作为表现方式之一衍生出来的分支，因为下文的对象比较多层次，因此这里列了出来。</li>
+<li>页面流程图（Page Flow）：包含页面、行动点、连接线，是产品从抽象到具象的关键点</li>
+</ul>
+</blockquote>
+<h3 id="服务角色"><a href="#服务角色" class="headerlink" title="服务角色"></a>服务角色</h3><blockquote>
+<ul>
+<li>1、设计师，页面流程图能提供设计师在满足流程设计中添加自己独特的交互和美观</li>
+<li>2、开发者，任务流程图能更好梳理开发中的业务逻辑细节设计</li>
+<li>3、上司，业务流程图能让上司清晰知道产品不同部门在协作某件任务时的业务流程</li>
+<li>4、自己，任务流程图能在产品上线之后，验证用户的真实操作是否按自己的逻辑来，能帮助自己更全面了解用户</li>
+<li>5、新员工，快速了解业务如何运作的视图，明白业务的最终目标是什么，中有哪些角色在参与以及他们的职责，以及彼此之间的联接。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="如何做流程图"><a href="#如何做流程图" class="headerlink" title="如何做流程图"></a>如何做流程图</h2><p>首先最重要的一点就是要遵守规则，虽然时代倡导要具备创新意识，但有时候统一规则还是非常有好处的，那就是方便交流，不然辛苦做好的流程图发现别人根本看不懂，那就真的是对牛弹琴了！由于人人都是PM中的流程规则图太美，就盗了过来，希望能不追究！<br><img src="http://image.woshipm.com/wp-files/2016/11/l9c0hJu6wmNWtQl4oR6T.png" alt="Flow此图来源在人人都是产品经理"></p>
+<h3 id="业务流程图"><a href="#业务流程图" class="headerlink" title="业务流程图"></a>业务流程图</h3><p>业务流程图一般会使用泳道图表示，泳道图是一个二维的表格，因为和游泳池的比赛道类似，因此被称为泳道图（净说些废话充字数），在泳道图的X轴为涉及到的主题，相当于游泳比赛参赛者，而Y轴则是一个业务中每一个连续的环节。</p>
+<p>我平时在项目中也没有用过这个流程图，这里因为是学习过程所以肯定要先基于理论之后做一个图，加深学习印象。<br><img src="https://thumbnail0.baidupcs.com/thumbnail/4df6a8175757778f190e6acc6449d689?fid=3375241367-250528-475166661980917&amp;time=1501761600&amp;rt=pr&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-CgpOvB%2bB9KN2MDLwN0xKusvyETg%3d&amp;expires=8h&amp;chkbd=0&amp;chkv=0&amp;dp-logid=4983124670850609264&amp;dp-callid=0&amp;size=c1280_u1024&amp;quality=90&amp;vuk=3375241367&amp;ft=image" alt="狼人杀业务流程图"></p>
+<h3 id="任务流程图"><a href="#任务流程图" class="headerlink" title="任务流程图"></a>任务流程图</h3><p>任务流程图一般比较简单，因为是核心是为某一环的操作而模仿用户行为的图解，这里我直接用我博客的流程图举例子<br><img src="https://pcs.baidu.com/rest/2.0/pcs/thumbnail?method=generate&amp;app_id=250528&amp;path=%2F%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B%E5%9B%BE.png&amp;quality=90&amp;size=c1280_u1024" alt="zues blog flow"></p>
+<h3 id="页面流程图"><a href="#页面流程图" class="headerlink" title="页面流程图"></a>页面流程图</h3><p>页面流程图我真的没做过，这是一个好机会，又能学新东西，理论已经在脑海中形成抽象的概念，手动模仿一个例子做出来的话能在脑海中形成更长久的记忆，希望到工作时不会忘记，哈哈！</p>
+<p>google的结果很大部分都是用Axure做的，基本都是低保真矩形框加箭头的线框图，看到一些复制的页面流程图，整体看起来非常帅，但其实线头非常多，如果想要做好我觉得需要提前脑海有一个整体的每部分图形，不然没拍好每一个页面的位置，恐怕箭头的指向都让其它看的人会晕，如果时那样觉得或许直接做原型会更好，不过做原型又要和设计师协作，我也不清楚怎么分情况讨论，没有经验也不敢随意参考别人的博客，还是自己以后亲手经历之后再说。<br><img src="https://s-media-cache-ak0.pinimg.com/736x/56/06/76/560676051a2970d8ae5c13f615962979--flowchart-service-design.jpg" alt="page flow"></p>
+<hr>
+<h2 id="持续更新"><a href="#持续更新" class="headerlink" title="持续更新"></a>持续更新</h2><p>mark一下，因为这里好多都只是个人理解，还有很多不懂的东西，以后就业之后会不断更新。谢谢各位来看我博客的小伙伴！</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?71cd5f4e461e0fed49351f38c5e4be37";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
