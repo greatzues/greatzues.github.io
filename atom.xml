@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zuesblog.xyz/"/>
-  <updated>2017-08-04T05:40:02.580Z</updated>
+  <updated>2017-08-01T14:06:48.718Z</updated>
   <id>http://zuesblog.xyz/</id>
   
   <author>
@@ -14,22 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>产品经理之路-PRD撰写-TD传媒教育</title>
-    <link href="http://zuesblog.xyz/2017/08/04/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-PRD%E6%92%B0%E5%86%99-TD%E4%BC%A0%E5%AA%92%E6%95%99%E8%82%B2/"/>
-    <id>http://zuesblog.xyz/2017/08/04/产品经理之路-PRD撰写-TD传媒教育/</id>
-    <published>2017-08-04T05:40:02.000Z</published>
-    <updated>2017-08-04T05:40:02.580Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>IOS开发_机电E家人</title>
@@ -674,9 +658,9 @@
       <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
-    
       <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
+    
+      <category term="Axure" scheme="http://zuesblog.xyz/tags/Axure/"/>
     
   </entry>
   
@@ -1075,6 +1059,35 @@ velocityY： The velocity of this fling measured in pixels per second along the 
     
     
       <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>产品经理之路-绪论（三）</title>
+    <link href="http://zuesblog.xyz/2016/12/24/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF-%E7%BB%AA%E8%AE%BA%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://zuesblog.xyz/2016/12/24/产品经理之路-绪论（三）/</id>
+    <published>2016-12-24T09:43:32.000Z</published>
+    <updated>2017-07-28T05:34:40.901Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;&lt;p&gt;PM的轨迹穿透整个产品的生命周期，从我收集的资料显示，从需求开始，经历产品评估、产品定义、产品开发、产品发布、产品迭代开发、产品发布…&lt;br&gt;&lt;img src=&quot;https://xmindshare.s3.amazonaws.com/preview/YG45-nMhabmo-74916.png&quot; alt=&quot;PM route&quot;&gt;&lt;/p&gt;
+&lt;p&gt;千里之行始于足下，不难想象最为困难并且最重要的是&lt;strong&gt;产品评估&lt;/strong&gt;和&lt;strong&gt;产品定义环节&lt;/strong&gt;，如果这一道棋下错，后面损失的利益是难以衡量，甚至是致命的。&lt;/p&gt;
+&lt;h3 id=&quot;定位&quot;&gt;&lt;a href=&quot;#定位&quot; class=&quot;headerlink&quot; title=&quot;定位&quot;&gt;&lt;/a&gt;定位&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;因此我认为产品经理的定位是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一名定义产品的技术可行性、市场可用性，通过开发团队输出成品，并站在用户角度，不断优化完善产品的团队灵魂。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;产品经理的定位&quot;&gt;&lt;a href=&quot;#产品经理的定位&quot; class=&quot;headerlink&quot; title=&quot;产品经理的定位&quot;&gt;&lt;/a&gt;产品经理的定位&lt;/h2&gt;&lt;p&gt;PM的轨迹穿透整个产品的生命周期，从我收集的资料显示，从需求开始，经历产品评估、产品定义、产品开发、
+    
+    </summary>
+    
+      <category term="产品经理之路" scheme="http://zuesblog.xyz/categories/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="PM" scheme="http://zuesblog.xyz/tags/PM/"/>
     
   </entry>
   

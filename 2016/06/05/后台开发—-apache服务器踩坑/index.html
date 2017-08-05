@@ -7,7 +7,7 @@
     
 
     <title>
-      page 5 | 所有文章 | zues blog 
+      后台开发—_apache服务器踩坑 | zues blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,15 +16,22 @@
     
     
 
-    <meta name="description" content="天赋是相对的，而正确的刻意训练是绝对的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="page 5 | 所有文章 | zues blog">
-<meta property="og:url" content="http://zuesblog.xyz/archives/page/5/index.html">
+    <meta name="description" content="续费这次不会放过那么好的补坑机会了，今天续了服务器的费用之后，发现忘记了服务器关于网站的目录在哪里了，这下蛋疼了，本来当时就是为了赶着一个比赛，把网站写好之后就放上去了，现在好了，突然之间忘记了。
+不过很幸运，刚好服务器后天才过期，续了费之后原来配置的环境都还在，现在来说说当时配置好LAMP之后关于目录结构的事情。
+apache根目录位置和安装位置apache在安装过程中会自动生成 /etc/ap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="后台开发—_apache服务器踩坑 | zues blog">
+<meta property="og:url" content="http://zuesblog.xyz/2016/06/05/后台开发—-apache服务器踩坑/index.html">
 <meta property="og:site_name" content="zues blog">
-<meta property="og:description" content="天赋是相对的，而正确的刻意训练是绝对的">
+<meta property="og:description" content="续费这次不会放过那么好的补坑机会了，今天续了服务器的费用之后，发现忘记了服务器关于网站的目录在哪里了，这下蛋疼了，本来当时就是为了赶着一个比赛，把网站写好之后就放上去了，现在好了，突然之间忘记了。
+不过很幸运，刚好服务器后天才过期，续了费之后原来配置的环境都还在，现在来说说当时配置好LAMP之后关于目录结构的事情。
+apache根目录位置和安装位置apache在安装过程中会自动生成 /etc/ap">
+<meta property="og:updated_time" content="2017-08-05T13:27:28.917Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="page 5 | 所有文章 | zues blog">
-<meta name="twitter:description" content="天赋是相对的，而正确的刻意训练是绝对的">
+<meta name="twitter:title" content="后台开发—_apache服务器踩坑 | zues blog">
+<meta name="twitter:description" content="续费这次不会放过那么好的补坑机会了，今天续了服务器的费用之后，发现忘记了服务器关于网站的目录在哪里了，这下蛋疼了，本来当时就是为了赶着一个比赛，把网站写好之后就放上去了，现在好了，突然之间忘记了。
+不过很幸运，刚好服务器后天才过期，续了费之后原来配置的环境都还在，现在来说说当时配置好LAMP之后关于目录结构的事情。
+apache根目录位置和安装位置apache在安装过程中会自动生成 /etc/ap">
     
     
     
@@ -217,214 +224,70 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-   <!-- do nothing -->
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">后台开发—_apache服务器踩坑</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/08/13/REACT-NATIVE开发_学习_笔记4/" title="link to REACT-NATIVE开发_学习_笔记4">REACT-NATIVE开发_学习_笔记4</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-08-13" class="post-list__meta--date date">2016-08-13</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/08/09/REACT-NATIVE开发_学习_笔记3/" title="link to REACT-NATIVE开发_学习_笔记3">REACT-NATIVE开发_学习_笔记3</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-08-09" class="post-list__meta--date date">2016-08-09</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/08/06/REACT-NATIVE开发_ES6入门5/" title="link to REACT-NATIVE开发_ES入门5">REACT-NATIVE开发_ES入门5</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-08-06" class="post-list__meta--date date">2016-08-06</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/08/06/REACT-NATIVE开发_ES6入门4/" title="link to REACT-NATIVE开发_ES入门4">REACT-NATIVE开发_ES入门4</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-08-06" class="post-list__meta--date date">2016-08-06</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/08/05/REACT-NATIVE开发_ES6入门3/" title="link to REACT-NATIVE开发_ES入门3">REACT-NATIVE开发_ES入门3</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-08-05" class="post-list__meta--date date">2016-08-05</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/08/02/REACT-NATIVE开发_ES6入门2/" title="link to REACT-NATIVE开发_ES6入门2">REACT-NATIVE开发_ES6入门2</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-08-02" class="post-list__meta--date date">2016-08-02</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/31/REACT-NATIVE开发_ES6入门/" title="link to REACT-NATIVE开发_ES6入门">REACT-NATIVE开发_ES6入门</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-31" class="post-list__meta--date date">2016-07-31</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/31/REACT-NATIVE开发_学习_笔记2/" title="link to REACT-NATIVE开发_学习_笔记2">REACT-NATIVE开发_学习_笔记2</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-31" class="post-list__meta--date date">2016-07-31</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/29/python学习_正则表达式笔记/" title="link to python学习_正则表达式笔记">python学习_正则表达式笔记</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-29" class="post-list__meta--date date">2016-07-29</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/27/python学习_爬虫日记/" title="link to python学习_python爬虫日记">python学习_python爬虫日记</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-27" class="post-list__meta--date date">2016-07-27</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
-    
-    	
-          <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/archives/page/4/">&larr; 上一頁 </a>
-        
     
 
-    <span class="pagination__page-number"> 5 / 9</span>
+    <div class="post-meta">
+      <time datetime="2016-06-05" class="post-meta__date date">2016-06-05</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/The-Fundamental-Skills/">The Fundamental Skills</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/开始/">开始</a>
+            </font>
+          
+
+      </span>
+    </div>
     
     
-        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/archives/page/6/">下一頁 &rarr;</a>
-    
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="续费"><a href="#续费" class="headerlink" title="续费"></a>续费</h2><p>这次不会放过那么好的补坑机会了，今天续了服务器的费用之后，发现忘记了服务器关于网站的目录在哪里了，这下蛋疼了，本来当时就是为了赶着一个比赛，把网站写好之后就放上去了，现在好了，突然之间忘记了。</p>
+<p>不过很幸运，刚好服务器后天才过期，续了费之后原来配置的环境都还在，现在来说说当时配置好<code>LAMP</code>之后关于目录结构的事情。</p>
+<h3 id="apache根目录位置和安装位置"><a href="#apache根目录位置和安装位置" class="headerlink" title="apache根目录位置和安装位置"></a>apache根目录位置和安装位置</h3><p><code>apache</code>在安装过程中会自动生成 <code>/etc/apache2/</code> 和 <code>/var/www/</code>文件夹</p>
+<p>因此<code>apache2</code>默认的会被安装在<code>etc/apacha2</code>下，所以如果需要配置<code>apache</code>的话可以先进去这个目录下修改<code>apache.config</code>，一般网上都会有很多关于配置的细节博客</p>
+<p>而另外一个就是打开网站时候初始的目录了，把静态文件放置对应的<code>/var/www/</code>下就可以正常访问了，超级简单，只是因为我自己忘记了，又浪费了时间，真讨厌自己啊！</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'greaterzues'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 
-</div>
+  
+</article>
+
+
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2017-2018 by greater zues. </a></span>
@@ -452,6 +315,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     <script>
 var _hmt = _hmt || [];
 (function() {
