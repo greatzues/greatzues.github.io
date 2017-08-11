@@ -113,9 +113,9 @@
       <category term="react" scheme="http://zuesblog.xyz/categories/react/"/>
     
     
-      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
-    
       <category term="ios" scheme="http://zuesblog.xyz/tags/ios/"/>
+    
+      <category term="react-native" scheme="http://zuesblog.xyz/tags/react-native/"/>
     
   </entry>
   
